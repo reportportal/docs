@@ -12,12 +12,11 @@ module.exports = function (grunt) {
         copy: {
             images: {
                 files: [{
+                    expand: true,
                     cwd: 'src',
                     src: ['Images/**'],
-                    dest: 'build',
-                    filter: 'isFile'
+                    dest: 'build/'
                 }]
-
             },
         },
         assemble: {
