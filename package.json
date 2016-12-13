@@ -1,0 +1,26 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "grunt:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reportportal/documentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reportportal/documentation/issues"
+  },
+  "homepage": "https://github.com/reportportal/documentation#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-assemble": "^0.5.0",
+    "load-grunt-tasks": "^3.5.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^0.8.0"
+  }
+}
