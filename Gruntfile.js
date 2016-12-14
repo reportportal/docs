@@ -9,6 +9,23 @@ module.exports = function (grunt) {
 
 
     grunt.initConfig({
+        'string-replace': {
+            image: {
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    src: ['md/*.md'],
+                    dest:  'src/computeds',
+                    filter: 'isFile'
+                }],
+                options: {
+                    replacements: [{
+                        pattern: /Images\//g,
+                        replacement: 'https://github.com/'
+                    }]
+                }
+            }
+        },
         copy: {
             images: {
                 files: [{
@@ -56,6 +73,7 @@ module.exports = function (grunt) {
         'build',
         [
             'clean:build',
+            'string-replace',
             'assemble',
             'copy:images',
         ]
