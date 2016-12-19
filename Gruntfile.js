@@ -21,7 +21,7 @@ module.exports = function (grunt) {
                 options: {
                     replacements: [{
                         pattern: /Images\//g,
-                        replacement: 'https://github.com/'
+                        replacement: 'http://reportportal.io/documentation/Images/'
                     }]
                 }
             }
