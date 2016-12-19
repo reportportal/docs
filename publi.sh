@@ -5,7 +5,7 @@ set -e # Exit with nonzero exit code if anything fails
 # change the branch names appropriately
 # git checkout develop
 
-git config --global user.email "andrei_varabyeu@gmail.com";
+git config --global user.email "$USER_EMAIL";
 git config --global user.name "avarabyeu";
 git remote set-url origin git@github.com:reportportal/documentation;
 
