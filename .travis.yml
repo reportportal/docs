@@ -6,7 +6,7 @@ env:
       secure: "qgnk2B0aWAx1DmbOKAnro6Mke8AESulDel/ASf+mmeFhEq8Mf2S3Wx3aM9Avh9XXESaq+uiqerDXTxhgsbQT74imw55ihF1h5EZpju6ZbQGLTQLgqHe1sDXmRTKhdoBSpVeXDj42dUrehDwq4GzJRco9AsEmbDzmShHAVQ50P+MyOSP8vDPeNHadw93cPmuUHwXfqzYnxMpHDPyanLmFfc5DReUhkWPwGxc5BHWnH+g9pQNJ4Jab6J7/LjGqaR+PcCTbMpu1wg1XcGUzQutaHkqkb3QkJm6F+ppbzb/EtstEIwjX1Or1Mdo+XpDk36Q6jg1IpD4Pcsg63zXFx+FwiNPLvy1pZQNdBDA+2gcNzLlBDBgyCwh9UIH2QhUWdcPhnv09LOcsHXA+2MqYQoTTk39Zh0mQix8SuhXPIVfkXA6WhDxAhgs1bv1H24aTb7zsuxkSDhVMYd+5aQEMbchJ15Dw/KL+gCAnGlBZqqXAZEhzcFtIOH4upoFzszQNS/+a3Vjj88iyBjj099I0WSyk2yps9S6cCu+p7550ijD8fufu2D3wLuJa32zVu2ytuOVFvWbl+5KuUGwkO9gQ85Sv9a6+hsQhTu+O7DVgqPn9FcI8KtZyhwqB4fjKevWxxby4BY6WC5VUnCkaXfMITox4TLSbopW/x+C9OahRKOk9T9o="
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_c5ce3f8fa2d6_key -iv $encrypted_c5ce3f8fa2d6_iv -in id_rsa.enc -out ~/.ssh/id_rsa
+  - openssl aes-256-cbc -K $encrypted_c5ce3f8fa2d6_key -iv $encrypted_c5ce3f8fa2d6_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - chmod +x ./publi.sh
 
