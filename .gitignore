@@ -1,4 +1,5 @@
 /build/
 /node_modules/
-.idea
+.idea/
+*.iml
 /src/computeds/
