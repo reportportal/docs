@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "grunt build"
+    "build": "grunt build",
+    "server": "webpack-dev-server --config config-server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "load-grunt-tasks": "^3.5.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^0.8.0",
-    "grunt-string-replace": "^1.2.1"
+    "grunt-string-replace": "^1.2.1",
+    "webpack": "1.13.0",
+    "webpack-dev-server": "1.14.1"
   }
 }
