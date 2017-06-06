@@ -35,6 +35,15 @@ module.exports = function (grunt) {
                     dest: 'build/'
                 }]
             },
+            md: {
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    src: ['md/*.md'],
+                    dest:  'src/computeds',
+                    filter: 'isFile'
+                }]
+            }
         },
         assemble: {
             options: {
@@ -55,11 +64,40 @@ module.exports = function (grunt) {
             }
         },
         clean: {
+            images: {
+                options: {force: true},
+                src: rootPath + '/build/Images*'
+            },
             build: {
                 options: {force: true},
                 src: rootPath + '/build/*'
+            },
+            md: {
+                options: {force: true},
+                src: rootPath + '/src/computeds/md/*'
             }
         },
+        watch: {
+            images: {
+                files: [
+                    'src/Images/**/*.*'
+                ],
+                tasks: [
+                    'clean:images',
+                    'copy:images'
+                ]
+            },
+            md: {
+                files: [
+                    'src/md/**/*.*'
+                ],
+                tasks: [
+                    'clean:md',
+                    'copy:md',
+                    'assemble'
+                ]
+            }
+        }
     });
 
 
@@ -70,9 +108,21 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask(
+        'develop',
+        [
+            'clean:build',
+            'clean:md',
+            'copy:md',
+            'assemble',
+            'copy:images',
+            'watch'
+        ]
+    );
+    grunt.registerTask(
         'build',
         [
             'clean:build',
+            'clean:md',
             'string-replace',
             'assemble',
             'copy:images',
