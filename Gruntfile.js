@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['md/*.md'],
+                    src: ['md/**/*.md'],
                     dest:  'src/computeds',
                     filter: 'isFile'
                 }],
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['md/*.md'],
+                    src: ['md/**/*.md'],
                     dest:  'src/computeds',
                     filter: 'isFile'
                 }]
