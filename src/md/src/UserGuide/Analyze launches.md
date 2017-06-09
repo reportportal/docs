@@ -18,15 +18,11 @@ To change a defect type, perform the following steps:
 
 3. Click on the defect label in the "Defect Type" column or small pencil icon.
 
-4. [ ![Image](Images/pic_110.jpg) ](Images/pic_110.jpg)
-
-5. You will see the defect editor block. After clicking on the defect icon, the current defect type will be shown in
+4. You will see the defect editor block. After clicking on the defect icon, the current defect type will be shown in
     a combo-box. A new defect type can be selected from the drop-down. Also, you
     can add a comment here, which should be not more than 255 symbols long.
 
-6. [ ![Image](Images/pic_111.jpg) ](Images/pic_111.jpg)
-
-7. The available defect types are described below:
+5. The available defect types are described below:
 
 >   *To investigate* - means that no investigation was performed on this defect
 >   yet.
@@ -49,8 +45,6 @@ for a selected item.
 
 Report Portal allows to edit defects in bulk.
 
-[ ![Image](Images/pic_113.jpg) ](Images/pic_113.jpg)
-
 In this case all changes will be applied to all selected defects. If you want to
 keep original defects comments, you should uncheck "Replace comments" check-box. In
 this case new comment will be saved for the defect, for which the editor is
@@ -58,8 +52,7 @@ opened.
 
 Also you can change a defect type at the logs level.
 
-[ ![Image](Images/pic_114.jpg) ](Images/pic_114.jpg)
-
+[ ![Image](Images/userGuide/analyzeLaunches/analyze_launches.png) ](https://youtu.be/Nf60EPDX3Co)
 
 ### Auto-Analysis 
 
@@ -121,9 +114,9 @@ steps:
 
 2. Select ON from the "Auto-Analysis" drop-down.
 
-3. [ ![Image](Images/pic_210.jpg) ](Images/pic_210.jpg)
+3. Click the "Submit" button. Now "Auto-Analysis" will start as soon as any launch finishes.
 
-4. Click the "Submit" button. Now "Auto-Analysis" will start as soon as any launch finishes.
+[ ![Image](Images/userGuide/analyzeLaunches/add_auto_analiz.png) ](https://youtu.be/6FzkHOLuuaM)
 
 
 #### Using manual "Analysis"
@@ -135,12 +128,10 @@ To start the analysis manually, perform the following steps:
 2. Select "Analysis" option from the context menu next to the selected
     launch name.
 
-3. [ ![Image](Images/pic_143.jpg) ](Images/pic_143.jpg)
-
-4. Launch with an active analyzing process will be marked the "Analysis"
+3. Launch with an active analyzing process will be marked the "Analysis"
     label.
 
-5. [ ![Image](Images/pic_144.jpg) ](Images/pic_144.jpg)
+[ ![Image](Images/userGuide/analyzeLaunches/manual_analiz.png) ](https://youtu.be/qXbTx4So0N4)
 
 
 ### Match issues in Launch
@@ -187,14 +178,10 @@ To start the "Match Issues in Launch" process, perform the following steps:
 2. Select "Match Issues in Launch" option from the context menu next to
     the selected launch name.
 
-3. [ ![Image](Images/pic_145.jpg) ](Images/pic_145.jpg)
-
 4. Launch with an active analyzing process will be marked the "Analysis"
     label.
 
-5. [ ![Image](Images/pic_144.jpg) ](Images/pic_144.jpg)
-
 You can also start the "Match Issues in Launch" process on Log level.
 
-[ ![Image](Images/pic_147.jpg) ](Images/pic_147.jpg)
+[ ![Image](Images/userGuide/analyzeLaunches/match_issue.png) ](https://youtu.be/0QyUUi2gHsM)
 
