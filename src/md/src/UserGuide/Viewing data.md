@@ -8,8 +8,6 @@ Launch is an object, which contains your data for certain execution. Inside the 
 Launches are present in two modes – the Default mode on the "Launches" tab
 and the Debug mode on the "Debug" tab.
 
-[ ![Image](Images/pic_82.jpg) ](Images/pic_82.jpg)
-
 Although both modes share almost the same set of features, the "Debug" mode is
 considered to be a more private one: it is not visible to the user with the
 CUSTOMER role and all the filters created there cannot be saved to
@@ -94,8 +92,6 @@ columns:
 >       all failed test cases with no selected defect type (marked as "To
 >       Investigate") in the launch in one table.
 
-[ ![Image](Images/pic_87.jpg) ](Images/pic_87.jpg)
-
 To drill down your structure, click the name of an item or numbers in the
 columns (Total, Passed, Failed, etc.), which will open the items, filtered
 by the column criteria.
@@ -135,12 +131,8 @@ Investigate.
 
 Navigation is is provided for both the "Launches" and the "Debug" modes.
 
-[ ![Image](Images/pic_89.jpg) ](Images/pic_89.jpg)
-
 The system shows all relevant test cases within the launch in one table,
 filtered by the column criteria.
-
-[ ![Image](Images/pic_90.jpg) ](Images/pic_90.jpg)
 
 The system allows keeping track of your location in the hierarchical launch
 structure, and navigating back to parent items you went through to get to the
@@ -151,13 +143,9 @@ item was reached. In case the child item was reached going through all upper
 levels sequentially, all the hierarchical elements are reflected in the
 breadcrumbs.
 
-[ ![Image](Images/pic_91.jpg) ](Images/pic_91.jpg)
-
 In case a clickable number was used for navigation, then only the highest level
 (Launch) and the lowest level (Step) are represented in the breadcrumbs.
 
-[ ![Image](Images/pic_92.jpg) ](Images/pic_92.jpg)
+User can hide precondition methods (except FAILED methods). Preconditions switcher is located on the table header on STEP level.
 
-User can hide precondition methods (except FAILED methods). Preconditions switcher is located on the table header on STEP level. 
-
-[ ![Image](Images/pic_242.jpg) ](Images/pic_242.jpg)
+[ ![Image](Images/viewingData/viewing_data.png) ](https://youtu.be/CjfZYY1ulZY)
