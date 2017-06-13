@@ -9,7 +9,7 @@ Report Portal provides 2 authorisation types:
 - Basic authorisation - for INTERNAL users
 - GitHub authorisation - for GITHUB users only
 
-[ ![Image](Images/userGuide/gettingStarted/login.png) ](https://youtu.be/P7DLZFik9-c)
+[ ![Image](Images/userGuide/gettingStarted/login.png) ](https://youtu.be/GfCICi97YyA)
 
 
 ### Email server configuration
@@ -48,7 +48,7 @@ Example of email server configuration for Gmail email server (detailed info coul
 2. Click 'Submit' button
 3. Confirmation message in status bar should be shown.
 
-[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/9Qbx21zs-Nw)
+[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/f7jS1bKp4R8)
 
 Example of email server configuration for Yandex email server (detailed info could be found here [https://yandex.com/support/mail-new/mail-clients.html](https://yandex.com/support/mail-new/mail-clients.html))
  
@@ -84,7 +84,7 @@ it yet.
 
 Also you can see the list of projects on the user profile page.
 
-[ ![Image](Images/userGuide/gettingStarted/access_to_project.png) ](https://youtu.be/6KwFFOKgCeo)
+[ ![Image](Images/userGuide/gettingStarted/access_to_project.png) ](https://youtu.be/s7AFCmXY3fE)
 
 ### User's types 
 
