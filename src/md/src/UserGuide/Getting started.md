@@ -7,60 +7,64 @@ To log in, open the application and click LOGIN.
 Report Portal provides 2 authorisation types:
 
 - Basic authorisation - for INTERNAL users
-
 - GitHub authorisation - for GITHUB users only
 
-[ ![Image](Images/userGuide/gettingStarted/login.png) ](Images/userGuide/gettingStarted/login.webm)
+[ ![Image](Images/userGuide/gettingStarted/login.png) ](https://youtu.be/P7DLZFik9-c)
 
 
 ### Email server configuration
+To configure Email server:
 
-Important: Only user with ADMINISTRATOR account role has permission to configure email server settings.
-To do that, login RP as ADMINISTRATOR and navigate to MANAGEMENT BOARD context, Server Settings page.
+1. Login Report Portal as ADMIN user
+2. Open list on the right of user's image.
+3. Click 'Administrative' link 
+4. Click 'Server Settings' from left-hand sidebar
+5. On 'Email Server' tab change switcher position of 'Enable Email Server' to "ON"
+6. Next fields are present:
+```javascript
+                   Host: <host_name_of_email_server>
+               Protocol: SMTP (predefined)
+    Default sender name: (optional)
+                   Port: <port_number>
+          Authorization: OFF/ON 
+               Username: <user_email_address>
+               Password: <user_email_password>
+         'TLS' or 'SSL': should be checked depends on selected port.
+```
 
-Switch Enable Email Server to ON position.
-Now fill in the form loaded.
+Example of email server configuration for Gmail email server (detailed info could be found here [https://support.google.com/a/answer/176600?hl=en](https://support.google.com/a/answer/176600?hl=en))
+ 
+1. Fill the form with next data:
+```javascript
+                   Host: smtp.gmail.com
+               Protocol: SMTP
+    Default sender name: Report Portal
+                   Port: 465
+           Autorization: ON
+               Username: <user_email_address>
+               Password: <user_email_password>
+                    SSL: checkbox should be checked.
+```
+2. Click 'Submit' button
+3. Confirmation message in status bar should be shown.
 
-[ ![Image](Images/E-mail form.jpg) ](Images/E-mail form.jpg)
+[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/9Qbx21zs-Nw)
 
-SMTP protocol for outgoing emails is predefined and could not be changed.
-'Host' and 'Port' are mandatory editable fields. By default, "25" port is in the field.
-You can add the name of a sender to customize your notifications. To do that, specify it in 'Default Sender' field.
-
-There are some examples of email server configuration below.
-
-To set up gmail smtp server, please use the settings provided on https://support.google.com/a/answer/176600?hl=en
-
->**Note:**
-Authorization is required for gmail email server.
-
-Example of configuration of gmail email server using port 465:
-
-[ ![Image](Images/Email settings-465.jpg) ](Images/Email settings-465.jpg)
-
-Example of configuration of gmail email server using port 587:
-
-[ ![Image](Images/Email settings-587.jpg) ](Images/Email settings-587.jpg)
-
-Settings are validated on form submitting. In case any data is not correct, test connection error message will be shown.
-
-[ ![Image](Images/Email settings-587-error.jpg) ](Images/Email settings-587-error.jpg)
-
-To set up yandex email server, please use the settings provided on https://yandex.com/support/mail-new/mail-clients.html
-
->**Note:**
-Authorization is required for yandex email server.
-
-Example of configuration of yandex email server using port 465:
-
-[ ![Image](Images/Email settings-yandex-465.jpg) ](Images/Email settings-yandex-465.jpg)
-
-Example of configuration of yandex email server using port 587:
-
-[ ![Image](Images/Email settings-yandex-587.jpg) ](Images/Email settings-yandex-587.jpg)
-
->**Note:**
-Settings of smtp server could be differ and depend on providers.
+Example of email server configuration for Yandex email server (detailed info could be found here [https://yandex.com/support/mail-new/mail-clients.html](https://yandex.com/support/mail-new/mail-clients.html))
+ 
+1. Fill the form with next data:
+```javascript
+                   Host: smtp.yandex.com
+               Protocol: SMTP
+    Default sender name: Report Portal
+                   Port: 465
+           Autorization: ON
+               Username: <user_email_address>
+               Password: <user_email_password>
+                    SSL: checkbox should be checked.
+```
+2. Click 'Submit' button
+3. Confirmation message in status bar should be shown.
 
 
 ### Access to projects
@@ -80,7 +84,7 @@ it yet.
 
 Also you can see the list of projects on the user profile page.
 
-[ ![Image](Images/userGuide/gettingStarted/access_to_project.png) ](Images/userGuide/gettingStarted/access_to_project.webm)
+[ ![Image](Images/userGuide/gettingStarted/access_to_project.png) ](https://youtu.be/6KwFFOKgCeo)
 
 ### User's types 
 
