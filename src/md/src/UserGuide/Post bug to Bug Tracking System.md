@@ -61,7 +61,9 @@ Keep in mind that data of Report Portal items are excluded in a bulk posting.
 8. Hover the mouse over the bug and you will see issue status and summary on
 tool-tip.
 
-Note,
+[ ![Image](Images/userGuide/postBugToBTS/postBugJira.png) ](https://youtu.be/fuk0kVRN7oI)
+
+>**Note:**
 in case of bulk operation Include data option with be missed in Post Bug pop up. So, logs, comments and attachments will not
 be present in JIRA ticket.
 
@@ -76,28 +78,17 @@ In order to post bug to RALLY, perform the following steps:
 
 3. Click "Defect editor" link or pencil icon in the "Defect Type" column. 
 
-4. [ ![Image](Images/pic_110.jpg) ](Images/pic_110.jpg)
-
-5. You will see the defect editor block. Click "Post Bug" icon from the
+4. You will see the defect editor block. Click "Post Bug" icon from the
     editor header.
 
-6. [ ![Image](Images/pic_115.jpg) ](Images/pic_115.jpg)
+5. Post bug pop-up form should appear.
 
-7. Post bug pop-up form should appear.
+6. Fill in the form and click "Submit" button.
 
-8. [ ![Image](Images/pic_121.jpg) ](Images/pic_121.jpg)
-
-9. Fill in the form and click "Submit" button.
-
-10. The bug will be posted to the RALLY and link to the bug will be displayed on the
+7. The bug will be posted to the RALLY and link to the bug will be displayed on the
 Step and log levels of the failed item.
 
 Hover the mouse over the bug and you will see issue status and summary on
 tool-tip.
 
-[ ![Image](Images/pic_127.jpg) ](Images/pic_127.jpg)
-
 Also you can post bug on Log level.
-
-[ ![Image](Images/pic_118.jpg) ](Images/pic_118.jpg)
-
