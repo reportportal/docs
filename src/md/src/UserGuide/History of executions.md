@@ -9,8 +9,6 @@ You can see the historical line of executions at the Log level. History is shown
 You can click on the item in the history and check the results in previous executions, read the comments, find the bugs, posted to this fail.
 This feature will save your time and help you to understand the reason of your fail.
 
-[ ![Image](Images/pic_135.jpg) ](Images/pic_135.jpg)
-
 History line has the following color scheme:
 
 >   Red - failed or interrupted. Contains link to related bug (if has it)
@@ -28,13 +26,10 @@ History line has the following color scheme:
 You can mark the current method or case with a defect type, and write a comment
 using the defect editor block.
 
-[ ![Image](Images/pic_136.jpg) ](Images/pic_136.jpg)
-
 To see the comment, hover the mouse over the launch number in the historical
 line.
 
-[ ![Image](Images/pic_137.jpg) ](Images/pic_137.jpg)
-
+[ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/p3ooUJRwRyE)
 
 
 ### Historical trend of executions
@@ -45,8 +40,6 @@ To see a table of historical trend of executions, navigate to the "Launches"
 page and drill down to launch structure.
 
 Then click the "History View" button.
-
-[ ![Image](Images/pic_139.jpg) ](Images/pic_139.jpg)
 
 You will see a historical trend in a table.
 
@@ -62,19 +55,15 @@ History trends have the following color scheme:
 
 >   Animated - still without state [in progress]
 
-[ ![Image](Images/pic_140.jpg) ](Images/pic_140.jpg)
-
 You can select the depth of history: 3, 5, or 10 launches using the "History
 Depth" drop-down menu.
 
-[ ![Image](Images/pic_141.jpg) ](Images/pic_141.jpg)
-
 History results can also be displayed in the following way.
-
-[ ![Image](Images/pic_142.jpg) ](Images/pic_142.jpg)
 
 The exclamation mark means that several equal test items are present within the
 required level.
+
+[ ![Image](Images/userGuide/historyExecution/historicalTrend.png) ](https://youtu.be/x3eS2odZIUg)
 
 
 ### Test Item actions history
@@ -95,5 +84,5 @@ will see last action in one line.
 
 Use spoiler to maximize actions history:
 
-[ ![Image](Images/pic_138.jpg) ](Images/pic_138.jpg)
+[ ![Image](Images/userGuide/historyExecution/actionHistory.png) ](https://youtu.be/HKfoRuz_-ag)
 
