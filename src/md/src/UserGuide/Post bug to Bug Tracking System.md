@@ -41,7 +41,7 @@ Including logs, attachments and comments.
 
 11. To get to item in Report Portal for which the bug was posted, click back link 'Link to defect'. 
 
-Sometimes it necessary to add one bug to some items via bulk operation. To do this:
+Sometimes it is necessary to add one bug to some items via bulk operation. To do this:
 
 1. Go to Step level of the launch
 
@@ -55,7 +55,8 @@ Sometimes it necessary to add one bug to some items via bulk operation. To do th
 
 6. Fill in credentials of your JIRA account and click 'Post' button
 
-7. Ticket of bug is added to all selected items.
+7. One ticket with bug is added to JIRA as for single bug posting. The identifier of JIRA ticket is added to all selected items. 
+Keep in mind that data of Report Portal items are excluded in a bulk posting.
 
 8. Hover the mouse over the bug and you will see issue status and summary on
 tool-tip.
