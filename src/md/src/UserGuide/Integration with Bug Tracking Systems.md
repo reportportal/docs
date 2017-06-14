@@ -24,12 +24,14 @@ To integrate JIRA to the Report Portal, perform the following steps:
 2. Open Settings page of project, select 'Bug Tracking System' tab
 
 3. Form to set up connection to JIRA appears. Form contains
-   'Link to BTS': <valid URL of bug tracking system>
-   'Project name in BTS': <project key in bug tracking system>
-   'Authorization Type': Basic (predefined)
-   'BTS Username': <JIRA user name>
-   'BTS Password': <JIRA user password>
 
+```
+                      'Link to BTS': <valid URL of bug tracking system>
+              'Project name in BTS': <project key in bug tracking system>
+               'Authorization Type': Basic (predefined)
+                     'BTS Username': <JIRA user name>
+                     'BTS Password': <JIRA user password>
+```
 4. Fill in required fields and click 'Submit' button.
 Confirmation message will be shown in status bar.
 
@@ -65,24 +67,49 @@ The settings of JIRA connection can be updated. To do that,
 
 2. Make changes in JIRA Properties form.
 
->   If "Link to BTS" and "Project name in BTS" fields weren’t changed – content of "Default properties for issue form" will be kept and shown
-after the new data validation is completed.
+ If "Link to BTS" and "Project name in BTS" fields weren’t changed – content of "Default properties for issue form" will be 
+kept and shown after the new data validation is completed.
 
->   If "Link to BTS" and "Project name in BTS" fields were changed - the
-system will reset the content of "Default properties for issue form" and show
-the blank form.
+ If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content 
+ of "Default properties for issue form" and show the default set of fields.
 
 **Update fields of post bug form**
 
-To update list of issue form, cick "Update" button under the "Default properties for issue form". 
-You will see the complete bug fields list. Select desired fields and save changes. "Default
-properties for issue form" will be updated.
+To update list of issue form: 
+1. Cick "Update" button under the "Default properties for issue form".
 
-To add additional fields to the post bug form, click 'Update' button under the "Default properties for issue form". You will see the
-complete bug fields list. Select desired fields and save changes. "Default properties for issue form" will be updated.
+   You will see the list with all available fields for post bug form.
 
-To remove the fields from the post bug form, click 'Update' button, uncheck desired fields and click "Submit"
-button under the "Default properties for issue form". "Default properties for issue form" will be updated.
+2. Select desired fields 
+
+3. Click 'Submit' button. 
+
+   Confirmation message will be shown in status bar. "Default properties for issue form" will be updated.
+
+To add additional fields to the post bug form:
+1. Click 'Update' button under the "Default properties for issue form". 
+
+   You will see the list with all available fields for post bug form. 
+   
+2. Select desired fields
+
+3. Click 'Submit' button. 
+   Confirmation message will be shown in status bar. "Default properties for issue form" will be updated.
+   Previously selected fields are checked as well.
+
+To remove the fields from the post bug form:
+1. Uncheck desired fields 
+
+2. Click "Submit" button. 
+"Default properties for issue form" will be updated.
+
+Also, fields can be filled in with some data. 
+
+For instance, add general data to 'Summary' field ("UI:")
+
+Or select a value from list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
+
+Post bug form will contan selected data. So, it will be not necessary in future to type or select general information again and again.
 
 
 ### Integration with RALLY
