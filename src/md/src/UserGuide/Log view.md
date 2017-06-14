@@ -17,8 +17,6 @@ Log object has the following levels:
 
 >   Trace
 
-[ ![Image](Images/pic_107.jpg) ](Images/pic_107.jpg)
-
 The table with log messages is painted in different colors depending on the log
 type:
 
@@ -35,15 +33,11 @@ Logs with *Trace*, *Debug*, *Error* labels are collapsed, if the log has more
 than 5 lines. You can expand log message clicking on special "Expand"
 button.
 
-[ ![Image](Images/pic_108.jpg) ](Images/pic_108.jpg)
-
 You can use quick filter for logs view to find *Error*, *Debug*, *Warn*, *Info*, *Trace* logs and logs with screenshots.
-
-[ ![Image](Images/pic_109.jpg) ](Images/pic_109.jpg)
 
 Also you can use the logs sorting by time, and filtering logs to find the certain message in logs.
 
-[ ![Image](Images/pic_226.jpg) ](Images/pic_226.jpg)
+[ ![Image](Images/userGuide/logView/logMessages.png) ](https://youtu.be/Mcqh7ktK1Oc)
 
 
 ### Navigate to the next/previous logs
@@ -51,7 +45,7 @@ Also you can use the logs sorting by time, and filtering logs to find the certai
 You can navigate from one log to the other using "Next"/"Previous" buttons on the Log view.
 
 
-[ ![Image](Images/pic_243.jpg) ](Images/pic_243.jpg)
+[ ![Image](Images/userGuide/logView/logNavigation.png) ](Images/userGuide/logView/logNavigation.png)
 
 
 Navigation takes into account selected by user filter and hidden preconditions methods on Step view.
@@ -67,16 +61,12 @@ on a picture thumbnail.
 
 Gallery thumbnails are not visible if no screenshots exist.
 
-[ ![Image](Images/pic_148.jpg) ](Images/pic_148.jpg)
-
 The gallery with screenshots will be opened. You can open a full size picture by clicking at the main box. The main picture box
 will show a scaled picture.
-
-[ ![Image](Images/pic_149.jpg) ](Images/pic_149.jpg)
 
 You can scroll gallery using "Next" and "Previous" buttons and jump to the source of this fail on log.
 
 You can change screenshot orientation for the current screenshot, using "Change
 orientation" icon.
 
-[ ![Image](Images/pic_150.jpg) ](Images/pic_150.jpg)
+[ ![Image](Images/userGuide/logView/screenshotGallery.png) ](https://youtu.be/8DUdwG-SdWA)
