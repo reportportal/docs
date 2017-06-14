@@ -9,7 +9,7 @@ project on the project settings page.
 In case bug tracking system is not connected, "Post bug" button will be
 disabled.
 
-The functionality is available for all users and does not depends on their project role.
+The functionality is available for all users and does not depend on their project role.
 
 ### Post bug to JIRA
 
