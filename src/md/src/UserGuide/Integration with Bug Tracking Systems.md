@@ -21,9 +21,9 @@ To integrate JIRA to the Report Portal, perform the following steps:
 
 1. Login into Report Portal instance as user with LEAD or PROJECT MANAGER role on the project.
 
-2. Open Settings page of project, select 'Bug Tracking System' tab
+2. Open Settings page of project, select 'Bug Tracking System' tab. JIRA system is selected by default.
 
-3. Form to set up connection to JIRA appears. Form contains
+3. Form to set up connection to JIRA is displayed. Form contains:
 
 ```
                       'Link to BTS': <valid URL of bug tracking system>
@@ -42,7 +42,7 @@ new JIRA project properties.
 
 Steps above are enough to load bug functionality and to getting updates on bug's statuses.
 
-To have a possibility to post bugs to bug tracking system, it is necessary to select and /or submit default properties for
+To have a possibility to submit issues to bug tracking system, it is necessary to select and /or submit default properties for
 issue form.
 
 
@@ -59,6 +59,9 @@ To configure fields for post bug form in JIRA:
 click "Submit" button. The system will save the entered information and hide the fields that are not checked. 
 All the saved information on the checked fields will be predefined, when you will post a bug to JIRA.
 
+Now project team members with JIRA accounts be able to submit bugs. Options for Post Bug is activated.
+
+
 **Edit JIRA properties**
 
 The settings of JIRA connection can be updated. To do that, 
@@ -73,12 +76,114 @@ kept and shown after the new data validation is completed.
  If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content 
  of "Default properties for issue form" and show the default set of fields.
 
+
 **Update fields of post bug form**
 
 To add additional fields to the post bug form:
 1. Click 'Update' button under the "Default properties for issue form". 
 
-   You will see the list with all available fields for post bug form. 
+   You will see the list of all available fields for post bug form. 
+   
+2. Select desired fields
+
+3. Click 'Submit' button. 
+   Confirmation message will be shown in status bar. "Default properties for issue form" will be updated.
+   Previously selected fields are checked as well.
+
+To remove the fields from the post bug form:
+1. Uncheck desired fields 
+
+2. Click "Submit" button. 
+"Default properties for issue form" will be updated.
+
+Also, fields can be filled in with some data. 
+
+For instance, add general data to 'Summary' field ("UI:")
+
+Or select a value from a list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
+
+Post bug form will contain selected data. So, it will be not necessary in future to type or select general information again and again.
+
+
+**Remove JIRA project from Report Portal settings**
+
+To remove JIRA from project settings:
+1. Click "Remove project" button.
+
+2. Confirm the action in modal window.
+
+The connection to JIRA will be deleted from Report Portal. But all created and loaded bugs will be kept and avaialbe on 
+Report Portal pages. 
+At the same time, post and load bug functionalities become disabled; status of already submitted bugs will not be availalbe as well.
+
+
+### Integration with RALLY
+
+**Set up connection to RALLY**
+
+To integrate RALLY to the project, perform following steps:
+
+1. Login into Report Portal instance as user with LEAD or PROJECT MANAGER role on the project.
+
+2. Open Settings page of project, select 'Bug Tracking System' tab.
+
+3. Select 'RALLY' from 'Bug Tracking System' list.
+
+4. Form to set up connection to RALLY appears. Form contains:
+
+```
+                     'Link to BTS' : <valid URL of bug tracking system>
+               Project name in BTS': <project key in bug tracking system>
+               'Authorization Type': ApiKey (predefined)
+                           'ApiKey': <RALLY user apikey>
+```
+
+5. Fill in required fields and click 'Submit' button.
+Confirmation message will be shown in status bar.
+
+Steps above are enough to load bug functionality and to getting updates on bug's statuses.
+
+To have a possibility to post bugs to bug tracking system, it is necessary to select and /or submit default properties for
+issue form.
+
+
+**Configuration of fields of post bug form**
+
+"Default properties for issue form" (list of fields provided for bug form in RALLY) will appear on submit the form above.
+Required in RALLY fields are marked with asterisk. They are checked by default and disabled for unchecking.
+
+To configure fields for post bug form in RALLY:
+
+1. Select wanted fields. The checked fields will be shown on the post bug form.
+
+2. Fill in the required fields and the other checked fields (if necessary), and click "Submit" button. 
+
+The system will save the entered information and hide the fields that are not checked. 
+All the saved information on the checked fields will be predefined, when you will post a bug to RALLY.
+
+Now project team members with JIRA accounts be able to submit bugs. Options for Post Bug is activated.
+
+
+**Edit RALLY properties**
+
+To edit RALLY properties, click "Edit" button. The RALLY properties will become
+editable.
+
+Make changes in RALLY properties form.
+
+ If "Link to BTS" and "Project name in BTS" fields weren’t changed – content of "Default properties for issue form" will be kept and 
+shown after the new data validation is completed.
+
+ If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content of "Default properties for issue 
+form" and show the blank form.
+
+
+**Update fields of post bug form**
+
+To add additional fields to the post bug form:
+1. Click 'Update' button under the "Default properties for issue form". 
+
+   You will see the list of all available fields for post bug form. 
    
 2. Select desired fields
 
@@ -101,68 +206,13 @@ Or select a value from list provided, e.g., select appropriate version name for 
 Post bug form will contan selected data. So, it will be not necessary in future to type or select general information again and again.
 
 
-### Integration with RALLY
+**Remove RALLY project from Report Portal settings**
 
-To integrate RALLY to the project, perform following steps:
+To remove RALLY from project settings:
+1. Click "Remove project" button.
 
-1. Login into Report Portal instance as Administrator.
+2. Confirm the action in modal window.
 
-2. Navigate to the Management Board -\> "Projects" page.
-
-3. Open the projects "Settings" page -\> "Bug Tracking System" tab.
-
-4. [ ![Image](Images/pic_235.jpg) ](Images/pic_235.jpg)
-
-5. Select RALLY in the "Bug Tracking System" drop-down and fill in RALLY
-    properties form, which contains the following required fields.
-
-6. [ ![Image](Images/pic_35.jpg) ](Images/pic_35.jpg)
-
-7. Click "Submit" button. "Default properties for issue form" (list of fields provided on bug form in RALLY) will appear. Required in RALLY fields
-    are marked with asterisk. They are checked by default and disabled for
-    unchecking.
-
-8. [ ![Image](Images/pic_36.jpg) ](Images/pic_36.jpg)
-
-9. Check wanted fields. The checked fields will be shown on the post bug form.
-
-10. Fill in the required fields and the other checked fields (if necessary), and
-    click the "Submit" button. The system will save the entered information
-    and hide the fields that are not checked. All the saved information on the
-    checked fields will be predefined, when you post a bug to RALLY.
-
-11. [ ![Image](Images/pic_37.jpg) ](Images/pic_37.jpg)
-
-
-**Update list of issue fields**
-
-To add additional fields to the post bug form, click "Update" button under the "Default properties for issue form". You will see the
-complete bug fields list. Select desired fields and save changes. "Default
-properties for issue form" will be updated.
-
-To remove any default fields, uncheck desired fields and click "Submit"
-button under the "Default properties for issue form". "Default properties for issue form" will be updated.
-
-
-**Remove RALLY**
-
-To remove RALLY from project settings, use "Remove project" button.
-
-[ ![Image](Images/pic_38.jpg) ](Images/pic_38.jpg)
-
-
-**Edit RALLY properties**
-
-To edit RALLY properties, click "Edit" button. The RALLY properties will become
-editable.
-
-[ ![Image](Images/pic_39.jpg) ](Images/pic_39.jpg)
-
-Make changes in RALLY properties form.
-
->   If "Link to BTS" and "Project name in BTS" fields weren’t changed – content of "Default properties for issue form" will be kept and shown
-after the new data validation is completed.
-
->   If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content of "Default properties for issue form" and show
-the blank form.
-
+The connection to RALLY will be deleted from Report Portal. But all created and loaded bugs will be kept and avaialbe on 
+Report Portal pages. 
+At the same time, post and load bug functionalities become disabled; status of already submitted bugs will not be availalbe as well.
