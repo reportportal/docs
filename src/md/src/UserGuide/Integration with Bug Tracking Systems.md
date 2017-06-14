@@ -1,7 +1,7 @@
 Integration with Bug Tracking Systems
 -------------------------------------
 
-The integration with bug tracking system could be required in case the project collects defects in the separate tracking tool.
+The integration with bug tracking system can be required in case the project collects defects in the separate tracking tool.
 Integration provides exchange of information between Report Portal and the bug tracking system, such as posting bugs and loading bugs,
 getting updates on their statuses.
 As for now, Report Portal allows to set up a connection to JIRA or RALLY system.
@@ -59,7 +59,7 @@ All the saved information on the checked fields will be predefined, when you wil
 
 **Edit JIRA properties**
 
-The settings of JIRA connection could be updated. To do that, 
+The settings of JIRA connection can be updated. To do that, 
 
 1. Click 'Edit' icon. The JIRA properties will become editable.
 
