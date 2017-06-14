@@ -75,17 +75,6 @@ kept and shown after the new data validation is completed.
 
 **Update fields of post bug form**
 
-To update list of issue form: 
-1. Cick "Update" button under the "Default properties for issue form".
-
-   You will see the list with all available fields for post bug form.
-
-2. Select desired fields 
-
-3. Click 'Submit' button. 
-
-   Confirmation message will be shown in status bar. "Default properties for issue form" will be updated.
-
 To add additional fields to the post bug form:
 1. Click 'Update' button under the "Default properties for issue form". 
 
