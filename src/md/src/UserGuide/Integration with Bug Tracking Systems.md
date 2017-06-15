@@ -59,6 +59,8 @@ All the saved information on the checked fields will be predefined, when you wil
 
 Now project team members with JIRA accounts be able to submit bugs. Options for Post Bug is activated.
 
+[ ![Image](Images/userGuide/bugSystem/addBugSystem.png) ](https://youtu.be/svX2hBdRNmA)
+
 
 **Edit JIRA properties**
 
@@ -101,6 +103,8 @@ For instance, add general data to 'Summary' field ("UI:")
 Or select a value from a list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
 
 Post bug form will contain selected data. So, it will be not necessary in future to type or select general information again and again.
+
+[ ![Image](Images/userGuide/bugSystem/updateFields.png) ](https://youtu.be/6Urp7kHsO4U)
 
 
 **Remove JIRA project from Report Portal settings**
@@ -157,6 +161,8 @@ All the saved information on the checked fields will be predefined, when you wil
 
 Now project team members with JIRA accounts be able to submit bugs. Options for Post Bug is activated.
 
+[ ![Image](Images/userGuide/bugSystem/addRally.png) ](https://youtu.be/thkH1Qn4DhQ)
+
 
 **Edit RALLY properties**
 
@@ -198,6 +204,8 @@ For instance, add general data to 'Summary' field ("UI:")
 Or select a value from list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
 
 Post bug form will contan selected data. So, it will be not necessary in future to type or select general information again and again.
+
+[ ![Image](Images/userGuide/bugSystem/updateRallyFields.png) ](https://youtu.be/ugoQvo_Acgo)
 
 
 **Remove RALLY project from Report Portal settings**
