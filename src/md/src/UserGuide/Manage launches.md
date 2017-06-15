@@ -17,9 +17,7 @@ In order to edit a launch, perform the following steps:
 
 [ ![Image](Images/userGuide/manageLaunches/edit_launch.png) ](https://youtu.be/87dTCdsFD-I)
 
->**Note:**
->
-The following users have permissions to edit launch tags and description:
+>**Note:** The following users have permissions to edit launch tags and description:
 - Administrator
 - User with one of Project Role {PROJECT MANAGER, LEAD} on the project
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
@@ -43,9 +41,7 @@ In order to edit a test item, perform the following steps:
 
 [ ![Image](Images/userGuide/manageLaunches/edit_item.png) ](https://youtu.be/7PZIowd9III)
 
->**Note:**
->
-The following users have permissions to edit test items:
+>**Note:** The following users have permissions to edit test items:
 - Administrator
 - User with one of Project Role {PROJECT MANAGER, LEAD} on the project
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
@@ -70,12 +66,11 @@ In order to delete a launch, perform the following steps:
 [ ![Image](Images/userGuide/manageLaunches/delete_launch.png) ](https://youtu.be/DNy9aqPz3NQ)
 
 >**Notes:**
->
 1. Its impossible to delete launches IN PROGRESS - "Delete" launch option will be disabled.
 2. The following users have permissions to delete launch:
-- Administrator
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
-- User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
+ - Administrator
+ - User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+ - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
 
 ### Delete test item
@@ -99,12 +94,11 @@ In order to delete a test item, perform the following steps:
 [ ![Image](Images/userGuide/manageLaunches/delete_items.png) ](https://youtu.be/r2r5OHwVt-U)
 
 >**Notes:**
->
 1. Its impossible to delete test items in launches IN PROGRESS - "Delete" test item option is disabled for test items in launches IN PROGRESS.
 2. The following users have permissions to delete test item:
-- Administrator
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
-- User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
+ - Administrator
+ - User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+ - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
 
 ### Move launches to Debug/Launches
@@ -122,9 +116,7 @@ To return the launch to the "Launches" section, navigate to the "Debug" section 
 
 [ ![Image](Images/userGuide/manageLaunches/move_to_debug-launches.png) ](https://youtu.be/UW1oMNy1-qo)
 
->**Note:**
->
-The following users have permissions to move launches to "Debug"/"Launches" mode:
+>**Note:** The following users have permissions to move launches to "Debug"/"Launches" mode:
 - Administrator
 - User with one of Project Role {PROJECT MANAGER, LEAD}
 - User with {MEMBER} Project Role  - Launch Owner
@@ -153,9 +145,7 @@ In order to finish a launch, perform the following steps:
 
 [ ![Image](Images/userGuide/manageLaunches/force_finish.png) ](https://youtu.be/nI1u4ZvKX1Y)
 
->**Note:**
->
-The following users have permissions to finish launches:
+>**Note:** The following users have permissions to finish launches:
 - Administrator
 - User with one of Project Role {PROJECT MANAGER, LEAD}
 - User with one of Project Role {MEMBER, CUSTOMER} - Launch Owner
@@ -205,9 +195,7 @@ The following launches cannot be merged:
 
 [ ![Image](Images/userGuide/manageLaunches/merge.png) ](https://youtu.be/tGTGFO0cGCM)
 
->**Note:**
->
-The following users have permissions to merge launches:
+>**Note:** The following users have permissions to merge launches:
 - Administrator
 - User with one of Project Role {PROJECT MANAGER, LEAD} on the project
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
