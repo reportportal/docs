@@ -27,7 +27,7 @@ To create a new dashboard, perform the following steps:
 
 Now you can add widgets to the dashboard.
 
-[ ![Image](Images/userGuide/dashboards/createDashboard.png) ](https://youtu.be/-3JkuMxiGE4)
+[ ![Image](Images/userGuide/Dashboards/createDashboard.png) ](https://youtu.be/-3JkuMxiGE4)
 
 
 ### Shared dashboard
@@ -53,7 +53,7 @@ click the name of the dashboard and click 'Edit' button in the header of the das
 4. Make the necessary changes and click "Update" button. The dashboard will
 be displayed with updates.
 
-[ ![Image](Images/userGuide/dashboards/editDashboard.png) ](https://youtu.be/649Zk8awSM0)
+[ ![Image](Images/userGuide/Dashboards/editDashboard.png) ](https://youtu.be/649Zk8awSM0)
 
 
 ### Delete dashboard
@@ -66,7 +66,7 @@ To remove a dashboard from the project, perform the following steps:
 
 The dashboard and related widgets will be deleted from the system.
 
-[ ![Image](Images/userGuide/dashboards/deleteDashboard.png) ](https://youtu.be/vvO09XrBFCs)
+[ ![Image](Images/userGuide/Dashboards/deleteDashboard.png) ](https://youtu.be/vvO09XrBFCs)
 
 
 >**Note:** User with PROJECT MANAGER role can delete dashboard shared by other member by clicking on ‘Delete’ button 
