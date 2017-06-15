@@ -20,12 +20,9 @@ Report Portal allows to connect one or multiple JIRA projects to one project in 
 To integrate JIRA to the Report Portal, perform the following steps:
 
 1. Login into Report Portal instance as user with LEAD or PROJECT MANAGER role on the project.
-
 2. Open Settings page of project, select 'Bug Tracking System' tab. JIRA system is selected by default.
-
 3. Form to set up connection to JIRA is displayed. Form contains:
-
-```
+```javascript
                       'Link to BTS': <valid URL of bug tracking system>
               'Project name in BTS': <project key in bug tracking system>
                'Authorization Type': Basic (predefined)
@@ -33,6 +30,7 @@ To integrate JIRA to the Report Portal, perform the following steps:
                      'BTS Password': <JIRA user password>
 ```
 4. Fill in required fields and click 'Submit' button.
+
 Confirmation message will be shown in status bar.
 
 Keep in mind, the set of fields depends on bug tracking system.
@@ -124,21 +122,17 @@ At the same time, post and load bug functionalities become disabled; status of a
 To integrate RALLY to the project, perform following steps:
 
 1. Login into Report Portal instance as user with LEAD or PROJECT MANAGER role on the project.
-
 2. Open Settings page of project, select 'Bug Tracking System' tab.
-
 3. Select 'RALLY' from 'Bug Tracking System' list.
-
 4. Form to set up connection to RALLY appears. Form contains:
-
+```javascript
+                     Link to BTS : <valid URL of bug tracking system>
+               Project name in BTS: <project key in bug tracking system>
+               Authorization Type: ApiKey (predefined)
+                           ApiKey: <RALLY user apikey>
 ```
-                     'Link to BTS' : <valid URL of bug tracking system>
-               Project name in BTS': <project key in bug tracking system>
-               'Authorization Type': ApiKey (predefined)
-                           'ApiKey': <RALLY user apikey>
-```
-
 5. Fill in required fields and click 'Submit' button.
+
 Confirmation message will be shown in status bar.
 
 Steps above are enough to load bug functionality and to getting updates on bug's statuses.
