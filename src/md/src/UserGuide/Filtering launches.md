@@ -170,16 +170,10 @@ The shared filters have the icons on tabs in "Launches" mode.
 
 - filter, shared by you
 
-[ ![Image](Images/pic_228.jpg) ](Images/pic_228.jpg)
-
 - filter, shared by other team member
-
-[ ![Image](Images/pic_227.jpg) ](Images/pic_227.jpg)
 
 
 Also you can share filter on the "Filters" page on one click.
-
-[ ![Image](Images/pic_233.jpg) ](Images/pic_233.jpg)
 
 >**Note:** Filter related to the widget, becomes shared once the related widget is shared.
 
@@ -196,8 +190,6 @@ The following information is present on the "Filters" page:
 - Share info
 - Actions (icons) - shown only for own filters. The following options are available: Add to launch tab
     (Remove from launch tab)/Edit/Share filter (Unshare filter)/Delete.
-
-[ ![Image](Images/pic_175.jpg) ](Images/pic_175.jpg)
 
 To open launches based on saved filter, click on the desired filter name or
 the "Add to launch tab" option in the "Options" column. The filter will be
