@@ -18,12 +18,10 @@ There are 14 widget templates in Report Portal:
 - Non-Passed test-cases trend chart 
 - Different launches comparison chart 
 
-
 The description of them is provided below.
 
 
 ### Launch statistics line chart
-
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -40,9 +38,6 @@ the second step:
 - Select issue types for displaying. All types are selected by default. To specify them, uncheck unnecessary items in "Criteria for Widget".
 - Select mode: Launch or Timeline.
 
-[ ![Image](Images/pic_199.jpg) ](Images/pic_199.jpg)
-
-
 **Widget view**
 
 Widget contains agenda with selected statuses; you can click on a status to remove/add it to the chart.
@@ -52,23 +47,23 @@ Widget view in Launch mode:
 - X-axis shows launches numbers and launches names (on hover).
 - Y-axis shows sum of test cases with each selected statuses.
 
-[ ![Image](Images/pic_160.jpg) ](Images/pic_160.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and launch statistics.
+
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsLineChart.png) ](Images/userGuide/widgetTypes/launchStatisticsLineChart.png)
+
 
 Widget view in Timeline mode:
 
 - X-axis shows dates and weekdays.
 - Y-axis shows sum of launches statistics with each selected statuses, distributed by weekdays.
 
-[ ![Image](Images/pic_161.jpg) ](Images/pic_161.jpg)
-
 Tooltip on mouse hover over chart area shows details: date and total launches statistics. 
 
 Widget has clickable sections; when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
 
-**Notes:**
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png)
 
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -79,7 +74,6 @@ The widget can be used in two modes - Launch mode and Timeline mode:
 - widget in Launch mode shows the growth trend in the number of test cases with each selected statuses from run to run,
 - widget in Timeline mode shows sum of test cases with each selected statuses distributed by dates.
 
-
 **Widget configuration**
 
 To configure the widget, click "Add New Widget" button on the dashboard header, select template and specify the following settings on the next step:
@@ -88,9 +82,6 @@ To configure the widget, click "Add New Widget" button on the dashboard header, 
 - Items - number of launches, that will be shown on the widget (should be 1-150). Default meaning is 50.
 - Select issue statuses for displaying. All statuses are selected by default. To specify them, uncheck unnecessary items in "Criteria for Widget".
 - Select mode: Launch or Timeline.
-
-[ ![Image](Images/pic_198.jpg) ](Images/pic_198.jpg)
-
 
 **Widget view**
 
@@ -101,25 +92,22 @@ Widget view in Launch mode:
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows sum of test cases with each selected statuses.
 
-[ ![Image](Images/pic_162.jpg) ](Images/pic_162.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and launch statistics. 
 
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsTrendChart.png) ](Images/userGuide/widgetTypes/launchStatisticsTrendChart.png)
 
 Widget view in Timeline mode:
 
 - X-axis shows dates and weekdays.
 - Y-axis shows sum of launches statistics with each selected statuses, distributed by weekdays.
 
-[ ![Image](Images/pic_163.jpg) ](Images/pic_163.jpg)
-
 Tooltip on mouse hover over chart area shows details: date and total launches statistics. 
 
 Widget has clickable sections, when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
 
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png)
 
-**Notes:**
-
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -135,14 +123,11 @@ To configure the widget, click "Add Widget" button on the dashboard header, sele
 - Items - number of launches, that will be shown on the widget (should be 1-150). Default meaning is 50.
 - Select issue statuses for displaying. All statuses are selected by default. To specify them, uncheck unnecessary items in "Criteria for Widget".
 
-[ ![Image](Images/pic_195.jpg) ](Images/pic_195.jpg)
-
 **Widget view**
 
-[ ![Image](Images/pic_156.jpg) ](Images/pic_156.jpg)
+[ ![Image](Images/userGuide/widgetTypes/overallStatisticsPanel.png) ](Images/userGuide/widgetTypes/overallStatisticsPanel.png)
 
-**Notes:**
-
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
  
 
@@ -154,8 +139,6 @@ You can specify "Items" - number of launches, that will be shown on the widget.
 
 To do this, click "Add New Widget" button on the dashboard header, select template and specify "Items" (not more than 150 launches) on the next step.
 
-[ ![Image](Images/Widget-duration.jpg) ](Images/Widget-duration.jpg)
-
 **Widget view**
 
 Widget shows the duration of the filtered launches.
@@ -163,14 +146,13 @@ Widget shows the duration of the filtered launches.
 - X-axis shows launches duration.
 - Y-axis shows launches numbers and launches names on hover.
 
-[ ![Image](Images/pic_165.jpg) ](Images/pic_165.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name, number and duration. 
 
 Widget has clickable sections, when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
- 
-**Notes:**
 
+[ ![Image](Images/userGuide/widgetTypes/launchesDurationChart.png) ](Images/userGuide/widgetTypes/launchesDurationChart.png)
+ 
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -189,13 +171,14 @@ Widget shows statistics of the last finished launch in chosen filter. Statistics
 
 Widget contains agenda with statuses, the user can click on a status to remove/add it to the chart.
 
-[ ![Image](Images/pic_205.jpg) ](Images/pic_205.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name, number and duration. 
 
 Statistics for every type is shown in percentage. On hover the exact number is shown for the curtain type.
 
 Widget has clickable sections, when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
+
+[ ![Image](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png) ](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png)
+
 
 ### Project activity panel
 
@@ -211,9 +194,6 @@ To configure the widget, click "Add New Widget" button on the dashboard header, 
 
 - Project members. In case of empty field actions of all project members will be shown.
 
-[ ![Image](Images/pic_202.jpg) ](Images/pic_202.jpg)
-
-
 **Widget view**
 
 Actions on the widget are present in a table, separated by days. Action messages have the following format:
@@ -221,7 +201,7 @@ Actions on the widget are present in a table, separated by days. Action messages
 >   *Member (name) did action.*  
 >   *Time - displayed in 'time ago' format (i.e. "10 minutes ago"). On mouse hover, the system should display accurate action time.)*
 
-[ ![Image](Images/pic_207.jpg) ](Images/pic_207.jpg)
+[ ![Image](Images/userGuide/widgetTypes/projectActivityPanel.png) ](Images/userGuide/widgetTypes/projectActivityPanel.png)
 
 
 ### Test-Cases Growth trend chart
@@ -246,24 +226,22 @@ Widget view in Launch mode:
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows the increment of test-cases.
 
-[ ![Image](Images/pic_169.jpg) ](Images/pic_169.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and launch statistics - total number of test cases and test cases growth.
+
+[ ![Image](Images/userGuide/widgetTypes/testCasesGrowthTrendChart.png) ](Images/userGuide/widgetTypes/testCasesGrowthTrendChart.png)
 
 Widget view in Timeline mode:
 
 - X-axis shows dates and weekdays.
 - Y-axis shows the increment of test-cases in launches with the largest number of test-cases per day.
 
-[ ![Image](Images/pic_236.jpg) ](Images/pic_236.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: date and launch statistics - total number of test cases and test cases growth.
-
 
 Widget has clickable sections, when you click on specific section in widget, the system forwards you to launch view for appropriate selection.
 
-**Notes:**
+[ ![Image](Images/userGuide/widgetTypes/testCasesGrowthTrendChartTimeline.png) ](Images/userGuide/widgetTypes/testCasesGrowthTrendChartTimeline.png)
 
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -291,24 +269,22 @@ Widget view in Launch mode:
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows percent of "Investigated" and "To Investigate" items to sum of (Product Bugs + Auto Bugs + System Issues + To Investigates).
 
-[ ![Image](Images/pic_166.jpg) ](Images/pic_166.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and percentage of "Investigated" or "To Investigate" items.
+
+[ ![Image](Images/userGuide/widgetTypes/investigatedPercentageOfLaunches.png) ](Images/userGuide/widgetTypes/investigatedPercentageOfLaunches.png)
 
 Widget view in Timeline mode:
 
 - X-axis shows dates and weekdays.
 - Y-axis shows percent of "Investigated" and "To Investigate" items to sum of (Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates), distributed by dates.
 
-[ ![Image](Images/pic_167.jpg) ](Images/pic_167.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: date and percentage of "Investigated" or "To Investigate" items.
 
 Widget has clickable sections, when you click on specific section in widget, the system forwards you to launch view for appropriate selection.
 
+[ ![Image](Images/userGuide/widgetTypes/investigatedPercentageOfLaunchesTimeline.png) ](Images/userGuide/widgetTypes/investigatedPercentageOfLaunchesTimeline.png)
 
-**Notes:**
-
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -323,19 +299,15 @@ To configure the widget, click "Add New Widget" button on the dashboard header, 
  - Select criteria for widget: Total, Passed, Failed, Skipped, Product Bug, Automation Bug, System Issue, To Investigate, Tags, User, Description, Start time, Finish time. All criteria are selected by default. To specify them, uncheck unnecessary items in "Criteria for Widget".
  - Items -  number of launches, that will be shown on the widget (not more then 150). Default meaning is 50.
 
-[ ![Image](Images/pic_196.jpg) ](Images/pic_196.jpg)
-
-
 **Widget view**
 
 Widget has a table view.
 
-[ ![Image](Images/pic_158.jpg) ](Images/pic_158.jpg)
-
 Widget has clickable elements (launch name, owner, tags, number of items); when you click on specific element in widget, the system forwards you to launch view for appropriate selection.
 
-**Notes:**
+[ ![Image](Images/userGuide/widgetTypes/launchesTable.png) ](Images/userGuide/widgetTypes/launchesTable.png)
 
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -350,7 +322,6 @@ To configure widget, click "Add New Widget" button on the dashboard header, sele
   - Select filter from available in the list or create a new one to define the range of data.
   - Items - number of launches, that will be used to collect bugs (should be 1-150). Default meaning is 10
 
-
 **Widget view**
 
 Widget has a table view, found bugs are sorted by the date they were posted or added.
@@ -362,18 +333,16 @@ Widget has the following data displayed:
 - Submit date  - date the bug was submitted/added. Time is displayed in 'time ago' format (i.e. "10 minutes ago"). On mouse hover the system should display accurate action time.
 - Submitter  - user, who submitted/added the bug.
 
-[ ![Image](Images/pic_157.jpg) ](Images/pic_157.jpg)
+[ ![Image](Images/userGuide/widgetTypes/uniqueBugsTable.png) ](Images/userGuide/widgetTypes/uniqueBugsTable.png)
 
-**Note:**
-
-1. Bugs from launches IN PROGRESS are not shown on the widget.
-2. In case the bug is provided for the few items, all of items will be listed in "Found in" column.
+>**Notes:**
+Bugs from launches IN PROGRESS are not shown on the widget.
+In case the bug is provided for the few items, all of items will be listed in "Found in" column.
 
 
 ### Most failure test-cases table
 
 Widget contains table with statistical information about TOP-20 most problematic tests cases.
-
 
 **Widget configuration**
 
@@ -385,9 +354,6 @@ To configure the widget, click "Add New Widget" button on the dashboard header, 
 
  - Launch name (required option).
 
-[ ![Image](Images/pic_203.jpg) ](Images/pic_203.jpg)
-
-
 **Widget view**
 
 Widget has a table view with the following data is displayed:
@@ -397,11 +363,9 @@ Widget has a table view with the following data is displayed:
 - Failed - count of found failed results
 - Last failure - date and time of last run, when the test item was failed, displayed in 'time ago' format (i.e. "10 minutes ago"). On mouse hover the system will display accurate start time.
 
-[ ![Image](Images/pic_206.jpg) ](Images/pic_206.jpg)
+[ ![Image](Images/userGuide/widgetTypes/mostFailureTestCasesTable.png) ](Images/userGuide/widgetTypes/mostFailureTestCasesTable.png)
 
-
-**Note:**
-
+>**Note:**
 Widget contains statistic of most problematic tests cases in all launches, except IN PROGRESS and INTERRUPTED launches.
 
 
@@ -423,13 +387,11 @@ Widget contains agenda: "Failed".
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows number of Failed issues (sum of Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates).
 
-[ ![Image](Images/pic_204.jpg) ](Images/pic_204.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and number of failed cases.
 
+[ ![Image](Images/userGuide/widgetTypes/failedCasesTrendChart.png) ](Images/userGuide/widgetTypes/failedCasesTrendChart.png)
 
-**Notes:**
-
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -451,12 +413,11 @@ Widget contains agenda: % (Failed + Skipped) / Total.
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows percent of sum Failed + Skipped test cases to Total.
 
-[ ![Image](Images/pic_168.jpg) ](Images/pic_168.jpg)
-
 Tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and percentage of non-passed cases.
 
-**Notes:**
+[ ![Image](Images/userGuide/widgetTypes/nonPassedTestCasesTrendChart.png) ](Images/userGuide/widgetTypes/nonPassedTestCasesTrendChart.png)
 
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -468,8 +429,6 @@ Widget allows to compare statistics for 2 last launches side by side.
 
 - X-axis shows launches numbers and launches names on hover.
 - Y-axis shows percentage of test-cases by statuses.
-
-[ ![Image](Images/pic_164.jpg) ](Images/pic_164.jpg)
 
 **Widget configuration**
 
@@ -485,7 +444,7 @@ Tooltip on mouse hover over chart area shows launch details: launch name and num
 
 Widget has clickable sections, when you click on specific section in widget, the system forwards you to launch view for appropriate selection.
 
+[ ![Image](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png) ](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png)
 
-**Notes:**
-
+>**Notes:**
 Widget doesn't contain IN PROGRESS launches.
