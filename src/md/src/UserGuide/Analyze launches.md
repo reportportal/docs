@@ -102,7 +102,7 @@ launch:
     project) then "Auto-Analysis" setup all attributes from investigated item in
     history to current failed item, and switching on next one failed item.
 
-[ ![Image](Images/AA.png) ](Images/AA.png)
+[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-full.png)
 
 
 #### Using "Auto-Analysis"
