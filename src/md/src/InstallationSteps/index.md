@@ -1,7 +1,7 @@
 Installation steps 
 ======================
 
-##### Install docker 
+## Install docker 
 Docker is supported by all major Linux distributions, MacOS and Windows.
 
 ***Note for Windows users.***
@@ -21,7 +21,7 @@ For MacOS native docker:
 ![Image](Images/installation/docker_config_macos.png)
 
 
-##### Deploy ReportPortal
+#### Deploy ReportPortal
 
 Deploy ReportPortal using docker-compose. 
 Example of compose descriptor can be found [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>)
