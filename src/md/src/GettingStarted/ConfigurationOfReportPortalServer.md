@@ -24,7 +24,7 @@ To configure Email server:
          'TLS' or 'SSL': should be checked depends on selected port.
 ```
 
-Example of email server configuration for Gmail email server (detailed info could be found here [https://support.google.com/a/answer/176600?hl=en](https://support.google.com/a/answer/176600?hl=en))
+Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
  
 1. Fill the form with next data:
 ```javascript
@@ -42,7 +42,7 @@ Example of email server configuration for Gmail email server (detailed info coul
 
 [ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/0919itAaixk)
 
-Example of email server configuration for Yandex email server (detailed info could be found here [https://yandex.com/support/mail-new/mail-clients.html](https://yandex.com/support/mail-new/mail-clients.html))
+Example of email server configuration for Yandex email server (detailed info could be found [here](https://yandex.com/support/mail-new/mail-clients.html))
  
 1. Fill the form with next data:
 ```javascript
@@ -87,7 +87,7 @@ Example of GitHub auth configuration:
            'Client Secret': ef22c9f804257afaf399a2dada7c8f22dee5fd1b
        'Organization Name': reportportal
   ```
- Click 'Submit' button
+ Click 'Submit' button.
  Confirmation message in status bar should be shown.
  'Login with GitHub' button will appear on login form.
 
