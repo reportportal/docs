@@ -1,4 +1,4 @@
-Widget Wizard
+Widget Creation
 -------------
 
 Widgets - special graphical control elements, that were designed to provide a simple and 
