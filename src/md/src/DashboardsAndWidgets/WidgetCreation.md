@@ -92,7 +92,7 @@ Widget has clickable sections; when you click on specified section in widget, th
 
 [ ![Image](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -103,7 +103,7 @@ The widget can be used in two modes - Launch mode and Timeline mode:
 - widget in Launch mode shows the growth trend in the number of test cases with each selected statuses from run to run,
 - widget in Timeline mode shows sum of test cases with each selected statuses distributed by dates.
 
-***Widget's parameters:**
+**Widget's parameters:**
 
 - Filter: required
 - Items: 1-150. Default meaning is 50.
@@ -134,7 +134,7 @@ Widget has clickable sections, when you click on specified section in widget, th
 
 [ ![Image](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -142,7 +142,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Panel shows summary of test cases with each statuses in the selected launches.
 
-**Widget's parameters**
+**Widget's parameters:**
 
 - Filter: required
 - Items: 1-150. Default meaning is 50.
@@ -152,7 +152,7 @@ Panel shows summary of test cases with each statuses in the selected launches.
 
 [ ![Image](Images/userGuide/widgetTypes/overallStatisticsPanel.png) ](Images/userGuide/widgetTypes/overallStatisticsPanel.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
  
 
@@ -160,7 +160,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Launch duration chart shows the duration of the selected launches.
 
-***Widget's parameters:**
+**Widget's parameters:**
 
 - Filter: required
 - Items: 1-150. Default meaning is 50
@@ -178,7 +178,7 @@ Widget has clickable sections, when you click on specified section in widget, th
 
 [ ![Image](Images/userGuide/widgetTypes/launchesDurationChart.png) ](Images/userGuide/widgetTypes/launchesDurationChart.png)
  
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -186,7 +186,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Launch execution and issue statistic shows the status and issues statistics for last launch of specified range.
 
-**Widget's parameters**
+**Widget's parameters:**
 
 - Filter: required
 
@@ -212,7 +212,7 @@ Widget has clickable sections, when you click on specified section in widget, th
 
 Widget shows all activities occurring on the project.
 
-**Widget's parameters**
+**Widget's parameters:**
 
 - Actions for Widget: Update Project Settings, Update Defect Types, Delete Launch, Start Launch, Finish Launch, Share Widget, Dashboard, Unshare Widget, Dashboard, Post Issue to BTS, Add, Register User, Update BTS. By default all actions are checked.
 
@@ -237,7 +237,7 @@ The widget can be used in two modes - Launch mode and Timeline mode:
 - widget in Launch mode shows the increment of test-cases from run to run,
 - widget in Timeline mode shows the increment of test-cases distributed by dates (in launches with the largest number of test-cases per day).
 
-**Widget's parameters**
+**Widget's parameters:**
 
 - Filter: required.
 - Items: 1-150. Default meaning is 50.
@@ -265,7 +265,7 @@ Widget has clickable sections, when you click on specific section in widget, the
 
 [ ![Image](Images/userGuide/widgetTypes/testCasesGrowthTrendChartTimeline.png) ](Images/userGuide/widgetTypes/testCasesGrowthTrendChartTimeline.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -276,7 +276,7 @@ The widget can be used in two modes - Launch mode and Timeline mode:
 - widget in Launch mode shows percentage of "Investigated" and "To Investigate" items by launch to sum of (Product Bugs + Auto Bugs + System Issues + To Investigates).
 - widget in Timeline mode shows percentage of "Investigated" and "To Investigate" items to sum of (Product Bugs + Auto Bugs + System Issues + To Investigates) in all runs per day, distributed by dates.
 
-**Widget configuration**
+**Widget's parameters:**
 
 - Filter: required
 - Items: 1-150. Default meaning is 50.
@@ -306,7 +306,7 @@ Widget has clickable sections, when you click on specific section in widget, the
 
 [ ![Image](Images/userGuide/widgetTypes/investigatedPercentageOfLaunchesTimeline.png) ](Images/userGuide/widgetTypes/investigatedPercentageOfLaunchesTimeline.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -314,7 +314,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Widget shows the configurable table of launches.
 
-**Widget's parameters **
+**Widget's parameters:**
 
  - Criteria for widget: Total, Passed, Failed, Skipped, Product Bug, Automation Bug, System Issue, To Investigate, Tags, User, Description, Start time, Finish time. All criteria are selected by default. To specify them, uncheck unnecessary items in "Criteria for Widget".
  - Items: 1-150. Default meaning is 50.
@@ -327,7 +327,7 @@ Widget has clickable elements (launch name, owner, tags, number of items); when 
 
 [ ![Image](Images/userGuide/widgetTypes/launchesTable.png) ](Images/userGuide/widgetTypes/launchesTable.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -335,7 +335,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Widget shows real identified bugs, posted to the Bug Tracking System from Report Portal, and existing bugs, that were added to the items on Report Portal.
 
-**Widget's parameters**
+**Widget's parameters:**
 
   - Filter: required.
   - Items: 1-150. Default meaning is 10.
@@ -353,7 +353,7 @@ Widget has the following data displayed:
 
 [ ![Image](Images/userGuide/widgetTypes/uniqueBugsTable.png) ](Images/userGuide/widgetTypes/uniqueBugsTable.png)
 
->**Notes:**
+>**Note:**
 Bugs from launches IN PROGRESS are not shown on the widget.
 In case the bug is provided for the few items, all of items will be listed in "Found in" column.
 
@@ -362,7 +362,7 @@ In case the bug is provided for the few items, all of items will be listed in "F
 
 Widget contains table with statistical information about TOP-20 most problematic tests cases.
 
-**Widget's parameters**
+**Widget's parameters:**
 
  - Criteria for Widget: Failed, Skipped, Product Bug, Automation Bug, System Issue, No Defect. Failed is selected by default.
 
@@ -390,7 +390,7 @@ Widget contains statistic of most problematic tests cases in all launches, excep
 
 Widget shows the trend of growth in the number of failed test cases (Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates) from run to run.
 
-**Widget's parameters **
+**Widget's parameters:**
 
  - Filter.
  - Items: 1-150. Default meaning is 50.
@@ -406,7 +406,7 @@ Tooltip on mouse hover over chart area shows launch details: launch name and num
 
 [ ![Image](Images/userGuide/widgetTypes/failedCasesTrendChart.png) ](Images/userGuide/widgetTypes/failedCasesTrendChart.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -414,7 +414,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Widget shows the percent ratio of non-passed test cases (Failed + Skipped) to "Total" cases from run to run.
 
-**Widget's parameters**
+**Widget's parameters:**
 
 To configure the widget, click "Add New Widget" button on the dashboard header, select template and specify the following settings on the second step:
 
@@ -432,7 +432,7 @@ Tooltip on mouse hover over chart area shows launch details: launch name and num
 
 [ ![Image](Images/userGuide/widgetTypes/nonPassedTestCasesTrendChart.png) ](Images/userGuide/widgetTypes/nonPassedTestCasesTrendChart.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
 
 
@@ -440,7 +440,7 @@ Widget doesn't contain IN PROGRESS launches.
 
 Widget allows to compare statistics for 2 last launches side by side.
 
-**Widget's parameters**
+**Widget's parameters:**
 
 - Filter.
 
@@ -457,5 +457,5 @@ Widget has clickable sections, when you click on specific section in widget, the
 
 [ ![Image](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png) ](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png)
 
->**Notes:**
+>**Note:**
 Widget doesn't contain IN PROGRESS launches.
