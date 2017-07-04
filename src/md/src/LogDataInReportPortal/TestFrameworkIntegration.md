@@ -321,7 +321,7 @@ TestNG agent can handle next events:
 TestItem – report portal specified object for representing:  suite, test, method objects in different test systems. Used as tree structure and can be recursively placed inside himself.
 
 
-## JUnit
+### JUnit
 
 #### Installation
 
@@ -435,7 +435,7 @@ public class MySuite extends Suite {
 
 >   Also make sure that running order keep in safe after yours extensions.
 
-### Configuration
+#### Configuration
 
 In order to start using of agent, user should configure property file
 “reportportal.properties” in such format.
@@ -507,7 +507,7 @@ Client loads properties in the next order (every next level overrides previous):
     environment variables.
 
 
-## Cucumber
+### Cucumber
 
 
 #### Installation and usage
@@ -532,7 +532,7 @@ Then run Cucumber with -f/--format switch:
 
 *cucumber <other options> -r <local path to sources>\lib\yarpc.rb -f YARPC::Cucumber::Formatter*
 
-### Configuration
+#### Configuration
 
 Create report\_portal.yml configuration file in one of the following folders of
 your Cucumber project: '.', './.config', './config' (see
@@ -653,7 +653,7 @@ parallel\_tests gem.
     descendant. This is workaround for current ReportPortal UI implementation
     and will be removed when UI 2.0 is deployed.
 
-## Cucumber-JVM (Java)
+### Cucumber-JVM (Java)
 
 
 #### Installation
@@ -703,7 +703,7 @@ objects in different test systems. Used as tree structure and can be recursively
 placed inside himself.
 
 
-## Node.js Client (JavaScript)
+### Node.js Client (JavaScript)
 
 Only Cucumber listener is available at the moment, and it was tested only in **Protractor/Cucumber combo** (although it should work in vanilla Cucumber-JS as well).
 
@@ -759,7 +759,7 @@ To use Report Portal client while this pull request is not merged, the following
 - now install Report Portal client as described above. Since REST client is already installed, the patch will not be overwritten.
 
 
-## NUnit
+### NUnit
 
 #### Installation
 
@@ -843,7 +843,7 @@ See example of valid configuration file below.
 </configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## SoapUI
+### SoapUI
 
 #### Installation
 
@@ -1097,7 +1097,7 @@ If you need to change logging you may override soapui-log4j.xml. Use "REPORTPORT
 </log4j:configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## SpecFlow
+### SpecFlow
 
 #### Installation
 
@@ -1159,7 +1159,7 @@ Example of valid configuration file is below.
 </configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## ScalaTest
+### ScalaTest
 
 #### Installation
 1) add this library to your project as dependency
@@ -1266,7 +1266,7 @@ User should provide next parameters to agent.
 |rp.skipped.issue                               |Report Portal provides feature to mark skipped tests as not 'To Investigate' items on WS side. Parameter could be equal boolean values: *TRUE* - skipped tests considered as issues and will be marked as 'To Investigate' on Report Portal. *FALSE* - skipped tests will not be marked as 'To Investigate' on application. |No |
 
 
-## Starting Logging
+### Starting Logging
 
 To start logging with Report Portal, add a specific listener to your automation
 framework, called an agent.
