@@ -1,2 +1,1 @@
-How to implement own integration
---------------------------------
+## How to implement own integration
