@@ -1,10 +1,10 @@
-## Test framework integration
+# Test framework integration
 
-### TestNG
+## TestNG
 
 TestNG provides support for attaching custom listeners, reporters, annotation transformers and method interceptors to your tests.
 
-#### Installation
+### Installation
 
 Add to POM.xml
 
@@ -41,7 +41,7 @@ Add to POM.xml
 </dependency>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#### Install listener
+### Install listener
 
 Download package [here](<https://bintray.com/epam/reportportal/agent-java-testng>).
 Choose latest version.
@@ -168,7 +168,7 @@ execution. Please see detailed information here:
 <http://testng.org/doc/documentation-main.html#testng-listeners> 5.17.2 -
 Specifying listeners with ServiceLoader.
 
-#### Configuration
+### Configuration
 
 Copy your configuration from UI of Report Portal at [User Profile](<#user-profile>) section
 
@@ -264,7 +264,7 @@ b.  Environment variables. If environment variables with names specified in the
     environment variables.
 
 
-#### Description
+### Description
 
 Handling events
 
@@ -298,7 +298,7 @@ TestNG agent can handle next events:
 
 -   Skip configuration
 
-#### Objects interrelation
+### Objects interrelation
 
 | **TestNG object**    | **ReportPortal object**       |
 |----------------------|-------------------------------|
@@ -321,9 +321,9 @@ TestNG agent can handle next events:
 TestItem – report portal specified object for representing:  suite, test, method objects in different test systems. Used as tree structure and can be recursively placed inside himself.
 
 
-### JUnit
+## JUnit
 
-#### Installation
+### Installation
 
 Download package [here](<https://bintray.com/epam/reportportal/agent-java-junit>)
 
@@ -342,7 +342,7 @@ The Runner was created for *\@BeforeClass*, *\@Before*, *\@After* and
 top-level events for native [JUnit](<http://junit.org/>) runners\\listeners.
 
 
-#### Report Portal Listener
+### Report Portal Listener
 
 The Listener could be included in the project via following scripts running
 method.
@@ -382,7 +382,7 @@ configuration in pom.xml.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#### Report Portal Runner
+### Report Portal Runner
 
 The RP runner could be used via following ways:
 
@@ -435,7 +435,7 @@ public class MySuite extends Suite {
 
 >   Also make sure that running order keep in safe after yours extensions.
 
-#### Configuration
+### Configuration
 
 In order to start using of agent, user should configure property file
 “reportportal.properties” in such format.
@@ -446,7 +446,7 @@ rp.uuid=user_token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#### Parameters
+### Parameters
 
 User should provide next parameters to agent.
 
@@ -477,7 +477,7 @@ Launch \#2" etc.
 >   IllegalArgumentException.
 
 
-#### How to provide parameters
+### How to provide parameters
 
 There are two ways to load parameters.
 
@@ -495,7 +495,7 @@ user can create his own “reportportal.properties” file and put in class path
 Read [here](#documentation/Tuning-CI-tool) how to do it by Jenkins
 
 
-#### Parameters loading order
+### Parameters loading order
 
 Client loads properties in the next order (every next level overrides previous):
 
@@ -507,10 +507,10 @@ Client loads properties in the next order (every next level overrides previous):
     environment variables.
 
 
-### Cucumber
+## Cucumber
 
 
-#### Installation and usage
+### Installation and usage
 
 There are several options to use Cucumber formatter:
 
@@ -532,7 +532,7 @@ Then run Cucumber with -f/--format switch:
 
 *cucumber <other options> -r <local path to sources>\lib\yarpc.rb -f YARPC::Cucumber::Formatter*
 
-#### Configuration
+### Configuration
 
 Create report\_portal.yml configuration file in one of the following folders of
 your Cucumber project: '.', './.config', './config' (see
@@ -557,13 +557,13 @@ report\_portal.yaml.example). Alternatively specify path to configuration file
 
 Each of these settings can be overridden by an environment variable with the same name and 'rp.' prefix (e.g. 'rp.username' for 'username').
 
-#### Usage
+### Usage
 
 Run Cucumber with -f/--format switch:
 
 *cucumber <other options> -f RP::Cucumber::YARPC*
 
-#### Supported events
+### Supported events
 
 -   before\_features (start launch)
 
@@ -600,7 +600,7 @@ Run Cucumber with -f/--format switch:
 
 2. Background steps are reported within the scenarios as 'BEFORE\_TEST' items.
 
-#### Logging
+### Logging
 
 Experimental support for three common logging frameworks was added:
 
@@ -614,7 +614,7 @@ To use Logger, set use\_standard\_logger parameter to true (see Configuration
 chapter). For the other two corresponding appenders/outputters are available
 under yarpc/logging.
 
-#### Parallel formatter
+### Parallel formatter
 
 YARPC::Cucumber::ParallelFormatter can be used instead for tests started via
 parallel\_tests gem.
@@ -653,10 +653,10 @@ parallel\_tests gem.
     descendant. This is workaround for current ReportPortal UI implementation
     and will be removed when UI 2.0 is deployed.
 
-### Cucumber-JVM (Java)
+## Cucumber-JVM (Java)
 
 
-#### Installation
+### Installation
 
 Add to POM.xml
 
@@ -703,11 +703,11 @@ objects in different test systems. Used as tree structure and can be recursively
 placed inside himself.
 
 
-### Node.js Client (JavaScript)
+## Node.js Client (JavaScript)
 
 Only Cucumber listener is available at the moment, and it was tested only in **Protractor/Cucumber combo** (although it should work in vanilla Cucumber-JS as well).
 
-#### Installation
+### Installation
 
 To install directly from Git, run
 
@@ -730,7 +730,7 @@ this.registerListener(require('node-rp-client').Cucumber({}));
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#### Configuration
+### Configuration
 
 Create reportportal.json in the working directory or specify desired config file in the environment variable rp_config (again, relative to the working directory).
 
@@ -759,9 +759,9 @@ To use Report Portal client while this pull request is not merged, the following
 - now install Report Portal client as described above. Since REST client is already installed, the patch will not be overwritten.
 
 
-### NUnit
+## NUnit
 
-#### Installation
+### Installation
 
 There are 2 ways how to install NUnit add-in. The first way is directed to
 install add-in for NUnit runner, the second is only for your assembly with
@@ -769,7 +769,7 @@ tests. So the test results will be reported to Report Portal if tests are
 executed by NUnit runner with installed add-in, or only if specific test
 assembly is executed and not depend on what NUnit runner is used.
 
-#### Windows Installer Package
+### Windows Installer Package
 
 Download the latest [Windows Installer package](https://www.nuget.org/packages/ReportPortal.Client/) package on your machine and follow
 instructions during installation.
@@ -791,7 +791,7 @@ successfully. Execute NUnit GUI runner, go to menu *Tools -\> Addins*.
 If add-in is successfully loaded beginning from now all tests that will be
 executed by this NUnit runner (exe) will be represented on Report Portal.
 
-#### NuGet Package
+### NuGet Package
 
 Install **ReportPortal.NUnit** NuGet package into your project with features
 files. Missed dependencies will be installed automatically.
@@ -805,7 +805,7 @@ NUnit launcher and you are not able to upgrade/downgrade to v2.6.4, please
 contact us and we will provide compatible NuGet package with NUnit runner which
 you use.
 
-#### Configuration
+### Configuration
 
 You can configure Report Portal plugin. All settings are stored in
 *EPAM.ReportPortal.Addins.NUnit.dll.config* file. You can find this file by path
@@ -843,9 +843,9 @@ See example of valid configuration file below.
 </configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### SoapUI
+## SoapUI
 
-#### Installation
+### Installation
 
 You can download SoapUI agent from
 [here](<https://github.com/reportportal/agent-java-soapui>).
@@ -937,7 +937,7 @@ Add the property to the plugin section.
 Put your soapui-log4j.xml in project directory (or made it available under classpath).
 
 
-#### Configuration
+### Configuration
 
 ReportPortal listeners described under ${SOAPUI-HOME}/bin/listeners/reportportal-listeners.xml for Desktop SoapUI version, or in user-specified file for maven plugin using:
 
@@ -953,7 +953,7 @@ ReportPortal listeners described under ${SOAPUI-HOME}/bin/listeners/reportportal
 </tns:soapui-listeners>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Desktop SoapUI
+## Desktop SoapUI
 
 For configuring SoapUI agent user has to set the follows properties into project custom properties or set them via system variables. For example:
 
@@ -977,7 +977,7 @@ rp.keystore.resource = your_keystore.jks
 rp.keystore.password = keystore_password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#### Logging
+### Logging
 
 If you need to change logging you may override soapui-log4j.xml. Use "REPORTPORTAL" appender if you want to track messages to Report Portal.
 
@@ -1097,9 +1097,9 @@ If you need to change logging you may override soapui-log4j.xml. Use "REPORTPORT
 </log4j:configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### SpecFlow
+## SpecFlow
 
-#### Installation
+### Installation
 
 Install **ReportPortal.SpecFlow** NuGet package into your project with features
 files. Missed dependencies will be installed automatically.
@@ -1124,7 +1124,7 @@ plugin and step assembly will be registered in the specFlow section.
 </specFlow>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#### Configuration
+### Configuration
 
 You can configure Report Portal plugin. All settings are stored in
 *EPAM.ReportPortal.Addins.SpecFlowPlugin.dll.config* file. This file is added
@@ -1159,9 +1159,9 @@ Example of valid configuration file is below.
 </configuration>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### ScalaTest
+## ScalaTest
 
-#### Installation
+### Installation
 1) add this library to your project as dependency
    * SBT
     >
@@ -1216,7 +1216,7 @@ Example of valid configuration file is below.
      }
     ```
     
-#### Configuration
+### Configuration
 
 Copy you configuration from UI of Report Portal at _User Profile_ section
 
@@ -1266,7 +1266,7 @@ User should provide next parameters to agent.
 |rp.skipped.issue                               |Report Portal provides feature to mark skipped tests as not 'To Investigate' items on WS side. Parameter could be equal boolean values: *TRUE* - skipped tests considered as issues and will be marked as 'To Investigate' on Report Portal. *FALSE* - skipped tests will not be marked as 'To Investigate' on application. |No |
 
 
-### Starting Logging
+## Starting Logging
 
 To start logging with Report Portal, add a specific listener to your automation
 framework, called an agent.
