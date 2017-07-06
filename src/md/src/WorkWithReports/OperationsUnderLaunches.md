@@ -61,7 +61,35 @@ Merge launches feature can help you to merge the existing launches into one.
 If your project has the really huge number of regression suites and they cannot be in one particular launch, so, they divided in parts.
 As soon as they completed, they could be merged in one separate launch to represent this data on dashboards and create reports.
 
-Report Portal provides two options for merge: Linear and Deep.
+Report Portal provides two options for merge: Linear and Deep. The difference in merge options is discribed below.
+
+**Linear merge**
+
+In case user selects "Linear merge" option, the new launch is created. The new launch contains elements of merging launches.
+Levels of elements stay the same as in origin launches. Status and issues statistics is calculated as sum of 
+statistics of all merged launches. The origin launches are deleted from the system.
+
+**Deep merge**
+
+In case user selects "Deep merge" option, the system creates a new launch and theck items with following conditions simultaneously:
+* test items with the same names
+* test items have the same type (SUITE or TEST) 
+* test items are on the same path (number of parents) 
+* test items with descendants. 
+If such elements are found only the earliest one is added to the new launch. All descendants are collected on 
+their levels as in the original launches. The merge is started from the upper levels to the lower levels. 
+In case upper level is not merged, the lower levels will not be merged as well. Items without descendants are not merge 
+despite their level. 
+Status and issues statistics are calculated for a new launch. 
+The original launches are deleted from the system.
+
+For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 
+have the same names and the same types and the same path and have descendants, so only 
+the earliest Suite_A (according to start time) is added to the new launch. All descendants of merged suites 
+are combined under the Suite_A. Then system searches for the same matches on next level (Test level).
+
+If items are not met the conditions described for the "Deep Merge" option then they are collected the same 
+way as described for "Linear merge" option.
 
 Permission: Next users are able to merge launches:
 
