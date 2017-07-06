@@ -1,23 +1,22 @@
-Logging Integration
-===================
+## Logging Integration
 
-## JVM-based loggers
+### JVM-based loggers
 Logging is allowed only during test (step, test, suite, etc) execution.
 Consider the following scheme. Before start and end of the test, logging context is available (marked as green):
 
 ![Image](Images/logging/logging_diagram.png) 
 
-### Log message format
+#### Log message format
 Loggers can be used the same way as it's described in some particular logger (logback, log4j) documentation.
 ReportPortal allows to attach binary data to the log entry. In this case consider the following message format:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ powershell
+```
 RP_MESSAGE#FILE#FILENAME#MESSAGE_TEST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ powershell
+```
 RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 >   RP\_MESSAGE - message header
 
@@ -32,12 +31,12 @@ There is client parameter in reportportal.properties with boolean type value
 for screenshots sending in "black-white" or "color" view. By default it is set
 as "true" and all pictures for Report Portal will be in "black-while" format.
 
-### Additional logging configuration
+#### Additional logging configuration
 **reportportal.properties**
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```properties
 rp.convertimage=true
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Possible values:
 
@@ -46,22 +45,22 @@ Possible values:
 -   **false** - all images will be as 'color'
 
 
-### Explicit logging
+#### Explicit logging
 You can call ReportPortal logger explicitly. Consider the following example:
 ```java
 File file = new File("my path to file");
 ReportPortal.emitLog("My message", "INFO", Calendar.getInstance().getTime(), file);
 ```
 
-### Log4j
+#### Log4j
 
-#### Configuration
+##### Configuration
 
 Log4j provides configuration opportunity via XML or properties files.
 
 Just add Report Portal appender into log4j.xml configuration file.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```xml
 <appender name="ReportPortalAppender" class="com.epam.ta.reportportal.log4j.appender.ReportPortalAppender">
    <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n"/>
@@ -74,23 +73,23 @@ Just add Report Portal appender into log4j.xml configuration file.
     <level value="info" />
     <appender-ref ref="ReportPortalAppender" />
 </root>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 For log4j.properties file it could be look like:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```properties
 log4j.appender.reportportal=com.epam.ta.reportportal.log4j.appender.ReportPortalAppender
 log4j.appender.reportportal.layout=org.apache.log4j.PatternLayout
 log4j.appender.reportportal.layout.ConversionPattern=[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-### Screenshots
+#### Screenshots
 
 For *log4j* case it is possible to send binary data in next ways.
 
 -   by using specific message wrapper.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```java
 private static Logger logger;
 /*
  * Path to screenshot file
@@ -102,7 +101,7 @@ public String screenshot_file_path = "demoScreenshoot.png";
 public String rp_message = "test message for Report Portal";
 ReportPortalMessage message = new ReportPortalMessage(new File(screenshot_file_path), rp_message);
 logger.info(message);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 - sending File object as log4j log message. In this case log4j Report Portal
     appender sends log message which will contain sending file and string message "*Binary data reported*".
@@ -112,13 +111,13 @@ logger.info(message);
 
 in this case log message should have next format:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ powershell
+```
 RP_MESSAGE#FILE#FILENAME#MESSAGE_TEST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ powershell
+```
 RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 >   RP\_MESSAGE - message header
 
@@ -137,9 +136,9 @@ as "true" and all pictures for Report Portal will be in "black-while" format.
 
 **reportportal.properties**
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```java
 rp.convertimage=true
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Possible values:
 
@@ -147,10 +146,9 @@ Possible values:
 
 -   **false** - all images will be as 'color'
 
-Log4j2
-------
+### Log4j2
 
-### Configuration
+#### Configuration
 
 Log4j2 provides configuration opportunity via XML or JSON files.
 
@@ -158,7 +156,7 @@ Log4j2 provides configuration opportunity via XML or JSON files.
 
 log4j2.xml
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
    <properties>
@@ -175,13 +173,13 @@ log4j2.xml
       </root>
    </loggers>
 </configuration>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 **JSON**
 
 log4j2.json
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ json
+```json
 {
   "configuration": {
     "properties": {
@@ -208,9 +206,9 @@ log4j2.json
     }
   }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-### Screenshots
+#### Screenshots
 
 For *log4j2* case it is possible to send binary data in next ways.
 
@@ -238,9 +236,9 @@ logger.info(message);
 
 in this case log message should have next format:
 
-### Logback
+#### Logback
 
-#### Configuration
+##### Configuration
 
 Add Report Portal appender into logback.xml configuration file.
 
@@ -284,10 +282,9 @@ Possible values:
 
 - **false** - all images will be as 'color'
 
-Log4Net
--------
+### Log4Net
 
-### Installation
+#### Installation
 
 Install ReportPortal.Log4Net NuGet package. Missed dependencies will be
 installed automatically.
@@ -295,7 +292,7 @@ installed automatically.
 >   Read [here](<http://docs.nuget.org/consume/package-manager-dialog>) how to
 >   manage NuGet packages.
 
-### Configuration
+#### Configuration
 
 Add custom appender into log4net configuration file.
 
@@ -326,9 +323,9 @@ Specify reference to appender in root section.
 </log4net>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## System.Diagnostics.Tracer
+### System.Diagnostics.Tracer
 
-#### Installation
+##### Installation
 
 Install **ReportPortal.Tracer** NuGet package. Missed dependencies will be
 installed automatically.
@@ -336,7 +333,7 @@ installed automatically.
 Read [here](<http://docs.nuget.org/consume/package-manager-dialog>) how to
 manage NuGet packages.
 
-### Configuration
+#### Configuration
 
 Add custom listener in your *App.config* file.
 
