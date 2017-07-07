@@ -1,8 +1,61 @@
 ### TestNG
 
 TestNG provides support for attaching custom listeners, reporters, annotation transformers and method interceptors to your tests.
+Handling events
 
-#### Installation
+TestNG agent can handle next events:
+
+-   Start launch
+
+-   Finish launch
+
+-   Start suite
+
+-   Finish suite
+
+-   Start test
+
+-   Finish test
+
+-   Start test step
+
+-   Successful finish of test step
+
+-   Fail of test step
+
+-   Skip of test step
+
+-   Start configuration (All «before» and «after» methods)
+
+-   Fail of configuration
+
+-   Successful finish of configuration
+
+-   Skip configuration
+
+#### Objects interrelation
+
+| **TestNG object**    | **ReportPortal object**       |
+|----------------------|-------------------------------|
+| LAUNCH               |LAUNCH                         |
+| BEFORE_SUITE         |TestItem (type = BEFORE_SUITE) |
+| BEFORE_GROUPS        |TestItem (type = BEFORE_GROUPS)|
+| SUITE                |TestItem (type = SUITE)        |
+| BEFORE_TEST          |TestItem (type = BEFORE_TEST)  |
+| TEST                 |TestItem (type = TEST)         |
+| BEFORE_CLASS         |TestItem (type = BEFORE_CLASS) |
+| CLASS                |Not in structure. Avoid it     |
+| BEFORE_METHOD        |TestItem (type = BEFORE_METHOD)|
+| METHOD               |TestItem (type = STEP)         |
+| AFTER_METHOD         |TestItem (type = AFTER_METHOD) |
+| AFTER_CLASS          |TestItem (type = AFTER_CLASS)  |
+| AFTER_TEST           |TestItem (type = AFTER_TEST)   |
+| AFTER_SUITE          |TestItem (type = AFTER_SUITE)  |
+| AFTER_GROUPS         |TestItem (type = AFTER_GROUPS) |
+
+TestItem – report portal specified object for representing:  suite, test, method objects in different test systems. Used as tree structure and can be recursively placed inside himself.
+
+#### Dependencies
 
 Add to POM.xml
 
@@ -165,59 +218,3 @@ execution. Please see detailed information here:
 
 <http://testng.org/doc/documentation-main.html#testng-listeners> 5.17.2 -
 Specifying listeners with ServiceLoader.
-
-#### Description
-
-Handling events
-
-TestNG agent can handle next events:
-
--   Start launch
-
--   Finish launch
-
--   Start suite
-
--   Finish suite
-
--   Start test
-
--   Finish test
-
--   Start test step
-
--   Successful finish of test step
-
--   Fail of test step
-
--   Skip of test step
-
--   Start configuration (All «before» and «after» methods)
-
--   Fail of configuration
-
--   Successful finish of configuration
-
--   Skip configuration
-
-#### Objects interrelation
-
-| **TestNG object**    | **ReportPortal object**       |
-|----------------------|-------------------------------|
-| LAUNCH               |LAUNCH                         |
-| BEFORE_SUITE         |TestItem (type = BEFORE_SUITE) |
-| BEFORE_GROUPS        |TestItem (type = BEFORE_GROUPS)|
-| SUITE                |TestItem (type = SUITE)        |
-| BEFORE_TEST          |TestItem (type = BEFORE_TEST)  |
-| TEST                 |TestItem (type = TEST)         |
-| BEFORE_CLASS         |TestItem (type = BEFORE_CLASS) |
-| CLASS                |Not in structure. Avoid it     |
-| BEFORE_METHOD        |TestItem (type = BEFORE_METHOD)|
-| METHOD               |TestItem (type = STEP)         |
-| AFTER_METHOD         |TestItem (type = AFTER_METHOD) |
-| AFTER_CLASS          |TestItem (type = AFTER_CLASS)  |
-| AFTER_TEST           |TestItem (type = AFTER_TEST)   |
-| AFTER_SUITE          |TestItem (type = AFTER_SUITE)  |
-| AFTER_GROUPS         |TestItem (type = AFTER_GROUPS) |
-
-TestItem – report portal specified object for representing:  suite, test, method objects in different test systems. Used as tree structure and can be recursively placed inside himself.

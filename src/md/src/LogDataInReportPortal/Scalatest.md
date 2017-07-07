@@ -55,7 +55,7 @@
      }
     ```
 
-### Starting Logging
+#### Starting Logging
 
 To start logging with Report Portal, add a specific listener to your automation
 framework, called an agent.
