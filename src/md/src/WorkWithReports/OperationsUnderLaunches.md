@@ -71,7 +71,7 @@ statistics of all merged launches. The origin launches are deleted from the syst
 
 **Deep merge**
 
-In case user selects "Deep merge" option, the system creates a new launch and theck items with following conditions simultaneously:
+In case user selects "Deep merge" option, the system creates a new launch and check items with following conditions simultaneously:
 * test items with the same names
 * test items have the same type (SUITE or TEST) 
 * test items are on the same path (number of parents) 
