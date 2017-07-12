@@ -58,7 +58,7 @@ Example of email server configuration for Yandex email server (detailed info cou
 2. Click 'Submit' button
 3. Confirmation message in status bar should be shown.
 
-### Athorization configuration
+### Authorization configuration
 Admin of Report Portal instance can provide an access to external user. 
 As for now, Report Portal allows GitHub users to login via GitHub auth.
 
