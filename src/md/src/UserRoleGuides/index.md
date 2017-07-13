@@ -36,4 +36,4 @@ Here are the links to User Guide sections divided by Report Portal User roles.
 [Dashboards and Widgets](#documentation/Dashboards-and-Widgets)  
 [User account](#documentation/User-account)  
 
-[1]: http://reportportal.io/#documentation/Saved-searches-(Filters)
+[1]: #documentation/Saved-searches-(Filters)
