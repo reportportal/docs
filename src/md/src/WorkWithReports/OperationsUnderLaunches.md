@@ -61,7 +61,11 @@ Merge launches feature can help you to merge the existing launches into one.
 If your project has the really huge number of regression suites and they cannot be in one particular launch, so, they divided in parts.
 As soon as they completed, they could be merged in one separate launch to represent this data on dashboards and create reports.
 
-Report Portal provides two options for merge: Linear and Deep. The difference in merge options is discribed below.
+Report Portal provides two options for merge: Linear and Deep. The difference in merge options is described below.
+
+Basically, the merge models distinguishes by the way of how the launches elements are collected in a resulting launch as shown on a picture:
+
+[ ![Image](Images/userGuide/manageLaunches/MergeBasicModel.png) ](Images/userGuide/manageLaunches/MergeBasicModel.png)
 
 **Linear merge**
 
@@ -82,6 +86,10 @@ In case upper level is not merged, the lower levels will not be merged as well. 
 despite their level. 
 Status and issues statistics are calculated for a new launch. 
 The original launches are deleted from the system.
+
+The Linear and Deep Merge algorythm, as described above, is shown on a scheme:
+
+[ ![Image](Images/userGuide/manageLaunches/MergeScheme.png) ](Images/userGuide/manageLaunches/MergeScheme.png)
 
 For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 
 have the same names and the same types and the same path and have descendants, so only 
