@@ -65,7 +65,7 @@ Report Portal provides two options for merge: Linear and Deep. The difference in
 
 Basically, the merge models distinguishes by the way of how the launches elements are collected in a resulting launch as shown on a picture:
 
-[ ![Image](Images/userGuide/manageLaunches/MergeBasicModel.png) ]
+[ ![Image](Images/userGuide/manageLaunches/MergeBasicModel.png) ](Images/userGuide/manageLaunches/MergeBasicModel.png)
 
 **Linear merge**
 
@@ -89,7 +89,7 @@ The original launches are deleted from the system.
 
 The Linear and Deep Merge algorythm, as described above, is shown on a scheme:
 
-[ ![Image](Images/userGuide/manageLaunches/MergeScheme.png) ]
+[ ![Image](Images/userGuide/manageLaunches/MergeScheme.png) ](Images/userGuide/manageLaunches/MergeScheme.png)
 
 For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 
 have the same names and the same types and the same path and have descendants, so only 
