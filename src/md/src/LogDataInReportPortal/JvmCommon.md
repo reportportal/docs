@@ -43,7 +43,7 @@ User should provide next parameters to agent.
 |rp.project                                     |Project name to identify scope |Yes |
 |rp.description                                 |Launch description |No |
 |rp.tags                                        |Set of tags for specifying additional meta information for current launch. Format: tag1;tag2;build:12345-6. Tags should be separated by “;”. There are one special tag- build – it should be used for specification number of build for launch. |No |
-|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server. Default = 20 |No |
+|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server. Default = 10 |No |
 |rp.keystore.resource                           |Put your JKS file into resources and specify path to it | |
 |rp.keystore.password                           |Access password for JKS (certificate storage) package, mentioned above | |
 |rp.convertimage                                |Colored log images can be converted to grayscale for reducing image size. Values: ‘true’ – will be converted. Any other value means ‘false’. |No |
