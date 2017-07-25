@@ -1,4 +1,4 @@
-# Viewing all launches 
+# Viewing all launches\ latest launches 
 You have two options to browse all project launches. By default system displays all launches of the project in one list in order of start time.
 
 Also you have possibility to optimize this list. If you choose **‘Latest Launches’** option  from the drop-down list (All Launches\ Latest Launches) at the top of the page, it will allow you to roll up the list  to latest launches only. 
