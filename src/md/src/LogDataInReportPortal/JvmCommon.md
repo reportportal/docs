@@ -11,17 +11,20 @@ In order to start using an agent, user should configure property file
 
 ```properties
 rp.endpoint = https://rp.epam.com/
-rp.username = default
 rp.uuid = 8967de3b-fec7-47bb-9dbc-2aa4ceab8b1e
 rp.launch = default_TEST_EXAMPLE
 rp.project = default_project
 
 ## OPTIONAL PARAMETERS
+rp.enable = true
+rp.description = My awesome launch
 rp.tags = TAG1;TAG2
-rp.keystore.resource = reportportal-client-v2.jks
-rp.keystore.password = reportportal
-
-rp.batch.size.logs = 5
+rp.convertimage = true
+rp.mode = DEFAULT
+rp.skipped.issue = true
+rp.batch.size.logs = 20
+rp.keystore.resource = <PATH_TO_YOUR_KEYSTORE>
+rp.keystore.password = <PASSWORD_OF_YOUR_KEYSTORE>
 ```
 
 
@@ -38,8 +41,9 @@ User should provide next parameters to agent.
 |rp.endpoint                                    |URL of web service, where requests should be send |Yes |
 |rp.launch                                      |The unique name of Launch (Run). Based on that name a history of runs will be created for particular name |Yes |
 |rp.project                                     |Project name to identify scope |Yes |
+|rp.description                                 |Launch description |No |
 |rp.tags                                        |Set of tags for specifying additional meta information for current launch. Format: tag1;tag2;build:12345-6. Tags should be separated by “;”. There are one special tag- build – it should be used for specification number of build for launch. |No |
-|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server |Yes |
+|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server. Default = 20 |No |
 |rp.keystore.resource                           |Put your JKS file into resources and specify path to it | |
 |rp.keystore.password                           |Access password for JKS (certificate storage) package, mentioned above | |
 |rp.convertimage                                |Colored log images can be converted to grayscale for reducing image size. Values: ‘true’ – will be converted. Any other value means ‘false’. |No |
