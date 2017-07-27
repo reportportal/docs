@@ -1,5 +1,14 @@
 # documentation
 
+# Structure
+* Path for pictures: src/Images/. Each picture should be stored in a folder with the same name as the documentation section.
+* Path for MD files: src/md/src/. Each section is located in the folder of the same name.
+In the section there is a main file (index.md) and files of subsections.
+
+>**Note**
+The first level header can only be contained in the main file(index.md) in a single instance.
+Subsections files can have headers of the second and higher level.
+
 # Guide
 
 ## Block image
