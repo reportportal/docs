@@ -67,6 +67,8 @@ To edit the defect type and comment for some item simultaniously, perform the ne
 
 >**Note:**
 'Replace comments' option is selected by default. So, the same comment will be added to all items.
+Initial comments are removed in case you change defect type only ('Comments' is not filled in) via bulk operation.
+
 
 Also you can change a defect type at the logs level.
 
