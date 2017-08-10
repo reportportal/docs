@@ -29,10 +29,10 @@ files that were copied earlier stay in RP file storage
 
 When all of valid log files are downloaded and processed then 'OK' button is enabled. 'OK' button closes the Import launches popup window. Zip archive is deleted after the Import is finished or canceled.
 
-[ ![Image](Images/userGuide/import/import.png) ](https://youtu.be/Hv9RD-o1hjY)
+[ ![Image](Images/userGuide/import/import.png) ](https://youtu.be/238DO03guaA)
 
 You can interrupt import in UI only when files are being downloaded into RP file storage. In this case you should hit the 'Cancel' button (or cross button on a pop up window) and confirm the cancellation of import and then hit the 'Cancel' button again.
 
-[ ![Image](Images/userGuide/import/import-break.png) ](https://youtu.be/-sPnLyi12fs)
+[ ![Image](Images/userGuide/import/import-break.png) ](https://youtu.be/Qf_vY0J7xGA)
 
 Import performs as a regular import via API as well.  Link to the import via API configuration.
