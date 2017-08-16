@@ -60,8 +60,9 @@ Example of email server configuration for Yandex email server (detailed info cou
 
 ### Authorization configuration
 Admin of Report Portal instance can provide an access to external user. 
-As for now, Report Portal allows GitHub users to login via GitHub auth.
+As for now, Report Portal allows GitHub users to login via GitHub auth, Active Directory Authorization or LDAP Authorization.
 
+# GitHub Authorization
 To setup access with GitHub auth:
 1. Login Report Portal as ADMIN user
 2. Open list on the right of user's image.
@@ -90,6 +91,38 @@ Example of GitHub auth configuration:
  Click 'Submit' button.
  Confirmation message in status bar should be shown.
  'Login with GitHub' button will appear on login form.
+ 
+ # Active Directory Authorization
+To setup access with Active Directory:
+1. Login Report Portal as ADMIN user
+2. Open list on the right of user's image.
+3. Click 'Administrative' link
+4. Click 'Server Settings' from left-hand sidebar
+5. Go to 'Authorization Configuration' tab
+6. Change switcher position of 'Activate Directory Authorization' to ON
+7. The following fields appear on a screen as is shown on a picture:
+
+
+Mandatory fields are marked with red. 
+Click 'Submit' button.
+All users of Active Directory will have an access to Report Portal instance.  
+For entrance to Report Portal user should use their domain credentials (Login and password).
+
+# LDAP Authorization (beta)
+To setup access with LDAP:
+1. Login Report Portal as ADMIN user
+2. Open list on the right of user's image.
+3. Click 'Administrative' link
+4. Click 'Server Settings' from left-hand sidebar
+5. Go to 'Authorization Configuration' tab
+6. Change switcher position of “LDAP Authorization' to ON
+7. The following fields appear on a screen as is shown on a picture:
+
+
+Mandatory fields are marked with red. 
+Click 'Submit' button.
+All users of LDAP will have an access to Report Portal instance. For entrance to Report Portal user should use their domain credentials (Login and password).
+
 
 ### Statistics
 It should be mentioned, that Report Portal server has enabled option of collecting statistics of user's actions.
