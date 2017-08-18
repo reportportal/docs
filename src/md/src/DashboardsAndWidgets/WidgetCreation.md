@@ -43,7 +43,8 @@ There are 14 widget templates in Report Portal as for now:
 - Project activity panel 
 - Test-Cases growth trend chart 
 - Investigated percentage of launches 
-- Launches table 
+- Launches table
+- Product status widget
 - Unique bugs table 
 - Most failure test-cases table
 - Failed cases trend chart 
@@ -326,6 +327,33 @@ Widget has a table view.
 Widget has clickable elements (launch name, owner, tags, number of items); when you click on specific element in widget, the system forwards you to launch view for appropriate selection.
 
 [ ![Image](Images/userGuide/widgetTypes/launchesTable.png) ](Images/userGuide/widgetTypes/launchesTable.png)
+
+>**Note:**
+Widget doesn't contain IN PROGRESS launches.
+
+**PRODUCT STATUS WIDGET**
+
+The widget summarizes a product data in a table view widget by custom filters results. The widget shows the configurable table of launches.
+
+**Widget's parameters:**
+- One or more filters;
+- Criteria for the widget: Name (Launch/Filter); Tags; Start time; Total; Pass; Failed; Skipped; Product Bug; Auto Bug; System Issue;  To Investigate; No Defect;  Pass Rate. All criteria are selected by default. To specify them, you can uncheck unnecessary items;
+- Number of watch latest launches: 1-150. Default meaning is 10;
+- Custom tag column ( column name/ tag pattern);
+- ‘Group launches by filter’ mode  on/off;
+- ‘Watch latest’ toggle button is switched on and disabled for change.
+
+**Widget view**
+Widget has a table view. User can name the widget, add description and share.  Widget has clickable elements, when you click on specific element in widget, the system forwards you to launch/filter view for the appropriate selection.
+You can choose several filters for that widget. Watch latest mode is switched on always.  As well you can add custom column that will be contained selected tag (you can add no more than three columns).
+
+Also the widget has two states: **‘Group launches by filter’** mode on and off.
+
+In case of **‘Group launches by filter’ mode off:**   widget shows a list of all launches with unique names with the last increment from chosen filters only.  
+
+In case of **‘Group launches by filter’ mode on:** system shows a list of filters.  Data of each filter is a sum of the values of latest launches that are included in certain filter.
+
+So you can check out statistic of different filters and compare results.
 
 >**Note:**
 Widget doesn't contain IN PROGRESS launches.
