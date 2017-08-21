@@ -62,7 +62,7 @@ Example of email server configuration for Yandex email server (detailed info cou
 Admin of Report Portal instance can provide an access to external user. 
 As for now, Report Portal allows GitHub users to login via GitHub auth, Active Directory Authorization or LDAP Authorization.
 
-# GitHub Authorization
+### GitHub Authorization
 To setup access with GitHub auth:
 1. Login Report Portal as ADMIN user
 2. Open list on the right of user's image.
@@ -92,7 +92,7 @@ Example of GitHub auth configuration:
  Confirmation message in status bar should be shown.
  'Login with GitHub' button will appear on login form.
  
- # Active Directory Authorization
+ ### Active Directory Authorization
 To setup access with Active Directory:
 1. Login Report Portal as ADMIN user
 2. Open list on the right of user's image.
@@ -109,7 +109,7 @@ Click 'Submit' button.
 All users of Active Directory will have an access to Report Portal instance.  
 For entrance to Report Portal user should use their domain credentials (Login and password).
 
-# LDAP Authorization (beta)
+### LDAP Authorization (beta)
 To setup access with LDAP:
 1. Login Report Portal as ADMIN user
 2. Open list on the right of user's image.
