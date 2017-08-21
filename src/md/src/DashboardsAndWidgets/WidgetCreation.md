@@ -147,10 +147,28 @@ Panel shows summary of test cases with each statuses in the selected launches.
 - Filter: required
 - Items: 1-150. Default meaning is 50.
 - Criteria for widget: all criteria are selected by default.
+- Type of view: Panel view/ Donut view
+- Mode All launches/ Latest launches
+
 
 **Widget view**
 
-[ ![Image](Images/userGuide/widgetTypes/overallStatisticsPanel.png) ](Images/userGuide/widgetTypes/overallStatisticsPanel.png)
+Widget shows statistics of the All launches/or Latest launches in chosen filter. Statistics is divided into 2 sections:
+-	Skipped, Passed, Failed
+-	Product Bug, System Issue, Automation Bug, No Defect and To Investigate.
+
+Statistics for every type is shown in percentage. On hover the exact number is shown for the curtain type.
+Widget has clickable sections, when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
+
+If you chose *All launches* mode, widget will show statistic about all launches in the filter. To view only latest executions of each launch, you should choose *Latest launches*.
+
+Widget can be viewed in two options as shown on pictures: Panel view 
+
+[ ![Image](Images/userGuide/widgetTypes/PanelView.png) ](Images/userGuide/widgetTypes/PanelView.png)
+
+or Donut view. 
+
+[ ![Image](Images/userGuide/widgetTypes/DonutView.png) ](Images/userGuide/widgetTypes/DonutView.png)
 
 >**Note:**
 Widget doesn't contain IN PROGRESS launches.
@@ -164,6 +182,7 @@ Launch duration chart shows the duration of the selected launches.
 
 - Filter: required
 - Items: 1-150. Default meaning is 50
+- Mode All launches/ Latest launches
 
 **Widget view**
 
@@ -175,6 +194,8 @@ Widget shows the duration of the filtered launches.
 Tooltip on mouse hover over chart area shows launch details: launch name, number and duration. 
 
 Widget has clickable sections, when you click on specified section in widget, the system forwards you to launch view for appropriate selection.
+
+Widget has two states: All launches and Latest lunches. If you chose *All launches* mode, widget will show statistic about all launches in the filter. To view only latest executions of each launch, you should choose *Latest launches*.
 
 [ ![Image](Images/userGuide/widgetTypes/launchesDurationChart.png) ](Images/userGuide/widgetTypes/launchesDurationChart.png)
  
