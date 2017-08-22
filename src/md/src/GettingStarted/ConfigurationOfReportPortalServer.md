@@ -102,7 +102,7 @@ To setup access with Active Directory:
 6. Change switcher position of 'Activate Directory Authorization' to ON
 7. The following fields appear on a screen as is shown on a picture:
 
-[ ![active_directory.png](documentation/src/Images/userGuide/gettingStarted/active_directory.png) ](documentation/src/Images/userGuide/gettingStarted/active_directory.png)
+[ ![active_directory.png](Images/userGuide/gettingStarted/active_directory.png) ](Images/userGuide/gettingStarted/active_directory.png)
 
 Mandatory fields are marked with red. 
 Click 'Submit' button.
@@ -119,7 +119,7 @@ To setup access with LDAP:
 6. Change switcher position of “LDAP Authorization' to ON
 7. The following fields appear on a screen as is shown on a picture:
 
-[ ![LDAP.png](documentation/src/Images/userGuide/gettingStarted/LDAP.png) ](documentation/src/Images/userGuide/gettingStarted/LDAP.png)
+[ ![LDAP.png](Images/userGuide/gettingStarted/LDAP.png) ](Images/userGuide/gettingStarted/LDAP.png)
 
 Mandatory fields are marked with red. 
 Click 'Submit' button.
