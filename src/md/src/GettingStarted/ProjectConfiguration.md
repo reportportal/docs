@@ -105,7 +105,7 @@ User with MEMBER or CUSTOMER project role has no the possibility to edit project
 
 The "Bug Tracking System" tab allows connecting a bug tracking system (JIRA, RALLY) to the project.
 
-For more information refer to the [Integration with bug tracking systems](#documentation/Integration-with-Bug)
+For more information refer to the [Integration with bug tracking systems](#documentation/Integration-with-bug)
 topic.
 
 **CREATE CUSTOM DEFECT TYPES**
