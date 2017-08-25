@@ -108,7 +108,7 @@ Run
 docker-compose -p reportportal up -d --force-recreate
 ```
 Server part is ready.
-ou can verify results, by accessing report-portal via https connection.
+To verify result open up report-portal via https connection.
 
 # Project configuration
 ### Adding certificate to project
@@ -134,6 +134,6 @@ rp.keystore.resource = certstore.jks
 ```
 - Modify/add property rp.keystore.password:
 ```$xslt
-rp.keystore.resource = certstore.jks
+rp.keystore.password = YOUR_PASSWORD to certstore.joks
 ```
 Project part is ready.
