@@ -18,7 +18,7 @@ Report Portal also gives you an ability to collaboratively analyze test automati
 Report Portal provides great capabilities along with auto-results analysis by
 leveraging historical data of test execution.
 
-With each execution Report Portal automatically figures out the root cause of a fail, doing analysis itself, and presents (?) you with the flag that engineer should pay attention to and which test results require actual analysis by human.
+With each execution Report Portal automatically figures out the root cause of a fail, doing analysis itself, and presents you with the flag that engineer should pay attention to and which test results require actual analysis by human.
 
  
 
