@@ -1,13 +1,13 @@
-### Introduction:
+## Introduction:
 This short guideline provides information about self-signed SSL certificate setup for your existing report portal environment.
 
-### Pre-requisites:
+#### Pre-requisites:
 - Installed report portal
 - Certificate in PEM format
 - Exported private key from PEM certificate
 
-# Server configuration
-### docker-compose.yml:
+### Server configuration
+#### docker-compose.yml:
 Provided example is using default docker-compose.yml. If you dont have any custom
 configurations in your docker-compose.yml file, you are free to use example below.<br>
 
@@ -98,11 +98,11 @@ configurations in your docker-compose.yml file, you are free to use example belo
        restart: always
    ```
 
-### Adding certificates to server
+#### Adding certificates to server
 Open up report portal directory (place, where is the "data" folder presents). Create directory
 "certs". Add cert "cert.pem" and key "mykey.pem" to this directory.
 
-### Recreate containers
+#### Recreate containers
 Run
 ```$xslt
 docker-compose -p reportportal up -d --force-recreate
@@ -110,8 +110,8 @@ docker-compose -p reportportal up -d --force-recreate
 Server part is ready.
 To verify result open up report-portal via https connection.
 
-# Project configuration
-### Adding certificate to project
+### Project configuration
+#### Adding certificate to project
 Before adding certificate to project, you need to convert it from "PEM" format to "DER"*.
 Find any online converter or use line below to do it:
 ```$xslt
@@ -125,7 +125,7 @@ keytool -import -alias your-alias -keystore certstore.jks -file cert.der
 NB! Remember your password, after adding it to container.<br>
 Add certstore.jks file to resources folder in classpath of your project.
 
-### reportportal.properties
+#### reportportal.properties
 Open up reportportal.properties file in your project.
 - Change rp.endpoint url from http to https
 - Modify/add property rp.keystore.resource:
@@ -134,6 +134,6 @@ rp.keystore.resource = certstore.jks
 ```
 - Modify/add property rp.keystore.password:
 ```$xslt
-rp.keystore.password = YOUR_PASSWORD to certstore.joks
+rp.keystore.password = YOUR_PASSWORD to certstore.jks
 ```
 Project part is ready.
