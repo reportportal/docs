@@ -273,22 +273,22 @@ To unassign he assignment for user on the project, perform the following steps:
 
 | **Action**\\**Account Role**                                                |**ADMIN**      |**USER**       |**USER**| **USER**       | **USER**           | **USER**         | **USER**             |
 |-----------------------------------------------------------------------------|---------------|-----------------|------|----------------|--------------------|------------------|----------------------|
-| **Action**\\**Project Role**                                                |               |**PROJECT MANAGER**|**LEAD**|**MEMBER** (owner)|**MEMBER** (not owner)|**CUSTOMER** (owner)|**CUSTOMER** (not owner)|
+| **Action**\\**Project Role**                                                |               |**PROJECT MANAGER**|**OPERATOR**|**MEMBER** (owner)|**MEMBER** (not owner)|**CUSTOMER** (owner)|**CUSTOMER** (not owner)|
 | Have access to Management Board                                             | \+            |                 |      |                |                    |                  |                      |
 | Create Project                                                              | \+            |                 |      |                |                    |                  |                      |
 | Delete project                                                              | \+            |                 |      |                |                    |                  |                      |
-| Update Project Settings                                                     | \+            | \+              | \+   |                |                    |                  |                      |
+| Update Project Settings                                                     | \+            | \+              |      |                |                    |                  |                      |
 | See Project Settings                                                        | \+            | \+              | \+   | \+             | \+                 | \+               | \+                   |
 | Create User                                                                 | \+            |                 |      |                |                    |                  |                      |
-| Invite User                                                                 | \+            | \+              | \+   |                |                    |                  |                      |
+| Invite User                                                                 | \+            | \+              |      |                |                    |                  |                      |
 | Delete User                                                                 | \+            |                 |      |                |                    |                  |                      |
-| Assign/Unassign internal user to/from the project                           | \+            | \+              | \+   |                |                    |                  |                      |
-| Change user's role on a project                                             | \+            | \+              | \+   |                |                    |                  |                      |
+| Assign/Unassign internal user to/from the project                           | \+            | \+              |      |                |                    |                  |                      |
+| Change user's role on a project                                             | \+            | \+              |      |                |                    |                  |                      |
 | See list of project members                                                 | \+            | \+              | \+   | \+             | \+                 |                  |                      |
 | Edit own account                                                            | \+            | \+              | \+   | \+             | \+                 | \+               | \+                   |
-| Edit, delete launch, test item                                              | \+            | \+              | \+   | \+             |                    | \+               |                      |
-| Manage launches (force finish, merge)                                       | \+            | \+              | \+   | \+             |                    | \+               |                      |
-| Move launch to debug/default mode                                           | \+            | \+              | \+   | \+             |                    |                  |                      |
+| Edit, delete launch, test item                                              | \+            | \+              |      | \+             |                    | \+               |                      |
+| Manage launches (force finish, merge)                                       | \+            | \+              |      | \+             |                    | \+               |                      |
+| Move launch to debug/default mode                                           | \+            | \+              |      | \+             |                    |                  |                      |
 | Analyse launches (start "Analysis" and "Match issues" manually)             | \+            | \+              | \+   | \+             | \+                 | \+               | \+                     |
 | Manage filters, widgets, dashboards (create, edit, delete, share)           | \+            | \+              | \+   | \+             | \+                 | \+               | \+                   |
 | Read data                                                                   | \+            | \+              | \+   | \+             | \+                 | \+               | \+                   |
