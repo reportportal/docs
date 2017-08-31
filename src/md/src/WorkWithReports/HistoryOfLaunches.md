@@ -1,5 +1,4 @@
-History of launches
--------------------
+##History of launches
 
 ### Historical trend of executions
 

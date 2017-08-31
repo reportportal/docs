@@ -50,9 +50,9 @@ module.exports = function (grunt) {
                 flatten: true,
                 layoutdir: 'src/md/layout',
                 partials: ['./*.md'],
-                anchors: {
-                    template: 'src/md/md-template.js'
-                }
+                // anchors: {
+                //     template: 'src/md/md-template.js'
+                // }
             },
             documentation: {
                 options: {
