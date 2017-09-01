@@ -273,6 +273,7 @@ To unassign he assignment for user on the project, perform the following steps:
 
 | **Action**\\**Account Role**                                                |**ADMIN**      |**USER**       |**USER**| **USER**       | **USER**           | **USER**         | **USER**             |
 |-----------------------------------------------------------------------------|---------------|-----------------|------|----------------|--------------------|------------------|----------------------|
+
 | **Action**\\**Project Role**                                                |               |**PROJECT MANAGER**|**MEMBER** (owner)|**MEMBER** (not owner)|**OPERATOR**|**CUSTOMER** (owner)|**CUSTOMER** (not owner)|
 | Have access to Management Board                                             | \+            |                 |                |                   |       |                  |                      |
 | Create Project                                                              | \+            |                 |                |                   |       |                  |                      |
@@ -292,6 +293,7 @@ To unassign he assignment for user on the project, perform the following steps:
 | Analyse launches (start "Analysis" and "Match issues" manually)             | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
 | Manage filters, widgets, dashboards (create, edit, delete, share)           | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
 | Read data                                                                   | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
+
  
 >**Note:**
 Invite user, Assign/Unassign internal user to/from the project, change user's role on a project actions can be done for a user 

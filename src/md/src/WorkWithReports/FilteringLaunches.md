@@ -1,5 +1,4 @@
-Filtering launches
-------------------
+## Filtering launches
 
 The data in a table in the "Launches" and "Debug" modes can be filtered with
 a filtering block. Filters may be applied at all test item levels:

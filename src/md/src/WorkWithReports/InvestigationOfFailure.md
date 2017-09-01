@@ -1,5 +1,4 @@
-Investigation of failure
-------------------------
+##Investigation of failure
 
 ### Defect types and comments
 
