@@ -1,4 +1,4 @@
-## Introduction:
+## Setup SSL
 This short guideline provides information about self-signed SSL certificate setup for your existing report portal environment.
 
 #### Pre-requisites:
