@@ -8,12 +8,12 @@ Testing process.
 
 It seamlessly integrates with mainstream platforms such as Jenkins, Jira, BDD process, majority of Functional and Unit testing frameworks.
 
-Real-time integration allows to manage and track execution status directly from
+Real-time integration provides the ability to manage and track execution status directly from
 Report Portal.
 
-Test cases execution results are stored following the same structure you have it in your suites and test plan. The test cases are shown with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test case is also available for you, so one can see previous execution result in one click.
+Test case execution results are stored following the same structure you have in your reporting suites and test plan. The test cases are shown with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test cases is also available for you, so one can see previous execution results in one click.
 
-Report Portal also gives you an ability to collaboratively analyze test automation results. Particular test case can be associated with a product bug, or automation issue, system issue and even could be submitted as an issue ticket directly from the execution result. 
+Report Portal also gives you the ability to collaboratively analyze test automation results. Particular test cases can be associated with a product bug, an automation issue, a system issue or can be submitted as an issue ticket directly from the execution result. 
 
 Report Portal provides great capabilities along with auto-results analysis by
 leveraging historical data of test execution.
