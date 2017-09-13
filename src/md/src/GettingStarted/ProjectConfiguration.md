@@ -274,7 +274,6 @@ To unassign he assignment for user on the project, perform the following steps:
 
 | **Action**\\**Account Role**                                                |**ADMIN**      |**USER**       |**USER**| **USER**       | **USER**           | **USER**         | **USER**             |
 |-----------------------------------------------------------------------------|---------------|-----------------|------|----------------|--------------------|------------------|----------------------|
-
 | **Action**\\**Project Role**                                                |               |**PROJECT MANAGER**|**MEMBER** (owner)|**MEMBER** (not owner)|**OPERATOR**|**CUSTOMER** (owner)|**CUSTOMER** (not owner)|
 | Have access to Management Board                                             | \+            |                 |                |                   |       |                  |                      |
 | Create Project                                                              | \+            |                 |                |                   |       |                  |                      |
