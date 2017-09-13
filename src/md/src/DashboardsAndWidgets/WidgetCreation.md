@@ -33,7 +33,7 @@ Widgets are automatically refreshed every minute.
 
 ### Predefined widgets types
 
-There are 14 widget templates in Report Portal as for now:
+There are 15 widget templates in Report Portal as for now:
  
 - Launch statistics line chart   
 - Launch statistics trend chart 
@@ -48,7 +48,8 @@ There are 14 widget templates in Report Portal as for now:
 - Most failure test-cases table
 - Failed cases trend chart 
 - Non-Passed test-cases trend chart 
-- Different launches comparison chart 
+- Different launches comparison chart
+- Product status widget
 
 The description of them is provided below.
 
@@ -477,6 +478,38 @@ Tooltip on mouse hover over chart area shows launch details: launch name and num
 Widget has clickable sections, when you click on specific section in widget, the system forwards you to launch view for appropriate selection.
 
 [ ![Image](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png) ](Images/userGuide/widgetTypes/differentLaunchesComparisonChart.png)
+
+>**Note:**
+Widget doesn't contain IN PROGRESS launches.
+
+**PRODUCT STATUS WIDGET**
+
+The widget summarizes a product data in a table view widget by custom filters results. The widget shows the configurable table of launches.
+
+[ ![Image](Images/userGuide/widgetTypes/productStatusWidget.png) ]
+
+**Widget's parameters:**
+
+-	Filter/s: you can choose several filters for that widget.
+
+-	Criteria for the widget: Start time; Status; Product Bug; Auto Bug; System Issue;  To Investigate; No Defect.  All criteria are selected by default. To specify them, you can uncheck unnecessary items;
+
+-	Number of items: 1-150. Default meaning is 10;
+
+-	Custom column (column name/ tag prefix).  You can add custom column to view tags with chosen tag prefix.
+
+-	 ‘Watch latest’ mode on/off: Watch latest mode is switched on by default.  
+
+-	‘Group launches by filter’ mode  on/off:
+
+In case of *‘Group launches by filter’ mode off*:   widget shows a list of all launches with unique names with the last increment from chosen filters only.  
+
+In case of *‘Group launches by filter’ mode on*: system shows a list of filters.  Data of each filter is a sum of the values of latest launches that are included in certain filter.
+
+**Widget view**
+Widget has a table view. You can name the widget, add a description and share.  Widget has clickable elements, when you click on specific element in widget, the system forwards you to launch/filter view for the appropriate selection.
+
+[ ![Video](Images/userGuide/widgetTypes/_________) ]
 
 >**Note:**
 Widget doesn't contain IN PROGRESS launches.
