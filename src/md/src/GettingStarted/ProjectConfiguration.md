@@ -253,6 +253,7 @@ To edit project role, perform the following steps:
 
 **UNASSIGN USER FROM PROJECT**
 
+
 Depends on project needs the assignment could be removed. 
 To unassign he assignment for user on the project, perform the following steps:
 
