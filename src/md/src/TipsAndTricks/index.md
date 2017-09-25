@@ -14,6 +14,7 @@ You can put those additional tags via CI command line.
 So, only Jenkins will generate launches with those tags
 
 
+
 **Option 2:**
 
 Put `rp.mode=debug` in all `reportportal.properties` files.
@@ -21,6 +22,8 @@ Put `rp.mode=debug` in all `reportportal.properties` files.
 For Jenkins executions, overload this param via command line as `rp.mode=default`
 
 So all local launches will be in debug, all Jenkins – in launches.
+
+
 
 **Option 3:**
 
@@ -34,11 +37,15 @@ Auto-analysis will use only `yyy` launches for review.
 
 Use filter, based on `yyy` name for widgets.
 
+
+
 **Option 4:**
 
 The same like _option 2_, but with `rp.enable=false|true`
 
 This will turn off reporting for local launches
+
+
 
 **Option 5:**
 
