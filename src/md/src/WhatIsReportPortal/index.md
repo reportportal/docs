@@ -1,31 +1,29 @@
-What is Report Portal?
+What is ReportPortal?
 ==============
 
-Report Portal is a service, it provides great capabilities for speeding up results analysis and reporting by means of built-in analytical features.
+ReportPortal is a service, that provides increased capabilities to speed up results analysis and reporting through the use of built-in analytic features.
 
-Report Portal is the great addition to the Continuous Integration and Continuous
+ReportPortal is a great addition to the Continuous Integration and Continuous
 Testing process.
 
 It seamlessly integrates with mainstream platforms such as Jenkins, Jira, BDD process, majority of Functional and Unit testing frameworks.
 
-Real-time integration provides the ability to manage and track execution status directly from
-Report Portal.
+Real-time integration provides businesses the ability to manage and track execution status directly from ReportPortal.
 
-Test case execution results are stored following the same structure you have in your reporting suites and test plan. The test cases are shown with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test cases is also available for you, so one can see previous execution results in one click.
+Test case execution results are stored following the same structure you have in your reporting suites and test plan. The test cases are shown with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test cases are also available for you, so one can see previous execution results in one click.
 
-Report Portal also gives you the ability to collaboratively analyze test automation results. Particular test cases can be associated with a product bug, an automation issue, a system issue or can be submitted as an issue ticket directly from the execution result. 
+ReportPortal also gives you the ability to collaboratively analyze test automation results. Particular test cases can be associated with a product bug, an automation issue, a system issue or can be submitted as an issue ticket directly from the execution result. 
 
-Report Portal provides great capabilities along with auto-results analysis by
+ReportPortal provides enhanced capabilities along with auto-results analysis by
 leveraging historical data of test execution.
 
-With each execution Report Portal automatically figures out the root cause of a fail, doing analysis itself, and presents you with the flag that engineer should pay attention to and which test results require actual analysis by human.
-
+With each execution ReportPortal automatically figures out the root cause of a fail, doing analysis itself, and marking it with a flag so that engineers will be alerted to the issue to see if its been resolved or which test results require actual human analysis.
  
 
 **What technologies are used?**
 
-Considering high load rate and performance requirements, we use a
-cutting edge technologies:
+Considering a high load rate and performance requirements, we use
+cutting edge technologies such as:
 
 -   NoSQL MongoDB - super fast write to DB, clustering.
 
