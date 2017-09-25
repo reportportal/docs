@@ -1,54 +1,54 @@
 Auto-Analysis of launches
 -------------------------
 
-Analysis feature of Report Portal allows to pass some part or rutine work to the application itself.
+The analysis feature of the ReportPortal makes it possible for the application to check and pass part of the routine duties by itself.
 
-The better way to explain how it works is an example.
+A better way to explain how this works for example is:
 
-Say, user has run first launch and investigated all "To Investigate" issues.
+Let's say a user has run the first launch and investigated all "To Investigate" issues.
 
 During the next run, it's necessary to investigate all failed issues again, and
 here is where the "Auto-Analysis" functionality is helpful.
 
-As a launch finishes, the System runs "Auto-Analysis" process in background only
+As a launch finishes, the System runs the "Auto-Analysis" process in background only
 for launches in the "Launches" mode.
 
 This process analyzes the current launch failures and finds the same failures in
-five previously investigated launches.
+the five previously investigated launches.
 
-As a result you see the following: the System sets [AUTO-SYSTEM] comment to
-identify it was processed by "Auto-Analysis" process.
+As a result you see the following: the System will set and mark the [AUTO-SYSTEM] comment to
+identify that it was processed by the "Auto-Analysis" process.
 
 
 **AUTO-ANALYSIS ALGORITHM**
 
-"Auto-Analysis" algorithm is based on previous user-investigated results for failed
-items (SKIPPED or FAILED). Means user should investigate failed items at least
-once to create initial issues scope. Next launches with the same name will have
+The "Auto-Analysis" algorithm is based on the previous user-investigated results for failed
+items (SKIPPED or FAILED). This means the user should investigate failed items at least
+once to create the initial issues scope. After that the next launches with the same name will have
 base material for logs comparison.
 
-If any issue appears in the next run (launch with the same name) then specified
-Report Portal service remembers failed item and launch, and saves it as comparison
-candidate. "Auto-analysis" starts its routine on the finish launch event:
+If any issue appears in the next run (launch with the same name) then the specified
+ReportPortal service remembers the failed item and launch, and saves it as comparison
+candidate. The "Auto-analysis" starts its routine on the finish of each launch event:
 
-1. "Auto-Analysis" creates history for current launch (with 5 launches in
-    depth including the current run).
+1. The "Auto-Analysis" creates a history for the current launch (analizing 5 launches in
+    depth, including the current run).
 
-2. "Auto-Analysis" looking ALL investigated items in history, means all items
+2. Because the "Auto-Analysis" is looking at ALL investigated items in history, this means all items
     with user specified comments, issue types and external system IDs (JIRA, for
-    example).
+    example) will be compared for analysis.
 
-Then "Auto-Analysis" going to process all remembered failed items from current
+Then the "Auto-Analysis" will process all remembered failed items from current
 launch:
 
-- "Auto-Analysis" took first item from remembered list and start to looking in history list
-    investigated item with the same count of *ERROR* logs. If this item found then
-    error log strings start comparing one with others via calculating
-    Levenshtein distance. All digit chars are excluded from comparison to avoid
+- The "Auto-Analysis" will take the first item from the remembered list and start looking into the history lists,
+    investigating the item with the same type of *ERROR* logs. If this item is found then an
+    error log string starts comparing one with the others via calculating
+    Levenshtein distance formula. Note: All digit chars are excluded from comparison to avoid
     date, numbers and code line number differences in stack-traces.
 
-- If total ratio more or equals 95% (it will be configurable in future per
-    project) then "Auto-Analysis" setup all attributes from investigated item in
+- If the total ratio is more or equals to 95% (it will be configurable in future per
+    project) then the "Auto-Analysis" will set all attributes from the investigated item in the
     history to current failed item, and switching on next one failed item.
 
 [ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-full.png)
@@ -59,7 +59,7 @@ launch:
 To activate the "Auto-Analysis" functionality in a project, perform the following
 steps:
 
-1. Login into Report Portal instance as Administrator or project member with PROJECT MANAGER or LEAD role on the project.
+1. Login into ReportPortal instance as Administrator or project member with PROJECT MANAGER or LEAD role on the project.
 
 2. Select ON from the "Auto-Analysis" drop-down.
 
@@ -74,10 +74,10 @@ To start the analysis manually, perform the following steps:
 
 1. Navigate to the "Launches" page.
 
-2. Select "Analysis" option from the context menu next to the selected
+2. Select the "Analysis" option from the context menu next to the selected
     launch name.
 
-3. Launch with an active analyzing process will be marked the "Analysis"
+3. Any launches with an active analyzing process will be marked with the "Analysis"
     label.
 
 [ ![Image](Images/userGuide/analyzeLaunches/manual_analiz.png) ](https://youtu.be/qXbTx4So0N4)
