@@ -6,18 +6,19 @@ Gateway communicates with Service Registry to get list actual of services that a
 There are two options proposed: 
 * [Fabio](https://github.com/fabiolb/fabio)
     * Configuration parameters:
-        * FABIO_REGISTRY_CONSUL_ADDR=registry:8500. Specifies URL to service registry server
-        * FABIO_REGISTRY_CONSUL_REGISTER_NAME=gateway. Specifies service name to register in service registry (consul)
-        * FABIO_PROXY_ADDR=:9999;rt=300s;wt=300s. Application port, read/write timeouts
+        * `FABIO_REGISTRY_CONSUL_ADDR=registry:8500` Specifies URL to service registry server
+        * `FABIO_REGISTRY_CONSUL_REGISTER_NAME=gateway` Specifies service name to register in service registry (consul)
+        * `FABIO_PROXY_ADDR=:9999;rt=300s;wt=300s` Application port, read/write timeouts
 * [Traefik](https://traefik.io/)
 
 ### Service Registry
-Service Registry is tool that keep actual list of running services with meta-information attached.
+Service Registry is the tool that keeps actual list of running services with meta-information attached.
 It performs health-checks to each running service to ensure availability.
 For the details, see [Consul](https://www.consul.io/)
 
 ### API Service
 API service is a core of ReportPortal. It is in charge of handling incoming requests from agents and UI. 
+
 ### UAT Service
 UAT (Unified Authorization Trap) service is module that authenticate users and creates/revokes user tokens. 
 It supports various types of authentication mechanisms:
@@ -37,7 +38,7 @@ It also aggregates some information/health data from other services to provide U
 Integration with JIRA's bug tracking system
 
 ### Rally Service
-Integration with Rally's  bug tracking system
+Integration with Rally's bug tracking system
 
 ### Analyzer Service
 Keeps index of user logs per project and provides ability to perform search by that index. Used by auto-analysis functionality 
