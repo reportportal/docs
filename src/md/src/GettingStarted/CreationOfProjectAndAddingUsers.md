@@ -7,41 +7,41 @@ Permission: Only user with account role ADMINISTRATOR has access to this context
 ### Creat project
 
 To create a project for a team:
-1. Login Report Portal as ADMIN user
-2. Open list on the right of user's image.
-3. Click 'Administrative' link 
-4. Click 'Projects' from left-hand sidebar
-5. Click 'Add Project' button in the right top corner
-6. Enter a name of project
-7. Click 'Submit' button.
+1. Login to the ReportPortal as an ADMIN user
+2. Open the list on the right of the user's image.
+3. Click the 'Administrative' link 
+4. Select 'Projects' from the left-hand sidebar
+5. Click the 'Add Project' button in the right top corner
+6. Then enter a name of the project
+7. Click the 'Submit' button.
 
-Confirmation message in status bar should appear.
+A confirmation message in status bar should appear.
 
 > **Note**
 
-> Name of project should contain 3-256 symbols. 
+> The name of project should contain between 3-256 symbols. 
 > It can include Latin and numeric characters, as well as underscores and dashes. 
 > The name should be unique and cannot be changed after saving.
 
-Admin can configure project settings or leave them as the default. 
-Project members with LEAD or PROJECT_MANAGER role are able to setup project settings.
-To know how project settings could be updated, go to 'ProjectConfiguration' section
+An Admin can configure the project settings or leave them as the default. 
+Project members with LEAD or PROJECT_MANAGER roles are able to setup the project settings.
+To know how project settings could be updated, go to the 'ProjectConfiguration' section
 
 To know more about project's management, go to Management Board>All Projects page
 
 ### Add users to project
 
-Only Admin user is able to create a user in Report Portal. This functionality is named as 'Add User'.
+Only the Admin user is able to create a user in ReportPortal. This functionality is named 'Add User'.
 
-A new user could be added on just created project with next steps:
-1. Login Report Portal as ADMIN user
-2. Open list on the right of user's image.
-3. Click 'Administrative' link 
-4. Click 'Projects' from left-hand sidebar
+A new user can be added for newly created projects with the next steps:
+1. Login to the ReportPortal as an ADMIN user
+2. Then open the list on the right of the user's image.
+3. Click the 'Administrative' link 
+4. Select 'Projects' from the left-hand sidebar
 5. Find the project on which user/s will be added
-6. Click 'Members' icon on the tail of the project
-7. Click 'Add User' button
-8. Next form opens in pop up:
+6. Click the 'Members' icon on the tail of the project
+7. Click the 'Add User' button
+8. Next a form opens in the pop-up:
 
 ```javascript
 								    'login': <unique_login_name>
@@ -62,11 +62,11 @@ Leave default or select a user's project role: LEAD
 ```
 Submit the form.
 
-Confirmation message in status bar should appear.
+A confirmation message in the status bar should appear.
 
-The notification email letter is sent to email address of new user.
+The notification email letter is sent to the email address of new user.
 
  > **Note** 
-  when user is created s/he gets own space, named as "personal project". 
+  When a user is created, s/he gets their own space, named as "personal project". 
 
-To know more options of adding users, go to Project Configuration>Management of users
+If you wish to know more about adding user options, go to Project Configuration > Management of users
