@@ -11,9 +11,9 @@ Grab the arrow with the cursor and drag it to the desired width and height.
 
 You can maintain the existing aspect ratio or set a new one, when resizing the widget.
 
-Note, that widgets have minimal meaning of width and height.
+Note: Widgets have a minimum and maximum mean of width and height defined within the application.
 
-Also you can customize your dashboard by changing the widgets' placement.
+Another way you can customize your dashboard is by changing the widgets' placement within the dashboard canvas area.
 
 To change a widget placement on the dashboard, perform the following: grab a widget with the cursor by clicking and dragging it to the selected position, holding down the mouse button.
 
@@ -26,23 +26,22 @@ The widgets located in this space, are moved to the relocatable widget place. Us
 
 To create a new widget, perform the following steps:
 
-1. Click "Edit" icon in the right corner of the widget header.
+1. Click the "Edit" icon in the right corner of the widget header.
 
-2. "Edit Widget" window will be opened. You can edit any widget settings except the template itself.
+2. After the "Edit Widget" window is opened, you can edit any widget settings except the template itself.
 
-3. Make the necessary changes and click "Save" button. The widget will be updated.
+3. Make the necessary changes and click the "Save" button. The widget will be updated.
 
 [ ![Image](Images/userGuide/widgets/editWidget.png) ](https://youtu.be/VlpvP7IIEoY)
 
 ### View widgets in full screen mode
 
-To view widgets in whole screen, click 'Full Screen' button in the right top corner of the dashbord.
+To view widgets in whole screen, click the 'Full Screen' button in the right top corner of the dashbord.
 
-Widgets are shown in the same order as for standard view, but no possibility to create a new, or update, or delete of available widgets.
+Widgets are shown in the same order as for standard view.  
+Note: Clickable areas or elements are disabled for full screen mode selected, therefore it will not be possibile to create a new widget, update, or delete available widgets in this mode.
 
-Clickable areas or elements are disabled for full screen mode selected. 
-
-Autorefresh timeout for widgets in full screen mode is 30 sec.
+Auto-refresh timeout for widgets in full screen mode is 30 sec.
 
 
 ### Delete widget
