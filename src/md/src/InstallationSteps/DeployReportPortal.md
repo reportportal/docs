@@ -12,7 +12,7 @@ ReportPortal can be easily deployed using Docker-Compose.
 
 3. Start application using the following command:
 
-```powershell
+```Shell
 docker-compose -p reportportal up -d --force-recreate
 ``` 
 Where:
@@ -26,12 +26,17 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-4. Open in your browser IP address of deployed enviroment at port `8080`
+4. Open in your browser IP address of deployed enviroment at port **8080**
 
   ```
   http://IP_ADDRESS:8080
   ```
-5. Use next login\pass for access: `default\1q2w3e` and  `superadmin\erebus`. 
+5. Use next **login\pass** for access: 
+```shell
+default\1q2w3e
+or
+superadmin\erebus
+```
 
 >Please change admin password for security.
 
