@@ -80,7 +80,7 @@ log4j.appender.reportportal.layout=org.apache.log4j.PatternLayout
 log4j.appender.reportportal.layout.ConversionPattern=[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n
 ```
 
-If you prefer to have log level on the root as DEBUG, TRACE, or ALL, we would recommend to mute Report Portal debug messages by adding the following configuration:
+ReportPortal agent logs can be hidded by increasing logging level for the following package:
 
 ```xml
 <logger name="rp">
