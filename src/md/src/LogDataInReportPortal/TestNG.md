@@ -73,13 +73,12 @@ Add to POM.xml
      </repository>
 </repositories>
 
-
-
 <dependency>
   <groupId>com.epam.reportportal</groupId>
   <artifactId>agent-java-testng</artifactId>
   <version>3.0.0</version>
 </dependency>
+<!-- TODO Leave only one dependency, depends on what logger you use: -->
 <dependency>
   <groupId>com.epam.reportportal</groupId>
   <artifactId>logger-java-logback</artifactId>
