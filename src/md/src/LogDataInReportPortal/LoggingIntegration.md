@@ -109,9 +109,6 @@ Just add Report Portal appender into log4j.xml configuration file.
       <param name="ConversionPattern" value="[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n"/>
    </layout>
 </appender>
-<logger name="com.epam.ta.apache">
-   <level value="OFF"/>
-</logger>
 <root>
     <level value="info" />
     <appender-ref ref="ReportPortalAppender" />
@@ -124,6 +121,17 @@ For log4j.properties file it could be look like:
 log4j.appender.reportportal=com.epam.ta.reportportal.log4j.appender.ReportPortalAppender
 log4j.appender.reportportal.layout=org.apache.log4j.PatternLayout
 log4j.appender.reportportal.layout.ConversionPattern=[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n
+```
+
+ReportPortal' agent logs can be hidded by increasing logging level for the following package:
+
+```xml
+<logger name="rp">
+    <level value="WARN"/>
+</logger>
+<logger name="com.epam.reportportal">
+    <level value="WARN"/>
+</logger>
 ```
 
 #### Screenshots
@@ -150,36 +158,11 @@ logger.info(message);
     appender sends log message which will contain sending file and string message "*Binary data reported*".
 
 - adding to log message additional text information which specify attaching
-    file location or base64 representation of sending file.
-
-in this case log message should have next format:
-
-```
-RP_MESSAGE#FILE#FILENAME#MESSAGE_TEST
-```
-
-```
-RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
-```
-
->   RP\_MESSAGE - message header
-
->   FILE, BASE64 - attaching data representation type
-
->   FILENAME, BASE\_64\_REPRESENTATION - path to sending file/ base64
->   representation of sending data
-
->   MESSAGE\_TEST - string log message
-
- 
-
-There is client parameter in reportportal.properties with boolean type value
-for screenshots sending in "black-white" or "color" view. By default it is set
-as "true" and all pictures for Report Portal will be in "black-while" format.
+    file location or base64 representation of sending file. Described in [Log message format](#log-message-format) section.
 
 **reportportal.properties**
 
-```java
+```properties
 rp.convertimage=true
 ```
 
@@ -251,6 +234,13 @@ log4j2.json
 }
 ```
 
+ReportPortal's agent logs can be hided by increasing logging level for the following package:
+
+```xml
+<Logger name="rp" level="WARN"/>
+<Logger name="com.epam.reportportal" level="WARN"/>
+```
+
 #### Screenshots
 
 For *log4j2* case it is possible to send binary data in next ways.
@@ -275,13 +265,11 @@ logger.info(message);
     appender sends log message which will contain sending file and string message *"Binary data reported"*.
 
 - adding to log message additional text information which specify attaching
-    file location or base64 representation of sending file.
+    file location or base64 representation of sending file. Described in [Log message format](#log-message-format) section.
 
-in this case log message should have next format:
+### Logback
 
-#### Logback
-
-##### Configuration
+#### Configuration
 
 Add Report Portal appender into logback.xml configuration file.
 
@@ -296,26 +284,9 @@ Add Report Portal appender into logback.xml configuration file.
 </root>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ powershell
-RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
->   RP\_MESSAGE - message header
-
->   FILE, BASE64 - attaching data representation type
-
->   FILENAME, BASE\_64\_REPRESENTATION - path to sending file/ base64
->   representation of sending data
-
->   MESSAGE\_TEST - string log message
-
-There is client parameter in reportportal.properties with boolean type value
-for screenshots sending in "black-white" or "color" view. By default it is set
-as "true" and all pictures for Report Portal will be in "black-while" format.
-
 **reportportal.properties**
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ properties
 rp.convertimage=true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -324,6 +295,9 @@ Possible values:
 - **true** - all images will be converted into 'black-white'
 
 - **false** - all images will be as 'color'
+
+### JDK Logging / java.util.logger (JUL)
+Due to low popularity of JUL logger, Report Portal does not have adapter for it. Bridge to SLF4J or Log4j may be used in this case: [Log4j2 JDK Logging Adapter](https://logging.apache.org/log4j/2.0/log4j-jul/index.html)
 
 ### Log4Net
 
@@ -368,7 +342,7 @@ Specify reference to appender in root section.
 
 ### System.Diagnostics.Tracer
 
-##### Installation
+#### Installation
 
 Install **ReportPortal.Tracer** NuGet package. Missed dependencies will be
 installed automatically.
