@@ -254,8 +254,7 @@ Possible values:
 - **false** - all images will be as 'color'
 
 ### JDK Logging / java.util.logger (JUL)
-Due to low popularity of this logger, Report Portal does not have addapter for it, but you may use [Log4j2 JDK Logging Adapter](https://logging.apache.org/log4j/2.0/log4j-jul/index.html)
-to wrap your logs and use [Log4j2 integration](#log4j2).
+Due to low popularity of JUL logger, Report Portal does not have adapter for it. Bridge to SLF4J or Log4j may be used in this case: [Log4j2 JDK Logging Adapter](https://logging.apache.org/log4j/2.0/log4j-jul/index.html)
 
 ### Log4Net
 
