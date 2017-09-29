@@ -1,5 +1,4 @@
-Manage filters
---------------
+## Manage filters
 
 **OPERATIONS WITH FILTERS**
 

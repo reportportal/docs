@@ -1,2 +1,1 @@
-Management Board
-==============
+# Management Board

@@ -1,5 +1,4 @@
-Creation of project and adding users
-------------------------------------
+## Creation of project and adding users
 
 Now it is necessary to create a separate space, named as Project, and add user(s) to it, who will create and manage the data.
 Permission: Only user with account role ADMINISTRATOR has access to this context.

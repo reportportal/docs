@@ -1,5 +1,4 @@
-Filters page
-------------
+## Filters page
 
 You can see the list of your saved searches and shared by other team members on "Filters" page. 
 

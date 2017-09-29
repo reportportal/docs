@@ -1,5 +1,4 @@
-Tips and tricks
-==============
+# Tips and tricks
 
 >If you see inconsistencies, typos or want to add something, please, [send us Pull Request into source](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
 

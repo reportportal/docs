@@ -1,5 +1,4 @@
-Create filters
---------------
+## Create filters
 
 Filters in Report Portal are saved searches of launches. 
 

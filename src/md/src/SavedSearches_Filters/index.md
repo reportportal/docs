@@ -1,2 +1,1 @@
-Saved searches (Filters)
-==============
+# Saved searches (Filters)

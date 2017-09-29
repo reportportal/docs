@@ -1,5 +1,4 @@
-Manage Widgets
--------
+## Manage Widgets
 
 ### Customize widget
 

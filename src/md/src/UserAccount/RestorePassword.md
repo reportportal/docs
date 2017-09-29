@@ -1,5 +1,4 @@
-Restore password
-----------------
+## Restore password
 
 If you forgot your password, you can restore it on the login page. To do that, perform the following steps:
 

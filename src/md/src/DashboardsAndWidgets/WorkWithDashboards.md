@@ -1,5 +1,4 @@
-Work with dashboards
---------------------
+## Work with dashboards
 
 Dashboards on ReportPortal are special containers, where users can create widgets.
 

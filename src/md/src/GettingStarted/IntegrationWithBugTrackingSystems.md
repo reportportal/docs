@@ -1,5 +1,4 @@
-Integration with bug tracking systems
--------------------------------------
+## Integration with bug tracking systems
 
 Integration with a bug tracking system, can be required for projects that collect defects in a separate tracking tool.
 Integration provides an exchange of information between ReportPortal and the bug tracking system, such as posting bugs and loading bugs,

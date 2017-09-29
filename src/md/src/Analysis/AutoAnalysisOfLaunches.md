@@ -1,5 +1,4 @@
-Auto-Analysis of launches
--------------------------
+## Auto-Analysis of launches
 
 The analysis feature of the ReportPortal makes it possible for the application to check and pass part of the routine duties by itself.
 

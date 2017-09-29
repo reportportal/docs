@@ -1,5 +1,4 @@
-What is ReportPortal?
-==============
+# What is ReportPortal?
 
 ReportPortal is a service, that provides increased capabilities to speed up results analysis and reporting through the use of built-in analytic features.
 

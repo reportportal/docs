@@ -1,5 +1,4 @@
-Tuning CI tool
---------------
+##Tuning CI tool
 
 How to provide parameters via system variables in the CI tool (as example - Jenkins)
 

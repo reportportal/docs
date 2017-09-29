@@ -1,5 +1,4 @@
-Edit personal information
--------------------------
+## Edit personal information
 
 To navigate to the user profile page, click the username drop-down in the right
 header and select "Profile" option.

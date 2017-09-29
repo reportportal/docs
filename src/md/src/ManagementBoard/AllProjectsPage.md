@@ -1,5 +1,4 @@
-All Projects page
------------------
+## All Projects page
 
 Users with the Administrator role have access to the Report Portal
 administration, called Management Board.

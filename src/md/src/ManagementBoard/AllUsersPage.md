@@ -1,5 +1,4 @@
-All Users page
---------------
+## All Users page
 
 All Users page in Management Board provide the access to see all available users in the system.
 

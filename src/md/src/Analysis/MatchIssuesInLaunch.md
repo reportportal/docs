@@ -1,5 +1,4 @@
-Match issues in launch
-----------------------
+## Match issues in launch
 
 **Match issues in Launch** is equal to the **Auto-Analysis** algorithm, but works in scope of only 1 certain launch.
 It means that Report Portal will look for similar fails in the same launch, where **Match issues** was called.

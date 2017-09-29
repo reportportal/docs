@@ -1,5 +1,4 @@
-Project configuration
----------------------
+## Project configuration
 
 Projects in Report Portal have separate spaces. 
 To see the list of available projects and open a project, click the drop-down list 

@@ -1,5 +1,4 @@
-Configuration of Report Portal server
--------------------------------------
+## Configuration of Report Portal server
 
 ### Email server configuration
 

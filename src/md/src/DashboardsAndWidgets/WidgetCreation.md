@@ -1,5 +1,4 @@
-Widget Creation
--------------
+## Widget Creation
 
 Widgets - contain special graphical control elements that were designed to provide a simple and 
 easy-to-use way of displaying and analyzing your automation trends and data.

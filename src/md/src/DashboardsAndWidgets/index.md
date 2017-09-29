@@ -1,2 +1,1 @@
-Dashboards and Widgets
-==============
+# Dashboards and Widgets
