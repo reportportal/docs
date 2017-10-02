@@ -172,15 +172,15 @@ Here is how you can define report portal listener in your testng.xml file.
 TestNG allows users to create own runners. In this case user can instantiate
 listener by himself and add it to TestNG object.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
+```java
 ReportPortalTestNGListener listener = new ReportPortalTestNGListener();
-     TestNG testNg = new TestNG();
-     List<String> lSuites = Lists.newArrayList();
-     Collections.addAll(lSuites, “testng_suite.xml”);
-     testNg.setTestSuites(lSuites);
-     testNg.addListener((Object) listener);
-     testNg.run();
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TestNG testNg = new TestNG();
+List<String> lSuites = Lists.newArrayList();
+Collections.addAll(lSuites, “testng_suite.xml”);
+testNg.setTestSuites(lSuites);
+testNg.addListener((Object) listener);
+testNg.run();
+```
 
 **Using command line**
 
