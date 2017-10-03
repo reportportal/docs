@@ -1,8 +1,8 @@
 ### Prerequisites 
 
-Find out your project name and name of internal docker network created along with ReportPortal.
+Find out your project name and name of the internal docker network created along with ReportPortal.
 
-The project name is basically a prefix of your containers. For example, if your API container has name
+The project name is basically a prefix of your containers. For example, if your API container is named
 `reportportal_api_1` then your project's name is `reportportal` 
 
 The project name can be found the following way:
