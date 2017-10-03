@@ -2,15 +2,15 @@
 
 ReportPortal can be easily deployed using Docker-Compose. 
 
-1. Make sure [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) installed.
+1. Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
 
-2. Download Latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
+2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
 
   ```Shell
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
-3. Start application using the following command:
+3. Start the application using the following command:
 
 ```Shell
 docker-compose -p reportportal up -d --force-recreate
@@ -26,7 +26,7 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-4. Open in your browser IP address of deployed enviroment at port **8080**
+4. Open your browser with the IP address of the deployed enviroment at port **8080**
 
   ```
   http://IP_ADDRESS:8080
@@ -38,10 +38,10 @@ or
 superadmin\erebus
 ```
 
->Please change admin password for security.
+>Please change the admin password for security.
 
 
-**ReportPortal consists of the following services:**
+**The ReportPortal consists of the following services:**
 
 - Redis. Used for distributed cache.
 - Authorization Service. In charge of access tokens distribution.
