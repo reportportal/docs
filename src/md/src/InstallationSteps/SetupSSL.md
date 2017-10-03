@@ -1,17 +1,17 @@
 ## Setup SSL
-This short guideline provides information about self-signed SSL certificate setup for your existing report portal environment.
+This is a short guideline that provides information about self-signed SSL certificate setup for your existing ReportPortal environment.
 
 #### Pre-requisites:
-- Installed report portal
+- Installed ReportPortal
 - Certificate in PEM format
 - Exported private key from PEM certificate
 
 ### Server configuration
 #### docker-compose.yml:
-Provided example is using default docker-compose.yml. If you dont have any custom
-configurations in your docker-compose.yml file, you are free to use example below.<br>
+Provided below is an example of using default docker-compose.yml. If you dont have any custom
+configurations in your docker-compose.yml file, you are free to use the example below.<br>
 
-<b>NB!</b> Certificate used with name "cert.pem" and key "mykey.pem", so you need to rename the certificate files if they are using different names or to add correct name in
+<b>NB!</b> Verify the certificates used are named "cert.pem" and key "mykey.pem",  if they are not then you need to rename the certificate files so that they match the above certificate names.
 "FABIO_PROXY_CS" property.
 
 ```$xslt
@@ -98,8 +98,8 @@ configurations in your docker-compose.yml file, you are free to use example belo
        restart: always
    ```
 
-#### Adding certificates to server
-Open up report portal directory (place, where is the "data" folder presents). Create directory
+#### Adding certificates to the server
+Open up the ReportPortal directory (place, where is the "data" folder presents). Create the directory
 "certs". Add cert "cert.pem" and key "mykey.pem" to this directory.
 
 #### Recreate containers
@@ -112,18 +112,18 @@ To verify result open up report-portal via https connection.
 
 ### Project configuration
 #### Adding certificate to project
-Before adding certificate to project, you need to convert it from "PEM" format to "DER"*.
+Before adding certificates to the project, you need to convert it from "PEM" format to "DER"*.
 Find any online converter or use line below to do it:
 ```$xslt
 openssl x509 -outform der -in cert.pem -out cert.der
 ```
-After conversion is completed, you need to add converted certificate to jks container.
-To do it open up bin folder in your JAVA JDK directory and run:
+After the conversion is completed, you need to add the converted certificate to the jks container.
+To do it, open up the bin folder in your JAVA JDK directory and run:
 ```$xslt
 keytool -import -alias your-alias -keystore certstore.jks -file cert.der
 ```
 NB! Remember your password, after adding it to container.<br>
-Add certstore.jks file to resources folder in classpath of your project.
+Add the certstore.jks file to resources folder in the classpath of your project.
 
 #### reportportal.properties
 Open up reportportal.properties file in your project.
