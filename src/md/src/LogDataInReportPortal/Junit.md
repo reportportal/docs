@@ -4,14 +4,14 @@
 
 Download package [here](<https://bintray.com/epam/reportportal/agent-java-junit>)
 
-Report Portal (hereinafter: RP) provides two client modules for valid tracking
+ReportPortal (hereinafter: RP) provides two client modules for valid tracking
 of [JUnit](<http://junit.org/>) script events:
 
--   Report Portal listener
+-   ReportPortal listener
 
--   Report Portal custom runner
+-   ReportPortal custom runner
 
-The Listener provides information for RP in appropriate form and updates launch
+The Listener provides information for RP in an appropriate form and updates the launch
 structure in accordance with developed template.
 
 The Runner was created for *\@BeforeClass*, *\@Before*, *\@After* and
@@ -19,7 +19,7 @@ The Runner was created for *\@BeforeClass*, *\@Before*, *\@After* and
 top-level events for native [JUnit](<http://junit.org/>) runners\\listeners.
 
 
-#### Report Portal Listener
+#### ReportPortal Listener
 
 The Listener could be included in the project via following scripts running
 method.
@@ -59,7 +59,7 @@ configuration in pom.xml.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#### Report Portal Runner
+#### ReportPortal Runner
 
 The RP runner could be used via following ways:
 
@@ -107,7 +107,7 @@ public class MySuite extends Suite {
  }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
->   If you use custom runner, please extend CustomJUnitRunner class instead of
+>   If you use a custom runner, please extend CustomJUnitRunner class instead of
 >   native BlockJUnit4ClassRunner JUnit4 class!
 
->   Also make sure that running order keep in safe after yours extensions.
+>   Also make sure that the running order keep in safe after yours extensions.
