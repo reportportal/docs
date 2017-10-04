@@ -39,10 +39,10 @@ as other custom reporters
 
 There are two versions: **ScenarioReporter** and **StepReporter**;
 
-the difference is in granularity level, ScenarioReporter being probably the
+the difference is in the granularity level, ScenarioReporter is the most
 recommended option. 
 
 
-TestItem – report portal specified object for representing: suite, test, method
-objects in different test systems. Used as tree structure and can be recursively
-placed inside himself.
+TestItem – A ReportPortal specified object for representing: suite, test, method
+objects in different test systems. Used as a tree structure that can be recursively
+placed inside itself.
