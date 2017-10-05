@@ -51,11 +51,11 @@ All Projects page allows:
 
 ### Create projects
 
-How to create a project please refer [Creation of project and adding users](#documentation/Getting Started/Creation of Project and Adding Users)
+How to create a project please refer [Creation of project and adding users](/docs/Getting Started/Creation of Project and Adding Users)
 
 ### Modify project settings
 
-How to modify project settings please refer [Project Configuration](#documentation/Getting Started/Project Configuration)
+How to modify project settings please refer [Project Configuration](/docs/Getting Started/Project Configuration)
 
 ### Add user on All Projects' "Members" page
 

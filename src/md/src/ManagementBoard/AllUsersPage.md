@@ -19,7 +19,7 @@ Report Portal provides 2 ways to create a new user account in the Management Boa
 
 - on the "All Users" page
 - on All Projects' "Members" page. This point is described on
-[Creation of Project and Adding Users](#documentation/Getting Started/Creation of Project and Adding Users)
+[Creation of Project and Adding Users](/docs/Getting Started/Creation of Project and Adding Users)
 
 
 #### Add user on "All Users" page

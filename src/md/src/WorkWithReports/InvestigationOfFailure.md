@@ -80,7 +80,7 @@ Report Portal allows to connect JIRA or RALLY systems and post bug to them.
 
 Before post a bug, make sure that the bug tracking systems is connected to the
 project on the project settings page. To check it, plese go to [Integration with Bug Tracking
-System](#documentation/Getting started/Integration with Bug Tracking Systems).
+System](/docs/Getting started/Integration with Bug Tracking Systems).
 
 In case bug tracking system is not connected, "Post bug" button will be disabled.
 
