@@ -31,7 +31,7 @@ Add to POM.xml
 
 Located in the main [RP repository](<https://github.com/reportportal/agent-java-jbehave>).
 
-Configuration details [can be found here](http://reportportal.io/#documentation/JVM-based-clients-configuration).
+Configuration details [can be found here](http://reportportal.io//docs/JVM-based-clients-configuration).
 
 To integrate ReportPortal with your JBehave project proceed with following steps:
 1. Add ReportPortal's story reporter

@@ -101,7 +101,7 @@ Users with a MEMBER or CUSTOMER project role will not have the capability to edi
 
 The "Bug Tracking System" tab can allow the project to connect to a bug tracking system such as JIRA or RALLY. 
 
-For more information on this topic, please refer to [Integration with bug tracking systems](#documentation/Integration-with-bug).
+For more information on this topic, please refer to [Integration with bug tracking systems](/docs/Integration-with-bug).
 
 **CREATE CUSTOM DEFECT TYPES**
 
@@ -144,7 +144,7 @@ To create custom defect types, perform the following steps:
 Add more custom defects, if you need. The system allows to add up to ten subtypes of each default defect type.
 
 Now you can investigate found defects as default Product Bug/Automation Bug/System Issue/No Defect or custom defects. All of them will be available to select on Defect Type editor.
-For more information refer to the [Investigation of failure](#documentation/Work-with-reports>Investigation-of-failure) topic. 
+For more information refer to the [Investigation of failure](/docs/Work-with-reports>Investigation-of-failure) topic.
 
 Note: Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
 
