@@ -20,9 +20,9 @@
     >      testCompile group: 'com.epam.reportportal', name: 'agent-scala-scalatest_2.11', version: '2.6.0'
     >
 
-2) add your reportportal.properties file to test/resources (See Configuration section)
+2) Add your reportportal.properties file to test/resources (See Configuration section)
 
-3) set reporter in your build tool:
+3) Set reporter in your build tool:
    * _maven_ (Configuration options / Reporters): 
   
     http://www.scalatest.org/user_guide/using_the_scalatest_maven_plugin
@@ -57,7 +57,7 @@
 
 #### Starting Logging
 
-To start logging with Report Portal, add a specific listener to your automation
+To start logging with ReportPortal, add a specific listener to your automation
 framework, called an agent.
 
 An agent consists of 2 parts:
