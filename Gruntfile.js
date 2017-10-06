@@ -35,6 +35,14 @@ module.exports = function (grunt) {
                     dest: 'build/'
                 }]
             },
+            resources: {
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    src: ['resources/**'],
+                    dest: 'build/'
+                }]
+            },
             md: {
                 files: [{
                     expand: true,
@@ -115,6 +123,7 @@ module.exports = function (grunt) {
             'copy:md',
             'assemble',
             'copy:images',
+            'copy:resources',
             'watch'
         ]
     );
@@ -126,6 +135,7 @@ module.exports = function (grunt) {
             'string-replace',
             'assemble',
             'copy:images',
+            'copy:resources'
         ]
     );
 };
