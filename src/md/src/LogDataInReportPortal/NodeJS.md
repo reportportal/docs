@@ -31,9 +31,9 @@ Create reportportal.json in the working directory or specify desired config file
 
 The following properties are supported:
 
--   username - Report Portal username (string, required)
--   password - Report Portal password (string, required)
--   endpoint - Report Portal API endpoint (string, required)
+-   username - ReportPortal username (string, required)
+-   password - ReportPortal password (string, required)
+-   endpoint - ReportPortal API endpoint (string, required)
 -   launch - launch name (string, required)
 -   project - project name (string, required)
 -   mode - launch mode ("DEFAULT" or "DEBUG", optional, defaults to "DEFAULT")
@@ -46,10 +46,10 @@ Each of these settings can be overridden by an environment variable with the sam
 
 1. Certificate verification is disabled in HTTPS agent because I do not have enough time left to figure how to supply the whole certificate chain to the client. If you know how of are willing to investigate, please do fix this security hole.
 
-2. As of the date of writing this, the latest version of node-rest-client, 1.4.3, (one of this module's dependencies) is unable to send binary data in HTTP requests which is required to upload attachments such as screenshots. The workaround is provided in [this pull request](https://github.com/aacerox/node-rest-client/pull/58); until it is merged, attachments will appear corrupted in Report Portal.
+2. As of the date of writing this, the latest version of node-rest-client, 1.4.3, (one of this module's dependencies) is unable to send binary data in HTTP requests which is required to upload attachments such as screenshots. The workaround is provided in [this pull request](https://github.com/aacerox/node-rest-client/pull/58); until it is merged, attachments will appear corrupted in ReportPortal.
 
-To use Report Portal client while this pull request is not merged, the following workaround can be taken:
+To use ReportPortal client while this pull request is not merged, the following workaround can be taken:
 
 - install patched REST client using *npm install git+* [https://github.com/nebehr/node-rest-client.git#write-buffers](https://github.com/nebehr/node-rest-client.git#write-buffers)
-- now install Report Portal client as described above. Since REST client is already installed, the patch will not be overwritten.
+- now install ReportPortal client as described above. Since REST client is already installed, the patch will not be overwritten.
 
