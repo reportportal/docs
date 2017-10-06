@@ -2,13 +2,13 @@
 
 ### JVM-based loggers
 Logging is allowed only during test (step, test, suite, etc) execution.
-Consider the following scheme. Before start and end of the test, logging context is available (marked as green):
+Consider the following scheme. Before the start and end of the test, logging context is available (marked in green):
 
 ![Image](Images/logging/logging_diagram.png) 
 
 #### Log message format
 Loggers can be used the same way as it's described in some particular logger (logback, log4j) documentation.
-ReportPortal allows to attach binary data to the log entry. In this case consider the following message format:
+ReportPortal allows the attachment of binary data to the log entry. In this case consider the following message format:
 
 ```
 RP_MESSAGE#FILE#FILENAME#MESSAGE_TEST
@@ -27,9 +27,9 @@ RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
 
 >   MESSAGE\_TEST - string log message
 
-There is client parameter in reportportal.properties with boolean type value
+There is a client parameter in reportportal.properties with boolean type values
 for screenshots sending in "black-white" or "color" view. By default it is set
-as "true" and all pictures for Report Portal will be in "black-while" format.
+as "true" and all pictures for ReportPortal will be in a "black-while" format.
 
 #### Multipart Logging Request Example
 
@@ -85,11 +85,11 @@ Possible values:
 
 -   **true** - all images will be converted into 'black-white'
 
--   **false** - all images will be as 'color'
+-   **false** - all images will be in 'color'
 
 
 #### Explicit logging
-You can call ReportPortal logger explicitly. Consider the following example:
+You can call the ReportPortal logger explicitly. To do this consider the following example:
 ```java
 File file = new File("my path to file");
 ReportPortal.emitLog("My message", "INFO", Calendar.getInstance().getTime(), file);
@@ -99,9 +99,9 @@ ReportPortal.emitLog("My message", "INFO", Calendar.getInstance().getTime(), fil
 
 ##### Configuration
 
-Log4j provides configuration opportunity via XML or properties files.
+Log4j provides a configuration opportunity via XML or properties files.
 
-Just add Report Portal appender into log4j.xml configuration file.
+Just add ReportPortal appender into log4j.xml configuration file.
 
 ```xml
 <appender name="ReportPortalAppender" class="com.epam.ta.reportportal.log4j.appender.ReportPortalAppender">
@@ -149,12 +149,12 @@ public String screenshot_file_path = "demoScreenshoot.png";
 /*
  * Message for attached screenshot
  */
-public String rp_message = "test message for Report Portal";
+public String rp_message = "test message for ReportPortal";
 ReportPortalMessage message = new ReportPortalMessage(new File(screenshot_file_path), rp_message);
 logger.info(message);
 ```
 
-- sending File object as log4j log message. In this case log4j Report Portal
+- sending File object as log4j log message. In this case log4j ReportPortal
     appender sends log message which will contain sending file and string message "*Binary data reported*".
 
 - adding to log message additional text information which specify attaching
@@ -256,7 +256,7 @@ public String screenshot_file_path = "demoScreenshoot.png";
 /*
  * Message for attached screenshot
  */
-public String rp_message = "test message for Report Portal";
+public String rp_message = "test message for ReportPortal";
 ReportPortalMessage message = new ReportPortalMessage(new File(screenshot_file_path), rp_message);
 logger.info(message);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
