@@ -42,4 +42,4 @@ docker run --network ${RP_NET} --rm -v ${PWD}/ dump2:/db_dump mongo  mongodump -
 docker run --network ${RP_NET} --rm -v ${PWD}/ dump2:/db_dump mongo  mongorestore -h mongodb -db reportportal /db_dump/reportportal
 ```
 
-You can download [PDF file](resources/CheatSheet.png) with commands.
+You can download [PDF file](resources/CheatSheet.pdf) with commands.
