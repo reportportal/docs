@@ -76,7 +76,7 @@ To add a user to a project on the project Users page, perform the following step
 [ ![Image](Images/userGuide/manageUsers/addUserFromProjectMembersPage.png) ](https://youtu.be/nkJmxlMfR1Q)
 
 
-#### Invite user on All Projects' "Members" page
+### Invite user on All Projects' "Members" page
 
 To invite a user on All Projects Members page, perform the following steps:
 

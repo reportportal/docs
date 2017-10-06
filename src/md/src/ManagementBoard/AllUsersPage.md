@@ -22,7 +22,7 @@ Report Portal provides 2 ways to create a new user account in the Management Boa
 [Creation of Project and Adding Users](/docs/Getting Started/Creation of Project and Adding Users)
 
 
-#### Add user on "All Users" page
+### Add user on "All Users" page
 
 To add a user on the "All Users" page, perform the following steps:
 
@@ -73,7 +73,7 @@ and to "Personal Project" with the PROJECT MANAGER project role.
 [ ![Image](Images/userGuide/manageUsers/inviteUserFromAllUsers.png) ](https://youtu.be/MM0eNrDK5yo)
 
 
-#### Assign user on "All Users" page in Management Board
+### Assign user on "All Users" page in Management Board
 
 To assign/unassign user on the "All Users" page, perform the following
 steps:
@@ -93,7 +93,7 @@ steps:
 7. Click the "Assign" button. The user will be assigned to the project.
 
 
-#### Unassign user on "All Users" page in Management Board
+### Unassign user on "All Users" page in Management Board
 
 To unassign a user from the project, perform the following steps:
 
@@ -109,7 +109,7 @@ To unassign a user from the project, perform the following steps:
 [ ![Image](Images/userGuide/manageUsers/assignUnassignUserFromAllUsers.png) ](https://youtu.be/DGssKgYmbds)
 
 
-#### Edit user project role on "All Users" page in Management Board
+### Edit user project role on "All Users" page in Management Board
 
 To edit a user project role on the "All Users" page, perform the following
 steps:
