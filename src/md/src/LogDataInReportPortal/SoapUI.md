@@ -2,32 +2,32 @@
 
 #### Installation
 
-You can download SoapUI agent from
+You can download the SoapUI agent from
 [here](<https://github.com/reportportal/agent-java-soapui>).
 
 **Option 1: Desktop SoapUI**
 
-SoapUI agent is provided as zip archive. Unpack this archive into SoapUI root folder, and **override** conflicted files.
-And remove the below jars from */lib* directory because old versions:
+The SoapUI agent is provided as zip archive. To unpack this archive into the SoapUI root folder, and **override** conflicted files.
+To remove the below jars from */lib* directory because old versions:
 
 -   log4j
 -   guava
     ... and any other found in /lib folder
 
-To verify that agent is successfully installed start SoapUI and see logs:
+To verify that agent is successfully installed start SoapUI and see the logs:
 
 [ ![Image](Images/pic_234.jpg) ](Images/pic_234.jpg)
 
-Now agent is plugged to SoapUI.
+Now that the agent is plugged into the SoapUI.
 
 **HTTPS**
 
-For access to servers working via HTTPS protocol - JKS keystore, provided by RP, is required.
-Keystore for access to RP is available [here](#user-profile). Please place it under ${SOAPUI-HOME}/bin
+For access to the servers working via HTTPS protocol - The JKS keystore, provided by RP, is required.
+The Keystore to access the RP is available [here](#user-profile). Please place it under the ${SOAPUI-HOME}/bin
 
-**Option 2: via Maven Plugin in external automation**
+**Option 2: Via the Maven Plugin in the external automation**
 
-Add following repository to your pom.xml.
+Add the following repository to your pom.xml.
 
 ```xml
      <repository>
@@ -40,7 +40,7 @@ Add following repository to your pom.xml.
      </repository>
 ```
 
-And dependency (please check latest available version under specified artifactory and use it instead provided):
+Then add the dependency XML (please check latest available version under specified artifactory and use it instead provided):
 
 ```xml
 <dependency>
@@ -50,7 +50,7 @@ And dependency (please check latest available version under specified artifactor
 </dependency>
 ```
 
-Exclude conflicted dependencies from soapui-maven-plugin.
+To exclude conflicted dependencies from soapui-maven-plugin.
 
 ```xml
 <groupId>eviware</groupId>
@@ -80,7 +80,7 @@ Exclude conflicted dependencies from soapui-maven-plugin.
 </exclusions>
 ```
 
-Add the property to the plugin section.
+Add the property XML to the plugin section.
 
 ```xml
 <property>
@@ -89,7 +89,7 @@ Add the property to the plugin section.
 </property>
 ```
 
-Put your soapui-log4j.xml in project directory (or made it available under classpath).
+Now put your soapui-log4j.xml in project directory (or made it available under classpath).
 
 
 #### Configuration
@@ -110,11 +110,11 @@ ReportPortal listeners described under ${SOAPUI-HOME}/bin/listeners/reportportal
 
 ### Desktop SoapUI
 
-For configuring SoapUI agent user has to set the follows properties into project custom properties or set them via system variables. For example:
+In order to configure the SoapUI agent the user has to set the follows properties into the project custom properties or set them via system variables. For example:
 
 [ ![Image](Images/soapui-properties.png) ](Images/soapui-properties.png)
 
-And in text format:
+Add in the following text format:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ java
 rp.username = andrei_ramanchuk
@@ -134,7 +134,7 @@ rp.keystore.password = keystore_password
 
 #### Logging
 
-If you need to change logging you may override soapui-log4j.xml. Use "REPORTPORTAL" appender if you want to track messages to Report Portal.
+If you need to make changes to logging you may override soapui-log4j.xml. Use "REPORTPORTAL" appender if you want to track messages to ReportPortal.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
