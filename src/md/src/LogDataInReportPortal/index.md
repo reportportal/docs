@@ -1,1 +1,1 @@
-# Log data in Report Portal
+# Log Data in ReportPortal
