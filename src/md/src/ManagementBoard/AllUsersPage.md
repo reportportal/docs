@@ -9,13 +9,13 @@ The page provides next information
  * Delete button: only Admin is able to delete user from the system
 
 All Users page allows: 
- - to add and invite a new Report Portal users.
+ - to add and invite new ReportPortal users.
  - to assign users to the projects with any project role.
  - to unnassign users from projects.
  - to update project role
- - to delete users from Report Portal.
+ - to delete users from ReportPortal.
 
-Report Portal provides 2 ways to create a new user account in the Management Board:
+ReportPortal provides 2 ways to create a new user account in the Management Board:
 
 - on the "All Users" page
 - on All Projects' "Members" page. This point is described on
@@ -26,7 +26,7 @@ Report Portal provides 2 ways to create a new user account in the Management Boa
 
 To add a user on the "All Users" page, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All users" page.
 
@@ -43,14 +43,14 @@ To add a user on the "All Users" page, perform the following steps:
 >**Note:**  
 This is the only place in the system where an Administrator can be created
 from. "Project role" is disabled, if Administrator has been selected in the
-"Account role" field. The "Project Role" parameter is not specified for
+"Account role" field. The "ProjectRole" parameter is not specified for
 Administrator, the Administrator has full privileges on the project.
 
 ### Invite user on "All Users" page
 
 To invite a user on the "All Users" page, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All users" page.
 
@@ -129,9 +129,9 @@ steps:
 
 ### Delete user
 
-To delete a user from Report Portal, perform the following steps:
+To delete a user from ReportPortal, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All Users" page.
 
@@ -139,21 +139,21 @@ To delete a user from Report Portal, perform the following steps:
 
 4. The warning message will be displayed.
 
-5. Click "Delete" button. The user will be deleted from Report Portal. All launches and shared data (filters, 
-dashboards and widgets), that the user owns on the projects will be kept in Report Portal.
+5. Click the "Delete" button. The user will be deleted from the ReportPortal. All launches and shared data (filters, 
+dashboards and widgets), that the user owns on the projects will be kept in ReportPortal.
 
 [ ![Image](Images/userGuide/manageUsers/deleteUser.png) ](https://youtu.be/8kaqZPyW5KQ)
 
 
 ### Edit user account role
 
-The only space in Report Portal where user can get the Administrator rights is All Users page
+The only space in ReportPortal where user can get the Administrator rights is All Users page
 
 **GRANT ADMINISTRATOR**
 
 To grant Administrator role for any user, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into the ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All Users" page.
 
@@ -172,7 +172,7 @@ To grant Administrator role for any user, perform the following steps:
 
 To take away Administrator account role, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All Users" page.
 
