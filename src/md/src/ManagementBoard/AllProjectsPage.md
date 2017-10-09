@@ -1,13 +1,13 @@
 ## All Projects page
 
-Users with the Administrator role have access to the Report Portal
+Users with the Administrator role have access to the ReportPortal
 administration, called Management Board.
 
 In Management Board you can:
 
 - Manage projects: create a project, delete a project, update project settings.
 
-- Manage users: create a user, invite a user to Report Portal, delete a user,
+- Manage users: create a user, invite a user to ReportPortal, delete a user,
 update a user project role, assign a user to projects/Unassign a user from
 projects.
 
@@ -51,17 +51,17 @@ All Projects page allows:
 
 ### Create projects
 
-How to create a project please refer [Creation of project and adding users](/docs/Getting Started/Creation of Project and Adding Users)
+To create a project, please refer to [Creation of project and adding users](/docs/Getting Started/Creation of Project and Adding Users)
 
 ### Modify project settings
 
-How to modify project settings please refer [Project Configuration](/docs/Getting Started/Project Configuration)
+To modify project settings please refer to [Project Configuration](/docs/Getting Started/Project Configuration)
 
 ### Add user on All Projects' "Members" page
 
 To add a user to a project on the project Users page, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into the ReportPortal instance as an Administrator.
 
 2. Navigate to the Management Board -\> "Projects" page.
 
@@ -70,7 +70,7 @@ To add a user to a project on the project Users page, perform the following step
 4. Navigate to the "Add" tab. "Add new member to the project" form will
     appear.
 
-5. Fill in the form and click "Add" button. A new user will be added
+5. Fill in the form and click the "Add" button. A new user will be added
     to the system and assigned to the current project, and to "Personal Project" with the PROJECT MANAGER project role. Message with authorization data will be sent to the user's email.
 
 [ ![Image](Images/userGuide/manageUsers/addUserFromProjectMembersPage.png) ](https://youtu.be/nkJmxlMfR1Q)
@@ -80,7 +80,7 @@ To add a user to a project on the project Users page, perform the following step
 
 To invite a user on All Projects Members page, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into the ReportPortal instance as an Administrator.
 
 2. Navigate to the Management Board -\> "Projects" page
 
@@ -88,40 +88,40 @@ To invite a user on All Projects Members page, perform the following steps:
 
 4. Click "Invite" tab. 
 
-5. "Invite new member to the project" form will appear.
+5. The "Invite new member to the project" form will appear.
 
-6. Enter email address of user in case he/she is not present in Report Portal data base
+6. Enter the email address of the user in case he/she is not present in ReportPortal database
  or enter his/her login name.
  
-7. In case user is already available in Report Portal, his/her name will appear in the suggestion list.
-If not, Admin should enter correct email address.
+7. In case the user is already available in ReportPortal, his/her name will appear in the suggestion list.
+If not, the Admin should enter correct email address.
 
 8. Select an appropriate role.
 
 9. Click 'Invite'.
 
-10. In case user user is already available in Report Portal s/he will be assigned to the project
-If not, the letter with invitation link will be sent to user email address.
+10. In the case the user is already available in ReportPortal s/he will be assigned to the project
+If not, the letter with the invitation link will be sent to user email address.
 
-11. The user will receive an email with the link to the registration. 
+11. The user will receive an email with the link to the registration page. 
 When the user clicks the link, he/she will see a registration form.
 
 11. The user needs to fill in the registration form and click the "Register"
 button to complete the registration. 
 
-12. The user will be assigned to the project that invitation was sent from, and to "Personal Project" with the PROJECT
+12. The user will be assigned to the project that the invitation was sent from, and to "Personal Project" with the PROJECT
  MANAGER project role. 
  
 [ ![Image](Images/userGuide/manageUsers/inviteUserFromMembersPageInMB.png) ](https://youtu.be/wK0PB-iVEjk)
 
 >**Note:**
-Link for registration will be active until the user registers in the system by this reference,
-but not more than 24 hours.
+The link for registration will be active until the user registers in the system for up to,
+but not exceeding 24 hours.
 
 
 ### Detailed project info
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All Projects" page.
 
@@ -136,7 +136,7 @@ but not more than 24 hours.
 
 To delete a project, perform the following steps:
 
-1. Login into Report Portal instance as Administrator.
+1. Login into ReportPortal instance as Administrator.
 
 2. Navigate to the Management Board -\> "All Projects" page.
 
@@ -144,7 +144,7 @@ To delete a project, perform the following steps:
 
 4. Click "Delete" icon. A warning pop-up message will appear:
 
-5. Click "Delete". The project will be deleted from Report Portal.
+5. Click "Delete". The project will be deleted from ReportPortal.
 
 [ ![Image](Images/userGuide/managingProjects/deleteProject.png) ](https://youtu.be/bipey3GxCiw)
 
