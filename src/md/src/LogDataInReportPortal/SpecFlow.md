@@ -8,7 +8,7 @@ files. Missed dependencies will be installed automatically.
 >   Read [here](<http://docs.nuget.org/consume/package-manager-dialog>) how to
 >   manage NuGet packages.
 
-After installing NuGet package your App.config will be modified. Report Portal
+After installing the NuGet package your App.config file will be modified. The ReportPortal
 plugin and step assembly will be registered in the specFlow section.
 
 ```xml
@@ -27,14 +27,14 @@ plugin and step assembly will be registered in the specFlow section.
 
 #### Configuration
 
-You can configure Report Portal plugin. All settings are stored in
+You can configure the ReportPortal plugin. All settings are stored in
 *EPAM.ReportPortal.Addins.SpecFlowPlugin.dll.config* file. This file is added
 into VS project with NuGet package installation.
 
 | **Property**              | **Description**                                                                                                        |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-| enabled                   |Enable/Disable reporting to Report Portal server                                                                        |
-| server - url              |The base URI to Report Portal REST web service                                                                          |
+| enabled                   |Enable/Disable reporting to ReportPortal server                                                                        |
+| server - url              |The base URI to ReportPortal REST web service                                                                          |
 | server - project          |Name of project                                                                                                         |
 | authentication - username |Name of user                                                                                                            |
 | authentication - password |Password of user. UID can be used instead of opened password. You can find it on user's profile page                    |
