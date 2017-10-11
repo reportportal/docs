@@ -1,6 +1,6 @@
 ## Create filters
 
-Filters in Report Portal are saved searches of launches. 
+Filters for the ReportPortal are saved searches of the launches. 
 
 Filters could be used as an independent object and for creating widgets as well.
 
@@ -29,5 +29,5 @@ Your new filter will be saved and shown on the "Filters" page.
 
 [ ![Image](Images/userGuide/filteringLaunches/createFilter.png) ](https://youtu.be/bZLtPv0t3bo)
 
->**Note:** Report Portal allows saving a filter on the "Launches" mode only. It's
+>**Note:** ReportPortal allows saving a filter on the "Launches" mode only. It's
 impossible to save filters on the "Debug" tab.
