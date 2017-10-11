@@ -2,9 +2,9 @@
 
 **OPERATIONS WITH FILTERS**
 
-After the filter is saved, there are some options to manage them
+After the filter is saved, there are some options to manage them.
 
-Permission: User has to be a filter's owner to manipulate with them.
+Permission: A user has to be the filter's owner to manipulate them.
 
 **EDIT FILTER** -
 This option allows edit filter name, description and share/unshare option of filter.
@@ -14,15 +14,15 @@ But you can share a filter for the project and allow other team members to use i
 
 To share a filter, perform the following steps:
 
-1. Open your filter on tab on the "Launches" page.
+1. Open your filter from the tab on the "Launches" page.
 
-2. Click "Edit" option on the tab menu.
+2. Click the "Edit" option on the tab menu.
 
-3. Edit filter popup window will appear.
+3. The Edit filter popup window will appear.
 
-4. Switch ON shared option and click "Update" button. The filter will be marked as shared.
+4. Switch ON the shared option and click the "Update" button. The filter will be marked as shared.
 
-5. To save the updates, select "Save" option from the filter context menu.
+5. To save the updates, select the "Save" option from the filter context menu.
 
 Your filter will be shared for the all team members.
 
@@ -30,25 +30,25 @@ You can share the filter on the "Filters" page as well.
 
 [ ![Image](Images/userGuide/filteringLaunches/shareFilter.png) ](https://youtu.be/8vw-nr6FSwI)
 
->**Note:** Filter related to the widget, becomes shared once the related widget is shared.
+>**Note:** A filter related to the widget, becomes shared once the related widget is shared.
 
 **CLONE** -
-This option allows to create a new tab with the same criteria.
+This option allows you to create a new tab with the same criteria.
 
-To clone the already existed filter, perform the following steps:
+To clone an already existed filter, perform the following steps:
 
 1. Open any filter on the "Launches" page.
 
-2. Click "Cline" option on the tab menu.
+2. Click the "Clone" option on the tab menu.
 
 3. Enter the unique name, description, select sharing option and submit.
 
-4. The content of filte will be the same as in original filter
+4. The content of filter will be the same as in original filter
 
 **DISCARD** -
 This option helps to reset unsaved filter changes.
 
-To discard the not saved changes, perform the following steps:
+To discard unsaved changes, perform the following steps:
 
 1. Open any filter on the "Launches" page.
 
@@ -56,9 +56,9 @@ To discard the not saved changes, perform the following steps:
 
 3. Asterisk mark appears for the filter
 
-4. Click 'Discard' to remove just made changes
+4. Click 'Discard' to remove most recent changes
 
-5. All not saved changes are removed. 
+5. All unsaved changes are removed. 
 
 6. Asterisk mark removed for the filter tab.
 
