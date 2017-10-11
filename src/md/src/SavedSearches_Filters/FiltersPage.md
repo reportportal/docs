@@ -1,12 +1,12 @@
 ## Filters page
 
-You can see the list of your saved searches and shared by other team members on "Filters" page. 
+You can see the list of your saved and shared searches by other team members on the "Filters" page. 
 
 The following information is present on the "Filters" page:
 
 - Filter name and description.
 - Options: criteria of search
-- Owner: user who created the filter
+- Owner: the user who created the filter
 - Shared: (icon)
 - Display on launches: ON/OFF switcher
 - Delete: active for own filters, disabled for not own filters.
@@ -14,7 +14,7 @@ The following information is present on the "Filters" page:
 To open launches based on saved filter, change switcher of 'Display on launches' to ON position and click the link of filter's name
 The filter will be opened as a tab on the "Launches" page.
 
-It is the only place where it is possible to delete the filter from Report Portal.
+It is the only place where it is possible to delete the filter from ReportPortal.
 
 To do this, click the 'delete' icon of your filter and confirm the action.
 The filter will be deleted but not launches in it.
