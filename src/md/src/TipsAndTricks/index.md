@@ -1,15 +1,15 @@
 # Tips and tricks
 
->If you see inconsistencies, typos or want to add something, please, [send us Pull Request into source](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
+>If you see inconsistencies, typos or want to add something, please, [send us Pull Requests to branch it into our source code](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
 
 ### How to avoid local execution reported into project space:
 **Option 1:** 
 
-Use specific tag for launches, which should represent state.
+Use a specific tag for launches, which should represent the state.
 
 Create filters using those tags. Build widgets and dashboards, based on those tags. 
 
-You can put those additional tags via CI command line. 
+You can add those additional tags via the CI command line. 
 
 So, only Jenkins will generate launches with those tags
 
@@ -19,23 +19,23 @@ So, only Jenkins will generate launches with those tags
 
 Put `rp.mode=debug` in all `reportportal.properties` files.
 
-For Jenkins executions, overload this param via command line as `rp.mode=default`
+For Jenkins executions, overload this param via the command line as `rp.mode=default`,
 
-So all local launches will be in debug, all Jenkins – in launches.
+so that all local launches will be in debug, all Jenkins – in launches.
 
 
 
 **Option 3:**
 
-Combine _option #2_ and _opition #3_, via launch name.
+Combine _option #2_ and _opition #3_, in the launch name.
 
 `rp.launch=xxx` saved in all `reportportal.properties` files.
 
-For Jenkins executions, overload this param via command line as `rp.launch=yyy`
+For Jenkins executions, overload this param via the command line as `rp.launch=yyy`
 
-Auto-analysis will use only `yyy` launches for review.
+The auto-analysis will use only `yyy` launches for review.
 
-Use filter, based on `yyy` name for widgets.
+Use filter, based on your `yyy` name for widgets.
 
 
 
@@ -49,14 +49,14 @@ This will turn off reporting for local launches
 
 **Option 5:**
 
-Set all users at project with Role `Operator`. This role can’t report data into RP.
+Set all users on the project with the Role `Operator`. This role can’t report data into RP.
 
-Create internal user for Jenkins executions, set him a lead role. 
+Create an internal user for Jenkins executions, set him/her as a lead role. 
 
-Will make possible to create launches only for Jenkins user
+This will make it possible to create launches only for Jenkins users
 
-And you can combine all those options at the same time.
+Note: It is also possible to combine all those options at the same time.
 
 
 
->If you see inconsistencies, typos or want to add something, please, [send us Pull Request into source](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
+>If you see inconsistencies, typos or want to add something, please, [send us Pull Requests to branch it into our source code](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
