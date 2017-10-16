@@ -1,6 +1,6 @@
 # Tips and tricks
 
->If you see inconsistencies, typos or want to add something, please, [send us Pull Requests to branch it into our source code](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
+>If you see inconsistencies, typos or want to add something, please, [send us your Pull Requests](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
 
 ### How to avoid local execution reported into project space:
 **Option 1:** 
@@ -59,4 +59,4 @@ Note: It is also possible to combine all those options at the same time.
 
 
 
->If you see inconsistencies, typos or want to add something, please, [send us Pull Requests to branch it into our source code](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
+>If you see inconsistencies, typos or want to add something, please, [send us your Pull Requests](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
