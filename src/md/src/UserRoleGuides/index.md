@@ -1,11 +1,11 @@
 # User role guides
-Here are the links to User Guide sections divided by Report Portal User roles.
+Here are the links to User Guide sections divided by ReportPortal User roles.
 
 ### Administrator
 [Installation steps](/docs/Installation-steps-)  
 [Getting started](/docs/Getting-started)  
 [User account](/docs/User-account)  
-[Log data in Report Portal](/docs/Log-data-in)  
+[Log data in ReportPortal](/docs/Log-data-in)  
 [Logging Integration](/docs/Logging-Integration)  
 [Saved searches (Filters)][1]    
 [Dashboards and Widgets](/docs/Dashboards-and-Widgets)  
