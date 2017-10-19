@@ -1,6 +1,6 @@
 ## Filtering launches
 
-The data tables for "Launches" and "Debug" modes can be filtered with
+The data tables for the "Launches" and the "Debug" modes can be filtered with
 a filtering block. Filters may be applied at all test item levels:
 Launch/Suite/Test/Step. The "Launches" mode allows saving a filter
 (a particular combination of filtering criteria) to the "Filters" tab. The
@@ -26,7 +26,7 @@ This filter has next conditions: contains, not contains, equals, not equals.
 values are available:
 
 -   **Tags** - 1 symbol is enough for this search.
-The system searches for the launches with specified tag(s). Several tags may be specified. This filter has next conditions: AND/OR. 
+The system searches for launches with the specified tag(s). Several tags may be specified. This filter has next conditions: AND/OR. 
 You can find items by a tag in just one click. If you click on a required tag under the launch name, the system will display all test items of the current level that have this tag.
 
 -   **Owner** - At least 3 symbols are required for this search. The system searches for the launches owned by specified 
