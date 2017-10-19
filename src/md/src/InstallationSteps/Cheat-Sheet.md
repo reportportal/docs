@@ -27,19 +27,19 @@ docker-compose -p $RP_PRJ logs <name, e.g. api>
 **Delete everything except data:** 
 
 ```javascript
-docker-compose -p $RP_PRJ down —rmi -v --removeorphans
+docker-compose -p $RP_PRJ down —rmi -v --remove-orphans
 ```
 
 **Backing UP:** 
 
 ```
-docker run --network ${RP_NET} --rm -v ${PWD}/ dump2:/db_dump mongo  mongodump -h mongodb --db reportportal --out /db_dump/
+docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongodump -h mongodb --db reportportal --out/db_dump/
 ```
 
 **Restore backup:** 
 
 ```
-docker run --network ${RP_NET} --rm -v ${PWD}/ dump2:/db_dump mongo  mongorestore -h mongodb -db reportportal /db_dump/reportportal
+docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongorestore -h mongodb --db reportportal/db_dump/reportportal
 ```
 
 You can download [PDF file](/documentation/resources/CheatSheet.pdf) with commands.
