@@ -1,7 +1,5 @@
 # Tips and tricks
 
->If you see inconsistencies, typos or want to add something, please, [send us your Pull Requests](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
-
 ### How to avoid local execution reported into project space:
 **Option 1:** 
 
@@ -56,7 +54,3 @@ Create an internal user for Jenkins executions, set him/her as a lead role.
 This will make it possible to create launches only for Jenkins users
 
 Note: It is also possible to combine all those options at the same time.
-
-
-
->If you see inconsistencies, typos or want to add something, please, [send us your Pull Requests](https://github.com/reportportal/documentation/edit/master/src/md/src/TipsAndTricks/index.md)
