@@ -54,3 +54,63 @@ Create an internal user for Jenkins executions, set him/her as a lead role.
 This will make it possible to create launches only for Jenkins users
 
 Note: It is also possible to combine all those options at the same time.
+
+### How to add a test stack trace to a description automatically
+You can make your process of a test analysis more convenient and quick by adding a description for failed tests that will include a last error message from the test log.
+You will not need to open an every single test to see the failure reason. With this new functionality you will see test failures reasons right in a table on All launches (step level), so that you can perform group actions to items.
+
+[ ![TipAndTricksStackTrace.png](Images/userGuide/tipAndTricks/TipAndTricksStackTrace.png) ](Images/userGuide/tipAndTricks/TipAndTricksStackTrace.png)
+
+We have prepared an example how to extend a TestNG agent, and you can find it below:
+
+**An extend agent service:**
+```java
+	public class ParamTaggingTestNgService extends TestNGService {
+
+		public ParamTaggingTestNgService(ListenerParameters parameters, ReportPortalClient reportPortalClient) {
+			super(parameters, reportPortalClient);
+		}
+
+		@Override
+		protected StartTestItemRQ buildStartStepRq(ITestResult testResult) {
+			final StartTestItemRQ rq = super.buildStartStepRq(testResult);
+			if (testResult.getParameters() != null && testResult.getParameters().length != 0) {
+				final Set<String> tags = Optional.fromNullable(rq.getTags()).or(new HashSet<>());
+				for (Object param : testResult.getParameters()) {
+					tags.add(param.toString());
+				}
+				rq.setTags(tags);
+
+			}
+			return rq;
+		}
+
+		@Override
+		protected FinishTestItemRQ buildFinishTestMethodRq(String status, ITestResult testResult) {
+			FinishTestItemRQ finishTestItemRQ = super.buildFinishTestMethodRq(status, testResult);
+			if (testResult.getThrowable() != null) {
+				String description = Strings.nullToEmpty(finishTestItemRQ.getDescription());
+				description = description + Throwables.getStackTraceAsString(testResult.getThrowable());
+				finishTestItemRQ.setDescription(description);
+			}
+			return finishTestItemRQ;
+		}
+	}
+
+```
+
+**An extend listener with your extended service:**
+```java
+	public static class ExtendedListener extends BaseTestNGListener {
+		public ExtendedListener() {
+			super(override(new TestNGAgentModule()).with((Module) binder -> binder.bind(ITestNGService.class)
+					.toProvider(new TestNGProvider() {
+						@Override
+						protected TestNGService createTestNgService(ListenerParameters listenerParameters,
+								ReportPortalClient reportPortalClient) {
+							return new ParamTaggingTestNgService(listenerParameters, reportPortalClient);
+						}
+					})));
+		}
+	}
+```
