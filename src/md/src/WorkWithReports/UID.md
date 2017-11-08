@@ -13,6 +13,7 @@ The UID is generated based on:
 All this information is encoded into MD5. After that a UID becomes a part of the item. It gives an opportunity to define the item uniqueness with no possibility of doubt. 
 ReportPortal plans to use this functionality in a process of building widgets ( f.e.:`Most failed test cases`, `Flack test`), `Rety` and `Rerun`, `Merge` and etc.
 
-You can provide a custom ID for a test item using the annotation as well. 
+Also if you use a Java based test frameworks you can provide a custom ID for a test item using the annotation `UniqueID` as well. Other clients are not supported yet.
+
 >**Note:**
 If you use a custom ID, you need to remember that a custom ID can affect a functionality based on test item uniqueness. 
