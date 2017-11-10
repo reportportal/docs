@@ -2,16 +2,16 @@
 
 ### UniqueID
 
-A UniqueID is used for identifying  a test item's originality. ReportPortal generates an ID automatically for all test items by default. 
-The UID is generated based on:
+A UniqueID is used for identifying a test item's originality. ReportPortal generates an ID automatically for all test items by default. 
+The UniqueID generation is based on:
 
 *	A project name; 
 * A launch name;
 * Names of all parents;
 * All parameters of the item;
 
-All this information is encoded into MD5. After that a UID becomes a part of the item. It gives an opportunity to define the item uniqueness with no possibility of doubt. 
-ReportPortal plans to use this functionality in a process of building widgets ( f.e.:`Most failed test cases`, `Flack test`), `Rety` and `Rerun`, `Merge` and etc.
+All this information become part of a test item in form of MD5 hash. After that a UID becomes a part of the item. It gives an opportunity to define the item uniqueness with no possibility of doubt. 
+ReportPortal uses this functionality in a process of building widgets ( f.e.:`Most failed test cases`, `Flack test`), `Rety` and `Rerun`and etc.
 
 Also if you use a Java based test frameworks you can provide a custom ID for a test item using the annotation `UniqueID` as well. Other clients are not supported yet.
 
