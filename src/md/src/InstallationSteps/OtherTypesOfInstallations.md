@@ -1,8 +1,10 @@
 ## Other Types of Installations
 
+### An instalation the ReportPortal on Ubuntu OS
+
 _(provided by @Tset Noitamotua)_
 
-### An instalation the ReportPortal on the Docker community edition
+Follow below steps if you like to have ReportPortal running on Ubuntu Zesty (17.04) with the latests Docker-CE version 17.05 and Docker-Compose 1.14
 
 ### 1. Enable apt transport over HTTPS
 ```shell
