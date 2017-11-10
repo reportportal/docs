@@ -5,7 +5,7 @@
 A UniqueID is used for identifying a test item's originality. ReportPortal generates an ID automatically for all test items by default. 
 The UniqueID generation is based on:
 
-*	A project name; 
+* A project name; 
 * A launch name;
 * Names of all parents;
 * All parameters of the item;
