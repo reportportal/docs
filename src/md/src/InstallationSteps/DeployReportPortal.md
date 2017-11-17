@@ -43,7 +43,6 @@ superadmin\erebus
 
 **The ReportPortal consists of the following services:**
 
-- Redis. Used for distributed cache.
 - Authorization Service. In charge of access tokens distribution.
 - Gateway Service. Main entry point to application. Port used by gateway should be opened and accessible from outside network.
 - API Service. Main application API.
