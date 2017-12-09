@@ -129,7 +129,7 @@ We have prepared an example how to extend a TestNG agent, and you can find it be
     }
 ```
 
-#### How to activate markdown syntax recognition for log messages
+### How to activate markdown syntax recognition for log messages
 
 If you need to support more complex formatting in your test log, Report Portal has its own integrated support of markdown syntax.
 
