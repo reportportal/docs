@@ -56,8 +56,20 @@ This will make it possible to create launches only for Jenkins users
 Note: It is also possible to combine all those options at the same time.
 
 ### How to add a test stack trace to a description automatically
+
 You can make your process of a test analysis more convenient and quick by adding a description for failed tests that will include a last error message from the test log.
+
 You will not need to open an every single test to see the failure reason. With this new functionality you will see test failures reasons right in a table on All launches (step level), so that you can perform group actions to items.
+
+**How to activate this option:**
+
+Change your listener to wrap log messages on error level with special text:
+
+```
+    ```error
+    <place your error message here>
+    ```
+```
 
 [ ![TipAndTricksStackTrace.png](Images/userGuide/TipAndTricksStackTrace.png) ](Images/userGuide/TipAndTricksStackTrace.png)
 
@@ -103,16 +115,28 @@ We have prepared an example how to extend a TestNG agent, and you can find it be
 
 **An extend listener with your extended service:**
 ```java
-	public static class ExtendedListener extends BaseTestNGListener {
-		public ExtendedListener() {
-			super(override(new TestNGAgentModule()).with((Module) binder -> binder.bind(ITestNGService.class)
-					.toProvider(new TestNGProvider() {
-						@Override
-						protected TestNGService createTestNgService(ListenerParameters listenerParameters,
-								ReportPortalClient reportPortalClient) {
-							return new ParamTaggingTestNgService(listenerParameters, reportPortalClient);
-						}
-					})));
-		}
-	}
+    public static class ExtendedListener extends BaseTestNGListener {
+        public ExtendedListener() {
+            super(override(new TestNGAgentModule()).with((Module) binder -> binder.bind(ITestNGService.class)
+                    .toProvider(new TestNGProvider() {
+                        @Override
+                        protected TestNGService createTestNgService(ListenerParameters listenerParameters,
+                                ReportPortalClient reportPortalClient) {
+                            return new ParamTaggingTestNgService(listenerParameters, reportPortalClient);
+                        }
+                    })));
+        }
+    }
 ```
+
+### How to activate markdown syntax recognition for log messages
+
+If you need to support more complex formatting in your test log, Report Portal has its own integrated support of markdown syntax.
+
+You can activate this option by adding this magic message into your log:
+
+```
+!!!MARKDOWN_MODE!!!
+```
+
+This message removed due to rendering your test log in ui service and all information right after this magic text is going to be rendered as a markdown.
