@@ -33,8 +33,7 @@ Widgets are automatically refreshed every minute.
 
 There are 15 widget templates in ReportPortal as for now:
  
-- Launch statistics line chart   
-- Launch statistics trend chart 
+- Launch statistics chart 
 - Overall statistics panel 
 - Launches duration chart 
 - Launch execution and issue statistic 
@@ -43,21 +42,25 @@ There are 15 widget templates in ReportPortal as for now:
 - Investigated percentage of launches 
 - Launches table 
 - Unique bugs table 
-- Most failure test-cases table
+- Most failed test cases table
 - Failed cases trend chart 
 - Non-Passed test-cases trend chart 
 - Different launches comparison chart
 - Product status widget
+- Flaky test cases table (TOP-20)
 
 The template descriptions are provided below.
 
 
-**LAUNCH STATISTICS LINE CHART**
+**LAUNCH STATISTICS CHART**
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
 - The widget in Launch mode shows the growth trend in the number of test cases with each selected status from run to run,
 - The widget in Timeline mode shows the sum of test cases with each selected status distributed by dates.
+
+Also you can choose different view of this widget:  Area view or Bar view.
+For a deeper investigation you can use Zoom widget area functionality.
 
 **Widget's parameters:**
 
@@ -65,6 +68,16 @@ The widget can be used in two modes - Launch mode and Timeline mode:
 - Items: 1-150. Default meaning is 50.
 - Widget Criteria: All criteria is selected by default.
 - Mode: Launch or Timeline.
+- View: Area/ Bar
+- Widget Criteria: All criteria is selected by default.
+
+>**Note:**
+If you choose **“Total Defect type”**, the system will show the grouped statistics of a chosen standard defect type (the summary of all custom types).  
+If you check a single custom defect types, the system will show just the defect type that you have chosen.
+If you choose “Total Defect type” and custom defect types, the system will show and  a grouped statistics and statistic of each custom defect types.
+
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsChart1.png) ](Images/userGuide/widgetTypes/launchStatisticsChart1.png)
+
 
 **Widget view**
 
@@ -77,8 +90,11 @@ The widget view in Launch mode:
 
 The tooltip on mouse hover over chart area shows launch details: launch name and number, launch start time and launch statistics.
 
-[ ![Image](Images/userGuide/widgetTypes/launchStatisticsLineChart.png) ](Images/userGuide/widgetTypes/launchStatisticsLineChart.png)
+Area view
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsChartArea.png) ](Images/userGuide/widgetTypes/ Images/userGuide/widgetTypes/launchStatisticsChartArea.png)
 
+Bar view
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsChartBar.png) ](Images/userGuide/widgetTypes/ Images/userGuide/widgetTypes/launchStatisticsChartBar.png)
 
 The widget view in Timeline mode:
 
@@ -89,53 +105,14 @@ The tooltip on mouse hover over the chart area shows details: date and total lau
 
 The widget has clickable sections; when you click on a specified section in widget, the system forwards you to launch view for appropriate selection.
 
-[ ![Image](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsLineChartTimeline.png)
+Area view
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsChartArea1.png) ](Images/userGuide/widgetTypes/ Images/userGuide/widgetTypes/launchStatisticsChartArea1.png)
+
+Bar view
+[ ![Image](Images/userGuide/widgetTypes/launchStatisticsChartBar1.png) ](Images/userGuide/widgetTypes/ Images/userGuide/widgetTypes/launchStatisticsChartBar1.png)
 
 >**Note:**
 The widget doesn't contain "IN PROGRESS" launches.
-
-
-**LAUNCH STATISTICS TREND CHART**
-
-The widget can be used in two modes - Launch mode and Timeline mode:
-
-- The widget in Launch mode shows the growth trend in the number of test cases with each selected statuses from run to run,
-- The widget in Timeline mode shows sum of test cases with each selected statuses distributed by dates.
-
-**Widget's parameters:**
-
-- Filter: At least one filter is required
-- Items: 1-150. Default meaning is 50.
-- Widget Criteria: All criteria is selected by default.
-- Mode: Launch or Timeline.Timeline.
-
-**Widget view**
-
-The widget contains agenda with selected statuses; you can click on a status to remove/add it to the chart.
-
-The widget view in Launch mode:
-
-- X-axis shows launches numbers and launches names on hover.
-- Y-axis shows sum of test cases with each selected statuses.
-
-The tooltip on mouse hover over the chart area shows launch details: launch name and number, launch start time and launch statistics. 
-
-[ ![Image](Images/userGuide/widgetTypes/launchStatisticsTrendChart.png) ](Images/userGuide/widgetTypes/launchStatisticsTrendChart.png)
-
-The widget view in Timeline mode:
-
-- X-axis shows dates and weekdays.
-- Y-axis shows sum of launches statistics with each selected statuses, distributed by weekdays.
-
-The tooltip on mouse hover over thr chart area shows details: date and total launches statistics. 
-
-The widget has clickable sections, when you click on a specified section in widget, the system forwards you to the launch view for the appropriate selection.
-
-[ ![Image](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png) ](Images/userGuide/widgetTypes/launchStatisticsTrendChartTimeline.png)
-
->**Note:**
-The widget doesn't contain "IN PROGRESS" launches.
-
 
 **OVERALL STATISTICS PANEL**
 
@@ -378,7 +355,7 @@ The bugs from launches "IN PROGRESS" are not shown on the widget.
 In case a bug is found in multiple items, all of items will be listed in "Found in" column.
 
 
-**MOST FAILURE TEST-CASES TABLE**
+**MOST FAILED TEST-CASES TABLE**
 
 The widget contains a table with statistical information about the TOP-20 most problematic test cases.
 
@@ -394,8 +371,7 @@ The widget contains a table with statistical information about the TOP-20 most p
 
 The widget has a table view with the following data displayed:
 
-- Test Item name
-- Find in last launch - links to the Step level of the last launch
+- Test Item name - link to the Step level of the last launch
 - Failed - count of found failed results
 - Last failure - date and time of last run, when the test item was failed, displayed in 'time ago' format (i.e. "10 minutes ago").
 On mouse hover the system will display accurate start times.
@@ -511,3 +487,28 @@ Widget has a table view. You can name the widget, add a description and share.  
 
 >**Note:**
 Widget doesn't contain IN PROGRESS launches.
+
+**FLAKY TEST CASES TABLE (TOP-20)**
+Shows the TOP-20 the most flaky test cases within the specified previous launches. The widget defines test cases with the most high percentage of switching their status in the execution. So that you can click on the test cases and be redirected to the last test item in execution to check the reasons. 
+
+**Widget's parameters:**
+
+- Launches count: 2-150. Default meaning is 30.
+-Launch name. Is required
+
+**Widget view**
+- Launch name: Is required.
+
+**Widget view**
+
+The widget has a table view with the following data displayed:
+
+- Test Item name - link to the Step level of the last launch
+- Switches - count of found results with often switches;
+- % of Switches - the per cent of the fact switches and the possible;
+- Last switch - date and time of a last run, when the test item switches the status, displayed in 'time ago' format (i.e. "10 minutes ago").
+
+On mouse hover the system will display accurate start times.
+
+[ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
+
