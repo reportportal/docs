@@ -174,15 +174,20 @@ All the related data for the test case (logs, screenshots) will be saved on Log 
 
 Log object has the following levels:
 
->   Error
+>Fatal - includes Fatal logs and custom level logs with log number more than 50 thousands;
 
->   Debug
+>Error - includes Error, Fatal logs and custom level logs with log number more than 40 thousands;
 
->   Warn
+>Warn - includes Warn, Error, Fatal logs and custom level logs with log number more than 30 thousands;
 
->   Info
+>Info - includes Info, Warn, Error, Fatal logs and custom level logs with log number more than 20 thousands;
 
->   Trace
+>Debug- includes Debug, Info, Warn, Error, Fatal logs and custom level logs with log number more than 10 thousands;
+
+>Trace – includesTrace, Debug, Info, Warn, Error, Fatal logs and custom level logs with log number more than 5 thousands;
+
+You can set a necessary log level using a slider. 
+
 
 The table with log messages is painted in different colors depending on the log type:
 
@@ -256,3 +261,24 @@ You can navigate from one log to the other using "Next"/"Previous" buttons on th
 
 
 Navigation takes into account selected by user filter and hidden preconditions methods on Step view.
+
+### Retried test case (retry)
+
+In case you implement a retry logic for your tests in a test framework, the ReportPortal will reflect them as a retry test case. If there were a few invocations of an executions of the one test case, all these invocations will be shown as a one test case.
+
+On a log view you can see all logs and all information about all invocations. But in statistics and auto-analysis the ReportPortal will take in account only the last invocation. So that a launch statistics will be more accurate.
+
+The defect type can be set for the last invocation only.
+
+On a Launch view you can see a label, that means that a launch includes retries.
+
+[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png)
+
+On a step view you can see the number of invocations and stake trace of each invocation.
+
+[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png)
+
+On a log view you can see the number of invocations and logs, attachments of each invocation.
+
+[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryLogLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryLogLevel.png)
+
