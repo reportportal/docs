@@ -3,11 +3,12 @@
 The analysis feature of the ReportPortal makes it possible for the application to check and pass part of the routine duties by itself.
 
 Auto-analysis take a part of your routine work and defines the reason of the test item failure and sets:
+
 * a defect type;
 * a link to BTS _(in case if it exists)_;
 * comment _(in case if it exists)_;
 
-The process f Auto-Analysis is based on previous user-investigated users' results  using the Machine Learning.  
+The process of Auto-Analysis is based on previous user-investigated users' results  using the Machine Learning.  
 
 An auto-analyzer is presented by combination of two services: ElasticSearch and Analyzer service. 
 
@@ -35,7 +36,7 @@ All test items with defect type *(except defect type “To investigate”)* whic
 The following info is sent:
 
 * An item ID;
-* A log with a log level Error (log >= 40 000);
+* A log higher than a log level Error (log >= 40 000);
 * Issue type;
 * Flag: “Analyzed by” (where shown by whom the test item has been analyzed by a user or by ReportPortal);
 * A launch name;
@@ -50,7 +51,7 @@ Test items of a launch in Debug mode are not included in Auto-Analysis. If you d
 
 An analysis can be started after a launch has been finished. All items with defect type “To investigate” with logs (>= 40 000) are picked  and checked.  Each log is checked in an ElasticSearch for an availability of coincidences ( the percentage of the coincidence is more than 90%) in already existing base. 
 
-All coincidences are returned and sorted in the order with following priorities (Boast):
+All coincidences are returned and sorted in the order with following priorities (Boost):
 
 •	The same Launch name;
 
@@ -58,9 +59,9 @@ All coincidences are returned and sorted in the order with following priorities 
 
 •	Manual analysis;
 
-Those priorities are influence on an object Score in ElasticSearch ( where Score is an estimated value of the coincidence degree).  The system finds the object with the highest score and set the appropriate defect type for analyzing test item.
+Those priorities are influence on an object Score in ElasticSearch ( where Score is an estimated value of the coincidence degree).  The system finds the object with the highest score and set the appropriate defect type fo the  analyzing test item.
 
-The most suitable linked bug and comment are defined and linked to the analyzing test item from the ReportPortal Data base.
+And it links an issue in the BTS and a comment of the most suitable test item to the analyzing test item from the ReportPortal Data base.
 
 **HOW YOU CAN START AN AUTO-ANALYSIS"
 
@@ -111,11 +112,11 @@ When you choose “Ignore in AA”, logs of the chosen item are removed from the
 
 ### Custom Analyzer
 
-If you do not want to use our ReportPortal auto-analyzer, you can implement and configure customer analyzer. The example of analyzer is under the [link]( https://github.com/pbortnik/example-custom-analyzer) 
+If you do not want to use our ReportPortal auto-analyzer, you can implement and configure custom analyzer. The example of analyzer is under the [link]( https://github.com/pbortnik/example-custom-analyzer) 
 
 ## Copy results from a previous run
 
-If you do not want to use Auto-Analyzer we provide you a possibility to get a results from previous runs.  So that you can set for a test item: Defect type, linked bug and comment from previous run at once. For that you can hit a button "Copy defect from #" in the last test item and copy a defect from a the last but one test item with defect type.
+In case you do not want to use Auto-Analyzer we provide you a possibility to get a results from previous runs.  So that you can set for a test item: Defect type, linked bug and comment from previous run at once. For that you can hit a button "Copy defect from #" in the last test item and copy a defect from a the last but one test item with defect type.
 
 [ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png)](Images/userGuide/analyzeLaunches/CopyResults.png)
 
