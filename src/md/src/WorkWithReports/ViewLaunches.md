@@ -264,7 +264,7 @@ Navigation takes into account selected by user filter and hidden preconditions m
 
 ### Retried test case (retry)
 
-In case you implement a retry logic for your tests in a test framework, the ReportPortal will reflect them as a retry test case. If there were a few invocations of an executions of the one test case, all these invocations will be shown as a one test case.
+In case you implement a retry logic for your tests in a test framework, the ReportPortal will reflect them as a retry test case. If there were a few invocations of the one test case, all these invocations will be shown as the one test case in the ReportPortal.
 
 On a log view you can see all logs and all information about all invocations. But in statistics and auto-analysis the ReportPortal will take in account only the last invocation. So that a launch statistics will be more accurate.
 
@@ -274,7 +274,7 @@ On a Launch view you can see a label, that means that a launch includes retries.
 
 [![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png)
 
-On a step view you can see the number of invocations and stake trace of each invocation.
+On a step view you can see the number of invocations and stack trace of each invocation.
 
 [![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png)
 
