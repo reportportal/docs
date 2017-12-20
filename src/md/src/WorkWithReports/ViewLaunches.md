@@ -272,13 +272,13 @@ The defect type can be set for the last invocation only.
 
 On a Launch view you can see a label, that means that a launch includes retries.
 
-[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryLaunchLevel.png)
+[ ![Image](Images/viewingData/RetryLaunchLevel.png) ](Images/viewingData/RetryLaunchLevel.png)
 
 On a step view you can see the number of invocations and stack trace of each invocation.
 
-[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryStepLevel.png)
+[ ![Image](Images/viewingData/RetryStepLevel.png) ](Images/viewingData/RetryStepLevel.png)
 
 On a log view you can see the number of invocations and logs, attachments of each invocation.
 
-[![Image](Images/userGuide/WorkWithReports/ViewLaunches/RetryLogLevel.png) ]( Images/userGuide/WorkWithReports/ViewLaunches/RetryLogLevel.png)
+[ ![Image](Images/viewingData/RetryLogLevel.png) ](Images/viewingData/RetryLogLevel.png)
 
