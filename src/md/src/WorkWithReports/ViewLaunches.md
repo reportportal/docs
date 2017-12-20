@@ -174,17 +174,15 @@ All the related data for the test case (logs, screenshots) will be saved on Log 
 
 Log object has the following levels:
 
->Fatal - includes Fatal logs and custom level logs with log number more than 50 thousands;
+| Level        | Value | 
+| -------- |:-------------:|
+| Trace | >= 5 000 |
+| Debug |>= 10 000 |
+| Info | >= 20 000 |
+| Warn |>= 30 000  |
+| Error | >= 40 000 |
+| Fatal | >= 50 000 |
 
->Error - includes Error, Fatal logs and custom level logs with log number more than 40 thousands;
-
->Warn - includes Warn, Error, Fatal logs and custom level logs with log number more than 30 thousands;
-
->Info - includes Info, Warn, Error, Fatal logs and custom level logs with log number more than 20 thousands;
-
->Debug- includes Debug, Info, Warn, Error, Fatal logs and custom level logs with log number more than 10 thousands;
-
->Trace – includesTrace, Debug, Info, Warn, Error, Fatal logs and custom level logs with log number more than 5 thousands;
 
 You can set a necessary log level using a slider. 
 
