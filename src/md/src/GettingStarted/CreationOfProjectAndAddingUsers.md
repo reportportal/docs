@@ -3,7 +3,7 @@
 Now it is necessary to create a separate space, named as Project, and add user(s) to it, who will create and manage the data.
 Permission: Only user with account role ADMINISTRATOR has access to this context.
 
-### Creat project
+### Create project
 
 To create a project for a team:
 1. Login to the ReportPortal as an ADMIN user
