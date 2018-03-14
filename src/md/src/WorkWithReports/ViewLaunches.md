@@ -174,15 +174,18 @@ All the related data for the test case (logs, screenshots) will be saved on Log 
 
 Log object has the following levels:
 
->   Error
+| Level        | Value | 
+| -------- |:-------------:|
+| Trace | >= 5 000 |
+| Debug |>= 10 000 |
+| Info | >= 20 000 |
+| Warn |>= 30 000  |
+| Error | >= 40 000 |
+| Fatal | >= 50 000 |
 
->   Debug
 
->   Warn
+You can set a necessary log level using a slider. 
 
->   Info
-
->   Trace
 
 The table with log messages is painted in different colors depending on the log type:
 
@@ -256,3 +259,24 @@ You can navigate from one log to the other using "Next"/"Previous" buttons on th
 
 
 Navigation takes into account selected by user filter and hidden preconditions methods on Step view.
+
+### Retried test case (retry)
+
+In case you implement a retry logic for your tests in a test framework, the ReportPortal will reflect them as a retry test case. If there were a few invocations of the one test case, all these invocations will be shown as the one test case in the ReportPortal.
+
+On a log view you can see all logs and all information about all invocations. But in statistics and auto-analysis the ReportPortal will take in account only the last invocation. So that a launch statistics will be more accurate.
+
+The defect type can be set for the last invocation only.
+
+On a Launch view you can see a label, that means that a launch includes retries.
+
+[ ![Image](Images/viewingData/RetryLaunchLevel.png) ](Images/viewingData/RetryLaunchLevel.png)
+
+On a step view you can see the number of invocations and stack trace of each invocation.
+
+[ ![Image](Images/viewingData/RetryStepLevel.png) ](Images/viewingData/RetryStepLevel.png)
+
+On a log view you can see the number of invocations and logs, attachments of each invocation.
+
+[ ![Image](Images/viewingData/RetryLogLevel.png) ](Images/viewingData/RetryLogLevel.png)
+
