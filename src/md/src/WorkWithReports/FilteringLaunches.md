@@ -83,10 +83,10 @@ Defect Comments "abcd", "zabc", "zabcd", "abc".
 The system searches for the items with specified tag(s). Multiple tags may be
 specified at once. This filter has next conditions: AND/OR.
 
--   **Analysed by RP (AA)** - there are two conditions: With AA mark, Without AA mark.
+-   **Analysed by RP (AA)** - there are two options: With AA mark, Without AA mark.
 
--   **Ignored in AA** -  there are two conditions: With Ignore mark, Without Ignore mark.
+-   **Ignored in AA** -  there are two options: With Ignore mark, Without Ignore mark.
 
--   **Issue in BTS** - there are two conditions: Linked bug, No linked bug.
+-   **Issue in BTS** - there are two options: Linked bug, No linked bug.
 
 [ ![Image](Images/userGuide/filteringLaunches/stepLevelFilters.png) ](https://youtu.be/S4aViEIurn4)
