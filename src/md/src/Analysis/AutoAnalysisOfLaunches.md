@@ -63,7 +63,7 @@ Those priorities are influence on an object Score in ElasticSearch ( where Score
 
 And it links an issue in the BTS and a comment of the most suitable test item to the analyzing test item from the ReportPortal Data base.
 
-**HOW YOU CAN START AN AUTO-ANALYSIS"
+**HOW YOU CAN START AN AUTO-ANALYSIS**
 
 To activate the "Auto-Analysis" functionality in a project, perform the following
 steps:
@@ -72,12 +72,14 @@ steps:
 
 2. Select ON from the "Auto-Analysis" drop-down.
 
-3. Click the "Submit" button. Now "Auto-Analysis" will start as soon as any launch finishes.
+3. Choose a scope of a previous results on base of which test items should be auto-analyzed: All launches or Launches with the same name. 
+
+4. Click the "Submit" button. Now "Auto-Analysis" will start as soon as any launch finishes.
 
 [ ![Image](Images/userGuide/analyzeLaunches/add_auto_analiz.png) ](https://youtu.be/6FzkHOLuuaM)
 
 
-**HOW TO START MANUAL ANALYSIS"
+**HOW TO START MANUAL ANALYSIS**
 
 To start the analysis manually, perform the following steps:
 
@@ -86,10 +88,36 @@ To start the analysis manually, perform the following steps:
 2. Select the "Analysis" option from the context menu next to the selected
     launch name.
 
+3. Choose a scope of a previous results on base of which test items should be auto-analyzed: All launches or Launches with the same name. 
+
+4. Click the "Analysis" button. Now "Auto-Analysis" will start
+
 3. Any launches with an active analyzing process will be marked with the "Analysis"
     label.
 
 [ ![Image](Images/userGuide/analyzeLaunches/manual_analiz.png) ](https://youtu.be/qXbTx4So0N4)
+
+### Custom configurations for Auto-Analysis
+
+You can configure Auto-Analysis for your own needs and choose custom options for this tool. It gives you an ability to made analyzing process more valid and credible. 
+
+Custom configures includes:
+
+- Choosing a scope of a previous results on base of which test items should be auto-analyzed;
+
+It means that you can choose which results from previous runs should be considered in Auto –Analysis for defining the failure reason.
+
+There three options:
+
+      - All launches;
+
+      - Launches with the same name;
+
+If you choose *“All launches”*, test results in launch will have analyzed on base of all data in Elastic search of the project. 
+
+If you choose *“Launches with the same name”*, test results in launch will have analyzed on base of all data in Elastic search that have the same Launch name.
+
+You can choose those configurations via Project configuration or from the list of actions on All launches view.
 
 ### Label AA
 
