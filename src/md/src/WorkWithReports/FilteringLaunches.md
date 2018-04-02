@@ -17,6 +17,9 @@ You can filter launches by the following criteria:
 The system searches for the launches that contain the specified characters in the launch name. For example, a user sets Name = "abc", the system will output launches with names "abcd", "zabc", "zabcd", "abc".
 This filter has next conditions: contains, not contains, equals, not equals.
 
+-   **Number** - At least symbol is required for this search. 
+The system searches for launches with the mentioned number. This filter has next conditions: equals, greater than or equal; less than or equal. 
+
 -   **Description** - At least 3 symbols are required for this search.
 The system searches for the launches that contain the specified characters in
 the launch description.
@@ -79,5 +82,11 @@ Defect Comments "abcd", "zabc", "zabcd", "abc".
 -   **Tags** - 1 symbol is enough for this search.
 The system searches for the items with specified tag(s). Multiple tags may be
 specified at once. This filter has next conditions: AND/OR.
+
+-   **Analysed by RP (AA)** - there are two options: With AA mark, Without AA mark.
+
+-   **Ignored in AA** -  there are two options: With Ignore mark, Without Ignore mark.
+
+-   **Issue in BTS** - there are two options: Linked bug, No linked bug.
 
 [ ![Image](Images/userGuide/filteringLaunches/stepLevelFilters.png) ](https://youtu.be/S4aViEIurn4)
