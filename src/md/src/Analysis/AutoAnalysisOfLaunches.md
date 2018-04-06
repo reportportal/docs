@@ -107,7 +107,7 @@ Custom configures includes:
 
 It means that you can choose which results from previous runs should be considered in Auto –Analysis for defining the failure reason.
 
-There three options:
+There two options:
 
       - All launches;
 
@@ -123,17 +123,17 @@ You can choose those configurations via Project configuration or from the list o
 
 When test item is analyzed by the ReportPortal, a label "AA" is set on the test item on a Step Level. You can filter results with a parameter “Analysed by RP (AA)”
 
-[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-AA.png)
+[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis-AA.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-AA.png)
 
 ### Ignore for Auto-Analysis
 
 If you don't want to save some test items in ElasticSearch, you can "Ignore it in Auto-Analysis". For that you can choose this action in “Defect type editor” pop-up:
 
-[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-IgnorePopUp.png)
+[ ![Image](Images/userGuide/analyzeLaunches//Auto-Analysis-IgnorePopUp.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-IgnorePopUp.png)
 
 Or from the action list for several test items:
 
-[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-IgnoreActionList.png)
+[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis-IgnoreActionList.png) ](Images/userGuide/analyzeLaunches/Auto-Analysis-IgnoreActionList.png)
 
 When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch. 
 
@@ -146,9 +146,9 @@ If you do not want to use our ReportPortal auto-analyzer, you can implement and 
 
 In case you do not want to use Auto-Analyzer we provide you a possibility to get a results from previous runs.  So that you can set for a test item: Defect type, linked bug and comment from previous run at once. For that you can hit a button "Copy defect from #" in the last test item and copy a defect from a the last but one test item with defect type.
 
-[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png)](Images/userGuide/analyzeLaunches/CopyResults.png)
+[ ![Image](Images/userGuide/analyzeLaunches/CopyResults.png)](Images/userGuide/analyzeLaunches/CopyResults.png)
 
 or hit a button "Send defect to #" from the not the last items and send defect to the last test item ( if it can has a defect type).
 
-[ ![Image](Images/userGuide/analyzeLaunches/Auto-Analysis.png)](Images/userGuide/analyzeLaunches/SendReultsResults.png)
+[ ![Image](Images/userGuide/analyzeLaunches/SendReultsResults.png)](Images/userGuide/analyzeLaunches/SendReultsResults.png)
 
