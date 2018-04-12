@@ -1,6 +1,6 @@
 ## How to resolve issues with JIRA bug tracking system
 
-# "Impossible interract with external system" error message
+### "Impossible interact with external system" error message
 
 In case user is connecting to JIRA system and gets the error like 
 "Impossible interact with external system.<name of current user's project>", there 
