@@ -32,7 +32,7 @@ related to services incompatibility.
 2. Fabio:
     1. Take default fabio.propereties file and change following default values:
        - proxy.addr = :8080;rt=300s;wt=300s (gateway port)
-       - registry.consul.addr = 10.235.32.99:
+       - registry.consul.addr = <server IP or hostname>:
        - registry.consul.register.addr = :8080 (Fabio registers itself in consul with this host:port address)
        - registry.consul.register.name = gateway
        - ui.addr = :9998 (port for management page)
