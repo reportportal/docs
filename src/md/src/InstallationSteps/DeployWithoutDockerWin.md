@@ -37,34 +37,31 @@ related to services incompatibility.
        - registry.consul.register.name = gateway
        - ui.addr = :9998 (port for management page)
        ```
-2. **Create Windows service** - `nssm install RP_service_gateway "<full directory path>\fabio-1.5.2-go1.9-
+3. **Create Windows service** - `nssm install RP_service_gateway "<full directory path>\fabio-1.5.2-go1.9-
 windows_amd64.exe" -cfg <full directory path>\fabio.properties.txt`
-3. **Consul**: create Windows service using command - `nssm install RP_consul "<full directory path>
+4. **Consul**: create Windows service using command - `nssm install RP_consul "<full directory path>
 \consul.exe" agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data
 -bind=127.0.0.0`
-4. **Service API**: create Windows service using command 
-`nssm install RP_service_api "<JDK path>\java.exe" -DSPRING_CLOUD_CONSUL_HOST=<server IP or hostname> -
+5. **Service API**: create Windows service using command `nssm install RP_service_api "<JDK path>\java.exe" -DSPRING_CLOUD_CONSUL_HOST=<server IP or hostname> -
 DRP_ISSUE_ANALYZER_DEPTH=4 -Xmx1g -Drp.uat.serviceUrl="http://<server IP or hostname>:8080/
 uat" -jar "<full directory path>\service-api-3.3.2.jar"`
-5. **Service Authorization**: create Windows service using command `nssm install RP_service_uat
-"<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -
-DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-3.3.0.jar"`
-6. **Service UI**:
-6.1. Create Windows service - `nssm install RP_service_ui "<full directory path>\service-
+6. **Service Authorization**: create Windows service using command ```nssm install RP_service_uat "<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-3.3.0.jar"```
+7. **Service UI**:
+    1. Create Windows service - `nssm install RP_service_ui "<full directory path>\service-
 ui_win_amd64.exe"`
-6.2. Unzip archive with web application content (ui.tar.gz) to some directory
-6.3. Set port, consul tags and address, path content - `nssm set RP_service_ui AppEnvironmentExtra
+    2. Unzip archive with web application content (ui.tar.gz) to some directory
+    3. Set port, consul tags and address, path content - `nssm set RP_service_ui AppEnvironmentExtra
 "RP_SERVER.PORT=8082" "RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui"
 "RP_CONSUL.ADDRESS=<server IP or hostname>:8500" "RP_STATICSPATH=<directorhy path for
 web application content >"`
-7. **Service Index**:
-7.1. Create Windows service - `nssm install RP_service_index "D:\rp\service-index_windows_amd64"`
-7.2. Set port, consul tags and address, path content - `nssm set RP_service_index AppEnvironmentExtra
+8. **Service Index**:
+    1. Create Windows service - `nssm install RP_service_index "D:\rp\service-index_windows_amd64"`
+    2. Set port, consul tags and address, path content - `nssm set RP_service_index AppEnvironmentExtra
 "RP_SERVER.PORT=8081" "RP_CONSUL.TAGS=urlprefix-/" "RP_CONSUL.ADDRESS=<server IP
 or hostname>:8500"`
-7.3. Add dependency of gateway and registry - `nssm set RP_service_index DependOnService RP_consul
+    3. Add dependency of gateway and registry - `nssm set RP_service_index DependOnService RP_consul
 RP_service_gateway`
-8. *(Optional)* **Service JIRA**: create Windows service using command `nssm install RP_service_jira
+9. *(Optional)* **Service JIRA**: create Windows service using command `nssm install RP_service_jira
 "<JDK path>\java.exe" -Xmx256m -DSERVER_PORT=8083 -jar "<full directory path>\service-
 jira-3.3.0.jar"`
 
