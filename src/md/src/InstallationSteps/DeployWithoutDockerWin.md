@@ -50,19 +50,19 @@ uat" -jar "<full directory path>\service-api-3.3.2.jar"`
 "<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -
 DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-3.3.0.jar"`
 6. **Service UI**:
-  1. Create Windows service - `nssm install RP_service_ui "<full directory path>\service-
+6.1. Create Windows service - `nssm install RP_service_ui "<full directory path>\service-
 ui_win_amd64.exe"`
-  2. Unzip archive with web application content (ui.tar.gz) to some directory
-  3. Set port, consul tags and address, path content - `nssm set RP_service_ui AppEnvironmentExtra
+6.2. Unzip archive with web application content (ui.tar.gz) to some directory
+6.3. Set port, consul tags and address, path content - `nssm set RP_service_ui AppEnvironmentExtra
 "RP_SERVER.PORT=8082" "RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui"
 "RP_CONSUL.ADDRESS=<server IP or hostname>:8500" "RP_STATICSPATH=<directorhy path for
 web application content >"`
 7. **Service Index**:
-  1. Create Windows service - `nssm install RP_service_index "D:\rp\service-index_windows_amd64"`
-  2. Set port, consul tags and address, path content - `nssm set RP_service_index AppEnvironmentExtra
+7.1. Create Windows service - `nssm install RP_service_index "D:\rp\service-index_windows_amd64"`
+7.2. Set port, consul tags and address, path content - `nssm set RP_service_index AppEnvironmentExtra
 "RP_SERVER.PORT=8081" "RP_CONSUL.TAGS=urlprefix-/" "RP_CONSUL.ADDRESS=<server IP
 or hostname>:8500"`
-  3. Add dependency of gateway and registry - `nssm set RP_service_index DependOnService RP_consul
+7.3. Add dependency of gateway and registry - `nssm set RP_service_index DependOnService RP_consul
 RP_service_gateway`
 8. *(Optional)* **Service JIRA**: create Windows service using command `nssm install RP_service_jira
 "<JDK path>\java.exe" -Xmx256m -DSERVER_PORT=8083 -jar "<full directory path>\service-
