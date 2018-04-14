@@ -4,7 +4,7 @@ Important: software versions should be exactly the same like in compose file - r
 compose.yml at master · reportportal/reportportal · GitHub. Otherwise you can receive issues, which will be
 related to services incompatibility.
 
-:point_up::skin-tone-2: *We don’t recommend it, but in case you have not other options*
+:point_up: *We don’t recommend it, but in case you have not other options*
 
 ## Download steps:
 
