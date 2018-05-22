@@ -84,7 +84,7 @@ Service Analyzer forms a query with a log data to the ElasticSearch.The query ar
 
 Then ElasticSearch receives log message and divides it on the terms (words) with a tokenizer and calculates the importance of each term (word). For that ElasticSearch computes TF-IDF for each term (word) in analyzed log. If level of a term importance is low, the ElasticSearch ignores it. 
 
->Note:
+>**Note:**
 >
 >*Term frequency (TF)* – how many time term (word) is used in analyzed log;
 >
@@ -96,7 +96,7 @@ The term (word) with the highest level of importance is the term (word) that is 
  
 After all important terms are defined, Elastic search calculates the level of equality between an analyzed log and each log in the Index.  For each log from the Index is calculated a score. 
 
->Note:
+>**Note:**
 >
 >How calculated a score:
 >
@@ -121,7 +121,7 @@ After all important terms are defined, Elastic search calculates the level of eq
        
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score. Service Analyzer sums scores of logs with the same Defect type and calculated group defect type ( defect type with the highest score). This defect type is assigned to the analyzed test item. 
 
->Note:
+>**Note:**
 In case test item has several logs, service Analyzer computes group defect type for each log, and test item gets defect type with the higest score. 
 
 A defect comment and a link to BTS of the item with highest score from this group come to the analyzed item.
@@ -136,7 +136,7 @@ All settings and configurations of Analyzer and ElasticSearch are situated on a 
 
 2. Come on Project Settings, choose Auto-Analysis section;
 
-Video
+[ ![Image]( Images/userGuide/analyzeLaunches/AASettings.png) ]( https://youtu.be/GaaRpHAw7iQ)
 
 In this section user can perform following actions:
 
@@ -186,7 +186,7 @@ Also we give possibility for our users to configure 4 main parameters of Elastic
 
 Parameters **MinDocFreq** and **MinTermFreque** are involved in the calculation of TF-IDF coefficient. So you can normalized log and reduce importance of frequent but useless words in a log (f.e. "Java" or prepositions...) manually. 
  
-> Note:
+> **Note:**
 For  option **“Only current launch” (base for Auto-analysis)**, parameter MinDocFreq is always 1.
 
 Parameter **MinShouldMatch** is involved in the calculation of a score. It is a minimum value for coord(q,d) (the percent of words equality between an analyzed log and a particular log from the ElasticSearch). So you can increase search hardness and choose a minimum level of similarity that is required.
@@ -205,10 +205,10 @@ There two possible action that can be performed under Index in ElasticSearch.
 
 You can **remove the Index from ElasticSearch** and all logs with there defect type will be delete. ML will be set to zero. All data with your investigations will be deleted from the ElasticSearch. For creating a new one you could start to investigate test results manually or generate data based on previous results on the project once again. 
 
-> Note:
+>**Note:**
 Your investigations in ReportPortal will not be changed. The operation concerns only ElasticSearch base.
 
-Video
+[ ![Image]( Images/userGuide/analyzeLaunches/AAremove.png) ]( https://youtu.be/GsRK5agYPxs)
 
 Another option, you can **generate the Index in ElasticSearch**. In case of generation, all data will be removed from ElasticSearch and new one will be generated based on all previous investigations on the project in accordance with current analysis settings. 
 
@@ -218,12 +218,12 @@ You can use index generation for several goals. For example, assume two hypothet
 
 * by accident you remove index, but now you want to restore it. 
 
->Note: 
+>**Note:** 
 New base will be generated in accordance with logs and settings that are existing on the moment of performing operation. So index before removing and index after generation can be different. 
 
 * you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate new index, old index will be removed, and new one will be generated. Logs in new index will contain 3 lines;  
 
-Video
+[ ![Image]( Images/userGuide/analyzeLaunches/AAgenerate.png) ]( https://youtu.be/Iq6tf40J_Wk)
 
 We strongly do not recommended use auto-analysis until new index will be generated.
 
@@ -263,17 +263,17 @@ In case the user chooses **Items analyzed manually** - the system is analyzing o
 
 In case of multi combination - the system is analyzing results in dependence with chosen options.
 
->Note:
+>**Note:**
 The Ignore flag is saved. If item has flag **Ignore in AA**, it will not be re-analyzed.
 
-> Note:
+> **Note:**
 For option **Only current lunch** you can not choose *Items analyzed automatically (by AA)* and *Items analyzed manually* simultaneously.
 
 4. Click the "Analysis" button. Now "Auto-Analysis" will start.
 
 Any launches with an active analyzing process will be marked with the "Analysis" label. 
 
-Video
+ [ ![Image]( Images/userGuide/analyzeLaunches/AAmanual.png) ](https://youtu.be/ulJ16fRT2Jw)
 
 
 ### Label AA
