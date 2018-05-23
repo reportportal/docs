@@ -1,8 +1,7 @@
 ## Integration with bug tracking systems
 
 Integration with a bug tracking system, can be required for projects that collect defects in a separate tracking tool.
-Integration provides an exchange of information between ReportPortal and the bug tracking system, such as posting bugs and loading bugs,
-getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA or RALLY systems.
+Integration provides an exchange of information between ReportPortal and the bug tracking system, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA or RALLY systems.
 
 Permission: The Administrator can configure the Bug Tracking System on the project settings page in the Management Board.
 
@@ -36,25 +35,25 @@ Keep in mind, the set of fields depends on a bug tracking system.
 Another JIRA project could be connected to the ReportPortal project. To do that, click the "Add New Instance" link and fill in
 the new JIRA project properties. 
 
-Steps above are enough to load bug functionality and to getting updates on bug's statuses.
+Steps above are enough to link issue functionality and to getting updates on issue's statuses.
 
 To add the functionality of submitting issues to bug tracking system, it is necessary to select and /or submit default properties for the issue form.
 
 
-**Configuration of fields of post bug form**
+**Configuration of fields of post issue form**
 
-The "Default properties for issue form" (list of fields provided for bug form in JIRA) will appear on the submit form above.
+The "Default properties for issue form" (list of fields provided for issue form in JIRA) will appear on the submit form above.
 The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
 
-To configure fields for posting bugs in JIRA, follow these instructions: 
+To configure fields for posting issues in JIRA, follow these instructions: 
 
-1. Check desired fields. The checked fields will be shown on the post bug form.
+1. Check desired fields. The checked fields will be shown on the post issue form.
 
 2. Fill in the required fields and the other checked fields as needed, and
 click "Submit" button. The system will save the entered information and hide the fields that are not checked. 
-All the saved information on the checked fields will be predefined, when you post a bug to JIRA.
+All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
 
-Now the project team members with JIRA accounts will be able to submit bugs. Options for Post Bug is activated.
+Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue is activated.
 
 [ ![Image](Images/userGuide/bugSystem/addBugSystem.png) ](https://youtu.be/svX2hBdRNmA)
 
@@ -87,7 +86,7 @@ To add additional fields to the post bug form:
    A confirmation message will be shown in the status bar. "Default properties for issue form" will be updated.
    Previously selected fields are checked as well.
 
-To remove the fields from the post bug form:
+To remove the fields from the post issue form:
 1. Uncheck the desired fields 
 
 2. Click the "Submit" button. 
@@ -99,7 +98,7 @@ For instance, add general data to the 'Summary' field ("UI:")
 
 Or select a value from a list provided, e.g., select all appropriate version names for 'Fix Version/s' or 'Affects Version/s' fields.
 
-The "Post bug form" will contain the selected data. So, it will be not necessary in the future to type or select general information again and again.
+The "Post issue form" will contain the selected data. So, it will be not necessary in the future to type or select general information again and again.
 
 [ ![Image](Images/userGuide/bugSystem/updateFields.png) ](https://youtu.be/6Urp7kHsO4U)
 
@@ -111,8 +110,8 @@ To remove JIRA from project settings:
 
 2. Confirm the action in the modal window.
 
-The connection to JIRA will be deleted from ReportPortal. But all created and loaded bugs will be kept and avaialbe on the
-ReportPortal pages. Note: At the same time, post and load bug functionalities will become disabled; the status of already submitted bugs will nolonger be availalbe. 
+The connection to JIRA will be deleted from ReportPortal. But all created and linkeed bissues will be kept and avaialbe on the
+ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; the status of already submitted issues will nolonger be availalbe. 
 
 
 ### Integration with RALLY
@@ -135,27 +134,27 @@ To integrate RALLY to the project, perform following steps:
 
 A confirmation message will be shown in the status bar.
 
-Steps above are enough to load bug functionality and to getting updates on bug's statuses.
+Steps above are enough to link issue functionality and to getting updates on issue's statuses.
 
-To have a possibility to post bugs to bug tracking system, it is necessary to select and /or submit default properties for the
+To have a possibility to post issues to bug tracking system, it is necessary to select and /or submit default properties for the
 issues form.
 
 
-**Configuration of fields of post bug form**
+**Configuration of fields of post issue form**
 
-The "Default properties for issue form" (list of fields provided for bug form in RALLY) will appear on the submit the form above.
+The "Default properties for issue form" (list of fields provided for issue form in RALLY) will appear on the submit the form above.
 The Required RALLY fields are marked with asterisk. They are checked by default and disabled for unchecking.
 
-To configure fields for the post bug form in RALLY:
+To configure fields for the post issue form in RALLY:
 
-1. Select the wanted fields. The checked fields will be shown on the post bug form.
+1. Select the wanted fields. The checked fields will be shown on the post issue form.
 
 2. Fill in the required fields and the other checked fields (if necessary), and click the "Submit" button. 
 
 The system will save the entered information and hide the fields that are not checked. 
-All the saved information on the checked fields will be predefined, when you will post a bug to RALLY.
+All the saved information on the checked fields will be predefined, when you will post a issue to RALLY.
 
-Now the project team members with JIRA accounts be able to submit bugs. Options for Post Bug is activated.
+Now the project team members with JIRA accounts be able to submit issues. Options for Post Issue is activated.
 
 [ ![Image](Images/userGuide/bugSystem/addRally.png) ](https://youtu.be/thkH1Qn4DhQ)
 
@@ -174,12 +173,12 @@ shown after the new data validation is completed.
 form" and show the blank form.
 
 
-**Update fields of post bug form**
+**Update fields of post issue form**
 
-To add additional fields to the post bug form:
+To add additional fields to the post issue form:
 1. Click the 'Update' button under the "Default properties for issue form". 
 
-   You will see the list of all available fields for post bug form. 
+   You will see the list of all available fields for post issue form. 
    
 2. Select the desired fields
 
@@ -187,7 +186,7 @@ To add additional fields to the post bug form:
    A confirmation message will be shown in the status bar. "Default properties for issue form" will be updated.
    Previously selected fields are checked as well.
 
-To remove the fields from the post bug form:
+To remove the fields from the post issue form:
 1. Uncheck desired fields 
 
 2. Click the "Submit" button. 
@@ -199,7 +198,7 @@ For instance, add general data to the 'Summary' field ("UI:")
 
 Or select a value from the list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
 
-The "Post bug form" will contain the selected data. So, it will be not necessary in future to type or select general information again and again.
+The "Post issue form" will contain the selected data. So, it will be not necessary in future to type or select general information again and again.
 
 [ ![Image](Images/userGuide/bugSystem/updateRallyFields.png) ](https://youtu.be/ugoQvo_Acgo)
 
@@ -211,5 +210,5 @@ To remove RALLY from project settings:
 
 2. Confirm the action in the modal window.
 
-The connection to RALLY will be deleted from ReportPortal. But all created and loaded bugs will be kept and avaialbe on 
-ReportPortal pages. Note: At the same time, post and load bug functionalities will become disabled; and status of already submitted bugs will not be availalbe as well.
+The connection to RALLY will be deleted from ReportPortal. But all created and linked issues will be kept and avaialbe on 
+ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; and status of already submitted issues will not be availalbe as well.
