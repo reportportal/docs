@@ -3,7 +3,7 @@
 ### Defect types and comments
 
 Report Portal provide possibility to investigate the results of your runs. Invesitation includes set the 
-appropriate defect type of failed items, post defect for them or load the id of defect that is already available
+appropriate defect type of failed items, post defect for them or link the id of defect that is already available
 in the bug tracking system. 
 
 Using defect editor you can choose the real reason of your fail and provide the comment for this fail.
@@ -178,27 +178,29 @@ To add link to existing JIRA issue to Report Portal, perform the following steps
 
 1. Navigate to the "Launches" page.
 
-2. Drill down to the Step or Log lavel of any failed item.
+2. Drill down to the Step or Log level of any failed item.
 
 3. Click "Defect editor" link or pencil icon in the "Defect Type" column. You
-    will see the defect editor block. Click "Load Bug" icon from the editor
-    header.
+    will see the defect editor block. Click on arrow on "Save" button" and choose "Save and Link issue".
 
-4. Load bug popup form should appear.
+4. Link issue popup form should appear.
 
 5. Select JIRA project, input link to issue and issue ID, add more issues (if
     need).
 
 6. Click "Add" button. The link to the bug will be shown on the
     Step and Log levels of the failed item.
+    
+You have several possibilities to add link to JIRA:
+* via defect editor on Step and Log view;
+* via Action menu on Step level (Actions > Link issue);
+* via "Link issue" on Log level;
 
 >**Note:**  
 Project name in JIRA will be missing, if only one JIRA is configured
 on the current project.
 
-Also you can add link to the JIRA issue on Log level.
-
-[ ![Image](Images/userGuide/addLinkToExistingBug/addLinkToExistingBugJira.png) ](https://youtu.be/nMiiO_ZkDGk)
+[ ![Image](Images/userGuide/addLinkToExistingBug/addLinkToExistingBugJira.png) ](https://youtu.be/sKp632zgYNk)
 
 
 **ADD LINK TO RALLY ISSUE**
@@ -209,11 +211,9 @@ To add link to existing RALLY issue to Report Portal, perform the following step
 
 2. Drill down to the Step or Log level to any failed item.
 
-3. Click "Defect editor" link or pencil icon in the "Defect Type" column. You
-    will see the defect editor block. Click "Load Bug" icon from the editor
-    header.
+3. Click "Defect editor" link or penciClick on arrow on "Save" button" and choose "Save and Link issue".
 
-4. Load bug popup form should appear.
+4. Link issue popup form should appear.
 
 5. Go to the RALLY and copy link to issue.
 
@@ -222,6 +222,11 @@ To add link to existing RALLY issue to Report Portal, perform the following step
 7. Click "Add" button. The link to the bug will be shown on the
     Step and Log levels of the failed item.
 
-Also you can add link to the RALLY issue on Log level.
+You have several possibilities to add link to RALLY:
+* via defect editor on Step and Log view;
+* via Action menu on Step level (Actions > Link issue);
+* via "Link issue" on Log level;
 
 To get update on defect's status, bring the cursor to the ticket. The tooltip will appear with actual information.
+
+If you want to remove a link to BTS, you can click a cross on a link label or unlink issue from Defect Editor. For bulk unlink operation use Actions Menu on Step Level.
