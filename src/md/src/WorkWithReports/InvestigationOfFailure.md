@@ -191,7 +191,7 @@ To add link to existing JIRA issue to Report Portal, perform the following steps
 6. Click "Add" button. The link to the bug will be shown on the
     Step and Log levels of the failed item.
     
-You have several possibilities to add link to JIRA:
+There are several ways to link an issue to Jira defect
 * via defect editor on Step and Log view;
 * via Action menu on Step level (Actions > Link issue);
 * via "Link issue" on Log level;
@@ -222,11 +222,11 @@ To add link to existing RALLY issue to Report Portal, perform the following step
 7. Click "Add" button. The link to the bug will be shown on the
     Step and Log levels of the failed item.
 
-You have several possibilities to add link to RALLY:
+There are several ways to link an issue to Rally defect:
 * via defect editor on Step and Log view;
 * via Action menu on Step level (Actions > Link issue);
 * via "Link issue" on Log level;
 
 To get update on defect's status, bring the cursor to the ticket. The tooltip will appear with actual information.
 
-If you want to remove a link to BTS, you can click a cross on a link label or unlink issue from Defect Editor. For bulk unlink operation use Actions Menu on Step Level.
+If you want to remove a link to BTS, you can click the cross on a link label or unlink an issue from Defect Editor. For bulk unlink operation use Actions Menu on Step Level.
