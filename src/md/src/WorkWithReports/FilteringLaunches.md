@@ -29,7 +29,7 @@ This filter has next conditions: contains, not contains, equals, not equals.
 values are available:
 
 -   **Tags** - 1 symbol is enough for this search.
-The system searches for launches with the specified tag(s) or without specified tag(s). Several tags may be specified. This filter has next conditions: ALL/ANY and WITHOUT ALL/WITHOUT ANY. 
+The system searches for launches with or without specified tag(s). Multiple tags may be specified. The following filtering conditions are available: ALL/ANY and WITHOUT ALL/WITHOUT ANY. 
 
 You can find items by a tag in just one click. If you click on a required tag under the launch name, the system will display all test items of the current level that have this tag.
 
@@ -81,8 +81,7 @@ For example, a user sets Defect Comment = "abc", the system will output test ite
 Defect Comments "abcd", "zabc", "zabcd", "abc".
 
 -   **Tags** - 1 symbol is enough for this search.
-The system searches for the items with or without specified tag(s). Multiple tags may be
-specified at once. This filter has next conditions:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
+The system searches for the items with or without specified tag(s). Multiple tags may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
 
 -   **Analysed by RP (AA)** - there are two options: With AA mark, Without AA mark.
 
