@@ -20,7 +20,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Dashboards and Widgets](/docs/Dashboards-and-Widgets)  
 [User account](/docs/User-account)  
 
-### Lead, Member
+### Member
 [Work with reports](/docs/Work-with-reports)  
 [Analysis](/docs/Analysis)  
 [Saved searches (Filters)][1]    
@@ -28,6 +28,15 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [User account](/docs/User-account)  
 [Log data in Report Portal](/docs/Log-data-in)  
 [Logging Integration](/docs/Logging-Integration)  
+
+### Operator
+[Work with reports](/docs/Work-with-reports)  
+[Analysis](/docs/Analysis)  
+[Saved searches (Filters)][1]    
+[Dashboards and Widgets](/docs/Dashboards-and-Widgets)  
+[User account](/docs/User-account)
+
+[See list of project members](http://reportportal.io/docs/Project-configuration%3Emanagement-of-users-on-the-project)
 
 ### Customer
 [Work with reports](/docs/Work-with-reports)  
