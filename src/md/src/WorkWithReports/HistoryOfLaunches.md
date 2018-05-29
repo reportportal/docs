@@ -24,7 +24,7 @@ History trends have the following color scheme:
    * Animated - still without state [in progress]
 
 You can select the depth of history: 3, 5, 10, 15, 20, 25 or 30 launches from the "History
-Depth" drop-down menu.
+Depth" drop-down menu. 
 
 >**Note:**
 
@@ -32,7 +32,7 @@ Depth" drop-down menu.
 
 >Description and tags are not displayed for items in the History table but can be visible in item's tooltip.
 
-[ ![Image](Images/userGuide/historyExecution/historicalTrend.png) ](https://youtu.be/x3eS2odZIUg)
+[ ![Image](Images/userGuide/historyExecution/historicalTrend.png) ](https://youtu.be/p_rUnOArZjk)
 
 
 ### Historical line of executions
@@ -65,7 +65,10 @@ using the defect editor block.
 To see the comment, hover the mouse over the launch number in the historical
 line.
 
-[ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/p3ooUJRwRyE)
+To come into a certain execution of an appropriate launch, hit a launch number 
+above the item.
+
+[ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/cmpORmbGAds)
 
 
 ### Test Item actions history
@@ -81,9 +84,15 @@ The following actions are shown on history of actions:
 
 >   user posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue.
 
+>   analyzer changed defect type of test item
+
+>   analyzer posted a comment to the test item
+
+>   analyzer posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue. 
+
 To see the history of actions, navigate to a certain child item. By default you
 will see last action in one line.
 
 Use spoiler to maximize actions history:
 
-[ ![Image](Images/userGuide/historyExecution/actionHistory.png) ](https://youtu.be/HKfoRuz_-ag)
+[ ![Image](Images/userGuide/historyExecution/actionHistory.png) ](https://youtu.be/Z-gPwjxWHTQ)
