@@ -1,3 +1,4 @@
+## Deploy Without Docker 
 This document contains steps for set up separate Report Portal instance without Docker.
 
 Important: software versions should be exactly the same like in compose file - reportportal/docker-
@@ -6,7 +7,7 @@ related to services incompatibility.
 
 :point_up: *We don’t recommend it, but in case you have not other options*
 
-## Download steps:
+### Download steps:
 
 1. **Mongo DB** - msi file from MongoDB Download Center | MongoDB (based on OS type)
 2. **Fabio** - exe file from Releases · fabiolb/fabio · GitHub (based on your architecture (x86 or x64))
@@ -25,7 +26,7 @@ related to services incompatibility.
 9. *(Optional)* **Service JIRA** - jar file from https://dl.bintray.com/epam/reportportal/com/epam/reportportal/
     service-jira/<version>/service-jira-<version>.jar
 
-## Installation steps:
+### Installation steps:
 
 1. **Mongo**:
     1. Go to installation folder
@@ -62,7 +63,7 @@ RP_service_gateway`
 9. *(Optional)* **Service JIRA**: create Windows service using command 
     * ```nssm install RP_service_jira "<JDK path>\java.exe" -Xmx256m -DSERVER_PORT=8083 -jar "<full directory path>\service-jira-3.3.0.jar"```
 
-## Result:
+### Result:
 
 1. Following Windows services should be created and you should be able to start them:
     1. RP_consul
