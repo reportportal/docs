@@ -1,11 +1,12 @@
-## Deploy Without Docker 
+## Deploy Without Docker on Windows
 This document contains steps for set up separate Report Portal instance without Docker.
 
 Important: software versions should be exactly the same like in compose file - reportportal/docker-
 compose.yml at master · reportportal/reportportal · GitHub. Otherwise you can receive issues, which will be
 related to services incompatibility.
 
-:point_up: *We don’t recommend it, but in case you have not other options*
+>**Note:**
+*We don’t recommend it, but in case you have not other options*
 
 ### Download steps:
 
