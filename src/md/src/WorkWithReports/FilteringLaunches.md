@@ -28,13 +28,15 @@ This filter has next conditions: contains, not contains, equals, not equals.
 -   **Start Time** - The system searches for the launches with a specified start time. The following
 values are available:
 
--   **Tags** - 1 symbol is enough for this search.
-The system searches for launches with or without specified tag(s). Multiple tags may be specified. The following filtering conditions are available: ALL/ANY and WITHOUT ALL/WITHOUT ANY. 
-
-You can find items by a tag in just one click. If you click on a required tag under the launch name, the system will display all test items of the current level that have this tag.
+-   **Tags** - It is allowed to search for tag with at least 1 symbol in it. The system searches for launches 
+with the specified tag(s). Several tags may be specified. 
+You can find launches by a tag in just one click. To do this, click on a required tag under the launch name 
+and the system will display all launches that have this tag.
+This filter has next conditions: all ( in API: 'filter.has.tags'), without all ( in API:'filter.!in.tags'), any ( in API:filter.in.tags), without any ( in API:'filter.!has.tags').
 
 -   **Owner** - At least 3 symbols are required for this search. The system searches for the launches owned by specified 
-project members. This filter can filter launches by several owners.
+project members. This filter can filter launches by several owners.You can find launches by an owner in just one click. 
+To do this, click on a required owner under the launch name and the system will display all launches of selected user.
 
 -   **Total**, **Passed**, **Failed**, **Skipped**, **To Investigate** - These criterias are equipped with conditions: ≥ 
 and ≤ and =.

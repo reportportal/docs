@@ -205,7 +205,7 @@ You can use filter to specify the level.
 
 Also you can use the logs sorting by time, and filtering logs to find the certain message in logs.
 
-[ ![Image](Images/userGuide/logView/logMessages.png) ](https://youtu.be/Mcqh7ktK1Oc)
+[ ![Image](Images/userGuide/logView/logMessages.png) ](https://https://youtu.be/WXOzhiTIfIE)
 
 **NAVIGATE WITH NEXT ERROR**
 
@@ -231,7 +231,7 @@ Report Portal provides the possibility of preview for such types of attachments 
  - 'javascript', 
  - 'json', 
  - 'css', 
- - 'php' 
+ - 'php'
 
 Other types of attachments will be opened in a new browser tab or downloaded.
 
@@ -247,7 +247,7 @@ To view data via Attachments section, perform the following steps:
 
 4. To expand the area, click the view on the main box.
 
-[ ![Image](Images/userGuide/logView/screenshotGallery.png) ](https://youtu.be/8DUdwG-SdWA)
+[ ![Image](Images/userGuide/logView/screenshotGallery.png) ](https://youtu.be/83k5x73JDI0)
 
 
 **NAVIGATE TO NEXT/PREVIOUS LOGS**
