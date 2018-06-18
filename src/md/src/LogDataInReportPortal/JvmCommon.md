@@ -34,22 +34,19 @@ User should provide next parameters to agent.
 
 | **Parameter**                                 | **Description**      | **Required**|
 |-----------------------------------------------|----------------------|-------------|
-|rp.enable                                      |Enable/Disable logging to Report Portal: rp.enable=true - enable log to RP server.  Any other value means 'false': rp.enable=false - disable log to RP server.  If parameter is absent in  properties file then automation project results will be posted on RP. |No |
-|rp.username                                    |User name |Yes |
-|rp.password                                    |User password. **We strongly recommend to use UUID** or separate ReportPortal internal users password here to avoid domain password publishing. |Yes |
-|rp.uuid                                        |UUID of user. |Yes |
 |rp.endpoint                                    |URL of web service, where requests should be send |Yes |
+|rp.uuid                                        |UUID of user. |Yes |
 |rp.launch                                      |The unique name of Launch (Run). Based on that name a history of runs will be created for particular name |Yes |
 |rp.project                                     |Project name to identify scope |Yes |
+|rp.enable                                      |Enable/Disable logging to Report Portal: rp.enable=true - enable log to RP server.  Any other value means 'false': rp.enable=false - disable log to RP server.  If parameter is absent in  properties file then automation project results will be posted on RP. |No |
 |rp.description                                 |Launch description |No |
 |rp.tags                                        |Set of tags for specifying additional meta information for current launch. Format: tag1;tag2;build:12345-6. Tags should be separated by “;”. There are one special tag- build – it should be used for specification number of build for launch. |No |
-|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server. Default = 10 |No |
-|rp.keystore.resource                           |Put your JKS file into resources and specify path to it | |
-|rp.keystore.password                           |Access password for JKS (certificate storage) package, mentioned above | |
 |rp.convertimage                                |Colored log images can be converted to grayscale for reducing image size. Values: ‘true’ – will be converted. Any other value means ‘false’. |No |
 |rp.mode                                        |ReportPortal provides possibility to specify visibility of executing launch. Currently two modes are supported: DEFAULT  - all users from project can see this launch; DEBUG - all users except of Customer role can see this launch (in debug sub tab). Note: for all java based clients (TestNG, Junit) mode will be set automatically to "DEFAULT" if it is not specified. |No |
 |rp.skipped.issue                               |ReportPortal provides feature to mark skipped tests as not 'To Investigate' items on WS side. Parameter could be equal boolean values: *TRUE* - skipped tests considered as issues and will be marked as 'To Investigate' on Report Portal. *FALSE* - skipped tests will not be marked as 'To Investigate' on application. |No |
-
+|rp.batch.size.logs                             |In order to rise up performance and reduce number of requests to server. Default = 10 |No |
+|rp.keystore.resource                           |Put your JKS file into resources and specify path to it | No|
+|rp.keystore.password                           |Access password for JKS (certificate storage) package, mentioned above |No |
 
 Launch name can be edited once, and should be edited once, before first
 execution. As usual, parts of launches are fixed for a long time. Keeping the
