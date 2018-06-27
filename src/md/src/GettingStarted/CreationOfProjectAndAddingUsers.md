@@ -94,4 +94,4 @@ but not more than 24 hours. When the user clicks the link, he/she will see a reg
 The user will be assigned to the project that was specified by you during the invitation, 
 and to "Personal Project" with the PROJECT MANAGER project role. 
 
-[ ![Image](Images/userGuide/manageUsers/inviteUserFromMembers.png) ](https://youtu.be/_XSrNWbHitM)
+[ ![Image](Images/userGuide/manageUsers/inviteUserFromProjectMembersPage.png) ](https://youtu.be/_XSrNWbHitM)
