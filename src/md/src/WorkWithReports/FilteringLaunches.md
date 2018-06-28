@@ -83,8 +83,7 @@ For example, a user sets Defect Comment = "abc", the system will output test ite
 Defect Comments "abcd", "zabc", "zabcd", "abc".
 
 -   **Tags** - 1 symbol is enough for this search.
-The system searches for the items with specified tag(s). Multiple tags may be
-specified at once. This filter has next conditions: AND/OR.
+The system searches for the items with or without specified tag(s). Multiple tags may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
 
 -   **Analysed by RP (AA)** - there are two options: With AA mark, Without AA mark.
 
