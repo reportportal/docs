@@ -70,7 +70,7 @@ The notification email letter is sent to the email address of new user.
 
 If you wish to know more about adding user options, go to Project Configuration > Management of users
 
-### Invite user to the project
+### Invite user to a project
 
 To invite a user on the "Members" page, perform the following steps:
 
@@ -86,12 +86,11 @@ To invite a user on the "Members" page, perform the following steps:
     has been sent. You can copy the link to the invitation from the "Link to
     invitation" field.
 
-6.  The user will receive an email with the link to the invitation. Registration
+6.  A user will receive an email with the link to the invitation. Registration
 link will be active until the user registers in the system by this reference,
 but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
 
-7. The user needs to fill in the registration form and click the "Register" button to complete the registration. 
-The user will be assigned to the project that was specified by you during the invitation, 
-and to "Personal Project" with the PROJECT MANAGER project role. 
+7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
+The user will be assigned to the project, and to "Personal Project" with the PROJECT MANAGER project role. 
 
 [ ![Image](Images/userGuide/manageUsers/inviteUserFromProjectMembersPage.png) ](https://youtu.be/_XSrNWbHitM)
