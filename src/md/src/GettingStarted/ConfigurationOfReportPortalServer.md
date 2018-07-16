@@ -91,6 +91,8 @@ Example of GitHub auth configuration:
  A confirmation message in status bar should be shown.
  A 'Login with GitHub' button will appear on login form.
  
+ >**Note:** Be sure that user's membership to the Github organization needs to be public.
+ 
  ### Active Directory Authorization
 To setup access with Active Directory:
 1. Login ReportPortal as an ADMIN user
