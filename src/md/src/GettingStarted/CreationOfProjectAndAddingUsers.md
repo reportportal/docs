@@ -69,3 +69,28 @@ The notification email letter is sent to the email address of new user.
   When a user is created, s/he gets their own space, named as "personal project". 
 
 If you wish to know more about adding user options, go to Project Configuration > Management of users
+
+### Invite user to a project
+
+To invite a user on the "Members" page, perform the following steps:
+
+1. Login into ReportPortal instance as Project Manager.
+
+2. Navigate to the Project Members page.
+
+3. Click the "Invite User" button.
+
+4. The "Invite new user" form will appear.
+
+5. Fill in the form and click the "Send invite" button. The invitation
+    has been sent. You can copy the link to the invitation from the "Link to
+    invitation" field.
+
+6.  A user will receive an email with the link to the invitation. Registration
+link will be active until the user registers in the system by this reference,
+but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
+
+7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
+The user will be assigned to the project, and to "Personal Project" with the PROJECT MANAGER project role. 
+
+[ ![Image](Images/userGuide/manageUsers/inviteUserFromProjectMembersPage.png) ](https://youtu.be/_XSrNWbHitM)
