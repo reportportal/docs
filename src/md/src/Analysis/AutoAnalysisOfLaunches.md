@@ -20,6 +20,25 @@ There are several ways to use an analyzer in our application:
 
 * Do not use any Analyzers at all and do an analytical routine by yourself;
 
+### ReportPortal Analyzer. How to install
+
+* Add info about Service Analyzer and service ElasticSearch in docker-compose file;
+
+* Set {vm.max_map_count} kernel setting before ReportPortal deploying with [command>](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode);
+
+* Give right permissions to ElasticSearch data folder using the following command:
+```javascript
+mkdir data/elasticsearch
+```
+```javascript
+chmod g+rwx data/elasticsearch
+```
+```javascript
+chgrp 1000 data/elasticsearch
+```
+
+For more details about ElasticSearch visit [ElasticSearch guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#_notes_for_production_use_and_defaults);
+
 ### ReportPortal Analyzer. How the Auto-Analysis is working
 
 ReportPortal's auto-analyzer allows users to reduce time spent on test execution investigation by analyzing test failures in automatic mode. For that reason you can deploy the  ReportPortal with a service Analyzer by adding an info about this service in a docker-compose file. Default analysis component is running along with ElasticSearch which is used for test logs indexing.
