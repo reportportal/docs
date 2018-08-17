@@ -1,16 +1,17 @@
 ## How to resolve issues with JIRA bug tracking system
 
-### "Impossible interact with external system" error message
-
 In case user is connecting to JIRA system and gets the error like 
 "Impossible interact with external system.<name of current user's project>", there 
 are some reasons could cause the issue.
+
 **First**, verify that the link to JIRA system is correct. There are some variants 
 are possible, for instance:
 https://jira.company.com/jira
 https://jiraeu.company.com
+
 **Second**, verify the project name is correct. Please fill in Project name field with 
 project key value, e.g. project ABC-DEF has key ABCDEF.
+
 **Third**, verify username and password data. Make sure, that login name and not email 
 is in the username field. In case all the data above is correct, but the error 
 appears again, check whether user's credentials to JIRA are not expired. 
