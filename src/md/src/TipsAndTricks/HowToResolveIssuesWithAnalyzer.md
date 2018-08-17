@@ -15,15 +15,15 @@ be sure that you have made all Analyzer configuration before ReportPortal deploy
 
 * give right permissions to ElasticSearch data folder using the following command:
 
-```java
+```bash
 mkdir data/elasticsearch
 ```
 
-```java
+```bash
 chmod g+rwx data/elasticsearch
 ```
 
-```java
+```bash
 chgrp 1000 data/elasticsearch
 ```
 
