@@ -36,5 +36,8 @@ case you need to import the certifcate inside the jira container:
 5. exit and restart the docker jira
 6. Now try to establish the connection to JIRA on ReportPortal project.
 
+>**Note:**
+SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
+
 Hope, the information above will be useful and resolve the issues if any,
 In case of extra problems, please contact us.
