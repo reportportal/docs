@@ -53,7 +53,7 @@ All test items with defect type *(except defect type “To investigate”)* whic
 The following info is sent:
 
 * An item ID;
-* A log higher than a log level Error (log >= 40 000);
+* A log with level Error  and higher (log >= 40 000);
 * Issue type;
 * Flag: “Analyzed by” (where shown by whom the test item has been analyzed by a user or by ReportPortal);
 * A launch name;
