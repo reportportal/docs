@@ -29,6 +29,7 @@ Screen with CAPTCHA should appears
 
 **Fourth**, maybe the connection to the jira instance requires a certificate, in this
 case you need to import the certifcate inside the jira container:
+
 1. docker exec -it reportportal_jira_1 ash # go inside shell
 2. cd /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/
 3. wget url://to/your/foo.cert
@@ -36,8 +37,18 @@ case you need to import the certifcate inside the jira container:
 5. exit and restart the docker jira
 6. Now try to establish the connection to JIRA on ReportPortal project.
 
->**Note:**
+or
+
+1. docker cp cert.der reportportal_jira_1:/cert.der
+2. docker exec -t -i reportportal_jira_1 
+3. ./usr/lib/jvm/java-1.8-openjdk/jre/bin/keytool -import -alias 
+4. rootcert -keystore /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/cacerts -file /cert.der
+4. exit and restart the docker jira
+5. Now try to establish the connection to JIRA on ReportPortal project.
+
+
+**Note:**
 SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 
-Hope, the information above will be useful and resolve the issues if any,
-In case of extra problems, please contact us.
+
+If these didn't resolve your issues, please contact us.
