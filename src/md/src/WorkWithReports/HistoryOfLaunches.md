@@ -62,7 +62,7 @@ History line has the following color scheme:
 You can mark the current method or case with a defect type, and write a comment
 using the defect editor block.
 
-To see the comment, hover the mouse over the launch number in the historical
+To see the test case duration, hover the mouse over the panel on the historical
 line.
 
 To come into a certain execution of an appropriate launch, hit a launch number 
@@ -70,6 +70,19 @@ above the item.
 
 [ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/cmpORmbGAds)
 
+Also on a History line you can see a "i" label, it means that the item with this label has a defect comment or/and a link to the Bug Tracking System.
+
+In case of one of executions of test case have a possitive growth of duration a label with percentage of growth is shown on History line as well. A duration growth is calculated as:
+
+(Duration of an actual test case /Duration of the previous one)* 100% - 100%
+
+Duration growth is calculated only for test cases with status Passed or Failed that are available on history line (without eye-symbol on the panel). When previous execution/s is/are absent (or has eye-symbol, or has status Skipped/In progress), the duration growth should be calculated as:
+
+(Duration of an actual test case /Duration of the last test case with Passed or Failed status before absent (or eye-symbol, or Skipped/In progress) test case/s) * 100% - 100%
+
+A tooltip in a mouse hover show the full value, in case a value growth has more than five symbol.
+
+[ ![Image](Images/userGuide/historyExecution/DurationFluctuation.png) ](Images/userGuide/historyExecution/DurationFluctuation.png)
 
 ### Test Item actions history
 
