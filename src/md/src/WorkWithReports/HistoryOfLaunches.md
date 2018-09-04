@@ -97,7 +97,7 @@ The following actions are shown on history of actions:
 
 >   user posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue.
 
->   analyzer changed defect type of test item
+>   analyzer changed defect type of test item based on item (where "item" is a link to a log view of an item which have been chosen by Analyzer as the most relevant result)
 
 >   analyzer posted a comment to the test item
 
