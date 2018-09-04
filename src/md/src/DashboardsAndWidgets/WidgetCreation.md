@@ -48,6 +48,7 @@ There are 15 widget templates in ReportPortal as for now:
 - Different launches comparison chart
 - Product status widget
 - Flaky test cases table (TOP-20)
+- The most time-consuming test case (TOP-20)
 
 The template descriptions are provided below.
 
@@ -366,6 +367,8 @@ The widget contains a table with statistical information about the TOP-20 most p
  - Launches count: 2-150. By default, "Launches count" is 30.
 
  - Launch name: Is required.
+ 
+ - Include /Exclude  Before and After methods
 
 **Widget view**
 
@@ -456,59 +459,62 @@ The widget has clickable sections, when you click on specific sections in widget
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-**PRODUCT STATUS WIDGET**
-
-The widget summarizes product data in a table view widget by custom filter results. The widget shows the configurable table of launches.
-
-[ ![Image](Images/userGuide/widgetTypes/productStatusWidget.png) ]
-
-**Widget's parameters:**
-
--	Filter/s: you can choose several filters for that widget.
-
--	Criteria for the widget: Start time; Status; Product Bug; Auto Bug; System Issue;  To Investigate; No Defect.  All criteria are selected by default. To specify them, you can uncheck unnecessary items;
-
--	Number of items: 1-150. Default meaning is 10;
-
--	Custom column (column name/ tag prefix).  You can add custom column to view tags with chosen tag prefix.
-
--	 ‘Watch latest’ mode on/off: Watch latest mode is switched on by default.  
-
--	‘Group launches by filter’ mode  on/off:
-
-In case of *‘Group launches by filter’ mode off*:   widget shows a list of all launches with unique names with the last increment from chosen filters only.  
-
-In case of *‘Group launches by filter’ mode on*: system shows a list of filters.  Data of each filter is a sum of the values of latest launches that are included in certain filter.
-
-**Widget view**
-Widget has a table view. You can name the widget, add a description and share.  Widget has clickable elements, when you click on specific element in widget, the system forwards you to launch/filter view for the appropriate selection.
-
-[ ![Video](Images/userGuide/widgetTypes/_________) ]
-
->**Note:**
-Widget doesn't contain IN PROGRESS launches.
-
 **FLAKY TEST CASES TABLE (TOP-20)**
 Shows the TOP-20 the most flaky test cases within the specified previous launches. The widget defines test cases with the most high percentage of switching their status in the execution. So that you can click on the test cases and be redirected to the last test item in execution to check the reasons. 
 
 **Widget's parameters:**
 
 - Launches count: 2-150. Default meaning is 30.
--Launch name. Is required
 
-**Widget view**
-- Launch name: Is required.
+- Launch name. Is required
+
+- Include /Exclude  Before and After methods
 
 **Widget view**
 
 The widget has a table view with the following data displayed:
 
 - Test Item name - link to the Step level of the last launch
+
 - Switches - count of found results with often switches;
+
 - % of Switches - the per cent of the fact switches and the possible;
+
 - Last switch - date and time of a last run, when the test item switches the status, displayed in 'time ago' format (i.e. "10 minutes ago").
 
 On mouse hover the system will display accurate start times.
 
 [ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
 
+**The most time-consuming test cases widget (TOP-20)**
+show the TOP 20 the most time-consuming test cases in the last execution of the specified launch.
+
+**Widget's parameters:**
+
+- Launch name. Is required
+
+- Criteria for widget: Passed or Failed
+
+- Include /Exclude  Before and After methods
+
+- View type: Table view/ Bar view
+
+**Widget view**
+
+The widget has two types of view. On a table view the following data is displayed:
+
+- Test Item name - link to the Log level of the last launch
+
+- Status;
+
+- Duration;
+
+- Start time - date and time of a last run,  displayed in 'time ago' format (i.e. "10 minutes ago").
+
+On mouse hover the system will display accurate start times.
+
+[ ![Image](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png) ]( Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png)
+
+On a bar view you can see a graph with durations of test cases in a descending order. Each bar is a link to the log view of an appropriate test case. In the tool-tip on a mouse hover you can see an information about a test case name, duration and start time.
+
+[ ![Image](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetBar.png) ]( Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetBar.png)
