@@ -155,7 +155,7 @@ All settings and configurations of Analyzer and ElasticSearch are situated on a 
 
 2. Come on Project Settings, choose Auto-Analysis section;
 
-[ ![Image]( Images/userGuide/analyzeLaunches/AASettings.png) ]( https://youtu.be/GaaRpHAw7iQ)
+[ ![Image]( Images/userGuide/analyzeLaunches/AnlyzerClassic.png) ]( https://https://youtu.be/7dN8uEKTkzo)
 
 In this section user can perform following actions:
 
@@ -216,7 +216,7 @@ With these 4 parameters you can configure an accuracy of analysis that you need.
 
 *	*Light* - search conditions are freer. You will get more results, but with the less level of similarity;
 *	*Moderate* - "happy medium";
-*	*Strict* - search conditions are strict. You will get less results, but with the higher level of similarity;
+*	*Classic* - search conditions are strict. You will get less results, but with the higher level of similarity;
 
 #### Remove/Generate ElasticSearch index
 
@@ -227,7 +227,7 @@ You can **remove the Index from ElasticSearch** and all logs with there defect t
 >**Note:**
 Your investigations in ReportPortal will not be changed. The operation concerns only ElasticSearch base.
 
-[ ![Image]( Images/userGuide/analyzeLaunches/AAremove.png) ]( https://youtu.be/GsRK5agYPxs)
+[ ![Image]( Images/userGuide/analyzeLaunches/AAremove.png) ]( https://youtu.be/lZoZm_n4vNw)
 
 Another option, you can **generate the Index in ElasticSearch**. In case of generation, all data will be removed from ElasticSearch and new one will be generated based on all previous investigations on the project in accordance with current analysis settings. 
 
@@ -242,7 +242,7 @@ New base will be generated in accordance with logs and settings that are existin
 
 * you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate new index, old index will be removed, and new one will be generated. Logs in new index will contain 3 lines;  
 
-[ ![Image]( Images/userGuide/analyzeLaunches/AAgenerate.png) ]( https://youtu.be/Iq6tf40J_Wk)
+[ ![Image]( Images/userGuide/analyzeLaunches/AAgenerate.png) ]( https://https://youtu.be/54EO4qM-9HU)
 
 We strongly do not recommended use auto-analysis until new index will be generated.
 
