@@ -96,6 +96,8 @@ Data of test items with defect type “To investigate” and logs (>= 40 000) ar
 * LogLevel 
 * Log Message  
 
+>**Note:** Parameter *IsAutoAnalyzed: true/false* for the test item can be sent via API.
+
 Service Analyzer forms a query with a log data to the ElasticSearch.The query are contained following info:
 * LogMessage;
 * Launch ID;
