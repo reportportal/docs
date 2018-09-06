@@ -486,7 +486,8 @@ On mouse hover the system will display accurate start times.
 
 [ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
 
-**The most time-consuming test cases widget (TOP-20)**
+**THE MOST TIME CONSUMING TEST CASE TABLE WIDGET (TOP-20)**
+
 show the TOP 20 the most time-consuming test cases in the last execution of the specified launch.
 
 **Widget's parameters:**
