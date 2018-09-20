@@ -1,4 +1,4 @@
-## How to resolve issues with Analyzer
+## How to solve issues with Analyzer
 
 In case you can not start an analysis on a project please perform following actions:
 
