@@ -1,4 +1,4 @@
-## How to resolve issues with LDAPS
+## Issues with LDAPS: how to resolve 
 
 When configuring LDAP to work with ldaps:// users may see the following error when trying to log in:
 ```
