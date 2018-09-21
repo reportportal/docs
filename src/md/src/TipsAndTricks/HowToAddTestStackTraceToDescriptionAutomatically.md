@@ -8,12 +8,13 @@ You will not need to open an every single test to see the failure reason. With t
 
 Change your listener to wrap log messages on error level with special text:
 
+
     ```error
     <place your error message here>
     ```
 
 
-[ ![TipAndTricksStackTrace.png](Images/userGuide/TipAndTricksStackTrace.png) ](Images/userGuide/TipAndTricksStackTrace.png)
+[ ![Image](Images/userGuide/tipsAndTricks/TipAndTricksStackTrace.png) ](Images/userGuide/tipsAndTricks/TipAndTricksStackTrace.png)
 
 We have prepared an example how to extend a TestNG agent, and you can find it below:
 
