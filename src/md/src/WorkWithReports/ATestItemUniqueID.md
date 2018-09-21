@@ -15,7 +15,7 @@ ReportPortal uses this functionality in a process of building widgets ( f.e.:`Mo
 
 Also if you use a Java based test frameworks you can provide a custom ID for a test item using the annotation `UniqueID` as well. Other clients are not supported yet.
 
-[ ![Image](Images/userGuide/manageLaunches/Сhocolate.png) ](Images/userGuide/manageLaunches/Chocolate.png)
+[ ![Image](Images/userGuide/manageLaunches/Chocolate.png) ](Images/userGuide/manageLaunches/Chocolate.png)
 
 [ ![Image](Images/userGuide/manageLaunches/UID.png) ](Images/userGuide/manageLaunches/UID.png)
 

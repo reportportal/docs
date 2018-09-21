@@ -328,5 +328,5 @@ In case you do not want to use Auto-Analyzer we provide you a possibility to get
 
 or hit a button "Send defect to #" from the not the last items and send defect to the last test item ( if it can has a defect type).
 
-[ ![Image](Images/userGuide/analyzeLaunches/SendReultsResults.png)](Images/userGuide/analyzeLaunches/SendReultsResults.png)
+[ ![Image](Images/userGuide/analyzeLaunches/SendResults.png)](Images/userGuide/analyzeLaunches/SendResults.png)
 

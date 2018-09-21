@@ -47,7 +47,7 @@ Don`t worry, now it is time to choose appropriate configuration for Analyzer.
 But you can use a short instruction:
 
 * check your exsiting configuration via Settings > Auto-Analysis
-[ ![TipAndTricksStackTrace.png](Images/userGuide/AnalysisConfigurations.png) ](Images/userGuide/AnalysisConfigurations.png)
+[ ![Image](Images/userGuide/tipsAndTricks/AnalysisConfigurations.png) ](Images/userGuide/tipsAndTricks/AnalysisConfigurations.png)
 If you can`t find this tab in settings, please update your version to the latest one. 
 
 * Then choose one of pre-sets: "Classic", "Moderate", "Light"
