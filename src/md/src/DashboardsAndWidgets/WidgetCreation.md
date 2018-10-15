@@ -486,36 +486,4 @@ On mouse hover the system will display accurate start times.
 
 [ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
 
-**THE MOST TIME CONSUMING TEST CASE TABLE WIDGET (TOP-20)**
 
-show the TOP 20 the most time-consuming test cases in the last execution of the specified launch.
-
-**Widget's parameters:**
-
-- Launch name. Is required
-
-- Criteria for widget: Passed or Failed
-
-- Include /Exclude  Before and After methods
-
-- View type: Table view/ Bar view
-
-**Widget view**
-
-The widget has two types of view. On a table view the following data is displayed:
-
-- Test Item name - link to the Log level of the last launch
-
-- Status;
-
-- Duration;
-
-- Start time - date and time of a last run,  displayed in 'time ago' format (i.e. "10 minutes ago").
-
-On mouse hover the system will display accurate start times.
-
-[ ![Image](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png) ]( Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png)
-
-On a bar view you can see a graph with durations of test cases in a descending order. Each bar is a link to the log view of an appropriate test case. In the tool-tip on a mouse hover you can see an information about a test case name, duration and start time.
-
-[ ![Image](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetBar.png) ]( Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetBar.png)
