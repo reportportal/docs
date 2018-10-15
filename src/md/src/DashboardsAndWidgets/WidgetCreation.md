@@ -48,7 +48,6 @@ There are 15 widget templates in ReportPortal as for now:
 - Different launches comparison chart
 - Product status widget
 - Flaky test cases table (TOP-20)
-- The most time-consuming test case (TOP-20)
 
 The template descriptions are provided below.
 
