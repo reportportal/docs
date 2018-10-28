@@ -100,8 +100,8 @@ RP_service_gateway`
 
 ### Result:
 
-1. Following Windows services should be created and you should be able to start them (in order, delay start)
-    1. RP_mongo
+1. Following Windows services should be created and you should be able to start them (in order, delay start beetweem 1,2 and 3)
+    1. RP_mongo 
     2. RP_consul
     3. RP_sevice_gateway
     4. RP_sevice_api
