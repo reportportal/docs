@@ -71,9 +71,10 @@ Fabio registers itself in consul with this host:port address. It must point to t
 	**-bind** - The address that should be bound to for internal cluster communications. This is an IP address that should be reachable by all other nodes in the cluster.
 	
 	```you can run Consul via command line
-	c:\consul agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data -bind=<ip address>
+	c:\consul agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data -bind=<ip address>```
 
-	Note delete consul_data directory if you make any changes to any component, running from command line will allows you to debug issues more easly, once its running you can export it as service via nssm```
+	>**Note:** 
+*Delete consul_data directory if you make any changes to any component, running from command line will allows you to debug issues more easly, once its running you can export it as service via nssm*
            
 
 5. **Service API**: create Windows service using command 
@@ -90,7 +91,7 @@ Fabio registers itself in consul with this host:port address. It must point to t
     3. Set port, consul tags and address, path content - 
     * ```nssm set RP_service_ui AppEnvironmentExtra "RP_SERVER_PORT=8082" "RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui" "RP_CONSUL.ADDRESS=<server IP or hostname>:8500" "RP_STATICSPATH=<directorhy path for web application content >"```
 8. **Service Index**:
-    1. Create Windows service - `nssm install RP_service_index "D:\rp\service-index_windows_amd64"`
+    1. Create Windows service - `nssm install RP_service_index "<full directory path>\service-index_windows_amd64"`
     2. Set port, consul tags and address, path content - 
     * ```nssm set RP_service_index AppEnvironmentExtra "RP_SERVER_PORT=8081" "RP_CONSUL.TAGS=urlprefix-/" "RP_CONSUL.ADDRESS=<server IP or hostname>:8500"```
     3. Add dependency of gateway and registry - `nssm set RP_service_index DependOnService RP_consul
