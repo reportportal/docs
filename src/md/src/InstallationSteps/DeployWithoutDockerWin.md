@@ -70,17 +70,16 @@ Fabio registers itself in consul with this host:port address. It must point to t
 	**-data-dir** - This flag provides a data directory for the agent to store state. This is required for all agents. The directory should be durable across reboots. This is especially critical for agents that are running in server mode as they must be able to persist cluster state.
 	**-bind** - The address that should be bound to for internal cluster communications. This is an IP address that should be reachable by all other nodes in the cluster.
 	
-	```you can run Consul via command line
-	c:\consul agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data -bind=<ip address>```
+	you can run Consul via command line
+	```c:\consul agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data -bind=<ip address>```
 
-	>**Note:** 
+>**Note:** 
 *Delete consul_data directory if you make any changes to any component, running from command line will allows you to debug issues more easly, once its running you can export it as service via nssm*
            
 
 5. **Service API**: create Windows service using command 
     * ```nssm install RP_service_api "<JDK path>\java.exe" -DSPRING_CLOUD_CONSUL_HOST=<ip address> -DRP_ISSUE_ANALYZER_DEPTH=4 -Xmx1g -Drp.uat.serviceUrl="http://<server IP or hostname>:8080/uat" -jar "<full directory path>\service-api-4.3.0.jar"```
-	>DSPRING_CLOUD_CONSUL_HOST - Consul
-	Drp.uat.serviceUrl
+
 	
 6. **Service Authorization**: create Windows service using command 
     * ```nssm install RP_service_uat "<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-4.2.0.jar"```
