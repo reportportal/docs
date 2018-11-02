@@ -1,3 +1,4 @@
+
 ## Deploy Without Docker on Windows
 This document contains steps for set up separate Report Portal instance without Docker.
 
@@ -24,13 +25,15 @@ related to services incompatibility.
     <version>/service-api-<version>.jar
 6.  **Service Authorization** - jar file from https://dl.bintray.com/epam/reportportal/com/epam/reportportal/
     service-authorization/<version>/:service-authorization-<version>.jar
-7. **Service UI** -
+7. **Dependency Libs** - zip file with java dependency  https://dl.bintray.com/epam/reportportal/com/epam/reportportal/
+    service-authorization/<version>/:service-authorization-<version>.zip    
+8. **Service UI** -
     1. exe file from https://dl.bintray.com/epam/reportportal/<version>/service-ui_win_amd64.exe
     2. web application content - /ui.tar.gz
-8. **Service Index** - exe file from https://dl.bintray.com/epam/reportportal/<version>/service-
+9. **Service Index** - exe file from https://dl.bintray.com/epam/reportportal/<version>/service-
     index_win_amd64.exe
-9. Latest version of **NSSM tool** - archive from NSSM - Service Manager https://nssm.cc/download
-10. *(Optional)* **Service JIRA** - jar file from https://dl.bintray.com/epam/reportportal/com/epam/reportportal/
+10. Latest version of **NSSM tool** - archive from NSSM - Service Manager https://nssm.cc/download
+11. *(Optional)* **Service JIRA** - jar file from https://dl.bintray.com/epam/reportportal/com/epam/reportportal/
     service-jira/<version>/service-jira-<version>.jar
 
 ### Installation steps:
@@ -82,7 +85,8 @@ Fabio registers itself in consul with this host:port address. It must point to t
 
 	
 6. **Service Authorization**: create Windows service using command 
-    * ```nssm install RP_service_uat "<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-4.2.0.jar"```
+    1. * ```nssm install RP_service_uat "<JDK path>\java.exe" -Xmx512m -DRP_SESSION_LIVE=86400 -DSERVER_PORT=9999 -DSPRING_PROFILES=consul -jar "<full directory path>\service-authorization-4.2.0.jar"```
+    2.  Unpack lib folder from service-authorization-<version>.zip into RP folder
 7. **Service UI**:
     1. Create Windows service - 
     * `nssm install RP_service_ui "<full directory path>\service-ui_win_amd64.exe"`
