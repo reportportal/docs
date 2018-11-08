@@ -1,4 +1,4 @@
-##View launches
+## View launches
 
 ### Viewing information about all launches
 
@@ -7,55 +7,42 @@ Launch is an object, which contains your data for certain execution. Inside the 
 Launches are present in two modes – the Default mode on the "Launches" tab
 and the Debug mode on the "Debug" tab.
 
+#### "Debug" tab
+
 Although both modes share almost the same set of features, the "Debug" mode is
 considered to be a more private one: it is not visible to the user with the
 CUSTOMER role and all the filters created there cannot be saved to
 "Filters". Filters are the base for building a widget, so widget charts are
 not available for the launches from the "Debug" mode.
 
-A typical Launch structure comprises the following elements: Suite \> Test
-\> Step \> Log.
+#### "Launches" tab
 
-However, this hierarchy is flexible. Only one restriction is applied: a step can
-be under a test only.
+A typical Launch structure comprises the following elements: **Suite** \> **Test**
+\> **Step** \> **Log**.
 
-A suite may lie under another suite.
+However, this hierarchy is flexible. Only one restriction is applied: **a step can
+be under a test only**.
+
+A suite may hierarchically lie under an another suite.
 
 The data in the "Launches" section is present in a table. By default, the
 user sees all runs.
 
 The "Launches" grid contains the following columns:
 
->   Runs (at all launches level) – Launch name / Suite name / Class name
-    (depends on a drill-down level).
-
->   Start time – a launch start time in the "time ago" format (e.g. "10
-    minutes ago"); on mouse hover the system displays the accurate start time. 
-
->   Duration – the launch duration. For launches in progress remaining time is shown.
-
->   Total – the total number of issues. It is a sum of all items with the
-    Passed, Failed, Skipped and Interrupted statuses.
-
->   Passed – the total number of issues that were completed with the
-    Passed status.
-
->   Failed - the total number of issues that were completed with the
-    Failed status.
-
->   Skipped - the total number of issues that were completed with the
-    Skipped status. Any Report Portal user can investigate failed and skipped
-    issues with one of the following values: Product Bug, Automation
-    Bug, System Issue.
-
->   Product Bug - a product issues; this type is selected manually.
-
->   Auto Bug - an automation test issues; this type is selected manually.
-
->   System Issue - this type is selected manually if it's a System Bugs.
-
->   To investigate - total number of Failed and Skipped issues that
-    are left to investigate.
+| Field        | Description | 
+| -------- |-------------|
+| Runs (at all launches level) |A **Launch name** or a **Suite name** or a **Class name** (depends on a drill-down level)|
+| Start time |A launch start time in the "time ago" format (e.g. "10 minutes ago"); on mouse hover the system displays the accurate start time|
+| Duration |The launch duration. For launches in progress remaining time is shown|
+| Total |The total number of issues. It is a sum of all items with the **Passed**, **Failed**, **Skipped** and **Interrupted** statuses|
+| Passed |The total number of issues that were completed with the **Passed** status.|
+| Failed |The total number of issues that were completed with the **Failed** status.|
+| Skipped |The total number of issues that were completed with the **Skipped** status. Any Report Portal user can investigate failed and skipped issues with one of the following values: **Product Bug**, **Automation Bug**, **System Issue**|
+| Product Bug |This type of issue is selected manually if it's a **product issue**|
+| Auto Bug |This type of issue is selected manually if it's an **automation test issue**|
+| System Issue |This type of issue is selected manually if it's a **system bug**|
+| To investigate |The total number of **Failed** and **Skipped** issues left to investigate|
 
 ### Viewing all launches / latest launches 
 You have two options to browse all project launches. By default system displays all launches of the project in one list in order of start time.
@@ -74,43 +61,27 @@ In a Latest Launches view you may perform any regular actions: add filter, perfo
 The data in the "Launches" table is present as links in the following
 columns:
 
->   Launch name – this link gives an opportunity to drill down a specific
->       launch.
-
->   *Total* – this link takes you to the Test Cases view and shows all test
->       cases within the launch in one table.
-
->   *Passed* - this link takes you to the Test Cases view and shows all passed
->       test cases within the launch in one table.
-
->   *Failed* - this link takes you to the Test Cases view and shows all failed
->       test cases within the launch in one table.
-
->   *Skipped* - this link takes you to the Test Cases view and shows all
->       skipped test cases within the launch in one table.
-
->   *Product Bug* - this link takes you to the Test Cases view and shows all
->       failed test cases marked as "Product Bugs" in the launch in one table.
-
->   *Automation Bug* - this link takes you to the Test Cases view and shows
->       all failed test cases marked as "Automation Bugs" in the launch in one table.
-
->   *System Issue* - this link takes you to the Test Cases view and shows all
->       failed test cases marked as "System Issues" in the launch in one table.
-
->   *To Investigate* - this link takes you to the Test Cases view and shows
->       all failed test cases with no selected defect type (marked as "To
->       Investigate") in the launch in one table.
+| Field        | Description | 
+| -------- |-------------|
+| Launch name |This link gives an opportunity to drill down to a specific launch|
+| *Total* |This link takes you to the Test Cases view and shows all test cases within the launch in one table|
+| *Passed* |This link takes you to the Test Cases view and shows all **passed** test cases within the launch in one table|
+| *Failed* |This link takes you to the Test Cases view and shows all **failed** test cases within the launch in one table|
+| *Skipped* |This link takes you to the Test Cases view and shows all **skipped** test cases within the launch in one table|
+| *Product Bug* |This link takes you to the Test Cases view and shows all **failed** test cases marked as **"Product Bugs"** in the launch in one table|
+| *Automation Bug* |this link takes you to the Test Cases view and shows all **failed** test cases marked as **"Automation Bugs"** in the launch in one table|
+| *System Issue* |This link takes you to the Test Cases view and shows all **failed** test cases marked as **"System Issues"** in the launch in one table|
+| *To Investigate* |This link takes you to the Test Cases view and shows all **failed** test cases with **no selected defect type** (marked as **"To Investigate"**) in the launch in one table|
 
 To drill down your structure, click the name of an item or numbers in the
-columns (Total, Passed, Failed, etc.), which will open the items, filtered
+columns (**Total**, **Passed**, **Failed**, etc.), which will open the items, filtered
 by the column criteria.
 
-"To investigate" number - represents number of items, which should be review
-in this particular run. This value incorporates all failed test cases and failed
+**"To investigate"** number - represents the number of items, which should be review
+in this particular run. This value incorporates all the failed test cases and failed
 preparation methods.
 
->   **Sum of number not equal?**
+>   **Why the sum of the values is not equal?**
 
 >   Total, Passed, Failed and Skipped columns counted in **TEST CASES**.
 
@@ -157,11 +128,11 @@ In case a clickable number was used for navigation, then only the highest level
 (Launch) and the lowest level (Step) are represented in the breadcrumbs.
 But log view of any of last items will have full path in breadcrumbs in brackets.
 
-One more useful functionality is collapsing not failed precondition methods. 
+One more useful feature is collapsing not failed precondition methods. 
 It could be setup on STEP view of any launch.
 The switcher is located on the left hand of Name column header.
 
-Be notify, that hidden items will not be visible on LOG view for 'Next'/'Previous' listing.
+Please note that that hidden items will not be visible on LOG view for 'Next'/'Previous' listing.
 
 [ ![Image](Images/viewingData/viewing_data.png) ](https://youtu.be/CjfZYY1ulZY)
 
@@ -207,7 +178,7 @@ Also you can use the logs sorting by time, and filtering logs to find the certai
 
 [ ![Image](Images/userGuide/logView/logMessages.png) ](https://https://youtu.be/WXOzhiTIfIE)
 
-**NAVIGATE WITH NEXT ERROR**
+**NAVIGATE TO THE NEXT ERROR**
 
 This functionality allows to get to next page with error message on it.
 It is useful in case you have big amount of log messages. And the navigation could be a bit difficult.
@@ -262,7 +233,7 @@ Navigation takes into account selected by user filter and hidden preconditions m
 
 ### Retried test case (retry)
 
-In case you implement a retry logic for your tests in a test framework, ReportPortal will reflect it by adding special retry structure. If there were a few invocations of the one test case, all these invocations will be shown as the one test case in ReportPortal.
+In case you implemented a retry logic for your tests in a test framework, ReportPortal will reflect it by adding special retry structure. If there were a few invocations of the one test case, all these invocations will be shown as the one test case in ReportPortal.
 
 On a log view you can see all logs and all information about all invocations. But in statistics and auto-analysis the ReportPortal will take in account only the last invocation. So that a launch statistics will be more accurate.
 
