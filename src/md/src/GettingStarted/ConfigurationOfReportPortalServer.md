@@ -2,7 +2,7 @@
 
 ### Email server configuration
 
-Permissions: Only user with account role ADMINISTRATOR has access to server settings.
+ >**Permissions:** Only user with account role *ADMINISTRATOR* has access to server settings.
 
 To configure Email server:
 
