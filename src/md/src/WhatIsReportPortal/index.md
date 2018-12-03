@@ -5,18 +5,26 @@ ReportPortal is a service, that provides increased capabilities to speed up resu
 ReportPortal is a great addition to the Continuous Integration and Continuous
 Testing process.
 
-It seamlessly integrates with mainstream platforms such as Jenkins, Jira, BDD process, majority of Functional and Unit testing frameworks.
+**What ReportPortal can do?**
 
-Real-time integration provides businesses the ability to manage and track execution status directly from ReportPortal.
+- ***Mainstream platforms integration***
+ReportPortal seamlessly integrates with mainstream platforms such as Jenkins, Jira, BDD process, majority of Functional and Unit testing frameworks.
 
-Test case execution results are stored following the same structure you have in your reporting suites and test plan. The test cases are shown with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test cases are also available for you, so one can see previous execution results in one click.
+- ***Real-time integration***
+Real-time integration provides businesses the ability to manage and track execution status directly from the ReportPortal.
 
-ReportPortal also gives you the ability to collaboratively analyze test automation results. Particular test cases can be associated with a product bug, an automation issue, a system issue or can be submitted as an issue ticket directly from the execution result. 
+- ***Test case execution results structure***
+Test case execution results are stored following the same structure you have in your reporting suites and test plan. The test cases are shown together with all related data in one place, right where you need it: logs, screenshots, binary data. The execution pipeline of certain test cases are also available for you, so one can see previous execution results in one click.
 
+- ***Collaborative analysis***
+ReportPortal also gives you the ability to collaboratively analyze the test automation results. Particular test cases can be associated with a product bug, an automation issue, a system issue or can be submitted as an issue ticket directly from the execution result. 
+
+- ***Historical data of test execution***
 ReportPortal provides enhanced capabilities along with auto-results analysis by
 leveraging historical data of test execution.
 
-With each execution ReportPortal automatically figures out the root cause of a fail, doing analysis itself, and marking it with a flag so that engineers will be alerted to the issue to see if its been resolved or which test results require actual human analysis.
+- ***Automatic Analysis***
+With each execution ReportPortal automatically figures out the root cause of a fail. As a result of this analysis ReportPortal is marking a test result with a flag. Engineers will be alerted about this issue to provide the further analysis: if it has been resolved already or which test results require actual human analysis.
  
 
 **What technologies are used?**
