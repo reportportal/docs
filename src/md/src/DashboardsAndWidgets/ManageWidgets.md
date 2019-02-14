@@ -35,10 +35,10 @@ To create a new widget, perform the following steps:
 
 ### View widgets in full screen mode
 
-To view widgets in whole screen, click the 'Full Screen' button in the right top corner of the dashbord.
+To view widgets in whole screen, click the 'Full Screen' button in the right top corner of the dashboard.
 
 Widgets are shown in the same order as for standard view.  
-Note: Clickable areas or elements are disabled for full screen mode selected, therefore it will not be possibile to create a new widget, update, or delete available widgets in this mode.
+Note: Clickable areas or elements are disabled for full screen mode selected, therefore it will not be possible to create a new widget, update, or delete available widgets in this mode.
 
 Auto-refresh timeout for widgets in full screen mode is 30 sec.
 

@@ -31,7 +31,7 @@ Example of email server configuration for Gmail email server (detailed info coul
                Protocol: SMTP
     Default sender name: Report Portal
                    Port: 465
-           Autorization: ON
+          Authorization: ON
                Username: <user_email_address>
                Password: <user_email_password>
                     SSL: checkbox should be checked.
@@ -49,7 +49,7 @@ Example of an email server configuration for a Yandex email server (detailed inf
                Protocol: SMTP
     Default sender name: Report Portal
                    Port: 465
-           Autorization: ON
+          Authorization: ON
                Username: <user_email_address>
                Password: <user_email_password>
                     SSL: checkbox should be checked.
@@ -136,8 +136,8 @@ To change the option:
 3. Click the 'Administrative' link 
 4. Click the 'Server Settings' from the left-hand sidebar
 5. Go to the 'Statistics' tab
-6. Leave the default settings or deselect the checkboxs
+6. Leave the default settings or deselect the checkboxes
 7. Click the Submit button if settings have been changed.
 
 Now the settings of ReportPortal service is fully configured.
-Next steps will discribe the organization of working space (project) in ReportPortal.
+Next steps will describe the organization of working space (project) in ReportPortal.

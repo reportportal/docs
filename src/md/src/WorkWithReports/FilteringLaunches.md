@@ -19,13 +19,13 @@ The system searches for the launches that contain the specified characters in th
 This filter has next conditions: 
 * *contains* - shown all test items that contain a specified combination in the name;
 * *not contains* - shown all test items that don't contain a specified  combination in the name; 
-* *equals* -  shown all test items with a name that is absolutly equal to the specified  combination;
-* *not equals* - shown all test items without items which name is absolutly equal to the specified  combination;
+* *equals* -  shown all test items with a name that is absolutely equal to the specified combination;
+* *not equals* - shown all test items without items which name is absolutely equal to the specified combination;
 
 -   **Number** - At least symbol is required for this search. 
 The system searches for launches with the mentioned number. This filter has next conditions: equals, greater than or equal; less than or equal. 
 
-* *greater than or equal* - shown all test items with launch number equal or qreater than specified;
+* *greater than or equal* - shown all test items with launch number equal or greater than specified;
 * *less than or equal* - shown all test items with launch number equal or less than specified;
 * *equals* - shown only test items with specified number;
 
@@ -36,17 +36,17 @@ This filter has next conditions: contains, not contains, equals, not equals.
 
 * *contains* - shown all test items that contain specified combination in the description;
 * *not contains* - shown all test items that don't contain specified  combination in the description; 
-* *equals* -  shown all test items which description is absolutly equal to the specified  combination;
-* *not equals* - shown all test items without items which description is absolutly equal to the specified  combination;
+* *equals* -  shown all test items which description is absolutely equal to the specified combination;
+* *not equals* - shown all test items without items which description is absolutely equal to the specified combination;
 
 -   **Start Time** - The system searches for the launches with a specified start time. 
 
 The following values are available:
-* *Today* - shown all test items with start time Today;  filter contains a dynamic value and searchs launches with start time equals Today, i.e. current date; 
-* *Last 2 days* - shown all test items with start time Last 2 days; filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 2 days;
-* *Last 7 days* - shown all test items with start time Last 7 days;  filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 7 days;
-* *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 30 days;
-* *Custom range* - shown all test items with start time in custom period; user can set stric period or dynamic value (filter will be move to one day every day, where Today (current day) is the last day in period);
+* *Today* - shown all test items with start time Today;  filter contains a dynamic value and search launches with start time equals Today, i.e. current date; 
+* *Last 2 days* - shown all test items with start time Last 2 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 2 days;
+* *Last 7 days* - shown all test items with start time Last 7 days;  filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 7 days;
+* *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 30 days;
+* *Custom range* - shown all test items with start time in custom period; user can set strict period or dynamic value (filter will be move to one day every day, where Today (current day) is the last day in period);
 
 -   **Tags** - It is allowed to search for tag with at least 1 symbol in it. The system searches for launches 
 with the specified tag(s). Several tags may be specified. 
@@ -62,16 +62,16 @@ This filter has next conditions:
 project members. This filter can filter launches by several owners.You can find launches by an owner in just one click. 
 To do this, click on a required owner under the launch name and the system will display all launches of selected user.
 
--   **Total**, **Passed**, **Failed**, **Skipped**, **To Investigate** - These criterias are equipped with conditions: ≥ 
+-   **Total**, **Passed**, **Failed**, **Skipped**, **To Investigate** - These criteria are equipped with conditions: ≥ 
 and ≤ and =.
-* *greater than or equal* - shown all launches with test cases equal or qreater than specified;
+* *greater than or equal* - shown all launches with test cases equal or greater than specified;
 * *less than or equal* - shown all launches with test cases equal or less than specified;
 * *equals* - shown only launches with specified number of test cases;
 
--   **Product Bug**, **Automation Bug**, **System Issue** - These criterias are equipped with conditions: ≥ and ≤ and =.
+-   **Product Bug**, **Automation Bug**, **System Issue** - These criteria are equipped with conditions: ≥ and ≤ and =.
 The list of filtering criteria depends on the use of the project defect types. If you use a standard set of defects: Product Bug, Automation Bug, System Issue, you will see them on the list of filtered criteria. On projects with custom defects the system can filter launches by each predefined defect type, each custom defect type and by total number of defects that belong to the same group.
-For example, if you create 2 custom Product Bugs, the total number of product bugs will be calculated as summ of predefined *Product Bug* + your custom *Product Bug-1* and *Product Bug-2*.
-* *greater than or equal* - shown all launches with test cases equal or qreater than specified;
+For example, if you create 2 custom Product Bugs, the total number of product bugs will be calculated as sum of predefined *Product Bug* + your custom *Product Bug-1* and *Product Bug-2*.
+* *greater than or equal* - shown all launches with test cases equal or greater than specified;
 * *less than or equal* - shown all launches with test cases equal or less than specified;
 * *equals* - shown only launches with specified number of test cases;
 
@@ -92,8 +92,8 @@ The system searches for the items containing specified characters in test item n
 This filter has next conditions: contains, not contains, equals, not equals.
 * *contains* - shown all test items that contain specified combination in the name;
 * *not contains* - shown all test items that don't contain specified  combination in the name; 
-* *equals* -  shown all test items which name is absolutly equal to the specified  combination;
-* *not equals* - shown all test items without items which name is absolutly equal to the specified  combination;
+* *equals* -  shown all test items which name is absolutely equal to the specified combination;
+* *not equals* - shown all test items without items which name is absolutely equal to the specified combination;
 
 -   **Method Type** - System searches for test items on current level with Method Type(s) specified.
 
@@ -103,17 +103,17 @@ Descriptions "abcd", "zabc", "zabcd", "abc".
 This filter has next conditions: contains, not contains, equals, not equals.
 * *contains* - shown all test items that contain specified combination in the description;
 * *not contains* - shown all test items that don't contain specified  combination in the description; 
-* *equals* -  shown all test items which description is absolutly equal to the specified  combination;
-* *not equals* - shown all test items without items which description is absolutly equal to the specified  combination;
+* *equals* -  shown all test items which description is absolutely equal to the specified combination;
+* *not equals* - shown all test items without items which description is absolutely equal to the specified combination;
 
 -   **Status** - The system searches for test items on current level with Status(es) specified.
 
 -   **Start Time** - The system searches for test items on the current level with specified Start Time values.
-* *Today* - shown all test items with start time Today;  filter contains a dynamic value and searchs launches with start time equals Today, i.e. current date; 
-* *Last 2 days* - shown all test items with start time Last 2 days; filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 2 days;
-* *Last 7 days* - shown all test items with start time Last 7 days;  filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 7 days;
-* *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and searchs launches with start time equals Last 30 days;
-* *Custom range* - shown all test items with start time in custom period; user can set stric period or dynamic value (filter will be move to one day every day, where Today (current day) is the last day in period);
+* *Today* - shown all test items with start time Today;  filter contains a dynamic value and search launches with start time equals Today, i.e. current date; 
+* *Last 2 days* - shown all test items with start time Last 2 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 2 days;
+* *Last 7 days* - shown all test items with start time Last 7 days;  filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 7 days;
+* *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equals Last 30 days;
+* *Custom range* - shown all test items with start time in custom period; user can set strict period or dynamic value (filter will be move to one day every day, where Today (current day) is the last day in period);
 
 -   **Defect Type** - The system searches for test items on the current level with Defect Type(s) specified.
 The list of filtering values depends on the use of the project defect types.
@@ -126,8 +126,8 @@ For example, a user sets Defect Comment = "abc", the system will output test ite
 Defect Comments "abcd", "zabc", "zabcd", "abc".
 * *contains* - shown all test items that contain specified combination in the defect comment;
 * *not contains* - shown all test items that don't contain specified  combination in the defect comment; 
-* *equals* -  shown all test items which defect comment is absolutly equal to the specified  combination;
-* *not equals* - shown all test items without items which defect comment is absolutly equal to the specified  combination;
+* *equals* -  shown all test items which defect comment is absolutely equal to the specified combination;
+* *not equals* - shown all test items without items which defect comment is absolutely equal to the specified combination;
 
 -   **Tags** - 1 symbol is enough for this search.
 The system searches for the items with or without specified tag(s). Multiple tags may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.

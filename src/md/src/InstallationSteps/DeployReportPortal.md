@@ -26,7 +26,7 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-4. Open your browser with the IP address of the deployed enviroment at port **8080**
+4. Open your browser with the IP address of the deployed environment at port **8080**
 
   ```
   http://IP_ADDRESS:8080

@@ -116,7 +116,7 @@ The widget doesn't contain "IN PROGRESS" launches.
 
 **OVERALL STATISTICS PANEL**
 
-The panel shows a summary of test cases with each status for each selected launche.
+The panel shows a summary of test cases with each status for each selected launch.
 
 **Widget's parameters:**
 

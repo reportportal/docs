@@ -44,7 +44,7 @@ related to services incompatibility.
     2. Execute mongod `--logpath <path_to_log>\mongo.log --serviceName="RP_mongo" --dbpath
        <path_to_db> --directoryperdb --install`
 2. **Fabio**:
-    1. Take default `fabio.propereties` file and change following default values,  if you are facing issues remove all the content except parameters below from default properties file:
+    1. Take default `fabio.properties` file and change following default values,  if you are facing issues remove all the content except parameters below from default properties file:
        ```- proxy.addr = <IP address>:8080;rt=300s;wt=300s
        - registry.consul.addr = :
        - registry.consul.register.addr = <IP address>:8080 (Fabio registers itself in consul with this host:port address)
@@ -92,7 +92,7 @@ Fabio registers itself in consul with this host:port address. It must point to t
     * `nssm install RP_service_ui "<full directory path>\service-ui_win_amd64.exe"`
     2. Unzip archive with web application content (ui.tar.gz) to some directory
     3. Set port, consul tags and address, path content - 
-    * ```nssm set RP_service_ui AppEnvironmentExtra "RP_SERVER_PORT=8082" "RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui" "RP_CONSUL.ADDRESS=<server IP or hostname>:8500" "RP_STATICSPATH=<directorhy path for web application content >"```
+    * ```nssm set RP_service_ui AppEnvironmentExtra "RP_SERVER_PORT=8082" "RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui" "RP_CONSUL.ADDRESS=<server IP or hostname>:8500" "RP_STATICSPATH=<directory path for web application content >"```
 8. **Service Index**:
     1. Create Windows service - `nssm install RP_service_index "<full directory path>\service-index_windows_amd64"`
     2. Set port, consul tags and address, path content - 
@@ -104,7 +104,7 @@ RP_service_gateway`
 
 ### Result:
 
-1. Following Windows services should be created and you should be able to start them (in order, delay start beetweem 1,2 and 3)
+1. Following Windows services should be created and you should be able to start them (in order, delay start between 1, 2 and 3)
     1. RP_mongo 
     2. RP_consul
     3. RP_sevice_gateway

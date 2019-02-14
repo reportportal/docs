@@ -14,7 +14,7 @@ To create a filter, perform the following steps:
 
 3. The new tab will be opened. Now you can configure your filter. The unsaved filter is marked with an asterisk (\*)
 
-4. Add filtering paremeters to have the relevant data
+4. Add filtering parameters to have the relevant data
 
 5. Click 'Save' button
 

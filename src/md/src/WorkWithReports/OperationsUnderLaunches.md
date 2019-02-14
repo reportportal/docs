@@ -86,7 +86,7 @@ despite their level.
 Status and issues statistics are calculated for a new launch. 
 The original launches are deleted from the system.
 
-The Linear and Deep Merge algorythm, as described above, is shown on a scheme:
+The Linear and Deep Merge algorithm, as described above, is shown on a scheme:
 
 [ ![Image](Images/userGuide/manageLaunches/MergeScheme.png) ](Images/userGuide/manageLaunches/MergeScheme.png)
 
@@ -194,7 +194,7 @@ In order to move a launch to the "Debug" section, perform the following steps:
 To return the launch to the "Launches" section, navigate to the "Debug" section and select the
 "Move to All Launches" from the context menu.
 
-In order to move some launches to the "Debug" section simultaniously, perform the following steps:
+In order to move some launches to the "Debug" section simultaneously, perform the following steps:
 
 1. Navigate to the "Launches" page
 
@@ -243,7 +243,7 @@ the *"stopped"* description. All the statistics collected by this time will be d
 
 [ ![Image](Images/userGuide/manageLaunches/force_finish.png) ](https://youtu.be/nI1u4ZvKX1Y)
 
-In order to finish some launches simultaniously those are in progress now, perform the following steps:
+In order to finish some launches simultaneously those are in progress now, perform the following steps:
 
 1. Navigate to the "Launches" page.
 
@@ -308,7 +308,7 @@ In order to delete a launch, perform the following steps:
 
 [ ![Image](Images/userGuide/manageLaunches/delete_launch.png) ](https://youtu.be/DNy9aqPz3NQ)
 
-In order to delete more than one launch simultaniously, perform the following steps:
+In order to delete more than one launch simultaneously, perform the following steps:
 
 1. Navigate to the "Launches" page
 
@@ -357,7 +357,7 @@ In order to delete a test item, perform the following steps:
 
 [ ![Image](Images/userGuide/manageLaunches/delete_items.png) ](https://youtu.be/r2r5OHwVt-U)
 
-In order to delete some test items simultaniously, perform the following steps:
+In order to delete some test items simultaneously, perform the following steps:
 
 1. Navigate to the "Launches" page
 

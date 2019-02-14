@@ -29,7 +29,7 @@ RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
 
 There is a client parameter in reportportal.properties with boolean type values
 for screenshots sending in "black-white" or "color" view. By default it is set
-as "true" and all pictures for ReportPortal will be in a "black-while" format.
+as "true" and all pictures for ReportPortal will be in a "black-white" format.
 
 #### Multipart Logging Request Example
 
@@ -252,7 +252,7 @@ private static Logger logger;
 /*
  * Path to screenshot file
  */
-public String screenshot_file_path = "demoScreenshoot.png";
+public String screenshot_file_path = "demoScreenshot.png";
 /*
  * Message for attached screenshot
  */
