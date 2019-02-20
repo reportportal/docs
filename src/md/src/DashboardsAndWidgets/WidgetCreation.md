@@ -46,7 +46,6 @@ There are 15 widget templates in ReportPortal as for now:
 - Failed cases trend chart 
 - Non-Passed test-cases trend chart 
 - Different launches comparison chart
-- Product status widget
 - Flaky test cases table (TOP-20)
 
 The template descriptions are provided below.
