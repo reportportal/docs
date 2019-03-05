@@ -7,7 +7,7 @@ in the top left corner of the page.
 ReportPortal supports customization of the default settings.
 
 Permission: 
-Usesr with the Administrator role can edit project settings on the project "Settings" page in Management Board 
+Users with the Administrator role can edit project settings on the project "Settings" page in Management Board 
 and in the Project space. Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
 
 ### Project settings
