@@ -33,7 +33,7 @@ docker-compose -p $RP_PRJ down —rmi -v --remove-orphans
 **Backing UP:** 
 
 ```
-docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongodump -h mongodb --db reportportal --out/db_dump/
+docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongodump -h mongodb --db reportportal --out /db_dump/
 ```
 
 **Restore backup:** 
