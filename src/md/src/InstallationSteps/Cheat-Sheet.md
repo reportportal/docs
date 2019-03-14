@@ -18,7 +18,7 @@ docker-compose -p $RP_PRJ up -d --force-recreate
 docker-compose -p $RP_PRJ logs
 ```
 
-**Show speciﬁc logs:** 
+**Show specific logs:** 
 
 ```javascript
 docker-compose -p $RP_PRJ logs <name, e.g. api>

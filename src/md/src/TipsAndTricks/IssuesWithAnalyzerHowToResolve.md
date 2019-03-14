@@ -37,22 +37,22 @@ When service Analyzer will have had status passed, try to start analyze results 
 
 On this stage your Analyzer should work well, if not, please follow the steps further.
 
-**Forthly,**
-check if you have any analyzed items. If not, start to analyze manualy.
+**Forth,**
+check if you have any analyzed items. If not, start to analyze manually.
 
-**Fiveth**
-if Analyzer still doesn`t work or you aren`t satisfied with results. 
+**Fifth**
+if Analyzer still doesn't work or you aren't satisfied with results. 
 Don`t worry, now it is time to choose appropriate configuration for Analyzer. 
 [Here](http://reportportal.io/docs/Auto-Analysis-of-launches%3Econfigure-elasticsearch-settings) you can find all information how to configure Analyzer.
 But you can use a short instruction:
 
-* check your exsiting configuration via Settings > Auto-Analysis
+* check your existing configuration via Settings > Auto-Analysis
 [ ![Image](Images/userGuide/tipsAndTricks/AnalysisConfigurations.png) ](Images/userGuide/tipsAndTricks/AnalysisConfigurations.png)
 If you can`t find this tab in settings, please update your version to the latest one. 
 
 * Then choose one of pre-sets: "Classic", "Moderate", "Light"
-If you can`t find these pre-sets in settings, please update your version to the latest one.
-If you don`t want to update your version, please use following configaration:
+If you can't find these pre-sets in settings, please update your version to the latest one.
+If you don't want to update your version, please use following configuration:
 
 *MinShouldMatch 95%
 MinDocFreq 1
@@ -65,5 +65,5 @@ Number of log lines All*
 
 After the new Index will have been generated, start analysis.
 
->**Note:** If you have walked throught all these steps, but your issue still presents. Please contact with us, via Slack, e-mail or GitHub.
+>**Note:** If you have walked through all these steps, but your issue still presents. Please contact with us, via Slack, e-mail or GitHub.
 We will connect with you as soon as it possible.

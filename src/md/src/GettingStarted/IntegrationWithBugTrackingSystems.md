@@ -17,7 +17,7 @@ The ReportPortal allows users to connect one or multiple JIRA projects to one pr
 To integrate JIRA to the ReportPortal, perform the following steps:
 
 1. Login into ReportPortal instance as a user with LEAD or PROJECT MANAGER roles on the project.
-2. Open the Settings page of for the project, select the 'Bug Tracking System' tab. The JIRA system is selected by default.
+2. Open the Settings page of the project, select the 'Bug Tracking System' tab. The JIRA system is selected by default.
 3. The form to set up connection to JIRA is then displayed. The Form contains the following:
 ```javascript
                       'Link to BTS': <valid URL of bug tracking system>
@@ -110,8 +110,8 @@ To remove JIRA from project settings:
 
 2. Confirm the action in the modal window.
 
-The connection to JIRA will be deleted from ReportPortal. But all created and linkeed bissues will be kept and avaialbe on the
-ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; the status of already submitted issues will nolonger be availalbe. 
+The connection to JIRA will be deleted from ReportPortal. But all created and linked issues will be kept and available on the
+ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; the status of already submitted issues will no longer be available. 
 
 
 ### Integration with RALLY
@@ -210,5 +210,5 @@ To remove RALLY from project settings:
 
 2. Confirm the action in the modal window.
 
-The connection to RALLY will be deleted from ReportPortal. But all created and linked issues will be kept and avaialbe on 
-ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; and status of already submitted issues will not be availalbe as well.
+The connection to RALLY will be deleted from ReportPortal. But all created and linked issues will be kept and available on 
+ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; and status of already submitted issues will not be available as well.

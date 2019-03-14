@@ -14,11 +14,11 @@ Subsections files can have headers of the second and higher level.
 ## Block image
 To display the picture, use the following syntax:
 ```$xslt
-[ ![ImageName](tumbImagePatch) ](imageOrYoutubePath)
+[ ![ImageName](thumbImagePatch) ](imageOrYoutubePath)
 ```
 * ImageName - the name of the image that will be displayed if there are errors during the download.
 
-* tumbImagePath - the address of the picture that will be displayed when the documentation is displayed. 
+* thumbImagePath - the address of the picture that will be displayed when the documentation is displayed. 
 There should be certain sizes of 1000x768.
 For example: 'Images/userGuide/manageLaunches/MergeScheme.png'
 

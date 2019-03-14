@@ -73,7 +73,7 @@ Each log entry along with its defect type is saved to ElasticSearch in form of a
 >For that, perform following actions: 
 >* Uncommented Service ElasticSearch ports in docker-compose file or add them: 9200:9200; 
 >* Restart Service ElasticSearch with new docker-compose; 
->* Send a request to ElasticSeaarch: 
+>* Send a request to ElasticSearch: 
 >    * how many documents in the Index: GET http://localhost:9200/_cat/indices?v  
 >    * Detailed information:  POST http://localhost:9200/{project_name}/_search
 
@@ -143,7 +143,7 @@ After all important terms are defined, Elastic search calculates the level of eq
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score. Service Analyzer sums scores of logs with the same Defect type and calculated group defect type ( defect type with the highest score). This defect type is assigned to the analyzed test item. 
 
 >**Note:**
-In case test item has several logs, service Analyzer computes group defect type for each log, and test item gets defect type with the higest score. 
+In case test item has several logs, service Analyzer computes group defect type for each log, and test item gets defect type with the highest score. 
 
 A defect comment and a link to BTS of the item with highest score from this group come to the analyzed item.
 
@@ -235,7 +235,7 @@ Another option, you can **generate the Index in ElasticSearch**. In case of gene
 
 In the end of the process you will receive a letter with info about the end of the process and with number of items that will be appeared in ElasticSearch.
 
-You can use index generation for several goals. For example, assume two hypothetical situations when index genertaion can be used:
+You can use index generation for several goals. For example, assume two hypothetical situations when index generation can be used:
 
 * by accident you remove index, but now you want to restore it. 
 
@@ -259,7 +259,7 @@ Analysis can be launched manually. To start the analysis manually, perform the f
 
 3. Choose a scope of a previous results on base of which test items should be auto-analyzed.  Default is the one that is chosen on setting page, but you can change it manually.
 
-Via this menu you have obility to choose 3 options unlike on Project Settings: 
+Via this menu you have the ability to choose 3 options unlike on Project Settings: 
 
 * All launches;
 

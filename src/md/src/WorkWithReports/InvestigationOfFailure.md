@@ -1,8 +1,8 @@
-##Investigation of failure
+## Investigation of failure
 
 ### Defect types and comments
 
-Report Portal provide possibility to investigate the results of your runs. Invesitation includes set the 
+Report Portal provide possibility to investigate the results of your runs. Investigation includes set the 
 appropriate defect type of failed items, post defect for them or link the id of defect that is already available
 in the bug tracking system. 
 
@@ -50,7 +50,7 @@ After clicking on the tick button, the comment and the defect type will be saved
 
 Report Portal allows to edit defects in bulk.
 
-To edit the defect type and comment for some item simultaniously, perform the next steps:
+To edit the defect type and comment for some item simultaneously, perform the next steps:
 
 1. Login into Report Portal instance
 
@@ -79,7 +79,7 @@ Also you can change a defect type at the logs level.
 Report Portal allows to connect JIRA or RALLY systems and post bug to them.
 
 Before post a bug, make sure that the bug tracking systems is connected to the
-project on the project settings page. To check it, plese go to [Integration with Bug Tracking
+project on the project settings page. To check it, please go to [Integration with Bug Tracking
 System](/docs/Getting started/Integration with Bug Tracking Systems).
 
 In case bug tracking system is not connected, "Post bug" button will be disabled.
@@ -168,7 +168,7 @@ Also you can post bug on Log level.
 
 ### Add link of existed defect.
 
-This functionality allows to attached the ticket ID of alredy posted defect to test item in Report Portal
+This functionality allows to attached the ticket ID of already posted defect to test item in Report Portal
 
 Depends on used bug tracking system the procedure of adding link could be different.
 
@@ -211,7 +211,7 @@ To add link to existing RALLY issue to Report Portal, perform the following step
 
 2. Drill down to the Step or Log level to any failed item.
 
-3. Click "Defect editor" link or penciClick on arrow on "Save" button" and choose "Save and Link issue".
+3. Click "Defect editor" link or pencil. Click on arrow on "Save" button" and choose "Save and Link issue".
 
 4. Link issue popup form should appear.
 

@@ -30,7 +30,7 @@ The "General" tab has the following project parameters displayed:
     hours, 6 hours, 12 hours, 1 day, 1 week.
 
 - Keep logs - this parameter specifies how long the system will keep old
-    logs in launches. Related launche structures will be saved, in order to keep
+    logs in launches. Related launch structures will be saved, in order to keep
     statistics. There are four options: 2 weeks, 1 month, 3 months, 6 months.
 
 - Keep screenshots - this parameter specifies how long to keep screenshots
@@ -107,7 +107,7 @@ For more information on this topic, please refer to [Integration with bug tracki
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
 
-After Instalation the ReportPortal by default sets-up the following defect types groups:
+After Installation the ReportPortal by default sets-up the following defect types groups:
 
 >   *To investigate* - means that no investigation was performed on this defect
 >   yet.
@@ -216,7 +216,7 @@ button to complete the registration.
 
 Every user is given a specific Project role within a specific project.
 
-Depends on the role, the user is able or not able perfom some actions. For more details, please see the Permissions map below
+Depends on the role, the user is able or not able perform some actions. For more details, please see the Permissions map below
 
 There are 4 possible Project roles in ReportPortal:
 

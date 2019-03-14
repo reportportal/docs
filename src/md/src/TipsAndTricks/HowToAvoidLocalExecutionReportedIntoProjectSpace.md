@@ -24,7 +24,7 @@ so that all local launches will be in debug, all Jenkins – in launches.
 
 **Option 3:**
 
-Combine _option #2_ and _opition #3_, in the launch name.
+Combine _option #2_ and _option #3_, in the launch name.
 
 `rp.launch=xxx` saved in all `reportportal.properties` files.
 

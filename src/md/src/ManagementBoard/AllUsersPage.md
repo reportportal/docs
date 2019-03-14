@@ -11,7 +11,7 @@ The page provides next information
 All Users page allows: 
  - to add and invite new ReportPortal users.
  - to assign users to the projects with any project role.
- - to unnassign users from projects.
+ - to unassign users from projects.
  - to update project role
  - to delete users from ReportPortal.
 
