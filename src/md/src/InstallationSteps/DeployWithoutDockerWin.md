@@ -2,12 +2,12 @@
 ## Deploy Without Docker on Windows
 This document contains steps for set up separate Report Portal instance without Docker.
 
-Important: software versions should be exactly the same like in compose file - reportportal/docker-
+Important: software versions should be exactly the same as in compose file - reportportal/docker-
 compose.yml at master · reportportal/reportportal · GitHub. Otherwise you can receive issues, which will be
 related to services incompatibility.
 
 >**Note:**
-*We don’t recommend it, but in case you have not other options*
+*We don’t recommend it. Use it only if you have no other options*
 
 ### Setup OS
 
@@ -77,7 +77,7 @@ Fabio registers itself in consul with this host:port address. It must point to t
 	```c:\consul agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -raft-protocol=3 -data-dir=consul_data -bind=<ip address>```
 
 >**Note:** 
-*Delete consul_data directory if you make any changes to any component, running from command line will allows you to debug issues more easly, once its running you can export it as service via nssm*
+*Delete consul_data directory if you make any changes to any component, running from command line will allow you to debug issues more easily; once its running, you can export it as service via nssm*
            
 
 5. **Service API**: create Windows service using command 
@@ -115,7 +115,7 @@ RP_service_gateway`
     8. RP_sevice_jira 
     
 2. Service status can be seen http://127.0.0.1:8500/ui/#/dc1/services
-3. Report portal should be accessible for URL - [http://<server](http://<server) IP or hostname>:8080/
+3. Report portal should be accessible at URL - [http://<server](http://<server) IP or hostname>:8080/
 
 
 
