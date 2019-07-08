@@ -16,7 +16,7 @@ ReportPortal can be easily deployed using Docker-Compose.
 docker-compose -p reportportal up -d --force-recreate
 ``` 
 Where:
-- **-p reportportal** adds prefix 'reportportal' to all containers
+- **-p reportportal** adds project prefix 'reportportal' to all containers
 - **up** creates and starts containers
 - **-d** daemon mode
 - **--force-recreate** Re-creates containers if there any
@@ -26,11 +26,18 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-4. Open your browser with the IP address of the deployed environment at port **8080**
+4. Open your browser with the IP address of the deployed environment at port **9090**
+
+You can get the host IP address by using the following docker command:
+
+```shell
+ $ docker-machine ip default
+```
 
   ```
-  http://IP_ADDRESS:8080
+  http://IP_ADDRESS:9090
   ```
+
 5. Use next **login\pass** for access: 
 ```shell
 default\1q2w3e
@@ -47,6 +54,5 @@ superadmin\erebus
 - Gateway Service. Main entry point to application. Port used by gateway should be opened and accessible from outside network.
 - API Service. Main application API.
 - UI Service. All statics for user interface.
-- JIRA Service. Interaction with JIRA.
-- Rally Service. Interaction with Rally.
-- TFS Service. Interaction with TFS.
+- Analyzer Service. Collects and processes the information, then sends it to ElasticSearch
+- Index Service. Responsible for redirections, collection of services information, handling errors
