@@ -21,7 +21,7 @@ Please do not forget to update variables acme.email and acme.domains with your o
 
 ```$xslt
 gateway:
-    image: traefik:1.6
+    image: traefik:1.7
     ports:
       - "9090:8080" # HTTP exposed
       - "9091:8081" # HTTP Administration exposed
