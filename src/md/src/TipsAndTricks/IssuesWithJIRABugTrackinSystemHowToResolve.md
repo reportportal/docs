@@ -33,18 +33,16 @@ case you need to import the certificate inside the jira container:
 1. docker exec -it reportportal_jira_1 ash # go inside shell
 2. cd /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/
 3. wget url://to/your/foo.cert
-4. keytool -importcert -noprompt -file foo.crt -alias "JIRA CERT" -keystore cacerts -storepass abc123
+4. keytool -importcert -noprompt -file foo.crt -alias "JIRA CERT" -keystore cacerts -storepass abc123 (default password for keystore: changeit)
 5. exit and restart the docker jira
 6. Now try to establish the connection to JIRA on ReportPortal project.
 
 or
 
 1. docker cp cert.der reportportal_jira_1:/cert.der
-2. docker exec -t -i reportportal_jira_1 
-3. ./usr/lib/jvm/java-1.8-openjdk/jre/bin/keytool -import -alias 
-4. rootcert -keystore /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/cacerts -file /cert.der
-4. exit and restart the docker jira
-5. Now try to establish the connection to JIRA on ReportPortal project.
+2. docker exec -t -i reportportal_jira_1 ./usr/lib/jvm/java-1.8-openjdk/jre/bin/keytool -import -alias rootcert -keystore /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/cacerts -file /cert.der
+3. exit and restart the docker jira
+4. Now try to establish the connection to JIRA on ReportPortal project.
 
 
 **Note:**
