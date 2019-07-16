@@ -10,7 +10,27 @@ ReportPortal can be easily deployed using Docker-Compose.
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
-3. Start the application using the following command:
+3. ElasticSearch configuration prerequisites for Analyzer service
+
+a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
+
+b) Give right permissions to ElasticSearch data folder using the following commands:
+
+```Shell
+mkdir -p data/elasticsearch
+``` 
+
+```Shell
+chmod g+rwx data/elasticsearch
+``` 
+
+```Shell
+chgrp 1000 data/elasticsearch
+``` 
+
+For more details about ElasticSearch visit ElasticSearch [guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#_notes_for_production_use_and_defaults)
+
+4. Start the application using the following command:
 
 ```Shell
 docker-compose -p reportportal up -d --force-recreate
