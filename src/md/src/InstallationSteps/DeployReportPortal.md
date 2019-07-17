@@ -4,7 +4,7 @@ ReportPortal can be easily deployed using Docker-Compose.
 
 1. Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
 
-2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/v5/docker-compose.yml>). You can make it by next command: 
+2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
 
   ```Shell
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
