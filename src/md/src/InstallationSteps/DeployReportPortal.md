@@ -46,7 +46,26 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-5. Open your browser with the IP address of the deployed environment at port **8080**
+5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
+
+For correct analyzer work we need to create its vhost and grant permissions for the 'rabbitmq' user
+
+Get a shell to a running RabbitMQ container
+```Shell
+docker exec -it <RABBITMQ_CONTAINER_ID> bash
+``` 
+
+Add a new vhost 'analyzer'
+```Shell
+rabbitmqctl add_vhost analyzer
+```
+
+Grant permissions
+```Shell
+rabbitmqctl set_permissions -p analyzer rabbitmq ".*" ".*" ".*"
+```
+
+6. Open your browser with the IP address of the deployed environment at port **8080**
 
 You can get the host IP address by using the following docker command:
 
