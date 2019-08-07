@@ -46,6 +46,24 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
+(IMPORTANT)
+
+On some Docker installations (e.g. Docker Toolbox) PostgreSQL container can failed with the following issue:
+```Shell
+data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
+``` 
+
+As a possible workaround, please edit the Docker Compose file to create a volume without mounting a host directory
+
+In order to do this, replace 
+```Shell
+- ./data/postgres:/var/lib/postgresql/data
+``` 
+with
+```Shell
+- /var/lib/postgresql/data
+``` 
+
 5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
 
 For correct analyzer work we need to create its vhost and grant permissions for the 'rabbitmq' user
