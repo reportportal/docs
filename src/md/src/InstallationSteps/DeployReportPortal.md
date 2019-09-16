@@ -48,20 +48,27 @@ Where:
 
 (IMPORTANT)
 
-On some Docker installations (e.g. Docker Toolbox) PostgreSQL container can failed with the following issue:
+On Windows Docker installations PostgreSQL container can failed with the following issue:  
 ```Shell
 data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
 ``` 
 
-As a possible workaround, please edit the Docker Compose file to create a volume without mounting a host directory
+In order to solve this, edit the Docker Compose file and:  
 
-In order to do this, replace 
+Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":
 ```Shell
-- ./data/postgres:/var/lib/postgresql/data
+    volumes:
+      # For windows host
+      - postgres:/var/lib/postgresql/data
+      # For unix host
+      # - ./data/postgres:/var/lib/postgresql/data
 ``` 
-with
+
+Uncomment the following:
 ```Shell
-- /var/lib/postgresql/data
+  # Docker volume for Windows host
+volumes:
+  postgres:
 ``` 
 
 5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
