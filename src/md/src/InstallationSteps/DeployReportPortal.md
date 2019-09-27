@@ -4,7 +4,7 @@ ReportPortal can be easily deployed using Docker-Compose.
 
 1. Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
 
-2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/v5/docker-compose.yml>). You can make it by next command: 
+2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
 
   ```Shell
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
@@ -46,7 +46,51 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-5. Open your browser with the IP address of the deployed environment at port **8080**
+(IMPORTANT)
+
+On Windows Docker installations PostgreSQL container can failed with the following issue:  
+```Shell
+data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
+``` 
+
+In order to solve this, edit the Docker Compose file and:  
+
+Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":
+```Shell
+    volumes:
+      # For windows host
+      - postgres:/var/lib/postgresql/data
+      # For unix host
+      # - ./data/postgres:/var/lib/postgresql/data
+``` 
+
+Uncomment the following:
+```Shell
+  # Docker volume for Windows host
+volumes:
+  postgres:
+``` 
+
+5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
+
+For correct analyzer work we need to create its vhost and grant permissions for the 'rabbitmq' user
+
+Get a shell to a running RabbitMQ container
+```Shell
+docker exec -it <RABBITMQ_CONTAINER_ID> bash
+``` 
+
+Add a new vhost 'analyzer'
+```Shell
+rabbitmqctl add_vhost analyzer
+```
+
+Grant permissions
+```Shell
+rabbitmqctl set_permissions -p analyzer rabbitmq ".*" ".*" ".*"
+```
+
+6. Open your browser with the IP address of the deployed environment at port **8080**
 
 You can get the host IP address by using the following docker command:
 
