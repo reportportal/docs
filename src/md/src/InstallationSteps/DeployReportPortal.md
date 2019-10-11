@@ -10,6 +10,28 @@ ReportPortal can be easily deployed using Docker-Compose.
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
+(OPTIONAL)
+
+PostgreSQL Performance Tuning
+
+Depends on your hardware configuration and parameters of your system, you can additionally optimize your PostgreSQL performance by adding the following parameters to "command" option in the Docker compose file:
+
+```Shell
+      -c effective_io_concurrency=
+      -c shared_buffers=
+      -c max_connections=
+      -c effective_cache_size=
+      -c maintenance_work_mem=
+      -c random_page_cost=
+      -c seq_page_cost= 
+      -c min_wal_size= 
+      -c max_wal_size=
+      -c max_worker_processes=
+      -c max_parallel_workers_per_gather=
+``` 
+
+Please choose set the values of these variables that are right for your system.
+
 3. ElasticSearch configuration prerequisites for analyzer service
 
 a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
