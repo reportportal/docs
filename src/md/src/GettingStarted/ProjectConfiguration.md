@@ -29,21 +29,22 @@ The "General" tab has the following project parameters displayed:
     for a job to interrupt inactive launches. There are six options: 1 hour, 3
     hours, 6 hours, 12 hours, 1 day, 1 week.
 
+- Keep launchess - this parameter specifies how long the system will keep old
+    launches in the data base. There are four options: 2 weeks, 1 month, 3 months, 6 months.
+
 - Keep logs - this parameter specifies how long the system will keep old
     logs in launches. Related launch structures will be saved, in order to keep
-    statistics. There are four options: 2 weeks, 1 month, 3 months, 6 months.
+    statistics. There are four options: 2 weeks, 1 month, 3 months, 6 months, Forever.
 
 - Keep screenshots - this parameter specifies how long to keep screenshots
     in the system. There are five options: 1 week, 2 weeks, 3 weeks, 1 month, 3
-    months.
+    months, Forever.
 
-- Auto-Analysis - this parameter allows activating auto-analysis on the
-    project. ON - analysis will start as soon as any launch is finished, OFF - analysis will not start automatically, but can be invoked manually.
 
 [ ![Image](Images/userGuide/managingProjects/generalConf.png) ](https://youtu.be/GsBGyhj-V6s)
 
 > **Note:**
-Users with MEMBER or CUSTOMER project roles do not have permissions to edit project settings, They can only to view them.
+Users with MEMBER/ OPERATOR/ CUSTOMER project roles do not have permissions to edit project settings, They can only to view them.
 
 
 **CONFIGURE EMAIL NOTIFICATION**
@@ -54,7 +55,7 @@ ReportPortal provides a way to add multiple rules with specific conditions. The 
 
 Permissions: 
 Users with Administrator an role can configure "Notifications" in Management Board.
-Users with PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
+Users with PROJECT_MANAGER roles can edit the settings on the project space only.
 
 To do that, perform the following steps:
 
@@ -62,46 +63,45 @@ To do that, perform the following steps:
 
 2. Navigate to the Project -\> Project "Settings" page.
 
-3. Open the "Notifications" tab and select "ON" from the "E-mail notifications" drop-down list.
+3. Open the "Notifications" tab and click on a button "Create new notification rule" 
 
-4. An e-mail notification settings form will appear.
+4. Enter your email into the "From" field. This email will be used as notification sender.
 
-5. Enter your email into the "From" field. This email will be used as notification sender.
-
-6. Select recipients. To do that, start typing any symbols into "Recipients" field.
+5. Select recipients. To do that, start typing any symbols into "Recipients" field.
 You can select an item from the auto-complete tool-tip using the
 keyboard (use the "Up" and "Down" arrows and "Enter" button). You can also enter a custom email into the "Recipients" field. To add a custom
 email, just enter the email address and press "Enter".
 
-7. The "Launch owner" is selected by default. Uncheck "Launch owner" to exclude
+6. The "Launch owner" is selected by default. Uncheck "Launch owner" to exclude
 him/her from the notification.
 
-8. Select "In Case" setting. To do that, select one of the following options from the "In Case" drop-down.
+7. Select "In Case" setting. To do that, select one of the following options from the "In Case" drop-down.
 
-9. Select launches (optional). To do that, start typing any symbols into the "Launch names" field.
+8. Select launches (optional). To do that, start typing any symbols into the "Launch names" field.
 You can select an item from the auto-complete tool-tip using the "Up" and "Down" arrows and clicking "Enter" on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications, when each of them finishes.
 
-10. Then Select tags (optional). To do that, start typing any symbols into the "Tags" field. The system
-will suggest the results in the drop-down, after at least 1 symbol is provided. It is also possible to add a new tag (that does not exist on the project). Several tags can be selected at once; the corresponding recipients will receive notifications about the
-launches that have all the specified tags.
+9. Then Select attributes (optional). To do that, start typing any symbols into the "Attribute key" and "Attribute value" fields. The system will suggest the results in the drop-down, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
 
-11. Add more rules, if needed. Each Notification rule should be unique.
+10. Switch ON Notifications
 
-12. After you configure all the options, click the "Submit" button.
+11. The system will activate the "Email notification" option. After the launch is finished, the recipients will receive a notification via email.
 
-13. The system will activate the "Email notification" option. After the launch
-is finished, the recipients will receive a notification via email.
+12. Add more rules, if needed. Each Notification rule should be unique.
 
-[ ![Image](Images/userGuide/managingProjects/notificationConf.png) ](https://youtu.be/i2aOBhd3NKU)
+13. You can edit/ copy/ enable / disable notification rule by clicking on the appropriate controlls on the notification rule.  
+
 
 >**Note:**  
-Users with a MEMBER or CUSTOMER project role will not have the capability to edit the project settings, however they do have the permissions to view them.
+Users with a MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however they do have the permissions to view them.
 
-**BUG TRACKING SYSTEM**
+>**Note:**
+For using this functionality be sure that E-mail server is configured.
 
-The "Bug Tracking System" tab can allow the project to connect to a bug tracking system such as JIRA or RALLY. 
+**INTEGRATION**
 
-For more information on this topic, please refer to [Integration with bug tracking systems](/docs/Integration-with-bug).
+The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
+
+For more information on this topic, please refer to [Integration with external systems](/docs/Integration-with-external).
 
 **CREATE CUSTOM DEFECT TYPES**
 
@@ -123,7 +123,7 @@ After Installation the ReportPortal by default sets-up the following defect type
 
 >   *No Defect* - defect was investigated and defined as not a defect.
 
-ReportPortal allows the use of existing defect types (Product Bug, Automation Bug, System Issue, No Defect) and or to create custom ones on project settings page.
+ReportPortal allows the use of existing defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on project settings page.
 
 To create custom defect types, perform the following steps:
 
@@ -143,18 +143,28 @@ To create custom defect types, perform the following steps:
 
 Add more custom defects, if you need. The system allows to add up to ten subtypes of each default defect type.
 
-Now you can investigate found defects as default Product Bug/Automation Bug/System Issue/No Defect or custom defects. All of them will be available to select on Defect Type editor.
+Now you can investigate found defects as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on Defect Type editor.
 For more information refer to the [Investigation of failure](/docs/Work-with-reports>Investigation-of-failure) topic.
 
-Note: Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
+>**Note:**
+Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
 
-In this case, the system will set parent defect types to all defects previously investigated as just deleted custom defects and update statistics in all launches where deleted a defect was present.
+>**Note:**
+You can create up to 15 custom defect types for eact group.
+
+>**Note:**
+If you have deleted a custom type from the system, all test executions with this deleted defect type get the parent type of the group which deleted defect has belonged and  statistics updates in all launches where deleted a defect was present.  
 For example, if you create custom "Product Bug-1" as a sub type of "Product Bugs" group and investigate a few
 defects as "Product Bug-1", then remove "Product Bug-1" from your project, all investigated "Product Bug-1" defects
 will be shown as "Product Bug".
 
 [ ![Image](Images/userGuide/managingProjects/defectTypesConf.png) ](https://youtu.be/z8iWXXk6A6Q)
 
+**AUTO-ANLYSIS and PATTERN ANALYSIS**
+
+The "Auto-Analysis" and "Pattern analysis" tabs can allow to reduce analysis routine on the project.
+
+For more information on this topic, please refer to [Analysis]('src/computeds/md/src/Analysis/index.md').
 
 **DEMO DATA**
 
@@ -172,14 +182,14 @@ On the Members page of a particular project, users with the appropriate roles ar
 
 Permissions: 
 
-User with Administrator role and users with project role PROJECT_MANAGER or LEAD.
+User with Administrator role and users with project role PROJECT_MANAGER.
 
 
 **INVITE USER ON PROJECT**
 
 To invite a user on the project "Members" page, perform the following steps:
 
-1. Login into ReportPortal instance as with PROJECT_MANAGER or LEAD project role.
+1. Login into ReportPortal instance as with PROJECT_MANAGER project role.
 
 2. Click the "Members" icon on the project page.
 
@@ -221,8 +231,8 @@ Depends on the role, the user is able or not able perform some actions. For more
 There are 4 possible Project roles in ReportPortal:
 
 - PROJECT MANAGER
-- LEAD
 - MEMBER
+- OPERATOR
 - CUSTOMER
 
 >**Note:**
@@ -261,31 +271,6 @@ To unassign he assignment for user on the project, perform the following steps:
 5. Confirm the action in the popup.
 
 6. The user will be unassigned from the current project but will stay in the system.
-
-
-### Permissions Map
-
-| **Action**\\**Account Role**                                                |**ADMIN**      |**USER**       |**USER**| **USER**       | **USER**           | **USER**         | **USER**             |
-|-----------------------------------------------------------------------------|---------------|-----------------|------|----------------|--------------------|------------------|----------------------|
-| **Action**\\**Project Role**                                                |               |**PROJECT MANAGER**|**MEMBER** (owner)|**MEMBER** (not owner)|**OPERATOR**|**CUSTOMER** (owner)|**CUSTOMER** (not owner)|
-| Have access to Management Board                                             | \+            |                 |                |                   |       |                  |                      |
-| Create Project                                                              | \+            |                 |                |                   |       |                  |                      |
-| Delete project                                                              | \+            |                 |                |                   |       |                  |                      |
-| Update Project Settings                                                     | \+            | \+              |                |                   |       |                  |                      |
-| See Project Settings                                                        | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
-| Create User                                                                 | \+            |                 |                |                   |       |                  |                      |
-| Invite User                                                                 | \+            | \+              |                |                   |       |                  |                      |
-| Delete User                                                                 | \+            |                 |                |                   |       |                  |                      |
-| Assign/Unassign internal user to/from the project                           | \+            | \+              |                |                   |       |                  |                      |
-| Change user's role on a project                                             | \+            | \+              |                |                   |       |                  |                      |
-| See list of project members                                                 | \+            | \+              | \+             | \+                | \+    |                  |                      |
-| Edit own account                                                            | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
-| Edit, delete launch, test item                                              | \+            | \+              | \+             |                   |       | \+               |                      |
-| Manage launches (force finish, merge)                                       | \+            | \+              | \+             |                   |       | \+               |                      |
-| Move launch to debug/default mode                                           | \+            | \+              | \+             |                   |       |                  |                      |
-| Analyse launches (start "Analysis" and "Match issues" manually)             | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
-| Manage filters, widgets, dashboards (create, edit, delete, share)           | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
-| Read data                                                                   | \+            | \+              | \+             | \+                | \+    | \+               | \+                   |
 
  
 >**Note:**
