@@ -1,14 +1,127 @@
-## Integration with bug tracking systems
+## Integration with Exteranal Systems
 
-Integration with a bug tracking system, can be required for projects that collect defects in a separate tracking tool.
-Integration provides an exchange of information between ReportPortal and the bug tracking system, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA or RALLY systems.
+Users can reinforce ReportPortal with adding additional integrtions with:
 
-Permission: The Administrator can configure the Bug Tracking System on the project settings page in the Management Board.
+* Jira
+* Rally
+* Sauce Labs
+* E-mail server
 
-A user with PROJECT MANAGER or LEAD project roles can configure the Bug Tracking System on the project settings page.
+Integration confiurations can be added on the global level (for all project on the instance) or on the project level (only for one project). To add integration with external systems, please look information in the section Plugins.
 
+If you have another configuration than others project have or you want to integrate only your project with external system, you should perform the next actions:
+
+1. Login ReportPortal as PROJECT MANGER or ADMIN
+
+2. Go to ProjectSettings > Integrations
+
+3. Click on the one of the integration panel
+
+4. And click button "Unlink and setup manually"
+
+By this action you unlink the current project from the global settings and configure your own integration.
+
+>**Note:**
+If you unlink project setting and ADMIN changes global settings for whole instance, your project will use your project settings.
+
+To return global settings, you need to click a button "Resert to global settings".
+In this case your settings will be deleted, and integration will use global settings.
+
+You always can reset to the global settings.
 
 ### Integration with JIRA
+
+Integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
+
+**Permission:** 
+The *Administrator* can upload plugin and make global integrations on the Plugin Tab on Administrative page. Also, the Administrator can unlink project configurations from global. 
+The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+
+#### Add JIRA integrations
+**Global JIRA integration**
+
+If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on JIRA plugin pannel
+
+4. Click on "Add integration"
+
+5. Fill and confirm authorization form
+
+6. Choose needed issue type and predefined field for chosen issue
+
+If you needed you can add more integrations, by clicking on "Add integration"
+
+**Project JIRA integration**
+
+If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
+
+1. Login as ADMIN or Project Manager
+
+2. Go to Project Settings > Integrations
+
+3. Click on the JIRA integration pannel
+
+4. Click on "Unlink and setup mannually"
+
+5. Fill and confirm authorization form
+
+6. Choose needed issue type and predefined field for chosen issue
+
+If you needed you can add more integrations, by clicking on "Add integration"
+
+>**Note:**
+
+User can add a severall integration, but with different name to the **one JIRA project**.
+
+>**Use case:**
+User wants to post to JIRA issues with type **Defect** and **Task** to the project NNN-MMM in Jira. Is it possible?
+Yes!
+Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1" and "Project -2". 
+Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
+While posing issue procedure, choose integration with needed type.
+
+### Authorization configurations
+
+```java
+'Integration Name ': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+'Project name in BTS': <project key in bug tracking system>            
+'Authorization Type': Basic (predefined)                  
+'BTS Username': <JIRA user name>                  
+'BTS Password': <JIRA user password>
+```
+
+**Some tricks when you create a new connections:**
+
+1.) Verify that the link to JIRA system is correct. There are some variants are possible, for instance: https://jira.company.com/jira https://jiraeu.company.com
+
+2.) Verify the project name in JIRA is correct. Please fill in Project name field with project key value, e.g. project ABC-DEF has key ABCDEF.
+
+3.) Verify username and password data. Make sure, that login name and not email is in the username field. In case all the data above is correct, but the error appears again, check whether user's credentials to JIRA are not expired. As far as JIRA sends the request in html format, we are not able to display the real reason of error. To check and/or resolve the issue, please do the next steps:
+
+*	Open JIRA page
+*	Login JIRA with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
+*	Submit the login form Screen with CAPTCHA should appears
+*	Enter the symbols
+*	Submit the credentials again
+*	Now try to establish the connection to JIRA on ReportPortal project.
+
+4.) SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
+After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
+
+### Configuration of fields of post issue form
+
+The "Configuration" (list of fields provided for issue form in JIRA) will appear on the Integration details. The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
+To configure fields for posting issues in JIRA, follow these instructions:
+•	Check desired fields. The checked fields will be shown on the post issue form.
+•	Fill in the required fields and the other checked fields as needed, and click "Submit" button. The system will save the entered information and hide the fields that are not checked. All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
+Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue / Link issue  are activated.
+
 
 **Set up connection to JIRA**
 
