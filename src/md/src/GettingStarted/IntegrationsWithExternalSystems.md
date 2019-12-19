@@ -325,3 +325,105 @@ To remove RALLY from project settings:
 
 The connection to RALLY will be deleted from ReportPortal. But all created and linked issues will be kept and available on 
 ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; and status of already submitted issues will not be available as well.
+
+### Integration with JIRA
+
+Integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
+
+**Permission:** 
+The *Administrator* can upload plugin and make global integrations on the Plugin Tab on Administrative page. Also, the Administrator can unlink project configurations from global. 
+The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+
+#### Add E-mail server integrations
+
+You can integrate Report portal with E-mail server. With this integration you will be able to perform such functions as:
+
+- invite new user to the project
+- configure notification rules on launch finish
+
+
+>**Permissions:** user with account role *ADMINISTRATOR* can configure E-mail integration for whole instance or per project.
+User with account role *PROJECT MANAGER* can configure E-mail integration only on project where he is assigned on as Project Manager.
+
+**Global E-mail server integration**
+
+To configure Email server for whole instance:
+
+1. Login to the ReportPortal as an ADMIN user
+2. Then open the list on the right of the user's image.
+3. Click the 'Administrative' link 
+4. Click the 'Plugins' from left-hand sidebar
+5. Click on the'Email Server' tab.
+6. Click on Add new integration
+6. The next fields should be present:
+```javascript 
+                   Host: <host_name_of_email_server>
+               Protocol: SMTP (predefined)
+    Default sender name: (optional)
+                   Port: <port_number>
+          Authorization: OFF/ON 
+               Username: <user_email_address>
+               Password: <user_email_password>
+         'TLS' or 'SSL': should be checked depends on selected port.
+```
+
+Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
+ 
+1. Fill the form with next data:
+```javascript
+                   Host: smtp.gmail.com
+               Protocol: SMTP
+    Default sender name: Report Portal
+                   Port: 465
+          Authorization: ON
+               Username: <user_email_address>
+               Password: <user_email_password>
+                    SSL: checkbox should be checked.
+```
+2. Click the 'Submit' button
+3. A confirmation message in the status bar should be shown.
+
+[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/0919itAaixk)
+
+Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
+ 
+1. Fill in the form with the next data set:
+```javascript
+                   Host: smtp.yandex.com
+               Protocol: SMTP
+    Default sender name: Report Portal
+                   Port: 465
+          Authorization: ON
+               Username: <user_email_address>
+               Password: <user_email_password>
+                    SSL: checkbox should be checked.
+```
+2. Click the 'Submit' button
+3. A confirmation message in the status bar should be shown.
+
+After E-mail server integration adding, the configration will be applyed to all projects on the instance.
+
+**Project E-mail integration**
+
+If E-mail integration has not be added on project, or if Project Manager or Admin want to specified a special configurations for special project, they can confugure E-mail server in the project settings.
+
+To configure Email server for one single project instance:
+
+1. Login to the ReportPortal as an ADMIN or PM user
+2. Then click on Project settings icon.
+3. Click on Integrations tab.
+4. Click on the'Email Server' tab.
+5. Click on the button "Unlink & Setup Manually"
+6. The next fields should be present:
+```javascript 
+                   Host: <host_name_of_email_server>
+               Protocol: SMTP (predefined)
+    Default sender name: (optional)
+                   Port: <port_number>
+          Authorization: OFF/ON 
+               Username: <user_email_address>
+               Password: <user_email_password>
+         'TLS' or 'SSL': should be checked depends on selected port.
+```
+
+>**Note:** In case you unlink your project settings from Global settings, for the chosen project
