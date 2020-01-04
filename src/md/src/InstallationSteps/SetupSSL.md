@@ -1,139 +1,53 @@
 ## Setup SSL
-This is a short guideline that provides information about self-signed SSL certificate setup for your existing ReportPortal environment.
 
-#### Pre-requisites:
-- Installed ReportPortal
-- Certificate in PEM format
-- Exported private key from PEM certificate
+This is a short guideline that provides information on how to configure ReportPortal to use Let SSL certificate setup for your existing ReportPortal environment.
 
-### Server configuration
-#### docker-compose.yml:
-Provided below is an example of using default docker-compose.yml. If you dont have any custom
-configurations in your docker-compose.yml file, you are free to use the example below.<br>
+#### Overview
 
-<b>NB!</b> Verify the certificates used are named "cert.pem" and key "mykey.pem",  if they are not then you need to rename the certificate files so that they match the above certificate names.
-"FABIO_PROXY_CS" property.
+We use Traefik as a layer-7 load balancer with SSL termination for the set of micro-services used to run ReportPortal web application.
+In addition, we use Let's Encrypt to automatically generate and renew SSL certificates per hostname.
+
+#### Pre-requisites
+
+- Server with a public IP address, with Docker and docker-compose installed on it
+- Installed ReportPortal on this servers
+- Your own domain and the DNS configured accordingly so the hostname records
+
+### Traefik configuration
+
+Provided below is an example of using Traefik (gateway service) in docker-compose.yml. If you don't have any custom configurations, you are free to use the example below.
+
+Please do not forget to update variables acme.email and acme.domains with your own values
 
 ```$xslt
-   version: '2'
+gateway:
+    image: traefik:1.7.12
+    ports:
+      - "8080:8080" # HTTP exposed
+      - "8081:8081" # HTTP Administration exposed
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command:
+      - --docker
+      - --docker.watch
+      - --docker.constraints=tag==v5
+      - --defaultentrypoints=https
+      - "--entryPoints=Name:https Address::8080 Redirect.EntryPoint:https"
+      - "--entryPoints=Name:https Address::8443 Compress:true"
+      - --logLevel=ERROR
+      - --web
+      - --web.address=:8081
+      - --web.metrics=true
+      - --web.metrics.prometheus=true
+      - --acme.email="your_email@blabla.com"
+      - --acme.storage="/etc/traefik/acme/acme.json"
+      - --acme.entrypoing=https
+      - --acme.httpchallenge.entrypoint=http
+      - --acme.domains='mydomain.com,www.mydomain.com'
 
-   services:
-     redis:
-       image: redis:3.2
-       ## Uncomment if needed
-       # ports:
-       #   - "6379:6379"
-       volumes:
-         - ./data/redis:/data
-       restart: always
-
-     mongodb:
-       image: mongo:3.4
-       volumes:
-         - ./data/mongo:/data/db
-       restart: always
-
-     registry:
-       image: consul:0.9.0
-       volumes:
-         - ./data/consul:/consul/data
-       command: "agent -server -bootstrap-expect=1 -ui -client 0.0.0.0  -raft-protocol=3"
-       environment:
-           - 'CONSUL_LOCAL_CONFIG={"leave_on_terminate": true}'
-       restart: always
-
-     uat:
-       image: reportportal/service-authorization:3.1.1
-       #ports:
-       #  - "9999:9999"
-       depends_on:
-         - redis
-         - mongodb
-       environment:
-         - RP_PROFILES=docker,6293
-         - RP_SESSION_LIVE=86400 #in seconds
-       restart: always
-
-     gateway:
-       image: fabiolb/fabio:1.5.2-go1.8.3
-       ports:
-         - "9998:9998" # GUI/management
-         - "8080:9999" # HTTP exposed
-       volumes:
-         - ./certs:/certs
-       environment:
-         - FABIO_REGISTRY_CONSUL_ADDR=registry:8500
-         - FABIO_REGISTRY_CONSUL_REGISTER_NAME=gateway
-         - FABIO_PROXY_ADDR=:9999;cs=av;rt=300s;wt=300s
-         - FABIO_PROXY_CS=cs=av;type=file;cert=/certs/cert.pem;key=/certs/mykey.pem
-
-     index:
-       image: reportportal/service-index:3.1.0
-       environment:
-         - RP_SERVER.PORT=8080
-         - RP_CONSUL.TAGS=urlprefix-/
-         - RP_CONSUL.ADDRESS=registry:8500
-       depends_on:
-          - registry
-          - gateway
-       restart: always
-
-     api:
-       image: reportportal/service-api:3.1.1
-       depends_on:
-         - redis
-         - mongodb
-       environment:
-         - RP_PROFILES=docker
-         - RP_ISSUE_ANALYZER_DEPTH=4
-         - JAVA_OPTS=-Xmx1g -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp
-       restart: always
-
-     ui:
-       image: reportportal/service-ui:3.1.5
-       environment:
-         - RP_SERVER.PORT=8080
-         - RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui
-         - RP_CONSUL.ADDRESS=registry:8500
-       restart: always
+    restart: always
    ```
 
-#### Adding certificates to the server
-Open up the ReportPortal directory (place, where is the "data" folder presents). Create the directory
-"certs". Add cert "cert.pem" and key "mykey.pem" to this directory.
-
-#### Recreate containers
-Run
-```$xslt
-docker-compose -p reportportal up -d --force-recreate
-```
-Server part is ready.
-To verify result open up report-portal via https connection.
-
-### Project configuration
-#### Adding certificate to project
-Before adding certificates to the project, you need to convert it from "PEM" format to "DER"*.
-Find any online converter or use line below to do it:
-```$xslt
-openssl x509 -outform der -in cert.pem -out cert.der
-```
-After the conversion is completed, you need to add the converted certificate to the jks container.
-To do it, open up the bin folder in your JAVA JDK directory and run:
-```$xslt
-keytool -import -alias your-alias -keystore certstore.jks -file cert.der
-```
-NB! Remember your password, after adding it to container.<br>
-Add the certstore.jks file to resources folder in the classpath of your project.
-
-#### reportportal.properties
-Open up reportportal.properties file in your project.
-- Change rp.endpoint url from http to https
-- Modify/add property rp.keystore.resource:
-```$xslt
-rp.keystore.resource = certstore.jks
-```
-- Modify/add property rp.keystore.password:
-```$xslt
-rp.keystore.password = YOUR_PASSWORD to certstore.jks
-```
-Project part is ready.
+With this simple configuration, you get:
+* HTTP redirect on HTTPS
+* Let's Encrypt support

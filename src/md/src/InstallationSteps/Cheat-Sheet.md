@@ -3,7 +3,6 @@
 
 ```
 export RP_PRJ=$(docker ps --filter="name=api" --format="\{{.Names}}" | sed 's/\(.*\)_api_[0-9]*/\1/')
-export RP_NET=$(docker inspect ${RP_PRJ}_mongodb_1 | jq '.[0].NetworkSettings.Networks' | jq -r 'keys[]')
 ```
 
 **Install/restart ReportPortal:** 
@@ -30,16 +29,16 @@ docker-compose -p $RP_PRJ logs <name, e.g. api>
 docker-compose -p $RP_PRJ down --rmi -v --remove-orphans
 ```
 
-**Backing UP:** 
+**Backup / Dump the data:** 
 
 ```
-docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongodump -h mongodb --db reportportal --out /db_dump/
+docker-compose exec -u <POSTGRES_USER> <postgres_container_name> pg_dump -Fc <POSTGRES_DB> > db.dump
 ```
 
-**Restore backup:** 
+**Restore the data:** 
 
 ```
-docker run --network ${RP_NET} --rm -v ${PWD}/dump2:/db_dump mongo  mongorestore -h mongodb --db reportportal/db_dump/reportportal
+docker-compose exec -i -u <POSTGRES_USER> <postgres_service_name> pg_restore -C -d postgres < db.dump
 ```
 
 You can download [PDF file](/documentation/resources/CheatSheet.pdf) with commands.
