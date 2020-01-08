@@ -25,6 +25,7 @@ Keeps index of user logs per project and provides ability to perform search by t
 Collects and processes the information, then sends it to Elasticsearch
 
 ### Migrations Service
+Database migrations written in Go. Migrate reads migrations from sources and applies them in correct order to a database  
 
 ### Index Service
 The Index services handle requests that do not match any pattern of other services. 
