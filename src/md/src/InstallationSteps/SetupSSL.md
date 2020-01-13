@@ -13,7 +13,7 @@ In addition, we use Let's Encrypt to automatically generate and renew SSL certif
 - Installed ReportPortal on this servers
 - Your own domain and the DNS configured accordingly so the hostname records
 
-### Traefik configuration
+#### Traefik configuration
 
 Provided below is an example of using Traefik (gateway service) in docker-compose.yml. If you don't have any custom configurations, you are free to use the example below.
 
