@@ -1,6 +1,4 @@
-## Other Types of Installations
-
-### An installation of the ReportPortal on Ubuntu OS
+## Deploy ReportPortal on Ubuntu OS
 
 _(provided by @Tset Noitamotua)_
 
