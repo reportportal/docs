@@ -1,5 +1,4 @@
 ## Test Framework Integration
-
 [ ![Integrations](Images/userGuide/import/Integrations.png) ](Images/userGuide/import/Integrations.png)
 
 ReportPortal is a system that **integrates with your Test Framework**, listens events in it and visualizes test results. You can not execute results right from ReportPortal.
