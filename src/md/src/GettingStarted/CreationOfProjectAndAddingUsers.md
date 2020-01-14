@@ -124,27 +124,39 @@ but not more than 24 hours. When the user clicks the link, he/she will see a reg
 7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
 
 
-#### Invite user via Project space Member page
+#### Edit project role
 
-To invite a user on the "Members" page, perform the following steps:
+To edit project role, perform the following steps:
 
-1. Login into ReportPortal instance as Project Manager.
+1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
 
-2. Navigate to the Project Members page.
+2. Then click the 'All users page' icon on the project page.
 
-3. Click the "Invite User" button.
+3. Click on Project name near a user name
 
-4. The "Invite new user" form will appear.
+4. Select a new value from the "Project Role" drop-down for the user
 
-5. Fill in the form and click the "Send invite" button. The invitation
-    has been sent. You can copy the link to the invitation from the "Link to
-    invitation" field.
+4. The new project role will be automatically saved.
 
-6.  A user will receive an email with the link to the invitation. Registration
-link will be active until the user registers in the system by this reference,
-but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
 
-7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
-The user will be assigned to the project, and to "Personal Project" with the PROJECT MANAGER project role. 
+#### Unassign user from the project
 
-[ ![Image](Images/userGuide/manageUsers/inviteUserFromProjectMembersPage.png) ](https://youtu.be/_XSrNWbHitM)
+Depending on project needs the assignment could be removed. 
+To unassign he assignment for user on the project, perform the following steps:
+
+1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
+
+2. Then click the 'All users page' icon on the project page.
+
+3. Find the required member
+
+4. Click on Project name near a user name
+
+5. Click on cross near the project name
+
+5. Confirm the action in the popup.
+
+6. The user will be unassigned from the current project but will stay in the system.
+
+>**Note:**
+User can not be unassign from the own personal project.
