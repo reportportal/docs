@@ -38,7 +38,8 @@ The *Administrator* can upload plugin and make global integrations on the Plugin
 The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
 
 #### Add JIRA integrations
-**Global JIRA integration**
+
+##### Global JIRA integration
 
 If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
 
@@ -56,7 +57,7 @@ If  all projects on your instance are using the same Jira  projects, you will be
 
 If you needed you can add more integrations, by clicking on "Add integration"
 
-**Project JIRA integration**
+##### Project JIRA integration
 
 If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
 
@@ -85,7 +86,7 @@ Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1"
 Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
 While posing issue procedure, choose integration with needed type.
 
-### Authorization configurations
+#### Authorization configurations
 
 ```java
 'Integration Name ': <The name which you want to give to your integration> - should be unique
@@ -114,7 +115,7 @@ While posing issue procedure, choose integration with needed type.
 4.) SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
 
-### Configuration of fields of post issue form
+#### Configuration of fields of post issue form
 
 The "Configuration" (list of fields provided for issue form in JIRA) will appear on the Integration details. The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
 To configure fields for posting issues in JIRA, follow these instructions:
@@ -122,109 +123,7 @@ To configure fields for posting issues in JIRA, follow these instructions:
 •	Fill in the required fields and the other checked fields as needed, and click "Submit" button. The system will save the entered information and hide the fields that are not checked. All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
 Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue / Link issue  are activated.
 
-
-**Set up connection to JIRA**
-
-The ReportPortal allows users to connect one or multiple JIRA projects to one project in the ReportPortal.
-
-To integrate JIRA to the ReportPortal, perform the following steps:
-
-1. Login into ReportPortal instance as a user with LEAD or PROJECT MANAGER roles on the project.
-2. Open the Settings page of the project, select the 'Bug Tracking System' tab. The JIRA system is selected by default.
-3. The form to set up connection to JIRA is then displayed. The Form contains the following:
-```javascript
-                      'Link to BTS': <valid URL of bug tracking system>
-              'Project name in BTS': <project key in bug tracking system>
-               'Authorization Type': Basic (predefined)
-                     'BTS Username': <JIRA user name>
-                     'BTS Password': <JIRA user password>
-```
-4. Fill in the required fields and click the 'Submit' button.
-
-A confirmation message will be shown in the status bar.
-
-Keep in mind, the set of fields depends on a bug tracking system.
-
-Another JIRA project could be connected to the ReportPortal project. To do that, click the "Add New Instance" link and fill in
-the new JIRA project properties. 
-
-Steps above are enough to link issue functionality and to getting updates on issue's statuses.
-
-To add the functionality of submitting issues to bug tracking system, it is necessary to select and /or submit default properties for the issue form.
-
-
-**Configuration of fields of post issue form**
-
-The "Default properties for issue form" (list of fields provided for issue form in JIRA) will appear on the submit form above.
-The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
-
-To configure fields for posting issues in JIRA, follow these instructions: 
-
-1. Check desired fields. The checked fields will be shown on the post issue form.
-
-2. Fill in the required fields and the other checked fields as needed, and
-click "Submit" button. The system will save the entered information and hide the fields that are not checked. 
-All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
-
-Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue is activated.
-
-[ ![Image](Images/userGuide/bugSystem/addBugSystem.png) ](https://youtu.be/svX2hBdRNmA)
-
-
-**Edit JIRA properties**
-
-To edit JIRA settings, properties the JIRA connection can be updated, by following these instructions: 
-
-1. Click the 'Edit' icon. The JIRA properties will become editable.
-
-2. Make changes in JIRA Properties form.
-
- If "Link to BTS" and "Project name in BTS" fields weren’t changed – content of "Default properties for issue form" will be 
-kept and shown after the new data validation is completed.
-
- If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content 
- of "Default properties for the issues form" and show the default set of fields.
-
-
-**Update fields of post bug form**
-
-To add additional fields to the post bug form:
-1. Click the 'Update' button under the "Default properties for issue form". 
-
-   You will see the list of all available fields for post bug form. 
-   
-2. Select the desired fields
-
-3. Click the 'Submit' button. 
-   A confirmation message will be shown in the status bar. "Default properties for issue form" will be updated.
-   Previously selected fields are checked as well.
-
-To remove the fields from the post issue form:
-1. Uncheck the desired fields 
-
-2. Click the "Submit" button. 
-"Default properties for issue form" will be updated.
-
-Also, fields can be filled in with some data. 
-
-For instance, add general data to the 'Summary' field ("UI:")
-
-Or select a value from a list provided, e.g., select all appropriate version names for 'Fix Version/s' or 'Affects Version/s' fields.
-
-The "Post issue form" will contain the selected data. So, it will be not necessary in the future to type or select general information again and again.
-
-[ ![Image](Images/userGuide/bugSystem/updateFields.png) ](https://youtu.be/6Urp7kHsO4U)
-
-
-**Remove JIRA project from ReportPortal settings**
-
-To remove JIRA from project settings:
-1. Click the "Remove project" button.
-
-2. Confirm the action in the modal window.
-
-The connection to JIRA will be deleted from ReportPortal. But all created and linked issues will be kept and available on the
-ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; the status of already submitted issues will no longer be available. 
+[Video]()
 
 
 ### Integration with RALLY
@@ -345,7 +244,7 @@ You can integrate Report portal with E-mail server. With this integration you wi
 >**Permissions:** user with account role *ADMINISTRATOR* can configure E-mail integration for whole instance or per project.
 User with account role *PROJECT MANAGER* can configure E-mail integration only on project where he is assigned on as Project Manager.
 
-**Global E-mail server integration**
+### Global E-mail server integration
 
 To configure Email server for whole instance:
 
@@ -427,3 +326,5 @@ To configure Email server for one single project instance:
 ```
 
 >**Note:** In case you unlink your project settings from Global settings, for the chosen project
+
+### Sauce Labs integration
