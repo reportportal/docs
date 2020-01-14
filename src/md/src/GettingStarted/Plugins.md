@@ -67,7 +67,7 @@ If user configure plugin on the **global level**, then these configurations will
 
 If user configure a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
 
-Details on how to configure a specific plugin please find in the Integration section:
+Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Project-configuration):
 
 *	integration with Jira
 *	integration with Rally
