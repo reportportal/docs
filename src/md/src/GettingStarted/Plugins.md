@@ -14,7 +14,7 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
  
 ### Upload plugin
 
-You can find latest version of plugins by the link bintray.com/beta/#/epam/reportportal/.
+You can find latest version of plugins by the [link](bintray.com/beta/#/epam/reportportal/).
 Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.
 
 For a plugin uploading please perform the following actions:
