@@ -77,7 +77,7 @@ Details on how to configure a specific plugin please find in the Integration sec
 > Use case: 
 > 
 > * One instance, *all project have the same plugin config* – configure global integration on > Administrative.
->  * One instance, *different projects have different plugin config* – do not configure global integration, just add integrations per project.
+> * One instance, *different projects have different plugin config* – do not configure global integration, just add integrations per project.
 > * One instance, *different projects have different projects, but some project have the same configuration* – configure global integration, and add project integrations only for needed projects.
 
 [Video]
