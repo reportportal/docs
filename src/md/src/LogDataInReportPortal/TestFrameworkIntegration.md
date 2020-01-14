@@ -22,8 +22,8 @@ Choose which combination of agent, client and logger you need, and follow the in
 
 |  Language | Agents |Client | Logger| 
 | ------------- | ------------- |------------- | ------------- |
-|Java Test Frameworks | [Java based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=java&type=&language=)| [Java client](https://github.com/reportportal/client-java)| [Java loggers](https://github.com/reportportal?utf8=%E2%9C%93&q=java+-logger&type=&language=)|
-|JavaScript Test Frameworks | [JavaScript based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=java-agent&type=&language=)| [JavaScript client](https://github.com/reportportal/client-javascript)| |
+|Java Test Frameworks | [Java based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=java-agent&type=&language=)| [Java client](https://github.com/reportportal/client-java)| [Java loggers](https://github.com/reportportal?utf8=%E2%9C%93&q=java+-logger&type=&language=)|
+|JavaScript Test Frameworks | [JavaScript based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=javascript&type=&language=)| [JavaScript client](https://github.com/reportportal/client-javascript)| |
 |.Net Test Frameworks | [.Net based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=net&type=&language=)| [.Net client](https://github.com/reportportal/client-nett)| [.Net loggers](https://github.com/reportportal?utf8=%E2%9C%93&q=net-logger&type=&language=) |
 |Python Test Frameworks | [Python based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=python&type=&language=)| [Python client](https://github.com/reportportal/client-Python)| |
 |PHP Test Frameworks | [PHP based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=php&type=&language=)| [PHP client](https://github.com/reportportal/client-php)| |
