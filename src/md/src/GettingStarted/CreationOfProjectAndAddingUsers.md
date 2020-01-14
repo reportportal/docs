@@ -1,7 +1,27 @@
 ## Creation of project and adding users
 
-Now it is necessary to create a separate space, named as Project, and add user(s) to it, who will create and manage the data.
-Permission: Only user with account role ADMINISTRATOR has access to this context.
+You have already configured server settings and add plugins to the system.
+Now you need to create a space where users will be working with test results.
+
+The main question how you can orginize your working space in ReportPortal. 
+Let's see two use cases which can help you to make decision.
+
+> **Use Case 1**: 
+> **Situation:** We have a small team. Everybody can see everything. We need one dashboard which shows information about whole project.
+> **Solution:** Create one project. Assign all users on created project. View all types of test cases (UI, API, Unit and so on) on this project. Divide executions by custom filters. Create a dasboard with widget based on filters.
+> **Pros:** You have a dasboard which can combain all results needed for your team. You need to configure only one project.
+> **Cons:** All team members can see all results, you can not configure permissions rules.
+
+> **Use Case 2**: 
+> **Situation:** We have a big team with a difficult permission structure and nested streams. Only persons with granted permissions can see results of the certain stream. 
+> **Solution:** Create separate projects for different streams. Assign users to an appropriate projects. Create a dasboard with widget based on filters for each project.
+> **Pros:** Security, only users with granted permission will have access to the data.
+> **Cons:** You can not see a single dashboard for several dashboards. 
+
+If you choose a strategy, it is time to create your first project.
+
+**Permission:**
+Via Administrative page  ADMINISTRATOR can create, configure, delete projects and add/invite/assign/unassign users on/to the projects. 
 
 ### Create project
 
@@ -17,22 +37,24 @@ To create a project for a team:
 A confirmation message in status bar should appear.
 
 > **Note**
-
-> The name of project should contain between 3-256 symbols. 
-> It can include Latin and numeric characters, as well as underscores and dashes. 
-> The name should be unique and cannot be changed after saving.
+The name of project should contain between 3-256 symbols. 
+It can include Latin and numeric characters, as well as underscores and dashes. 
+The name should be unique and cannot be changed after saving.
 
 An Admin can configure the project settings or leave them as the default. 
-Project members with LEAD or PROJECT_MANAGER roles are able to setup the project settings.
-To know how project settings could be updated, go to the 'ProjectConfiguration' section
+Project members with PROJECT_MANAGER roles are able to setup the project settings.
+To know how project settings could be updated, go to the [ProjectConfiguration](https://reportportal.io/docs/Project-configuration) section
 
-To know more about project's management, go to Management Board>All Projects page
+To know more about project's management, go to Management Board > All Projects page.
+
+You have a project, now add your team members to it.  You can create new user and send credentials for them - **Add user** or you can sent them invite link - **Invite user**.
 
 ### Add users to project
 
-Only the Admin user is able to create a user in ReportPortal. This functionality is named 'Add User'.
+**Permission:**
+Via Administrative page only ADMINISTRATOR can add users.
 
-A new user can be added for newly created projects with the next steps:
+A new user can be added on projects with the next steps:
 1. Login to the ReportPortal as an ADMIN user
 2. Then open the list on the right of the user's image.
 3. Click the 'Administrative' link 
@@ -46,8 +68,9 @@ A new user can be added for newly created projects with the next steps:
 								    'login': <unique_login_name>
 							    'Full Name': <user_full_name>
 								    'Email': <unique_email_address>
+								    'Account role': USER (by default)
 							 'Project Role': MEMBER (by default)
-								 'Password': could be entered manually (at least 6 symbols required) or generated via link under the field.
+                            'Password': could be entered manually (at least 6 symbols required) or generated via link under the field.
 ```
 
 Example of user creation:
@@ -55,9 +78,10 @@ Example of user creation:
 ```javascript
 						   Enter user's login: Demo
 					   Enter user's full name: Demo user
-						   Enter user's email: demo_user@example.com
-Leave default or select a user's project role: LEAD
-								 Add password: 1q2w3e 
+	                                 Enter user's email: demo_user@example.com
+                                           'Account role': USER (by default)
+					    'Project Role': MEMBER (by default)
+						Add password: 1q2w3e 
 ```
 Submit the form.
 
@@ -65,12 +89,42 @@ A confirmation message in the status bar should appear.
 
 The notification email letter is sent to the email address of new user.
 
- > **Note** 
-  When a user is created, s/he gets their own space, named as "personal project". 
+By default the system creates a personal project for new user. All new users which have been added to the ReportPortal  will be have a personal project along with project where they have been assigned on. The user will be assigned to  "Personal Project" with the PROJECT MANAGER project role.
 
-If you wish to know more about adding user options, go to Project Configuration > Management of users
+>**Note:**
+If you do not need personal project, ADMINISTRATOR can delete it. This project will be removed from the instanse. But if user is be unassigned from all projects in the system, and he/she will login to the ReportPortal after that - deleted personal project will be created once more time.
+
+If you wish to know more about adding user options, go to Management Board > All Users page.
 
 ### Invite user to a project
+**Permission:**
+Via Administrative page only ADMINISTRATOR can invite users.
+Via Project Space ADMINISTRATOR and PROJECT MANAGER can invite users.
+
+#### Invite user via Management board
+
+To invite a user perform the following steps:
+
+1. Login into ReportPortal instance as ADMINISTRATOR.
+
+2. Navigate to the All Users pagee.
+
+3. Click the "Invite User" button.
+
+4. The "Invite new user" form will appear.
+
+5. Fill in the form and click the "Send invite" button. The invitation
+    has been sent. You can copy the link to the invitation from the "Link to
+    invitation" field.
+
+6.  A user will receive an email with the link to the invitation. Registration
+link will be active until the user registers in the system by this reference,
+but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
+
+7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
+
+
+#### Invite user via Project space Member page
 
 To invite a user on the "Members" page, perform the following steps:
 
