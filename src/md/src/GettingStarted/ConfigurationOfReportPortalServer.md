@@ -1,11 +1,16 @@
-## Configuration of Report Portal server
+## Authorization configuration
 
-### Authorization configuration
-ReportPortal allows GitHub users to login via GitHub auth, Active Directory Authorization or LDAP Authorization.
-The Admin of the ReportPortal instance can provide access to an external user. 
+ReportPortal Admin can configure an easy authorization on the instanse. From the box we provide OAuth with:
+
+* GitHub
+* LDAP
+* Active Directory
+* SAML (in progress)
 
 ### GitHub Authorization
+
 To setup access with GitHub auth:
+
 1. Login to the ReportPortal as an ADMIN user
 2. Open the list on the right of the user's image.
 3. Click the 'Administrative' link 
@@ -28,7 +33,7 @@ Example of GitHub auth configuration:
  ```javascript 
                'Client Id': 8767988c424a0e7a2640
            'Client Secret': ef22c9f804257afaf399a2dada7c8f22dee5fd1b
-       'Organization Name': reportportal
+       'Organization Name': reportportal (optional)
   ```
  Click the 'Submit' button.
  A confirmation message in status bar should be shown.
@@ -37,6 +42,7 @@ Example of GitHub auth configuration:
  >**Note:** Be sure that user's membership to the Github organization needs to be public.
  
  ### Active Directory Authorization
+ 
 To setup access with Active Directory:
 1. Login ReportPortal as an ADMIN user
 2. Then open the list on the right of the user's image.
