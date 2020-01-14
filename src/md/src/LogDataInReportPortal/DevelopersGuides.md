@@ -2,13 +2,13 @@
 
 Here you can find some guides for developers which helps to configure and improve your reporting.
  
-* [API difference between the version 4 and the version 5](https://github.com/ihar-kahadouski/dev-guide/blob/master/api-differences.md)
+* [API difference between the version 4 and the version 5](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/api-differences.md)
 
 
-* [The full description on how to report results to ReportPortal](https://github.com/ihar-kahadouski/dev-guide/blob/master/reporting.md)
+* [The full description on how to report results to ReportPortal](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/reporting.md)
 
 
-* [Launch rerun (report results to exsisting launch without new launch creation)](https://github.com/ihar-kahadouski/dev-guide/blob/master/rerun.md)
+* [Launch rerun (report results to exsisting launch without new launch creation)](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/rerun.md)
 
 
 * [How to aggregate Multi thread process execution in one launch](https://github.com/reportportal/client-java/wiki/How-to-aggregate-Multi-thread-process-execution-in-one-launch)
