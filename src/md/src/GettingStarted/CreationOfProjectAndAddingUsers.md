@@ -7,15 +7,23 @@ The main question how you can orginize your working space in ReportPortal.
 Let's see two use cases which can help you to make decision.
 
 > **Use Case 1**: 
+>
 > **Situation:** We have a small team. Everybody can see everything. We need one dashboard which shows information about whole project.
+>
 > **Solution:** Create one project. Assign all users on created project. View all types of test cases (UI, API, Unit and so on) on this project. Divide executions by custom filters. Create a dasboard with widget based on filters.
+>
 > **Pros:** You have a dasboard which can combain all results needed for your team. You need to configure only one project.
+>
 > **Cons:** All team members can see all results, you can not configure permissions rules.
 
 > **Use Case 2**: 
+>>
 > **Situation:** We have a big team with a difficult permission structure and nested streams. Only persons with granted permissions can see results of the certain stream. 
+>
 > **Solution:** Create separate projects for different streams. Assign users to an appropriate projects. Create a dasboard with widget based on filters for each project.
+>
 > **Pros:** Security, only users with granted permission will have access to the data.
+>
 > **Cons:** You can not see a single dashboard for several dashboards. 
 
 If you choose a strategy, it is time to create your first project.
@@ -26,13 +34,13 @@ Via Administrative page  ADMINISTRATOR can create, configure, delete projects an
 ### Create project
 
 To create a project for a team:
-1. Login to the ReportPortal as an ADMIN user
-2. Open the list on the right of the user's image.
-3. Click the 'Administrative' link 
-4. Select 'Projects' from the left-hand sidebar
-5. Click the 'Add Project' button in the right top corner
-6. Then enter a name of the project
-7. Click the 'Submit' button.
+* Login to the ReportPortal as an ADMIN user
+* Open the list on the right of the user's image.
+* Click the 'Administrative' link 
+* Select 'Projects' from the left-hand sidebar
+* Click the 'Add Project' button in the right top corner
+* Then enter a name of the project
+* Click the 'Submit' button.
 
 A confirmation message in status bar should appear.
 
@@ -55,14 +63,14 @@ You have a project, now add your team members to it.  You can create new user an
 Via Administrative page only ADMINISTRATOR can add users.
 
 A new user can be added on projects with the next steps:
-1. Login to the ReportPortal as an ADMIN user
-2. Then open the list on the right of the user's image.
-3. Click the 'Administrative' link 
-4. Select 'Projects' from the left-hand sidebar
-5. Find the project on which user/s will be added
-6. Click the 'Members' icon on the tail of the project
-7. Click the 'Add User' button
-8. Next a form opens in the pop-up:
+* Login to the ReportPortal as an ADMIN user
+* Then open the list on the right of the user's image.
+* Click the 'Administrative' link 
+* Select 'Projects' from the left-hand sidebar
+* Find the project on which user/s will be added
+* Click the 'Members' icon on the tail of the project
+* Click the 'Add User' button
+* Next a form opens in the pop-up:
 
 ```javascript
 								    'login': <unique_login_name>
@@ -105,57 +113,57 @@ Via Project Space ADMINISTRATOR and PROJECT MANAGER can invite users.
 
 To invite a user perform the following steps:
 
-1. Login into ReportPortal instance as ADMINISTRATOR.
+* Login into ReportPortal instance as ADMINISTRATOR.
 
-2. Navigate to the All Users pagee.
+* Navigate to the All Users pagee.
 
-3. Click the "Invite User" button.
+* Click the "Invite User" button.
 
-4. The "Invite new user" form will appear.
+* The "Invite new user" form will appear.
 
-5. Fill in the form and click the "Send invite" button. The invitation
+* Fill in the form and click the "Send invite" button. The invitation
     has been sent. You can copy the link to the invitation from the "Link to
     invitation" field.
 
-6.  A user will receive an email with the link to the invitation. Registration
+* A user will receive an email with the link to the invitation. Registration
 link will be active until the user registers in the system by this reference,
 but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
 
-7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
+* A user needs to fill in the registration form and click the "Register" button to complete the registration. 
 
 #### Assign user to the project
 
 Perform the following steps:
 
-1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
+* Login into the ReportPortal as a user with ADMINISTRATOR project role.
 
-2. Then click the 'All users page' icon on the project page.
+* Then click the 'All users page' icon on the project page.
 
-3. Click on Project name near a user name
+* Click on Project name near a user name
 
-4. Click on 'Add project'
+* Click on 'Add project'
 
-5. Type first 3 symbols of needed project and choose project from the proposed list
+* Type first 3 symbols of needed project and choose project from the proposed list
 
-6. Choose a project role (Member by default)
+* Choose a project role (Member by default)
 
-7. Click on stick
+* Click on stick
 
-8. The new assignment  will be automatically saved.
+* The new assignment  will be automatically saved.
 
 #### Edit project role
 
 To edit project role, perform the following steps:
 
-1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
+* Login into the ReportPortal as a user with ADMINISTRATOR project role.
 
-2. Then click the 'All users page' icon on the project page.
+* Then click the 'All users page' icon on the project page.
 
-3. Click on Project name near a user name
+* Click on Project name near a user name
 
-4. Select a new value from the "Project Role" drop-down for the user
+* Select a new value from the "Project Role" drop-down for the user
 
-4. The new project role will be automatically saved.
+* The new project role will be automatically saved.
 
 
 #### Unassign user from the project
@@ -163,19 +171,19 @@ To edit project role, perform the following steps:
 Depending on project needs the assignment could be removed. 
 To unassign he assignment for user on the project, perform the following steps:
 
-1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
+* Login into the ReportPortal as a user with ADMINISTRATOR project role.
 
-2. Then click the 'All users page' icon on the project page.
+* Then click the 'All users page' icon on the project page.
 
-3. Find the required member
+* Find the required member
 
-4. Click on Project name near a user name
+* Click on Project name near a user name
 
-5. Click on cross near the project name
+* Click on cross near the project name
 
-5. Confirm the action in the popup.
+* Confirm the action in the popup.
 
-6. The user will be unassigned from the current project but will stay in the system.
+* The user will be unassigned from the current project but will stay in the system.
 
 >**Note:**
 User can not be unassign from the own personal project.
