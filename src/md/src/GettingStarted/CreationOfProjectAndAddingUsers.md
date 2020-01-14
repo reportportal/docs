@@ -123,6 +123,25 @@ but not more than 24 hours. When the user clicks the link, he/she will see a reg
 
 7. A user needs to fill in the registration form and click the "Register" button to complete the registration. 
 
+#### Assign user to the project
+
+Perform the following steps:
+
+1. Login into the ReportPortal as a user with ADMINISTRATOR project role.
+
+2. Then click the 'All users page' icon on the project page.
+
+3. Click on Project name near a user name
+
+4. Click on 'Add project'
+
+5. Type first 3 symbols of needed project and choose project from the proposed list
+
+6. Choose a project role (Member by default)
+
+7. Click on stick
+
+8. The new assignment  will be automatically saved.
 
 #### Edit project role
 
