@@ -14,12 +14,13 @@ Here you can find some guides for developers which helps to configure and improv
 * [How to aggregate Multi thread process execution in one launch](https://github.com/reportportal/client-java/wiki/How-to-aggregate-Multi-thread-process-execution-in-one-launch)
 
 
+* [How report tests with attributes?](https://github.com/reportportal/client-java/wiki/Test-item-attributes)
+
+
 * How report tests with Test case ID. How add TestID from your Test Management System to reported execution
   * https://github.com/reportportal/client-java/wiki/Test-case-ID
   * https://github.com/reportportal/client-java/wiki/Test-case-ID-Key
 
-
-* [How report tests with attributes?](https://github.com/reportportal/client-java/wiki/Test-item-attributes)
 
 
 * How report tests with nested steps?
