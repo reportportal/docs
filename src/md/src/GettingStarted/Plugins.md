@@ -65,7 +65,7 @@ User can configure a plugin on the **instance level** (global configuration) and
 
 If user configure plugin on the **global level**, then these configurations will be applied to the all project on the instance, which do not have their own configurations.
 
-If user configure a plugin on the *project level*, then these configurations will be applied to only this project and replace global configurations, in case they are. 
+If user configure a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
 
 Details on how to configure a specific plugin please find in the Integration section:
 
