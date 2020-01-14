@@ -27,7 +27,7 @@ Choose which combination of agent, client and logger you need, and follow the in
 |.Net Test Frameworks | [.Net based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=net&type=&language=)| [.Net client](https://github.com/reportportal/client-net)| [.Net loggers](https://github.com/reportportal?utf8=%E2%9C%93&q=net-logger&type=&language=) |
 |Python Test Frameworks | [Python based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=python&type=&language=)| [Python client](https://github.com/reportportal/client-Python)| |
 |PHP Test Frameworks | [PHP based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=php&type=&language=)| [PHP client](https://github.com/reportportal/client-php)| |
-|Others Test Frameworks | [Other](https://reportportal.io/installation)| | |
+|Others Test Frameworks | [Other](https://reportportal.io/installation)| | | |
 
 
 
