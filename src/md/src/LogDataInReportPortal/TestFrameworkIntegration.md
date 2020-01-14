@@ -12,7 +12,7 @@ If you decide to integrate your test framework with ReportPortal what should you
 
 First, we propose you to start you exploration with our examples, that help you to try ReportPortal in action without any efforts.
 
-| Testframe works | Examples|
+| **Testframe works | Examples**|
 | ------------- | ------------- |
 | Java TestFrameworks |https://github.com/reportportal/examples-java  |
 | JavaScript based TestFrameworks |in progress |
@@ -20,7 +20,7 @@ First, we propose you to start you exploration with our examples, that help you 
 Now when you understand how integration works, you will be able to configure your own reporting.
 Choose which combination of agent, client and logger you need, and follow the instructions which has been provided inside each agents.
 
-|  Language | Agents |Client | Logger| 
+|  **Language | Agents |Client | Logger**| 
 | ------------- | ------------- |------------- | ------------- |
 |Java Test Frameworks | [Java based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=java-agent&type=&language=)| [Java client](https://github.com/reportportal/client-java)| [Java loggers](https://github.com/reportportal?utf8=%E2%9C%93&q=java+-logger&type=&language=)|
 |JavaScript Test Frameworks | [JavaScript based agents](https://github.com/reportportal?utf8=%E2%9C%93&q=javascript&type=&language=)| [JavaScript client](https://github.com/reportportal/client-javascript)| |
