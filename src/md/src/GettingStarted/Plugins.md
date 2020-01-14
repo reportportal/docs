@@ -8,7 +8,7 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
 
 | **Plugin**  | **Features**  |   
 |---|---|
-| Jira/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and Jira or Rally, such <br>* Posting new issues to BTS  <br>* linking test failures with existing issue in BTS   <br>*  Track issue statuses| 
+| Jira/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with existing issue in BTS, track issue statuses| 
 |E-mail server| With this plugin you will be able to configure notifications about test result finish in real time.|
 |SauceLabs| Configure an integration with Sauce Labs and watch video of test executions right in the ReportPortal application on the log view.|
  
