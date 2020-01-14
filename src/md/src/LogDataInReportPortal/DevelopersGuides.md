@@ -1,4 +1,4 @@
-## Developers` guide
+## Developers guide
 
 Here you can find some guides for developers which helps to configure and improve your reporting.
  
