@@ -1,4 +1,4 @@
-## Integration with Exteranal Systems
+## Integrations
 
 Users can reinforce ReportPortal with adding additional integrtions with:
 
