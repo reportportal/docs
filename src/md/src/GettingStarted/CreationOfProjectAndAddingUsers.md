@@ -110,8 +110,6 @@ If you wish to know more about adding user options, go to Management Board > All
 Via Administrative page only ADMINISTRATOR can invite users.
 Via Project Space ADMINISTRATOR and PROJECT MANAGER can invite users.
 
-#### Invite user via Management board
-
 To invite a user perform the following steps:
 
 * Login into ReportPortal instance as ADMINISTRATOR.
@@ -132,7 +130,11 @@ but not more than 24 hours. When the user clicks the link, he/she will see a reg
 
 * A user needs to fill in the registration form and click the "Register" button to complete the registration. 
 
-#### Assign user to the project
+### Assign user to the project
+
+**Permission:**
+Via Administrative page only ADMINISTRATOR can assign users.
+Via Project Space ADMINISTRATOR and PROJECT MANAGER can assign users.
 
 Perform the following steps:
 
@@ -152,7 +154,11 @@ Perform the following steps:
 
 * The new assignment  will be automatically saved.
 
-#### Edit project role
+### Edit project role
+
+**Permission:**
+Via Administrative page only ADMINISTRATOR can edit project role.
+Via Project Space ADMINISTRATOR and PROJECT MANAGER can edit project role.
 
 To edit project role, perform the following steps:
 
@@ -167,7 +173,11 @@ To edit project role, perform the following steps:
 * The new project role will be automatically saved.
 
 
-#### Unassign user from the project
+### Unassign user from the project
+
+**Permission:**
+Via Administrative page only ADMINISTRATOR can unassign users.
+Via Project Space ADMINISTRATOR and PROJECT MANAGER can unassign users.
 
 Depending on project needs the assignment could be removed. 
 To unassign he assignment for user on the project, perform the following steps:
