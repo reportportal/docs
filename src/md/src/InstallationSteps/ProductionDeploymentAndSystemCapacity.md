@@ -9,7 +9,7 @@ Information is presented for the M5 instances which are the latest generation of
 
 #### C5 instances
 
-Information is presented for the С5 instances which are optimized for compute-intensive workloads and deliver cost-effective high performance at a low price per compute ratio(Compute Optimized Instances) with Up to 3.4GHz, and single core turbo frequency of up to 3.5 GHz 2nd generation Intel Xeon Scalable Processors (Cascade Lake) or 1st generation Intel Xeon Platinum 8000 series (Skylake-SP) processor with a sustained all core Turbo frequency
+(Recommended type) Information is presented for the С5 instances which are optimized for compute-intensive workloads and deliver cost-effective high performance at a low price per compute ratio(Compute Optimized Instances) with Up to 3.4GHz, and single core turbo frequency of up to 3.5 GHz 2nd generation Intel Xeon Scalable Processors (Cascade Lake) or 1st generation Intel Xeon Platinum 8000 series (Skylake-SP) processor with a sustained all core Turbo frequency
 
 ##### Application and Database are deployed on different VMs
 
