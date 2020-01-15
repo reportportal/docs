@@ -5,7 +5,7 @@ ReportPortal is a system that **integrates with your Test Framework**, listens e
 
 How you can integrate ReportPoral with a Test framework?
 
-## Novice user
+### Novice user
 
 If you do not know anything about ReportPoral. 
 If you just want to  integrate ReportaPortal with your Test Framework and view info about test cases executions: a name, a status, a duration, parameters, attachments (files, screenshots, video and other), logs and others.
@@ -20,7 +20,7 @@ Start you exploration with examples.
 
 Then mimic the provided example and start to use ReportPortal. 
 
-## Advanced user
+### Advanced user
 
 If you need a sophisticated and fullfeatured integration with a test frameworks, you can configure it by your self. 
 Choose which combination of agent, client and logger you need, and follow the instructions which has been provided inside of each agents.
