@@ -19,7 +19,7 @@ The project configuration page will be opened.
 The project settings are divided into five tabs: "General", "Notifications", "Bug Tracking
 System", "Defect Types" and "Demo Data".
 
-**GENERAL SETTINGS** 
+#### General settings 
 
 The "General" tab has the following project parameters displayed:
 
@@ -47,7 +47,7 @@ The "General" tab has the following project parameters displayed:
 Users with MEMBER/ OPERATOR/ CUSTOMER project roles do not have permissions to edit project settings, They can only to view them.
 
 
-**CONFIGURE EMAIL NOTIFICATION**
+#### E-mail notifications
 
 The "Notifications" tab provides the administrator the ability to activate e-mail notifications on the project.
 
@@ -97,13 +97,13 @@ Users with a MEMBER/ OPERATOR/ CUSTOMER project role will not have the capabilit
 >**Note:**
 For using this functionality be sure that E-mail server is configured.
 
-**INTEGRATION**
+#### Integrations 
 
 The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
 
 For more information on this topic, please refer to [Integration with external systems](/docs/Integration-with-external).
 
-**CREATE CUSTOM DEFECT TYPES**
+#### Custom defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
 
@@ -160,13 +160,13 @@ will be shown as "Product Bug".
 
 [ ![Image](Images/userGuide/managingProjects/defectTypesConf.png) ](https://youtu.be/z8iWXXk6A6Q)
 
-**AUTO-ANLYSIS and PATTERN ANALYSIS**
+#### Auto-analysis and Pattern analysis
 
 The "Auto-Analysis" and "Pattern analysis" tabs can allow to reduce analysis routine on the project.
 
 For more information on this topic, please refer to [Analysis]('src/computeds/md/src/Analysis/index.md').
 
-**DEMO DATA**
+#### Demo data
 
 The "Demo Data" tab provides a way to generate demo data on the project.
 
@@ -185,7 +185,7 @@ Permissions:
 User with Administrator role and users with project role PROJECT_MANAGER.
 
 
-**INVITE USER ON PROJECT**
+#### Invite user on project
 
 To invite a user on the project "Members" page, perform the following steps:
 
@@ -222,7 +222,7 @@ button to complete the registration.
 [ ![Image](Images/userGuide/manageUsers/inviteUserFromProjectMembersPage.png) ](https://youtu.be/BLI-IlTkSgI)
 
 
-**PROJECT ROLE**
+#### Project role
 
 Every user is given a specific Project role within a specific project.
 
@@ -239,7 +239,7 @@ There are 4 possible Project roles in ReportPortal:
 Administrator has all privileges on the project.
 
 
-**EDIT PROJECT ROLE** 
+#### Edit project role
 
 To edit project role, perform the following steps:
 
@@ -254,7 +254,7 @@ To edit project role, perform the following steps:
 [ ![Image](Images/userGuide/manageUsers/editProjectRoleFromProjectMembersPage.png) ](https://youtu.be/aH1viL0FFlw)
 
 
-**UNASSIGN USER FROM PROJECT**
+#### Unassign user from the project
 
 
 Depending on project needs the assignment could be removed. 
