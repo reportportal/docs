@@ -14,6 +14,9 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
  
 ### Upload plugin
 
+**Permissions:**
+Only ADMIMISTRATOR can upload plugin.
+
 You can find latest version of plugins by the [link](https://bintray.com/beta/#/epam/reportportal/).
 Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.
 
@@ -25,23 +28,27 @@ For a plugin uploading please perform the following actions:
 *	and click Upload
 
 
-**Technical requirements for plugin:**
-
-* a plugin should has format: .jar 
-* a plugin file size is up to 128Mb
-* a plugin should have a version
-* a plugin should have a Manifest
-* a plugin should have a plugin Extensions
-* Admin cannot upload a plugin with exciting ID and exciting version to the system
+> **Technical requirements for plugin:**
+>
+>* a plugin should has format: .jar 
+>* a plugin file size is up to 128Mb
+>* a plugin should have a version
+>* a plugin should have a Manifest
+>* a plugin should have a plugin Extensions
+>* Admin cannot upload a plugin with exciting ID and exciting version to the system
 
 [Video]
 
 ### Update a plugin
+**Permissions:**
+Only ADMIMISTRATOR can uppdate plugin.
 It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and a exsisting version will be updated to the latest one. 
 
 [Video]
 
 ### Enable / Disable a plugin
+**Permissions:**
+Only ADMIMISTRATOR can enable / disable plugin.
 
 If you do not want remove plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
 For that:
@@ -52,6 +59,9 @@ For that:
 Plugin will be removed from Project Settings on the project spaces. But all plugin configurations will be saved in the DataBase and you can returned them back if you need by clicking on the switcher enable plugin.
 
 ### Uninstall a plugin 
+**Permissions:**
+Only ADMIMISTRATOR can uninstall plugin.
+
 User can remove a plugin from the system. For that  you should:
 * login ReportPortal with Admin account
 *	come to Administrative page > Plugins tab > Plugin > Plugin details
@@ -61,6 +71,11 @@ Plugin will be successfully deleted. All plugin configurations will be deleted f
 E-mail plugin can not be uninstalled.
 
 ### Configure a plugin
+
+**Permissions:**
+Only ADMIMISTRATOR can make global configurations of a plugin.
+ADMIMISTRATOR and PROJECT MANAGER can make project configurations of a plugin.
+
 User can configure a plugin on the **instance level** (global configuration) and also on the **project level** (project configuration). Configuration are the same for both of levels.
 
 If user configure plugin on the **global level**, then these configurations will be applied to the all project on the instance, which do not have their own configurations.
