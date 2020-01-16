@@ -89,10 +89,25 @@ Details on how to configure a specific plugin please find in the [Integration se
 *	integration with SauceLabs
 *	integration with E-mail server
  
-> Use case: 
+> **Use case 1:** 
 > 
-> * One instance, *all project have the same plugin config* – configure global integration on > Administrative.
-> * One instance, *different projects have different plugin config* – do not configure global integration, just add integrations per project.
-> * One instance, *different projects have different projects, but some project have the same configuration* – configure global integration, and add project integrations only for needed projects.
+> **Situation:** A small team, on ReportPortal instanse there are several projects. Separate projects are added for different test types (UI, API, Unit and other). Team works with one project in Jira (or Rally). Different projects post new bugs in the same Jira (or Rally) project.
+> **Solution:** configure global integration for Jira (or Rally) plugin on the Management board.
+>**Pros:** Administrator configures integration once, and should not perform the same action several times. If inegration requires some changes, Administrator can easily edit an integration, and the changes will aply to all project on the instanse.
+
+
+> **Use case 2:** 
+> 
+> **Situation:**  On ReportPortal instanse there are several projects. Separate projects are added for different teams. Each team works with their project in Jira (or Rally) and post post new bugs in different Jira (or Rally) projects. Each team should not have acsses to Jira (or Rally) project of others team.
+> **Solution:** configure project integrations for Jira (or Rally) plugin on the Project settings.
+>**Pros:** Project Manager or Administrator configures integrations per project,  team members from different projects can not see configurations of each others.
+
+
+> **Use case 3:** 
+> 
+> **Situation:**  On ReportPortal instanse there are several projects. Separate projects are added for different teams. But for one team has been added several project. So several projects on ReportPortal have connections with one Jira (or Rally) project and several projects have conection with different Jira (or Rally) projects.
+> **Solution:** configure global integrations on Management board, and configure project integrations for Jira (or Rally) plugin on the Project settings.
+>**Pros:** Administrator configures integration once for those who needs the same settings, and Project Manager or Administrator configures integrations per project, for those projects who needs to limit acsses.
+
 
 [Video]
