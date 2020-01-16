@@ -1,14 +1,13 @@
 ## Project configuration
 
-Projects in ReportPortal have separate spaces. 
-To see the list of available projects and open a project, click the drop-down list 
-in the top left corner of the page.
+To see the list of available projects and open a project, click the drop-down list  in the top left corner of the page.
 
 ReportPortal supports customization of the default settings.
-
-Permission: 
+**Permission:** 
 Users with the Administrator role can edit project settings on the project "Settings" page in Management Board 
-and in the Project space. Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
+and in the Project space. 
+Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
+MEMBER/ OPERATOR/ CUSTOMER can only view applyed project settings.
 
 ### Project settings
 
@@ -16,36 +15,53 @@ To go to the project settings page, click the "Settings" icon in the header of t
 
 The project configuration page will be opened.
 
-The project settings are divided into five tabs: "General", "Notifications", "Bug Tracking
-System", "Defect Types" and "Demo Data".
+The project settings are divided into five tabs: "General", "Integrations", "Notifications", "Defect Types", "Auto-Analysis", "Pattern Analysis" and "Demo Data".
 
 #### General settings 
 
-The "General" tab has the following project parameters displayed:
+The "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
 - Name – is a disabled field as the project name cannot be changed.
 
-- Launch inactivity timeout - this parameter specifies the scheduled time
-    for a job to interrupt inactive launches. There are six options: 1 hour, 3
-    hours, 6 hours, 12 hours, 1 day, 1 week.
+- **Launch inactivity timeout** - this parameter specifies the scheduled time for a job to interrupt inactive launches (launches which have status 'in progress', but there is no any items during the chosen period). There are six options: 
+* 1 hour, 
+* 3 hours, 
+* 6 hours, 
+* 12 hours, 
+* 1 day, 
+* 1 week.
 
-- Keep launchess - this parameter specifies how long the system will keep old
-    launches in the data base. There are four options: 2 weeks, 1 month, 3 months, 6 months.
+- **Keep launchess** - this parameter specifies how long the system will keep old launches in the data base. There are 5 options: 
+* 2 weeks, 
+* 1 month, 
+* 3 months, 
+* 6 months,
+* forever.
+After this period a launch will be deleted, and you can not see it in ReportPortal.
 
-- Keep logs - this parameter specifies how long the system will keep old
-    logs in launches. Related launch structures will be saved, in order to keep
-    statistics. There are four options: 2 weeks, 1 month, 3 months, 6 months, Forever.
+- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, in order to keep statistics. There are 5 options:
+* 2 weeks, 
+* 1 month, 
+* 3 months, 
+* 6 months,
+* forever.
 
-- Keep screenshots - this parameter specifies how long to keep screenshots
-    in the system. There are five options: 1 week, 2 weeks, 3 weeks, 1 month, 3
-    months, Forever.
+- **Keep screenshots** - this parameter specifies how long to keep binary data (screenshots, files, video and others attachments)
+    in the system. There are five options: 
+* 2 weeks, 
+* 1 month, 
+* 3 months, 
+* 6 months,
+* forever.
 
 
 [ ![Image](Images/userGuide/managingProjects/generalConf.png) ](https://youtu.be/GsBGyhj-V6s)
 
-> **Note:**
-Users with MEMBER/ OPERATOR/ CUSTOMER project roles do not have permissions to edit project settings, They can only to view them.
+#### Integrations 
 
+The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
+
+For more information on this topic, please refer to [Integration with external systems](/docs/Integration-with-external).
 
 #### E-mail notifications
 
