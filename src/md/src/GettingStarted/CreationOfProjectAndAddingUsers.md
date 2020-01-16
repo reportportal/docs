@@ -17,6 +17,7 @@ Let's see two use cases which can help you to make decision.
 > **Cons:** All team members can see all results, you can not configure permissions rules.
 
 
+
 > **Use Case 2**: 
 >
 > **Situation:** We have a big team with a difficult permission structure and nested streams. Only persons with granted permissions can see results of the certain stream. 
