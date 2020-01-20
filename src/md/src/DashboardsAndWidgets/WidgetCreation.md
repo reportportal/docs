@@ -551,6 +551,16 @@ First level view - summ statistics of launches with attributes BUILD: 3.20.8.0 /
 > **Note:**
 Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches with attribute 3.20.8.0 
 
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme1.png) ](Images/userGuide/widgetTypes/CumulativeScheme1.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme2.png) ](Images/userGuide/widgetTypes/CumulativeScheme2.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme3.png) ](Images/userGuide/widgetTypes/CumulativeScheme3.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme4.png) ](Images/userGuide/widgetTypes/CumulativeScheme4.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme5.png) ](Images/userGuide/widgetTypes/CumulativeScheme5.png)
+
 [ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png)
 
 
