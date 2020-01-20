@@ -536,6 +536,8 @@ A widget does not require an edit or new filter creation. If new version (build,
 - Attribute key for the first level (mandatory)
 - Attribute key for the second level (optional)
 
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](Images/userGuide/widgetTypes/CumulativeCreation.png)
+
 **Widget view**
 A widget have two levels.
 
@@ -549,7 +551,6 @@ First level view - summ statistics of launches with attributes BUILD: 3.20.8.0 /
 > **Note:**
 Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches with attribute 3.20.8.0 
 
-[ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](Images/userGuide/widgetTypes/CumulativeCreation.png)
 [ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png)
 
 A user has an ability to drill down to the second level of the widget. For that he should click on the bar. And the system shows two buttons: Drill Down and Show filter.
