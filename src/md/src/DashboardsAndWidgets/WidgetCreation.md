@@ -569,18 +569,19 @@ On the hover on the bar, a user can see detailed information about sample. Also 
 
 
 **Visual options**
-Focus on defect types
+
+**Focus on defect types**
 If option is enabled, a user can see only information about defect types for each sample. 
 If option is disabled, a user can see information about statuses and defect types.
 
-Totals
+**Totals**
 If option is enabled, a user can see an info about number of test cases in each sample. 
 
-Staked area / Separete bars
+**Staked area / Separete bars**
 Staked area chart - is shown a one bar for statuses, and one bar for defect types for each sample. 
 Separete bars - is shown a separate bar for  each status, and for each  defect type group. 
 
-Tests / Per cent
+**Tests / Per cent**
 Test mode - OY axsis is calculated in test cases.
 Per cent mode - OY axsis is calculated in per cent. OY = 100%. 
 
