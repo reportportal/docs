@@ -523,7 +523,7 @@ On mouse hover the system will display accurate start times.
 ## Cumulative trend chart
 
 Shows the growth trend of summary statistics of launches with the same attribute key.
-[ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](https://youtu.be/TcW5ihoNTrQ)
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](https://www.youtube.com/watch?v=TcW5ihoNTrQ)
 
 
 **Widget's parameters:**
