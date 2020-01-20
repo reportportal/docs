@@ -42,7 +42,7 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 The template descriptions are provided below.
 
 
-## LAUNCH STATISTICS CHART
+## Launch statistics chart
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -104,7 +104,7 @@ Bar view
 >**Note:**
 The widget doesn't contain "IN PROGRESS" launches.
 
-## OVERALL STATISTICS PANEL
+## Overall statistics
 
 The panel shows a summary of test cases with each status for each selected launch.
 
@@ -140,7 +140,7 @@ or Donut view.
 The widget doesn't contain "IN PROGRESS" launches.
  
 
-##  LAUNCHES DURATION CHART
+##  Launches duration chart
 
 The Launch Duration Chart shows the duration of the selected launches.
 
@@ -169,7 +169,7 @@ The Widget has two states: All launches and Latest lunches. If you chose *All la
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## LAUNCH EXECUTION AND ISSUE STATISTIC
+## Launch execution and issue statistic
 
 The Launch Execution and Issue Statistic chart shows the status and issues statistics for last launch of a specified range.
 
@@ -195,7 +195,7 @@ The widget has clickable sections, when you click on a specified section in the 
 [ ![Image](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png) ](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png)
 
 
-## PROJECT ACTIVITY PANEL
+## Project activity panel
 
 The widget shows all activities occurring on the project.
 
@@ -217,7 +217,7 @@ The actions on the widget are present in a table, separated by days. Action mess
 [ ![Image](Images/userGuide/widgetTypes/projectActivityPanel.png) ](Images/userGuide/widgetTypes/projectActivityPanel.png)
 
 
-## TEST-CASES GROWTH TREND CHART
+## Test-cases growth trend chart
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -256,7 +256,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## INVESTIGATED PERCENTAGE OF LAUNCHES
+## Investigated percentage of launches
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -297,7 +297,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## LAUNCHES TABLE
+## Launches table
 
 The widget shows a configurable table of launches.
 
@@ -318,7 +318,7 @@ The widget has clickable elements "launch name", "owner", "tags", and "number of
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## UNIQUE BUGS TABLE
+## Unique bugs table
 
 The widget shows real identified bugs, posted to the Bug Tracking System from ReportPortal, and existing bugs, that were added to the items on ReportPortal.
 
@@ -345,7 +345,7 @@ The bugs from launches "IN PROGRESS" are not shown on the widget.
 In case a bug is found in multiple items, all of items will be listed in "Found in" column.
 
 
-## MOST FAILED TEST-CASES TABLE
+## Most failed test-cases table (TOP-20)
 
 The widget contains a table with statistical information about the TOP-20 most problematic test cases.
 
@@ -374,7 +374,7 @@ On mouse hover the system will display accurate start times.
 The widget contains statistics of the most problematic tests cases in all launches, except "IN PROGRESS" and "INTERRUPTED" launches.
 
 
-## FAILED CASES TREND CHART
+## Failed cases trend chart
 
 The widget shows the trend of growth in the number of failed test cases (Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates) from run to run.
 
@@ -398,7 +398,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## NON-PASSED TEST-CASES TREND CHART
+## Non-passed test-cases trend chart
 
 The widget shows the percent ratio of non-passed test cases "Failed + Skipped" and "Total" cases from run to run.
 
@@ -424,7 +424,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-## DIFFERENT LAUNCHES COMPARISON CHART
+## Different launches comparison chart
 
 The widget allows you to compare statistics for the 2 last launches side by side.
 
@@ -448,7 +448,7 @@ The widget has clickable sections, when you click on specific sections in widget
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-## Passibg rate per launch
+## Passing rate per launch
 
 
 **Widget's parameters:**
@@ -476,7 +476,7 @@ The widget doesn't contain 'IN PROGRESS" launches.
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-## FLAKY TEST CASES TABLE (TOP-20)
+## Flaky test cases table (TOP-20)
 Shows the TOP-20 the most flaky test cases within the specified previous launches. The widget defines test cases with the most high percentage of switching their status in the execution. So that you can click on the test cases and be redirected to the last test item in execution to check the reasons. 
 
 **Widget's parameters:**
