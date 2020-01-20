@@ -178,10 +178,6 @@ Also you can use the logs sorting by time, and filtering logs to find the certai
 
 [ ![Image](Images/userGuide/logView/logMessages.png) ](https://https://youtu.be/WXOzhiTIfIE)
 
-**NAVIGATE TO THE NEXT ERROR**
-
-This functionality allows to get to next page with error message on it.
-It is useful in case you have big amount of log messages. And the navigation could be a bit difficult.
 
 **STACK TRACE OF ERROR**
 
@@ -220,16 +216,13 @@ To view data via Attachments section, perform the following steps:
 
 [ ![Image](Images/userGuide/logView/screenshotGallery.png) ](https://youtu.be/83k5x73JDI0)
 
-
-**NAVIGATE TO NEXT/PREVIOUS LOGS**
-
-You can navigate from one log to the other using "Next"/"Previous" buttons on the Log view.
+### Log view for containeers (for a launch or a suite
 
 
-[ ![Image](Images/userGuide/logView/logNavigation.png) ](Images/userGuide/logView/logNavigation.png)
+### Nested Steps
 
 
-Navigation takes into account selected by user filter and hidden preconditions methods on Step view.
+
 
 ### Retried test case (retry)
 
