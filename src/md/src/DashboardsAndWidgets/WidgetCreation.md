@@ -524,7 +524,7 @@ On mouse hover the system will display accurate start times.
 
 Shows the growth trend of summary statistics of launches with the same attribute key.
 
-[ ![Cumulative Video](https://www.youtube.com/watch?v=F51a1JpEITo) ](https://www.youtube.com/watch?v=F51a1JpEITo)
+[ ![Cumulative Video](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](https://youtu.be/F51a1JpEITo)
 
 
 **Widget's parameters:**
