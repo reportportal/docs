@@ -522,22 +522,24 @@ On mouse hover the system will display accurate start times.
 
 ## Cumulative trend chart
 
-Shows the growth trend of summary statistics of launches with the same attribute key.
+Shows the growth trend of summary statistics of launches with the same attribute key. 
+You can see a growth of statistics from the build to the build, or from version to version. 
+A widget does not require an edit or new filter creation. If new version (build, release or other) is added to ReportPortal, new information will be added to the graph.
 
 [ ![Cumulative Video](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](https://youtu.be/F51a1JpEITo)
 
 
 **Widget's parameters:**
 - Filter
-- Parameter: only Latest launches
-- Number of shown attrinutes on the widget
+- Parameters: only Latest launches
+- Number of shown attrinutes on the widget: 1 - 15
 - Attribute key for the first level (mandatory)
 - Attribute key for the second level (optional)
 
-
 **Widget view**
 A widget have two levels.
-For the first level  the system uses the last 600 launches from thechosen filter. 
+
+**For the first level**  the system uses the last 600 launches from the chosen filter. 
 Then  system searches all launches which have attributes with the key specified on the widget wizard for the first widget level (for example attribute key - BUILD).
 Then system combines launches into groups around unique attribute value (BUILD:3.6, BUILD:V3.7, BUILD:3.8…..).
 After that the system should keep in each group **only latest executions** (e.g.  the latest launches for BUILD:3.6,  the latest launches  BUILD:V3.7,  the latest launches  BUILD:3.8…. ) and reflects statistics for all unique attributes on the graph for the first widget level.
@@ -550,8 +552,42 @@ Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches
 [ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](Images/userGuide/widgetTypes/CumulativeCreation.png)
 [ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png)
 
+A user has an ability to drill down to the second level of the widget. For that he should click on the bar. And the system shows two buttons: Drill Down and Show filter.
+And a user should  click on **"Drill down"**.
+
+**For the second level** the system again analyzes the 600 launches from the filter.
+Then it leaves only launches which have attribute, that have been clicked by user (f.e. BUILD: 3.20.8.0 ).
+From these launches systems chooses ones with attributes  that have key attribute  form the section Level 2 (detailed view) on widget wizard.
+After the system groups launches with the same attribute and leaves for each selection only the “latest” launches (launches with unique launch name and with the biggest launch number in ReportPortal).
+Others should be removed from a group. Each unique group should be reflected  on the graph on the second widget level.
+
+
+For each group there is shown a set of bars: Passed, Failed, Skipped, group Product Bug, group Auto Bug, group System Issue, group No defect, group To investigated.
+
+On the hover on the bar, a user can see detailed information about sample. Also user can see a list of attributes with attribute key from the first and from the second levels which have launches, which have been used for a hovered bar.
+
+
+**Visual options**
+Focus on defect types
+If option is enabled, a user can see only information about defect types for each sample. 
+If option is disabled, a user can see information about statuses and defect types.
+
+Totals
+If option is enabled, a user can see an info about number of test cases in each sample. 
+
+Staked area / Separete bars
+Staked area chart - is shown a one bar for statuses, and one bar for defect types for each sample. 
+Separete bars - is shown a separate bar for  each status, and for each  defect type group. 
+
+Tests / Per cent
+Test mode - OY axsis is calculated in test cases.
+Per cent mode - OY axsis is calculated in per cent. OY = 100%. 
+
+A user can combine different options together. Options are saved per user.
+
 >**Note:**
-The widget doesn't contain 'IN PROGRESS" launches.
+The widget doesn't contain 'IN PROGRESS" launches. The widget statistics calculated only in items with method type TEST.
+
 
 ## Most popular pattern table (TOP-20)
 
