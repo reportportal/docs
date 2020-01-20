@@ -523,6 +523,7 @@ On mouse hover the system will display accurate start times.
 ## Cumulative trend chart
 
 Shows the growth trend of summary statistics of launches with the same attribute key.
+
 [ ![ImageName](https://youtu.be/F51a1JpEITo) ](https://youtu.be/F51a1JpEITo)
 
 
@@ -546,8 +547,8 @@ First level view - summ statistics of launches with attributes BUILD: 3.20.8.0 /
 > **Note:**
 Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches with attribute 3.20.8.0 
 
-[ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](CumulativeCreation.png)
-[ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](CumulativeFirstLevelView.png)
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](Images/userGuide/widgetTypes/CumulativeCreation.png)
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png)
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
