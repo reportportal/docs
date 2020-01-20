@@ -31,27 +31,18 @@ Widgets are automatically refreshed every minute.
 
 ### Predefined widgets types
 
-There are 15 widget templates in ReportPortal as for now:
+There are 15 widget templates in ReportPortal for tracking different KPI:
+| KPI  | Widget template |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
  
-- Launch statistics chart 
-- Overall statistics panel 
-- Launches duration chart 
-- Launch execution and issue statistic 
-- Project activity panel 
-- Test-Cases growth trend chart 
-- Investigated percentage of launches 
-- Launches table 
-- Unique bugs table 
-- Most failed test cases table
-- Failed cases trend chart 
-- Non-Passed test-cases trend chart 
-- Different launches comparison chart
-- Flaky test cases table (TOP-20)
+
 
 The template descriptions are provided below.
 
 
-**LAUNCH STATISTICS CHART**
+## LAUNCH STATISTICS CHART
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -113,7 +104,7 @@ Bar view
 >**Note:**
 The widget doesn't contain "IN PROGRESS" launches.
 
-**OVERALL STATISTICS PANEL**
+## OVERALL STATISTICS PANEL
 
 The panel shows a summary of test cases with each status for each selected launch.
 
@@ -149,7 +140,7 @@ or Donut view.
 The widget doesn't contain "IN PROGRESS" launches.
  
 
-**LAUNCHES DURATION CHART**
+##  LAUNCHES DURATION CHART
 
 The Launch Duration Chart shows the duration of the selected launches.
 
@@ -178,7 +169,7 @@ The Widget has two states: All launches and Latest lunches. If you chose *All la
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**LAUNCH EXECUTION AND ISSUE STATISTIC**
+## LAUNCH EXECUTION AND ISSUE STATISTIC
 
 The Launch Execution and Issue Statistic chart shows the status and issues statistics for last launch of a specified range.
 
@@ -204,7 +195,7 @@ The widget has clickable sections, when you click on a specified section in the 
 [ ![Image](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png) ](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png)
 
 
-**PROJECT ACTIVITY PANEL**
+## PROJECT ACTIVITY PANEL
 
 The widget shows all activities occurring on the project.
 
@@ -226,7 +217,7 @@ The actions on the widget are present in a table, separated by days. Action mess
 [ ![Image](Images/userGuide/widgetTypes/projectActivityPanel.png) ](Images/userGuide/widgetTypes/projectActivityPanel.png)
 
 
-**TEST-CASES GROWTH TREND CHART**
+## TEST-CASES GROWTH TREND CHART
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -265,7 +256,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**INVESTIGATED PERCENTAGE OF LAUNCHES**
+## INVESTIGATED PERCENTAGE OF LAUNCHES
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -306,7 +297,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**LAUNCHES TABLE**
+## LAUNCHES TABLE
 
 The widget shows a configurable table of launches.
 
@@ -327,7 +318,7 @@ The widget has clickable elements "launch name", "owner", "tags", and "number of
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**UNIQUE BUGS TABLE**
+## UNIQUE BUGS TABLE
 
 The widget shows real identified bugs, posted to the Bug Tracking System from ReportPortal, and existing bugs, that were added to the items on ReportPortal.
 
@@ -354,7 +345,7 @@ The bugs from launches "IN PROGRESS" are not shown on the widget.
 In case a bug is found in multiple items, all of items will be listed in "Found in" column.
 
 
-**MOST FAILED TEST-CASES TABLE**
+## MOST FAILED TEST-CASES TABLE
 
 The widget contains a table with statistical information about the TOP-20 most problematic test cases.
 
@@ -383,7 +374,7 @@ On mouse hover the system will display accurate start times.
 The widget contains statistics of the most problematic tests cases in all launches, except "IN PROGRESS" and "INTERRUPTED" launches.
 
 
-**FAILED CASES TREND CHART**
+## FAILED CASES TREND CHART
 
 The widget shows the trend of growth in the number of failed test cases (Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates) from run to run.
 
@@ -407,7 +398,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**NON-PASSED TEST-CASES TREND CHART**
+## NON-PASSED TEST-CASES TREND CHART
 
 The widget shows the percent ratio of non-passed test cases "Failed + Skipped" and "Total" cases from run to run.
 
@@ -433,7 +424,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**DIFFERENT LAUNCHES COMPARISON CHART**
+## DIFFERENT LAUNCHES COMPARISON CHART
 
 The widget allows you to compare statistics for the 2 last launches side by side.
 
@@ -457,7 +448,35 @@ The widget has clickable sections, when you click on specific sections in widget
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-**FLAKY TEST CASES TABLE (TOP-20)**
+## Passibg rate per launch
+
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+
+## Passing rate summary
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+## FLAKY TEST CASES TABLE (TOP-20)
 Shows the TOP-20 the most flaky test cases within the specified previous launches. The widget defines test cases with the most high percentage of switching their status in the execution. So that you can click on the test cases and be redirected to the last test item in execution to check the reasons. 
 
 **Widget's parameters:**
@@ -484,4 +503,41 @@ On mouse hover the system will display accurate start times.
 
 [ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
 
+## Cumulative trend chart
 
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+## Most popular pattern table (TOP-20)
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+## Component health check
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
