@@ -32,11 +32,28 @@ Widgets are automatically refreshed every minute.
 ### Predefined widgets types
 
 There are 15 widget templates in ReportPortal for tracking different KPI:
+
 | KPI  | Widget template |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
- 
+|   | [Launch statistics chart](https://reportportal.io/docs/Launch-statistics-chart)  |
+|  Passing rate for filter summary, and structure of problems |[Overall statistics](https://reportportal.io/docs/Overall-statistics)  |
+|  Track the longest launch in the filter  | [Launches duration chart](https://reportportal.io/docs/Launches-duration-chart) |
+|   Track the passing rate and structure of problems of the latest run in the system| [Launch execution and issue statistic](https://reportportal.io/docs/Launch-execution-and) |
+|  Track the activity of your QA team | [Project activity panel](https://reportportal.io/docs/Project-activity-panel)  |
+| Track the growth of new test cases in your build  | [Test-cases growth trend chart](https://reportportal.io/docs/Test-cases-growth-trend) |
+| Track the speed of test failure analysis | [Investigated percentage of launches](https://reportportal.io/docs/Investigated-percentage-of)  |
+| Follow up information about only important launches for your team  | [Launches table](https://reportportal.io/docs/Launches-table) |
+| Track new BTS issues in your run  | [Unique bugs table](https://reportportal.io/docs/Unique-bugs-table) |
+|  Track the most unstaoble test cases in the build | [Most failed test-cases table](https://reportportal.io/docs/Most-failed-test-cases) |
+|  See the trend of number of failed test cases from build to build | [Failed cases trend chart](https://reportportal.io/docs/Failed-cases-trend) |
+|  See the trend of number of failed and skipped test cases from build to build | [Non-passed test-cases trend chart](https://reportportal.io/docs/Non-passed-test-cases-trend)  |
+| Compare two launches together  | [Different launches comparison chart](https://reportportal.io/docs/Different-launches-comparison) |
+|  Track passing rate for one launch | [Passing rate per launch](https://reportportal.io/docs/Passing-rate-per)  |
+| Track passing reate for the build  | [Passing rate summary](https://reportportal.io/docs/Passing-rate-summary) |
+|  Find the most flaky test in the build | [Flaky test cases table (TOP-20)](https://reportportal.io/docs/Flaky-test-cases)  |
+| Compare statistics for different builds on one graph  | [Cumulative trend chart](https://reportportal.io/docs/Cumulative-trend-chart) |
+| Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
+| Track the passing rate of different components of your application  | [Component health check](https://reportportal.io/docs/Component-health-check) |
 
 
 The template descriptions are provided below.
@@ -505,13 +522,32 @@ On mouse hover the system will display accurate start times.
 
 ## Cumulative trend chart
 
-**Widget's parameters:**
+Shows the growth trend of summary statistics of launches with the same attribute key.
+[ ![ImageName](https://youtu.be/TcW5ihoNTrQ) ](https://youtu.be/TcW5ihoNTrQ)
 
+
+**Widget's parameters:**
+- Filter
+- Parameter: only Latest launches
+- Number of shown attrinutes on the widget
+- Attribute key for the first level (mandatory)
+- Attribute key for the second level (optional)
 
 
 **Widget view**
+A widget have two levels.
+For the first level  the system uses the last 600 launches from thechosen filter. 
+Then  system searches all launches which have attributes with the key specified on the widget wizard for the first widget level (for example attribute key - BUILD).
+Then system combines launches into groups around unique attribute value (BUILD:3.6, BUILD:V3.7, BUILD:3.8…..).
+After that the system should keep in each group **only latest executions** (e.g.  the latest launches for BUILD:3.6,  the latest launches  BUILD:V3.7,  the latest launches  BUILD:3.8…. ) and reflects statistics for all unique attributes on the graph for the first widget level.
 
+First level view - summ statistics of launches with attributes BUILD: 3.20.8.0 / 3.20.8.1 / ... / 3.20.8.9
 
+> **Note:**
+Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches with attribute 3.20.8.0 
+
+[ ![ImageName](CumulativeCreation.png) ](CumulativeCreation.png)
+[ ![ImageName](CumulativeCreation.png) ](CumulativeFirstLevelView.png)
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
