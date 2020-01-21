@@ -33,7 +33,7 @@ For MacOS native docker:
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
-(OPTIONAL)
+> (OPTIONAL)
 
 PostgreSQL Performance Tuning
 
@@ -54,6 +54,8 @@ Depends on your hardware configuration and parameters of your system, you can ad
 ``` 
 
 Please choose set the values of these variables that are right for your system.
+
+You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment [variable](https://reportportal.io/docs/Additional-configuration-parameters). 
 
 3. ElasticSearch configuration prerequisites for analyzer service
 
@@ -91,7 +93,7 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-(IMPORTANT)
+> (IMPORTANT)
 
 On Windows Docker installations PostgreSQL container can failed with the following issue:  
 ```Shell
