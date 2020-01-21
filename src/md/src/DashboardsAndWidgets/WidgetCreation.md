@@ -640,6 +640,7 @@ Shows the passing rate of the application components which are indicated by the 
 > **Use case:**
 >
 > **Situation:** As a Project Manager or Test Lead, a I want to see the most unstable place in his product ( application). 
+> 
 > **Solution:** All test cases in my project in ReportPortal have an attributes. For example `function: (order, team, configure, administrative)`, `type: (backend, API, Unit, UI)`, ...., `marketstate: (open, close)`, `role: (ProjectManager, Member, Admin)` and other. The attributes can be different and dependend on your project needs.
 >  
 > 
