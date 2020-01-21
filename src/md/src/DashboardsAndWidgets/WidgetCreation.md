@@ -637,21 +637,21 @@ Shows the passing rate of the application components which are indicated by the 
 **Widget view**
 
 
-> **Note:**
+> **Use case:**
 >
-> Let's assume that a filter conditions are: launch name contains Regression. And a user chooses this filter for widget. Each test in > > launches in the filter has a set of the attributes such as: `function: (order, team, configure, administrative)`, `type: (backend, 
-> API, Unit, UI)`, ...., `marketstate: (open, close)`, `role: (ProjectManager, Member, Admin)` and other. The attributes can be 
-> different in deendences with your project needs.
+> **Situation:** As a Project Manager or Test Lead, a I want to see the most unstable place in his product ( application). 
+> **Solution:** All test cases in my project in ReportPortal have an attributes. For example `function: (order, team, configure, administrative)`, `type: (backend, API, Unit, UI)`, ...., `marketstate: (open, close)`, `role: (ProjectManager, Member, Admin)` and other. The attributes can be different and dependend on your project needs.
 >  
-> Then a user chooses **key attributes** (for test cases or launches) for different widget levels. 1 level = 1 key attribute.
 > 
-> Let's assume that for the first level user chooses attribute key = `function`, for the second `type` and for the 3rd - `marketstate`
+> A user  can create a Component Health Check Widget and set attribute key = `function` for the 1st level, for the 2nd -`type` and for the 3rd - `marketstate`
 > 
-> So that a user will see on the first level a several groups. All groups will contains only test cases with attribute which contain 
-> attribute key `function`. And each group has been grouped by attribute value.
-> 
-> When a user clicks on the group, system will show the second level of the widget. All test items on the second level will be contain 
-> attribute of clicked group (for example `function: order`) and attributes which contain attribute key from the second level. 
+> So that a user will see on the first level a several groups: order, team, configure, administrative.  All groups will contains only 
+> test cases with attribute which contain attribute key `function`. Each group has been grouped by attribute value: order, team, 
+> configure, administrative.
+> If a user clicks on the group `function: order`, the system will show the second level of the widget. All test items on the second 
+> level will be contain the attribute `function: order`and attributes which contain attribute key: `type`. And these items will be 
+> grouped by attribute values: backend, API, Unit, UI.
+> The same logic will be applied for the next levels.
 
 
 
