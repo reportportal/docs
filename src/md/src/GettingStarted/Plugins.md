@@ -118,5 +118,3 @@ Details on how to configure a specific plugin please find in the [Integration se
 > **Solution:** configure global integrations on Management board, and configure project integrations for Jira (or Rally) plugin on the Project settings.
 >**Pros:** Administrator configures integration once for those who needs the same settings, and Project Manager or Administrator configures integrations per project, for those projects who needs to limit acsses.
 
-
-[Video]
