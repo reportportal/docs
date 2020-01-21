@@ -33,7 +33,7 @@ For MacOS native docker:
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
-(OPTIONAL)
+> OPTIONAL
 
 PostgreSQL Performance Tuning
 
@@ -54,6 +54,8 @@ Depends on your hardware configuration and parameters of your system, you can ad
 ``` 
 
 Please choose set the values of these variables that are right for your system.
+
+You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment [variable](https://reportportal.io/docs/Additional-configuration-parameters). 
 
 3. ElasticSearch configuration prerequisites for analyzer service
 
@@ -91,16 +93,18 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-(IMPORTANT)
+**IMPORTANT**
 
 On Windows Docker installations PostgreSQL container can failed with the following issue:  
+
 ```Shell
 data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
 ``` 
 
 In order to solve this, edit the Docker Compose file and:  
 
-Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":
+Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":  
+
 ```Shell
     volumes:
       # For windows host
@@ -109,35 +113,17 @@ Change the 'volumes' value for postgres container from "For unix host" to the "F
       # - ./data/postgres:/var/lib/postgresql/data
 ``` 
 
-Uncomment the following:
+Uncomment the following:  
+
 ```Shell
   # Docker volume for Windows host
 volumes:
   postgres:
 ``` 
 
-5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
+5. Open your web-browser with an IP address of the deployed environment at port **8080**
 
-For correct analyzer work we need to create its vhost and grant permissions for the 'rabbitmq' user
-
-Get a shell to a running RabbitMQ container
-```Shell
-docker exec -it <RABBITMQ_CONTAINER_ID> bash
-``` 
-
-Add a new vhost 'analyzer'
-```Shell
-rabbitmqctl add_vhost analyzer
-```
-
-Grant permissions
-```Shell
-rabbitmqctl set_permissions -p analyzer rabbitmq ".*" ".*" ".*"
-```
-
-6. Open your browser with the IP address of the deployed environment at port **8080**
-
-You can get the host IP address by using the following docker command:
+You can get the host IP address by using the following docker command:  
 
 ```shell
  $ docker-machine ip default
@@ -147,14 +133,15 @@ You can get the host IP address by using the following docker command:
   http://IP_ADDRESS:8080
   ```
 
-6. Use next **login\pass** for access: 
+6. Use the following **login\pass** to access: 
+
 ```shell
 default\1q2w3e
 or
 superadmin\erebus
 ```
 
->Please change the admin password for security.
+> Please change the admin password for better security
 
 
 **The ReportPortal consists of the following services:**
