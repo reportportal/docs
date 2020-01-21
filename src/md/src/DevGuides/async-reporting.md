@@ -10,4 +10,4 @@ So using that approach client is not blocked and don't wait until server process
 
 ### Simple scheme of interactions between RabbitMq and API
 
-![](src/Images/devguide/async/simple-scheme.png)
+![](/src/Images/devguide/async/simple-scheme.png)
