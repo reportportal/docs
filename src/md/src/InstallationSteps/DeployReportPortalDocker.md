@@ -96,13 +96,15 @@ Where:
 **IMPORTANT**
 
 On Windows Docker installations PostgreSQL container can failed with the following issue:  
+
 ```Shell
 data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
 ``` 
 
 In order to solve this, edit the Docker Compose file and:  
 
-Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":
+Change the 'volumes' value for postgres container from "For unix host" to the "For windows host":  
+
 ```Shell
     volumes:
       # For windows host
@@ -111,35 +113,17 @@ Change the 'volumes' value for postgres container from "For unix host" to the "F
       # - ./data/postgres:/var/lib/postgresql/data
 ``` 
 
-Uncomment the following:
+Uncomment the following:  
+
 ```Shell
   # Docker volume for Windows host
 volumes:
   postgres:
 ``` 
 
-5. Creation a RabbitMQ virtual host and granting permissions to 'rabbitmq' user
+5. Open your web-browser with an IP address of the deployed environment at port **8080**
 
-For correct analyzer work we need to create its vhost and grant permissions for the 'rabbitmq' user
-
-Get a shell to a running RabbitMQ container
-```Shell
-docker exec -it <RABBITMQ_CONTAINER_ID> bash
-``` 
-
-Add a new vhost 'analyzer'
-```Shell
-rabbitmqctl add_vhost analyzer
-```
-
-Grant permissions
-```Shell
-rabbitmqctl set_permissions -p analyzer rabbitmq ".*" ".*" ".*"
-```
-
-6. Open your browser with the IP address of the deployed environment at port **8080**
-
-You can get the host IP address by using the following docker command:
+You can get the host IP address by using the following docker command:  
 
 ```shell
  $ docker-machine ip default
@@ -149,14 +133,15 @@ You can get the host IP address by using the following docker command:
   http://IP_ADDRESS:8080
   ```
 
-6. Use next **login\pass** for access: 
+6. Use the following **login\pass** to access: 
+
 ```shell
 default\1q2w3e
 or
 superadmin\erebus
 ```
 
->Please change the admin password for security.
+> Please change the admin password for better security
 
 
 **The ReportPortal consists of the following services:**
