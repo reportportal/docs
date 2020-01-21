@@ -33,7 +33,7 @@ For MacOS native docker:
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
   ```
 
-> (OPTIONAL)
+> OPTIONAL
 
 PostgreSQL Performance Tuning
 
@@ -93,7 +93,7 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-> (IMPORTANT)
+**IMPORTANT**
 
 On Windows Docker installations PostgreSQL container can failed with the following issue:  
 ```Shell
