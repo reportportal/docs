@@ -1,4 +1,4 @@
-## Deploy ReportPortal with Docker
+## Deploy with Docker ReportPortal 
 
 ReportPortal can be easily deployed using Docker-Compose. 
 
