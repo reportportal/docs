@@ -7,7 +7,9 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 * Sauce Labs
 * E-mail server
 
-Integration confiurations can be added on the global level (for all project on the instance) or on the project level (only for one project). To add integration with external systems, please look information in the section Plugins.
+If you want integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check section in documentation [Plugins](https://reportportal.io/docs/Plugins).
+
+Integration confiurations can be added on the global level (for all project on the instance) on the Management board or on the project level (only for one project) on Project Settings.
 
 If you have another configuration than others project have or you want to integrate only your project with external system, you should perform the next actions:
 
@@ -21,6 +23,7 @@ If you have another configuration than others project have or you want to integr
 
 By this action you unlink the current project from the global settings and configure your own integration.
 
+
 >**Note:**
 If you unlink project setting and ADMIN changes global settings for whole instance, your project will use your project settings.
 
@@ -31,17 +34,17 @@ You always can reset to the global settings.
 
 ### Integration with JIRA
 
-Integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
+An integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
 
 **Permission:** 
-The *Administrator* can upload plugin and make global integrations on the Plugin Tab on Administrative page. Also, the Administrator can unlink project configurations from global. 
+The *Administrator* can upload a plugin and make global integrations on the Plugin Tab on the Management board. Also, the Administrator can unlink project configurations from global. 
 The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
 
-#### Add JIRA integrations
 
-##### Global JIRA integration
 
-If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
+#### Global JIRA integration
+
+If  all projects on your instance are using the same Jira  projects, you will be able configure **global integrations** which will be applied on all projects. 
 
 1. Login as ADMIN
 
@@ -53,11 +56,35 @@ If  all projects on your instance are using the same Jira  projects, you will be
 
 5. Fill and confirm authorization form
 
-6. Choose needed issue type and predefined field for chosen issue
+```java
+'Integration Name ': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+'Project name in BTS': <project key in bug tracking system>            
+'Authorization Type': Basic (predefined)                  
+'BTS Username': <JIRA user name>                  
+'BTS Password': <JIRA user password>
+```
+
+After you have created a connection with JIRA project, you can choose predefinded JIRA ticket fields. These fields will be shown you all the time when you post issue in the Jira.
+
+This feature gives you an abilty to choose with which type you will post ticket.
+
+For choosing needed issue type and predefined field for chosen issue, you should perform following actions:
+
+1. Click button "Configure"
+
+2. Choose issue type from a drop-down
+
+3. Check needed fields and fill them if you need
+
+4. Click on "Submit"
+
+
+Now team members on all your projects will be able to submit issues in Jira. Options for Post Issue / Link issue  are activated.
 
 If you needed you can add more integrations, by clicking on "Add integration"
 
-##### Project JIRA integration
+#### Project JIRA integration
 
 If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
 
@@ -71,7 +98,21 @@ If  all projects on your instance are using the same Jira  projects, you will be
 
 5. Fill and confirm authorization form
 
-6. Choose needed issue type and predefined field for chosen issue
+```java
+'Integration Name ': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+'Project name in BTS': <project key in bug tracking system>            
+'Authorization Type': Basic (predefined)                  
+'BTS Username': <JIRA user name>                  
+'BTS Password': <JIRA user password>
+```
+6. After creation a connectionChoose needed issue type and predefined field for chosen issue
+
+> **Note:** The "Configuration" (list of fields provided for issue form in JIRA) will appear on the Integration details. The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
+To configure fields for posting issues in JIRA, follow these instructions:
+•	Check desired fields. The checked fields will be shown on the post issue form.
+•	Fill in the required fields and the other checked fields as needed, and click "Submit" button. The system will save the entered information and hide the fields that are not checked. All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
+Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue / Link issue  are activated.
 
 If you needed you can add more integrations, by clicking on "Add integration"
 
@@ -86,16 +127,8 @@ Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1"
 Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
 While posing issue procedure, choose integration with needed type.
 
-#### Authorization configurations
 
-```java
-'Integration Name ': <The name which you want to give to your integration> - should be unique
-'Link to BTS': <valid URL of bug tracking system>
-'Project name in BTS': <project key in bug tracking system>            
-'Authorization Type': Basic (predefined)                  
-'BTS Username': <JIRA user name>                  
-'BTS Password': <JIRA user password>
-```
+
 
 **Some tricks when you create a new connections:**
 
@@ -115,13 +148,7 @@ While posing issue procedure, choose integration with needed type.
 4.) SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
 
-#### Configuration of fields of post issue form
 
-The "Configuration" (list of fields provided for issue form in JIRA) will appear on the Integration details. The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
-To configure fields for posting issues in JIRA, follow these instructions:
-•	Check desired fields. The checked fields will be shown on the post issue form.
-•	Fill in the required fields and the other checked fields as needed, and click "Submit" button. The system will save the entered information and hide the fields that are not checked. All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
-Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue / Link issue  are activated.
 
 [Video]()
 
