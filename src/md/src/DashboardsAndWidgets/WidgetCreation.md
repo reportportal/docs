@@ -623,7 +623,7 @@ Shows the passing rate of the application components which are indicated by the 
 
 >**Note:** for using this widget you need to report (or add manaully) attributes to test items.
 
-[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/CumulativeScheme1.png) ](https://youtu.be/T98iy0mJk0s)
+[ ![ComponentHEalthCheckWidgetVideo](ComponentHealthCheckView.png) ](https://youtu.be/T98iy0mJk0s)
 
 **Widget's parameters:**
 - Filter
