@@ -26,7 +26,7 @@ You can find latest version of all ReportPortal plugins by the [link](https://bi
 | SauceLabs | https://bintray.com/beta/#/epam/reportportal/plugin-saucelabs?tab=files |
 
 
-
+[ ![UploadPluginVideo](Images/userGuide/gettingStarted/UploadPlugin.png) ](https://youtu.be/xR75Bdq3uaM)
 
 For a plugin uploading please perform the following actions:
 *	login ReportPortal with Admin account
@@ -45,18 +45,18 @@ For a plugin uploading please perform the following actions:
 >* a plugin should have a plugin Extensions
 >* Admin cannot upload a plugin with exciting ID and exciting version to the system
 
-[Video]
 
 ### Update a plugin
 **Permissions:**
 Only ADMIMISTRATOR can uppdate plugin.
 It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and a exsisting version will be updated to the latest one. 
 
-[Video]
 
 ### Enable / Disable a plugin
 **Permissions:**
 Only ADMIMISTRATOR can enable / disable plugin.
+
+[ ![Enable/DisablePluginVideo](Images/userGuide/gettingStarted/DisablePlugin.png) ](https://youtu.be/Sj9BpnTIxW8)
 
 If you do not want remove plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
 For that:
@@ -92,10 +92,11 @@ If user configure a plugin on the **project level**, then these configurations w
 
 Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Integrations):
 
-*	integration with Jira
-*	integration with Rally
-*	integration with SauceLabs
-*	integration with E-mail server
+*	[integration with Jira](https://reportportal.io/docs/Integrations%3Eintegration-with-jira) 
+*	[integration with Rally](https://reportportal.io/docs/Integrations%3Eintegration-with-rally)
+*	[integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
+*	[integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
+
  
 > **Use case 1:** 
 > 
