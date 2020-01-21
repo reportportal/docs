@@ -18,6 +18,14 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
 Only ADMIMISTRATOR can upload plugin.
 
 You can find latest version of plugins by the [link](https://bintray.com/beta/#/epam/reportportal/).
+
+|Plugin  | Link to down load |
+| ------------- | ------------- |
+| JIRA  | https://bintray.com/beta/#/epam/reportportal/plugin-bts-jira?tab=files|
+| Rally | https://bintray.com/beta/#/epam/reportportal/plugin-bts-rally?tab=files |
+| SauceLabs | https://bintray.com/beta/#/epam/reportportal/plugin-saucelabs?tab=files |
+
+
 Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.
 
 For a plugin uploading please perform the following actions:
