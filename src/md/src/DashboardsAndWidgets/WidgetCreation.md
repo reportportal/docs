@@ -616,15 +616,87 @@ The widget doesn't contain 'IN PROGRESS" launches. The widget statistics calcula
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
+
 ## Component health check
 
+Shows the passing rate of the application components which are indicated by the specified attributes. 
+
+>**Note:** for using this widget you need to report (or add manaully) attributes to test items.
+
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/CumulativeScheme1.png) ](https://youtu.be/T98iy0mJk0s)
+
 **Widget's parameters:**
+- Filter
+- Parameters: All launches/ Latest launches
+- The min allowable passing rate for the component: Possible value from 50 - 100%. Default value 100%.
+- Attribute key for the first level (mandatory)
+- Attribute key for the 2-10 levels (optional)
 
-
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckCreation.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckCreation.png)
 
 **Widget view**
 
 
+> **Note:**
+>
+> Let's assume that a filter conditions are: launch name contains Regression. And a user chooses this filter for widget. Each test in > > launches in the filter has a set of the attributes such as: `function: (order, team, configure, administrative)`, `type: (backend, 
+> API, Unit, UI)`, ...., `marketstate: (open, close)`, `role: (ProjectManager, Member, Admin)` and other. The attributes can be 
+> different in deendences with your project needs.
+>  
+> Then a user chooses **key attributes** (for test cases or launches) for different widget levels. 1 level = 1 key attribute.
+> 
+> Let's assume that for the first level user chooses attribute key = `function`, for the second `type` and for the 3rd - `marketstate`
+> 
+> So that a user will see on the first level a several groups. All groups will contains only test cases with attribute which contain 
+> attribute key `function`. And each group has been grouped by attribute value.
+> 
+> When a user clicks on the group, system will show the second level of the widget. All test items on the second level will be contain 
+> attribute of clicked group (for example `function: order`) and attributes which contain attribute key from the second level. 
+
+
+**Widget level**
+Each level shows all available atrributes with corresponded his level attribute key.
+For each level system analyze last 600 launches.
+
+**Widget sectin**
+Widget has two sections: Passed and Failed
+**Failed section has:** all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard
+
+**Passed section has:** all groups which have passing rate higher than passing rated which has been specified on widget wizard
+
+Each group on the widget has an name which equals to attribute value, passing rate = passed test cases with attribute / total test cases with attribute
+number of test cases with attribute 
+link to the widget list view: Filter list view + test method: Test + status: Passed, Failed, Skipped, Interrupted, InProgress; the number of items is equal to the number of Test cases in the widget
+color line which depends on passing rate (see sectin Widget legend)
+Widget legend
+
+Widget legend has two lines: Passed and Failed
+ Failed
+
+Failed line has four colors:
+-    
+-  
+-  
+-  
+And have values - less than specified on widget wizard -1
+Passed
+
+Passed line has only two color:
+
+  slightly green  
+green = Passed
+And have values - from specified on widget wizard to 100%
+Depends on this color scheme each group on the widget has own color. 
+Groups which have passing rate 100% - has color passed green
+Groups whith passing rate from 99 - specified on widget wizard  - has color slightly green
+from 3* (Value specified on WW -  1)/4  to (Value specified on WW -1)   
+from (Value specified on WW- 1)/2  to 3* (Value specified on WW- 1)/4 - 
+from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4  
+0  - ((Value specified on WW- 1)/4 -1) -
+
+
+
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckView.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckView.png)
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
