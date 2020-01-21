@@ -17,7 +17,7 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
 **Permissions:**
 Only ADMIMISTRATOR can upload plugin.
 
-You can find latest version of plugins by the [link](https://bintray.com/beta/#/epam/reportportal/).
+You can find latest version of all ReportPortal plugins by the [link](https://bintray.com/beta/#/epam/reportportal/). Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.  Or you can use a direct link to needed plugin from the table below.
 
 |Plugin  | Link to down load |
 | ------------- | ------------- |
@@ -26,7 +26,7 @@ You can find latest version of plugins by the [link](https://bintray.com/beta/#/
 | SauceLabs | https://bintray.com/beta/#/epam/reportportal/plugin-saucelabs?tab=files |
 
 
-Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.
+
 
 For a plugin uploading please perform the following actions:
 *	login ReportPortal with Admin account
