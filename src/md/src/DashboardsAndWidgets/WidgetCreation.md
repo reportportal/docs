@@ -623,7 +623,7 @@ Shows the passing rate of the application components which are indicated by the 
 
 >**Note:** for using this widget you need to report (or add manaully) attributes to test items.
 
-[ ![ComponentHEalthCheckWidgetVideo](ComponentHealthCheckView.png) ](https://youtu.be/T98iy0mJk0s)
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckView.png) ](https://youtu.be/T98iy0mJk0s)
 
 **Widget's parameters:**
 - Filter
@@ -652,6 +652,17 @@ Shows the passing rate of the application components which are indicated by the 
 > 
 > When a user clicks on the group, system will show the second level of the widget. All test items on the second level will be contain 
 > attribute of clicked group (for example `function: order`) and attributes which contain attribute key from the second level. 
+
+
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme1.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme1.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme2.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme2.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme3.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme3.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme4.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme4.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme5.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme5.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme6.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme6.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png)
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png)
 
 
 **Widget level**
