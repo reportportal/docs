@@ -61,14 +61,22 @@ Async controllers has `/api/v2` prefix.Requests and responses have no difference
 
 `API` has the following properties for connection to RabbitMq service:
 
-| Name                 | Environment variable name | Description                                                                                                                                                                                                                     | Default value                          |
-|----------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
-| rp.amqp.host         | RP_AMQP_HOST              | Hostname of RabbitMq service                                                                                                                                                                                                    | rabbitmq                               |
-| rp.amqp.port         | RP_AMQP_PORT              | Port of RabbitMq service                                                                                                                                                                                                        | 5672                                   |
-| rp.amqp.user         | RP_AMQP_USER              | Username to connect to RabbitMq service                                                                                                                                                                                         | rabbitmq                               |
-| rp.amqp.pass         | RP_AMQP_PASS              | User password to connect to RabbitMq service                                                                                                                                                                                    | rabbitmq                               |
-| rp.amqp.addresses    | RP_AMQP_ADDRESSES         | Full address to connect to RabbitMq service                                                                                                                                                                                     | amqp://rabbitmq:rabbitmq@rabbitmq:5672 |
-| rp.amqp.queues       | RP_AMQP_QUEUES            | Number of queues to be processed by this service-api                                                                                                                                                                            | 10                                     |
-| rp.amqp.queuesPerPod |                           | Cluster configuration parameter. Number of queues to be processed by this service-api pod (default effectively infinite). Note: should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster | 10                                     |
+| Name                 | Environment variable name | Default value                          |
+|----------------------|---------------------------|----------------------------------------|
+| rp.amqp.host         | RP_AMQP_HOST              | rabbitmq                               |
+| rp.amqp.port         | RP_AMQP_PORT              | 5672                                   |
+| rp.amqp.user         | RP_AMQP_USER              | rabbitmq                               |
+| rp.amqp.pass         | RP_AMQP_PASS              | rabbitmq                               |
+| rp.amqp.addresses    | RP_AMQP_ADDRESSES         | amqp://rabbitmq:rabbitmq@rabbitmq:5672 |
+| rp.amqp.queues       | RP_AMQP_QUEUES            | 10                                     |
+| rp.amqp.queuesPerPod |                           | 10                                     |
+
+`rp.amqp.host` - Hostname of RabbitMq service  
+`rp.amqp.port` - Port of RabbitMq service  
+`rp.amqp.user` - Username to connect to RabbitMq service  
+`rp.amqp.pass` - User password to connect to RabbitMq service  
+`rp.amqp.addresses` - Full address to connect to RabbitMq service  
+`rp.amqp.queues` - Number of queues to be processed by this service-api  
+`rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod (default effectively infinite). Note: should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster
 
 #### Exchanges and queues for reporting
