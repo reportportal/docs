@@ -90,10 +90,10 @@ Now team members on all your projects will be able to submit issues in Jira. Opt
 
 [ ![Global Jira Integration Creation](Images/userGuide/gettingStarted/JiraGlobal.png) ](https://youtu.be/tCRh30KDpKc)
 
-If you needed you can add more integrations, by clicking on "Add integration"
+If you need you can add more integrations, by clicking on "Add integration".
 
->**Note:**
 User can add a severall integrations, but with a different name to the **one JIRA project**.
+
 
 >**Use case:**
 >
@@ -129,7 +129,7 @@ If you need to edit Jira integration authorization parameters, please perform ac
 
 >**Note:** 
 >
->you can edit only "Integration name". If you need others changes, please submit new integration.
+> You can edit "Integration name" only. If you need others changes, please submit new integration.
 
 
 If you need to edit a fields which should be posted in Jira, please perform actions:
@@ -248,12 +248,12 @@ If you want to delete project integrations with Jira and link your project with 
 
 3. Verify username and password data. Make sure, that login name and not email is in the username field. In case all the data above is correct, but the error appears again, check whether user's credentials to JIRA are not expired. As far as JIRA sends the request in html format, we are not able to display the real reason of error. To check and/or resolve the issue, please do the next steps:
 
-*	Open JIRA page
-*	Login JIRA with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
-*	Submit the login form Screen with CAPTCHA should appears
-*	Enter the symbols
-*	Submit the credentials again
-*	Now try to establish the connection to JIRA on ReportPortal project.
+   *	Open JIRA page
+   *	Login JIRA with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
+   *	Submit the login form Screen with CAPTCHA should appears
+   *	Enter the symbols
+   *	Submit the credentials again
+   *	Now try to establish the connection to JIRA on ReportPortal project.
 
 4. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
@@ -264,7 +264,7 @@ By posting issue in Jira, we mean a possibility to create new issue in Jira from
 
 If you want to post new issue to Jira, you need to have a project or global integration with Jira. 
 
-[ ![Post issue](Images/userGuide/gettingStarted/Post Issue.png) ](Images/userGuide/gettingStarted/Post Issue.png)
+[ ![Post issue](Images/userGuide/gettingStarted/Post issue.png) ](Images/userGuide/gettingStarted/Post issue.png)
 
 Post issue via Step view
 
@@ -281,12 +281,12 @@ Post issue via Step view
 6. Fill a posting form with valid data
 
 ```javascript
-BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
-Integration name: from drom down you can choose any of integrations for chosen earlier BTS
-Predefined fields: fields which you choose on Project Settings/ or Plugins
-Includede data: which data should be posted to BTS (attachments, logs, comments)
-BTS username: reporter login in Jira
-BTS password: reporter password in Jira
+`BTS`: if you have configured Jira and Rally integrations, you will be able to choose needed
+`Integration name`: from drom down you can choose any of integrations for chosen earlier BTS
+`Predefined fields`: fields which you choose on Project Settings/ or Plugins
+`Includede data`: which data should be posted to BTS (attachments, logs, comments)
+`BTS username`: reporter login in Jira
+`BTS password`: reporter password in Jira
 ```
 
 7. Submit a form
@@ -319,10 +319,10 @@ Post issue via Step view
 6. Fill a posting form with valid data
 
 ```javascript
-BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
-Integration name: from drom down you can choose any of integrations for chosen earlier BTS
-Link to issue: a full link to the item in BTS
-Issue ID: information which will be display on the label in ReportPortal
+`BTS`: if you have configured Jira and Rally integrations, you will be able to choose needed
+`Integration name`: from drom down you can choose any of integrations for chosen earlier BTS
+`Link to issue`: a full link to the item in BTS
+`Issue ID`: information which will be display on the label in ReportPortal
 ```
 
 7. Submit a form
@@ -349,10 +349,10 @@ If  all projects on your instance are using the same RALLY  projects, you will b
 
 ```java
 'Integration Name ': <The name which you want to give to your integration> - should be unique
-Link to BTS : <valid URL of bug tracking system>
-Project name in BTS: <project key in bug tracking system>
-Authorization Type: ApiKey (predefined)
-ApiKey: <RALLY user apikey>
+`Link to BTS` : <valid URL of bug tracking system>
+`Project name in BTS`: <project key in bug tracking system>
+`Authorization Type`: ApiKey (predefined)
+`ApiKey`: <RALLY user apikey>
 ```
 
 After you have created a connection with RALLY project, you can choose predefinded RALLY ticket fields. These fields will be shown you all the time when you post issue in the RALLY.
@@ -570,10 +570,10 @@ Post issue via Step view
 6. Fill a posting form with valid data
 
 ```javascript
-BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
-Integration name: from drom down you can choose any of integrations for chosen earlier BTS
-Link to issue: a full link to the item in BTS
-Issue ID: information which will be display on the label in ReportPortal
+`BTS`: if you have configured Jira and Rally integrations, you will be able to choose needed
+`Integration name`: from drom down you can choose any of integrations for chosen earlier BTS
+`Link to issue`: a full link to the item in BTS
+`Issue ID`: information which will be display on the label in ReportPortal
 ```
 
 7. Submit a form
@@ -613,40 +613,40 @@ To configure Email server for whole instance:
 7. The next fields should be present:
 
 ```javascript 
-Host: <host_name_of_email_server>
-Protocol: SMTP (predefined)
-Default sender name: (optional)
-Port: <port_number>
-Authorization: OFF/ON 
-Username: <user_email_address>
-Password: <user_email_password>
+`Host`: <host_name_of_email_server>
+`Protocol`: SMTP (predefined)
+`Default sender name`: (optional)
+`Port`: <port_number>
+`Authorization`: OFF/ON 
+`Username`: <user_email_address>
+`Password`: <user_email_password>
 'TLS' or 'SSL': should be checked depends on selected port.
 ```
 
 Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
 
 ```javascript
-Host: smtp.gmail.com
-Protocol: SMTP
-Default sender name: Report Portal
-Port: 465
-Authorization: ON
-Username: <user_email_address>
-Password: <user_email_password>
-SSL: checkbox should be checked.
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`Default sender name`: Report Portal
+`Port`: 465
+`Authorization`: ON
+`Username`: <user_email_address>
+`Password`: <user_email_password>
+`SSL`: checkbox should be checked.
 ```
 
 Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
  
 ```javascript
-                   Host: smtp.yandex.com
-               Protocol: SMTP
-    Default sender name: Report Portal
-                   Port: 465
-          Authorization: ON
-               Username: <user_email_address>
-               Password: <user_email_password>
-                    SSL: checkbox should be checked.
+`Host`: smtp.yandex.com
+`Protocol`: SMTP
+`Default sender name`: Report Portal
+`Port`: 465
+`Authorization`: ON
+`Username`: <user_email_address>
+`Password`: <user_email_password>
+`SSL`: checkbox should be checked.
 ```
 
 8. Confirm data in the form
@@ -668,40 +668,40 @@ To configure Email server for one single project instance:
 5. Click on the button "Unlink & Setup Manually"
 6. The next fields should be present:
 ```javascript 
-                   Host: <host_name_of_email_server>
-               Protocol: SMTP (predefined)
-    Default sender name: (optional)
-                   Port: <port_number>
-          Authorization: OFF/ON 
-               Username: <user_email_address>
-               Password: <user_email_password>
-         'TLS' or 'SSL': should be checked depends on selected port.
+`Host`: <host_name_of_email_server>
+`Protocol`: SMTP (predefined)
+`Default sender name`: (optional)
+`Port`: <port_number>
+`Authorization`: OFF/ON 
+`Username`: <user_email_address>
+`Password`: <user_email_password>
+'TLS' or 'SSL': should be checked depends on selected port.
 ```
 
 Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
 
 ```javascript
-Host: smtp.gmail.com
-Protocol: SMTP
-Default sender name: Report Portal
-Port: 465
-Authorization: ON
-Username: <user_email_address>
-Password: <user_email_password>
-SSL: checkbox should be checked.
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`Default sender name`: Report Portal
+`Port`: 465
+`Authorization: ON
+`Username`: <user_email_address>
+`Password`: <user_email_password>
+`SSL`: checkbox should be checked.
 ```
 
 Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
  
 ```javascript
-                   Host: smtp.yandex.com
-               Protocol: SMTP
-    Default sender name: Report Portal
-                   Port: 465
-          Authorization: ON
-               Username: <user_email_address>
-               Password: <user_email_password>
-                    SSL: checkbox should be checked.
+Host: smtp.yandex.com
+`Protocol`: SMTP
+`Default sender name`: Report Portal
+`Port`: 465
+`Authorization`: ON
+`Username`: <user_email_address>
+`Password`: <user_email_password>
+`SSL`: checkbox should be checked.
 ```
 
 8. Confirm data in the form
@@ -742,9 +742,9 @@ To configure Sauce Labs for whole instance:
 7. The next fields should be present:
 
 ```javascript 
-User name: <host_name_of_email_server>
-Access token: <youe access token>
-Data center: <Europe, USA>
+`User name`: <host_name_of_email_server>
+`Access token`: <youe access token>
+`Data center`: <Europe, USA>
 ```
 
 8. Confirm data in the form
