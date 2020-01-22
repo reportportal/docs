@@ -80,3 +80,7 @@ Async controllers has `/api/v2` prefix.Requests and responses have no difference
 `rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod (default effectively infinite). Note: should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster
 
 #### Exchanges and queues for reporting
+
+![](/src/Images/devguide/async/exchanges-queues.png)
+
+
