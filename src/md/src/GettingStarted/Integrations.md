@@ -23,6 +23,8 @@ If you have another configuration than others project have or you want to integr
 
 By this action you unlink the current project from the global settings and configure your own integration.
 
+[ ![Unlink Global Jira Integration](Images/userGuide/gettingStarted/Unlink Global Integration.png) ](mages/userGuide/gettingStarted/Unlink Global Integration.png)
+
 
 >**Note:**
 If you unlink project setting and ADMIN changes global settings for whole instance, your project will use your project settings.
@@ -32,7 +34,7 @@ In this case your settings will be deleted, and integration will use global sett
 
 You always can reset to the global settings.
 
-### Integration with JIRA
+## Integration with JIRA
 
 An integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
 
@@ -41,8 +43,9 @@ The *Administrator* can upload a plugin and make global integrations on the Plug
 The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
 
 
+### Global JIRA integration
 
-#### Global JIRA integration
+#### Add new global Jira integration
 
 If  all projects on your instance are using the same Jira  projects, you will be able configure **global integrations** which will be applied on all projects. 
 
@@ -82,11 +85,101 @@ For choosing needed issue type and predefined field for chosen issue, you should
 
 Now team members on all your projects will be able to submit issues in Jira. Options for Post Issue / Link issue  are activated.
 
+[ ![Global Jira Integration Creation](Images/userGuide/gettingStarted/JiraGlobal.png) ](https://youtu.be/tCRh30KDpKc)
+
 If you needed you can add more integrations, by clicking on "Add integration"
 
-#### Project JIRA integration
+>**Note:**
 
-If  all projects on your instance are using the same Jira  projects, you will be able configure *global integrations* which will be applied on all projects. 
+User can add a severall integrations, but with a different name to the **one JIRA project**.
+
+>**Use case:**
+>
+> **Situation:** User wants to post to JIRA issues with type **Defect** and **Task** to the project NNN-MMM in Jira. Is it possible?
+> Yes!
+>
+> **Solution:** Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1" and "Project -2". 
+> Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
+> While posing issue procedure, choose integration with needed type.
+>
+> [ ![UseCaseWithTwoIntegrations](Images/userGuide/gettingStarted/JiraProject.png) ](https://youtu.be/med4tuL4plU)
+
+
+#### Update global Jira integration
+
+If you need to edit Jira integration authorization parameters, please perform actions:
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on JIRA plugin pannel
+
+4. Click on a tab with exsisting integration
+
+5. Click on "Edit authorization"
+
+6. Change "Integration name"
+
+7. Type your Jira credentials
+
+8. Submit form
+
+>**Note:** 
+>
+>you can edit only "Integration name". If you need others changes, please submit new integration.
+
+
+If you need to edit a fields which should be posted in Jira, please perform actions:
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on JIRA plugin pannel
+
+4. Click on a tab with exsisting integration
+
+5. Click on the button "Configure"
+
+6. Choose issue type from a drop-down
+
+7. Check needed fields and fill them if you need
+
+8. Click on "Submit"
+
+9. Submit form
+
+
+[ ![Edit Global Jira Integration](Images/userGuide/gettingStarted/JiraGlobal.png) ](https://youtu.be/yvYwxs4zTYA)
+
+
+#### Remove global Jira integration
+
+If you need to remove Jira integration, please perform actions:
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on JIRA plugin pannel
+
+4. Click on a tab with exsisting integration
+
+5. Click on "Remove integration"
+
+6. Submit an action
+
+[ ![Remove Global Jira Integration](Images/userGuide/gettingStarted/JiraGlobal.png) ](https://youtu.be/mEWP4txdJFA)
+
+
+### Project JIRA integration
+
+#### Add new global Jira integration
+
+If each projects need different Jira configurations, you need to unlink a project from Global configurations and add a project configurations. It means that now when new global integration will be added to the ReportPortal, it would not apply to the unlinked project. 
+
+For that,
 
 1. Login as ADMIN or Project Manager
 
@@ -106,37 +199,52 @@ If  all projects on your instance are using the same Jira  projects, you will be
 'BTS Username': <JIRA user name>                  
 'BTS Password': <JIRA user password>
 ```
-6. After creation a connectionChoose needed issue type and predefined field for chosen issue
 
-> **Note:** The "Configuration" (list of fields provided for issue form in JIRA) will appear on the Integration details. The Required fields in JIRA are marked with an asterisk. They are checked by default and disabled by unchecking.
-To configure fields for posting issues in JIRA, follow these instructions:
-•	Check desired fields. The checked fields will be shown on the post issue form.
-•	Fill in the required fields and the other checked fields as needed, and click "Submit" button. The system will save the entered information and hide the fields that are not checked. All the saved information on the checked fields will be predefined, when you post a issue to JIRA.
-Now the project team members with JIRA accounts will be able to submit issues. Options for Post Issue / Link issue  are activated.
+After you have created a connection with JIRA project, you can choose predefinded JIRA ticket fields. These fields will be shown you all the time when you post issue in the Jira.
 
-If you needed you can add more integrations, by clicking on "Add integration"
+This feature gives you an abilty to choose with which type you will post ticket.
 
->**Note:**
+For choosing needed issue type and predefined field for chosen issue, you should perform following actions:
 
-User can add a severall integration, but with different name to the **one JIRA project**.
+1. Click button "Configure"
 
->**Use case:**
-User wants to post to JIRA issues with type **Defect** and **Task** to the project NNN-MMM in Jira. Is it possible?
-Yes!
-Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1" and "Project -2". 
-Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
-While posing issue procedure, choose integration with needed type.
+2. Choose issue type from a drop-down
+
+3. Check needed fields and fill them if you need
+
+4. Click on "Submit"
 
 
+Now team members on **this projects** will be able to submit issues in Jira. Options for Post Issue / Link issue  are activated.
+
+If you needed you can add more integrations, by clicking on "Add integration".
+
+[ ![ProjectJiraIntegration](Images/userGuide/gettingStarted/JiraProject.png) ](https://youtu.be/tCRh30KDpKc)
+
+#### Reset to global Jira Integrations
+
+If you want to delete project integrations with Jira and link your project with global configurations, please perform actions described below:
+
+1. Login as ADMIN or Project Manager
+
+2. Go to Project Settings > Integrations
+
+3. Click on the JIRA integration pannel
+
+4. Click on "Reset to global settings"
+
+5. Confirm actions
+
+[ ![Reset to Global Jira Integration](Images/userGuide/gettingStarted/JiraGlobal.png) ](https://youtu.be/KIrEVY-DKiA)
 
 
-**Some tricks when you create a new connections:**
+### Some tricks when you create a new connections:
 
-1.) Verify that the link to JIRA system is correct. There are some variants are possible, for instance: https://jira.company.com/jira https://jiraeu.company.com
+1. Verify that the link to JIRA system is correct. There are some variants are possible, for instance: https://jira.company.com/jira https://jiraeu.company.com
 
-2.) Verify the project name in JIRA is correct. Please fill in Project name field with project key value, e.g. project ABC-DEF has key ABCDEF.
+2. Verify the project name in JIRA is correct. Please fill in Project name field with project key value, e.g. project ABC-DEF has key ABCDEF.
 
-3.) Verify username and password data. Make sure, that login name and not email is in the username field. In case all the data above is correct, but the error appears again, check whether user's credentials to JIRA are not expired. As far as JIRA sends the request in html format, we are not able to display the real reason of error. To check and/or resolve the issue, please do the next steps:
+3. Verify username and password data. Make sure, that login name and not email is in the username field. In case all the data above is correct, but the error appears again, check whether user's credentials to JIRA are not expired. As far as JIRA sends the request in html format, we are not able to display the real reason of error. To check and/or resolve the issue, please do the next steps:
 
 *	Open JIRA page
 *	Login JIRA with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
@@ -145,122 +253,195 @@ While posing issue procedure, choose integration with needed type.
 *	Submit the credentials again
 *	Now try to establish the connection to JIRA on ReportPortal project.
 
-4.) SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
+4. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
 
 
+## Integration with RALLY
+### Global RALLY integration
 
-[Video]()
+#### Add new global RALLY integration
 
+If  all projects on your instance are using the same RALLY  projects, you will be able configure **global integrations** which will be applied on all projects. 
 
-### Integration with RALLY
+1. Login as ADMIN
 
-**Set up connection to RALLY**
+2. Go to Administrative > Plugins
 
-To integrate RALLY to the project, perform following steps:
+3. Click on RALLY plugin pannel
 
-1. Login into the ReportPortal instance as a user with LEAD or PROJECT MANAGER role on the project.
-2. Open the Settings page of project, select 'Bug Tracking System' tab.
-3. Select 'RALLY' from 'Bug Tracking System' list.
-4. The form to set up the connection to RALLY appears. The form contains:
-```javascript
-                     Link to BTS : <valid URL of bug tracking system>
-               Project name in BTS: <project key in bug tracking system>
-               Authorization Type: ApiKey (predefined)
-                           ApiKey: <RALLY user apikey>
+4. Click on "Add integration"
+
+5. Fill and confirm authorization form
+
+```java
+'Integration Name ': <The name which you want to give to your integration> - should be unique
+Link to BTS : <valid URL of bug tracking system>
+Project name in BTS: <project key in bug tracking system>
+Authorization Type: ApiKey (predefined)
+ApiKey: <RALLY user apikey>
 ```
-5. Fill in required fields and click 'Submit' button.
 
-A confirmation message will be shown in the status bar.
+After you have created a connection with RALLY project, you can choose predefinded RALLY ticket fields. These fields will be shown you all the time when you post issue in the RALLY.
 
-Steps above are enough to link issue functionality and to getting updates on issue's statuses.
+This feature gives you an abilty to choose with which type you will post ticket.
 
-To have a possibility to post issues to bug tracking system, it is necessary to select and /or submit default properties for the
-issues form.
+For choosing needed issue type and predefined field for chosen issue, you should perform following actions:
 
+1. Click button "Configure"
 
-**Configuration of fields of post issue form**
+2. Choose issue type from a drop-down
 
-The "Default properties for issue form" (list of fields provided for issue form in RALLY) will appear on the submit the form above.
-The Required RALLY fields are marked with asterisk. They are checked by default and disabled for unchecking.
+3. Check needed fields and fill them if you need
 
-To configure fields for the post issue form in RALLY:
-
-1. Select the wanted fields. The checked fields will be shown on the post issue form.
-
-2. Fill in the required fields and the other checked fields (if necessary), and click the "Submit" button. 
-
-The system will save the entered information and hide the fields that are not checked. 
-All the saved information on the checked fields will be predefined, when you will post a issue to RALLY.
-
-Now the project team members with JIRA accounts be able to submit issues. Options for Post Issue is activated.
-
-[ ![Image](Images/userGuide/bugSystem/addRally.png) ](https://youtu.be/thkH1Qn4DhQ)
+4. Click on "Submit"
 
 
-**Edit RALLY properties**
+Now team members on all your projects will be able to submit issues in RALLY. Options for Post Issue / Link issue  are activated.
 
-To edit RALLY properties, click the "Edit" button. The RALLY properties will become
-editable.
+If you needed you can add more integrations, by clicking on "Add integration"
 
-Make changes in the RALLY properties form.
+>**Note:**
 
- If "Link to BTS" and "Project name in BTS" fields weren’t changed – the content of "Default properties for issue form" will be kept and 
-shown after the new data validation is completed.
+User can add a severall integrations, but with a different name to the **one RALLY project**.
 
- If "Link to BTS" and "Project name in BTS" fields were changed - the system will reset the content of "Default properties for issue 
-form" and show the blank form.
-
-
-**Update fields of post issue form**
-
-To add additional fields to the post issue form:
-1. Click the 'Update' button under the "Default properties for issue form". 
-
-   You will see the list of all available fields for post issue form. 
-   
-2. Select the desired fields
-
-3. Click the 'Submit' button. 
-   A confirmation message will be shown in the status bar. "Default properties for issue form" will be updated.
-   Previously selected fields are checked as well.
-
-To remove the fields from the post issue form:
-1. Uncheck desired fields 
-
-2. Click the "Submit" button. 
-The "Default properties for issue form" will be updated.
-
-Fields can also be filled in with some data. 
-
-For instance, add general data to the 'Summary' field ("UI:")
-
-Or select a value from the list provided, e.g., select appropriate version name for 'Fix Version/s' or 'Affects Version/s' fields.
-
-The "Post issue form" will contain the selected data. So, it will be not necessary in future to type or select general information again and again.
-
-[ ![Image](Images/userGuide/bugSystem/updateRallyFields.png) ](https://youtu.be/ugoQvo_Acgo)
+>**Use case:**
+>
+> **Situation:** User wants to post to RALLY issues with type **Defect** and **Task** to the project NNN-MMM in RALLY. Is it possible?
+> Yes!
+>
+> **Solution:** Add two integrations to the project NNN-MMM in RALLY with names f.e. "Project -1" and "Project -2". 
+> Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
+> While posing issue procedure, choose integration with needed type.
 
 
-**Remove RALLY project from Report Portal settings**
+#### Update global RALLY integration
 
-To remove RALLY from project settings:
-1. Click the "Remove project" button.
+If you need to edit RALLY integration authorization parameters, please perform actions:
 
-2. Confirm the action in the modal window.
+1. Login as ADMIN
 
-The connection to RALLY will be deleted from ReportPortal. But all created and linked issues will be kept and available on 
-ReportPortal pages. Note: At the same time, post and link issue functionalities will become disabled; and status of already submitted issues will not be available as well.
+2. Go to Administrative > Plugins
 
-### Integration with JIRA
+3. Click on RALLY plugin pannel
 
-Integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
+4. Click on a tab with exsisting integration
 
-**Permission:** 
-The *Administrator* can upload plugin and make global integrations on the Plugin Tab on Administrative page. Also, the Administrator can unlink project configurations from global. 
-The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+5. Click on "Edit authorization"
 
-#### Add E-mail server integrations
+6. Change "Integration name"
+
+7. Type your RALLY credentials
+
+8. Submit form
+
+>**Note:** 
+>
+>you can edit only "Integration name". If you need others changes, please submit new integration.
+
+
+If you need to edit a fields which should be posted in RALLY, please perform actions:
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on RALLY plugin pannel
+
+4. Click on a tab with exsisting integration
+
+5. Click on the button "Configure"
+
+6. Choose issue type from a drop-down
+
+7. Check needed fields and fill them if you need
+
+8. Click on "Submit"
+
+9. Submit form
+
+
+
+#### Remove global RALLY integration
+
+If you need to remove RALLY integration, please perform actions:
+
+1. Login as ADMIN
+
+2. Go to Administrative > Plugins
+
+3. Click on RALLY plugin pannel
+
+4. Click on a tab with exsisting integration
+
+5. Click on "Remove integration"
+
+6. Submit an action
+
+### Project RALLY integration
+
+#### Add new global RALLY integration
+
+If each projects need different RALLY configurations, you need to unlink a project from Global configurations and add a project configurations. It means that now when new global integration will be added to the ReportPortal, it would not apply to the unlinked project. 
+
+For that,
+
+1. Login as ADMIN or Project Manager
+
+2. Go to Project Settings > Integrations
+
+3. Click on the RALLY integration pannel
+
+4. Click on "Unlink and setup mannually"
+
+5. Fill and confirm authorization form
+
+```java
+'Integration Name ': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+'Project name in BTS': <project key in bug tracking system>            
+'Authorization Type': Basic (predefined)                  
+'BTS Username': <RALLY user name>                  
+'BTS Password': <RALLY user password>
+```
+
+After you have created a connection with RALLY project, you can choose predefinded RALLY ticket fields. These fields will be shown you all the time when you post issue in the RALLY.
+
+This feature gives you an abilty to choose with which type you will post ticket.
+
+For choosing needed issue type and predefined field for chosen issue, you should perform following actions:
+
+1. Click button "Configure"
+
+2. Choose issue type from a drop-down
+
+3. Check needed fields and fill them if you need
+
+4. Click on "Submit"
+
+
+Now team members on **this projects** will be able to submit issues in RALLY. Options for Post Issue / Link issue  are activated.
+
+If you needed you can add more integrations, by clicking on "Add integration".
+
+#### Reset to global RALLY Integrations
+
+If you want to delete project integrations with RALLY and link your project with global configurations, please perform actions described below:
+
+1. Login as ADMIN or Project Manager
+
+2. Go to Project Settings > Integrations
+
+3. Click on the RALLY integration pannel
+
+4. Click on "Reset to global settings"
+
+5. Confirm actions
+
+
+
+
+### Add E-mail server integrations
 
 You can integrate Report portal with E-mail server. With this integration you will be able to perform such functions as:
 
@@ -354,4 +535,4 @@ To configure Email server for one single project instance:
 
 >**Note:** In case you unlink your project settings from Global settings, for the chosen project
 
-### Sauce Labs integration
+## Sauce Labs integration
