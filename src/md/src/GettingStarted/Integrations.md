@@ -709,9 +709,10 @@ After E-mail server integration adding, the configration will be applyed to all 
 
 >**Note:** In case you unlink your project settings from Global settings, for the chosen project
 
+
 ## Sauce Labs integration
 
-### Add Sauce Labs server integrations
+### Add Sauce Labs integrations
 
 Configure an integration with Sauce Labs and watch video of test executions right in the ReportPortal application. 
 
@@ -749,35 +750,6 @@ Data center: <Europe, USA>
 
 After Sauce Labs integration adding, you can use Sauce Labs integration.
 
-**Project E-mail integration**
-
-If E-mail integration has not be added on project, or if Project Manager or Admin want to specified a special configurations for special project, they can confugure E-mail server in the project settings.
-
-To configure Email server for one single project instance:
-
-1. Login to the ReportPortal as an ADMIN or PM user
-
-2. Then click on Project settings icon.
-
-3. Click on Integrations tab.
-
-4. Click on the'Email Server' tab.
-
-5. Click on the button "Unlink & Setup Manually"
-
-6. The next fields should be present:
-
-```javascript 
-User name: <host_name_of_email_server>
-Access token: <youe access token>
-Data center: <Europe, USA - use your Data center for Sauce Labs>
-```
-
-8. Confirm data in the form
-
-After Sauce Labs integration adding, you can use Sauce Labs integration.
-
->**Note:** In case you unlink your project settings from Global settings, for the chosen project
 
 ### How to use Sauce Labs Integration
 
