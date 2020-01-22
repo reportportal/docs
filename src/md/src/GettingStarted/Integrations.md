@@ -27,14 +27,14 @@ By this action you unlink the current project from the global settings and confi
 
 
 >**Note:**
-If you unlink project setting and ADMIN changes global settings for whole instance, your project will use your project settings.
+> If you unlink project setting and ADMIN changes global settings for whole instance, your project will use your project settings.
 
 To return global settings, you need to click a button "Resert to global settings".
 In this case your settings will be deleted, and integration will use global settings.
 
 You always can reset to the global settings.
 
-## Integration with JIRA
+## Jira Integration  
 
 An integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
 
@@ -90,7 +90,6 @@ Now team members on all your projects will be able to submit issues in Jira. Opt
 If you needed you can add more integrations, by clicking on "Add integration"
 
 >**Note:**
-
 User can add a severall integrations, but with a different name to the **one JIRA project**.
 
 >**Use case:**
@@ -175,7 +174,7 @@ If you need to remove Jira integration, please perform actions:
 
 ### Project JIRA integration
 
-#### Add new global Jira integration
+#### Add new project Jira integration
 
 If each projects need different Jira configurations, you need to unlink a project from Global configurations and add a project configurations. It means that now when new global integration will be added to the ReportPortal, it would not apply to the unlinked project. 
 
@@ -221,7 +220,7 @@ If you needed you can add more integrations, by clicking on "Add integration".
 
 [ ![ProjectJiraIntegration](Images/userGuide/gettingStarted/JiraProject.png) ](https://youtu.be/tCRh30KDpKc)
 
-#### Reset to global Jira Integrations
+#### Reset to project Jira Integrations
 
 If you want to delete project integrations with Jira and link your project with global configurations, please perform actions described below:
 
@@ -257,7 +256,7 @@ If you want to delete project integrations with Jira and link your project with 
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
 
 
-## Integration with RALLY
+## Rally Integration 
 ### Global RALLY integration
 
 #### Add new global RALLY integration
@@ -380,7 +379,7 @@ If you need to remove RALLY integration, please perform actions:
 
 ### Project RALLY integration
 
-#### Add new global RALLY integration
+#### Add new project RALLY integration
 
 If each projects need different RALLY configurations, you need to unlink a project from Global configurations and add a project configurations. It means that now when new global integration will be added to the ReportPortal, it would not apply to the unlinked project. 
 
@@ -424,7 +423,7 @@ Now team members on **this projects** will be able to submit issues in RALLY. Op
 
 If you needed you can add more integrations, by clicking on "Add integration".
 
-#### Reset to global RALLY Integrations
+#### Reset to project RALLY Integrations
 
 If you want to delete project integrations with RALLY and link your project with global configurations, please perform actions described below:
 
@@ -441,6 +440,7 @@ If you want to delete project integrations with RALLY and link your project with
 
 
 
+## E-mail server integration
 ### Add E-mail server integrations
 
 You can integrate Report portal with E-mail server. With this integration you will be able to perform such functions as:
@@ -449,7 +449,9 @@ You can integrate Report portal with E-mail server. With this integration you wi
 - configure notification rules on launch finish
 
 
->**Permissions:** user with account role *ADMINISTRATOR* can configure E-mail integration for whole instance or per project.
+**Permissions:** 
+
+user with account role *ADMINISTRATOR* can configure E-mail integration for whole instance or per project.
 User with account role *PROJECT MANAGER* can configure E-mail integration only on project where he is assigned on as Project Manager.
 
 ### Global E-mail server integration
@@ -457,44 +459,45 @@ User with account role *PROJECT MANAGER* can configure E-mail integration only o
 To configure Email server for whole instance:
 
 1. Login to the ReportPortal as an ADMIN user
+
 2. Then open the list on the right of the user's image.
+
 3. Click the 'Administrative' link 
+
 4. Click the 'Plugins' from left-hand sidebar
+
 5. Click on the'Email Server' tab.
+
 6. Click on Add new integration
-6. The next fields should be present:
+
+7. The next fields should be present:
+
 ```javascript 
-                   Host: <host_name_of_email_server>
-               Protocol: SMTP (predefined)
-    Default sender name: (optional)
-                   Port: <port_number>
-          Authorization: OFF/ON 
-               Username: <user_email_address>
-               Password: <user_email_password>
-         'TLS' or 'SSL': should be checked depends on selected port.
+Host: <host_name_of_email_server>
+Protocol: SMTP (predefined)
+Default sender name: (optional)
+Port: <port_number>
+Authorization: OFF/ON 
+Username: <user_email_address>
+Password: <user_email_password>
+'TLS' or 'SSL': should be checked depends on selected port.
 ```
 
 Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
- 
-1. Fill the form with next data:
-```javascript
-                   Host: smtp.gmail.com
-               Protocol: SMTP
-    Default sender name: Report Portal
-                   Port: 465
-          Authorization: ON
-               Username: <user_email_address>
-               Password: <user_email_password>
-                    SSL: checkbox should be checked.
-```
-2. Click the 'Submit' button
-3. A confirmation message in the status bar should be shown.
 
-[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/0919itAaixk)
+```javascript
+Host: smtp.gmail.com
+Protocol: SMTP
+Default sender name: Report Portal
+Port: 465
+Authorization: ON
+Username: <user_email_address>
+Password: <user_email_password>
+SSL: checkbox should be checked.
+```
 
 Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
  
-1. Fill in the form with the next data set:
 ```javascript
                    Host: smtp.yandex.com
                Protocol: SMTP
@@ -505,8 +508,10 @@ Example of an email server configuration for a Yandex email server (detailed inf
                Password: <user_email_password>
                     SSL: checkbox should be checked.
 ```
-2. Click the 'Submit' button
-3. A confirmation message in the status bar should be shown.
+
+8. Confirm data in the form
+
+[ ![E-mail server configuration](Images/userGuide/gettingStarted/E-mail Server.png) ](https://youtu.be/FekmJRNedfU)
 
 After E-mail server integration adding, the configration will be applyed to all projects on the instance.
 
@@ -533,6 +538,119 @@ To configure Email server for one single project instance:
          'TLS' or 'SSL': should be checked depends on selected port.
 ```
 
+Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
+
+```javascript
+Host: smtp.gmail.com
+Protocol: SMTP
+Default sender name: Report Portal
+Port: 465
+Authorization: ON
+Username: <user_email_address>
+Password: <user_email_password>
+SSL: checkbox should be checked.
+```
+
+Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
+ 
+```javascript
+                   Host: smtp.yandex.com
+               Protocol: SMTP
+    Default sender name: Report Portal
+                   Port: 465
+          Authorization: ON
+               Username: <user_email_address>
+               Password: <user_email_password>
+                    SSL: checkbox should be checked.
+```
+
+8. Confirm data in the form
+
+After E-mail server integration adding, the configration will be applyed to all projects on the instance.
+
 >**Note:** In case you unlink your project settings from Global settings, for the chosen project
 
 ## Sauce Labs integration
+
+### Add Sauce Labs server integrations
+
+Configure an integration with Sauce Labs and watch video of test executions right in the ReportPortal application. 
+
+
+**Permissions:** 
+
+user with account role *ADMINISTRATOR* can configure integration for whole instance or per project.
+User with account role *PROJECT MANAGER* can configure integration only on project where he is assigned on as Project Manager.
+
+### Global Sauce Labs integration
+
+To configure Sauce Labs for whole instance:
+
+1. Login to the ReportPortal as an ADMIN user
+
+2. Then open the list on the right of the user's image.
+
+3. Click the 'Administrative' link 
+
+4. Click the 'Plugins' from left-hand sidebar
+
+5. Click on the'Sauce Labs' tab.
+
+6. Click on Add new integration
+
+7. The next fields should be present:
+
+```javascript 
+User name: <host_name_of_email_server>
+Access token: <youe access token>
+Data center: <Europe, USA>
+```
+
+8. Confirm data in the form
+
+After Sauce Labs integration adding, you can use Sauce Labs integration.
+
+**Project E-mail integration**
+
+If E-mail integration has not be added on project, or if Project Manager or Admin want to specified a special configurations for special project, they can confugure E-mail server in the project settings.
+
+To configure Email server for one single project instance:
+
+1. Login to the ReportPortal as an ADMIN or PM user
+
+2. Then click on Project settings icon.
+
+3. Click on Integrations tab.
+
+4. Click on the'Email Server' tab.
+
+5. Click on the button "Unlink & Setup Manually"
+
+6. The next fields should be present:
+
+```javascript 
+User name: <host_name_of_email_server>
+Access token: <youe access token>
+Data center: <Europe, USA - use your Data center for Sauce Labs>
+```
+
+8. Confirm data in the form
+
+After Sauce Labs integration adding, you can use Sauce Labs integration.
+
+>**Note:** In case you unlink your project settings from Global settings, for the chosen project
+
+### How to use Sauce Labs Integration
+
+Before using this feature a user should report test results to ReportPortal with attribute:`SLID: XXXXXXXX`.
+
+Where SLID - `Sauce Labs ID`
+
+XXXXXXXX - `# of job in Sauce Labs`
+
+By the attribute `SLID: XXXXXXXX` you link the execution in ReportPortal and a job in Sauce Labs.
+
+So that if a test item has attribute `SLID: XXXXXXXX`, and there are a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs from the appropriate job in ReportPortal on a log view. 
+
+[ ![Sauce Labs configuration](Images/userGuide/gettingStarted/Sauce Labs.png) ](https://youtu.be/RQAxGz6koh0)
+
