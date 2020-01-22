@@ -43,6 +43,7 @@ Async controllers has `/api/v2` prefix.Requests and responses have no difference
 
 Async reporting is supported only in agents since version 5.0.0.
 To enable it you should set `rp.reporting.async=true` in `reportportal.properties`.
+By default (if property `rp.reporting.async` is not specified) agents work in synchronous mode.
 
 ```properties
 rp.endpoint=https://example.com
