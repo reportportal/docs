@@ -2,6 +2,8 @@
 
 Users can reinforce ReportPortal with adding additional integrtions with:
 
+[ ![Integrations](Images/userGuide/gettingStarted/Integrations.png) ](Images/userGuide/gettingStarted/Integrations.png)
+
 * Jira
 * Rally
 * Sauce Labs
