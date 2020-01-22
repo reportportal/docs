@@ -255,6 +255,77 @@ If you want to delete project integrations with Jira and link your project with 
 4. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
 After you have connected Jira and ReportPortal, you can choose an issue type which you will be able to add to Jira during “Post Issue” operation.  Also, user can add a predefined fields that user can fill.
 
+### Post issue to Jira
+
+By posting issue in Jira, we mean a possibility to create new issue in Jira from ReportPortal and upload logs and attachments from an execcution.
+
+If you want to post new issue to Jira, you need to have a project or global integration with Jira. 
+
+[ ![Post issue](Images/userGuide/gettingStarted/Post Issue.png) ](Images/userGuide/gettingStarted/Post Issue.png)
+
+Post issue via Step view
+
+1. Login ReportPortal as Admin, PM, Member, Customer or Operator
+
+2. Come to a step view
+
+3. Choose needed item
+
+4. Click on a button "Actions"
+
+5. Choose an action "Post issue"
+
+6. Fill a posting form with valid data
+
+```javascript
+BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
+Integration name: from drom down you can choose any of integrations for chosen earlier BTS
+Predefined fields: fields which you choose on Project Settings/ or Plugins
+Includede data: which data should be posted to BTS (attachments, logs, comments)
+BTS username: reporter login in Jira
+BTS password: reporter password in Jira
+```
+
+7. Submit a form
+
+8. A new issue will be posted in BTS with information from ReportPortal
+
+9. A label with issue ID will be added to the test item
+
+
+
+
+### Link an issue with an issue in Jira
+
+By linking issue with an issue in Jira, we mean a possibility to a clickable link to an exsisting issue in Jira from ReportPortal that will show a status of this issue. 
+
+[ ![Link issue](Images/userGuide/gettingStarted/Link issue.png) ](Images/userGuide/gettingStarted/Link issue.png)
+
+Post issue via Step view
+
+1. Login ReportPortal as Admin, PM, Member, Customer or Operator
+
+2. Come to a step view
+
+3. Choose needed item
+
+4. Click on a button "Actions"
+
+5. Choose an action "Link issue"
+
+6. Fill a posting form with valid data
+
+```javascript
+BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
+Integration name: from drom down you can choose any of integrations for chosen earlier BTS
+Link to issue: a full link to the item in BTS
+Issue ID: information which will be display on the label in ReportPortal
+```
+
+7. Submit a form
+
+8. A label with issue ID will be added to the test item
+
 
 ## Rally Integration 
 ### Global RALLY integration
@@ -437,8 +508,74 @@ If you want to delete project integrations with RALLY and link your project with
 
 5. Confirm actions
 
+### Post issue to Rally
+
+By posting issue in Rally, we mean a possibility to create new issue in Rally from ReportPortal and upload logs and attachments from an execcution.
+
+If you want to post new issue to Rally, you need to have a project or global integration with Rally. 
+
+Post issue via Step view
+
+1. Login ReportPortal as Admin, PM, Member, Customer or Operator
+
+2. Come to a step view
+
+3. Choose needed item
+
+4. Click on a button "Actions"
+
+5. Choose an action "Post issue"
+
+6. Fill a posting form with valid data
+
+```javascript
+BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
+Integration name: from drom down you can choose any of integrations for chosen earlier BTS
+Predefined fields: fields which you choose on Project Settings/ or Plugins
+Includede data: which data should be posted to BTS (attachments, logs, comments)
+BTS username: reporter login in Jira
+BTS password: reporter password in Jira
+```
+
+7. Submit a form
+
+8. A new issue will be posted in BTS
+
+9. A label with issue ID will be added to the test item
 
 
+[ ![Post issue](Images/userGuide/gettingStarted/Post Issue.png) ](Images/userGuide/gettingStarted/Post Issue.png)
+
+### Link an issue with an issue in Rally
+
+By linking issue with an issue in Rally, we mean a possibility to a clickable link to an exsisting issue in Rally from ReportPortal that will show a status of this issue. 
+
+[ ![Link issue](Images/userGuide/gettingStarted/Link issue.png) ](Images/userGuide/gettingStarted/Link issue.png)
+
+Post issue via Step view
+
+1. Login ReportPortal as Admin, PM, Member, Customer or Operator
+
+2. Come to a step view
+
+3. Choose needed item
+
+4. Click on a button "Actions"
+
+5. Choose an action "Link issue"
+
+6. Fill a posting form with valid data
+
+```javascript
+BTS: if you have configured Jira and Rally integrations, you will be able to choose needed
+Integration name: from drom down you can choose any of integrations for chosen earlier BTS
+Link to issue: a full link to the item in BTS
+Issue ID: information which will be display on the label in ReportPortal
+```
+
+7. Submit a form
+
+8. A label with issue ID will be added to the test item
 
 ## E-mail server integration
 ### Add E-mail server integrations
