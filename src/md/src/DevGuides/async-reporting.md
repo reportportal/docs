@@ -18,4 +18,4 @@ After that `controller` returns HTTP response to `client`.
 * Step 3  
 `Consumer` starts processing the message as soon as it received from `RabbitMq`. In case exception occurs it logged.
 
-![](src/Images/devguide/async/simple-scheme.png)
+![](/src/Images/devguide/async/simple-scheme.png)
