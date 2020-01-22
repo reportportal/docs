@@ -38,9 +38,10 @@ You always can reset to the global settings.
 
 ## Jira Integration  
 
-An integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. At this time, ReportPortal only allows users to set up and connect to JIRA systems.
+An integration with a JIRA can be required for projects that collect defects in a separate tracking tool. Integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. 
 
 **Permission:** 
+
 The *Administrator* can upload a plugin and make global integrations on the Plugin Tab on the Management board. Also, the Administrator can unlink project configurations from global. 
 The *Project Manager* is able to work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
 
