@@ -235,3 +235,18 @@ POST `/v2/{projectName}/log` - Create log.
 
 ### Nested steps
 [Nested steps wiki](https://github.com/reportportal/client-java/wiki/Nested-steps)
+
+### Launch logs
+
+Create log request contains fields `launchUuid` and `itemUuid`. At least one of them should not be null.
+
+```json
+{
+  "itemUuid": "7f32fb6a-fcc2-4ecb-a4f7-780c559a37ca",
+  "launchUuid": "6fd4638d-90e2-4f52-a9bd-bf433ebfb0f3"
+}
+```
+
+If they both are present - log will be saved as test item log.
+If only `itemUuid` is present - log will be saved as test item log.
+If only `launchUuid` is present - log will be saved as launch log.
