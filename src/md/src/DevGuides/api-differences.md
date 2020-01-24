@@ -250,3 +250,11 @@ Create log request contains fields `launchUuid` and `itemUuid`. At least one of 
 If they both are present - log will be saved as test item log.
 If only `itemUuid` is present - log will be saved as test item log.
 If only `launchUuid` is present - log will be saved as launch log.
+
+Java client has static methods for launch log reporting:
+
+//TODO fix links after java client final version release
+- [emitLaunchLog(Function<String, SaveLogRQ> logSupplier)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L160)
+- [emitLaunchLog(final String message, final String level, final Date time)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L192)
+- [emitLaunchLog(final String message, final String level, final Date time, final File file)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L233)
+- [emitLaunchLog(final ReportPortalMessage message, final String level, final Date time)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L288)
