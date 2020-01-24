@@ -101,4 +101,4 @@ In case message from `reporting.retry` was consumed with exception more than 10 
 
 #### Finishing launch
 
-![](/src/Images/devguide/async/finish-launch.png)
+![](/src/Images/devguide/async/finish-launch-scheme.png)
