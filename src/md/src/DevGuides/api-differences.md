@@ -6,15 +6,21 @@
 
 GET `/v1/{projectName}/activity/{activityId}` - Get activity by id.
 
+---
+
 ### Dashboard controller
 
-PUT `/v1/{projectName}/dashboard/{dashboadrId}/{widgetId}}` - Add specified widget to dashboard.
+PUT `/v1/{projectName}/dashboard/{dashboardId}/{widgetId}}` - Add specified widget to dashboard.
 
-DELETE `/v1/{projectName}/dashboard/{dashboardId}/{widgetId}` Delete specified widget from dashboard.
+DELETE `/v1/{projectName}/dashboard/{dashboardId}/{widgetId}` - Delete specified widget from dashboard.
+
+---
 
 ### Launch controller
 
-Tags from v4 was replaced by attributes in v5. Attribute contains key and value. It may have null key, but non-null value. Attribute with null value is analog for v4 tag. 
+Note: Tags from v4 was replaced by attributes in v5.
+Attribute contains key and value. It may have null key, but non-null value.
+Attribute with null value is analog for v4 tag.
 
 GET `/v1/{projectName}/launch/attribute/keys` - Retrieve all unique attribute keys of project launches.
 
@@ -24,17 +30,25 @@ GET `/v1/{projectName}/launch/status` - Get launches statuses.
 
 GET `/v1/{projectName}/launch/uuid/{launchUuid}` - Get launch by uuid.
 
+Note: Response from start(create) launch request contains object with key `id` and string value (example: `id="33fa80b9-8ec9-4d52-8cb7-68b7bb4070f1"`).
+It is not physical `id` in database. It is UUID (virtual id of launch, part of asynchronous reporting implementation).
+Using request above you can retrieve physical `id` from database of just reported launch and use it in next queries for items, filters etc.
+
 PUT `/v1/{projectName}/launch/info` - Bulk update launches attributes and descriptions.
+
+---
 
 ### Log controller
 
-New functionality in v5 - nested steps.
+New functionality in v5 - [nested steps](https://github.com/reportportal/client-java/wiki/Nested-steps).
 
 GET `/v1/{projectName}/log/nested/{parentId}` - Get nested steps with logs for the parent test item.
 
 GET `/v1/{projectName}/log/uuid/{logUuid}` - Get log by uuid.
 
 POST `/v1/{projectName}/log/search/{itemId}` - Search test items with similar error logs.
+
+---
 
 ### Plugin controller
 
@@ -44,7 +58,9 @@ POST `/v1/plugin` - Upload new plugin.
 
 PUT `/v1/plugin/{pluginId}` - update specified plugin.
 
-DELETE `/v1/plugin/{pluginId}` delete specified plugin.
+DELETE `/v1/plugin/{pluginId}` - delete specified plugin.
+
+---
 
 ### Project controller
 
@@ -66,6 +82,8 @@ PUT `/v1/project/{projectName}/preference/{login}/{filterId}` - Add specified fi
 
 DELETE `/v1/project/{projectName}/preference/{login}/{filerId}` - Remove specified filter from user preference.
 
+---
+
 ### Project setting controller
 
 POST `/v1/{projectName}/settings/pattern` - Create pattern template for item's log messages pattern analysis.
@@ -74,7 +92,13 @@ PUT `/v1/{projectName}/settings/pattern/{id}` - Update specified pattern templat
 
 DELETE `/v1/{projectName}/settings/pattern/{id}` - Delete specified pattern template for item's log messages pattern analysis.
 
+---
+
 ### Test item controller
+
+Note: Tags from v4 was replaced by attributes in v5.
+Attribute contains key and value. It may have null key, but non-null value.
+Attribute with null value is analog for v4 tag.
 
 GET `/v1/{projectName}/item/attribute/keys` - Retrieve all unique attributes keys of specified launch.
 
@@ -86,11 +110,17 @@ GET `/v1/{projectName}/item/ticket/ids` - Get tickets that contains a term as a 
 
 GET `/v1/{projectName}/item/uuid/{itemId}` - Get test item by uuid.
 
+Note: Response from start(create) test item request contains object with key `id` and string value (example: `id="1f8233b0-6a2d-4a82-989b-a33463287130"`).
+It is not physical `id` in database. It is UUID (virtual id of test item, part of asynchronous reporting implementation).
+Using request above you can retrieve physical `id` from database of just reported test item and use it in next queries for items, logs etc.
+
 PUT `/v1/{projectName}/item/info` - Bulk update items attributes and descriptions.
 
 PUT `/v1/{projectName}/item/issue/link` - Link external issue for specified test items.
 
 PUT `/v1/{projectName}/item/issue/unlink` - Unlink external issue for specified test items.
+
+---
 
 ### User controller
 
@@ -106,11 +136,15 @@ GET `/v1/user/{userName}/projects` - Retrieve all user projects.
 
 DELETE `/v1/user` - Delete specified users by ids.
 
+---
+
 ### Widget controller
  
 New group of widgets that may have few levels
  
 GET `/v1/{projectName}/widget/multilevel/{widgetId}` - Get multilevel widget by id.
+
+---
 
 ## New controllers
 
@@ -127,6 +161,8 @@ GET `/v1/bts/{projectName}/{integrationId}/fields-set` - Get list of fields requ
 GET `/v1/bts/{projectName}/{integrationId}/issue_types` - Get list of allowable issue types for bug tracking system (project integration).
 
 POST - `/v1/bts/{projectName}/{integrationId}/ticket` - Post ticket to the bts integration.
+
+---
 
 #### Integration controller
 
@@ -164,12 +200,7 @@ DELETE `/v1/integration/{integrationId}` - Delete specified global integration b
 
 DELETE `/v1/integration/{projectName}/{integrationId}` - Delete specified project integration by id.
 
-### Asynchronous reporting
-
-Requests sent to asynchronous controllers handled by api in the following way:
-1. For the entity from incoming request generates uuid and returns response
-2. Request stores in the message queue
-3. Consumer gets messages from the queue one by one and tries to handle them. If some error occured, message send to retry queue and will be handled again later. If number of attempts exceed specified value (10 by default), message drops from queue 
+---
 
 #### Launch asynchronous controller
 
@@ -179,6 +210,8 @@ POST `/v2/{projectName}/launch/merge` - Merge set of specified launches in commo
 
 PUT `/v2/{projectName}/launch/{launchId}/finish` - Finish launch for specified project.
 
+---
+
 #### Test item asynchronous controller
 
 POST `/v2/{projectName}/item` - Start root test item.
@@ -187,21 +220,26 @@ POST `/v2/{projectName}/item/{parentItem}` - Start child test item.
 
 PUT `/v2/{projectName}/item/{testItemId}` - Finish test item.
 
+---
+
 #### Log asynchronous controller
 
 POST `/v2/{projectName}/log` - Create log.
 
+---
+
 ## Differences in reporting
 
 ### Launch rerun
-[link-to-dev-guide]()
+[Rerun developers guide](/src/md/src/DevGuides/rerun.md)
 
 ### Nested steps
-[link-to-nested-steps-guide]()
+[Nested steps wiki](https://github.com/reportportal/client-java/wiki/Nested-steps)
 
 ### Launch logs
 
 Create log request contains fields `launchUuid` and `itemUuid`. At least one of them should not be null.
+
 ```json
 {
   "itemUuid": "7f32fb6a-fcc2-4ecb-a4f7-780c559a37ca",
@@ -215,18 +253,8 @@ If only `launchUuid` is present - log will be saved as launch log.
 
 Java client has static methods for launch log reporting:
 
+//TODO fix links after java client final version release
 - [emitLaunchLog(Function<String, SaveLogRQ> logSupplier)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L160)
 - [emitLaunchLog(final String message, final String level, final Date time)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L192)
 - [emitLaunchLog(final String message, final String level, final Date time, final File file)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L233)
 - [emitLaunchLog(final ReportPortalMessage message, final String level, final Date time)](https://github.com/reportportal/client-java/blob/20b1dda7681301acd86d2d9c9dbcbd7991890cdc/src/main/java/com/epam/reportportal/service/ReportPortal.java#L288)
-
-
-
-
-
-
-
-
-
-
-
