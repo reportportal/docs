@@ -5,6 +5,10 @@
 1. [Enable asynchronous reporting in agents](#enable-asynchronous-reporting-in-agents)
 1. [Asynchronous API](#asynchronous-api)
 1. [Detailed scheme of interactions between RabbitMq and API](#detailed-scheme-of-interactions-between-rabbitmq-and-api)
+    1. [API properties](#api-properties)
+    1. [Exchanges and queues for reporting](#exchanges-and-queues-for-reporting)
+    1. [Scheme](#scheme)
+    1. [Finishing launch](#finishing-launch)
 ---
 
 ### Overview
@@ -91,4 +95,10 @@ In case message from `reporting.retry` was consumed with exception more than 10 
 
 ![](/src/Images/devguide/async/exchanges-queues.png)
 
+#### Scheme
 
+![](/src/Images/devguide/async/detailed-reporting.png)
+
+#### Finishing launch
+
+![](/src/Images/devguide/async/finish-launch.png)
