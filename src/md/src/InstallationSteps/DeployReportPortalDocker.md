@@ -25,9 +25,9 @@ For MacOS native docker:
 
 #### Deploy ReportPortal with Docker
 
-1. Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
+1) Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
 
-2. Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
+2) Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
 
   ```Shell
   curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml
@@ -57,7 +57,7 @@ Please choose set the values of these variables that are right for your system.
 
 You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment [variable](https://reportportal.io/docs/Additional-configuration-parameters). 
 
-3. ElasticSearch configuration prerequisites for analyzer service
+3) ElasticSearch configuration prerequisites for analyzer service
 
 a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
 
@@ -77,7 +77,7 @@ chgrp 1000 data/elasticsearch
 
 For more details about ElasticSearch visit ElasticSearch [guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#_notes_for_production_use_and_defaults)
 
-4. Start the application using the following command:
+4) Start the application using the following command:
 
 ```Shell
 docker-compose -p reportportal up -d --force-recreate
@@ -121,7 +121,7 @@ volumes:
   postgres:
 ``` 
 
-5. Open your web-browser with an IP address of the deployed environment at port **8080**
+5) Open your web-browser with an IP address of the deployed environment at port **8080**
 
 You can get the host IP address by using the following docker command:  
 
@@ -133,7 +133,7 @@ You can get the host IP address by using the following docker command:
   http://IP_ADDRESS:8080
   ```
 
-6. Use the following **login\pass** to access: 
+6) Use the following **login\pass** to access: 
 
 ```shell
 default\1q2w3e
