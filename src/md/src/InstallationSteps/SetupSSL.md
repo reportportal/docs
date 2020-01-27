@@ -15,20 +15,23 @@ In addition, we use Let's Encrypt to automatically generate and renew SSL certif
 
 #### Traefik configuration
 
-Provided below is an example of using Traefik (gateway service) in docker-compose.yml. If you don't have any custom configurations, you are free to use the example below.
+Provided below is an example of using Traefik (gateway service) in docker-compose.yml. If you don't have any custom configurations, you are free to use the example below.  
 
-First of all you need to create a directory on the server where we will configure the rest of Traefik:
+First of all, please create a folder on the server as a start point to configure Traefik:  
 
 ```
 mkdir -p data/traefik
 ```
-Within this directory, you need to create empty `acme.json` file:
+
+Create an empty `acme.json` file within this folder:  
 
 ```
 touch data/traefik/acme.json && chmod 600 data/traefik/acme.json
 ```
 
-And you need to apply values in your `docker-compose.yml` file (please do not forget to update variables acme.email and acme.domains with your own values)
+Apply the following values in your `docker-compose.yml` file:  
+
+> Do not forget to update 'acme.email' and 'acme.domains' variables with your own values
 
 ```$xslt
 gateway:
@@ -64,7 +67,9 @@ gateway:
 
     restart: always
    ```
-But if you want to use standart http/https ports, please see following configuration:
+
+In case you want to go with the standart http/https ports, please use following configuration:  
+
 
 ```$xslt
 gateway:
@@ -109,7 +114,7 @@ This is the minimum configuration required to do the following:
 4) Enable the Docker provider and listen for container events on the Docker unix socket we've mounted earlier. However, new containers will not be exposed by Traefik by default, we'll get into this in a bit!
 5) Enable automatic request and configuration of SSL certificates using Let's Encrypt. These certificates will be stored in the acme.json file, which you can back-up yourself and store off-premises.
 
-IMPORTANT NOTE: You need to make sure that the required ports are opened, please check your firewall settings
+IMPORTANT NOTE: You need to make sure that the required ports are opened, please check your firewall settings.  
 
 With this simple configuration, you get:
 * HTTP redirect on HTTPS
