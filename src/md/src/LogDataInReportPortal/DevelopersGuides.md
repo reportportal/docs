@@ -26,3 +26,5 @@ Here you can find some guides for developers which helps to configure and improv
 * How report tests with nested steps?
   * https://github.com/reportportal/client-java/wiki/Nested-steps
   * https://github.com/reportportal/client-java/wiki/Step-template-and-step-template-config
+  
+* [Asynchronous reporting](https://github.com/reportportal/documentation/blob/async-reporting/src/md/src/DevGuides/async-reporting.md)
