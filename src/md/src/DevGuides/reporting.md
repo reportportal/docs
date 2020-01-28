@@ -6,6 +6,7 @@
 1. [Start root(suite) item](#start-rootsuite-item)
 1. [Start child(container) item](#start-childcontainer-item)
 1. [Start child(step) item](#start-childstep-item)
+1. [Start child(nested step) item](#start-childnested-step-item)
 1. [Finish child item](#finish-child-item)
 1. [Finish parent(container) item](#finish-parentcontainer-item)
 1. [Save single log without attachment](#save-single-log-without-attachment)
@@ -306,13 +307,48 @@ And response:
 }
 ```
 
+## Start child(nested step) item
+
+Test item without statistics is called `Nested step` and required for grouping logs and other `nested steps`(can be expanded and collapsed on the UI-view). `Nested step` has the same body request as common test item and defined only by additional field `hasStats=false`.
+
+```shell
+curl --header "Content-Type: application/json" \
+     --header "Authorization: Bearer 039eda00-b397-4a6b-bab1-b1a9a90376d1" \
+     --request POST \
+     --data '{"name":"uploadPlugin","startTime":"1574423237000","type":"step","hasStats":false,"launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4","description":"Uploading plugin"}' \
+     http://rp.com/api/v1/rp_project/item/bb237b98-22b0-4289-9490-9bb29215fe5e
+```
+
+With body:
+
+```json
+{
+  "name": "uploadPlugin",
+  "startTime": "1574423237000",
+  "type": "step",
+  "hasStats": false,
+  "launchUuid": "96d1bc02-6a3f-451e-b706-719149d51ce4",
+  "description": "Uploading plugin"
+}
+```
+
+And response:
+
+```json
+{
+  "id": "22e55c62-d028-4b49-840f-195d7a48b114"
+}
+```
+
+Nested steps description(java-specific) and screenshots with UI-view can be accessed by this [LINK](https://github.com/reportportal/client-java/wiki/Nested-steps)
+
 ## Finish child item
 
 We are not going to report more test items under this one, so we can finish it.
 To do that we should send the following request:
 PUT `/api/{version}/{projectName}/item/{itemUuid}`
 
-Finish test item request model:
+Finish test item request model (same for the `Nested step`):
 
 | Attribute   | Required | Description                                                                                               | Default value | Example                                                                                                                                                                 |
 |-------------|----------|-----------------------------------------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
