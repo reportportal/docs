@@ -6,6 +6,8 @@
 1. [Start root(suite) item](#start-rootsuite-item)
 1. [Start child(container) item](#start-childcontainer-item)
 1. [Start child(step) item](#start-childstep-item)
+1. [Start child(nested step) item](#start-childnested-step-item)
+1. [Finish child(nested step) item](#finish-childnested-step-item)
 1. [Finish child item](#finish-child-item)
 1. [Finish parent(container) item](#finish-parentcontainer-item)
 1. [Save single log without attachment](#save-single-log-without-attachment)
@@ -303,6 +305,77 @@ And response:
 ```json
 {
   "id": "22e55c62-d028-4b49-840f-195d7a48b114"
+}
+```
+
+## Start child(nested step) item
+
+Test item without statistics is called `Nested step` and required for grouping logs and other `nested steps`(can be expanded and collapsed on the UI-view). `Nested step` has the same body request as common test item and defined only by additional field `hasStats=false`.
+
+```shell
+curl --header "Content-Type: application/json" \
+     --header "Authorization: Bearer 039eda00-b397-4a6b-bab1-b1a9a90376d1" \
+     --request POST \
+     --data '{"name":"nestedItem","startTime":"1574423237000","type":"step","hasStats":false,"launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4"}' \
+     http://rp.com/api/v1/rp_project/item/22e55c62-d028-4b49-840f-195d7a48b114
+```
+
+With body:
+
+```json
+{
+  "name": "nestedItem",
+  "startTime": "1574423237000",
+  "type": "step",
+  "hasStats": false,
+  "launchUuid": "96d1bc02-6a3f-451e-b706-719149d51ce4"
+}
+```
+
+And response:
+
+```json
+{
+  "id": "37b77h32-t028-7b49-842f-195d7b48s114"
+}
+```
+
+See Nested Step usage implementation and visual appearance ([Java based example](https://github.com/reportportal/client-java/wiki/Nested-steps))
+
+## Finish child(nested step) item
+
+We can finish `Nested step`.
+To do that we should send the following request:
+PUT `/api/{version}/{projectName}/item/{itemUuid}`
+
+Finish `Nested step` request model:
+
+| Attribute   | Required | Description                                                                                               | Default value | Example                                                                                                                                                                 |
+|-------------|----------|-----------------------------------------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| endTime     | Yes      | Test item end time                                                                                        | -             | 2019-11-22T11:47:01+00:00 (ISO 8601); Fri, 22 Nov 2019 11:47:01 +0000 (RFC 822, 1036, 1123, 2822); 2019-11-22T11:47:01+00:00 (RFC 3339); 1574423221000 (Unix Timestamp) |
+| launchUuid  | Yes      | Parent launch UUID                                                                                        | -             | 48ecc273-032f-44d4-822a-66e494e9b1e8                                                                                                                                    |
+| status      | No       | Test item status. Allowable values: "passed", "failed", "stopped", "skipped", "interrupted", "cancelled". | -             | failed                                                                                                                                                                  |
+| description | No       | Test item description. Overrides description from start request. Not displayed on the UI-view for Nested Steps                                         | empty         | Test item description on finish                                                                                                                                         |
+
+If item finished successfully in the response will be message with item uuid.
+
+Full request:
+
+ ```shell
+curl --header "Content-Type: application/json" \
+     --header "Authorization: Bearer 039eda00-b397-4a6b-bab1-b1a9a90376d1" \
+     --request PUT \
+     --data '{"endTime":"1574423239000","status":"failed","launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4"}' \
+     http://rp.com/api/v1/rp_project/item/37b77h32-t028-7b49-842f-195d7b48s114
+```
+
+With body: 
+
+```json
+{
+  "endTime": "1574423239000",
+  "status": "failed",
+  "launchUuid": "96d1bc02-6a3f-451e-b706-719149d51ce4"
 }
 ```
 
