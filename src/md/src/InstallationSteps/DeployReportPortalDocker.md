@@ -3,29 +3,26 @@
 ReportPortal can be easily deployed using Docker-Compose. 
 
 
-#### Install docker 
+### Install docker 
 Docker is supported by all major Linux distributions, MacOS and Windows.
-
-***Note: for Windows users.***
-*[Docker for Windows](https://docs.docker.com/docker-for-windows/) requires 64-bit Windows 10 Pro and Microsoft Hyper-V. 
-If your system does not satisfy these requirements, 
-you can install [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/), 
-which uses Oracle Virtual Box instead of Hyper-V.*
 
 [Download](https://www.docker.com/community-edition) and install Docker (Docker Engine, Compose, etc)
 
-**IMPORTANT**
-If you use Docker for Windows or MacOS, make sure there is at least 3gb dedicated for Docker.
-For Windows native docker:
-![Image](Images/installation/docker_config_win.png)
+> **Note:**
+> 
+> If you use Docker for Windows or MacOS, make sure there is at least 3gb dedicated for Docker.
+> For Windows native docker:
+> ![Image](Images/installation/docker_config_win.png)
+> 
+> For MacOS native docker:
+> ![Image](Images/installation/docker_config_macos.png)
 
-For MacOS native docker:
-![Image](Images/installation/docker_config_macos.png)
 
+### Deploy ReportPortal with Docker
 
-#### Deploy ReportPortal with Docker
+1) Make sure the 
 
-1) Make sure the [Docker](https://docs.docker.com/engine/installation/) ([Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
+[Docker](https://docs.docker.com/engine/installation/), [Engine](https://docs.docker.com/engine/installation/), [Compose](https://docs.docker.com/compose/install/)) is installed.
 
 2) Download the latest compose descriptor example from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by next command: 
 
@@ -93,7 +90,15 @@ Where:
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 
-**IMPORTANT**
+
+### Deploy ReportPortal with Docker on Windows
+
+***Note: for Windows users.***
+*[Docker for Windows](https://docs.docker.com/docker-for-windows/) requires 64-bit Windows 10 Pro and Microsoft Hyper-V. 
+If your system does not satisfy these requirements, 
+you can install [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/), 
+which uses Oracle Virtual Box instead of Hyper-V.*
+
 
 On Windows Docker installations PostgreSQL container can failed with the following issue:  
 
