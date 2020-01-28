@@ -340,7 +340,7 @@ And response:
 }
 ```
 
-Nested steps description(java-specific) and screenshots with UI-view can be accessed by this [LINK](https://github.com/reportportal/client-java/wiki/Nested-steps)
+See Nested Step usage implementation and visual appearance ([Java based example](https://github.com/reportportal/client-java/wiki/Nested-steps))
 
 ## Finish child(nested step) item
 
