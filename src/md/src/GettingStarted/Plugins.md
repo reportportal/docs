@@ -43,7 +43,7 @@ For a plugin uploading please perform the following actions:
 >* a plugin should have a version
 >* a plugin should have a Manifest
 >* a plugin should have a plugin Extensions
->* Admin cannot upload a plugin with exciting ID and exciting version to the system
+>* Admin cannot upload a plugin with existing ID and existing version to the system
 
 
 ### Update a plugin
