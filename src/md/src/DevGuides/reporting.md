@@ -355,7 +355,7 @@ Finish `Nested step` request model:
 | endTime     | Yes      | Test item end time                                                                                        | -             | 2019-11-22T11:47:01+00:00 (ISO 8601); Fri, 22 Nov 2019 11:47:01 +0000 (RFC 822, 1036, 1123, 2822); 2019-11-22T11:47:01+00:00 (RFC 3339); 1574423221000 (Unix Timestamp) |
 | launchUuid  | Yes      | Parent launch UUID                                                                                        | -             | 48ecc273-032f-44d4-822a-66e494e9b1e8                                                                                                                                    |
 | status      | No       | Test item status. Allowable values: "passed", "failed", "stopped", "skipped", "interrupted", "cancelled". | -             | failed                                                                                                                                                                  |
-| description | No       | Test item description. Overrides description from start request.                                          | empty         | Test item description on finish                                                                                                                                         |
+| description | No       | Test item description. Overrides description from start request. Not displayed on the UI-view for Nested Steps                                         | empty         | Test item description on finish                                                                                                                                         |
 
 If item finished successfully in the response will be message with item uuid.
 
