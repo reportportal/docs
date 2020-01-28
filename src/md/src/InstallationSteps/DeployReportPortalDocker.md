@@ -29,7 +29,7 @@ which uses Oracle Virtual Box instead of Hyper-V.*
 
 ### Deploy ReportPortal with Docker
 
-1) Make sure the Docker [Engine](https://docs.docker.com/engine/installation/) and [Compose](https://docs.docker.com/compose/install/)) are installed.
+1) Make sure the Docker [Engine](https://docs.docker.com/engine/installation/) and [Compose](https://docs.docker.com/compose/install/) are installed.
 
 2) Download the latest ReportPortal Docker compose file from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by run the following command: 
 
