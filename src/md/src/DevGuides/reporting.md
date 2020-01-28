@@ -7,7 +7,7 @@
 1. [Start child(container) item](#start-childcontainer-item)
 1. [Start child(step) item](#start-childstep-item)
 1. [Start child(nested step) item](#start-childnested-step-item)
-1. [Finish child(nested stpe) item](#finish-childnested-step-item)
+1. [Finish child(nested step) item](#finish-childnested-step-item)
 1. [Finish child item](#finish-child-item)
 1. [Finish parent(container) item](#finish-parentcontainer-item)
 1. [Save single log without attachment](#save-single-log-without-attachment)
