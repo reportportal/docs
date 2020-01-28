@@ -147,7 +147,9 @@ volumes:
 ``` 
 
 
-**The ReportPortal consists of the following services:**
+### ReportPortal Services
+
+The ReportPortal consists of the following services:
 
 - Authorization Service. In charge of access tokens distribution.
 - Gateway Service. Main entry point to application. Port used by gateway should be opened and accessible from outside network.
