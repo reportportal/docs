@@ -6,7 +6,7 @@ In Report Portal these items are grouped and displayed as a sequence of executio
 
 ![](/src/Images/devguide/retry/retry.png)
 
-When you can click on the `retries` link and switch between `Retries` seeing logs:
+When you click on the `retries` link you can switch between `Retries` and see their logs:
 
 ![](/src/Images/devguide/retry/retry_switch.png)
 
