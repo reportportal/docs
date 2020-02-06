@@ -32,13 +32,13 @@ docker-compose -p $RP_PRJ down --rmi -v --remove-orphans
 **Backup / Dump the data:** 
 
 ```
-docker-compose exec -u <POSTGRES_USER> <postgres_container_name> pg_dump -Fc <POSTGRES_DB> > db.dump
+docker exec <postgres_container_name> pg_dump -U <POSTGRES_USER> <database_name> > backup.sql
 ```
 
 **Restore the data:** 
 
 ```
-docker-compose exec -i -u <POSTGRES_USER> <postgres_service_name> pg_restore -C -d postgres < db.dump
+docker exec -i <postgres_container_name> psql -U <POSTGRES_USER> -d <database_name> < backup.sql
 ```
 
 You can download [PDF file](/documentation/resources/CheatSheet.pdf) with commands.

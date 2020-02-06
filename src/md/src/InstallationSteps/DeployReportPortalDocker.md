@@ -39,7 +39,7 @@ which uses Oracle Virtual Box instead of Hyper-V.*
 
 3) Make the ElasticSearch configuration prerequisites for the analyzer service
 
-a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
+a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
 
 b) Give right permissions to ElasticSearch data folder using the following commands:
 
@@ -99,17 +99,26 @@ Where:
 
 6) Open your web-browser with an IP address of the deployed environment at port **8080**
 
-You can get the host IP address by using the following docker command:  
+You can get the host IP address by using the following docker commands:  
+
+> If you run Docker on macOS or Windows with Docker for Mac, Docker for Windows, or Docker Toolbox  
 
 ```shell
- $ docker-machine ip default
+docker-machine ip default
 ```
 
+> If you run Docker on Linux, you can find your public IP address in Linux Terminal
+
+```shell
+curl ifconfig.co
+```
+
+ReportPortal address:  
   ```
   http://IP_ADDRESS:8080
   ```
 
-Use the following **login\pass** to access: 
+Use the following **login\pass** to access:  
 
 ```shell
 default\1q2w3e
@@ -157,3 +166,4 @@ The ReportPortal consists of the following services:
 - UI Service. All statics for user interface.
 - Analyzer Service. Collects and processes the information, then sends it to ElasticSearch
 - Index Service. Responsible for redirections, collection of services information, handling errors
+
