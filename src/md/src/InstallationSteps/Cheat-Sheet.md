@@ -26,7 +26,7 @@ docker-compose -p $RP_PRJ logs <name, e.g. api>
 **Delete everything except data:** 
 
 ```javascript
-docker-compose -p $RP_PRJ down —rmi -v --remove-orphans
+docker-compose -p $RP_PRJ down --rmi -v --remove-orphans
 ```
 
 **Backup / Dump the data:** 
