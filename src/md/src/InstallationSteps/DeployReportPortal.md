@@ -32,7 +32,8 @@ Depends on your hardware configuration and parameters of your system, you can ad
 
 Please choose set the values of these variables that are right for your system.
 
-3. ElasticSearch configuration prerequisites for analyzer service
+3. ElasticSearch configuration prerequisites for Analyzer service
+
 
 a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode)
 
