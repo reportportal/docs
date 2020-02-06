@@ -139,7 +139,7 @@ Please note that that hidden items will not be visible on LOG view for 'Next'/'P
 
 ### Log view
 
-**LOG MESSAGES**
+#### Logs messages
 
 All the related data for the test case (logs, screenshots) will be saved on Log level. To see table with log messages, navigate to the lowest level. 
 
@@ -178,18 +178,13 @@ Also you can use the logs sorting by time, and filtering logs to find the certai
 
 [ ![Image](Images/userGuide/logView/logMessages.png) ](https://https://youtu.be/WXOzhiTIfIE)
 
-**NAVIGATE TO THE NEXT ERROR**
 
-This functionality allows to get to next page with error message on it.
-It is useful in case you have big amount of log messages. And the navigation could be a bit difficult.
+#### Stack trace
 
-**STACK TRACE OF ERROR**
+On the Log view for the fast redirection to the last 5 error log messages, please click on the tab Stack trace, in this section you can find *5 last error logs". 
 
-Fast redirection to the last error log message with stack trace available could be executed by 
-click on link "Go to Stack Trace in Log Message" in 'STACK TRACE' section.
-Note, the stack trace will be displayed here as well.
 
-**ATTACHMENTS**
+#### Attachments
 
 In case you are interested in logs with attachments only, check the corresponding checkbox.
 
@@ -220,16 +215,70 @@ To view data via Attachments section, perform the following steps:
 
 [ ![Image](Images/userGuide/logView/screenshotGallery.png) ](https://youtu.be/83k5x73JDI0)
 
+#### Items details
 
-**NAVIGATE TO NEXT/PREVIOUS LOGS**
+In the section Items details you can find information about test case such as:
 
-You can navigate from one log to the other using "Next"/"Previous" buttons on the Log view.
+* Test Case name
+* Test case status
+* Test case start time
+* Durtation and duration fluctuation
+* Description
+* Parameters 
+* Attributes
+* Code location (that can be easily copied by a user)
+
+#### History of actions
+
+In this section you can find all activities which was performed under test case such as:
+
+* user changed defect type of test item
+* user posted a comment to the test item
+* user posted a bug to the Bug Tracking System
+* user added link to the existing in Bug Tracking System bug.
+* analyzer changed defect type of test item based on item (where "item" is a link to a log view of an item which have been chosen by analyzer as the most relevant result)
+* analyzer posted a comment to the test item
+* analyzer posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue.
+* pattern analysis add a found pattern
+
+History of actions is not shown, if nobody performed actions with the item.
+By default you will see last action in one line.
 
 
-[ ![Image](Images/userGuide/logView/logNavigation.png) ](Images/userGuide/logView/logNavigation.png)
+#### Markdown mode on Logs view
+
+You can view logs in Markdown mode or in Console view.
+
+To enable Markdown mode, please perform actions:
+
+* Click on "M" button on log level
+
+To disable Markdown mode, please perform actions:
+
+* Click on "M" button on log level one more time
+
+The same logic applies to the Console view.
 
 
-Navigation takes into account selected by user filter and hidden preconditions methods on Step view.
+### Log view for containeers (for a launch or a suite)
+
+A user can report logs not only to the test execution, but also to containeers:
+
+* Launch
+* Suite
+
+If user want to view attached logs:
+
+* Login ReportPortal
+* Click on a launch name, or a suite name
+* Click on Log tab
+[ ![Launc Logs](Images/userGuide/logView/LaunchLogLevel.png) ](Images/userGuide/logView/LaunchLogLevel.png)
+[ ![Launc Logs](Images/userGuide/logView/LaunchLogs.png) ](Images/userGuide/logView/LaunchLogs.png)
+
+### Nested Steps
+
+
+[ ![Launc Logs](Images/userGuide/logView/NestedSteps.png) ](https://youtu.be/6CEBJnkOHY8)
 
 ### Retried test case (retry)
 

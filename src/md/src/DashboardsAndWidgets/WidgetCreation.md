@@ -31,27 +31,35 @@ Widgets are automatically refreshed every minute.
 
 ### Predefined widgets types
 
-There are 15 widget templates in ReportPortal as for now:
- 
-- Launch statistics chart 
-- Overall statistics panel 
-- Launches duration chart 
-- Launch execution and issue statistic 
-- Project activity panel 
-- Test-Cases growth trend chart 
-- Investigated percentage of launches 
-- Launches table 
-- Unique bugs table 
-- Most failed test cases table
-- Failed cases trend chart 
-- Non-Passed test-cases trend chart 
-- Different launches comparison chart
-- Flaky test cases table (TOP-20)
+There are 15 widget templates in ReportPortal for tracking different KPI:
+
+| KPI  | Widget template |
+| ------------- | ------------- |
+|   | [Launch statistics chart](https://reportportal.io/docs/Launch-statistics-chart)  |
+|  Passing rate for filter summary, and structure of problems |[Overall statistics](https://reportportal.io/docs/Overall-statistics)  |
+|  Track the longest launch in the filter  | [Launches duration chart](https://reportportal.io/docs/Launches-duration-chart) |
+|   Track the passing rate and structure of problems of the latest run in the system| [Launch execution and issue statistic](https://reportportal.io/docs/Launch-execution-and) |
+|  Track the activity of your QA team | [Project activity panel](https://reportportal.io/docs/Project-activity-panel)  |
+| Track the growth of new test cases in your build  | [Test-cases growth trend chart](https://reportportal.io/docs/Test-cases-growth-trend) |
+| Track the speed of test failure analysis | [Investigated percentage of launches](https://reportportal.io/docs/Investigated-percentage-of)  |
+| Follow up information about only important launches for your team  | [Launches table](https://reportportal.io/docs/Launches-table) |
+| Track new BTS issues in your run  | [Unique bugs table](https://reportportal.io/docs/Unique-bugs-table) |
+|  Track the most unstaoble test cases in the build | [Most failed test-cases table](https://reportportal.io/docs/Most-failed-test-cases) |
+|  See the trend of number of failed test cases from build to build | [Failed cases trend chart](https://reportportal.io/docs/Failed-cases-trend) |
+|  See the trend of number of failed and skipped test cases from build to build | [Non-passed test-cases trend chart](https://reportportal.io/docs/Non-passed-test-cases-trend)  |
+| Compare two launches together  | [Different launches comparison chart](https://reportportal.io/docs/Different-launches-comparison) |
+|  Track passing rate for one launch | [Passing rate per launch](https://reportportal.io/docs/Passing-rate-per)  |
+| Track passing reate for the build  | [Passing rate summary](https://reportportal.io/docs/Passing-rate-summary) |
+|  Find the most flaky test in the build | [Flaky test cases table (TOP-20)](https://reportportal.io/docs/Flaky-test-cases)  |
+| Compare statistics for different builds on one graph  | [Cumulative trend chart](https://reportportal.io/docs/Cumulative-trend-chart) |
+| Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
+| Track the passing rate of different components of your application  | [Component health check](https://reportportal.io/docs/Component-health-check) |
+
 
 The template descriptions are provided below.
 
 
-**LAUNCH STATISTICS CHART**
+## Launch statistics chart
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -113,7 +121,7 @@ Bar view
 >**Note:**
 The widget doesn't contain "IN PROGRESS" launches.
 
-**OVERALL STATISTICS PANEL**
+## Overall statistics
 
 The panel shows a summary of test cases with each status for each selected launch.
 
@@ -149,7 +157,7 @@ or Donut view.
 The widget doesn't contain "IN PROGRESS" launches.
  
 
-**LAUNCHES DURATION CHART**
+##  Launches duration chart
 
 The Launch Duration Chart shows the duration of the selected launches.
 
@@ -178,7 +186,7 @@ The Widget has two states: All launches and Latest lunches. If you chose *All la
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**LAUNCH EXECUTION AND ISSUE STATISTIC**
+## Launch execution and issue statistic
 
 The Launch Execution and Issue Statistic chart shows the status and issues statistics for last launch of a specified range.
 
@@ -204,7 +212,7 @@ The widget has clickable sections, when you click on a specified section in the 
 [ ![Image](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png) ](Images/userGuide/widgetTypes/launchExecutionAndIssueStatistic.png)
 
 
-**PROJECT ACTIVITY PANEL**
+## Project activity panel
 
 The widget shows all activities occurring on the project.
 
@@ -226,7 +234,7 @@ The actions on the widget are present in a table, separated by days. Action mess
 [ ![Image](Images/userGuide/widgetTypes/projectActivityPanel.png) ](Images/userGuide/widgetTypes/projectActivityPanel.png)
 
 
-**TEST-CASES GROWTH TREND CHART**
+## Test-cases growth trend chart
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -265,7 +273,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**INVESTIGATED PERCENTAGE OF LAUNCHES**
+## Investigated percentage of launches
 
 The widget can be used in two modes - Launch mode and Timeline mode:
 
@@ -306,7 +314,7 @@ The widget has clickable sections, when you click on a specific section in the w
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**LAUNCHES TABLE**
+## Launches table
 
 The widget shows a configurable table of launches.
 
@@ -327,7 +335,7 @@ The widget has clickable elements "launch name", "owner", "tags", and "number of
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**UNIQUE BUGS TABLE**
+## Unique bugs table
 
 The widget shows real identified bugs, posted to the Bug Tracking System from ReportPortal, and existing bugs, that were added to the items on ReportPortal.
 
@@ -354,7 +362,7 @@ The bugs from launches "IN PROGRESS" are not shown on the widget.
 In case a bug is found in multiple items, all of items will be listed in "Found in" column.
 
 
-**MOST FAILED TEST-CASES TABLE**
+## Most failed test-cases table (TOP-20)
 
 The widget contains a table with statistical information about the TOP-20 most problematic test cases.
 
@@ -383,7 +391,7 @@ On mouse hover the system will display accurate start times.
 The widget contains statistics of the most problematic tests cases in all launches, except "IN PROGRESS" and "INTERRUPTED" launches.
 
 
-**FAILED CASES TREND CHART**
+## Failed cases trend chart
 
 The widget shows the trend of growth in the number of failed test cases (Product Bugs + Auto Bugs + System Issues + No Defects + To Investigates) from run to run.
 
@@ -407,7 +415,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**NON-PASSED TEST-CASES TREND CHART**
+## Non-passed test-cases trend chart
 
 The widget shows the percent ratio of non-passed test cases "Failed + Skipped" and "Total" cases from run to run.
 
@@ -433,7 +441,7 @@ The tooltip on mouse hover over the chart area shows launch details: launch name
 The widget doesn't contain "IN PROGRESS" launches.
 
 
-**DIFFERENT LAUNCHES COMPARISON CHART**
+## Different launches comparison chart
 
 The widget allows you to compare statistics for the 2 last launches side by side.
 
@@ -457,7 +465,35 @@ The widget has clickable sections, when you click on specific sections in widget
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-**FLAKY TEST CASES TABLE (TOP-20)**
+## Passing rate per launch
+
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+
+## Passing rate summary
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+## Flaky test cases table (TOP-20)
 Shows the TOP-20 the most flaky test cases within the specified previous launches. The widget defines test cases with the most high percentage of switching their status in the execution. So that you can click on the test cases and be redirected to the last test item in execution to check the reasons. 
 
 **Widget's parameters:**
@@ -484,4 +520,204 @@ On mouse hover the system will display accurate start times.
 
 [ ![Image](Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png) ]( Images/userGuide/widgetTypes/flakyTestCasesTableWidget.png)
 
+## Cumulative trend chart
 
+Shows the growth trend of summary statistics of launches with the same attribute key. 
+You can see a growth of statistics from the build to the build, or from version to version. 
+A widget does not require an edit or new filter creation. If new version (build, release or other) is added to ReportPortal, new information will be added to the graph.
+
+[ ![Cumulative Video](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](https://youtu.be/F51a1JpEITo)
+
+
+**Widget's parameters:**
+- Filter
+- Parameters: only Latest launches
+- Number of shown attrinutes on the widget: 1 - 15
+- Attribute key for the first level (mandatory)
+- Attribute key for the second level (optional)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeCreation.png) ](Images/userGuide/widgetTypes/CumulativeCreation.png)
+
+**Widget view**
+A widget have two levels.
+
+**For the first level**  the system uses the last 600 launches from the chosen filter. 
+Then  system searches all launches which have attributes with the key specified on the widget wizard for the first widget level (for example attribute key - BUILD).
+Then system combines launches into groups around unique attribute value (BUILD:3.6, BUILD:V3.7, BUILD:3.8…..).
+After that the system should keep in each group **only latest executions** (e.g.  the latest launches for BUILD:3.6,  the latest launches  BUILD:V3.7,  the latest launches  BUILD:3.8…. ) and reflects statistics for all unique attributes on the graph for the first widget level.
+
+First level view - summ statistics of launches with attributes BUILD: 3.20.8.0 / 3.20.8.1 / ... / 3.20.8.9
+
+> **Note:**
+Statistics for bars BUILD: 3.20.8.0 is calculated as - a summ of latest launches with attribute 3.20.8.0 
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme1.png) ](Images/userGuide/widgetTypes/CumulativeScheme1.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme2.png) ](Images/userGuide/widgetTypes/CumulativeScheme2.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme3.png) ](Images/userGuide/widgetTypes/CumulativeScheme3.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme4.png) ](Images/userGuide/widgetTypes/CumulativeScheme4.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeScheme5.png) ](Images/userGuide/widgetTypes/CumulativeScheme5.png)
+
+[ ![ImageName](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png) ](Images/userGuide/widgetTypes/CumulativeFirstLevelView.png)
+
+
+
+A user has an ability to drill down to the second level of the widget. For that he should click on the bar. And the system shows two buttons: Drill Down and Show filter.
+And a user should  click on **"Drill down"**.
+
+**For the second level** the system again analyzes the 600 launches from the filter.
+Then it leaves only launches which have attribute, that have been clicked by user (f.e. BUILD: 3.20.8.0 ).
+From these launches systems chooses ones with attributes  that have key attribute  form the section Level 2 (detailed view) on widget wizard.
+After the system groups launches with the same attribute and leaves for each selection only the “latest” launches (launches with unique launch name and with the biggest launch number in ReportPortal).
+Others should be removed from a group. Each unique group should be reflected  on the graph on the second widget level.
+
+
+For each group there is shown a set of bars: Passed, Failed, Skipped, group Product Bug, group Auto Bug, group System Issue, group No defect, group To investigated.
+
+On the hover on the bar, a user can see detailed information about sample. Also user can see a list of attributes with attribute key from the first and from the second levels which have launches, which have been used for a hovered bar.
+
+
+**Visual options**
+
+**Focus on defect types**
+If option is enabled, a user can see only information about defect types for each sample. 
+If option is disabled, a user can see information about statuses and defect types.
+
+**Totals**
+If option is enabled, a user can see an info about number of test cases in each sample. 
+
+**Staked area / Separete bars**
+Staked area chart - is shown a one bar for statuses, and one bar for defect types for each sample. 
+Separete bars - is shown a separate bar for  each status, and for each  defect type group. 
+
+**Tests / Per cent**
+Test mode - OY axsis is calculated in test cases.
+Per cent mode - OY axsis is calculated in per cent. OY = 100%. 
+
+A user can combine different options together. Options are saved per user.
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches. The widget statistics calculated only in items with method type TEST.
+
+
+## Most popular pattern table (TOP-20)
+
+**Widget's parameters:**
+
+
+
+**Widget view**
+
+
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.
+
+
+## Component health check
+
+Shows the passing rate of the application components which are indicated by the specified attributes. 
+
+>**Note:** for using this widget you need to report (or add manaully) attributes to test items.
+
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckView.png) ](https://youtu.be/T98iy0mJk0s)
+
+**Widget's parameters:**
+- Filter
+- Parameters: All launches/ Latest launches
+- The min allowable passing rate for the component: Possible value from 50 - 100%. Default value 100%.
+- Attribute key for the first level (mandatory)
+- Attribute key for the 2-10 levels (optional)
+
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckCreation.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckCreation.png)
+
+**Widget view**
+
+
+> **Use case:**
+>
+> **Situation:** As a Project Manager or Test Lead, a I want to see the most unstable place in my product ( application). 
+> 
+> **Solution:** All test cases in my project in ReportPortal have an attributes. For example `function: (order, team, configure, administrative)`, `type: (backend, API, Unit, UI)`, ...., `marketstate: (open, close)`, `role: (ProjectManager, Member, Admin)` and other. The attributes can be different and dependend on your project needs.
+>  
+> 
+> A user  can create a Component Health Check Widget and set attribute key = `function` for the 1st level, for the 2nd -`type` and for the 3rd - `marketstate`
+> 
+> So that a user will see on the first level a several groups: order, team, configure, administrative.  All groups will contains only 
+> test cases with attribute which contain attribute key `function`. Each group has been grouped by attribute value: order, team, 
+> configure, administrative.
+> If a user clicks on the group `function: order`, the system will show the second level of the widget. All test items on the second 
+> level will be contain the attribute `function: order`and attributes which contain attribute key: `type`. And these items will be 
+> grouped by attribute values: backend, API, Unit, UI.
+> The same logic will be applied for the next levels.
+
+
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme1.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme1.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme2.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme2.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme3.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme3.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme4.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme4.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme5.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme5.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme6.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme6.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png)
+
+[ ![ComponentHEalthCheckWidgetScheme](Images/userGuide/widgetTypes/ComponentHealthCheckScheme9.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckScheme9.png)
+
+
+**Widget level**
+Each level shows all available atrributes with corresponded his level attribute key.
+For each level system analyze last 600 launches.
+
+**Widget sectin**
+Widget has two sections: Passed and Failed
+**Failed section has:** all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard
+
+**Passed section has:** all groups which have passing rate higher than passing rated which has been specified on widget wizard
+
+Each group on the widget has an name which equals to attribute value, passing rate = passed test cases with attribute / total test cases with attribute
+number of test cases with attribute 
+link to the widget list view: Filter list view + test method: Test + status: Passed, Failed, Skipped, Interrupted, InProgress; the number of items is equal to the number of Test cases in the widget
+color line which depends on passing rate (see sectin Widget legend)
+Widget legend
+
+Widget legend has two lines: Passed and Failed
+ Failed
+
+Failed line has four colors:
+-    
+-  
+-  
+-  
+And have values - less than specified on widget wizard -1
+Passed
+
+Passed line has only two color:
+
+  slightly green  
+green = Passed
+And have values - from specified on widget wizard to 100%
+Depends on this color scheme each group on the widget has own color. 
+Groups which have passing rate 100% - has color passed green
+Groups whith passing rate from 99 - specified on widget wizard  - has color slightly green
+from 3* (Value specified on WW -  1)/4  to (Value specified on WW -1)   
+from (Value specified on WW- 1)/2  to 3* (Value specified on WW- 1)/4 - 
+from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4  
+0  - ((Value specified on WW- 1)/4 -1) -
+
+
+
+[ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckView.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckView.png)
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.

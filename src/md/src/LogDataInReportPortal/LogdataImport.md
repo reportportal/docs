@@ -1,4 +1,4 @@
-## Log data import to ReportPortal
+## Import data to ReportPortal
 
 Import functionality gives opportunity to upload log files via UI.
 To start the import process, you should hit the 'Import' button on the Launch page (All Launches tab). In a new pop-up window **'Import Launch'** you can drop files or add them by adding a link.

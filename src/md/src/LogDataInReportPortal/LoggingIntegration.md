@@ -31,63 +31,6 @@ There is a client parameter in reportportal.properties with boolean type values
 for screenshots sending in "black-white" or "color" view. By default it is set
 as "true" and all pictures for ReportPortal will be in a "black-white" format.
 
-#### Multipart Logging Request Example
-
-```
----------------84cfa4e5-b644-45d2-8b3e-b925eb20512e
-Content-Disposition: form-data; name="json_request_part"
-Content-Type: application/json; charset=utf-8
-Content-Transfer-Encoding: 8bit
-
-[{"item_id":"59cb6b13b9d82100013b89e5","time":"2017-09-27T12:09:14.113+0300","message":"I'm logging HTML","level":"INFO","file":{"name":"b7a417f2-bf63-4b78-a600-66c901f44800"}}]
----------------84cfa4e5-b644-45d2-8b3e-b925eb20512e
-Content-Disposition: form-data; name="binary_part"; filename="b7a417f2-bf63-4b78-a600-66c901f44800"
-Content-Type: text/html
-Content-Transfer-Encoding: binary
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>
-        Office
-    </title>
-    <script src="https://yastatic.net/jquery/3.1.0/jquery.min.js">
-    </script>
-    <script src="https://yastatic.net/underscore/1.8.3/underscore-min.js">
-    </script>
-    <script src="https://yastatic.net/backbone/1.2.3/backbone-min.js">
-    </script>
-    <script src="models/ModelEmployee.js">
-    </script>
-    <script src="views/ViewOffice.js">
-    </script>
-    <script src="views/ViewEmployee.js">
-    </script>
-</head>
-<body>
-<div id="office">
-</script>
-</body>
-</html>
-
----------------84cfa4e5-b644-45d2-8b3e-b925eb20512e--
-
-```
-#### Additional logging configuration
-**reportportal.properties**
-
-```properties
-rp.convertimage=true
-```
-
-Possible values:
-
--   **true** - all images will be converted into 'black-white'
-
--   **false** - all images will be in 'color'
-
-
 #### Explicit logging
 You can call the ReportPortal logger explicitly. To do this consider the following example:
 ```java

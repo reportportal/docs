@@ -32,7 +32,7 @@ With each execution ReportPortal automatically figures out the root cause of a f
 Considering a high load rate and performance requirements, we use
 cutting edge technologies such as:
 
--   NoSQL MongoDB - super fast write to DB, clustering.
+-   PostgreSQL -The World's Most Advanced Open Source Relational Database.
 
 -   REST Web Service - lightweight requests, industry standard.
 

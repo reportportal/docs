@@ -1,68 +1,16 @@
-## Configuration of Report Portal server
+## Authorization configuration
 
-### Email server configuration
+ReportPortal Admin can configure an easy authorization on the instanse. From the box we provide OAuth with:
 
- >**Permissions:** Only user with account role *ADMINISTRATOR* has access to server settings.
-
-To configure Email server:
-
-1. Login to the ReportPortal as an ADMIN user
-2. Then open the list on the right of the user's image.
-3. Click the 'Administrative' link 
-4. Click the 'Server Settings' from left-hand sidebar
-5. On the'Email Server' tab change switcher position of 'Enable Email Server' to "ON"
-6. The next fields should be present:
-```javascript 
-                   Host: <host_name_of_email_server>
-               Protocol: SMTP (predefined)
-    Default sender name: (optional)
-                   Port: <port_number>
-          Authorization: OFF/ON 
-               Username: <user_email_address>
-               Password: <user_email_password>
-         'TLS' or 'SSL': should be checked depends on selected port.
-```
-
-Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
- 
-1. Fill the form with next data:
-```javascript
-                   Host: smtp.gmail.com
-               Protocol: SMTP
-    Default sender name: Report Portal
-                   Port: 465
-          Authorization: ON
-               Username: <user_email_address>
-               Password: <user_email_password>
-                    SSL: checkbox should be checked.
-```
-2. Click the 'Submit' button
-3. A confirmation message in the status bar should be shown.
-
-[ ![Image](Images/userGuide/gettingStarted/gmail.png) ](https://youtu.be/0919itAaixk)
-
-Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
- 
-1. Fill in the form with the next data set:
-```javascript
-                   Host: smtp.yandex.com
-               Protocol: SMTP
-    Default sender name: Report Portal
-                   Port: 465
-          Authorization: ON
-               Username: <user_email_address>
-               Password: <user_email_password>
-                    SSL: checkbox should be checked.
-```
-2. Click the 'Submit' button
-3. A confirmation message in the status bar should be shown.
-
-### Authorization configuration
-The Admin of the ReportPortal instance can provide access to an external user. 
-As for now, ReportPortal allows GitHub users to login via GitHub auth, Active Directory Authorization or LDAP Authorization.
+* GitHub
+* LDAP
+* Active Directory
+* SAML (in progress)
 
 ### GitHub Authorization
+
 To setup access with GitHub auth:
+
 1. Login to the ReportPortal as an ADMIN user
 2. Open the list on the right of the user's image.
 3. Click the 'Administrative' link 
@@ -85,7 +33,7 @@ Example of GitHub auth configuration:
  ```javascript 
                'Client Id': 8767988c424a0e7a2640
            'Client Secret': ef22c9f804257afaf399a2dada7c8f22dee5fd1b
-       'Organization Name': reportportal
+       'Organization Name': reportportal (optional)
   ```
  Click the 'Submit' button.
  A confirmation message in status bar should be shown.
@@ -94,6 +42,7 @@ Example of GitHub auth configuration:
  >**Note:** Be sure that user's membership to the Github organization needs to be public.
  
  ### Active Directory Authorization
+ 
 To setup access with Active Directory:
 1. Login ReportPortal as an ADMIN user
 2. Then open the list on the right of the user's image.
@@ -141,3 +90,5 @@ To change the option:
 
 Now the settings of ReportPortal service is fully configured.
 Next steps will describe the organization of working space (project) in ReportPortal.
+
+
