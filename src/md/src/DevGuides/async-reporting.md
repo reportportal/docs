@@ -23,9 +23,9 @@ So using that approach client is not blocked and don't wait until server process
 `API` receives HTTP request from `client`. `Controller` checks permissions and throws request to `producer`.
 * Step 2  
 `Producer` validates business rules if necessary, composes message for rabbit and sends it to specified queue.
-After that `controller` returns HTTP response to `client`.
+After that `controller` returns HTTP response to `client` that contains UUID(virtual id) of entity that not created yet.
 * Step 3  
-`Consumer` starts processing the message as soon as it received from `RabbitMq`. In case exception occurs it logged.
+`Consumer` starts processing the message as soon as it received from `RabbitMq`. After successfully finished processing item will be stored in database and obtain physical id. In case exception occurs it logged and entity will not be saved.
 
 ![](/src/Images/devguide/async/simple-scheme.png)
 
