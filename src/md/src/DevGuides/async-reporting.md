@@ -106,7 +106,7 @@ In case message from `reporting.retry` was consumed with exception more than 10 
 #### Scheme
 
 All requests(items, logs) related to the same launch will be stored in the same rabbit queue. 
-It is achieved the following algorithm that map launch uuid to queue key:
+It is achieved using the following algorithm that map launch uuid to queue key:
 ![](/src/Images/devguide/async/uuid-queus-mapping.png)
 
 Messages in queue don't have strict order but they stored mostly in the same order as they came from `client`. 
