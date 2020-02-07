@@ -29,7 +29,7 @@ sends it to specified queue.
 After that `controller` returns HTTP response to `client` that contains UUID. **At the moment physical entity may not be created!**
 * **Step 3**  
 `Consumer` starts processing the message as soon as it received from `RabbitMq`. 
-After successfully finished processing item will be stored in database and obtain physical id. 
+After successfully processed entity will be stored in database and obtain physical id. 
 In case exception occurs it logged and entity will not be saved.
 
 ![](/src/Images/devguide/async/simple-scheme.png)
@@ -51,7 +51,7 @@ rp.reporting.async=true
 ### Asynchronous API
 
 Async controllers has `/api/v2` prefix.
-Requests and responses have no differences with sync ones but there are some differences in behavior that described in 
+Requests and responses have no differences with sync ones but there are some specific distinctions in behavior that described in 
 [reporting guide](./reporting.md).
 
 * [Start launch](./reporting.md#start-launch)
@@ -109,10 +109,19 @@ All requests(items, logs) related to the same launch will be stored in the same 
 It is achieved the following algorithm that map launch uuid to queue key:
 ![](/src/Images/devguide/async/uuid-queus-mapping.png)
 
+Messages in queue don't have strict order but they stored mostly in the same order as they came from `client`. 
+So it ensure minimal amount of exceptions and sending messages to retry queue in cases when child handled before its parent. 
+
 Consuming scheme:
 
 ![](/src/Images/devguide/async/consuming.png)
 
 #### Finishing launch
 
-![](/src/Images/devguide/async/finish-launch-scheme.png)
+If order is not broken finish launch request will be handled when there are no more child item requests in queue.
+
+![](/src/Images/devguide/async/finish-launch.png)
+
+In case launch finish request not last in the queue it will be finished anyway. 
+But all the next request under the launch will be handled as soon as they come to consumer and launch statistics will be updated.
+
