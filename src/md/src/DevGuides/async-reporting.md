@@ -28,7 +28,9 @@ composes message for `RabbitMq` and
 sends it to specified queue.
 After that `controller` returns HTTP response to `client` that contains UUID. **At the moment physical entity may not be created!**
 * **Step 3**  
-`Consumer` starts processing the message as soon as it received from `RabbitMq`. After successfully finished processing item will be stored in database and obtain physical id. In case exception occurs it logged and entity will not be saved.
+`Consumer` starts processing the message as soon as it received from `RabbitMq`. 
+After successfully finished processing item will be stored in database and obtain physical id. 
+In case exception occurs it logged and entity will not be saved.
 
 ![](/src/Images/devguide/async/simple-scheme.png)
 
@@ -49,7 +51,8 @@ rp.reporting.async=true
 ### Asynchronous API
 
 Async controllers has `/api/v2` prefix.
-Requests and responses have no differences with sync ones but there are some differences in behavior that described in [reporting guide](./reporting.md).
+Requests and responses have no differences with sync ones but there are some differences in behavior that described in 
+[reporting guide](./reporting.md).
 
 * [Start launch](./reporting.md#start-launch)
 * [Start root(suite) item](./reporting.md#start-rootsuite-item)
@@ -85,22 +88,30 @@ Requests and responses have no differences with sync ones but there are some dif
 `rp.amqp.pass` - User password to connect to RabbitMq service.  
 `rp.amqp.addresses` - Full address to connect to RabbitMq service.  
 `rp.amqp.queues` - Number of queues to be processed by this service-api.  
-`rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod (default effectively infinite).
+`rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod 
+(default effectively infinite).
 Note: should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster.
 
 #### Exchanges and queues for reporting
 
-`API` produces two reporting exchanges - `reporting` and `reporting.retry`. Exchange `reporting` contains queues for storing messages from requests.
-Exchange `reporting.retry` contains queues for storing messages that was consumed exceptionally from queues in `reporting` exchange.
-Amount of queues in exchanges depends on `rp.amqp.queues` parameter. Exchange `reporting` has N queues with names reporting.0 ... reporting.N.
-Exchange `reporting.retry` has N+1 queues with names reporting.retry.0 ... reporting.retry.N and reporting.dlq.
-In case message from `reporting.retry` was consumed with exception more than 10 times, the message will be stored in reporting.dlq which is [dead letter queue](https://www.rabbitmq.com/dlx.html).
+`API` produces two reporting exchanges - `reporting` and `reporting.retry`. Exchange `reporting` contains queues for storing messages 
+from requests. Exchange `reporting.retry` contains queues for storing messages that was consumed exceptionally from queues in `reporting` 
+exchange. Amount of queues in exchanges depends on `rp.amqp.queues` parameter. Exchange `reporting` has N queues with names 
+reporting.0 ... reporting.N. Exchange `reporting.retry` has N+1 queues with names reporting.retry.0 ... reporting.retry.N and reporting.dlq.
+In case message from `reporting.retry` was consumed with exception more than 10 times, the message will be stored in reporting.dlq which is 
+[dead letter queue](https://www.rabbitmq.com/dlx.html).
 
 ![](/src/Images/devguide/async/exchanges-queues.png)
 
 #### Scheme
 
-![](/src/Images/devguide/async/detailed-reporting.png)
+All requests(items, logs) related to the same launch will be stored in the same rabbit queue. 
+It is achieved the following algorithm that map launch uuid to queue key:
+![](/src/Images/devguide/async/uuid-queus-mapping.png)
+
+Consuming scheme:
+
+![](/src/Images/devguide/async/consuming.png)
 
 #### Finishing launch
 
