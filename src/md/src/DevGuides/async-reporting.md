@@ -37,7 +37,7 @@ In case exception occurs it logged and entity will not be saved.
 ### Enable asynchronous reporting in agents
 
 Async reporting is supported only in agents since version 5.0.0.
-To enable it you should set `rp.reporting.async=true` in `reportportal.properties`.
+To enable it you should set `rp.reporting.async=true` (*) in `reportportal.properties`.
 By default (if property `rp.reporting.async` is not specified) agents work in synchronous mode.
 
 ```properties
@@ -47,6 +47,8 @@ rp.launch=launch-name
 rp.project=project-name
 rp.reporting.async=true
 ```
+
+(*) For java based agents only. Enabling in other agents may be different.
 
 ### Asynchronous API
 
