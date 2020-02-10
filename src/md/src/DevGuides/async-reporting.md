@@ -135,6 +135,9 @@ If order is not broken finish launch request will be handled when there are no m
 
 ![](/src/Images/devguide/async/finish-launch.png)
 
+`(!)` It is main difference in reporting mechanism between Report Portal version 4 and 5. 
 In case launch finish request not last in the queue it will be finished anyway. 
-But all the next request under the launch will be handled as soon as they come to consumer and launch statistics will be updated.
+But all the next request under the launch will be handled as soon as they come to consumer and launch statistics will be updated. 
+So it is possible to report items under already finished launch.
+
 
