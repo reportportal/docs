@@ -75,23 +75,23 @@ A new user can be added on projects with the next steps:
 * Next a form opens in the pop-up:
 
 ```javascript
-								    'login': <unique_login_name>
-							    'Full Name': <user_full_name>
-								    'Email': <unique_email_address>
-								    'Account role': USER (by default)
-							 'Project Role': MEMBER (by default)
-                            'Password': could be entered manually (at least 6 symbols required) or generated via link under the field.
+'login': <unique_login_name>
+'Full Name': <user_full_name>
+'Email': <unique_email_address>
+'Account role': USER (by default)
+'Project Role': MEMBER (by default)
+'Password': could be entered manually (at least 6 symbols required) or generated via link under the field.
 ```
 
 Example of user creation:
 
 ```javascript
-						   Enter user's login: Demo
-					   Enter user's full name: Demo user
-	                                 Enter user's email: demo_user@example.com
-                                           'Account role': USER (by default)
-					    'Project Role': MEMBER (by default)
-						Add password: 1q2w3e 
+Enter user's login: Demo
+Enter user's full name: Demo user
+Enter user's email: demo_user@example.com
+'Account role': USER (by default)
+'Project Role': MEMBER (by default)
+Add password: 1q2w3e 
 ```
 Submit the form.
 
