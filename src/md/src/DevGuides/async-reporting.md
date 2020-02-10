@@ -116,6 +116,19 @@ Consuming scheme:
 
 ![](/src/Images/devguide/async/consuming.png)
 
+`(!)` Possible exceptions that may be thrown and leads to sending message to retry queue:
+* On start launch/test item:
+    * User not found
+    * Entity not found. Parent entity not found
+    * Bad request. Start time of child item is earlier than parent start time, trying to report child under retry item, trying 
+    to report non nested step under nested step parent, trying to rerun launch that not exists
+* On finish launch/test item:
+    * Entity not found. Entity that has to be finished not found in database or parent entity not found (for test items).
+    * Bad request. User tries to finish already finished entity. Finish time is earlier than start time.
+    * Access denied. User tries to finish not own entity of under not own project
+* On log creation:
+    * Entity not found. Trying to create log for not existing launch/test item
+
 #### Finishing launch
 
 If order is not broken finish launch request will be handled when there are no more child item requests in queue.
