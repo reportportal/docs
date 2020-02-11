@@ -35,10 +35,24 @@ docker-compose -p $RP_PRJ down --rmi -v --remove-orphans
 docker exec <postgres_container_name> pg_dump -U <POSTGRES_USER> <database_name> > backup.sql
 ```
 
+**Clean up the data:** 
+
+```
+docker exec -it <postgres_container_name> psql -U <POSTGRES_USER> -d <database_name>
+```
+
+```
+    DROP TABLE schema_migrations;
+    DROP SCHEMA quartz CASCADE;
+    DROP SCHEMA public CASCADE; CREATE SCHEMA public;
+    \q
+```
+
 **Restore the data:** 
 
 ```
 docker exec -i <postgres_container_name> psql -U <POSTGRES_USER> -d <database_name> < backup.sql
 ```
+
 
 You can download [PDF file](/documentation/resources/CheatSheet.pdf) with commands.
