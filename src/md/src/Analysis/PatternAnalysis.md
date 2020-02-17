@@ -11,7 +11,8 @@ Pattern analysis is a feature that helps you to increase of finding the common p
 > Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
 > Add The most popular pattern widget (TOP-20) and track the TOP-20 the most popular reason of test failing in the build.
 
-https://youtu.be/5YaN85x6_hc
+[ ![ImageName](Images/userGuide/analyzeLaunches/Auto Pattern.png) ](https://youtu.be/XgJr5Nm7OrI)
+
 
 > **Use case 2:**
 > 
@@ -21,4 +22,7 @@ https://youtu.be/5YaN85x6_hc
 name.
 > Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
 
-https://youtu.be/XgJr5Nm7OrI
+[ ![ImageName](Images/userGuide/analyzeLaunches/Manual Pattern.png) ](https://youtu.be/5YaN85x6_hc)
+
+
+
