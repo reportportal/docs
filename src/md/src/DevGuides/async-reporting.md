@@ -20,6 +20,23 @@ So using that approach client is not blocked and don't wait until server process
 
 ### Simple scheme of interactions between RabbitMq and API
 
+***Difference between ID and UUID***
+`ID` is physical identificator of entity generated automatic by database at the moment of saving.  
+`UUID` is virtual identificator of entity. Can be specified in request or if not present in request generated automatic at the moment 
+`api` accepts request.  
+Each entity has both `ID` and `UUID`. `ID` is used to perform CRUD operation with ***already saved in db*** entity. 
+`UUID` is used to build child-parent relationships between entities at client side during reporting. 
+In case synchronous reporting any response from `api` returns ***after*** handling request and saving entity in database. 
+In case asynchronous reporting any response from `api` returns ***before*** handling request and saving entity in database.
+Responses in both modes looks the same:
+```json
+{
+  "id": "cd64d5eb-fea1-4e7e-8a5a-69998ac5620f"
+}
+```
+`id` property of response actually is `UUID`. This is due to backward compatibility. 
+So when you have this uuid and want to update, delete ent entity you should get physical `id` from db first. 
+
 * **Step 1**  
 `API` receives HTTP request from `client`. `Controller` checks permissions and throws request to `producer`.
 * **Step 2**  
