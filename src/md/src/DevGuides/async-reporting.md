@@ -1,7 +1,7 @@
 # Asynchronous reporting
 
 1. [Overview](#overview)
-1. [Simple scheme of interactions between RabbitMq and API](#simple-sccheme-of-interactions-between-rabbitmq-and-api)
+1. [Simple scheme of interactions between RabbitMq and API](#simple-scheme-of-interactions-between-rabbitmq-and-api)
 1. [Enable asynchronous reporting in agents](#enable-asynchronous-reporting-in-agents)
 1. [Asynchronous API](#asynchronous-api)
 1. [Detailed scheme of interactions between RabbitMq and API](#detailed-scheme-of-interactions-between-rabbitmq-and-api)
@@ -20,7 +20,8 @@ So using that approach client is not blocked and don't wait until server process
 
 ### Simple scheme of interactions between RabbitMq and API
 
-***Difference between ID and UUID***
+***Difference between ID and UUID***  
+
 `ID` is physical identificator of entity generated automatic by database at the moment of saving.  
 `UUID` is virtual identificator of entity. Can be specified in request or if not present in request generated automatic at the moment 
 `api` accepts request.  
@@ -36,6 +37,9 @@ Responses in both modes looks the same:
 ```
 `id` property of response actually is `UUID`. This is due to backward compatibility. 
 So when you have this uuid and want to update, delete ent entity you should get physical `id` from db first. 
+
+***Simple asyncronous reporting scheme***  
+
 
 * **Step 1**  
 `API` receives HTTP request from `client`. `Controller` checks permissions and throws request to `producer`.
