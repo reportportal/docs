@@ -36,7 +36,7 @@ Responses in both modes looks the same:
 }
 ```
 `id` property of response actually is `UUID`. This is due to backward compatibility. 
-So when you have this uuid and want to update, delete ent entity you should get physical `id` from db first. 
+So when you have this uuid and want to update, delete etc. entity you should get physical `id` from db first. 
 
 ***Simple asyncronous reporting scheme***  
 
@@ -58,7 +58,7 @@ In case exception occurs it logged and entity will not be saved.
 ### Enable asynchronous reporting in agents
 
 Async reporting is supported only in agents since version 5.0.0.
-To enable it you should set `rp.reporting.async=true` (*) in `reportportal.properties`.
+To enable it you should set `rp.reporting.async=true` in `reportportal.properties`.
 By default (if property `rp.reporting.async` is not specified) agents work in synchronous mode.
 
 ```properties
@@ -69,7 +69,7 @@ rp.project=project-name
 rp.reporting.async=true
 ```
 
-(*) For java based agents only. Enabling in other agents may be different.
+(*) Listed above is an example for Java-based client. For another platforms please see corresponding documentation.
 
 ### Asynchronous API
 
