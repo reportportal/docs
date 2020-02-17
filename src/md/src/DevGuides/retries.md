@@ -60,7 +60,36 @@ Request for a `retry` looks the same, but has field `retry=true`:
 ```
 
 To be displayed as a `retry` reported `Test item` should have the same `name`, `parentUuid`, `launchUuid` and `uniqueId` (if you provided it explicitly).
+If one of mentioned fields is not matched (for example `Test item` with the same `name` but different `uniqueId` and vise versa) `Test item`s won't be grouped as retries.
 Also `Test item` with type `Suite` cannot be reported as a `retry`.
+
+Retries handling triggered only if `Test item` has `retry=true` flag in the request. For example:
+
+First request will trigger retries handling, but if it's the first reported `Test item` it won't be a `retry`:
+```json
+{
+  "name": "example step",
+  "startTime": "1574423237100",
+  "type": "step",
+  "launchUuid": "<launch uuid>",
+  "description": "Item that should be retried",
+  "retry": true
+}
+```
+
+Second request won't trigger retries handling, because `retry=false` is specified (or this field isn't provided) in the request:
+```json
+{
+  "name": "example step",
+  "startTime": "1574423237100",
+  "type": "step",
+  "launchUuid": "<launch uuid>",
+  "description": "Item that should be retried",
+  "retry": false
+}
+```
+
+As a result 2 separate `Test items` will be displayed, so ORDER of sent requests matters (if send this items in reversed order they will be grouped as `retries`).
 
 In Report Portal the only `Test item` from the `Retries` group that has statistics and can have an `issue` attached is the one with max `startTime`.
 In previous requests `startTime` was `1574423237000` for the first one and `1574423237100` for the second one, so the second one is a 'main' `Test Item`
