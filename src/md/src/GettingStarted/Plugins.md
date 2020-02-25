@@ -15,7 +15,7 @@ ReportPortal can be reinforced by uploading plugins. For now you can install nex
 ### Upload plugin
 
 **Permissions:**
-Only ADMIMISTRATOR can upload plugin.
+Only ADMINISTRATOR can upload plugin.
 
 You can find latest version of all ReportPortal plugins by the [link](https://bintray.com/beta/#/epam/reportportal/). Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.  Or you can use a direct link to needed plugin from the table below.
 
@@ -48,13 +48,13 @@ For a plugin uploading please perform the following actions:
 
 ### Update a plugin
 **Permissions:**
-Only ADMIMISTRATOR can uppdate plugin.
+Only ADMINISTRATOR can uppdate plugin.
 It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and a exsisting version will be updated to the latest one. 
 
 
 ### Enable / Disable a plugin
 **Permissions:**
-Only ADMIMISTRATOR can enable / disable plugin.
+Only ADMINISTRATOR can enable / disable plugin.
 
 [ ![Enable/DisablePluginVideo](Images/userGuide/gettingStarted/DisablePlugin.png) ](https://youtu.be/Sj9BpnTIxW8)
 
@@ -68,7 +68,7 @@ Plugin will be removed from Project Settings on the project spaces. But all plug
 
 ### Uninstall a plugin 
 **Permissions:**
-Only ADMIMISTRATOR can uninstall plugin.
+Only ADMINISTRATOR can uninstall plugin.
 
 User can remove a plugin from the system. For that  you should:
 * login ReportPortal with Admin account
@@ -81,8 +81,8 @@ E-mail plugin can not be uninstalled.
 ### Configure a plugin
 
 **Permissions:**
-Only ADMIMISTRATOR can make global configurations of a plugin.
-ADMIMISTRATOR and PROJECT MANAGER can make project configurations of a plugin.
+Only ADMINISTRATOR can make global configurations of a plugin.
+ADMINISTRATOR and PROJECT MANAGER can make project configurations of a plugin.
 
 User can configure a plugin on the **instance level** (global configuration) and also on the **project level** (project configuration). Configuration are the same for both of levels.
 
