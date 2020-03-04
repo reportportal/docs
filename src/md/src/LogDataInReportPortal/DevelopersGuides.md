@@ -28,3 +28,4 @@ Here you can find some guides for developers which helps to configure and improv
   * https://github.com/reportportal/client-java/wiki/Step-template-and-step-template-config
   
 * [Asynchronous reporting](https://github.com/reportportal/documentation/blob/async-reporting/src/md/src/DevGuides/async-reporting.md)
+* [How to report retried items](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/retries.md)
