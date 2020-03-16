@@ -156,6 +156,21 @@ volumes:
 ``` 
 
 
+### Updating ReportPortal with Docker
+
+Updating ReportPortal with Docker is a two step process.  
+
+In the first step, your Docker Compose file should be replaced with a new one (with the latest version services) from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>).
+
+The second step is update / redeploy the application using the following command:  
+
+```Shell
+docker-compose -p reportportal up -d --force-recreate
+``` 
+
+There is no strict need for backup / restore the data if you are keep the postgres, elasticsearch & minio volumes. However, it is recommended (see Maintain commands Cheat sheet).  
+
+
 ### ReportPortal Services
 
 The ReportPortal consists of the following services:
