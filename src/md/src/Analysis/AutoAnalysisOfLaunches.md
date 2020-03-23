@@ -316,9 +316,50 @@ Or from the action list for several test items:
 When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch. 
 
 
-### Custom Analyzer
 
-If you do not want to use our ReportPortal auto-analyzer, you can implement and configure custom analyzer. The example of analyzer is under the [link]( https://github.com/pbortnik/example-custom-analyzer) 
+## Search for the similiar "To investigate" items
+
+>**Use case:**
+> **Situation:** Analyzer has been finished wits work, and marked with defect types a known issues.
+> But in the run there are a lot of failures with the similiar unknown reason. All such items have "To investigate" defect type.
+>**Problem:** A user should check and analyze all failed items.
+> **Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil >near a defect type, thw system opens a Defect editor modal. In this modal user can see all items with "To investigate" defect type and >the same failure reason. 
+>A user can check all same failure and perform bulk operation for them.
+
+
+
+There are 3 options for search:
+- For the current launch
+The systems is looking similiar iteams through the one launch.
+For using this feature:
+- click on the filter on All launches view
+- click on To investigate items
+- open a Defect editor modal 
+- choose For the current launch in the drop down
+
+- For the launches with the same name
+The systems is looking similiar iteams through the 10 last launches with the same name.
+For using this feature:
+- click on the filter on All launches view
+- click on To investigate items
+- open a Defect editor modal 
+- choose For the launches with the same name in the drop down
+
+- For the applied filter
+
+The systems is looking similiar iteams through the 10 last launches from the applyed filter.
+For using this feature:
+- click on the filter on All launches view
+- click on To investigate items
+- open a Defect editor modal 
+- choose For the applied filter in the drop down
+
+
+The funtion can be used only for items which belong to finished launch.
+The number of log lines are using for analysis, a user can configure on Project Settings > Analysis.
+
+
+
 
 ## Copy results from a previous run
 
