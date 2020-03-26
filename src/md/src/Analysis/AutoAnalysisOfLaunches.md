@@ -317,54 +317,54 @@ When you choose “Ignore in AA”, logs of the chosen item are removed from the
 
 
 
-## Search for the similiar "To investigate" items
+## Search for the similar "To investigate" items
 
 >**Use case:**
 > **Situation:** Analyzer has been finished its work, and marked with defect types known issues.
-> But in the run there are a lot of failures with the similiar unknown reason. All such items have "To investigate" defect type.
+> But in the run there are a lot of failures with a similar unknown reason. All such items have "To investigate" defect type.
 >
 >**Problem:** A user should check and analyze all failed items.
 >
-> **Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil >near a defect type, thw system opens a Defect editor modal. In this modal user can see all items with "To investigate" defect type and >the same failure reason. 
->A user can check all same failure and perform bulk operation for them.
+> **Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil >near a defect type, the system opens a Defect editor modal. In this modal users can see all items with "To investigate" defect type and >the same failure reason. 
+>A user can check all same failure and perform the bulk operation for them.
 
 
 
 There are 3 options for search:
 - For the current launch
-The systems is looking similiar iteams through the one launch.
+The system is looking for similar items through the one launch.
 For using this feature:
-- click on the filter on All launches view
+- Click on the filter on All launches view
 - click on To investigate items
 - open a Defect editor modal 
-- choose For the current launch in the drop down
+- choose For the current launch in the drop-down
 
 https://youtu.be/O5cBESXX0l0
 
 
 - For the launches with the same name
-The systems is looking similiar iteams through the 10 last launches with the same name.
+The system is looking for similar items through the 10 last launches with the same name.
 For using this feature:
-- click on the filter on All launches view
+- Click on the filter on All launches view
 - click on To investigate items
 - open a Defect editor modal 
-- choose For the launches with the same name in the drop down
+- choose For the launches with the same name in the drop-down
 
 https://youtu.be/q7YRSvAZU18
 
 - For the applied filter
 
-The systems is looking similiar iteams through the 10 last launches from the applyed filter.
+The system is looking for similar items through the 10 last launches from the applied filter.
 For using this feature:
-- click on the filter on All launches view
+- Click on the filter on All launches view
 - click on To investigate items
 - open a Defect editor modal 
-- choose For the applied filter in the drop down
+- choose For the applied filter in the drop-down
 
 https://youtu.be/PZSfQRsNDrM
 
-The funtion can be used only for items which belong to finished launch.
-The number of log lines are using for analysis, a user can configure on Project Settings > Analysis.
+The function can be used only for items that belong to the finished launch.
+The number of logs lines are using for analysis, a user can configure on Project Settings > Analysis.
 
 
 
