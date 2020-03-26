@@ -320,9 +320,11 @@ When you choose “Ignore in AA”, logs of the chosen item are removed from the
 ## Search for the similiar "To investigate" items
 
 >**Use case:**
-> **Situation:** Analyzer has been finished wits work, and marked with defect types a known issues.
+> **Situation:** Analyzer has been finished its work, and marked with defect types known issues.
 > But in the run there are a lot of failures with the similiar unknown reason. All such items have "To investigate" defect type.
+>
 >**Problem:** A user should check and analyze all failed items.
+>
 > **Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil >near a defect type, thw system opens a Defect editor modal. In this modal user can see all items with "To investigate" defect type and >the same failure reason. 
 >A user can check all same failure and perform bulk operation for them.
 
@@ -337,6 +339,9 @@ For using this feature:
 - open a Defect editor modal 
 - choose For the current launch in the drop down
 
+https://youtu.be/O5cBESXX0l0
+
+
 - For the launches with the same name
 The systems is looking similiar iteams through the 10 last launches with the same name.
 For using this feature:
@@ -344,6 +349,8 @@ For using this feature:
 - click on To investigate items
 - open a Defect editor modal 
 - choose For the launches with the same name in the drop down
+
+https://youtu.be/q7YRSvAZU18
 
 - For the applied filter
 
@@ -354,6 +361,7 @@ For using this feature:
 - open a Defect editor modal 
 - choose For the applied filter in the drop down
 
+https://youtu.be/PZSfQRsNDrM
 
 The funtion can be used only for items which belong to finished launch.
 The number of log lines are using for analysis, a user can configure on Project Settings > Analysis.
