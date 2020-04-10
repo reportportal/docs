@@ -62,8 +62,10 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 >
 > When you hover one of the cell on the table, you will be able to see to what launch this execution belongs to.
 
+[ ![HistoryTable](Images/userGuide/historyExecution/HistoryTable.png) ](https://youtu.be/WYytkzpzJps)
 
-#### History for only for launches with the same name
+
+#### History table for launches with the same name
 
 **How you can open a history table with execution from all launches?**
 
@@ -91,6 +93,7 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 > | Test 3  | Passed  |
 >
 
+[ ![HistoryTable](Images/userGuide/historyExecution/HistoryTable.png) ](https://youtu.be/Y5eXSa3bA8w)
 
 #### Actions 
 
