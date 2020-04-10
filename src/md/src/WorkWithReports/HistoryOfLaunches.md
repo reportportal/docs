@@ -122,6 +122,8 @@ You can create a filter that includes test executions for the previous version (
 Then you can open a history table for the launch with results for version 3 and add a custom column with the filter 'Version 2'.
 The system adds the latest executions from filter 'Version 2' and you will be able to compare the latest results for version 2 and version 3.
 
+[ ![HistoryTable](Images/userGuide/historyExecution/HistoryTable.png) ](https://youtu.be/hr4IQ5UBpM8)
+
 
 ### Historical line of executions
 
