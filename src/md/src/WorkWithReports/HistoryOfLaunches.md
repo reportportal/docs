@@ -1,11 +1,11 @@
-##History of launches
+## History of launches
 
 ### Historical trend of executions
 
 Historical trend of executions represents you history view for list of test items. This feature can help you to find 
-the most unstable test cases in your suites.
+the most unstable test cases in your suites/ launches/ builds.
 
-To see a table of historical trend of executions, navigate to the "Launches" page and drill down to launch structure.
+To see a table of historical trend of executions, navigate to the "Launches" page and drill down to launch structure/ or launch statistics.
 
 Then click the "History" button.
 
@@ -26,13 +26,98 @@ History trends have the following color scheme:
 You can select the depth of history: 3, 5, 10, 15, 20, 25 or 30 launches from the "History
 Depth" drop-down menu. 
 
->**Note:**
+There are two options for a History table:
 
->In case of several equal test items are present within the required level the icon with corresponding tooltip will be shown.
+- history for all launches
+- history for launches with the same name
 
->Description and tags are not displayed for items in the History table but can be visible in item's tooltip.
+The history table is based on the [Test Case ID](https://reportportal.io/docs/A-test-item%3Euniqueid)
 
-[ ![Image](Images/userGuide/historyExecution/historicalTrend.png) ](https://youtu.be/p_rUnOArZjk)
+#### History for all launches
+
+**How you can open a history table with execution from all launches?**
+
+- Open All launches tab
+- Click on the Launch name/ Total/ Passed/ Failed/ Skipped /Product Bug/ Auto Bug/ System Issues/ To investigate statistics
+- Click on the button 'History'
+- Choose the option '**All launches'** in the drop-down 'BASE'
+
+**What information is shown on the table?**
+
+On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from all launches on the project.
+Each column on the history table is equaled to a number of the execution.
+
+Let's see an example.
+
+>**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on MacOS, Windows, and Linux. 
+After test runs finish, you will be able to see on the All launches tab on ReportPortal 3 launches with different names: *Regression_MacOS, Regression_Win, Regression_Linux*.
+If you click on the Total statistic for  the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*)
+>
+> 
+> | Test case name  | Execution #3 | Execution #2 | Execution #1|
+> | ------------- | ------------- |------------- |------------- |
+> | Test 1 | Passed  |Failed   |Passed  |
+> | Test 2  | Failed  |Passed |Passed  |
+> | Test 3  | Failed |Passed  |Passed  |
+>
+> When you hover one of the cell on the table, you will be able to see to what launch this execution belongs to.
+
+
+#### History for only for launches with the same name
+
+**How you can open a history table with execution from all launches?**
+
+- Open All launches tab
+- Click on the Launch name/ Total/ Passed/ Failed/ Skipped /Product Bug/ Auto Bug/ System Issues/ To investigate statistics
+- Click on the button 'History'
+- Choose the option **'Launches with the same name'** in the drop-down 'BASE'
+
+**What information is shown on the table?**
+
+On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from only launches with the same name on the project.
+Each column on the history table is equaled to a number of the execution.
+
+Let's see an example.
+
+>**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on MacOS, Windows, and Linux. 
+After test runs finish, you will be able to see on the All launches tab on ReportPortal 3 launches with different names: *Regression_MacOS, Regression_Win, Regression_Linux*.
+If you click on the Total statistic for  the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*). When you choose the option **'Launches with the same name'**, you will see executions only from launches with name *Regression_MacOS*.
+>
+> 
+> | Test case name  | Execution #2|
+> | ------------- | ------------- |
+> | Test 1 |Passed  |
+> | Test 2  | Passed  |
+> | Test 3  | Passed  |
+>
+
+
+#### Actions 
+
+From the History table you will be able to perform the next actions:
+
+- edit items
+- [edit defect](https://reportportal.io/docs/Investigation-of-failure%3Edefect-types-and-comments)
+- [post issue](https://reportportal.io/docs/Investigation-of-failure%3Epost-bug-to-bug-tracking-system)
+- [link / unlink issue](https://reportportal.io/docs/Investigation-of-failure%3Eadd-link-of-existed-defect-)
+- delete items
+
+For that:
+- Hover the cell on the history table
+- Click on the check box
+- Check needed item 
+- Click on the button 'Action'
+- Choose needed action
+
+### Compare launch results with the filter
+
+You can add a custom column with the latest filter results to the History table. 
+
+>**Use case:** You have a test suite for the regression. You run this suite for different versions (version 1, version2, version 3).
+When you run tests for the new version you need to find out if new bugs appeared in it in comparison with the previous version.
+You can create a filter that includes test executions for the previous version (version 2).
+Then you can open a history table for the launch with results for version 3 and add a custom column with the filter 'Version 2'.
+The system adds the latest executions from filter 'Version 2' and you will be able to compare the latest results for version 2 and version 3.
 
 
 ### Historical line of executions
