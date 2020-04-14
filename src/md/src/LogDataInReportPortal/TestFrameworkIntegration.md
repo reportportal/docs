@@ -1,29 +1,28 @@
 ## Test Framework Integration
 [ ![Integrations](Images/userGuide/import/Integrations.png) ](Images/userGuide/import/Integrations.png)
 
-ReportPortal is a system that **integrates with your Test Framework**, listens events in it and visualizes test results. You can not execute results right from ReportPortal.
+ReportPortal is a system that **integrates with your Test Framework**, listens for events and visualizes test results. You cannot execute results right from ReportPortal.
 
-How you can integrate ReportPoral with a Test framework?
+How you can integrate ReportPortal with a Test Framework?
 
 ### Novice user
 
-If you do not know anything about ReportPoral. 
-If you just want to  integrate ReportaPortal with your Test Framework and view info about test cases executions: a name, a status, a duration, parameters, attachments (files, screenshots, video and other), logs and others.
+If you do not know anything about ReportPortal. 
+If you just want to integrate ReportPortal with your Test Framework and view info about test case executions: a name, a status, a duration, parameters, attachments (files, screenshots, video and other), logs and others.
 So this section for you.
 
-Start you exploration with examples.
+You can review and mimic the following examples to start your integration with ReportPortal.
 
-| **Testframe works** | **Examples**|
+| **Test frameworks** | **Examples**|
 | ------------- | ------------- |
-| Java TestFrameworks |https://github.com/reportportal/examples-java  |
-| JavaScript based TestFrameworks |in progress |
+| Java Test Frameworks |https://github.com/reportportal/examples-java  |
+| JavaScript based TestFrameworks | _In progress_ |
 
-Then mimic the provided example and start to use ReportPortal. 
 
 ### Advanced user
 
-If you need a sophisticated and fullfeatured integration with a test frameworks, you can configure it by your self. 
-Choose which combination of agent, client and logger you need, and follow the instructions which has been provided inside of each agents.
+If you need a sophisticated and full-featured integration with a test framework, you can configure it by your self. 
+Choose which combination of agent, client, and logger you need, and then follow the instructions provided for each agent.
 
 |  **Language** | **Agents** |**Client** | **Logger**| 
 | ------------- | ------------- |------------- | ------------- |
@@ -35,13 +34,13 @@ Choose which combination of agent, client and logger you need, and follow the in
 |Others Test Frameworks | [Other](https://reportportal.io/installation)| | | |
 
 
-Please find full list of available integrations with test frameworks from the box in our [GitHub repositories](https://github.com/reportportal). 
+Please find the full list of available integrations with test frameworks in our [GitHub repositories](https://github.com/reportportal).
 
-If you needs a guidlines you can explore our [Developers guides](https://reportportal.io/docs/Developers-guide).
+If you need further guidelines, you can explore our [Developers guides](https://reportportal.io/docs/Developers-guide).
 
 What you can do if you can not find your Test Framework?
-You can create your own custom integrations. For that reasons, please look at [page](https://reportportal.io/docs/Implement-own-integration).
+You can create a custom integrations. To get started, please look at our [Implement own Integration](https://reportportal.io/docs/Implement-own-integration) page.
 
 >**Note:**
-> We can propose a paid support for integration with a new framework or supporting exsisting one. If you need more details, please drop a letter on support@reportportal.io.
+> We offer paid support for new or existing integrations. If you need more details, please send an email to support@reportportal.io.
 
