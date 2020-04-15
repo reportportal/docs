@@ -3,12 +3,12 @@
 To navigate to the user profile page, click the username drop-down in the right
 header and select the "Profile" option.
 
-The user Profile page consists of the following elements:
+The User Profile page consists of the following elements:
 
 - Personal information and photo – JPEG, PNG, GIF file, with a file size limit no more than 1 MB and 300x500px.
 
 - "UUID" – is a unique user identifier. UUID is used in automated test
-configuration files for a user authentication instead of a password. It will
+configuration files for user authentication instead of a password. It will
 allow you to post data, without logging it in the UI.
 
 - "Regenerate UUID" button – this button regenerates a new UUID. If a
@@ -22,11 +22,11 @@ is a read-only list. Note: The current project is highlighted.
 You can edit the name, email and password fields. Note: The specified login at user
 creation cannot be changed.
 
-To edit full name and/or email, click on the "Edit personal info" button. The full
+To edit the full name and/or email, click on the "Edit personal info" button. The full
 name and email fields will become available.
 
-Full name allows: 3-256 symbols, English, Latin, Cyrillic, numeric characters and the
-following symbols: hyphen, underscore, dot, and space. Email should be unique in ReportPortal.
+The full name allows: 3-256 symbols, English, Latin, Cyrillic, numeric characters and the
+following symbols: hyphen, underscore, dot, and space. The email should be unique in ReportPortal.
 
 Make changes and click the "Save" button.
 
@@ -52,4 +52,4 @@ Fill in these fields and click the "Change Password" button under the form.
 [ ![Image](Images/userGuide/userAccount/changePassword.png) ](https://youtu.be/sb_TNHGAIMw)
 
 >**Note:**  
-GitHub users cannot change password on ReportPortal.
+GitHub users cannot change the password on ReportPortal.
