@@ -48,8 +48,8 @@ For a plugin uploading please perform the following actions:
 
 ### Update a plugin
 **Permissions:**
-Only ADMINISTRATOR can uppdate plugin.
-It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and a exsisting version will be updated to the latest one. 
+Only ADMINISTRATOR can update plugin.
+It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and an exsisting version will be updated to the latest one. 
 
 
 ### Enable / Disable a plugin
@@ -58,7 +58,7 @@ Only ADMINISTRATOR can enable / disable plugin.
 
 [ ![Enable/DisablePluginVideo](Images/userGuide/gettingStarted/DisablePlugin.png) ](https://youtu.be/Sj9BpnTIxW8)
 
-If you do not want remove plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
+If you do not want to remove plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
 For that:
 * login ReportPortal with Admin account
 *	come to Administrative page > Plugins tab > Plugin > Plugin details
@@ -107,9 +107,9 @@ Details on how to configure a specific plugin please find in the [Integration se
 
 > **Use case 2:** 
 > 
-> **Situation:**  On ReportPortal instanse there are several projects. Separate projects are added for different teams. Each team works with their project in Jira (or Rally) and post post new bugs in different Jira (or Rally) projects. Each team should not have acsses to Jira (or Rally) project of others team.
+> **Situation:**  On ReportPortal instanse there are several projects. Separate projects are added for different teams. Each team works with its project in Jira (or Rally) and posts new bugs in different Jira (or Rally) projects. Each team should not have acsses to Jira (or Rally) project of others team.
 > **Solution:** configure project integrations for Jira (or Rally) plugin on the Project settings.
->**Pros:** Project Manager or Administrator configures integrations per project,  team members from different projects can not see configurations of each others.
+>**Pros:** Project Manager or Administrator configures integrations per project, team members from different projects can not see configurations of each others.
 
 
 > **Use case 3:** 
