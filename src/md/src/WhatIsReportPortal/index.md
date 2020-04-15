@@ -2,7 +2,7 @@
 
 ReportPortal is a service, that provides increased capabilities to speed up results analysis and reporting through the use of built-in analytic features.
 
-ReportPortal is a great addition to the Continuous Integration and Continuous
+ReportPortal is a great addition to Continuous Integration and Continuous
 Testing process.
 
 **What ReportPortal can do?**
@@ -24,7 +24,7 @@ ReportPortal provides enhanced capabilities along with auto-results analysis by
 leveraging historical data of test execution.
 
 - ***Automatic Analysis***
-With each execution ReportPortal automatically figures out the root cause of a fail. As a result of this analysis ReportPortal is marking a test result with a flag. Engineers will be alerted about this issue to provide the further analysis: if it has been resolved already or which test results require actual human analysis.
+With each execution, ReportPortal automatically figures out the root cause of a fail. As a result of this analysis, ReportPortal is marking a test result with a flag. Engineers will be alerted about this issue to provide further analysis: if it has been resolved already or which test results require actual human analysis.
  
 
 **What technologies are used?**
@@ -36,4 +36,4 @@ cutting edge technologies such as:
 
 -   REST Web Service - lightweight requests, industry standard.
 
--   Mobile responsive UI - check it at any mobile device with default browser.
+-   Mobile responsive UI - check it at any mobile device with the default browser.
