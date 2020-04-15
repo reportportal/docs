@@ -2,10 +2,10 @@
 
 ### Historical trend of executions
 
-Historical trend of executions represents you history view for list of test items. This feature can help you to find 
+The historical trend of executions represents your history view for the list of test items. This feature can help you to find 
 the most unstable test cases in your suites/ launches/ builds.
 
-To see a table of historical trend of executions, navigate to the "Launches" page and drill down to launch structure/ or launch statistics.
+To see a table of the historical trend of executions, navigate to the "Launches" page and drill down to launch structure/ or launch statistics.
 
 Then click the "History" button.
 
@@ -49,7 +49,7 @@ Each column on the history table is equaled to a number of the execution.
 
 Let's see an example.
 
->**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on MacOS, Windows, and Linux. 
+>**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on macOS, Windows, and Linux. 
 After test runs finish, you will be able to see on the All launches tab on ReportPortal 3 launches with different names: *Regression_MacOS, Regression_Win, Regression_Linux*.
 If you click on the Total statistic for  the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*)
 >
@@ -60,7 +60,7 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 > | Test 2  | Failed  |Passed |Passed  |
 > | Test 3  | Failed |Passed  |Passed  |
 >
-> When you hover one of the cell on the table, you will be able to see to what launch this execution belongs to.
+> When you hover one of the cells on the table, you will be able to see to what launch this execution belongs to.
 
 [ ![HistoryTable](Images/userGuide/historyExecution/HistoryTable.png) ](https://youtu.be/WYytkzpzJps)
 
@@ -81,9 +81,9 @@ Each column on the history table is equaled to a number of the execution.
 
 Let's see an example.
 
->**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on MacOS, Windows, and Linux. 
+>**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on macOS, Windows, and Linux. 
 After test runs finish, you will be able to see on the All launches tab on ReportPortal 3 launches with different names: *Regression_MacOS, Regression_Win, Regression_Linux*.
-If you click on the Total statistic for  the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*). When you choose the option **'Launches with the same name'**, you will see executions only from launches with name *Regression_MacOS*.
+If you click on the Total statistic for the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*). When you choose the option **'Launches with the same name'**, you will see executions only from launches with name *Regression_MacOS*.
 >
 > 
 > | Test case name  | Execution #2|
@@ -107,7 +107,7 @@ From the History table you will be able to perform the next actions:
 
 For that:
 - Hover the cell on the history table
-- Click on the check box
+- Click on the checkbox
 - Check needed item 
 - Click on the button 'Action'
 - Choose needed action
@@ -127,19 +127,19 @@ The system adds the latest executions from filter 'Version 2' and you will be ab
 
 ### Historical line of executions
 
-Historical line of executions represents you the statuses of current test case in history.
+The historical line of executions represents the statuses of the current test case in history.
 
 You can see the historical line of executions at the Log level. History is shown only for the 
-current item, and there are 10 items max in history. 
+current item and there are 10 items max in history. 
 You can click on the item in the history and check the results in previous executions, read 
 the comments, find the bugs, posted to this fail.
-This feature will save your time and help you to understand the reason of your fail.
+This feature will save you time and help you to understand the reason for your failure.
 
 History line has the following color scheme:
 
- * Red - failed or interrupted. Contains link to related bug (if has it)
+ * Red - failed or interrupted. Contains a link to a related bug (it has it)
 
- * Grey - skipped. Contains link to related bug (if has it)
+ * Grey - skipped. Contains a link to a related bug (it has it)
 
  * Green - passed. Contains only execution number
 
@@ -157,7 +157,7 @@ above the item.
 
 [ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/cmpORmbGAds)
 
-Also on a History line you can see a "i" label, it means that the item with this label has a defect comment or/and a link to the Bug Tracking System.
+Also on a History line, you can see an "i" label, it means that the item with this label has a defect comment or/and a link to the Bug Tracking System.
 
 
 ### Test Item actions history
@@ -165,22 +165,22 @@ Also on a History line you can see a "i" label, it means that the item with this
 Test Item actions history will show you the history of actions, which have been made to a
 certain test item. You can see the kind of activity, and who performed it.
 
-The following actions are shown on history of actions:
+The following actions are shown on the history of actions:
 
 >   user changed defect type of test item
 
 >   user posted a comment to the test item
 
->   user posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue.
+>   user posted a bug to the Bug Tracking System or added a link to the existing in Bug Tracking System issue.
 
->   analyzer changed defect type of test item based on item (where "item" is a link to a log view of an item which have been chosen by Analyzer as the most relevant result)
+>   analyzer changed defect type of test item based on the item (where "item" is a link to a log view of an item which has been chosen by Analyzer as the most relevant result)
 
 >   analyzer posted a comment to the test item
 
->   analyzer posted a bug to the Bug Tracking System or added link to the existing in Bug Tracking System issue. 
+>   analyzer posted a bug to the Bug Tracking System or added a link to the existing in the Bug Tracking System issue. 
 
 To see the history of actions, navigate to a certain child item. By default you
-will see last action in one line.
+will see the last action in one line.
 
 Use spoiler to maximize actions history:
 
