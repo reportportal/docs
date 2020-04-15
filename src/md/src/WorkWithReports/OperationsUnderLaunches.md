@@ -1,10 +1,10 @@
 ##Operations under launches
 
-There are some ways how launches could be modified and managed.
+There are several ways of how launches could be modified and managed.
 
 ### Edit launch tags and description
 
-The system allows to edit tags and description for the launch on the "Launches" and "Debug" modes.
+The system allows editing tags and descriptions for the launch on the "Launches" and "Debug" modes.
 
 Permission: next users are able to modify launches:
 
@@ -22,7 +22,7 @@ In order to edit a launch, perform the following steps:
 
 3. The launch editor will be opened with the following options.
 
-6. Make the required changes and click "Save" button.
+6. Make the required changes and click the "Save" button.
 
 [ ![Image](Images/userGuide/manageLaunches/edit_launch.png) ](https://youtu.be/87dTCdsFD-I)
 
@@ -45,11 +45,11 @@ In order to edit a test item, perform the following steps:
 
 2. Drill down to the test level of any item.
 
-3. Select "Edit" option ('pencil' icon) to the selected test item.
+3. Select the "Edit" option ('pencil' icon) to the selected test item.
 
 4. The test item editor will be opened with the following options.
 
-5. Make the required changes and click "Save" button.
+5. Make the required changes and click the "Save" button.
 
 [ ![Image](Images/userGuide/manageLaunches/edit_item.png) ](https://youtu.be/7PZIowd9III)
 
@@ -57,46 +57,41 @@ In order to edit a test item, perform the following steps:
 ### Merge launches
 
 Merge launches feature can help you to merge the existing launches into one.
-If your project has the really huge number of regression suites and they cannot be in one particular launch, so, they divided in parts.
+If your project has a really huge number of regression suites and they cannot be in one particular launch, so, they divided into parts.
 As soon as they completed, they could be merged in one separate launch to represent this data on dashboards and create reports.
 
 Report Portal provides two options for merge: Linear and Deep. The difference in merge options is described below.
 
-Basically, the merge models distinguishes by the way of how the launches elements are collected in a resulting launch as shown on a picture:
+Basically, the merge models distinguished by the way of how the launches elements are collected in a resulting launch as shown on a picture:
 
-[ ![Image](Images/userGuide/manageLaunches/MergeBasicModel.png) ](Images/userGuide/manageLaunches/MergeBasicModel.png)
+[![Image](Images/userGuide/manageLaunches/MergeBasicModel.png) ](Images/userGuide/manageLaunches/MergeBasicModel.png)
 
 **Linear merge**
 
-In case user selects "Linear merge" option, the new launch is created. The new launch contains elements of merging launches.
-Levels of elements stay the same as in origin launches. Status and issues statistics is calculated as sum of 
-statistics of all merged launches. The origin launches are deleted from the system.
+In case the user selects the "Linear merge" option, the new launch is created. The new launch contains elements of merging launches.
+Levels of elements stay the same as in origin launches. Status and issues statistics are calculated as the sum of statistics of all merged launches. The origin launches are deleted from the system.
 
 **Deep merge**
 
-In case user selects "Deep merge" option, the system creates a new launch and check items with following conditions simultaneously:
+In case the user selects the "Deep merge" option, the system creates a new launch and check items with the following conditions simultaneously:
 * test items with the same names
 * test items have the same type (SUITE or TEST) 
 * test items are on the same path (number of parents) 
 * test items with descendants. 
-If such elements are found only the earliest one is added to the new launch. All descendants are collected on 
-their levels as in the original launches. The merge is started from the upper levels to the lower levels. 
-In case upper level is not merged, the lower levels will not be merged as well. Items without descendants are not merge 
-despite their level. 
+If such elements are found only the earliest one is added to the new launch. All descendants are collected on their levels as in the original launches. The merge is started from the upper levels to the lower levels. 
+In case the upper level is not merged, the lower levels will not be merged as well. Items without descendants are not merged despite their level. 
 Status and issues statistics are calculated for a new launch. 
 The original launches are deleted from the system.
 
 The Linear and Deep Merge algorithm, as described above, is shown on a scheme:
 
-[ ![Image](Images/userGuide/manageLaunches/MergeScheme.png) ](Images/userGuide/manageLaunches/MergeScheme.png)
+[![Image](Images/userGuide/manageLaunches/MergeScheme.png) ](Images/userGuide/manageLaunches/MergeScheme.png)
 
 For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 
-have the same names and the same types and the same path and have descendants, so only 
-the earliest Suite_A (according to start time) is added to the new launch. All descendants of merged suites 
-are combined under the Suite_A. Then system searches for the same matches on next level (Test level).
+have the same names and the same types and the same path and have descendants, so only the earliest Suite_A (according to start time) is added to the new launch. All descendants of merged suites are combined under the Suite_A. Then the system searches for the same matches on the next level (Test level).
 
 If items are not met the conditions described for the "Deep Merge" option then they are collected the same 
-way as described for "Linear merge" option.
+way as described for the "Linear merge" option.
 
 Permission: Next users are able to merge launches:
 
@@ -114,7 +109,7 @@ In order to merge launches, perform the following steps:
 
 3. Open 'Actions' list
 
-4. Click "Merge" button.
+4. Click the "Merge" button.
 
 5. Merge launches popup will be opened. 
 
@@ -123,13 +118,13 @@ In order to merge launches, perform the following steps:
 7. Parameters fields become active. Merge popup contains:
 ```javascript
                       Launch name: (editable)
-                            Owner: field is filled in with current user.
+                            Owner: The field is filled in with the current user.
                       Description: collect data from all launches 
                              Tags: collect unique tags from all launches
                    Time Start/End: filled in and disabled.
 Checkbox 'Extend child suites description with original launches names': Unchecked by default
 ```
-8. Make changes and click "Merge" button on the "Merge Launches" window.
+8. Make changes and click the "Merge" button on the "Merge Launches" window.
    After the merge, a new run will be shown on the common launches list.
 
 >**Note:**
@@ -153,23 +148,23 @@ In order to compare launches, perform the following steps:
 
 2. Select required launches by click on their checkboxes.
 
-3. Expand 'Actions' list
+3. Expand the 'Actions' list
 
-4. Select "Compare" option.
+4. Select the "Compare" option.
 
 5.  The system shows a window where a widget with bars is displayed, reflecting the
 Passed/Failed/Skipped and Product Bug/Automation Bug/System Issue/To
 Investigate test items.
 
 >**Note:**
-Launches can be compare on 'Launches' page and not on 'Debug' page.
+Launches can be compared on the 'Launches' page and not on the 'Debug' page.
 
 [ ![Image](Images/userGuide/manageLaunches/compare_launches.png) ](https://youtu.be/1MjgTxbRH5c)
 
 
 ### Move launches to Debug
 
-The "Debug" section is used to hide incorrect launches from CUSTOMER view.
+The "Debug" section is used to hide incorrect launches from the CUSTOMER view.
 
 Permission: Next users are able to move launches to "Debug"/"Launches" mode:
 
@@ -183,11 +178,11 @@ In order to move a launch to the "Debug" section, perform the following steps:
 
 1. Navigate to the "Launches" page 
 
-2. Select the "Move to Debug" option from the context menu on the left hand of launch name.
+2. Select the "Move to Debug" option from the context menu on the left hand of the launch name.
 
 3. The warning popup will be opened
 
-4. Click 'Move' button 
+4. Click the 'Move' button 
 
 5. The launch gets to "Debug" page and removed from "Launches" page
 
@@ -208,17 +203,17 @@ In order to move some launches to the "Debug" section simultaneously, perform th
 
 6. Confirm the action
 
-7. The launches gets to "Debug" page and removed from "Launches" page.
+7. The launches get to the "Debug" page and removed from the "Launches" page.
 
 To return the launches to the "Launches" section, navigate to the "Debug" section, select them 
-and select "Move to All Launches" from 'Actions' list.
+and select "Move to All Launches" from the 'Actions' list.
 
 [ ![Image](Images/userGuide/manageLaunches/move_to_debug-launches.png) ](https://youtu.be/UW1oMNy1-qo)
 
 
 ### Force finish launches
 
-The system allows to finish launches on the "Launches" and the "Debug" pages manually.
+The system allows finishing launches on the "Launches" and the "Debug" pages manually.
 
 Permission: Next users are able to stop launches:
 
@@ -232,14 +227,13 @@ In order to finish a launch that is in progress now, perform the following steps
 
 1. Navigate to the "Launches" page.
 
-2. Select the "Force Finish" option in the context menu on the left hand of launch name.
+2. Select the "Force Finish" option in the context menu on the left hand of the launch name.
 
 3. The warning popup will be opened.
 
-4. Click "Finish" button.
+4. Click the "Finish" button.
 
-5. The launch will be stopped and shown in the launches table with the "stopped" tag and 
-the *"stopped"* description. All the statistics collected by this time will be displayed.
+5. The launch will be stopped and shown in the launches table with the "stopped" tag and the *"stopped"* description. All the statistics collected by this time will be displayed.
 
 [ ![Image](Images/userGuide/manageLaunches/force_finish.png) ](https://youtu.be/nI1u4ZvKX1Y)
 
@@ -263,26 +257,26 @@ the *"stopped"* description. All the statistics collected by this time will be d
 
 ### Export launches reports
 
-The system allows to export launches reports on the "Launches" and the "Debug"
-modes. You can export launch report in the following formats: PDF, XML, HTML.
+The system allows exporting launches reports on the "Launches" and the "Debug"
+modes. You can export the launch report in the following formats: PDF, XML, HTML.
 
 In order to export a launch, perform the following steps:
 
 1. Navigate to the "Launches" page.
 
-2. Select required format from the "Export" option in the context menu on the left hand of launch name.
+2. Select the required format from the "Export" option in the context menu on the left hand of the launch name.
 
-3. The launch report in selected format will be opened.
+3. The launch report in the selected format will be opened.
 
 [ ![Image](Images/userGuide/manageLaunches/export_launch.png) ](https://youtu.be/NZIolEFI7zc)
 
 >**Note:**
-Export operation works for a separate launch only. No multiple action for export of launches.
+The export operation works for a separate launch only. No multiple actions for the export of launches.
 
 
 ### Delete launches
 
-The system allows to delete launches on the "Launches" and "Debug" pages.
+The system allows deleting launches on the "Launches" and "Debug" pages.
 
 Permission: next users are able to delete launches:
 
@@ -298,11 +292,11 @@ In order to delete a launch, perform the following steps:
 
 1. Navigate to the "Launches" page.
 
-2. Select "Delete" option in the context menu on the left hand of the launch name.
+2. Select the "Delete" option in the context menu on the left hand of the launch name.
 
 3. The warning popup will be opened.
 
-4. Click "Delete" button.
+4. Click the "Delete" button.
 
 5.  The launch will be deleted from Report Portal. All related content will be deleted: test items, logs, screenshots.
 
@@ -331,9 +325,9 @@ It is impossible to delete launches IN PROGRESS - "Delete" launch option will be
 
 ### Delete test item
 
-The system allows to delete test items in all levels of launch in the "Launches" and "Debug" pages.
+The system allows deleting test items in all levels of launch in the "Launches" and "Debug" pages.
 
-Permission: Next users are able to delete test item:
+Permission: Next users are able to delete the test item:
 
 - Administrator
 
@@ -347,11 +341,11 @@ In order to delete a test item, perform the following steps:
 
 2. Drill down to the test level of any item
 
-3. Select "Delete" option in the context menu next to the selected test item.
+3. Select the "Delete" option in the context menu next to the selected test item.
 
 4. The warning popup will be opened.
 
-5. Click "Delete" button.
+5. Click the "Delete" button.
 
 6. The test item will be deleted from Report Portal with all related content (logs, screenshots).
 
