@@ -2,9 +2,9 @@
 
 ### What is it: Test case ID
 
-If you are using any of the Test Management System (such as TestRail, Jira, ALM and any others), you have a unique identification of test cases in it.
+If you are using any of the Test Management System (such as TestRail, Jira, ALM, and any others), you have a unique identification of test cases in it.
 
-Starts from the version 5.1 you have an ability to report test cases with TestCase ID from your TMS. That gives you an ability to link a source of the test case in TMS and its executions in ReportPortal. 
+Starts from version 5.1 you can report test cases with TestCase ID from your TMS. That gives you an ability to link a source of the test case in TMS and its executions in ReportPortal. 
 
 The benefit of this feature is that you will be able to see **the real history of your test cases**. 
 
@@ -31,9 +31,9 @@ If the test execution has test parameters, a test case ID will be generated on t
 
 ### What does happen if you do not report items with Test case ID?
 
-In case a user doesn't report tests with Test Case ID, the system generats its automatically:
+In case a user doesn't report tests with Test Case ID, the system generates it automatically:
 
-* Auto generation based on 'Code reference' and 'Parameters'
+* Auto-generation based on 'Code reference' and 'Parameters'
 If users do not report test case ID, it is generated automatically on the base of:
 
 > Test case id in ReportPortal = 'Code reference' + all test parameters
@@ -56,5 +56,5 @@ The UniqueID generation is based on:
 * Names of all parents;
 * All parameters of the item;
 
-All this information become part of a test item in form of MD5 hash. After that a UID becomes a part of the item. It gives an opportunity to define the item uniqueness with no possibility of doubt. 
-ReportPortal uses this functionality in a process of building widgets ( f.e.:'Most failed test cases', 'Flacky tests'), 'Retry' and 'Rerun'and etc.
+All this information becomes part of a test item in the form of the MD5 hash. After that, a UID becomes a part of the item. It allows defining the item's uniqueness with no possibility of doubt. 
+ReportPortal uses this functionality in a process of building widgets ( f.e.:'Most failed test cases', 'Flacky tests'), 'Retry' and 'Rerun'and, etc.
