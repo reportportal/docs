@@ -11,7 +11,7 @@ If you do not know anything about ReportPortal.
 If you just want to integrate ReportPortal with your Test Framework and view info about test case executions: a name, a status, a duration, parameters, attachments (files, screenshots, video and other), logs and others.
 So this section for you.
 
-You can review and mimic the following examples to start your integration with ReportPortal.
+You can review and mimic the following examples to start your integration with the Report Portal.
 
 | **Test frameworks** | **Examples**|
 | ------------- | ------------- |
@@ -39,7 +39,7 @@ Please find the full list of available integrations with test frameworks in our 
 If you need further guidelines, you can explore our [Developers guides](https://reportportal.io/docs/Developers-guide).
 
 What you can do if you can not find your Test Framework?
-You can create a custom integrations. To get started, please look at our [Implement own Integration](https://reportportal.io/docs/Implement-own-integration) page.
+You can create custom integrations. To get started, please look at our [Implement own Integration](https://reportportal.io/docs/Implement-own-integration) page.
 
 >**Note:**
 > We offer paid support for new or existing integrations. If you need more details, please send an email to support@reportportal.io.
