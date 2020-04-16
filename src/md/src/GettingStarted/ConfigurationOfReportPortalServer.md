@@ -43,8 +43,16 @@ Example of GitHub auth configuration:
  
 
 ### Statistics
-It should be mentioned, that the ReportPortal server has an enabled option of collecting statistics of user's actions.
+
+It should be mentioned, that the ReportPortal server has an enabled option of collecting statistics of user's actions for Google analytics.
+
+We collect information on:
+* which buttons are the most clickable
+* which place are the most popular
+
+It helps us to improve the usability of the application and to collect information about the most popular behavior patterns.
 The list of actions could be found on the Statistics page.
+
 To change the option:
 1. Login to the ReportPortal as an ADMIN user
 2. Then open the list on the right of the user's image.
