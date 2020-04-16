@@ -1,1 +1,1 @@
-# Getting started
+# Report Portal Configuration
