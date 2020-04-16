@@ -4,10 +4,12 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 
 [ ![Integrations](Images/userGuide/gettingStarted/Integrations.png) ](Images/userGuide/gettingStarted/Integrations.png)
 
-* Jira
-* Rally
-* Sauce Labs
-* E-mail server
+* [Jira](https://reportportal.io/docs/Jira-Integration)
+* [Rally](https://reportportal.io/docs/Rally-Integration)
+* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs-integration)
+* [E-mail server](https://reportportal.io/docs/E-mail-server-integration)
+* [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
+* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
 
 If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](https://reportportal.io/docs/Plugins).
 
@@ -765,3 +767,75 @@ By the attribute `SLID: XXXXXXXX` you link the execution in ReportPortal and a j
 So that if a test item has an attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs from the appropriate job in ReportPortal on a log view. 
 
 [ ![Sauce Labs configuration](Images/userGuide/gettingStarted/Sauce Labs.png) ](https://youtu.be/RQAxGz6koh0)
+
+
+
+ 
+ ### Active Directory Auth integration
+ 
+To set up access with Active Directory:
+
+1. Login to the ReportPortal as an ADMIN user
+
+2. Then open the list on the right of the user's image.
+
+3. Click the 'Administrative' link 
+
+4. Click the 'Plugins' from the left-hand sidebar
+
+5. Click on the'Activate Directory' tab.
+
+6. Click on Add new integration
+
+7. The next fields should be present:
+
+```javascript 
+'Domain*': text
+'URL*': text
+'Base DN*': text
+'Email attribute*': text
+'Full name attribute' : text
+'Photo attribute' : text
+  ```
+
+Mandatory fields are marked with red. 
+Click the 'Submit' button.
+All users of Active Directory will have access to the ReportPortal instance.  
+For entrance to ReportPortal, the user should use their domain credentials (Login and password).
+
+
+### LDAP Auth integration 
+To set up access with LDAP:
+
+1. Login to the ReportPortal as an ADMIN user
+
+2. Then open the list on the right of the user's image.
+
+3. Click the 'Administrative' link 
+
+4. Click the 'Plugins' from the left-hand sidebar
+
+5. Click on the'LDAP' tab.
+
+6. Click on Add new integration
+
+7. The next fields should be present:
+
+```javascript 
+'URL*': text
+'Base DN*': text
+'Manager DN': text
+'Manager password': text
+'User DN pattern': text
+'User search filter': text
+'Group search base': text
+'Group search filter': text
+'Password encoder type': text
+'Email attribute*': text
+'Full name attribute' : text
+'Photo attribute' : text
+```
+
+Mandatory fields are marked with red. 
+Click the 'Submit' button.
+All users of LDAP will have access to the ReportPortal instance. For access to the ReportPortal, the user should use their domain credentials (Login and password).
