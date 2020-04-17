@@ -1,8 +1,5 @@
 ## Creation of project and adding users
 
-You have already configured server settings and add plugins to the system.
-Now you need to create a space where users will be working with test results.
-
 The main question of how you can organize your working space in ReportPortal. 
 Let's see two use cases which can help you to make a decision.
 
