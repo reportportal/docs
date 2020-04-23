@@ -1,13 +1,8 @@
-// Workaround for autoprefixer
+const path = require('path');
 
-var path = require('path');
-
-var rootPath = path.resolve('');
+const rootPath = path.resolve('');
 
 module.exports = function (grunt) {
-    'use strict';
-
-
     grunt.initConfig({
         'string-replace': {
             image: {

@@ -1,8 +1,6 @@
-'use strict';
+const path = require('path');
 
-var path = require('path');
-
-var publicPath = path.resolve('./build');
+const publicPath = path.resolve('./build');
 
 module.exports = {
     devServer: {
