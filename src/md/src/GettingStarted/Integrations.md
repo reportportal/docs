@@ -771,7 +771,7 @@ So that if a test item has an attribute `SLID: XXXXXXXX`, and there is a global 
 
 
  
- ### Active Directory Auth integration
+ ## Active Directory Auth integration
  
 To set up access with Active Directory:
 
@@ -804,7 +804,7 @@ All users of Active Directory will have access to the ReportPortal instance.
 For entrance to ReportPortal, the user should use their domain credentials (Login and password).
 
 
-### LDAP Auth integration 
+## LDAP Auth integration 
 To set up access with LDAP:
 
 1. Login to the ReportPortal as an ADMIN user
