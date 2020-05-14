@@ -771,7 +771,7 @@ So that if a test item has an attribute `SLID: XXXXXXXX`, and there is a global 
 
 
  
- ## Active Directory Auth integration
+## Active Directory Auth integration
  
 To set up access with Active Directory:
 
