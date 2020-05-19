@@ -15,7 +15,7 @@ In general, 4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM instance capacity is enough config
 
 4. **PostgreSQL Performance Tuning**
 
-Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:  
+Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:
 
 * general and universal for any capacity of the instance hardware:
 
@@ -86,7 +86,6 @@ For the **docker-compose:** add the following lines to the *command* section by 
         ...
         # Some another configs
     ```
-
 For the **AWS RDS:** create new parameter group(*Services -> RDS -> Parameter groups -> Create parameter group*), search config by the name and set up the following values, then apply created parameter group to the RDS DB.
 
 The following parameters can be scaled and depends on CPU’s number and RAM size of the instance. For example, for the instance 16 CPUs/32GB RAM(the database is deployed on the separate VM) this parameters should be:
