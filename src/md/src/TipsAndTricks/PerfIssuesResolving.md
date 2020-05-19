@@ -7,15 +7,15 @@
    * **Azure**: Fsv2-series instances,
    * **AWS**: c5 instances.
 
-    The instance capacity(4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM etc.) should be selected regarding average reporting test-cases/day and average CPU/RAM utilization. If the CPU/RAM utilization of the ReportPortal instance up to 100% a long time daily, consider scale up the VM x2.
+The instance capacity(4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM etc.) should be selected regarding average reporting test-cases/day and average CPU/RAM utilization. If the CPU/RAM utilization of the ReportPortal instance up to 100% a long time daily, consider scale up the VM x2.
 
-    In general, 4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM instance capacity is enough configuration setup for the small/middle-size server.
+In general, 4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM instance capacity is enough configuration setup for the small/middle-size server.
 
 3. Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS or a separate VM only for the PostgreSQL database.
 
 4. **PostgreSQL Performance Tuning**
 
-    Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:  
+Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:  
 
 * general and universal for any capacity of the instance hardware:
 
@@ -45,7 +45,7 @@
     max_parallel_maintenance_workers=2
     ```
 
-    Recommendations regarding **PostgreSQL server tuning** for the instance with 8 CPUs/16GB RAM(where all RP services are deployed):
+Recommendations regarding **PostgreSQL server tuning** for the instance with 8 CPUs/16GB RAM(where all RP services are deployed):
 
     ```yaml
     shared_buffers=4GB
@@ -68,9 +68,9 @@
     max_parallel_maintenance_workers=4
     ```
 
-   If the PostgreSQL database and services are deployed on the separate VM’s, the "effective_cache_size" parameter should be changed to "12GB"(total RAM size - shared_buffers size).
+If the PostgreSQL database and services are deployed on the separate VM’s, the "effective_cache_size" parameter should be changed to "12GB"(total RAM size - shared_buffers size).
 
-    For the **docker-compose:** add the following lines to the *command* section by the “-c” option to *“postgres”* service.
+For the **docker-compose:** add the following lines to the *command* section by the “-c” option to *“postgres”* service.
 
     **Example:**
 
@@ -87,9 +87,9 @@
         # Some another configs
     ```
 
-    For the **AWS RDS:** create new parameter group(*Services -> RDS -> Parameter groups -> Create parameter group*), search config by the name and set up the following values, then apply created parameter group to the RDS DB.
+For the **AWS RDS:** create new parameter group(*Services -> RDS -> Parameter groups -> Create parameter group*), search config by the name and set up the following values, then apply created parameter group to the RDS DB.
 
-    The following parameters can be scaled and depends on CPU’s number and RAM size of the instance. For example, for the instance 16 CPUs/32GB RAM(the database is deployed on the separate VM) this parameters should be:
+The following parameters can be scaled and depends on CPU’s number and RAM size of the instance. For example, for the instance 16 CPUs/32GB RAM(the database is deployed on the separate VM) this parameters should be:
   
     ```yaml
     shared_buffers = '8GB'
