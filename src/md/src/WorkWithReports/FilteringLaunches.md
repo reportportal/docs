@@ -48,13 +48,13 @@ The following values are available:
 * *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equal Last 30 days;
 * *Custom range* - shown all test items with a start time in the custom period; the user can set strict period or dynamic value (filter will be a move to one day every day, where Today (current day) is the last day in period);
 
--   **Tags** - It is allowed to search for the tag with at least 1 symbol in it. The system searches for launches with the specified tag(s). Several tags may be specified. 
+-   **Attributes** - It is allowed to search for the attributes with at least 1 symbol in it. The system searches for launches with the specified tag(s). Several attributes may be specified. 
 You can find launches by a tag in just one click. To do this, click on a required tag under the launch name and the system will display all launches that have this tag.
 This filter has the next conditions: 
-* *all ( in API: 'filter.has.tags')* - shown all test items which contain all specified tags; 
-* *without all( in API:'filter.!in.tags')* -  shown all test items without specified tags in any combinations;
-* *any ( in API:filter.in.tags)*  - shown all test items which contain any combinations of specified tags; 
-* *without any ( in API:'filter.!has.tags')* - shown all test items without all specified tags in case, when both of tags present in the test item;
+* *all ( in API: 'filter.has.Attributes')* - shown all test items which contain all specified attributes; 
+* *without all( in API:'filter.!in.Attributes')* -  shown all test items without specified attributes in any combinations;
+* *any ( in API:filter.in.Attributes)*  - shown all test items which contain any combinations of specified attributes; 
+* *without any ( in API:'filter.!has.Attributes')* - shown all test items without all specified attributes in case, when both of attributes present in the test item;
 
 -   **Owner** - At least 3 symbols are required for this search. The system searches for the launches owned by specified project members. This filter can filter launches by several owners. You can find launches by an owner in just one click. 
 To do this, click on a required owner under the launch name and the system will display all launches of the selected user.
