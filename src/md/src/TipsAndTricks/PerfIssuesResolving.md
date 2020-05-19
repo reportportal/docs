@@ -4,8 +4,8 @@
 
 2. Consider switching to the **CPU optimized** instances to reduce high CPU utilization of the ReportPortal service-API and speed up ReportPortal overall. For example:
 
-   * **Azure**: Fsv2-series instances,
-   * **AWS**: c5 instances.
+    **Azure**: Fsv2-series instances,
+    **AWS**: c5 instances.
 
 The instance capacity(4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM etc.) should be selected regarding average reporting test-cases/day and average CPU/RAM utilization. If the CPU/RAM utilization of the ReportPortal instance up to 100% a long time daily, consider scale up the VM x2.
 
