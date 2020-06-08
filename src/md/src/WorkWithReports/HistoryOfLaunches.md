@@ -7,7 +7,54 @@ the most unstable test cases in your suites/ launches/ builds.
 
 To see a table of the historical trend of executions, navigate to the "Launches" page and drill down to launch structure/ or launch statistics.
 
-Then click the "History" button.
+### History table: Test Case ID or Unique ID
+
+Report Portal acquires a lot of results and you can choose by which parameter you want the history of test results to get defined.
+There are 2 options:
+
+* by [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/)
+* by [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
+
+#### Difference between Test Case ID  and Unique ID
+
+Please find the description of what Test Case ID and Unique ID are by the links:
+* [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/)
+* [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
+
+They are both a unique identifiers of executions uniquness.
+
+But Unique ID generates on the base a launch name where test execution is situated.
+And Test Case ID usually doesn't contain a test execution name. 
+
+So that the main difference between a history table based on Unique ID and Tets Case ID is that:
+
+* History on UUID: history shows only executions from launches with the same name
+* History on Test Case ID: history shows executions from all launches.
+
+#### Unique ID history
+
+1. Take the ReportPortal release version 5.2.2 or higher. docker-compose.yml
+
+2. Add an environment variable to the service-API service:
+
+```
+RP_ENVIRONMENT_VARIABLE_HISTORY_OLD=true
+```
+
+3. Redeploy ReportPortal
+
+#### Test Case ID history
+
+Run ReportPortal without env variable.
+
+
+### History table
+
+Where you can find History table.
+
+Drill down to the Step view (test executions list). 
+
+Click the "History" button.
 
 You will see a historical trend in a table.
 
