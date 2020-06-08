@@ -23,13 +23,14 @@ Please find the description of what Test Case ID and Unique  by the links:
 
 They are both a unique identifiers of executions uniquness.
 
-But Unique ID generates on the base a launch name where test execution is situated.
-And Test Case ID usually doesn't contain a test execution name. 
+But Unique ID generates on the base of a launch name where test execution is situated.
+And Test Case ID usually doesn't contain a launch name. 
 
 So that the main difference between a history table based on Unique ID and Tets Case ID is that:
 
-* History on UUID: history shows only executions from launches with the same name
-* History on Test Case ID: history shows executions from all launches.
+* History on Unique ID  shows only executions from launches with the same name
+* History on Test Case ID shows executions from all launches.
+
 
 #### Unique ID history
 
@@ -78,9 +79,14 @@ There are two options for a History table:
 - history for all launches
 - history for launches with the same name
 
-The history table is based on the [Test Case ID](https://reportportal.io/docs/A-test-item%3Euniqueid)
+If your are using History table based on Test Case ID, you will be able to use both of this options.
+In case you use a history table based on UID, a history table will show you results in mode: "History for launches with the same name".
+
 
 #### History for all launches
+
+If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id). 
+This option is for you.
 
 **How you can open a history table with execution from all launches?**
 
@@ -89,7 +95,7 @@ The history table is based on the [Test Case ID](https://reportportal.io/docs/A-
 - Click on the button 'History'
 - Choose the option '**All launches'** in the drop-down 'BASE'
 
-**What information is shown on the table?**
+**What information is shown on the table based on Test Case ID?**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from all launches on the project.
 Each column on the history table is equaled to a number of the execution.
@@ -114,14 +120,18 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 
 #### History table for launches with the same name
 
-**How you can open a history table with execution from all launches?**
+If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id) or with Unique ID. 
+This option is for you.
+
+
+**How you can open a history table with execution launches with the same name?**
 
 - Open All launches tab
 - Click on the Launch name/ Total/ Passed/ Failed/ Skipped /Product Bug/ Auto Bug/ System Issues/ To investigate statistics
 - Click on the button 'History'
 - Choose the option **'Launches with the same name'** in the drop-down 'BASE'
 
-**What information is shown on the table?**
+**What information is shown on the table basedon Unique ID ot Test Case ID (with option "Launches with the same name"?**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from only launches with the same name on the project.
 Each column on the history table is equaled to a number of the execution.
@@ -130,7 +140,7 @@ Let's see an example.
 
 >**Use case:** You have a test suite for the regression. You want to perform regression testing in different environments. For those reasons, you are running your regression suite on macOS, Windows, and Linux. 
 After test runs finish, you will be able to see on the All launches tab on ReportPortal 3 launches with different names: *Regression_MacOS, Regression_Win, Regression_Linux*.
-If you click on the Total statistic for the launch *Regression_MacOS* and click on the 'History' button, you will see a History table with all test cases in the suite and their 10 last executions from all launches on the project (e.g. from *Regression_MacOS, Regression_Win, Regression_Linux*). When you choose the option **'Launches with the same name'**, you will see executions only from launches with name *Regression_MacOS*.
+If you click on the Total statistic for the launch *Regression_MacOS* and click on the 'History' button and  you choose the option **'Launches with the same name'**, you will see executions only from launches with name *Regression_MacOS*.
 >
 > 
 > | Test case name  | Execution #2|
