@@ -198,10 +198,8 @@ You can choose those configurations via Project configuration or from the list o
 
 #### Configure ElasticSearch settings
 
-Also, we give the possibility for our users to configure 4 main parameters of ElasticSearch manually:
+Also, we give the possibility for our users to configure 2 main parameters of ElasticSearch manually:
 
-*    **MinDocFreq** - the minimum frequency of the saved logs in ElasticSearch (index) in which word from analyzed log should be used. If the log count is below the specified value, that word will be ignored for AA in the analyzed log. The more often the word appears in the index, the lower it weights. Min value 1, max value 10. 
-*    **MinTermFreq** - the minimum frequency of the word in the analyzed log. If the word count is below the specified value, this word will be ignored for AA. The more often the word appears in the analyzed log, the higher it weights. Min value 1, max value 10.
 *    **MinShouldMatch** - percent of words equality between analyzed log and particular log from the ElasticSearch. If a log from ElasticSearch has the value less then set, this log will be ignored for AA. Min value 50, max value 100.
 *    **Number of log lines** - the number of first lines of log message that should be considered in ElasticSearch. Only the chosen number of logline will be saved in ElasticSearch. Possible values: 2, 3, 4, 5, All.  In case you choose “ALL”, the full text of log will be saved in ElasticSearch Index.
 
