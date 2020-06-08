@@ -18,7 +18,7 @@ There are 2 options:
 #### Difference between Test Case ID  and Unique ID
 
 Please find the description of what Test Case ID and Unique  by the links:
-* [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/)
+* [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/ )
 * [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 They are both a unique identifiers of executions uniquness.
