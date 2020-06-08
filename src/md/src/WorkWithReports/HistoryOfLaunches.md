@@ -12,7 +12,7 @@ To see a table of the historical trend of executions, navigate to the "Launches"
 Report Portal acquires a lot of results and you can choose by which parameter you want the history of test results to get defined.
 There are 2 options:
 
-* by [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/)
+* by [Unique ID](https://reportportal.io/docs/Unique-ID-(deprecated/ )
 * by [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 #### Difference between Test Case ID  and Unique ID
