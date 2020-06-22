@@ -50,14 +50,29 @@ You can create **Overall statistics** and **Launches table**, and now a team who
 
 ###  Build / Release/ Sprint Report (A dashboard for an Team leads, PM, DM)
 
-The goal of this report to show status for the whole version. It means for this report we want to see the latest results of  aggregated statistics for several lanches.
+The goal of this report to show status for the whole version. It means for this report we want to see the latest results of aggregated statistics for several lanches.
 
-In our example I want to see a results for the whole Regression (API + UI + Integration tests).
+In our example, I want to see the latest results for the whole Regression (latest results for API suite + latest results for UI + latest results for Integration tests).
 
-
-
+Also, it is very useful to compare the results of the Regression on the current version with the Regression on previous versions and to see details about business metrics.
 
 [ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Build Report.png)
-[ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Project Report.png)
+
+On this dashboard you can see different metrics:
+
+- A passing rate for the whole Regression
+- With **Cumulative trend chart** you will be able to compare different versions on one chart, to compare different runs for the current regression
+- **Component Health Check Widget** would show you product:
+
+* on different env
+* on a different dimension
+* by business metrics / by features/ by user roles / by etc
+
+>**Note**: you need to report test executions with attributes which specified needed metrics or envs
+
+- **Unique bugs table** helps you collect and analyze new bugs in the system
+
+>**Note** Component Health Check Widget and Cumulative trend chart are very configurable and you can create your own widget based on project needs.
+
 
 
