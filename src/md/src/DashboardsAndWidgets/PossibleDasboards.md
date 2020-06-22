@@ -68,6 +68,8 @@ On this dashboard you can see different metrics:
 * on a different dimension
 * by business metrics / by features/ by user roles / by etc
 
+Also with a help of **Component Health Check Widget** you can create a Test Pyramid.
+
 >**Note**: you need to report test executions with attributes which specified needed metrics or envs
 
 - **Unique bugs table** helps you collect and analyze new bugs in the system
