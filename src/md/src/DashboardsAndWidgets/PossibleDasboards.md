@@ -2,10 +2,10 @@
 
 ReportPortal.io is a powerful tool that acquires a lot of analytics. With this manual, we are wanting to help you to configure simple and understandable reports for your teams.
 
-Let's look on 3 possible dashboards which you can generate:
+Let's look on 2 examples of dashboards which you can generate:
 * Report for one Launch
 * Report for Build (Version, Release, Sprint)
-* Report for several streams
+
 
 > **Precondition**
 > Let's assume that we have a Regression suite which contains:
