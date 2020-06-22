@@ -17,7 +17,7 @@ Let's look on 2 examples of dashboards which you can generate:
 > The whole Regression is running against nightly build every day.
 > Different teams are responsible for different suites.
 >
-> Which dashboard I can create in such conditions.
+> Which dashboard I can create in such conditions?
 
 
 ###  Report for one tests run (A dashboard for an engineer)
@@ -29,9 +29,9 @@ The goal for this report to show the status of the latest test run. For instance
 You can configure:
 [**Passing rate widget**]() that shows a passing rate for a latest launch "API suite'
 
-[**Most popular pattern**](https://reportportal.io/docs/Most-popular-pattern) track TOP-20 problems in the last and previous runs of this suite. 
+[**Most popular pattern**](https://reportportal.io/docs/Most-popular-pattern) tracks TOP-20 problems in the last and previous runs of this suite. 
 
-> **Note:** For Most popular pattern table, you should you create a set of rules and run PAttern Analysis
+> **Note:** For Most popular pattern table, you should you create a set of rules and run Pattern Analysis
 
 With [**Investigated percentage of launches**](https://reportportal.io/docs/Investigated-percentage-of) you can find out the status of failure investigations. You will be able to evaluate team performance and consistency of results.
 
