@@ -8,17 +8,16 @@ Let's look on 3 possible dashboards which you can generate:
 * Report for several streams
 
 > **Precondition**
-
-Let's assume that we have a Regression suite which contains:
-
-- a suite with API test cases
-- a suite with UI test cases
-- a suite with integration test cases
-
-The whole Regression is running against nightly build every day.
-Different teams are responsible for different suites.
-
-Which dashboard I can create in such conditions.
+> Let's assume that we have a Regression suite which contains:
+>
+> - a suite with API test cases
+> - a suite with UI test cases
+> - a suite with integration test cases
+>
+> The whole Regression is running against nightly build every day.
+> Different teams are responsible for different suites.
+>
+> Which dashboard I can create in such conditions.
 
 
 ###  Report for one tests run
