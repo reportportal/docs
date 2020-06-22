@@ -7,6 +7,8 @@ Let`s look on 3 possible cases:
 * Report for Build (Version, Release, Sprint)
 * Report for several streams
 
-
+[ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Launch Report.png)
+[ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Build Report.png)
+[ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Project Report.png)
 
 
