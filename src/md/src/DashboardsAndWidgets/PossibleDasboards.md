@@ -39,7 +39,7 @@ With [**Investigated percentage of launches**](https://reportportal.io/docs/Inve
 
 [**Duration chart**](https://reportportal.io/docs/Launches-duration-chart) will be very helpful for those who track duration KPI and want to increase the speed of tests run. 
 
-[**Test growth trend chart**](https://reportportal.io/docs/Test-cases-growth-trend) could show you to understand the speed of new test cases creation.
+[**Test growth trend chart**](https://reportportal.io/docs/Test-cases-growth-trend) shows you the speed of new test cases creation.
 
 Also, you can create [**"Most flaky test cases"**](https://reportportal.io/docs/Flaky-test-cases) and [**"Most failed test case"**](https://reportportal.io/docs/Most-failed-test-cases) and find the most unstable items which should be taken into account.
 
