@@ -20,7 +20,7 @@ Let's look on 3 possible dashboards which you can generate:
 > Which dashboard I can create in such conditions.
 
 
-###  Report for one tests run
+###  Report for one tests run (A dashboard for an engineer)
 
 The goal for this report to show the status of the latest test run. For instance to see the latest results for launch with an API suite. 
 
@@ -45,7 +45,15 @@ Also, you can create **"Most flaky test cases"** and **"Most failed test case"**
 
 Let's assume that you have a lot of test results and a lot of teams.
 
-You can create **Overall statistics** and **Launches table**, and now a team who is responsible for API suite has no need to go to the test results. It can use only this dashboard which gives enough information test failure management.
+You can create **Overall statistics** and **Launches table**, and now a team who is responsible for API suite has no need to go to the test results. It can use only this dashboard which gives enough information for test failure management.
+
+
+###  Build / Release/ Sprint Report (A dashboard for an Team leads, PM, DM)
+
+The goal of this report to show status for the whole version. It means for this report we want to see the latest results of  aggregated statistics for several lanches.
+
+In our example I want to see a results for the whole Regression (API + UI + Integration tests).
+
 
 
 
