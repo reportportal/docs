@@ -56,7 +56,7 @@ In our example, I want to see the latest results for the whole Regression (lates
 
 Also, it is very useful to compare the results of the Regression on the current version with the Regression on previous versions and to see details about business metrics.
 
-[ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Build Report.png)
+[ ![ImageName](Images/userGuide/dashboards/Build Report.png) ](Images/userGuide/dashboards/Build Report.png)
 
 On this dashboard you can see different metrics:
 
