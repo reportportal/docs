@@ -1,4 +1,4 @@
-# Use Case Possible Dasboard in ReportPortal
+## Possible Dasboard in ReportPortal
 
 ReportPortal.io is a powerful tool which accuares a lot of analytics. Witj this manual we are wanting to help you to configure simple and understandable reports for your teams.
 
