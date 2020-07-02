@@ -16,7 +16,8 @@ You can review and mimic the following examples to start your integration with t
 | **Test frameworks** | **Examples**|
 | ------------- | ------------- |
 | Java Test Frameworks |https://github.com/reportportal/examples-java  |
-| JavaScript based TestFrameworks | _In progress_ |
+| JavaScript based TestFrameworks | https://github.com/reportportal/examples-js |
+|.Net based TestFrameworks| In progress|
 
 
 ### Advanced user
