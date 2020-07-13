@@ -129,7 +129,7 @@ superadmin\erebus
 > Please change the admin password for better security
 
 
-### Deploy ReportPortal with Docker on Windows
+## Deploy ReportPortal with Docker on Windows
 
 In case you went with Docker on Windows, please make sure you changed the 'volumes' value for postgres container from "For unix host" to the "For windows host":  
 
