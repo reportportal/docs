@@ -52,7 +52,8 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 |  Find the most flakiest test in the build | [Flaky test cases table (TOP-20)](https://reportportal.io/docs/Flaky-test-cases)  |
 | Compare statistics for different builds on one graph  | [Cumulative trend chart](https://reportportal.io/docs/Cumulative-trend-chart) |
 | Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
-| Track the passing rate of different components of your application  | [Component health check](https://reportportal.io/docs/Component-health-check) |
+| Track the passing rate of different components of your application | [Component health check](https://reportportal.io/docs/Component-health-check) |
+| Track the statistics of different components of your application  | [Component health check (table)](https://reportportal.io/docs/Component-health-check) |
 
 
 The template descriptions are provided below.
@@ -735,3 +736,21 @@ from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
+
+## Component health check (table)
+
+Shows the detailed statisctics of the application components which are indicated by the specified attributes. 
+
+>**Note:** for using this widget you need to report (or add manually) attributes to test items.
+
+### Why can this widget can be useful for your project
+
+Let`s look on several use cases how you can utilize Component Health Check Widget.
+
+> **Use Case: To track information regarding the latest build in version without filter update**
+> **Problem:** You are test lead, and you want to track information regarding the latest results without any additional movements. Your build contains several launches: a launch with API test cases, a launch with UI test cases, and a launch with Integration test cases.
+You need to track summary statisctics fort latest results in API launch, UI launch and Integration launch.
+For that reason, you have added an attribute 'build: XXX", where specify number of build. And you have created a filter that includes all launches with mentioned attribute.
+Now you can create a widget Overall statisctics for instanse. And this
+
+>**Solution:**
