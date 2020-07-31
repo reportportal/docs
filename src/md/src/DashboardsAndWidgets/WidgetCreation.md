@@ -737,7 +737,7 @@ from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
-## Component health check (table)
+## Component health check Table view
 
 Shows the detailed statisctics of the application components which are indicated by the specified attributes. 
 
