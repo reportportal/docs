@@ -774,7 +774,6 @@ But if you run a new version (for instance version: xxx+1), you should repeat pr
 
 
 Widget logic is the same as for https://reportportal.io/docs/Component-health-check.
-
 **Widget's parameters:**
 
 - Filter
@@ -786,26 +785,26 @@ Widget logic is the same as for https://reportportal.io/docs/Component-health-ch
 
 **Widget view**
 
-Widget has a table view. Each line contains information regarding one component (one unique attribute value):
+The widget has a table view. Each line contains information regarding one component (one unique attribute value):
 
 - component name
 - component passing rate
 - statistics: Total/Passed/Failed/Skipped/ Product bugs/ Automation bugs/ System issues/ To investigate
 - information about attribute value in the custom column
 
-Total line shows summary for all components.
+The total line shows a summary of all components.
 
 **Custom column**
 
-Why you may need a cusotm column? Let's see it on the example.
+Why you may need a custom column? Let's see it in the example.
 
 **Use case #3**
 
 **Use Case:** You need to understand the impact of failed test cases
 
-**Problem:** You created a Component Health Check widget and can see a list with features and their passing rate. But you can not understand importance of failed features.
+**Problem:** You created a Component Health Check widget and can see a list with features and their passing rate. But you can not understand the importance of failed features.
 
-**Solution:** Add for all test executions attributes with an attribute key 'priority: XXX'. For instanse:
+**Solution:** Add for all test executions attributes with an attribute key 'priority: XXX'. For instance:
 - priority: low
 - priority: major
 - priority: critical
@@ -813,6 +812,6 @@ Why you may need a cusotm column? Let's see it on the example.
 Then add to widget wizard attribute key 'priority' in the custom column field.
 So that system adds to the widget view information regarding priority to each feature.
 
-> **Note:** Component Health Check widget (table view) is the first widget which uses materialized view of PostgreSQL. So that it takes time to create it. That is why information about new launches in filter isn't added dynamicly. For that reason a user should update a widget manually by сlicking on update button. On the widget a user can see the time for the last update.
+> **Note:** Component Health Check widget (table view) is the first widget that uses a materialized view of PostgreSQL. It takes time to create it. So that is why information about new launches in the filter adds dynamically. For that reason, a user should update a widget manually by сlicking on the update button. On the widget, a user can see the time for the last update.
 
 
