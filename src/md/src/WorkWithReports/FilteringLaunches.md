@@ -138,4 +138,8 @@ The system searches for the items with or without a specified Attribute(s). Mult
 
 -   **Issue in BTS** - there are two options: Linked bug, No linked bug.
 
+- **Pattern name** - all patterns names, which a PM creates on Project Settings 
+
+- **Has retries/Hasn't retries** - there are two options: Has retries/ No retries.
+
 [ ![Image](Images/userGuide/filteringLaunches/stepLevelFilters.png) ](https://youtu.be/S4aViEIurn4)
