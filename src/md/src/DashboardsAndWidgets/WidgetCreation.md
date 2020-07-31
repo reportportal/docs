@@ -747,10 +747,13 @@ Shows the detailed statisctics of the application components which are indicated
 
 Let`s look on several use cases how you can utilize Component Health Check Widget.
 
-> **Use Case: To track information regarding the latest build in version without filter update**
-> **Problem:** You are test lead, and you want to track information regarding the latest results without any additional movements. Your build contains several launches: a launch with API test cases, a launch with UI test cases, and a launch with Integration test cases.
-You need to track summary statisctics fort latest results in API launch, UI launch and Integration launch.
-For that reason, you have added an attribute 'build: XXX", where specify number of build. And you have created a filter that includes all launches with mentioned attribute.
-Now you can create a widget Overall statisctics for instanse. And this
+> **Use Case:** To track information regarding the latest version in version **without filter update**
+> **Problem:** You are test lead, and you want to track information regarding the latest results without any additional movements. Your version contains several launches: a launch with API test cases, a launch with UI test cases, and a launch with Integration test cases.
+> You need to track summary statisctics fort latest results for API launch, UI launch and Integration launch.
+> For that reason, you have added an attribute 'version: XXX" to all needed launches, where specify number of version. And you have created a filter that includes all launches with mentioned attribute.
+> Now you can create a widget Overall statisctics for instanse. And this widget will show you summary for latest results for version:xxx. 
+> But if you run new version (for instanse version: xxx+1), you should repeate previous actions one more time: create ne filter, update widget.
+> **Solution:** How you can you can skip this steps. Create filter which includes 3 launches: API launch, UI launch and Integration launch. Create Component Health Check widget (table view) with this filter and add attribute key 'version' for grouping. Now you will see summary for latest version everyday. If a new version appears in the system, a widget automaticall remove info about previous one, and add the latest version.
+> [ ![ComponentHEalthCheckWidgetversion](Images/userGuide/widgetTypes/ComponentHealthCheckTableBuild.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckTableBuild.png)
 
->**Solution:**
+
