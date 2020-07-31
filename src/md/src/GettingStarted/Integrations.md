@@ -839,3 +839,39 @@ To set up access with LDAP:
 Mandatory fields are marked with red. 
 Click the 'Submit' button.
 All users of LDAP will have access to the ReportPortal instance. For access to the ReportPortal, the user should use their domain credentials (Login and password).
+
+
+## SAML integration
+ 
+To set up access with SAML:
+
+1. Login to the ReportPortal as an ADMIN user
+
+2. Then open the list on the right of the user's image.
+
+3. Click the 'Administrative' link 
+
+4. Click the 'Plugins' from the left-hand sidebar
+
+5. Click on the'SAML' tab.
+
+6. Click on Add new integration
+
+7. The next fields should be present:
+
+```javascript 
+'Identity provider name ID*': text
+'Provider name*': text
+'Metadata URL*': text
+'Emai attribute*': text
+'Name attributes mode' : 
+'Last name attribute' text
+'First name attribute' text
+or
+'Full name attribute' : text
+  ```
+
+Mandatory fields are marked with red. 
+Click the 'Submit' button.
+All users of SAML will have access to the ReportPortal instance.  
+Just click on the button 'Login with SAML' and choose needed integration from the drop-down
