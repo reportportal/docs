@@ -757,3 +757,9 @@ Let`s look on several use cases how you can utilize Component Health Check Widge
 > [ ![ComponentHEalthCheckWidgetversion](Images/userGuide/widgetTypes/ComponentHealthCheckTableBuild.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckTableBuild.png)
 
 
+> **Use Case:** To track information regarding components such features/browsers/ platforms/ or others**
+> **Problem:** You are running different launches API launch, UI launch and Integration launch. In these 3 launches there are test cases which belongs to different features. One feature can have test cases with different types: API, UI, Integration. You need to track overall statistics for feature, not for  a launch.
+> **Solution:** Create filter which includes 3 launches: API launch, UI launch and Integration launch. Create Component Health Check widget (table view) with this filter and add attribute key 'feature' for grouping. Now you will see summary for all feature from different launches. 
+>
+> [ ![ComponentHEalthCheckWidgetversion](Images/userGuide/widgetTypes/ComponentHealthCheckTableFeature.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckTableFeature.png)
+
