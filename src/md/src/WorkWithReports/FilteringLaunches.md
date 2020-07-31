@@ -48,8 +48,8 @@ The following values are available:
 * *Last 30 days* - shown all test items with start time Last 30 days; filter contains a dynamic value, which will be updated every day, and search launches with start time equal Last 30 days;
 * *Custom range* - shown all test items with a start time in the custom period; the user can set strict period or dynamic value (filter will be a move to one day every day, where Today (current day) is the last day in period);
 
--   **Attributes** - It is allowed to search for the attributes with at least 1 symbol in it. The system searches for launches with the specified tag(s). Several attributes may be specified. 
-You can find launches by a tag in just one click. To do this, click on a required tag under the launch name and the system will display all launches that have this tag.
+-   **Attributes** - It is allowed to search for the attributes with at least 1 symbol in it. The system searches for launches with the specified Attribute(s). Several attributes may be specified. 
+You can find launches by a Attribute in just one click. To do this, click on a required Attribute under the launch name and the system will display all launches that have this Attribute.
 This filter has the next conditions: 
 * *all ( in API: 'filter.has.Attributes')* - shown all test items which contain all specified attributes; 
 * *without all( in API:'filter.!in.Attributes')* -  shown all test items without specified attributes in any combinations;
@@ -125,12 +125,12 @@ Defect Comments "abcd", "zabc", "zabcd", "abc".
 * *equals* -  shown all test items which defect comment is absolutely equal to the specified combination;
 * *not equals* - shown all test items without items which defect comment is absolutely equal to the specified combination;
 
--   **Tags** - 1 symbol is enough for this search.
-The system searches for the items with or without a specified tag(s). Multiple tags may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
-* *all ( in API: 'filter.has.tags')* - shown all test items which contain all specified tags; 
-* *without all( in API:'filter.!in.tags')* -  shown all test items without specified tags in any combinations;
-* *any ( in API:filter.in.tags)*  - shown all test items which contain any combinations of specified tags; 
-* *without any ( in API:'filter.!has.tags')* - shown all test items without all specified tags in case, when both of tags present in the test item;
+-   **Attributes** - 1 symbol is enough for this search.
+The system searches for the items with or without a specified Attribute(s). Multiple Attributes may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
+* *all ( in API: 'filter.has.attributes')* - shown all test items which contain all specified Attributess; 
+* *without all( in API:'filter.!in.attributes')* -  shown all test items without specified Attributess in any combinations;
+* *any ( in API:filter.in.attributes)*  - shown all test items which contain any combinations of specified attributes; 
+* *without any ( in API:'filter.!has.attributes')* - shown all test items without all specified attributes in case, when both of attributes present in the test item;
 
 -   **Analysed by RP (AA)** - there are two options: With AA mark, Without AA mark.
 
