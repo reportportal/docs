@@ -53,7 +53,7 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 | Compare statistics for different builds on one graph  | [Cumulative trend chart](https://reportportal.io/docs/Cumulative-trend-chart) |
 | Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
 | Track the passing rate of different components of your application | [Component health check](https://reportportal.io/docs/Component-health-check) |
-| Track the statistics of different components of your application  | [Component health check (table)](https://reportportal.io/docs/Component-health-check) |
+| Track the statistics of different components of your application  | [Component health check (table)](https://reportportal.io/docs/Table-Component-health) |
 
 
 The template descriptions are provided below.
