@@ -862,7 +862,7 @@ To set up access with SAML:
 ```javascript 
 'Identity provider name ID*': text
 'Provider name*': text
-'Metadata URL*': text
+'Metadata URL*': URL
 'Emai attribute*': text
 'Name attributes mode' : 
 'Last name attribute' text
