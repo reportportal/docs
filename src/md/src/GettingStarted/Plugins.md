@@ -10,7 +10,8 @@ ReportPortal can be reinforced by uploading plugins. For now, you can install th
 |---|---|
 | Jira/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses| 
 |E-mail server| With this plugin, you will be able to configure notifications about test result finish in real time.|
-|SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.|
+|SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.
+|LDAP/Active directory/SAML| This plugin helps authorize without new user creation|
  
 ### Upload plugin
 
@@ -24,6 +25,7 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 | JIRA  | https://bintray.com/beta/#/epam/reportportal/plugin-bts-jira?tab=files|
 | Rally | https://bintray.com/beta/#/epam/reportportal/plugin-bts-rally?tab=files |
 | SauceLabs | https://bintray.com/beta/#/epam/reportportal/plugin-saucelabs?tab=files |
+|E-mail/LDAP/ Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
 
 
 [ ![UploadPluginVideo](Images/userGuide/gettingStarted/UploadPlugin.png) ](https://youtu.be/xR75Bdq3uaM)
@@ -96,7 +98,9 @@ Details on how to configure a specific plugin please find in the [Integration se
 *    [integration with Rally](https://reportportal.io/docs/Integrations%3Eintegration-with-rally)
 *    [integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
 *    [integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
-
+*    [integration with LDAP)[https://reportportal.io/docs/LDAP-Auth-integration]
+*    [integration with Active directory)[https://reportportal.io/docs/Active-Directory-Auth]
+*    [integration with SAML)[https://reportportal.io/docs/SAML-integration]
  
 > **Use case 1:** 
 > 
