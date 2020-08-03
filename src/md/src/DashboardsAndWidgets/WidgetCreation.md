@@ -774,6 +774,7 @@ But if you run a new version (for instance version: xxx+1), you should repeat pr
 
 
 Widget logic is the same as for https://reportportal.io/docs/Component-health-check.
+
 **Widget's parameters:**
 
 - Filter
@@ -811,6 +812,16 @@ Why you may need a custom column? Let's see it in the example.
 
 Then add to widget wizard attribute key 'priority' in the custom column field.
 So that system adds to the widget view information regarding priority to each feature.
+
+**Custom sorting*
+
+You can choose how components should be sorted in the table. 
+Possible criteria:
+
+* Total
+* Passing rate
+* Custom column
+* Failed items
 
 > **Note:** Component Health Check widget (table view) is the first widget that uses a materialized view of PostgreSQL. It takes time to create it. So that is why information about new launches in the filter adds dynamically. For that reason, a user should update a widget manually by сlicking on the update button. On the widget, a user can see the time for the last update.
 
