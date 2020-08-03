@@ -775,7 +775,7 @@ But if you run a new version (for instance version: xxx+1), you should repeat pr
 
 Widget logic is the same as for https://reportportal.io/docs/Component-health-check.
 
-https://youtu.be/d-TC4BsF8-E
+https://youtu.be/uRCpA7zivZU
 
 **Widget's parameters:**
 
