@@ -18,7 +18,7 @@
 ### 3. The database separately from other services
    Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS or a separate VM only for the PostgreSQL database.
 
-### 4. **PostgreSQL Performance Tuning**
+### 4. PostgreSQL Performance Tuning
    Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:
 
   * general and universal for any capacity of the instance hardware:
