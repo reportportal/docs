@@ -842,7 +842,10 @@ All users of LDAP will have access to the ReportPortal instance. For access to t
 
 
 ## SAML integration
- 
+
+[ ![SAML configuration](Images/userGuide/gettingStarted/SAML.png) ](https://youtu.be/ljXvCVWG4mQ) 
+
+
 To set up access with SAML:
 
 1. Login to the ReportPortal as an ADMIN user
