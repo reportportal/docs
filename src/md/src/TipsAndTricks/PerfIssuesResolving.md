@@ -1,4 +1,4 @@
-# Optimal Performance Hardware setup
+## Optimal Performance Hardware setup
 
 ### 1.  Disk I/O 
    To speed up PostgreSQL database performance, on instance strongly recommended use **SSD disk** hardware.
