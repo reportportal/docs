@@ -1,10 +1,12 @@
-# How to resolve issues with performance
+# Optimal Performance Hardware setup
 
-## 1.  Disk I/O
-   To reduce slow disk I/O and speed up PostgreSQL database performance, on instance strongly recommended use **SSD disk** hardware.
+### 1.  Disk I/O 
+   To speed up PostgreSQL database performance, on instance strongly recommended use **SSD disk** hardware.
 
-## 2. High CPU utilization 
-   Consider switching to the **CPU optimized** instances to reduce high CPU utilization of the ReportPortal service-API and speed up ReportPortal overall. For example:
+### 2. CPU utilization 
+   Consider choosing the **CPU optimized** instances to reduce high CPU utilization of the ReportPortal service-API and speed up ReportPortal overall. 
+   
+   For example:
 
   * **Azure**: Fsv2-series instances,
   * **AWS**: c5 instances.  
@@ -13,10 +15,10 @@
   
   In general, 4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM instance capacity is enough configuration setup for the small/middle-size server.
 
-## 3. The database separately from other services
+### 3. The database separately from other services
    Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS or a separate VM only for the PostgreSQL database.
 
-## 4. **PostgreSQL Performance Tuning**
+### 4. **PostgreSQL Performance Tuning**
    Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:
 
   * general and universal for any capacity of the instance hardware:
