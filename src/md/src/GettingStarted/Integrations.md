@@ -866,7 +866,7 @@ To set up access with SAML:
 'Identity provider name ID*': text
 'Provider name*': text
 'Metadata URL*': URL
-'Emai attribute*': text
+'Email attribute*': text
 'Name attributes mode' : 
 'Last name attribute' text
 'First name attribute' text
