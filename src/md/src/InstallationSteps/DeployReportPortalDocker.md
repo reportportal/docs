@@ -48,7 +48,7 @@ mkdir -p data/elasticsearch
 ``` 
 
 ```Shell
-chmod g+rwx data/elasticsearch
+chmod 777 data/elasticsearch
 ``` 
 
 ```Shell
