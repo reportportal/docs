@@ -147,12 +147,23 @@ In case you went with Docker on Windows, please make sure you changed the 'volum
 > data directory “/var/lib/postgresql/data/pgdata” has wrong ownership
 > ``` 
 
-Then uncomment the following:  
+Then uncomment the following:
+
+```Shell
+    volumes:
+     # For unix host
+     # - ./data/storage:/data 
+     # For windows host
+      - minio:/data
+ ```
+ 
+And after that uncomment the following:  
 
 ```Shell
   # Docker volume for Windows host
 volumes:
   postgres:
+  minio:
 ``` 
 
 
