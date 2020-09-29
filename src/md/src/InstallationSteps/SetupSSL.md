@@ -55,7 +55,7 @@ gateway:
       - "--entryPoints=Name:https Address::8443 Compress:true TLS"
       - --retry
       - --web
-      - --web.address=8081
+      - --web.address=:8081
       - --web.metrics=true
       - --web.metrics.prometheus=true
       - --acme.email=your_email@blabla.com
