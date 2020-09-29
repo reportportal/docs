@@ -38,7 +38,9 @@ In this case, your settings will be deleted, and integration will use global set
 
 You always can reset to the global settings.
 
-## Jira Integration  
+## Jira Integration 
+
+For Jira plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
 
 Integration with a JIRA can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and the JIRA, such as posting issues and linking issues, getting updates on their statuses. 
 
@@ -333,6 +335,9 @@ Post issue via Step view
 
 
 ## Rally Integration 
+
+For Rally plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+
 ### Global RALLY integration
 
 #### Add new global RALLY integration
@@ -714,6 +719,8 @@ After E-mail server integration adding, the configuration will be applied to all
 
 
 ## Sauce Labs integration
+
+For SauceLAbs plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
 
 ### Add Sauce Labs integrations
 
