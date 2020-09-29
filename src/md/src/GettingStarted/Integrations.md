@@ -885,3 +885,9 @@ Mandatory fields are marked with red.
 Click the 'Submit' button.
 All users of SAML will have access to the ReportPortal instance.  
 Just click on the button 'Login with SAML' and choose needed integration from the drop-down
+
+
+On Octa side you should to specify SSO url. The format for url is the next:
+```java
+https://your domain adress/uat/saml/sp/SSO/alias/report-portal-sp
+```
