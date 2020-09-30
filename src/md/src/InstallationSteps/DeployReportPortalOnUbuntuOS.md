@@ -65,11 +65,12 @@ http-proxy.conf content
    # your will see output e.g. "Hello from Docker!  ... "
 ```
 
-7. DOCKER-COMPOSE installation from PIP! (apt gives you outdated version)
+7. DOCKER-COMPOSE installation from PIP v3.x (Python PIP 2.7 is deprecated 01/01/2020)
 ```shell
-   sudo apt install python-pip
-   sudo pip install docker-compose
+   sudo apt install python3-pip
+   sudo pip3 install docker-compose
 ```
+Also you can use the [official installation guide](https://docs.docker.com/compose/install/)
 
 8. REPORTPORTAL INSTALLATION
 ```shell
