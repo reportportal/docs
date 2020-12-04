@@ -1,9 +1,11 @@
 ## Optimal Performance Hardware setup
 
 ### 1.  Disk I/O 
+
    To speed up PostgreSQL database performance, on instance strongly recommended use **SSD disk** hardware.
 
 ### 2. CPU utilization 
+
    Consider choosing the **CPU optimized** instances to reduce high CPU utilization of the ReportPortal service-API and speed up ReportPortal overall. 
    
    For example:
@@ -11,14 +13,37 @@
   * **Azure**: Fsv2-series instances,
   * **AWS**: c5 instances.  
 
-  The instance capacity(4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM etc.) should be selected regarding average reporting test-cases/day and average CPU/RAM utilization. If the CPU/RAM utilization of the ReportPortal instance up to 100% a long time daily, consider scale up the VM x2.  
-  
-  In general, 4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM instance capacity is enough configuration setup for the small/middle-size server.
+  The instance capacity(4 CPUs/8Gb RAM or 8 CPUs/16Gb RAM etc.) should be selected regarding average reporting test-cases/day and average CPU/RAM utilization. If the CPU/RAM utilization of the ReportPortal instance up to 100% a long time daily, consider scale up the VM x2.
+
+**System hardware requirements**
+
+Simple Docker installation from the box:
+
+| Server type | CPU's | RAM size, Gb | Disk space, Gb | Disk type | AWS Shape |
+| ----------- | ----- | ------------ | -------------- | ------------- | --------- |
+| Small | 4 | 8 | 300 | gp2 | c5.xlarge |
+| Middle | 8 | 16 | 500 | gp2 | c5.2xlarge |
+| Middle+ | 16 | 32 | 1000 | gp2 | c5.4xlarge |
+| Large | 32 | 64 | 2000 | gp2 | c5a.8xlarge |
+
 
 ### 3. The database separately from other services
-   Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS or a separate VM only for the PostgreSQL database.
+
+   Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS PostgreSQL Database or a separate VM only for the PostgreSQL database.
+
+   The separate database instance should be the same by CPU's and RAM, but started from middle+ server type, the database instance may need to have doubled CPU's and RAM size in comparison with the application instance.
+   This is explained by the fact that with an increase in the size of the database and the number of concurrent users, the load is distributed more on the database server: increased volume of resources(CPU, memory, IOPS number, etc.) required to performing each DB query since it handles / can handle more data volume and/or can handle of a greater number of concurrent users.
+
+Example for the middle+ server:
+
+| Instance type | CPU's | RAM size, Gb | Disk space, Gb | AWS Shape |
+| ------------- | ----- | ------------ | -------------- | --------- |
+| Application instance | 16 | 32 | 200 | c5.4xlarge |
+| Database instance | 16 | 32 | 1000 | c5.4xlarge |
+
 
 ### 4. PostgreSQL Performance Tuning
+
    Since PostgreSQL Database is used, it needs some set of special configs for the best performance. These set contains two categories:
 
   * general and universal for any capacity of the instance hardware:
@@ -45,7 +70,7 @@
     work_mem=96MB
     max_worker_processes=4
     max_parallel_workers_per_gather=2
-    max_parallel_workers=2
+    max_parallel_workers=4
     max_parallel_maintenance_workers=2
     ```  
 
@@ -101,3 +126,26 @@
    max_worker_processes = '16'
    max_parallel_workers = '16'
    ```
+
+### 5. Application connections pool tuning
+
+By default, ReportPortal has 27 connections on service-api and 27 connections in pool on service-authorization.
+In general these values are valid for the small and middle servers. But from the middle+ server type, the connection pool may be increased if it's not enough for your server load.
+
+It can be detected as periodic freezes and the "Loading" message when opening any page, and/or slowing down the work with RP after a certain period of time during active reporting and use with UI. Restarts of API and UAT services can also be observed.
+
+To increasing the connection pool on both services, need to add next environment variables to the service-api and to the service-authorization:
+
+```yaml
+RP_DATASOURCE_MAXIMUMPOOLSIZE=100
+```
+
+After increasing the connection pool from the application side, do not forget increase the max_connections from the Database side, using following DB configuration paramether:
+
+```yaml
+max_connections=500
+```
+
+*The values of these parameters are given for example only, but in general, can be valid for all types of loads for servers middle+ and large.*
+
+Please note, that the max_connections paramether must be more than the sum of the RP_DATASOURCE_MAXIMUMPOOLSIZE for the API and the UAT services + several connections for connecting to the database from outside.
