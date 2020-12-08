@@ -24,6 +24,7 @@
 | Small | 4 | 8 | 300 | gp2 | c5.xlarge |
 | Middle | 8 | 16 | 500 | gp2 | c5.2xlarge |
 | Middle+ | 16 | 32 | 1000 | gp2 | c5.4xlarge |
+| Large | 32 | 64 | 2000 | gp2 | c5a.8xlarge |
 <br/>
 
    Kubernetes:
@@ -41,6 +42,14 @@
 
    <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
+
+   ---
+**NOTE**
+
+The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
+
+---
+<br/>
 
 ### 3. The database separately from other services<br/>
 
