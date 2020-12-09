@@ -717,6 +717,28 @@ After E-mail server integration adding, the configuration will be applied to all
 
 >**Note:** In case you unlink your project settings from Global settings, for the chosen project
 
+**A possibility to provide custom host in links** (started from 5.4 version)
+
+You can make this operation via API. 
+For that just choose an API call Integration controller - Update project integration instance, and provide a link to your host in the field  ' "rpHost": "custom_link.com" '' 
+
+```javascript
+PUT/v1/integration/{projectName}/{integrationId}
+
+{
+ "enabled": true,
+ "integrationParameters": {
+ "protocol": "smtp",
+ "rpHost": "custom_link.com",
+ "authEnabled": true,
+ "port": "",
+ "sslEnabled": false,
+ "starTlsEnabled": true,
+ "host": "smtp.com",
+ "username": ""
+ }
+}
+```
 
 ## Sauce Labs integration
 
