@@ -17,7 +17,7 @@
 
 **System hardware requirements**
 
-Simple Docker installation from the box:
+   Simple Docker installation from the box:
 
 | Server type | CPU's | RAM size, Gb | Disk space, Gb | Disk type | AWS Shape |
 | ----------- | ----- | ------------ | -------------- | ------------- | --------- |
@@ -25,9 +25,33 @@ Simple Docker installation from the box:
 | Middle | 8 | 16 | 500 | gp2 | c5.2xlarge |
 | Middle+ | 16 | 32 | 1000 | gp2 | c5.4xlarge |
 | Large | 32 | 64 | 2000 | gp2 | c5a.8xlarge |
+<br/>
 
+   Kubernetes:
+    
+| Server type | EKS Nodes |                           |               |           | Amazon RDS for PostgreSQL |               |       |               |           |          | Additional Volumes (GB) |    | Monthly   | Yearly     |
+|-------------|:---------:|--------------------------:|---------------|:---------:|:-------------------------:|---------------|-------|---------------|-----------|----------|-------------------------|----|-----------|------------|
+|    Small    |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type |  IOPS | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $404.95   | $4,859.40  |
+|             |     3     |          m5.large         |       50      |    gp2    |             1             |  db.m5.large  |   -   |      300      |    gp2    |    no    |           140           | 50 |           |            |
+|    Middle   |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type |  IOPS | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $1,233.59 | $14,803.08 |
+|             |     3     |         c5.xlarge         |       50      |    gp2    |             1             |  db.m5.xlarge |   -   |      500      |    gp2    |    no    |           300           | 50 |           |            |
+|   Middle+   |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type | IOPS* | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $2,452.61 | $29,431.32 |
+|             |     3     |         c5.xlarge         |       50      |    gp2    |             1             | db.m5.2xlarge |   -   |      1000     |    gp2    |    yes   |           500           | 50 |           |            |
+|    Large    |   Count   |       Instance type       | Disk size(GB) | Disk type |          Count**          | Instance type | IOPS* | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $3,188.79 | $38,265.48 |
+|             |     3     |         c5.2xlarge        |       50      |    gp2    |             1             | db.m5.4xlarge |   -   |      2500     |    gp2    |    yes   |           1000          | 50 |           |            |<br/>
 
-### 3. The database separately from other services
+   <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
+   ***Replica*
+
+   ---
+**NOTE**
+
+The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
+
+---
+<br/>
+
+### 3. The database separately from other services<br/>
 
    Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS PostgreSQL Database or a separate VM only for the PostgreSQL database.
 
@@ -40,7 +64,7 @@ Example for the middle+ server:
 | ------------- | ----- | ------------ | -------------- | --------- |
 | Application instance | 16 | 32 | 200 | c5.4xlarge |
 | Database instance | 16 | 32 | 1000 | c5.4xlarge |
-
+<br/>
 
 ### 4. PostgreSQL Performance Tuning
 
