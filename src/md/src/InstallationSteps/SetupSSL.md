@@ -1,11 +1,10 @@
-## Setup SSL
+## Setup TLS/SSL in Traefik 2.0.x
 
-This is a short guideline that provides information on how to configure ReportPortal to use Let SSL certificate setup for your existing ReportPortal environment.
+This is a short guideline that provides information on how to configure ReportPortal to use Let TLS/SSL certificate setup for your existing ReportPortal environment.
 
 #### Overview
 
-We use Traefik as a layer-7 load balancer with SSL termination for the set of micro-services used to run ReportPortal web application.
-In addition, we use Let's Encrypt to automatically generate and renew SSL certificates per hostname.
+We use Traefik as a layer-7 load balancer with TLS/SSL termination for the set of micro-services used to run ReportPortal web application.
 
 #### Pre-requisites
 
@@ -13,109 +12,142 @@ In addition, we use Let's Encrypt to automatically generate and renew SSL certif
 - Installed ReportPortal on this servers
 - Your own domain and the DNS configured accordingly so the hostname records
 
-#### Traefik configuration
+#### Configuration
 
-Provided below is an example of using Traefik (gateway service) in docker-compose.yml. If you don't have any custom configurations, you are free to use the example below.  
+Provided below is an example of using Traefik (gateway service) in docker-compose.yaml. If you don't have any custom configurations, you are free to use the example below.
 
-First of all, please create a folder on the server as a start point to configure Traefik:  
+1. Create a directory on the server for Traefik data and storing certificates:
 
-```
-mkdir -p data/traefik
-```
-
-Create an empty `acme.json` file within this folder:  
-
-```
-touch data/traefik/acme.json && chmod 600 data/traefik/acme.json
+```bash
+mkdir data/traefik/ && mkdir -p data/certs/traefik
 ```
 
-Apply the following values in your `docker-compose.yml` file:  
+Check:
 
-> Do not forget to update 'acme.email' and 'acme.domains' variables with your own values
+```bash
+data
+|-- certs
+|-- elasticsearch
+|-- postgres
+|-- traefik
+```
 
-```$xslt
-gateway:
-    image: traefik:1.7.12
+2. Create config file for Traefik with certificate and key path.
+
+```bash
+cat << EOF | tee -a data/traefik/certs-traefik.yaml
+tls:
+  certificates:
+    - certFile: /etc/certs/examplecert.crt
+      keyFile: /etc/certs/examplecert.key
+EOF
+```
+ 
+3. Place certificate `examplecert.crt` and key `examplecert.key` to directory `data/certs/traefik/` you created earlier.
+
+4. Edit Traefik service in the `docker-compose.yaml`
+
+Add the following volumes to Traefik:
+
+```yaml
+services:
+  gateway:
+    volumes:
+      - "./data/traefik/dynamic/certs-traefik.yaml:/etc/traefik/dynamic/certs-traefik.yaml"
+      - "./data/certs/traefik:/etc/certs/"
+```
+
+commands:
+
+```yaml
+services:
+  gateway:
+    commands:
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--entrypoints.websecure.address=:443"
+```
+
+and ports:
+
+```yaml
+services:
+  gateway:
+    ports:
+      - "443:443"
+```
+
+Check the Traefik part:
+
+```yaml
+version: '2.4'
+services:
+
+  gateway:
+    image: traefik:v2.0.5
     ports:
       - "8080:8080" # HTTP exposed
-      - "8443:8443" # HTTP exposed
       - "8081:8081" # HTTP Administration exposed
+      - "443:443"   # TLS/SSL
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data/traefik/acme.json:/acme.json
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./data/traefik/dynamic/certs-traefik.yaml:/etc/traefik/dynamic/certs-traefik.yaml"
+      - "./data/certs/traefik:/etc/certs/"     
     command:
-      - --logLevel=ERROR
-      - --docker
-      - --docker.watch
-      - --docker.constraints=tag==v5
-      - --docker.endpoint=unix:///var/run/docker.sock
-      - --docker.domain=mydomain.com
-      - --defaultentrypoints=http,https
-      - "--entryPoints=Name:http Address::8080 Redirect.EntryPoint:https"
-      - "--entryPoints=Name:https Address::8443 Compress:true TLS"
-      - --retry
-      - --web
-      - --web.address=:8081
-      - --web.metrics=true
-      - --web.metrics.prometheus=true
-      - --acme.email=your_email@blabla.com
-      - --acme.storage=acme.json
-      - --acme.onHostRule=true
-      - --acme.entrypoint=https
-      - --acme.httpchallenge.entrypoint=http
-      - --acme.domains=mydomain.com,www.mydomain.com
-
-    restart: always
-   ```
-
-In case you want to go with the standart http/https ports, please use following configuration:  
-
-
-```$xslt
-gateway:
-    image: traefik:1.7.12
-    ports:
-      - "80:80" # HTTP exposed
-      - "443:443" # HTTP exposed
-      - "8081:8081" # HTTP Administration exposed
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data/traefik/acme.json:/acme.json
-    command:
-      - --logLevel=ERROR
-      - --docker
-      - --docker.watch
-      - --docker.constraints=tag==v5
-      - --docker.endpoint=unix:///var/run/docker.sock
-      - --docker.domain=mydomain.com
-      - --defaultentrypoints=http,https
-      - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
-      - "--entryPoints=Name:https Address::443 Compress:true TLS"
-      - --retry
-      - --web
-      - --web.address=8081
-      - --web.metrics=true
-      - --web.metrics.prometheus=true
-      - --acme.email=your_email@blabla.com
-      - --acme.storage=acme.json
-      - --acme.onHostRule=true
-      - --acme.entrypoint=https
-      - --acme.httpchallenge.entrypoint=http
-      - --acme.domains=mydomain.com,www.mydomain.com
-
+      - "--providers.docker=true"
+      - "--providers.docker.constraints=Label(`traefik.expose`, `true`)"
+      - "--entrypoints.web.address=:8080"
+      - "--entrypoints.traefik.address=:8081"
+      - "--api.dashboard=true"
+      - "--api.insecure=true"
+      # TLS/SSL
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--entrypoints.websecure.address=:443"
     restart: always
 ```
-   
-This is the minimum configuration required to do the following:
 
-1) Log ERROR-level messages (or more severe) to the console, but silence DEBUG-level messages
-2) Check for new versions of Traefik periodically
-3) Create two entry points, namely an HTTP endpoint on port 80, and an HTTPS endpoint on port 443 where all incoming traffic on port 80 will immediately get redirected to HTTPS.
-4) Enable the Docker provider and listen for container events on the Docker unix socket we've mounted earlier. However, new containers will not be exposed by Traefik by default, we'll get into this in a bit!
-5) Enable automatic request and configuration of SSL certificates using Let's Encrypt. These certificates will be stored in the acme.json file, which you can back-up yourself and store off-premises.
+5. Add the following labels to existing services `api`, `uat`, `index`, `ui`  and replacing `<service>` with the corresponding services names
 
-IMPORTANT NOTE: You need to make sure that the required ports are opened, please check your firewall settings.  
+```yaml
+labels:
+  - "traefik.http.routers.<service>.tls=true"
+```
 
-With this simple configuration, you get:
-* HTTP redirect on HTTPS
-* Let's Encrypt support
+Check the UI and API services as an expample:
+
+```yaml
+version: '2.4'
+services:
+
+  ui:
+    image: reportportal/service-ui:5.3.4
+    environment:
+      - RP_SERVER_PORT=8080
+    labels:
+      - "traefik.http.middlewares.ui-strip-prefix.stripprefix.prefixes=/ui"
+      - "traefik.http.routers.ui.middlewares=ui-strip-prefix@docker"
+      - "traefik.http.routers.ui.rule=PathPrefix(`/ui`)"
+      - "traefik.http.routers.ui.service=ui"
+      - "traefik.http.services.ui.loadbalancer.server.port=8080"
+      - "traefik.http.services.ui.loadbalancer.server.scheme=http"
+      - "traefik.expose=true"
+      - "traefik.http.routers.ui.tls=true" # label is here
+    restart: always
+```
+
+**NOTE**: You need to make sure that the required ports are opened, please check your firewall settings.
+
+
+---
+### Issues
+
+#### Unable to find valid certification path to requested target
+
+```java
+Feb-2 00:00:00.000 [rp-io-1] ERROR Launch - [18] ReportPortal execution error
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+```
+
+Solutions:
+
+1. **Recomended**. Add certificate to Java-machine
+2. **Not recommended**. [Ignoring SSL certificate](https://stackoverflow.com/questions/19517538/ignoring-ssl-certificate-in-apache-httpclient-4-3/34991729)
