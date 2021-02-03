@@ -136,6 +136,11 @@ services:
 
 **NOTE**: You need to make sure that the required ports are opened, please check your firewall settings.
 
+### Helpful links
+
+1. [Traefik HTTPS&TLS Offical documentation](https://doc.traefik.io/traefik/https/tls/)
+2. [Traefik 2 & TLS 101](https://traefik.io/blog/traefik-2-tls-101-23b4fbee81f1/)
+3. [Traefik Routing TLS](https://doc.traefik.io/traefik/routing/routers/#tls)
 
 ---
 ### Issues
