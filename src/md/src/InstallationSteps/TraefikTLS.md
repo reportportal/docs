@@ -1,4 +1,4 @@
-## Setup TLS/SSL in Traefik 2.0.x
+## Setup TLS(SSL) in Traefik 2.0.x
 
 This is a short guideline that provides information on how to configure ReportPortal to use Let TLS/SSL certificate setup for your existing ReportPortal environment.
 
@@ -16,7 +16,7 @@ We use Traefik as a layer-7 load balancer with TLS/SSL termination for the set o
 
 Provided below is an example of using Traefik (gateway service) in docker-compose.yaml. If you don't have any custom configurations, you are free to use the example below.
 
-1. Create a directory on the server for Traefik data and storing certificates:
+##### Create a directory on the server for Traefik data and storing certificates
 
 ```bash
 mkdir data/traefik/ && mkdir -p data/certs/traefik
@@ -32,7 +32,7 @@ data
 |-- traefik
 ```
 
-2. Create config file for Traefik with certificate and key path.
+##### Create config file for Traefik with certificate and key path.
 
 ```bash
 cat << EOF | tee -a data/traefik/certs-traefik.yaml
@@ -43,9 +43,9 @@ tls:
 EOF
 ```
  
-3. Place certificate `examplecert.crt` and key `examplecert.key` to directory `data/certs/traefik/` you created earlier.
+##### Place certificate `examplecert.crt` and key `examplecert.key` to directory `data/certs/traefik/` you created earlier.
 
-4. Edit Traefik service in the `docker-compose.yaml`
+##### Edit Traefik service in the `docker-compose.yaml`
 
 Add the following volumes to Traefik:
 
@@ -105,7 +105,7 @@ services:
     restart: always
 ```
 
-5. Add the following labels to existing services `api`, `uat`, `index`, `ui`  and replacing `<service>` with the corresponding services names
+##### Add the following labels to existing services `api`, `uat`, `index`, `ui`  and replacing `<service>` with the corresponding services names
 
 ```yaml
 labels:
