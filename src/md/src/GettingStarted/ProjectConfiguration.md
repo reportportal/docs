@@ -21,7 +21,7 @@ The project settings are divided into five tabs: "General", "Integrations", "Not
 Report Portal allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
 
-The first one is API service back-end environment variables that are described in [Report Portal jobs configuration](https://reportportal.io/docs/ReportPortalJobs)
+The first one is API service back-end environment variables that are described in [Report Portal jobs configuration](https://reportportal.io/docs/Report-Portal-jobs)
 
 The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
