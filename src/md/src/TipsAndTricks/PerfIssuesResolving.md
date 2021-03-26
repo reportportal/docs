@@ -28,22 +28,12 @@
 <br/>
 
    Kubernetes:
-    
-| Server type | EKS Nodes |                           |               |           | Amazon RDS for PostgreSQL |               |       |               |           |          | Additional Volumes (GB) |    | Monthly   | Yearly     |
-|-------------|:---------:|--------------------------:|---------------|:---------:|:-------------------------:|---------------|-------|---------------|-----------|----------|-------------------------|----|-----------|------------|
-|    Small    |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type |  IOPS | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $404.95   | $4,859.40  |
-|             |     3     |          m5.large         |       50      |    gp2    |             1             |  db.m5.large  |   -   |      300      |    gp2    |    no    |           140           | 50 |           |            |
-|    Middle   |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type |  IOPS | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $1,233.59 | $14,803.08 |
-|             |     3     |         c5.xlarge         |       50      |    gp2    |             1             |  db.m5.xlarge |   -   |      500      |    gp2    |    no    |           300           | 50 |           |            |
-|   Middle+   |   Count   |       Instance type       | Disk size(GB) | Disk type |           Count           | Instance type | IOPS* | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $2,452.61 | $29,431.32 |
-|             |     3     |         c5.xlarge         |       50      |    gp2    |             1             | db.m5.2xlarge |   -   |      1000     |    gp2    |    yes   |           500           | 50 |           |            |
-|    Large    |   Count   |       Instance type       | Disk size(GB) | Disk type |          Count**          | Instance type | IOPS* | Disk size(GB) | Disk type | Multi AZ |          MinIO          | ES | $3,188.79 | $38,265.48 |
-|             |     3     |         c5.2xlarge        |       50      |    gp2    |             1             | db.m5.4xlarge |   -   |      2500     |    gp2    |    yes   |           1000          | 50 |           |            |<br/>
+   [ ![Kubernetes_server_types.png](Images/Kubernetes_server_types.png) ](Images/Kubernetes_server_types.png)
 
-   <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
+<br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
 
-   ---
+---
 **NOTE**
 
 The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
@@ -188,6 +178,24 @@ Example for the middle+ server:
    ```
 
    If the PostgreSQL database and services are deployed on the separate VM’s, the "effective_cache_size" parameter should be changed to "12GB"(total RAM size - shared_buffers size).
+
+   **Simple ways to set these parameters:**
+   
+   CPU’s count related:
+
+   ```yaml
+   max_worker_processes = <DB instance CPU’s count>
+   max_parallel_workers_per_gather = <DB instance CPU’s count / 2>
+   max_parallel_workers = <DB instance CPU’s count>
+   max_parallel_maintenance_workers = <DB instance CPU’s count / 2>
+   ```
+
+   RAM size related:
+   ```yaml
+   shared_buffers = <DB instance RAM size in GB / 4>
+   effective_cache_size = <DB instance RAM size in GB - shared_buffers>
+   maintenance_work_mem = < if total RAM size > 16 Gb – 2Gb; under 16Gb – 1Gb and less>
+   ```
 
    For the **docker-compose:** add the following lines to the *command* section by the “-c” option to *“postgres”* service.
 
