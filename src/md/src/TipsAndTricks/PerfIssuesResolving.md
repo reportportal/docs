@@ -28,7 +28,7 @@
 <br/>
 
    Kubernetes:
-   [ ![Kubernetes_server_types.png](Images/Kubernetes_server_types.png) ](Images/Kubernetes_server_types.png)
+   [ ![Image](Images/Kubernetes_server_types.png) ](Images/Kubernetes_server_types.png)
 
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
@@ -112,7 +112,8 @@ Example for the middle+ server:
    ```
 
    If the PostgreSQL database and services are deployed on the separate VM’s, the "effective_cache_size" parameter should be changed to "12GB"(total RAM size - shared_buffers size).
-
+   
+   <br/>
    **Simple ways to set these parameters:**
    
    CPU’s count related:
