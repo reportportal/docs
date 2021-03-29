@@ -28,7 +28,7 @@
 <br/>
 
    Kubernetes:
-   ![Image](https://github.com/reportportal/documentation/blob/master/src/Images/Kubernetes_server_types.png "Kubernetes server types")
+   ![Kubernetes server types](Images/Kubernetes_server_types.png)
 
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
