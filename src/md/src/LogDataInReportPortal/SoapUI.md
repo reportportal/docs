@@ -27,20 +27,7 @@ The Keystore to access the RP is available [here](#user-profile). Please place i
 
 **Option 2: Via the Maven Plugin in the external automation**
 
-Add the following repository to your pom.xml.
-
-```xml
-     <repository>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-        <id>bintray-epam-reportportal</id>
-        <name>bintray</name>
-        <url>http://dl.bintray.com/epam/reportportal</url>
-     </repository>
-```
-
-Then add the dependency XML (please check latest available version under specified artifactory and use it instead provided):
+Add the dependency XML (please check latest available version under specified artifactory and use it instead provided):
 
 ```xml
 <dependency>
