@@ -4,20 +4,20 @@
 1) add this library to your project as dependency
    * SBT
     >
-    >      libraryDependencies += "com.epam.reportportal" %% "agent-scala-scalatest" % "2.6.0" % "test"
+    >      libraryDependencies += "com.epam.reportportal" %% "agent-scala-scalatest" % "5.0.4" % "test"
     >
 
    * Maven
     >      <dependency>
     >        <groupId>com.epam.reportportal</groupId>
-    >        <artifactId>agent-scala-scalatest_2.11</artifactId>
-    >        <version>2.6.0</version>
+    >        <artifactId>agent-scala-scalatest_2.13</artifactId>
+    >        <version>5.0.4</version>
     >        <scope>test</scope>
     >      </dependency>
 
    * Gradle
     >
-    >      testCompile group: 'com.epam.reportportal', name: 'agent-scala-scalatest_2.11', version: '2.6.0'
+    >      testCompile group: 'com.epam.reportportal', name: 'agent-scala-scalatest_2.13', version: '5.0.4'
     >
 
 2) Add your reportportal.properties file to test/resources (See Configuration section)
@@ -36,22 +36,12 @@
    ```groovy
    args = ['-C', 'com.epam.reportportal.scalatest.RPReporter']
    ```
-4) define bintray repository
-   * _sbt_
-     ```scala
-       resolvers ++= Seq(
-         "EPAM bintray" at "http://dl.bintray.com/epam/reportportal"
-       )
-     ```
-   * _maven_  
-      [Resolving Artifacts](https://bintray.com/docs/usermanual/formats/formats_mavenrepositories.html#anchorMavenResolve)  
-      URL parameter is https://dl.bintray.com/epam/reportportal/
+4) define repository
+   * _maven, sbt_: included by default
    * _gradle_
      ```groovy
      repositories {
-         jcenter()
-         mavenLocal()
-         maven { url "http://dl.bintray.com/epam/reportportal" }
+         mavenCentral()
      }
     ```
 
