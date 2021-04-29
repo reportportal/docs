@@ -18,13 +18,13 @@ ReportPortal can be reinforced by uploading plugins. For now, you can install th
 **Permissions:**
 Only ADMINISTRATOR can upload plugin.
 
-You can find the latest version of all ReportPortal plugins by the [link](https://bintray.com/beta/#/epam/reportportal/). Type “plugin” in the field Search and you will see all available plugins.  Then you should download the latest version of a needed plugin.  Or you can use a direct link to the needed plugin from the table below.
+You can find the latest version of all ReportPortal plugins by the [link](https://search.maven.org/search?q=g:com.epam.reportportal%20plugin). Then you should download the latest version of a needed plugin. Or you can use a direct link to the needed plugin from the table below.
 
 |Plugin  | Link to download |
 | ------------- | ------------- |
-| JIRA  | https://bintray.com/beta/#/epam/reportportal/plugin-bts-jira?tab=files|
-| Rally | https://bintray.com/beta/#/epam/reportportal/plugin-bts-rally?tab=files |
-| SauceLabs | https://bintray.com/beta/#/epam/reportportal/plugin-saucelabs?tab=files |
+| JIRA  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira |
+| Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally |
+| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs |
 |E-mail/LDAP/ Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
 
 
