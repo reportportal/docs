@@ -1,4 +1,4 @@
-# How to use PG_REPACK on ReportPortal database
+# How to clean up the ReportPortal database using PG_REPACK
 
 ## Description
 
