@@ -34,6 +34,6 @@ result: 0 Success
 # numEntries: 1
 ```
 
+**Hints**
 
-### Hints
 If you are using docker you can also use the internal container IP  `docker inspect -f '\{{range .NetworkSettings.Networks}}\{{.IPAddress}}\{{end}}' <LDAP container name>`
