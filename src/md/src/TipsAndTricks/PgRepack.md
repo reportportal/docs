@@ -1,10 +1,10 @@
-# How to clean up the ReportPortal database using PG_REPACK
+## How to clean up the ReportPortal database using PG_REPACK
 
-## Description
+### Description
 
 [pg_repack](https://reorg.github.io/pg_repack/) is a PostgreSQL extension that lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes. Unlike CLUSTER and VACUUM FULL it works online, without holding an exclusive lock on the processed tables during processing. pg_repack is efficient to boot, with performance comparable to using CLUSTER directly.
 
-## Performance 
+### Performance 
 
 |Initial Database Size|Final Database Size|Repack duration|Duration|
 |---------------------|-------------------|---------------|--------|
@@ -13,7 +13,7 @@
 Overall pg_repack performance has been tested during load tests running and without. The database load during pg_repack is pretty good by capacity and instance  
 High DB RAM Utilization faced at the pr_repack starting, but then the overall RAM Usage becomes normal. During reporting(load tests running) faced small response times and throughput degradation around 10 minutes, but then they became a regular performance. Also, no KO requests during reporting and pg_repack run in parallel, so that all Staging pg_repack configuration can be safely porting to Production.
 
-### Detailed DB Resource Utilization Stats
+#### Detailed DB Resource Utilization Stats
 
 |Resources         |Used           |
 |------------------|---------------|
@@ -21,11 +21,11 @@ High DB RAM Utilization faced at the pr_repack starting, but then the overall RA
 |CPU IOwait        |7%             |
 |Disk IO Read/Write|1800/30000 IOPS|
 
-## PG_REPACK installation
+### PG_REPACK installation
 
 To install PG_REPACK use the guide from the official [GitHub page](https://reorg.github.io/pg_repack/). If you use Amazon RDS follow the [link](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html#Appendix.PostgreSQL.CommonDBATasks.pg_repack)
 
-## PG_REPACK usage
+### PG_REPACK usage
 
 * Attach to Screen session:
 
