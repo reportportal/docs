@@ -36,4 +36,4 @@ result: 0 Success
 
 
 ### Hints
-If you are using docker you can also use the internal container IP  `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <LDAP container name>`
+If you are using docker you can also use the internal container IP  `docker inspect -f '\{{range .NetworkSettings.Networks}}\{{.IPAddress}}\{{end}}' <LDAP container name>`
