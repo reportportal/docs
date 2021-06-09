@@ -55,7 +55,7 @@ To create a project, please refer to [Creation of project and adding users](/doc
 
 ### Modify project settings
 
-To modify project settings please refer to [Project Configuration](/docs/Getting Started/Project Configuration)
+To modify project settings please refer to [Project Configuration](https://reportportal.io/docs/Project-configuration)
 
 ### Add user on All Projects' "Members" page
 
