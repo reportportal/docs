@@ -54,6 +54,7 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 | Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
 | Track the passing rate of different components of your application | [Component health check](https://reportportal.io/docs/Component-health-check) |
 | Track the statistics of different components of your application  | [Component health check (table)](https://reportportal.io/docs/Table-Component-health) |
+| Track the top-20 tests with longest execution time| [Most time-consuming test cases widget (TOP-20)](https://reportportal.io/docs/Time-Consuming-Tests)
 
 
 The template descriptions are provided below.
@@ -829,4 +830,46 @@ Possible criteria:
 
 > **Note:** Component Health Check widget (table view) is the first widget that uses a materialized view of PostgreSQL. It takes time to create it. So that is why information about new launches in the filter adds dynamically. For that reason, a user should update a widget manually by сlicking on the update button. On the widget, a user can see the time for the last update.
 
+
+## Most time-consuming test cases widget (TOP-20)
+
+Show the TOP 20 test cases with the highest duration in the last execution of the specified launch. 
+
+**Widget's parameters:**
+
+- Test Status. Default value - Passed, Failed
+
+- Launch name. Is required
+
+- Include /Exclude  Before and After methods
+
+- View options: Bar view, Table view
+- 
+
+**Widget view**
+
+Table View
+
+The widget has a table view with the following data displayed:
+
+- Test Item name - link to the log of the last launch
+
+- Test Status
+
+- Test Duration
+
+- Test Start Time  - date and time of the last run, displayed in 'time ago' format (i.e. "10 minutes ago").
+
+On mouse hover, the system will display accurate start times.
+
+
+Bar View
+
+Bar chart where:
+
+- axis OY - Tests 
+- axsic OX - Duration 
+
+Bar color specifies a color of execution.
+On mouse hover, the system will display accurate start times.
 
