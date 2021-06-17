@@ -4650,6 +4650,10 @@ easy-to-use way of displaying and analyzing your automation trends and data.</p>
 <td>Track the statistics of different components of your application</td>
 <td><a href="https://reportportal.io/docs/Table-Component-health">Component health check (table)</a></td>
 </tr>
+<tr>
+<td>Track the top-20 tests with longest execution time</td>
+<td><a href="https://reportportal.io/docs/Most-time-consuming-test-cases-widget-top-20">Most time-consuming test cases widget (TOP-20)</a></td>
+</tr>
 </tbody>
 </table>
 <p>The template descriptions are provided below.</p>
@@ -5230,6 +5234,43 @@ Possible criteria:</p>
 <blockquote>
 <p><strong>Note:</strong> Component Health Check widget (table view) is the first widget that uses a materialized view of PostgreSQL. It takes time to create it. So that is why information about new launches in the filter adds dynamically. For that reason, a user should update a widget manually by сlicking on the update button. On the widget, a user can see the time for the last update.</p>
 </blockquote>
+<h2 id="most-time-consuming-test-cases-widget-top-20-">Most time-consuming test cases widget (TOP-20)</h2>
+<p>Show the TOP 20 test cases with the highest duration in the last execution of the specified launch. </p>
+<p><strong>Widget&#39;s parameters:</strong></p>
+<ul>
+<li><p>Test Status. Default value - Passed, Failed</p>
+</li>
+<li><p>Launch name. Is required</p>
+</li>
+<li><p>Include /Exclude  Before and After methods</p>
+</li>
+<li><p>View options: Bar view, Table view</p>
+</li>
+<li></li>
+</ul>
+<p><strong>Widget view</strong></p>
+<p>Table View</p>
+<p>The widget has a table view with the following data displayed:</p>
+<ul>
+<li><p>Test Item name - link to the log of the last launch</p>
+</li>
+<li><p>Test Status</p>
+</li>
+<li><p>Test Duration</p>
+</li>
+<li><p>Test Start Time  - date and time of the last run, displayed in &#39;time ago&#39; format (i.e. &quot;10 minutes ago&quot;).</p>
+</li>
+</ul>
+<p>On mouse hover, the system will display accurate start times.</p>
+<p>Bar View</p>
+<p>Bar chart where:</p>
+<ul>
+<li>axis OY - Tests </li>
+<li>axsic OX - Duration </li>
+</ul>
+<p>Bar color specifies a color of execution.
+On mouse hover, the system will display accurate start times.</p>
+<p><a href="https://youtu.be/uRCpA7zivZU"> ![MostTimeConsuming]</a><a href="https://youtu.be/EpX238egj9k">https://youtu.be/EpX238egj9k</a></p>
 
   <div data-js-md-path="src/computeds/md/src/DashboardsAndWidgets/WidgetCreation.md"></div>
   <h2 id="manage-widgets">Manage Widgets</h2>
