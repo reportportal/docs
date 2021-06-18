@@ -825,6 +825,7 @@ To set up access with Active Directory:
 'Email attribute*': text
 'Full name attribute' : text
 'Photo attribute' : text
+'UserSearchFilter' (the same as for LDAP): text 
   ```
 
 Mandatory fields are marked with red. 
