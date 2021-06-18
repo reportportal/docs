@@ -874,6 +874,9 @@ Bar color specifies a color of execution.
 On mouse hover, the system will display accurate start times.
 
 
+[ ![MostTimeConsuming](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetBar.png) ](https://youtu.be/tYaPUW9Uwmk)
 
-[ ![MostTimeConsuming]](https://youtu.be/tYaPUW9Uwmk)
+
+
+[ ![MostTimeConsuming Table]](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png)](Images/userGuide/widgetTypes/TheMostTimeConsumingTestCasesWidgetTable.png)
 
