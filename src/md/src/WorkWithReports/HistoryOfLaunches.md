@@ -187,7 +187,7 @@ The system adds the latest executions from filter 'Version 2' and you will be ab
 The historical line of executions represents the statuses of the current test case in history.
 
 You can see the historical line of executions at the Log level. History is shown only for the 
-current item and there are 10 items max in history. 
+current item and there are 30 items max in history. 
 You can click on the item in the history and check the results in previous executions, read 
 the comments, find the bugs, posted to this fail.
 This feature will save you time and help you to understand the reason for your failure.
@@ -200,10 +200,6 @@ History line has the following color scheme:
 
  * Green - passed. Contains only execution number
 
- * White with cross symbol - absent in particular run
-
- * Orange - a few items with the same name are present
-
  * Animated - still without state [in progress]
 
 You can mark the current method or case with a defect type, and write a comment
@@ -212,10 +208,32 @@ using the defect editor block.
 To come into a certain execution of an appropriate launch, hit a launch number 
 above the item.
 
-[ ![Image](Images/userGuide/historyExecution/historicalLine.png) ](https://youtu.be/cmpORmbGAds)
-
 Also on a History line, you can see an "i" label, it means that the item with this label has a defect comment or/and a link to the Bug Tracking System.
 
+#### History across All launches
+By default system shows history across Launches with the same name.
+
+But you can choose option "History across All Launches" and system will show you executions of the test cases which have been executed in launches with different names.
+
+On hover user can find launch name of test and all launch attributes.
+
+#### Duration fluctuation
+
+If test execution has duration growth in comparison with previous run, the system marks such items with red triangles:
+
+No duration growth - 0 triangles
+duration growh from 0 to 20% - 1 triangles
+duration growh from 21% - 50% - 2 trianges 
+duration growh from 51% - 100% - 3 trianges 
+duration growh from 101% and higher - 4 trianges 
+
+#### Load more History
+
+By default the system shows 12 latest executions. If you need more history you can click on the button "Load more 9 items and the system loaded more executions on history line. Max number of items on History line is 30 executions. 
+
+User can move on History line using horizontal scroll.
+
+[ ![Image](Images/userGuide/historyExecution/HistoryLineToolTip.png) ](https://www.youtube.com/watch?v=P0S1zElmWx0)
 
 ### Test Item actions history
 
