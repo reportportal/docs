@@ -54,7 +54,7 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 | Track the most popular failure reasons in the build  | [Most popular pattern table (TOP-20)](https://reportportal.io/docs/Most-popular-pattern)  |
 | Track the passing rate of different components of your application | [Component health check](https://reportportal.io/docs/Component-health-check) |
 | Track the statistics of different components of your application  | [Component health check (table)](https://reportportal.io/docs/Table-Component-health) |
-| Track the top-20 tests with longest execution time| [Most time-consuming test cases widget (TOP-20)](https://reportportal.io/docs/Most-time-consuming-test-cases-widget-top-20)
+| Track the top-20 tests with longest execution time| [Most time-consuming test cases widget (TOP-20)](https://reportportal.io/docs/Most-time-consuming-test)|
 
 
 The template descriptions are provided below.
@@ -875,5 +875,5 @@ On mouse hover, the system will display accurate start times.
 
 
 
-[ ![MostTimeConsuming]](https://youtu.be/uRCpA7zivZU)https://youtu.be/EpX238egj9k
+[ ![MostTimeConsuming]]()
 
