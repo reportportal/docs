@@ -136,10 +136,16 @@ The system searches for the items with or without a specified Attribute(s). Mult
 
 -   **Ignored in AA** -  there are two options: With Ignore mark, Without ignoring mark.
 
--   **Issue in BTS** - there are two options: Linked bug, No linked bug.
+-   **Issue in BTS** - there are two options: 1 symbol is enough for autocomplete.
+The system searches for the items with or without a specified Issue in BTS. Multiple Issues may be specified at once. The following filtering conditions are available:  ALL/ANY and WITHOUT ALL/WITHOUT ANY.
+* *all (has)* - shown all test items which contain all specified Issues; 
+* *without all(!has)* -  shown test items without all specified Issies in any combinations;
+* *any (in)* - shown all test items which contain any combinations of specified Issues; 
+* *without any (!in)* - shown all test items without any specified Issues
 
 - **Pattern name** - all patterns names, which a PM creates on Project Settings 
 
 - **Has retries/Hasn't retries** - there are two options: Has retries/ No retries.
+
 
 [ ![Image](Images/userGuide/filteringLaunches/stepLevelFilters.png) ](https://youtu.be/S4aViEIurn4)
