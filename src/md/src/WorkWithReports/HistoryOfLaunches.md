@@ -222,10 +222,15 @@ On hover user can find launch name of test and all launch attributes.
 If test execution has duration growth in comparison with previous run, the system marks such items with red triangles:
 
 No duration growth - 0 triangles
+
 duration growh from 0 to 20% - 1 triangles
+
 duration growh from 21% - 50% - 2 trianges 
+
 duration growh from 51% - 100% - 3 trianges 
+
 duration growh from 101% and higher - 4 trianges 
+
 
 #### Load more History
 
@@ -233,7 +238,7 @@ By default the system shows 12 latest executions. If you need more history you c
 
 User can move on History line using horizontal scroll.
 
-[ ![Image](Images/userGuide/historyExecution/HistoryLineToolTip.png) ](https://www.youtube.com/watch?v=P0S1zElmWx0)
+[ ![Image](Images/userGuide/historyExecution/HistoryLineToolTip.png) ](https://youtu.be/P0S1zElmWx0)
 
 ### Test Item actions history
 
