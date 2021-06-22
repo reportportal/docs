@@ -105,14 +105,14 @@ services:
     restart: always
 ```
 
-##### Add the following labels to existing services `api`, `uat`, `index`, `ui`  and replacing `<service>` with the corresponding services names
+##### Add the following labels to existing services `api`, `uat`, `index`, `ui`, replacing `<service>` with the corresponding service name
 
 ```yaml
 labels:
   - "traefik.http.routers.<service>.tls=true"
 ```
 
-Check the UI and API services as an expample:
+Check the UI and API services as an example:
 
 ```yaml
 version: '2.4'
@@ -134,7 +134,7 @@ services:
     restart: always
 ```
 
-**NOTE**: You need to make sure that the required ports are opened, please check your firewall settings.
+**NOTE**: Make sure that the required ports are opened. Please check your firewall settings.
 
 ### Helpful links
 
