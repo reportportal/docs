@@ -20,9 +20,6 @@ not available for the launches from the "Debug" mode.
 A typical Launch structure comprises the following elements: **Suite** \> **Test**
 \> **Step** \> **Log**.
 
-However, this hierarchy is flexible. Only one restriction is applied: **a step can
-be under a test only**.
-
 A suite may hierarchically lie under another suite.
 
 The data in the "Launches" section is present in a table. By default, the
