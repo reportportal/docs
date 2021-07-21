@@ -1384,43 +1384,52 @@ with a similar and lower role only.</p>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/ProjectConfiguration.md"></div>
   <h2 id="report-portal-jobs-configuration">Report Portal jobs configuration</h2>
-<p>Currently, Report Portal has 3 configurable jobs for data removing:</p>
+<p>Currently, Report Portal has 5 configurable jobs for data removing:</p>
 <ul>
 <li>Clean launches</li>
 <li>Clean logs</li>
-<li>Clean attachments</li>
+<li>Clean attachments info</li>
+<li>Clean attachments binaries</li>
+<li>Project binary storage size recalculation</li>
 </ul>
-<p>Job execution period can be configured using environment variables, where period value should be provided in accordance with one of the patterns (ISO 8601):</p>
+<p>Job execution period can be configured using environment variables, where period value should be provided as <a href="https://www.baeldung.com/cron-syntax-linux-vs-spring"><strong>spring cron</strong></a> expression:</p>
 <ul>
-<li>P1M - every month</li>
-<li>P1D - every day</li>
-<li>PT1H - every hour</li>
-<li>PT1M - every minute</li>
-<li>PT10H5M3S - 10 hours 5 minutes 3 seconds period</li>
+<li><em>/30 </em> <em> </em> <em> </em> - every 30 seconds</li>
+<li>0 <em>/2 </em> <em> </em> * - every 2 minutes</li>
+<li>0 0 <em>/24 </em> <em> </em> - every 24 hours (every day)</li>
 </ul>
+<p><a href="https://github.com/reportportal/reportportal/blob/2b22c61f87674aaf2efc7a973af38004c2517680/docker-compose.yml#L237-L241">Job environment variables example for docker</a></p>
 <h3 id="clean-launches-job">Clean launches job</h3>
-<p>Clean launches job removes launches, their test items, logs and attachments (both from <strong>database</strong> and <strong>file storage</strong>).
+<p>Clean launches job removes launches, their test items and logs.
 Environment variables for configuration with default values:</p>
 <ul>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LAUNCHES_PERIOD=P3D - specifies how often job will be started</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LAUNCHES_SIZE=50 - specifies batch size of selected launches for each removing iteration</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LAUNCHES_POOL=5 - specifies count of threads that will be used during launches removing</li>
+<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LAUNCH_CRON=0 <em>/10 </em> <em> </em> * - specifies how often job will be started (every 10 minutes)</li>
 </ul>
 <h3 id="clean-logs-job">Clean logs job</h3>
-<p>Clean logs job removes logs and attachments (both from <strong>database</strong> and <strong>file storage</strong>).
+<p>Clean logs job removes logs.
 Environment variables for configuration with default values:</p>
 <ul>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LOGS_PERIOD=P2D - specifies how often job will be started</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_ITEMS_SIZE=500 - specifies batch size of selected items for each removing iteration</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LOGS_POOL=5 - specifies count of threads that will be used during logs removing</li>
+<li>RP_ENVIRONMENT_VARIABLE_CLEAN_LOG_CRON=0 <em>/5 </em> <em> </em> * - specifies how often job will be started (every 5 minutes)</li>
 </ul>
-<h3 id="clean-attachments-job">Clean attachments job</h3>
-<p>Clean attachments job removes attachments (both from <strong>database</strong> and <strong>file storage</strong>).
+<h3 id="clean-attachments-info-job">Clean attachments info job</h3>
+<p>Clean attachments info job removes attachments data from main <strong>database</strong> storage and puts into <strong>temporary table</strong> to remove binaries from the <strong>file storage</strong>
 Environment variables for configuration with default values:</p>
 <ul>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_ATTACH_PERIOD=P1D - specifies how often job will be started</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_ATTACH_SIZE=200 - specifies batch size of selected attachments for each removing iteration</li>
-<li>RP_ENVIRONMENT_VARIABLE_CLEAN_ATTACH_POOL=5 - specifies count of threads that will be used during attachments removing</li>
+<li>RP_ENVIRONMENT_VARIABLE_CLEAN_ATTACHMENT_CRON=0 <em>/2 </em> <em> </em> * - specifies how often job will be started (every 2 minutes)</li>
+</ul>
+<h3 id="clean-attachments-binaries-job">Clean attachments binaries job</h3>
+<p>Clean attachments binaries job uses data from the <strong>temporary table</strong> (filled by previous job) 
+and removes binaries from the <strong>file storage</strong>
+Environment variables for configuration with default values:</p>
+<ul>
+<li>RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CRON=<em>/30 </em> <em> </em> <em> </em> - specifies how often job will be started (every 30 seconds)</li>
+<li>RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CHUNKSize=1000 - specifies the size of the batch to be selected from the <strong>temporary table</strong> to be removed</li>
+</ul>
+<h3 id="project-binary-storage-size-recalculation-job">Project binary storage size recalculation job</h3>
+<p>Project binary storage size recalculation job updates <strong>allocated storage</strong> value of the <strong>project</strong> based on the existing attachments at the moment.
+Environment variables for configuration with default values:</p>
+<ul>
+<li>RP_ENVIRONMENT_VARIABLE_STORAGE_PROJECT_CRON=0 <em>/1 </em> <em> </em> * - specifies how often job will be started (every minute)</li>
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/ReportPortalJobs.md"></div>
