@@ -7,7 +7,7 @@ Currently, Report Portal has 5 configurable jobs for data removing:
 * Clean attachments binaries
 * Project binary storage size recalculation
 
-Job execution period can be configured using environment variables, where period value should be provided as cron expression:
+Job execution period can be configured using environment variables, where period value should be provided as [**spring cron**](https://www.baeldung.com/cron-syntax-linux-vs-spring) expression:
 * */30 * * * * * - every 30 seconds
 * 0 */2 * * * * - every 2 minutes
 * 0 0 */24 * * * - every 24 hours (every day)
