@@ -1,15 +1,15 @@
 # Plugin developer guide
 
 1. [Introduction](#introduction)
-1. [How does it work](#how does it work)
-1. [Creating your first plugin](#creating your first plugin)
-    1. [Base plugin configuration](#base plugin configuration)
-    1. [Create extension](#create extension)
-    1. [Autowire dependencies](#autowire dependencies)
-    1. [Get file command](#get file command)
-    1. [Assemble plugin](#assemble plugin)
-    1. [Event listeners](#event listeners)
-1. [Lazy initialization](#lazy initialization)
+1. [How does it work](#how-does-it-work)
+1. [Creating your first plugin](#creating-your-first-plugin)
+    1. [Base plugin configuration](#base-plugin-configuration)
+    1. [Create extension](#create-extension)
+    1. [Autowire dependencies](#autowire-dependencies)
+    1. [Get file command](#get-file-command)
+    1. [Assemble plugin](#assemble-plugin)
+    1. [Event listeners](#event-listeners)
+1. [Lazy initialization](#lazy-initialization)
 
 ## Introduction
 
