@@ -33,7 +33,7 @@ of [PF4J](https://github.com/pf4j/pf4j).
 Result of the following steps can be found here - [Plugin example](https://github.com/reportportal/plugin-example).
 This is fully configured and ready-to-use plugin
 
-#### Base plugin configuration
+### Base plugin configuration
 
 We configure our build.gradle file as follows:
 
@@ -77,7 +77,7 @@ This base configuration with `plugin-api` dependency grants access to extension 
 
 <br/>
 
-#### Create extension
+### Create extension
 
 Firstly we create our plugin representation (we also can override `start()` and `stop()` methods) that will be managed by `pf4j` plugin
 manager.
@@ -148,7 +148,7 @@ Command `testConnection` is mandatory and should either always return `true` or 
 
 <br/>
 
-#### Autowire dependencies
+### Autowire dependencies
 
 Being loaded in runtime plugin extension can be handled as `Spring bean`. That's why we can autowire dependencies just as we do in core
 application:
@@ -175,7 +175,7 @@ public class ExampleExtension implements ReportPortalExtensionPoint {
 
 <br/>
 
-#### Get file command
+### Get file command
 
 We can store in `resources` folder files that can be loaded from the client side later. During plugin installation `plugin manager` provides
 directory in the file system to store plugin resources. This directory passed through the constructor (with Map parameter) and can be
@@ -256,7 +256,7 @@ public class ExampleExtension implements ReportPortalExtensionPoint {
 
 <br/>
 
-#### Assemble plugin
+### Assemble plugin
 
 Our plugin can be built either as:
   - simple jar (without external dependencies) and use dependencies from core application;
@@ -385,7 +385,7 @@ compileJava.dependsOn npm_run_build
 
 Now we can just execute *./gradlew build* and get plugin binaries (as jar and as shadowJar) that can be loaded to the application.
 
-#### Event listeners
+### Event listeners
 
 All plugin commands are executed through the core application end-point with mapping:
 
