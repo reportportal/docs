@@ -30,6 +30,9 @@ of [PF4J](https://github.com/pf4j/pf4j).
 
 ## Creating your first plugin
 
+Result of the following steps can be found here - [Plugin example](https://github.com/reportportal/plugin-example).
+This is fully configured and ready-to-use plugin
+
 #### Base plugin configuration
 
 We configure our build.gradle file as follows:
