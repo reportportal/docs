@@ -101,7 +101,7 @@ You can get the host IP address by using the following docker commands:
 > If you run Docker on macOS or Windows with Docker for Mac, Docker for Windows  
 
 ```Bash
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_ID_OR_NAME
+docker inspect -f '\{{range .NetworkSettings.Networks}}\{{.IPAddress}}\{{end}}' CONTAINER_ID_OR_NAME
 ```
 
 > If you run Docker on Linux, you can find your public IP address in Linux Terminal
