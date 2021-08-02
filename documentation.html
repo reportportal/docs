@@ -460,47 +460,44 @@ In general these values are valid for the small and middle servers. But from the
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/PerfIssuesResolving.md"></div>
   <h2 id="deploy-with-docker-reportportal">Deploy with Docker ReportPortal</h2>
 <p>ReportPortal can be easily deployed using Docker-Compose. </p>
-<h3 id="install-docker">Install docker</h3>
+<h3 id="install-docker">Install Docker</h3>
 <p>Docker is supported by all major Linux distributions, MacOS and Windows</p>
-<p><a href="https://www.docker.com/community-edition">Download</a> and install Docker (Docker Engine, Compose, etc)</p>
+<p><a href="https://www.docker.com/get-started">Download</a> and install Docker, Docker Compose</p>
 <blockquote>
 <p><strong>Note:</strong></p>
 <p>If you use Docker for Windows or MacOS, make sure there is at least 3gb dedicated for Docker.
 For Windows native docker:
 <img src="http://reportportal.io/documentation/Images/installation/docker_config_win.png" alt="Image"></p>
 <p>For MacOS native docker:
-<img src="http://reportportal.io/documentation/Images/installation/docker_config_macos.png" alt="Image"></p>
+<img src="http://reportportal.io/documentation/Images/installation/docker_config_macos_new.png" alt="Image"></p>
 </blockquote>
 <p><strong><em>Note: for Windows users.</em></strong>
-<em><a href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a> requires 64-bit Windows 10 Pro and Microsoft Hyper-V. 
-If your system does not satisfy these requirements, 
-you can install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a>, 
-which uses Oracle Virtual Box instead of Hyper-V.</em></p>
+*<a href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a> requires 64-bit Windows 10 Pro and Microsoft Hyper-V. </p>
 <h3 id="deploy-reportportal-with-docker">Deploy ReportPortal with Docker</h3>
-<p>1) Make sure the Docker <a href="https://docs.docker.com/engine/installation/">Engine</a> and <a href="https://docs.docker.com/compose/install/">Compose</a> are installed.</p>
+<p>1) Make sure the Docker <a href="https://docs.docker.com/engine/install/">Engine</a> and <a href="https://docs.docker.com/compose/install/">Compose</a> are installed.</p>
 <p>2) Download the latest ReportPortal Docker compose file from <a href="https://github.com/reportportal/reportportal/blob/master/docker-compose.yml">here</a>. You can make it by run the following command: </p>
-<pre><code class="language-Shell">  curl https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml -o docker-compose.yml</code></pre>
+<pre><code class="language-Bash">curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml</code></pre>
 <p>3) Make the ElasticSearch configuration prerequisites for the analyzer service</p>
-<p>a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode">Commands</a></p>
+<p>a) Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode">Commands</a></p>
 <p>b) Give right permissions to ElasticSearch data folder using the following commands:</p>
-<pre><code class="language-Shell">mkdir -p data/elasticsearch</code></pre>
-<pre><code class="language-Shell">chmod 777 data/elasticsearch</code></pre>
-<pre><code class="language-Shell">chgrp 1000 data/elasticsearch</code></pre>
-<p>For more details about ElasticSearch visit ElasticSearch <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#_notes_for_production_use_and_defaults">guide</a></p>
+<pre><code class="language-Bash">mkdir -p data/elasticsearch</code></pre>
+<pre><code class="language-Bash">chmod 777 data/elasticsearch</code></pre>
+<pre><code class="language-Bash">chgrp 1000 data/elasticsearch</code></pre>
+<p>For more details about ElasticSearch visit ElasticSearch <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#_notes_for_production_use_and_defaults">guide</a></p>
 <p>4) &gt; OPTIONAL</p>
 <p>PostgreSQL Performance Tuning</p>
 <p>Depends on your hardware configuration and parameters of your system, you can additionally optimize your PostgreSQL performance by adding the following parameters to &quot;command&quot; option in the Docker compose file:</p>
-<pre><code class="language-Shell">      -c effective_io_concurrency=
-      -c shared_buffers=
-      -c max_connections=
-      -c effective_cache_size=
-      -c maintenance_work_mem=
-      -c random_page_cost=
-      -c seq_page_cost= 
-      -c min_wal_size= 
-      -c max_wal_size=
-      -c max_worker_processes=
-      -c max_parallel_workers_per_gather=</code></pre>
+<pre><code class="language-Bash"> -c effective_io_concurrency=
+ -c shared_buffers=
+ -c max_connections=
+ -c effective_cache_size=
+ -c maintenance_work_mem=
+ -c random_page_cost=
+ -c seq_page_cost= 
+ -c min_wal_size= 
+ -c max_wal_size=
+ -c max_worker_processes=
+ -c max_parallel_workers_per_gather=</code></pre>
 <p>Please choose set the values of these variables that are right for your system.</p>
 <p>You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment <a href="https://reportportal.io/docs/Additional-configuration-parameters">variable</a>. </p>
 <p>5) Start the application using the following command:</p>
@@ -521,35 +518,36 @@ which uses Oracle Virtual Box instead of Hyper-V.</em></p>
 <p>6) Open your web-browser with an IP address of the deployed environment at port <strong>8080</strong></p>
 <p>You can get the host IP address by using the following docker commands:  </p>
 <blockquote>
-<p>If you run Docker on macOS or Windows with Docker for Mac, Docker for Windows, or Docker Toolbox  </p>
+<p>If you run Docker on macOS or Windows with Docker for Mac, Docker for Windows  </p>
 </blockquote>
-<pre><code class="language-shell">docker-machine ip default</code></pre>
+<pre><code class="language-Bash">docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; CONTAINER_ID_OR_NAME</code></pre>
 <blockquote>
 <p>If you run Docker on Linux, you can find your public IP address in Linux Terminal</p>
 </blockquote>
-<pre><code class="language-shell">curl ifconfig.co</code></pre>
+<pre><code class="language-Bash">curl ifconfig.co</code></pre>
 <p>ReportPortal address:  </p>
-<pre><code>  http://IP_ADDRESS:8080</code></pre>
-<p>Use the following <strong>login\pass</strong> to access:  </p>
-<pre><code class="language-shell">default\1q2w3e
-or
-superadmin\erebus</code></pre>
+<pre><code>http://IP_ADDRESS:8080</code></pre>
+<p>Use the following <strong>login\pass</strong> to access: </p>
+<ul>
+<li>Default User: <code>default\1q2w3e</code></li>
+<li>Administrator: <code>superadmin\erebus</code></li>
+</ul>
 <blockquote>
 <p>Please change the admin password for better security</p>
 </blockquote>
 <h2 id="deploy-reportportal-with-docker-on-windows">Deploy ReportPortal with Docker on Windows</h2>
 <p>In case you went with Docker on Windows, please make sure you changed the &#39;volumes&#39; value for postgres container from &quot;For unix host&quot; to the &quot;For windows host&quot;:  </p>
-<pre><code class="language-Shell">    volumes:
-      # For windows host
-      - postgres:/var/lib/postgresql/data
-      # For unix host
-      # - ./data/postgres:/var/lib/postgresql/data</code></pre>
+<pre><code class="language-Shell">  volumes:
+    # For windows host
+    - postgres:/var/lib/postgresql/data
+    # For unix host
+    # - ./data/postgres:/var/lib/postgresql/data</code></pre>
 <blockquote>
 <p>If you haven’t done this, you will get an error</p>
 <pre><code class="language-Shell">data directory “/var/lib/postgresql/data/pgdata” has wrong ownership</code></pre>
 </blockquote>
 <p>Then uncomment the following:  </p>
-<pre><code class="language-Shell">  # Docker volume for Windows host
+<pre><code class="language-Shell"># Docker volume for Windows host
 volumes:
   postgres:</code></pre>
 <h3 id="updating-reportportal-with-docker">Updating ReportPortal with Docker</h3>
