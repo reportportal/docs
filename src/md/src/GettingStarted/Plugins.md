@@ -12,6 +12,7 @@ ReportPortal can be reinforced by uploading plugins. For now, you can install th
 |E-mail server| With this plugin, you will be able to configure notifications about test result finish in real time.|
 |SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.
 |LDAP/Active directory/SAML| This plugin helps authorize without new user creation|
+| Implement your own plugin |https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/plugin.md| 
  
 ### Upload plugin
 
