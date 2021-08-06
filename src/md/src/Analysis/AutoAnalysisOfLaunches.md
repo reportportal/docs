@@ -404,7 +404,7 @@ The request for the suggestions part looks like this:
 * analyzerConfig;
 * logs = List of log objects (logId, logLevel, message)
 
-The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs. **Note** When a test item has several error logs, we will show similar items by any of these logs which have the highest score among the searched items.
+The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs. **Note** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
 
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. The ML model is an XGBoost model which features represent different statistics about the test item, log message texts, launch info and etc, for example:
 * the percent of selected test items with the following defect type
@@ -413,4 +413,9 @@ The ElasticSearch returns to the service Analyzer 10 logs with the highest score
 * whether it has the same unique id, from the same launch
 * the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
 
-The model gives a probability for each candidate 
+The model gives a probability for each candidate, we filter out test items with the probability <= 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.
+
+ML suggestions section contains at maximum 5 suggested items, they are shown together with the scores given by the model and we divide them into 3 groups:
+* the group "SAME", test items with the score = 100% 
+* the group "HIGH", test items with the score in the range [70% - 99.9%]
+* the group "LOW", test items with the score in the range [40% - 69.9%]
