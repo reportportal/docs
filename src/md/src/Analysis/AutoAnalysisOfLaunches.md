@@ -10,7 +10,11 @@ Auto-analysis take a part of your routine work and defines the reason for the te
 
 The process of Auto-Analysis is based on previous user-investigated users' results using Machine Learning.  
 
-An auto-analyzer is presented by a combination of several services: ElasticSearch, Analyzer service(two instances Analyzer and Analyzer train), Metrics gatherer. Elasticsearch contains an analytical base, stores training data for retraining of models and saves metrics for metrics gatherer. Analyzer instance performs all operations, connected with the basic functionality (indexing/removing logs, searching logs, auto-analysis,  ML suggestions). Analyzer train is resposible for training models for Auto-analysis and ML suggestions functionality. Metrics gatherer gathers metrics about the usage and requests deletion of custom models if metrics goes down.
+An auto-analyzer is presented by a combination of several services: ElasticSearch, Analyzer service(two instances Analyzer and Analyzer train), Metrics gatherer:
+* Elasticsearch contains an analytical base, stores training data for retraining of models and saves metrics for metrics gatherer.
+* Analyzer instance performs all operations, connected with the basic functionality (indexing/removing logs, searching logs, auto-analysis,  ML suggestions).
+* Analyzer train instance is responsible for training models for Auto-analysis and ML suggestions functionality.
+* Metrics gatherer calculates metrics about the analyzer usage and requests deletion of custom models if metrics goes down.
 
 There are several ways to use an analyzer in our application:
 
@@ -61,7 +65,7 @@ The following info is sent:
 * Unique ID;
 * Test case ID;
 
-For the better analysis, we compose small logs (which consists of 1-2 log lines and words number <= 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field "merged_small_logs" for all the big logs if there are ones.
+For the better analysis, we merge small logs (which consist of 1-2 log lines and words number <= 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field "merged_small_logs" for all the big logs if there are ones.
 
 The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. These parts are saved in a separate fields for each log entry.
 
@@ -83,10 +87,10 @@ After your Index has been completed. You can start to use the auto-analysis feat
 
 Analysis can be launched automatically (via Project Settings) or manually (via the menu on All launches view). After the process is started, all items with defect type “To investigate” with logs (log level >= 40 000) from the analyzed launch are picked and sent to the Analyzer Service and the service ElasticSearch for investigations.
 
-#### How Elasticsearch returns candidates for analysis
+#### How Elasticsearch returns candidates for Analysis
 Here is a simplified procedure of the Auto-analysis candidates searching via ElasticSearch.
 
-When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other condition boosts the better results and they will have a higher score (boosted conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.). 
+When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.). 
 
 Then ElasticSearch receives a log message and divides it into the terms (words) with a tokenizer and calculates the importance of each term (word). For that ElasticSearch computes TF-IDF for each term (word) in the analyzed log. If the level of term importance is low, the ElasticSearch ignores it. 
 
@@ -96,7 +100,7 @@ Then ElasticSearch receives a log message and divides it into the terms (words) 
 >
 >*Document frequency (DF)* – in how many documents this term (word) is used in Index;
 >
->*TF-IDF (TF — term frequency, IDF — inverse document frequency)* — a statistical measure used to assess the importance of a term (word)  in the context of a log that is part of an Index. The weight of a term (word)   is proportional to the amount of use of this term (word)   in the analyzed log and inversely proportional to the frequency of term (word)   usage in Index.
+>*TF-IDF (TF — term frequency, IDF — inverse document frequency)* — a statistical measure used to assess the importance of a term (word) in the context of a log that is part of an Index. The weight of a term (word)   is proportional to the amount of use of this term (word)   in the analyzed log and inversely proportional to the frequency of term (word)   usage in Index.
 
 The term (word) with the highest level of importance is the term (word) that is used very frequently in analyzed log and moderately in the Index.
  
@@ -127,15 +131,30 @@ After all important terms are defined, Elastic search calculates the level of eq
 >       * Error message;
 >       * The same numbers in the log;
 >       * and etc.
-       
+
+The results are sorted by the score, in case the scores are the same, they are sorted by "start_time" field, which helps to boost the test items with closer to today dates. So the latest defect types will be higher in the returned by Elasticsearch results.
+
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each log. Analyzer regroups all the results by a defect type and chooses the best representative for each defect type group, based on their scores.
 
 >**Note:**
-In the case of test, the item has several logs, the service Analyzer computes group defect type for each log, and the test item gets defect type with the highest score.
+In the case the test item has several logs, the best representative for a defect type group will become the log with the highest score among all logs.
 
 #### How Auto-analysis makes decisions for candidates, returned by Elasticsearch
 
-A defect comment and a link to BTS of the item with the highest score from this group come to the analyzed item.
+The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. Analyzer regroups all the results by a defect type and chooses the best representative for each defect type group, based on their scores.
+
+The ML model is an XGBoost model which features (about 30 features) represent different statistics about the test item, log message texts, launch info and etc, for example:
+* the percent of selected test items with the following defect type
+* max/min/mean scores for the following defect type
+* cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields
+* whether it has the same unique id, from the same launch
+* the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
+
+The model gives a probability for each defect type group, and we choose the defect type group with the highest probability and the probability should be >= 50%.
+
+A defect comment and a link to BTS of the best representative from this group come to the analyzed item.
+
+The Auto-analysis model is retrained for the project and this information can be found in the section "How models are retrained" below.
 
 So this is how Auto-Analysis works and defines the most relevant defect type on the base of the previous investigations. We give an ability to our users to configure auto-analysis manually.
 
@@ -197,7 +216,7 @@ Parameter **MinShouldMatch** is involved in the calculation of a score. It is a 
 
 With the parameter **Number of log lines** - you can write the root cause of test failure in the first lines and configure the analyzer to take into account only the required lines. 
 
-With these 4 parameters, you can configure the accuracy of the analysis that you need. For your facilities we have prepared 3 pre-sets with values:
+With these 2 parameters, you can configure the accuracy of the analysis that you need. For your facilities we have prepared 3 pre-sets with values:
 
 *    *Light* - search conditions are freer. You will get more results, but with the less level of similarity;
 *    *Moderate* - "happy medium";
@@ -377,7 +396,7 @@ This analysis hints what are the most similar analyzed items to the current test
 
 ML Suggestions searches for similar previously analyzed items to the current test item, so it requires an analytical base saved in Elasticsearch. How an analytical base is created you can find in the subsection "Create an analytical base in the ElasticSearch" above. ML suggestions takes into account all user-investigated, auto-analyzed items or items chosen from ML suggestions. While the analytical base is growing ML suggestions functionality will have more examples to search by and suggest you the best options.
 
-ML suggestions analysis is run everytime you enter "Make decision" editor. ML suggestions are run for all test items no matter what defect type they have now. This functionality is processing only test items with logs (error log level >= 40000). 
+ML suggestions analysis is run everytime you enter "Make decision" editor. ML suggestions are run for all test items no matter what defect type they have now. This functionality is processing only test items with logs (log level >= 40000). 
 
 The request for the suggestions part looks like this: 
 * testItemId;
@@ -389,9 +408,9 @@ The request for the suggestions part looks like this:
 * analyzerConfig;
 * logs = List of log objects (logId, logLevel, message)
 
-The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs. **Note** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
+The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs. **Note:** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
 
-The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. The ML model is an XGBoost model which features represent different statistics about the test item, log message texts, launch info and etc, for example:
+The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. The ML model is an XGBoost model which features (about 40 features) represent different statistics about the test item, log message texts, launch info and etc, for example:
 * the percent of selected test items with the following defect type
 * max/min/mean scores for the following defect type
 * cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields
@@ -412,7 +431,7 @@ In the Auto-analysis and ML suggestions processes several models take part:
 * ML suggestions XGBoost model, which gives the probability for a test item to be similar to the test item from the history
 * Error message language model on Tf-Idf vectors(Random Forest Classifier), which gives a probability for the error message to be of a specific defect type or its subtype based on the words in the message. The probability from this model is taken as a feature in the main boosting algorithm.
 
-At the start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized analysis, the models should be retrained on the data from the project. **Note** If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
+At the start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized analysis, the models should be retrained on the data from the project. **Note:** If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
 
 Triggering information and retrained models are saved in Minio(or a filesystem) as you set up in the Analyzer service settings.
 
@@ -422,9 +441,9 @@ Retraining triggering conditions for **Error message Random Forest Classifier**:
 
 Retraining triggering conditions for **Auto-analysis** and **Suggestion XGBoost models**:
 * We gather training data for training from several sources:
-    * when you choose one of the suggestions(the chosen test item will be a positive example, others will negative ones)
-    * when you don't choose any suggestion and edit the test item somehow(set up a defect type manually, add a comment, etc.), all suggestions becoime negative examples;
-    * when auto-analysis runs and for a test item it finds a simialr test item, we consider it a positive example, until the user changes the defect type for it manually. In this case, the result will be marked as a negative one.
+    * when you choose one of the suggestions(the chosen test item will be a positive example, others will be negative ones)
+    * when you don't choose any suggestion and edit the test item somehow(set up a defect type manually, add a comment, etc.), all suggestions become negative examples;
+    * when auto-analysis runs and for a test item it finds a similar test item, we consider it a positive example, until the user changes the defect type for it manually. In this case, the result will be marked as a negative one.
 * Each time a suggestion analysis runs or changing a defect type happens, we update the triggering info for both models. This information is saved in the files  "auto_analysis_trigger_info" and "suggestion_tgrigger_info" in Minio.
 * When we have more than 300 labelled items, and since last training we have 100 labelled test items, retraining is triggered and if validation data metrics are better than metrics for a global model for the same data points, then we save a custom "auto_anlysis" model in Minio and use it further in the auto-analysis functionality.
 * When we have more than 100 labelled items, and since last training we have 50 labelled test items, retraining is triggered and if validation data metrics are better than metrics for a global model for the same data points, then we save a custom "suggestion" model in Minio and use it further in the suggestions functionality.
