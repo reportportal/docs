@@ -5936,61 +5936,7 @@ $JAVA_HOME/bin/keytool -import -alias ldap_cert -keystore $JAVA_HOME/lib/securit
 docker restart reportportal_uat_1</code></pre>
 
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/IssuesWithLDAPSHowToResolve.md"></div>
-  <h2 id="issues-with-analyzer-how-to-resolve">Issues with Analyzer: how to resolve</h2>
-<p>In case you can not start an analysis on a project please perform following actions:</p>
-<p><strong>Firstly,</strong>
-check if you have service Analyzer and service ElastiSearch in your docker-compose file.
-If no, please add this services to your docker-compose file manually.</p>
-<p><strong>Secondly</strong>
-be sure that you have made all Analyzer configuration before ReportPortal deployment such as:</p>
-<ul>
-<li><p>set <strong>{vm.max_map_count} kernel setting</strong> before ReportPortal deploying with <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode">Commands&gt;</a></p>
-</li>
-<li><p>give right permissions to ElasticSearch data folder using the following command:</p>
-</li>
-</ul>
-<pre><code class="language-bash">mkdir data/elasticsearch</code></pre>
-<pre><code class="language-bash">chmod g+rwx data/elasticsearch</code></pre>
-<pre><code class="language-bash">chgrp <span class="number">1000</span> data/elasticsearch</code></pre>
-<p>For more details about ElasticSearch visit <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#_notes_for_production_use_and_defaults">ElasticSearch guide &gt;</a></p>
-<p>In case you haven`t done it yet, please do and then re-start docker-compose.</p>
-<p><strong>Thirdly</strong> 
-check the health of all services on localhost:8500. 
-When service Analyzer will have had status passed, try to start analyze results in ReportPortal.</p>
-<p>On this stage your Analyzer should work well, if not, please follow the steps further.</p>
-<p><strong>Forth,</strong>
-check if you have any analyzed items. If not, start to analyze manually.</p>
-<p><strong>Fifth</strong>
-if Analyzer still doesn&#39;t work or you aren&#39;t satisfied with results. 
-Don`t worry, now it is time to choose appropriate configuration for Analyzer. 
-<a href="http://reportportal.io/docs/Auto-Analysis-of-launches%3Econfigure-elasticsearch-settings">Here</a> you can find all information how to configure Analyzer.
-But you can use a short instruction:</p>
-<ul>
-<li><p>check your existing configuration via Settings &gt; Auto-Analysis
-<a href="http://reportportal.io/documentation/Images/userGuide/tipsAndTricks/AnalysisConfigurations.png"> <img src="http://reportportal.io/documentation/Images/userGuide/tipsAndTricks/AnalysisConfigurations.png" alt="Image"> </a>
-If you can`t find this tab in settings, please update your version to the latest one. </p>
-</li>
-<li><p>Then choose one of pre-sets: &quot;Classic&quot;, &quot;Moderate&quot;, &quot;Light&quot;
-If you can&#39;t find these pre-sets in settings, please update your version to the latest one.
-If you don&#39;t want to update your version, please use following configuration:</p>
-</li>
-</ul>
-<p><em>MinShouldMatch 95%
-MinDocFreq 1
-MinTermFreq 1
-Number of log lines All</em></p>
-<ul>
-<li><p>Save new configuration;</p>
-</li>
-<li><p>Re-generate index;</p>
-</li>
-</ul>
-<p>After the new Index will have been generated, start analysis.</p>
-<blockquote>
-<p><strong>Note:</strong> If you have walked through all these steps, but your issue still presents. Please contact with us, via Slack, e-mail or GitHub.
-We will connect with you as soon as it possible.</p>
-</blockquote>
-
+  
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/IssuesWithAnalyzerHowToResolve.md"></div>
   <h2 id="how-to-check-ldap-connection">How to check LDAP connection</h2>
 <p>Firstly, check the availability of your LDAP server from the server when ReportPortal is installed. For example, use the command ldapsearch.</p>
