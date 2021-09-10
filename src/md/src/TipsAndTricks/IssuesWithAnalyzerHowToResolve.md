@@ -1,7 +1,8 @@
-# Resolve Analyzer Known Issues
+## Resolve Analyzer Known Issues
 
-## Problem 1. Auto-Analysy doesn't work. Analyzer health check status failed: Elasticsearch is not healthy
+### Problem 1. Auto-Analysy doesn't work. Analyzer health check status failed: Elasticsearch is not healthy
 
+#### Problem Description
 Analyzer log:
 
 ```
@@ -20,7 +21,7 @@ STATUS                                     NAMES
 Up Less than a second (health: starting)   reportportal_elasticsearch_1
 ```
 
-## Solution
+#### Solution
 
 Create a directory for ElasticSearch and assign permissions with the following commands
 
@@ -32,20 +33,24 @@ chgrp 1000 data/elasticsearch
 
 Recreate ReportPortal services.
 
-## Problem 2. Auto-Analysy doesn't work. KeyError: 'found_test_and_methods' not found
+### Problem 2. Auto-Analysy doesn't work. KeyError: 'found_test_and_methods' not found
+
+#### Problem Description
 
 ```
 2021-09-09 11:35:48,737 - analyzerApp.utils - ERROR - KeyError: 'found_test_and_methods' not found
 ```
 
-## Solution
+#### Solution
 
 Regenerate index in the ElasticSearch. Project settings -> Auto-Analysis -> Genetate Index
 
 ![Regenerate index](Images/autoanalyzer-generate-index.gif)
 
 
-## Problem 3. Amqp connection was not established
+### Problem 3. Amqp connection was not established
+
+#### Problem Description
 
 ```
 2021-09-09 11:32:00,579 - analyzerApp - INFO - Starting waiting for AMQP connection
@@ -53,11 +58,13 @@ Regenerate index in the ElasticSearch. Project settings -> Auto-Analysis -> Gene
 2021-09-09 11:32:00,595 - analyzerApp - ERROR - Amqp connection was not established
 ```
 
-## Solution
+#### Solution
 
 RabbitMQ container is not running. Wait for status `running` or recreate the RabbitMQ container.
 
-## Problem 4. Perfomance
+### Problem 4. Perfomance
+
+#### Problem Description
 
 Slowing down analysis or waiting for a long time fore responce.
 
@@ -68,7 +75,7 @@ DAMN ! worker 1 (pid: 9191) died, killed by signal 9 :( trying respawn ...
 Respawned uWSGI worker 1 (new pid: 9490)
 ```
 
-## Solution
+#### Solution
 
 Increase VM stats. We recommend using the minimum memory:
 * [Analyzer](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml#L56) - 1024 Mb
