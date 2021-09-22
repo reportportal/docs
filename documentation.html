@@ -2274,6 +2274,50 @@ User with account role <em>PROJECT MANAGER</em> can configure integration only o
 <p>Mandatory fields are marked with red. 
 Click the &#39;Submit&#39; button.
 All users of Active Directory will have access to the ReportPortal instance.<br>For entrance to ReportPortal, the user should use their domain credentials (Login and password).</p>
+<p>Please find the example with configurations for Microsoft Active Directory that worked successfully provided by our user:</p>
+<p><strong>Table with properties and values for LDAP Microsoft Active Directory</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Url</td>
+<td style="text-align:center">auth-servers.domain.org.int:3358</td>
+</tr>
+<tr>
+<td style="text-align:center">Base DN</td>
+<td style="text-align:center">OU=MAIN,DC=DOMAIN,DC=ORG,DC=INT</td>
+</tr>
+<tr>
+<td style="text-align:center">Manager DN</td>
+<td style="text-align:center">cn=Service UserBind,ou=Service Accounts,ou=Colombia,ou=America,ou=ServiceAccounts,dc=DOMAIN,dc=ORG,dc=INT</td>
+</tr>
+<tr>
+<td style="text-align:center">User search filter</td>
+<td style="text-align:center">(&amp;(objectClass=user)(sAMAccountName={0}))</td>
+</tr>
+<tr>
+<td style="text-align:center">Password encoder type</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">Email attribute</td>
+<td style="text-align:center">mail</td>
+</tr>
+<tr>
+<td style="text-align:center">Full name attribute</td>
+<td style="text-align:center">displayName</td>
+</tr>
+<tr>
+<td style="text-align:center">Photo attribute</td>
+<td style="text-align:center">thumbnailPhoto</td>
+</tr>
+</tbody>
+</table>
 <h2 id="ldap-auth-integration">LDAP Auth integration</h2>
 <p>To set up access with LDAP:</p>
 <ol>
