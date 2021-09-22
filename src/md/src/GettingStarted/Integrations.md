@@ -834,6 +834,23 @@ All users of Active Directory will have access to the ReportPortal instance.
 For entrance to ReportPortal, the user should use their domain credentials (Login and password).
 
 
+
+Please find the example with configurations for Microsoft Active Directory that worked successfully provided by our user:
+
+**Table with properties and values for LDAP Microsoft Active Directory**
+
+|          Property         |                                                          Value                                                          |
+|:---------------------:|:----------------------------------------------------------------------------------------------------------------------:|
+| Url                   | auth-servers.domain.org.int:3358                                                                                       |
+| Base DN               | OU=MAIN,DC=DOMAIN,DC=ORG,DC=INT                                                                                        |
+| Manager DN            | cn=Service UserBind,ou=Service Accounts,ou=Colombia,ou=America,ou=ServiceAccounts,dc=DOMAIN,dc=ORG,dc=INT              |
+| User search filter    | (&(objectClass=user)(sAMAccountName={0})) |
+| Password encoder type | NO                                                                                                                     |
+| Email attribute       | mail                                                                                                                   |
+| Full name attribute   | displayName                                                                                                            |
+| Photo attribute       | thumbnailPhoto                                                                                                         |
+
+
 ## LDAP Auth integration 
 To set up access with LDAP:
 
