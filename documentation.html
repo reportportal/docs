@@ -458,6 +458,154 @@ In general these values are valid for the small and middle servers. But from the
 <p>Please note, that the max_connections paramether must be more than the sum of the RP_DATASOURCE_MAXIMUMPOOLSIZE for the API and the UAT services + several connections for connecting to the database from outside.</p>
 
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/PerfIssuesResolving.md"></div>
+  <h2 id="basic-monitoring-configuration">Basic monitoring configuration</h2>
+<p>The common ReportPortal instance consists of two main parts – the application server and the database server – both of which must be covered by basic system-level and application-level metrics. Basic system-level monitoring should include metrics tracking the main application and database servers&#39; VM and cluster resources, such as:</p>
+<ul>
+<li>CPU,</li>
+<li>RAM,</li>
+<li>Network,</li>
+<li>Disk Operations,</li>
+<li>Storage Usage.</li>
+</ul>
+<p>Extended system-level monitoring for the application instance should include:</p>
+<ul>
+<li>CPU and RAM utilization per each service,</li>
+<li>MinIO storage usage trend,</li>
+<li>Restarts count per each service,</li>
+<li>Disk Bytes,</li>
+<li>CPU usage in cores per each service,</li>
+<li>Network IO per each service,</li>
+<li>RabbitMQ runtime metrics.</li>
+</ul>
+<p>In the case of rollouts of the ReportPortal PostgreSQL database as an <strong>Amazon RDS</strong>, the <strong>AWS RDS Performance Insights</strong> is used for monitoring purposes and CloudWatch metrics are used to measure basic system-level database workload.</p>
+<h3 id="tools">Tools</h3>
+<p>For regular monitoring, we&#39;ve chosen one of the most popular, lightweight, and easy-to-maintain tools stack - <strong>Telegraf+InfluxDB+Grafana</strong>.
+Telegraf is an open-source server agent which enables us to use a lot of different monitoring protocols out of the box. InfluxDB is used to collect these metrics from Telegraf agents. Grafana is used for metrics visualization, building charts, and custom dashboards to reach a &quot;single pane of glass&quot; monitoring principle.
+The PostgreSQL database in all cases is monitored by AWS RDS Performance Insights, which gives high visibility into the Database workload in runtime, meets all monitoring requirements, and covers OS system-level and database-specific metrics.
+In addition to that, for the basic database monitoring is used PGHero tool - useful monitoring dashboard for PostgreSQL.</p>
+<h3 id="monitoring-installation">Monitoring installation</h3>
+<p>Not recommended mixing the ReportPortal services and monitoring services on the same machine, especially in docker installation. 
+To avoid competition for resources with the services of the ReportPortal, deploy a separate virtual machine for monitoring (for our instances we using m5.large shape for the monitoring node) and install the following services: 
+1) InfluxDB database: <a href="https://docs.influxdata.com/influxdb/v2.0/install/?t=Docker">https://docs.influxdata.com/influxdb/v2.0/install/?t=Docker</a>;
+2) Grafana: <a href="https://grafana.com/docs/grafana/latest/installation/docker/">https://grafana.com/docs/grafana/latest/installation/docker/</a>;
+Dashboard examples(Grafana IDs): 5955, 3056.
+3) Telegraf:</p>
+<ul>
+<li>Kubernetes deployment: telegraf agent needs to be installed at each cluster node.</li>
+<li>Docker deployment: telegraf agent should be installed at the ReportPortal VM. In case of rollouting the Database server on the separate VM, telegraf agent should be installed also at that VM.</li>
+</ul>
+<p><strong>Telegraf installation guide:</strong></p>
+<p>Update your system.</p>
+<pre><code>```yaml
+sudo yum -y update
+```</code></pre>
+<p>Add Influxdata RPM repository.</p>
+<pre><code>```yaml
+cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/influxdb.repo
+[influxdb]
+name = InfluxDB Repository - RHEL 
+baseurl = https://repos.influxdata.com/rhel/7/x86_64/stable/
+enabled = 1
+gpgcheck = 1
+gpgkey = https://repos.influxdata.com/influxdb.key
+EOF
+```</code></pre>
+<p>Install Telegraf on RHEL 8 / CentOS 8. Once the repository has been added, install Telegraf on RHEL 8 using the command below.</p>
+<pre><code>```yaml
+sudo dnf -y install telegraf
+```</code></pre>
+<p>Open &quot;telegraf.conf&quot; file for the monitoring configuration. In the case of Kubernetes deployment need to configure telegraf on each cluster node separately.</p>
+<pre><code>```yaml
+sudo nano /etc/telegraf/telegraf.conf
+```</code></pre>
+<p>Change following configs(press <strong>Ctrl+W</strong> to search for the particular configs):</p>
+<pre><code>```yaml
+hostname = &quot;api_node_1&quot;
+```</code></pre>
+<p>Search for the &quot;outputs.influxdb&quot; and update URL and database name for the InfluxDB:</p>
+<pre><code>```yaml
+[[outputs.influxdb]]
+urls = [&quot;http://&lt;influxdb_host&gt;:8086&quot;]
+database = &quot;telegraf&quot;
+```</code></pre>
+<p>Search for the &quot;inputs.docker&quot; and update next configs(should be uncommented each value which you need to add to the monitoring):</p>
+<pre><code>```yaml
+[[inputs.docker]]
+endpoint = &quot;unix://var/run/docker.sock&quot;
+perdevice_include = [&quot;cpu&quot;]
+total_include = [&quot;cpu&quot;, &quot;blkio&quot;, &quot;network&quot;]
+```</code></pre>
+<p>Search for the &quot;inputs.net&quot; for adding the network metrics to the monitoring. Uncomment only the plugin name:</p>
+<pre><code>```yaml
+[[inputs.net]]
+```</code></pre>
+<p>Save changes, close &quot;telegraf.conf&quot; and start telegraf service:</p>
+<pre><code>```yaml
+sudo systemctl enable --now telegraf
+```</code></pre>
+<p>Check the status(should be green and in active running status):</p>
+<pre><code>```yaml
+sudo systemctl status telegraf
+```</code></pre>
+<p>In case of errors <em>&quot;E! [inputs.docker] Error in plugin: Got permission denied while trying to connect to the Docker daemon socket at unix://var/run/docker.sock Permission denied&quot;</em></p>
+<p>Need to add permissions to the <em>/var/run/docker.sock</em>:</p>
+<pre><code>```yaml
+sudo chmod 666 /var/run/docker.sock
+```</code></pre>
+<h3 id="pghero-simple-monitoring-dashboard-for-postgresql">PGHero - simple monitoring dashboard for PostgreSQL</h3>
+<h3 id="functionality">Functionality</h3>
+<ul>
+<li>requests statistic: number of calls, average and total execution time (with the ability to store history);</li>
+<li>currently active queries;</li>
+<li>information about tables: disk space occupied, dates of the last <strong>VACUUM</strong> and <strong>ANALYSE</strong> launches;</li>
+<li>information about indexes: disk space occupied, presence of duplicated / unused indexes;</li>
+<li>recommendations regarding adding an index on complex queries with <strong>Seq Scan</strong>;</li>
+<li>statistics on open connections to the database;</li>
+<li>displaying basic database settings that affect performance (<strong>shared_buffers</strong>, <strong>work_mem</strong>, <strong>maintenance_work_mem</strong>, etc.).</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p><strong>How to enable query stats</strong></p>
+<p>In the database settings(for RDS database - in parameter group) add/change the following parameters:</p>
+<pre><code>```yaml
+shared_preload_libraries = &#39;pg_stat_statements&#39;
+pg_stat_statements.track = all
+pg_stat_statements.max = 10000
+track_activity_query_size = 2048
+```</code></pre>
+<p>Restart the database or reboot the RDS instance.
+As a superuser from the psql console, run:</p>
+<pre><code>```yaml
+CREATE extension pg_stat_statements;
+```</code></pre>
+<p><strong>How to configure historical query stats</strong></p>
+<p>To track query stats over time, create a table to store them.</p>
+<p>Execute the following query for table creation:</p>
+<pre><code>```yaml
+CREATE TABLE &quot;pghero_query_stats&quot; (
+&quot;id&quot; bigserial primary key,
+&quot;database&quot; text,
+&quot;user&quot; text,
+&quot;query&quot; text,
+&quot;query_hash&quot; bigint,
+&quot;total_time&quot; float,
+&quot;calls&quot; bigint,
+&quot;captured_at&quot; timestamp
+);
+```</code></pre>
+<p>Build index on the created table:</p>
+<pre><code>```yaml
+CREATE INDEX ON &quot;pghero_query_stats&quot; (&quot;database&quot;, &quot;captured_at&quot;);
+```</code></pre>
+<p>Include the following to the installation string to schedule the task to run every 5 minutes:</p>
+<pre><code>```yaml
+bin/rake pghero:capture_query_stats
+```</code></pre>
+<p>The query stats table can grow large over time. Remove old stats with:</p>
+<pre><code>```yaml
+bin/rake pghero:clean_query_stats
+```</code></pre>
+
+  <div data-js-md-path="src/computeds/md/src/InstallationSteps/BasicMonitoringConfiguration.md"></div>
   <h2 id="deploy-with-docker-reportportal">Deploy with Docker ReportPortal</h2>
 <p>ReportPortal can be easily deployed using Docker-Compose. </p>
 <h3 id="install-docker">Install Docker</h3>
