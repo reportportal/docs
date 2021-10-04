@@ -6332,6 +6332,18 @@ Type <span class="string">"screen [-d] -r [pid.]tty.host"</span> to resume one o
 <li>Then execute #update schema_migrations set version=9, dirty=f</li>
 <li>Redeploy RP based on docker-composer for example (migration should be started automatically, if you followed by instructions of installation for this way.)</li>
 </ol>
+<h3 id="error-org-jasypt-exceptions-encryptionoperationnotpossibleexception-null-api-doesn-t-start-reportportal-unavailable-">Error: org.jasypt.exceptions.EncryptionOperationNotPossibleException: null. API doesn&#39;t start. ReportPortal unavailable.</h3>
+<p>Minio files are used during migration to change integration passwords encryption. 
+Files in Minio may be corrupted and deleted somehow before migration during Reportportal usage. </p>
+<p>Removing existing integrations from db before deploying can help. Creation of a new integration will use a new encryption type.</p>
+<ol>
+<li>Execute the next script in database to remove existing integrations before deploy:</li>
+</ol>
+<pre><code class="language-sql"><span class="operator"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> integration <span class="keyword">WHERE</span> type <span class="keyword">IN</span> (<span class="keyword">SELECT</span> id <span class="keyword">FROM</span> integration_type <span class="keyword">WHERE</span> name <span class="keyword">IN</span> (<span class="string">'email'</span>, <span class="string">'jira'</span>, <span class="string">'ldap'</span>, <span class="string">'ad'</span>));</span></code></pre>
+<ol>
+<li>Deploy Reportportal</li>
+<li>Create integrations again</li>
+</ol>
 
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/MigrationIssue.md"></div>
 
