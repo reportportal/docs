@@ -13,6 +13,19 @@ For instance, if you have "Error: Dirty database version 10. Fix and force versi
 4. Redeploy RP based on docker-composer for example (migration should be started automatically, if you followed by instructions of installation for this way.)
 
 
+### Error: org.jasypt.exceptions.EncryptionOperationNotPossibleException: null. API doesn't start. ReportPortal unavailable.
 
+Minio files are used during migration to change integration passwords encryption. 
+Files in Minio may be corrupted and deleted somehow before migration during Reportportal usage. 
 
+Removing existing integrations from db before deploying can help. Creation of a new integration will use a new encryption type.
+
+1. Execute the next script in database to remove existing integrations before deploy:
+
+```sql
+DELETE FROM integration WHERE type IN (SELECT id FROM integration_type WHERE name IN ('email', 'jira', 'ldap', 'ad'));
+
+```
+2. Deploy Reportportal
+3. Create integrations again
 
