@@ -18,8 +18,9 @@ For instance, if you have "Error: Dirty database version 10. Fix and force versi
 Minio files are used during migration to change integration passwords encryption. 
 Files in Minio may be corrupted and deleted somehow before migration during Reportportal usage. 
 
-Removing existed integrations from db before deploying will help. Creation of new integration will use a new ecryption type. 
-1. Execute the next script in database to remove existed integrations before deploy:
+Removing existing integrations from db before deploying can help. Creation of a new integration will use a new encryption type.
+
+1. Execute the next script in database to remove existing integrations before deploy:
 
 ```sql
 DELETE FROM integration WHERE type IN (SELECT id FROM integration_type WHERE name IN ('email', 'jira', 'ldap', 'ad'));
