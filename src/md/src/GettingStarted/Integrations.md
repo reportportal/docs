@@ -913,6 +913,7 @@ To set up access with SAML:
 'Identity provider name ID*': text
 'Provider name*': text
 'Metadata URL*': URL
+'RP callback URL': URL - RP host/uat
 'Email attribute*': text
 'Name attributes mode' : 
 'Last name attribute' text
@@ -931,6 +932,9 @@ On Octa side you should to specify SSO url. The format for url is the next:
 ```java
 https://your domain adress/uat/saml/sp/SSO/alias/report-portal-sp
 ```
+
+“RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. "https://reportportal.com/uat"). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations. 
+
 
 ## GitHub Authorization
 
