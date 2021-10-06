@@ -2521,6 +2521,7 @@ All users of LDAP will have access to the ReportPortal instance. For access to t
 <pre><code class="language-javascript"><span class="string">'Identity provider name ID*'</span>: text
 <span class="string">'Provider name*'</span>: text
 <span class="string">'Metadata URL*'</span>: URL
+<span class="string">'RP callback URL'</span>: URL - RP host/uat
 <span class="string">'Email attribute*'</span>: text
 <span class="string">'Name attributes mode'</span> : 
 <span class="string">'Last name attribute'</span> text
@@ -2532,6 +2533,7 @@ Click the &#39;Submit&#39; button.
 All users of SAML will have access to the ReportPortal instance.<br>Just click on the button &#39;Login with SAML&#39; and choose needed integration from the drop-down</p>
 <p>On Octa side you should to specify SSO url. The format for url is the next:</p>
 <pre><code class="language-java">https:<span class="comment">//your domain adress/uat/saml/sp/SSO/alias/report-portal-sp</span></code></pre>
+<p>“RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. &quot;<a href="https://reportportal.com/uat">https://reportportal.com/uat</a>&quot;). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations. </p>
 <h2 id="github-authorization">GitHub Authorization</h2>
 <p>To setup access with GitHub auth:</p>
 <ol>
