@@ -9,7 +9,7 @@ In order to get started with ReportPortal on Red Hat Family and Ubuntu Linux dis
 
 Ubuntu LTS `18.04`, `20.04` / Red Hat family `6`, `7`, `8` (RHEL, CentOS, etc)
 
-#### Requared service
+#### Required service
 * PSQL `12.6`
 * RabbitMQ `3.8.14`
 * ElasticSearch `7.12`
@@ -24,7 +24,7 @@ In addition, these services are compatible with earlier versions.
 
 Ubuntu LTS `16.04`, `18.04` / Red Hat family `6`, `7` (RHEL, CentOS, etc)
 
-#### Requared service
+#### Required service
 * PSQL `11`
 * RabbitMQ `3.6.10`
 * ElasticSearch `6.7.0"`
