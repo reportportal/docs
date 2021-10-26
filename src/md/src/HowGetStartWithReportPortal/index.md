@@ -1,4 +1,4 @@
-# How Getting Start With Report Portal
+# Getting Started With Report Portal
 
 You have decided to get started with the ReportPortal. So what are your next steps?
 
