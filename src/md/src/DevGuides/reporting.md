@@ -540,10 +540,10 @@ Response model contains an array of the following objects:
 Full request:
 
 ```shell script
-curl --header "Content-Type: application/json" \
+curl --header "Content-Type: multipart/form-data" \
      --header "Authorization: Bearer 039eda00-b397-4a6b-bab1-b1a9a90376d1" \
      --request POST \
-     --form '[{"itemUuid":"9c7632a2-272e-4c24-9627-d7d509de7620","launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4","time":"2019-11-06T15:50:53.187Z","message":"Some critical exception","level":40000,"file":{"name":"file1.pdf"}},{"itemUuid":"16fb3d7f-ddce-407a-8e52-464a596e6da1","launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4","time":"2019-11-06T15:50:53.187Z","message":"java.lang.NullPointerException","level":40000,"file":{"name":"file2.txt"}}]' \
+     --form 'json_request_part=[{"itemUuid":"9c7632a2-272e-4c24-9627-d7d509de7620","launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4","time":"2019-11-06T15:50:53.187Z","message":"Some critical exception","level": "info","file":{"name":"file1.pdf"}},{"itemUuid":"16fb3d7f-ddce-407a-8e52-464a596e6da1","launchUuid":"96d1bc02-6a3f-451e-b706-719149d51ce4","time":"2019-11-06T15:50:53.187Z","message":"java.lang.NullPointerException","level": "info","file":{"name":"file2.txt"}}]; type=application/json' \
      --form "file=@/path/to/file1.pdf" \
      --form "file=@/path/to/file2.txt" \
      http://rp.com/api/v1/rp_project/log
