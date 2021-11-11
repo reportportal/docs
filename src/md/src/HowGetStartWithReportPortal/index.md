@@ -28,7 +28,7 @@ Visit our detailed documentation on how deploy ReportPortal:
 * [with Docker on Windows](https://reportportal.io/docs/Deploy-with-Docker%3Edeploy-reportportal-with-docker-on-windows)
 * [with without Docker](https://reportportal.io/docs/Deploy-ReportPortal-without)
 
-Please also check the [technical requirements for your system](https://reportportal.io/docs/Production-Deployment-And)
+Please also check the [technical requirements for your system](https://reportportal.io/docs/Optimal-Performance-Hardware)
 
 
 
