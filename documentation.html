@@ -5613,15 +5613,86 @@ users as &quot;Widget not found&quot;.</p>
 
   <div data-js-md-path="src/computeds/md/src/QualityGates/index.md"></div>
   <h2 id="quality-gate-purpose">Quality Gate Purpose</h2>
-<p> we support Continuous Testing with build-in functionality - Quality Gates</p>
+<p> we support Continuous Testing with build-in functionality - Quality Gates
+ <img src="https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png" alt="image"></p>
 <h2 id="how-to-install-quality-gates">How to install Quality Gates</h2>
 <p>The Quality Gate feature is available in the scope of ReportPortal enterprise version. 
 Section is in progress</p>
 <h2 id="feature-overview">Feature overview</h2>
-<p>Quality Gate analysis provides capabilities to speed up CI/CD pipeline by auto-analysis and auto-feedback to your CI/CD tools. ReportPortal assesses build quality and sends auto feedback to CI/CD.</p>
-<p>Quality Gates plugin adds to ReportPortal a possibility to create quality rules</p>
+<p>Quality Gate analysis provides capabilities to speed up CI/CD pipeline by auto-analysis and auto-feedback to your CI/CD tools. ReportPortal assesses the build quality and sends auto feedback to CI/CD.</p>
+<p>Quality Gates plugin adds to ReportPortal possibilities:</p>
+<ul>
+<li>to create quality rules based on general test automation KPI: number of executed tests and executed tests, failure rate, failure of critical components, number of issues in executed tests, number of critical issues in the critical components, new failures &amp; new errors in the build</li>
+<li>run Quality Gates analysis for build and view build report that helps to troubleshoot issues in the build</li>
+<li>automatically send Quality Gates status to CI/CD. </li>
+</ul>
 <h2 id="quality-rules-configuration">Quality Rules Configuration</h2>
-<p><img src="https://user-images.githubusercontent.com/30413511/142931328-a659b71d-6a6c-4fbd-8113-5af261e2846e.png" alt="image"></p>
+<h3 id="quality-gate-creation">Quality Gate creation</h3>
+<p>Quality Gates can be configured on the Project Settings on the tab Quality Gate.</p>
+<p>Project Manager or Admin can create a several rules for one project.</p>
+<p>For Quality Gate creation Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gates </li>
+<li>Click on the <code>Create Gate</code> button</li>
+<li>In <code>Create Quality Gate</code> fill in the form: </li>
+</ol>
+<pre><code>Quality Gate Name: (Min length 1 - max length 55) A name which will be added to the Quality Gate report on All launches
+Analyzed Launch: Launch Name of a launch that should be analyzed   
+Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND testPlan: Regression)</code></pre>
+<p><img src="https://user-images.githubusercontent.com/30413511/142935092-bc1996cf-8459-4563-86d8-6feffcf761eb.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142934937-01d850cc-2da5-4c5f-809d-3ff9f8bda8fe.png" alt="image"></p>
+<ol>
+<li>Click on the button <code>&quot;Save&quot;</code></li>
+<li>A Quality Gate is created successfully</li>
+<li>Quality Gate is added to the Quality Gate List</li>
+</ol>
+<h3 id="quality-gate-rules">Quality Gate rules</h3>
+<p>When Quality Gate is created, you can fill you gate with quality rules.</p>
+<p>There are 4 types of Quality Gate rules:</p>
+<ul>
+<li>Amount of tests</li>
+<li>Amount of issues</li>
+<li>Percent </li>
+<li>New failures </li>
+<li>New errors (in 5.7 version)</li>
+</ul>
+<h4 id="amount-of-tests-in-the-run">Amount of tests in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that all tests should be run every time. </p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if critical tests are executed every time. </p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/30413511/142938190-16c81fd5-7a31-4552-b7e8-fecbe6a96bb9.png" alt="image"></p>
+<p>The purpose of the rule is to block a run that contains not all tests. So that you can define the minimum number of tests that should be in the run.</p>
+<p><strong>Amount of tests in a launch</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule&quot;</li>
+<li>Choose an option &quot;Amount&quot;</li>
+<li>Choose option &quot;All tests&quot;</li>
+<li>Add a number of min allowable amoutn of tests in the launch - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish the system will automatically analyzed a launch and compare number of tests in the analyzed launch with number in the &quot;amount&quot; rule in the Quality Gate. If number of tests in the launch is less than in the rule, the system fails the rule and Qulaity Gate.</p>
+<p>You can add only 1 &quot;All tests amount&quot; rule to the 1 Quality Gate.  </p>
+<p><strong>Amount of tests in a component/feature/etc</strong></p>
+<p>You can track also number of tests that belong to a feature, component, priority or others in a launch.
+For that tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
+<p>Than you need to add a &quot;amount&quot; rule with an attribute option:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule&quot;</li>
+<li>Choose an option &quot;Amount&quot;</li>
+<li>Choose option &quot;Tests with attributes&quot;</li>
+<li>Add a number of min allowable amoutn of tests for the component, feature etc. - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish the system will automatically analyzed a launch and compare number of tests with specified attirbut in the analyzed launch with number in the &quot;amount&quot; rule in the Quality Gate. If number of tests is less than in the rule, the system fails the rule and Qulaity Gate.</p>
+<p>You can add several &quot;Tests with attribute amount&quot; rule to the Quality Gate. But it is impossible to create duplicates.</p>
 <h2 id="assesment-of-test-results-using-quality-gates">Assesment of test results using Quality Gates</h2>
 <h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
 <h3 id="integration-with-jenkins">Integration with Jenkins</h3>
@@ -5644,8 +5715,8 @@ def encodedUrl = sh(script: &quot;echo -n ${hook.getURL().toString()} | base64 -
 <ol>
 <li>Configure webhook waiting data from RP:</li>
 </ol>
-<p>a. Option #1.
-This option allows sending the Quality Gates result status to the separate pipeline stage and doesn’t affect the tests execution stage and the status of that stage will be determined by the result of the Quality Gate status.
+<p><strong>a. Option #1</strong></p>
+<p>This option allows sending the Quality Gates result status to the separate pipeline stage and doesn’t affect the tests execution stage and the status of that stage will be determined by the result of the Quality Gate status.
 Add additional pipeline stage Wait for webhook and define the particular TIMEOUT_TIME, how long Jenkins should wait for data from RP:</p>
 <pre><code class="language-groovy">stage(&#39;Wait for webhook&#39;) {
      timeout(time: params.TIMEOUT_TIME, unit: params.TIMEOUT_UNIT) {
@@ -5663,8 +5734,8 @@ Add additional pipeline stage Wait for webhook and define the particular TIMEOUT
         string(name: &#39;TIMEOUT_TIME&#39;, defaultValue: &#39;30&#39;, description: &#39;&#39;)
         string(name: &#39;TIMEOUT_UNIT&#39;, defaultValue: &#39;SECONDS&#39;, description: &#39;&#39;)
 }</code></pre>
-<p>b. Option #2.
-This option should send the results from the RP to the tests run pipeline stage and the status of that stage(tests execution) will be determined by the result of the Quality Gate status.
+<p><strong>b. Option #2</strong></p>
+<p>This option should send the results from the RP to the tests run pipeline stage and the status of that stage(tests execution) will be determined by the result of the Quality Gate status.
 Add next code in the pipeline stage, where tests run:</p>
 <pre><code class="language-groovy">echo &#39;Waiting for RP processing...&#39;
 data = waitForWebhook hook;
