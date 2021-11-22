@@ -135,7 +135,7 @@ For adding this rule Project Manager or Admin should:
 7.  Click on the tick 
 8.  The rule is added to the Quality Gate
 
-In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the "failure percent" rule in the Quality Gate. If failure rate in the launch is less than in the rule, the system fails the rule and Qulaity Gate.
+In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the "failure percent" rule in the Quality Gate. If failure rate in the launch is more than in the rule, the system fails the rule and Qulaity Gate.
 
 You can add only 1 "All tests failure rate" rule to the 1 Quality Gate.  
 
@@ -156,7 +156,7 @@ Than you need to add a "amount" rule with an attribute option:
 8.  The rule is added to the Quality Gate
 
 
-In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total)of tests with specified attiribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If failure rate is less than specified in the rule, the system fails the rule and Qulaity Gate.
+In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total)of tests with specified attiribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If failure rate is more than specified in the rule, the system fails the rule and Qulaity Gate.
 
 You can add several "Tests with attribute percent" rule to the Quality Gate. But it is impossible to create duplicates.
 
@@ -174,15 +174,39 @@ If you choose "Not passed" option, rate will be calculated as (failed + skipped)
 
 
 
-#### Amount of issues in he run 
+#### Amount of issues in the run 
 
 >**Case 1:** Regression suite has 1000 tests. You want to track that the run should not have critical issue or Product bugs (or any other)
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issue or Product bugs (or any other) in the 500 tests.
 
+Amount of issues has also 2 option "All tests" and "Tests with attribute". The purpose for the rule is to limit number of unwanted defects in the run. With option "All tests" you can limit issues for all tests in the launch.
+
+With the option "Test with attributes" you can limit issues in the critical features, components or etc.
+
+1.  Open Project Settings> Quality Gate 
+2.  Click on the pencil on the Quality Gate
+3.  Click on the drop-down: "Add a new rule"
+4.  Choose an option "Amount of issues"
+5.  Choose option "All tests"/"Test with attributes"
+6.  Choose Defect type from the drop-down
+8.  Click on the tick 
+9.  The rule is added to the Quality Gate
+
+In this case, on the finish the system will automatically analyzed a launch and compare amount of issues in all tests/or  tests with specified attiribute in the analyzed launch with amount of issues from the rule in the Quality Gate. If amount of issues is more than specified in the rule, the system fails the rule and Qulaity Gate.
+
+##### Allowable leavel of To investigate
+
+When you choose a rule "Amount of issues", the system automatically adds a parameter "Allowable To investigate level" to the Quality Gate.
+What does this parameter mean?
+
+The purpose of the rule is a check and a guarantee that the run does not contain specified issues. But if a launch contains "To investigate" the system can not make an analysis of the system and guarante that the forbiden isssues absent in a launch.
+
+For this reasons, we have added a parameter "Allowable To investigate level". By default, this parameter equals to 0. It means, that the Quality gate analysis can be done 
 
 
 
+#### New failures in the run 
 
 
 
