@@ -5618,6 +5618,84 @@ users as &quot;Widget not found&quot;.</p>
 <h2 id="quality-rules-configuration">Quality Rules Configuration</h2>
 <h2 id="assesment-of-test-results-using-quality-gates">Assesment of test results using Quality Gates</h2>
 <h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
+<h3 id="integration-with-jenkins">Integration with Jenkins</h3>
+<h4 id="jenkins-configuration">Jenkins configuration</h4>
+<ol>
+<li>Go to “Manage Jenkins” -&gt; “Manage Plugins”.</li>
+<li>Make sure that the necessary Jenkins plugin is installed:
+a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.
+b. If no results of the search:
+i. Switch to the “Available” tab;
+ii. Search for “Webhook Step”;
+iii. Install the plugin with “Download now and install after restart”.</li>
+<li>Define webhook configuration to the Jenkins job/pipeline before tests execution:</li>
+</ol>
+<pre><code class="language-groovy">def hook = registerWebhook();
+def encodedUrl = sh(script: &quot;echo -n ${hook.getURL().toString()} | base64 -w 0&quot;, returnStdout: true)</code></pre>
+<p><code>encodedUrl</code> – this is a unique string that will be generated from the Jenkins job/pipeline and connect each reported launch with the appropriate Jenkins run from which the launch was reported.</p>
+<p>Put the <code>encodedUrl</code> variable into the test execution string at the enumeration of <code>rp.attributes</code>. For example(Maven build):</p>
+<pre><code class="language-groovy">Drp.attributes=&#39;k1:v1;k2:v2;rp.webhook.key:${encodedUrl}&#39;</code></pre>
+<ol>
+<li>Configure webhook waiting data from RP:</li>
+</ol>
+<p>a. Option #1.
+This option allows sending the Quality Gates result status to the separate pipeline stage and doesn’t affect the tests execution stage and the status of that stage will be determined by the result of the Quality Gate status.
+Add additional pipeline stage Wait for webhook and define the particular TIMEOUT_TIME, how long Jenkins should wait for data from RP:</p>
+<pre><code class="language-groovy">stage(&#39;Wait for webhook&#39;) {
+     timeout(time: params.TIMEOUT_TIME, unit: params.TIMEOUT_UNIT) {
+
+         echo &#39;Waiting for RP processing...&#39;
+         data = waitForWebhook hook;
+         echo &quot;Processing finished... ${data}&quot;
+
+         def jsonData = readJSON text: data
+         assert jsonData[&#39;status&#39;] == &#39;PASSED&#39; 
+      }
+}</code></pre>
+<p>Parameters for <code>TIMEOUT_TIME</code> and <code>TIMEOUT_UNIT</code> can be defined like that:</p>
+<pre><code class="language-groovy">parameters {
+        string(name: &#39;TIMEOUT_TIME&#39;, defaultValue: &#39;30&#39;, description: &#39;&#39;)
+        string(name: &#39;TIMEOUT_UNIT&#39;, defaultValue: &#39;SECONDS&#39;, description: &#39;&#39;)
+}</code></pre>
+<p>b. Option #2.
+This option should send the results from the RP to the tests run pipeline stage and the status of that stage(tests execution) will be determined by the result of the Quality Gate status.
+Add next code in the pipeline stage, where tests run:</p>
+<pre><code class="language-groovy">echo &#39;Waiting for RP processing...&#39;
+data = waitForWebhook hook;
+echo &quot;Processing finished... ${data}&quot;
+
+def jsonData = readJSON text: data
+assert jsonData[&#39;status&#39;] == &#39;PASSED&#39;</code></pre>
+<p>If the Jenkins received a response about QualityGate status from RP, the build status should be marked properly:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Jenkins Job Status</th>
+<th style="text-align:center">Quality Gate Status</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SUCCESS</td>
+<td style="text-align:center">PASSED</td>
+<td style="text-align:left">Quality Gate is passed</td>
+</tr>
+<tr>
+<td style="text-align:center">ABORTED</td>
+<td style="text-align:center">UNDEFINED</td>
+<td style="text-align:left">The Jenkins timeout has been exceeded</td>
+</tr>
+<tr>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:left">Quality Gate is failed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configure-quality-gate-analysis-timeout">Configure Quality Gate Analysis timeout</h4>
+<p>Set the appropriate “Timeout” value, which defined the delay for Quality Gate status auto-sending to Jenkins.
+Quality Gate status example, if Jenkins configuration is working and the result has been sent to CI/CD pipeline:</p>
 
   <div data-js-md-path="src/computeds/md/src/QualityGates/QualityGates.md"></div>
   <h1 id="management-board">Management Board</h1>
