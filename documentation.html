@@ -5712,7 +5712,7 @@ For that tests in the analyzed launch should have attributes (f.i. feature: Paym
 <li>Click on the tick </li>
 <li>The rule is added to the Quality Gate</li>
 </ol>
-<p>In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the &quot;failure percent&quot; rule in the Quality Gate. If failure rate in the launch is less than in the rule, the system fails the rule and Qulaity Gate.</p>
+<p>In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the &quot;failure percent&quot; rule in the Quality Gate. If failure rate in the launch is more than in the rule, the system fails the rule and Qulaity Gate.</p>
 <p>You can add only 1 &quot;All tests failure rate&quot; rule to the 1 Quality Gate.  </p>
 <p><strong>Failure rate in a component/feature/etc</strong></p>
 <p>You can track also failure rate of tests that belong to a feature, component, priority or others in a launch.
@@ -5728,17 +5728,36 @@ For that tests in the analyzed launch should have attributes (f.i. feature: Paym
 <li>Click on the tick </li>
 <li>The rule is added to the Quality Gate</li>
 </ol>
-<p>In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total)of tests with specified attiribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If failure rate is less than specified in the rule, the system fails the rule and Qulaity Gate.</p>
+<p>In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total)of tests with specified attiribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If failure rate is more than specified in the rule, the system fails the rule and Qulaity Gate.</p>
 <p>You can add several &quot;Tests with attribute percent&quot; rule to the Quality Gate. But it is impossible to create duplicates.</p>
 <p><strong>Not passed rate in the launch or in a component/feature/etc</strong></p>
 <p>You can use &quot;Percent rule&quot; in several options: Failure /Not passed.</p>
 <p>Failure rule is described in the previous sections.</p>
 <p>If you choose &quot;Not passed&quot; option, rate will be calculated as (failed + skipped)/total.</p>
-<h4 id="amount-of-issues-in-he-run">Amount of issues in he run</h4>
+<h4 id="amount-of-issues-in-the-run">Amount of issues in the run</h4>
 <blockquote>
 <p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the run should not have critical issue or Product bugs (or any other)</p>
 <p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issue or Product bugs (or any other) in the 500 tests.</p>
 </blockquote>
+<p>Amount of issues has also 2 option &quot;All tests&quot; and &quot;Tests with attribute&quot;. The purpose for the rule is to limit number of unwanted defects in the run. With option &quot;All tests&quot; you can limit issues for all tests in the launch.</p>
+<p>With the option &quot;Test with attributes&quot; you can limit issues in the critical features, components or etc.</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule&quot;</li>
+<li>Choose an option &quot;Amount of issues&quot;</li>
+<li>Choose option &quot;All tests&quot;/&quot;Test with attributes&quot;</li>
+<li>Choose Defect type from the drop-down</li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish the system will automatically analyzed a launch and compare amount of issues in all tests/or  tests with specified attiribute in the analyzed launch with amount of issues from the rule in the Quality Gate. If amount of issues is more than specified in the rule, the system fails the rule and Qulaity Gate.</p>
+<h5 id="allowable-leavel-of-to-investigate">Allowable leavel of To investigate</h5>
+<p>When you choose a rule &quot;Amount of issues&quot;, the system automatically adds a parameter &quot;Allowable To investigate level&quot; to the Quality Gate.
+What does this parameter mean?</p>
+<p>The purpose of the rule is a check and a guarantee that the run does not contain specified issues. But if a launch contains &quot;To investigate&quot; the system can not make an analysis of the system and guarante that the forbiden isssues absent in a launch.</p>
+<p>For this reasons, we have added a parameter &quot;Allowable To investigate level&quot;. By default, this parameter equals to 0. It means, that the Quality gate analysis can be done </p>
+<h4 id="new-failures-in-the-run">New failures in the run</h4>
 <h2 id="assesment-of-test-results-using-quality-gates">Assesment of test results using Quality Gates</h2>
 <h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
 <h3 id="integration-with-jenkins">Integration with Jenkins</h3>
