@@ -1,6 +1,7 @@
 ## Quality Gate Purpose 
 
  we support Continuous Testing with build-in functionality - Quality Gates
+ 
  ![image](https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png)
 
  
@@ -105,6 +106,84 @@ Than you need to add a "amount" rule with an attribute option:
 In this case, on the finish the system will automatically analyzed a launch and compare number of tests with specified attirbut in the analyzed launch with number in the "amount" rule in the Quality Gate. If number of tests is less than in the rule, the system fails the rule and Qulaity Gate.
 
 You can add several "Tests with attribute amount" rule to the Quality Gate. But it is impossible to create duplicates.
+
+
+
+
+
+
+#### Failure rate of the run 
+
+>**Case 1:** Regression suite has 1000 tests. You want to track that passing rate should be no more than 5%.
+
+>**Case 2:** Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. 
+
+![image](https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png)
+
+The purpose of the rule is to block a run that has a not allowble passing rate. So that you can define the minimum failure rate for the run.
+
+**Launch Failure rate**
+
+For adding this rule Project Manager or Admin should:
+
+1.  Open Project Settings> Quality Gate 
+2.  Click on the pencil on the Quality Gate
+3.  Click on the drop-down: "Add a new rule"
+4.  Choose an option "Percent"
+5.  Choose option "All tests"
+6.  Add a % of min allowable failure rate - N% 
+7.  Click on the tick 
+8.  The rule is added to the Quality Gate
+
+In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the "failure percent" rule in the Quality Gate. If failure rate in the launch is less than in the rule, the system fails the rule and Qulaity Gate.
+
+You can add only 1 "All tests failure rate" rule to the 1 Quality Gate.  
+
+**Failure rate in a component/feature/etc**
+
+You can track also failure rate of tests that belong to a feature, component, priority or others in a launch.
+For that tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).
+
+Than you need to add a "amount" rule with an attribute option:
+
+1.  Open Project Settings> Quality Gate 
+2.  Click on the pencil on the Quality Gate
+3.  Click on the drop-down: "Add a new rule"
+4.  Choose an option "Percent"
+5.  Choose option "Tests with attributes"
+6.  Add a % of min allowable failure rate - N% 
+7.  Click on the tick 
+8.  The rule is added to the Quality Gate
+
+
+In this case, on the finish the system will automatically analyzed a launch and compare failure rate (failed tests/total)of tests with specified attiribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If failure rate is less than specified in the rule, the system fails the rule and Qulaity Gate.
+
+You can add several "Tests with attribute percent" rule to the Quality Gate. But it is impossible to create duplicates.
+
+**Not passed rate in the launch or in a component/feature/etc**
+
+You can use "Percent rule" in several options: Failure /Not passed.
+
+Failure rule is described in the previous sections.
+
+If you choose "Not passed" option, rate will be calculated as (failed + skipped)/total.
+
+
+
+
+
+
+
+#### Amount of issues in he run 
+
+>**Case 1:** Regression suite has 1000 tests. You want to track that the run should not have critical issue or Product bugs (or any other)
+
+>**Case 2:** Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issue or Product bugs (or any other) in the 500 tests.
+
+
+
+
+
 
 
 
