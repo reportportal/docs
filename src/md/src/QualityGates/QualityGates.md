@@ -1,10 +1,24 @@
 ## Quality Gate Purpose 
 
-## How to instal Quality Gates
+ we support Continuous Testing with build-in functionality - Quality Gates
+ 
+ 
+
+## How to install Quality Gates
+
+The Quality Gate feature is available in the scope of ReportPortal enterprise version. 
+Section is in progress
 
 ## Feature overview 
 
+Quality Gate analysis provides capabilities to speed up CI/CD pipeline by auto-analysis and auto-feedback to your CI/CD tools. ReportPortal assesses build quality and sends auto feedback to CI/CD.
+
+Quality Gates plugin adds to ReportPortal a possibility to create quality rules
+
 ## Quality Rules Configuration
+
+![image](https://user-images.githubusercontent.com/30413511/142931328-a659b71d-6a6c-4fbd-8113-5af261e2846e.png)
+
 
 ## Assesment of test results using Quality Gates 
 
