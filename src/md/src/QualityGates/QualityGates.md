@@ -159,6 +159,7 @@ Now the system will automatically analyze a launch and compare the number of tes
 #### Failure rate of the run 
 
 >**Case 1:** You want to track that the passing rate for regression suite should be no more than 20%.
+>
 >**Case 2:** You want to track that all critical tests in regression suite are always passed. 
 
 [ ![Rule: Percent of Tests](Images/userGuide/QualityGates/Failure Rate All.png) ](https://youtu.be/bSO21gtT82E)
