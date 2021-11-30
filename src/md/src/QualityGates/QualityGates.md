@@ -56,14 +56,14 @@ Download the .jar file and upload it to ReportPortal. Fo that pleases perform, f
 * Reload page 
 
 As soon as the plugin has been added to the ReportPortal, a new ``` Quality Gates tab``` will be added to the Project Settings.
-![image](https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png)
+
+ [ ![No state](Images/userGuide/QualityGates/No Quality Gates View.png) ](Images/userGuide/QualityGates/No Quality Gates View.png)
+
 
 On the All launches page, the system adds a label "N/A" to each launch.
-![image](https://user-images.githubusercontent.com/30413511/143957615-51ac23c7-ec0c-4576-bba1-b37a89f2a66c.png)
-
-![image](https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png)
-
 ```A label "N/A"``` means that the Quality Gates has not been run for a launch yet.
+
+ [ ![NA Label](Images/userGuide/QualityGates/NA Quality Gate Label.png) ](Images/userGuide/QualityGates/NA Quality Gate Label.png)
 
 ## Quality Rules Configuration
 
