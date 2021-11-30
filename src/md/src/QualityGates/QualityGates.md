@@ -347,9 +347,9 @@ If you want to choose other options for a baseline, you can do it:
 | Case | Fileds configuration | 
 | :----:      |    :----:   | 
 | You want to specify a static launch that should always be used | Select launch name and add launch number in the baseline section|
-| You want to specify dynamic launcg| Select launch name and check a button "Latest" (?)|
+| You want to specify dynamic launcg| Select launch name and check a button "Latest" :question:|
 
-(?) When you use "latest", the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
+:question: When you use "latest", the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
 If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.
 
 ## Qulaity Gate Edit
