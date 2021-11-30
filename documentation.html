@@ -5853,21 +5853,27 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 <li>The rule is added to the Quality Gate</li>
 </ol>
 <p>In this case, on the finish, the system will automatically analyze a launch and compare failed tests /or failed tests with the specified attribute in the analyzed launch with tests in the baseline. It fails a rule if the system detects a new failure in the launch or in tests with specified attributes. </p>
+<h5 id="how-does-the-rule-works">How does the rule works</h5>
+<p>For defining test uniqueness, ReportPortal uses <a href="https://reportportal.io/docs/Test-case-ID%3Ewhat-is-it-test-case-id">Test Case ID principles</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> For now, ReportPortal can not process items with the same Test Case ID correctly.</p>
+</blockquote>
 <h5 id="how-to-choose-a-baseline-for-the-new-failures-rule">How to choose a Baseline for the &quot;New failures&quot; rule</h5>
 <p><strong>Default Baseline</strong></p>
 <p>By default, a system will use <code>a previous launch</code> for comparison. For example, for &quot;Launch A #3&quot;, the system will use &quot;Launch A #2&quot; as a baseline. If there is no &quot;Launch A #2&quot; (f.e. this launch has been deleted by retention job) in the system, the system will use &quot;Launch A #1&quot;.</p>
 <p>If there is no fitting launch in the system, the &quot;New failure&quot; rule will get the status &quot;Undefine&quot;.</p>
-<p><img src="https://user-images.githubusercontent.com/30413511/143959570-88bf90df-52f8-44b3-821b-90b4640349d0.png" alt="image"></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Baseline Latest.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Baseline Latest.png" alt="Rule: Baseline Latest"> </a></p>
 <p><strong>Customized Baseline</strong></p>
 <p>If you want to choose other options for a baseline, you can do it:</p>
 <ul>
 <li>Login ReportPortal as Project Manager or Admin </li>
-<li>Open Project Settings&gt; Quality Gates</li>
-<li>Click on the pencil on the Quality Gate rule </li>
-<li>Click on &quot;Edit Details.&quot;</li>
-<li>Unclick a checkbox on &quot;Choose a previous launch as a baseline.&quot; </li>
+<li>Open <code>Project Settings&gt; Quality Gates</code></li>
+<li>Click on <code>the pencil</code> on the Quality Gate rule </li>
+<li>Click on <code>&quot;Edit Details.&quot;</code></li>
+<li>Unclick a checkbox on <code>&quot;Choose a previous launch as a baseline.&quot;</code> </li>
 <li>The system activates fields for baseline configuration</li>
 </ul>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Custom Baseline.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Custom Baseline.png" alt="Rule: Baseline Custom"> </a></p>
 <table>
 <thead>
 <tr>
@@ -5888,6 +5894,18 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 </table>
 <p>(?) When you use &quot;latest&quot;, the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
 If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.</p>
+<h2 id="qulaity-gate-edit">Qulaity Gate Edit</h2>
+<p>If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.</p>
+<p>If you want to recalculate Quality Gate with a new values, please chekc section ### How to recalculate Qulaity Gates.</p>
+<h2 id="delete-quality-gates">Delete Quality Gates</h2>
+<p>If you want to delete Quality Gate:</p>
+<ul>
+<li>Login ReportPortal as Project Manager or Admin </li>
+<li>Open <code>Project Settings&gt; Quality Gates</code></li>
+<li>Click on <code>the trash</code> on the Quality Gate rule </li>
+<li>The system removes Quality Gate from the DB</li>
+<li>All Quality Gate report for this rule also will be deleted form the system</li>
+</ul>
 <h2 id="assessment-of-test-results-using-quality-gates">Assessment of test results using Quality Gates</h2>
 <p>Now the system is preconfigured, and you can start using Quality Gates Analysis.</p>
 <p>Quality Gates plugin can be used with CI/CD tools - in this case, and Quality Gate status will be sent to CI/CD pipeline.
@@ -5897,9 +5915,19 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 <h3 id="how-to-run-quality-gates-manually">How to run Quality Gates Manually</h3>
 <p>By default, all launches have &quot;N\A&quot; status. It means that Quality Gate analysis has not been run for these launches.</p>
 <p>If you want to run Quality Gate analysis manually, click on the label &quot;N/A&quot; and click on the &quot;Run Quality Gate&quot; in the opened pop-up.</p>
-<p><img src="https://user-images.githubusercontent.com/30413511/143961414-b1e63a25-9976-4750-a3dd-f54df7564f2b.png" alt="image"></p>
+<h3 id="how-to-recalculate-qulaity-gates">How to recalculate Qulaity Gates</h3>
+<p>If you want to recalculate Quality Gate status for a launch, just perform next actions: </p>
+<ul>
+<li>click on <code>the label with a status</code> of a launch</li>
+<li>click on the <code>&quot;Recalculate&quot;</code> in the opened pop-up</li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png" alt="Report"> </a></p>
+<blockquote>
+<p><strong>Note:</strong> If Quality Gate status has been alredy sent to CI/CD, a status can not be recalculated for a such launch. </p>
+</blockquote>
 <h3 id="how-to-run-quality-gates-automatically">How to run Quality Gates Automatically</h3>
 <p>You can configure Auto Quality Gate Analysis on the Project Settings. If you switch Quality Gate Analysis ON, the system will start QG analysis on the launch finish. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Auto.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Auto.png" alt="Report"> </a></p>
 <h3 id="quality-gate-status">Quality Gate Status</h3>
 <p>When Quality Gate analysis is finished, a launch gets a status. How is status calculated:</p>
 <table>
@@ -5940,11 +5968,20 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 </ul>
 <p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that:</p>
 <ul>
-<li>Click on the Quality Gate status label </li>
-<li>On the Quality Gate Popup, click on the &quot;Run Quality Gate.&quot;</li>
+<li>Click on <code>the Quality Gate status label</code> </li>
+<li>On the Quality Gate Popup, click on the <code>&quot;Run Quality Gate.&quot;</code></li>
 <li>Reload Page</li>
 </ul>
 <h3 id="quality-gate-report">Quality Gate Report</h3>
+<p>A Quality Gate report is a full report that shows information on Quality gate results. This is a table that shows:</p>
+<ul>
+<li>all rules in a Quality Gate</li>
+<li>rule status: <code>Passed/Faile/Skipped</code> </li>
+<li>expected results</li>
+<li>actual results </li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png" alt="Report"> </a></p>
+<p>All actual results are clickable in the report except New Failure. A clickable area for New failure will be available in the version 5.7. So user can drill down and investigate items, that became a reason of build failure.</p>
 <h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
 <h3 id="integration-with-jenkins">Integration with Jenkins</h3>
 <h4 id="jenkins-configuration">Jenkins configuration</h4>
