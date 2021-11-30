@@ -21,9 +21,9 @@ The second purpose of Quality Gate is to simplify interactions between a QA team
 * new failures & new errors in the build
 
 And it leads us to the third purpose of Quality Gates. It is a full-featured report on Quality Gates analysis results which helps to troubleshoot problems and fix them.
- src/Images/userGuide/QualityGates/Quality Gates Intro.jpg
  
- [ ![QulaityGatesIntro](src/Images/userGuide/QualityGates/Quality Gates Intro.jpg) ](src/Images/userGuide/QualityGates/Quality Gates Intro.jpg)
+
+ [ ![QulaityGatesIntro](Images/userGuide/QualityGates/Quality Gates Intro.jpg) ](Images/userGuide/QualityGates/Quality Gates Intro.jpg)
 
  
 ## How to install Quality Gates
