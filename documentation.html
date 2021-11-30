@@ -5792,32 +5792,64 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 </blockquote>
 <h4 id="amount-of-issues-in-the-run">Amount of issues in the run</h4>
 <blockquote>
-<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the run should not have a critical issue or Product bugs (or any other)</p>
-<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in the 500 tests.</p>
+<p><strong>Case 1:</strong> You want to track that the regression suite run should not have a critical issue or Product bugs.</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in these 500 tests.</p>
 </blockquote>
-<p><a href="https://youtu.be/ajIvWB83bGg">https://youtu.be/ajIvWB83bGg</a></p>
+<p><a href="https://youtu.be/ajIvWB83bGg"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Issues .png" alt="Rule: Issues in the run"> </a></p>
+<p>Amount of issues also has 2 options &quot;All tests&quot; and &quot;Tests with the attribute&quot;. The purpose of the rule is to limit the number of unwanted defects in the run. With the option &quot;All tests&quot;, you can restrict issues for all tests in the launch.</p>
+<p>With the option &quot;Test with attributes&quot;, you can limit issues in the critical features, components, etc.</p>
+<p><strong>Ammount of issues in the launch</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open <code>Project Settings&gt; Quality Gate</code> </li>
+<li>Click on <code>the pencil</code> on the Quality Gate</li>
+<li>Click on the drop-down: <code>&quot;Add a new rule&quot;</code></li>
+<li>Choose the option <code>&quot;Amount of issues&quot;</code></li>
+<li>Choose the option <code>&quot;All tests&quot;</code></li>
+<li>Choose a defect type: <code>&quot;Total Defect Types&quot;</code> or <code>&quot;Defect Type&quot;</code></li>
+<li>Add a number of min allowable issues - <code>N%</code> </li>
+<li>Click on <code>the tick</code> </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>On the finish, the system will automatically analyze a launch and compare a number of specified defects in the analyzed launch with a issues numbers in the &quot;amount issues&quot; rule in the Quality Gate. If the a number of issues in the launch is more than in the rule, the system fails the rule and Quality Gate.</p>
+<blockquote>
+<p><strong>Note:</strong> How a number of issues is calculated</p>
+<p>if in the rule specified &quot;Total Defect type&quot;
+&gt;
+<code>A number of issues in the test run</code> = SUM of items with defect types which belong to the Defect type group</p>
+<p>if in the rule specified &quot;Defect type&quot;</p>
+<p><code>A number of issues in the test run</code> = number of items with specified defect types </p>
+</blockquote>
+<p><strong>Ammount of issues in tests with attribute</strong></p>
+<p>For this rule a user can choose an option <code>Tests with an attribute&quot;</code>. The logic for this rule is the same as for rule &quot;Amount of tests with an attribute&quot;.</p>
 <h5 id="allowable-level-of-to-investigate">Allowable level of To investigate</h5>
-<p>When you choose a rule &quot;Amount of issues&quot;, the system automatically adds a parameter &quot;Allowable To investigate level&quot; to the Quality Gate.
-What does this parameter mean?</p>
+<p>When you choose a rule <code>&quot;Amount of issues&quot;</code>, the system automatically adds a parameter <code>&quot;Allowable To investigate level&quot;</code> to the Quality Gate.</p>
+<p>What does this parameter mean?</p>
 <p>The purpose of the rule is a check and a guarantee that the run does not contain specified issues. But if a launch includes &quot;To investigate&quot;, the system can not make an analysis of the system and guarantee that the forbidden problems are absent in a launch.</p>
-<p>For this reason, we have added the parameter &quot;Allowable To investigate level&quot;. By default, this parameter equals 0. It means that the system can do the Quality gate analysis. </p>
+<p>For this reason, we have added the parameter <code>&quot;Allowable To investigate level&quot;</code>. By default, this parameter equals 0. But you can change this parameter and set your custom value. </p>
+<p>For this Project Manager or Admin can edit Quality Gate:</p>
+<ul>
+<li>Open <code>Project Settings&gt; Quality Gates</code> </li>
+<li>Click on <code>the pencil</code> on the Quality Gate</li>
+<li>Click on the button <code>&quot;Edit Details&quot;</code></li>
+<li>Change value in the field <code>&quot;Allowable TI&quot;</code></li>
+<li>Click on the button <code>&quot;Save&quot;</code></li>
+</ul>
 <h4 id="new-failures-in-the-run">New failures in the run</h4>
 <blockquote>
 <p><strong>Case 1:</strong> Regression suite has 1000 tests. In the last released version, five tests failed in a regression suite. You want to track that the regression runs on the version in development should not have new failures.</p>
 <p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.</p>
 </blockquote>
-<p><a href="https://youtu.be/W05N7DQkalg">https://youtu.be/W05N7DQkalg</a></p>
-<p>Amount of issues also has 2 options &quot;All tests&quot; and &quot;Tests with the attribute&quot;. The purpose of the rule is to limit the number of unwanted defects in the run. With the option &quot;All tests&quot;, you can restrict issues for all tests in the launch.</p>
-<p>With the option &quot;Test with attributes&quot;, you can limit issues in the critical features, components, etc.</p>
+<p><a href="https://youtu.be/W05N7DQkalg"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/New failure.png" alt="Rule: New Failure"> </a></p>
 <p>The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
 <p>New failures also have 2 options &quot;All tests&quot; and &quot;Tests with an attribute&quot;. The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
 <ol>
-<li>Open Project Settings&gt; Quality Gate </li>
-<li>Click on the pencil on the Quality Gate</li>
-<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
-<li>Choose the option &quot;New failure.&quot;</li>
-<li>Choose the option &quot;All tests&quot;/&quot;Test with attributes.&quot;</li>
-<li>Click on the tick </li>
+<li>Open <code>Project Settings&gt; Quality Gate</code> </li>
+<li>Click on <code>the pencil</code> on the Quality Gate</li>
+<li>Click on the drop-down: <code>&quot;Add a new rule.&quot;</code></li>
+<li>Choose the option <code>&quot;New failure.&quot;</code></li>
+<li>Choose the option <code>&quot;All tests&quot;/&quot;Test with attributes.&quot;</code></li>
+<li>Click on <code>the tick</code> </li>
 <li>The rule is added to the Quality Gate</li>
 </ol>
 <p>In this case, on the finish, the system will automatically analyze a launch and compare failed tests /or failed tests with the specified attribute in the analyzed launch with tests in the baseline. It fails a rule if the system detects a new failure in the launch or in tests with specified attributes. </p>
