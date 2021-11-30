@@ -397,6 +397,7 @@ If you want to recalculate Quality Gate status for a launch, just perform next a
 [ ![Report](Images/userGuide/QualityGates/Quality Gates Report.png) ](Images/userGuide/QualityGates/Quality Gates Report.png)
 
 >**Note:** If Quality Gate status has been alredy sent to CI/CD, a status can not be recalculated for a such launch. 
+> [ ![Report](Images/userGuide/QualityGates/Report That is already sent .png) ](Images/userGuide/QualityGates/Report That is already sent .png)
  
 ### How to run Quality Gates Automatically
 
@@ -439,6 +440,8 @@ A Quality Gate report is a full report that shows information on Quality gate re
 All actual results are clickable in the report except New Failure. A clickable area for New failure will be available in the version 5.7. So user can drill down and investigate items, that became a reason of build failure.
 
 ## Integration with CI/CD
+
+[ ![Report](Images/userGuide/QualityGates/Report That is already sent .png) ](https://youtu.be/W7BBhni9ANU)
 
 ### Integration with Jenkins 
 
