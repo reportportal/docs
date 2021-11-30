@@ -91,6 +91,7 @@ Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND dev
 
 [ ![Quality Gate Creation](Images/userGuide/QualityGates/Quality Gates Creation.png) ](https://youtu.be/dXp3Lf9bI30)
 
+### Quality Gate ordering
 
 
 ### Quality Gate rules
@@ -106,15 +107,9 @@ There are four types of Quality Gate rules:
 
 #### Amount of tests in the run 
 
->**Case 1:** Regression suite has 1000 tests. You want to track that all tests should be run every time.
+>**Case:** Regression suite has 224 tests. You want to track that all tests should be run every time.
 
-https://youtu.be/TC0J8BV_XBY
-
->**Case 2:** Regression suite contains 500 tests with critical priority. You want to track if required tests are executed every time. 
-
-https://youtu.be/EwsG7RcmcDs
-
-![image](https://user-images.githubusercontent.com/30413511/142938190-16c81fd5-7a31-4552-b7e8-fecbe6a96bb9.png)
+[ ![Rule: Amount of All Tests in the launch](Images/userGuide/QualityGates/Amount of tests ALL.png) ](https://youtu.be/TC0J8BV_XBY)
 
 The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.
 
@@ -122,39 +117,42 @@ The purpose of the rule is to block a run that contains not all tests so that yo
 
 For adding this rule Project Manager or Admin should:
 
-1.  Open Project Settings> Quality Gate 
-2.  Click on the pencil on the Quality Gate
-3.  Click on the drop-down: "Add a new rule."
-4.  Choose the option "Amount."
-5.  Choose the option "All tests."
-6.  Add a number of min allowable amount of tests in the launch - N 
-7.  Click on the tick 
-8.  The rule is added to the Quality Gate
+1.  Open ```Project Settings> Quality Gate``` 
+2.  Click on ```the pencil``` on the Quality Gate
+3.  Click on the drop-down: ```"Add a new rule"```
+5.  Choose the option ```"Amount"```
+6.  Choose the option ```"All tests"```
+7.  Add a number of min allowable amount of tests in the launch - ```N```
+8.  Click on ```the tick``` 
+9.  The rule is added to the Quality Gate
 
-In this case, the system will automatically analyze a launch and compare the number of tests in the analyzed launch with the number in the "amount" rule in the Quality Gate. If the number of tests in the launch is less than in the rule, the system fails the rule and Quality Gate.
+Now the system will automatically analyze a launch and compare the number of tests in the analyzed launch with the number in the "amount" rule in the Quality Gate. If the number of tests in the launch is less than in the rule, the system fails the rule and Quality Gate.
 
-You can add only 1 "All tests amount" rule to 1 Quality Gate.  
+>**Note:** You can add only 1 "All tests amount" rule to 1 Quality Gate.  
 
 **Amount of tests in a component/feature/etc**
+
+>**Case:** Regression suite contains 24 tests with critical priority. You want to track if these tests are executed every time. 
+
+[ ![Rule: Amount of Tests with attributes in the launch](Images/userGuide/QualityGates/Amount Attribute.png) ](https://youtu.be/EwsG7RcmcDs)
 
 You can also track the number of tests that belong to a feature, component, priority or others in a launch.
 For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).
 
 Then you need to add an "amount" rule with an attribute option:
 
-1.  Open Project Settings> Quality Gate 
-2.  Click on the pencil on the Quality Gate
-3.  Click on the drop-down: "Add a new rule."
-4.  Choose the option "Amount."
-5.  Choose option "Tests with attributes."
-6.  Add a number of min allowable amount of tests for the component, feature etc. - N 
-7.  Click on the tick 
+1.  Open ```Project Settings> Quality Gate``` 
+2.  Click on ```the pencil``` on the Quality Gate
+3.  Click on the drop-down: ```"Add a new rule"```
+4.  Choose the option ```"Amount"```
+5.  Choose option ```"Tests with attributes"```
+6.  Add a number of min allowable amount of tests for the component, feature etc. - ```N``` 
+7.  Click on ```the tick``` 
 8.  The rule is added to the Quality Gate
 
-In this case, the system will automatically analyze a launch and compare the number of tests with specified attributes in the analyzed launch with a number in the "amount" rule in the Quality Gate. If the number of tests is less than in the rule, the system fails the rule and Quality Gate.
+Now the system will automatically analyze a launch and compare the number of tests with specified attributes in the analyzed launch with a number in the "amount" rule in the Quality Gate. If the number of tests is less than in the rule, the system fails the rule and Quality Gate.
 
-You can add several "Tests with attribute amount" rules to the Quality Gate. But it is impossible to create duplicates.
-
+>**Note:** You can add several "Tests with attribute amount" rules to the Quality Gate. But it is impossible to create duplicates.
 
 
 
