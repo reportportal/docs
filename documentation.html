@@ -5612,7 +5612,740 @@ users as &quot;Widget not found&quot;.</p>
   <h1 id="quality-gates-enterprise-">Quality Gates (Enterprise)</h1>
 
   <div data-js-md-path="src/computeds/md/src/QualityGates/index.md"></div>
-  
+  <h2 id="quality-gate-purpose">Quality Gate Purpose</h2>
+<p> ReportPortal supports Continuous Testing with build-in functionality - <strong>Quality Gates</strong>. </p>
+<p>The primary Quality Gate purpose is to speed up a CI/CD pipeline.</p>
+<p>Quality Gates plugin supports the next user flow:</p>
+<ul>
+<li>Create Quality Gate rules in ReportPortal </li>
+<li>Start a test job in CI/CD with webhook </li>
+<li>ReportPortal assesses launch quality using created rules</li>
+<li>ReportPortal sends auto feedback to CI/CD tool with status Passed or Failed</li>
+<li>Based on ReportPortal Feedback, CI/CD tool fails a build or promotes it to the next stage</li>
+</ul>
+<p>The second purpose of Quality Gate is to simplify interactions between a QA team and business stakeholders. Quality Gates provides a possibility to create business-friendly rules such as:</p>
+<ul>
+<li>define required number of tests in a job</li>
+<li>specify tests that should be executed (features, components)</li>
+<li>define minimum executed tests failure rate</li>
+<li>new failure of critical components </li>
+<li>define a number of issues in executed tests </li>
+<li>define a number of critical issues in the critical components </li>
+<li>new failures &amp; new errors in the build</li>
+</ul>
+<p>And it leads us to the third purpose of Quality Gates. It is a full-featured report on Quality Gates analysis results which helps to troubleshoot problems and fix them.</p>
+<p> <img src="https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png" alt="image"></p>
+<h2 id="how-to-install-quality-gates">How to install Quality Gates</h2>
+<p>The Quality Gate feature is available in the scope of the ReportPortal enterprise version started from <a href="https://reportportal.io/releases/5.6.0">version 5.6</a>. ReportPortal provides it for clients in the scope of paid support engagement( min contract amount 50K).</p>
+<blockquote>
+<p><strong>Note:</strong> If you are interested in this feature, please get in touch with us via support@reportportal.io.</p>
+</blockquote>
+<h2 id="feature-overview">Feature overview</h2>
+<p>Quality Gate analysis provides capabilities to speed up CI/CD pipeline by sending auto-feedback to your CI/CD tools. ReportPortal assesses the build quality and sends auto feedback to CI/CD.</p>
+<p>Quality Gates plugin adds to ReportPortal possibilities:</p>
+<ul>
+<li>to create quality rules based on general test automation KPI: number of executed tests and executed tests, failure rate, failure of critical components, number of issues in completed tests, number of essential issues in the critical parts, new failures &amp; new errors in the build</li>
+<li>run Quality Gates analysis for build and view build report that helps to troubleshoot issues in the build</li>
+<li>automatically send Quality Gates status to CI/CD. </li>
+</ul>
+<h2 id="upload-quality-gate-to-reportportal">Upload Quality Gate to ReportPortal</h2>
+<p>The default configuration of ReportPortal doesn&#39;t contain Quality Gate. For adding this feature, you need to <a href="# How to install Quality Gates">receive a link to the .jar file from ReportPortal</a>. </p>
+<p>Download the .jar file and upload it to ReportPortal. Fo that pleases perform, following actions:</p>
+<ul>
+<li>Login ReportPortal as an Admin </li>
+<li>Open <code>Admin Page &gt; Plugins</code> </li>
+<li>Click on the button <code>Upload</code></li>
+<li>Add .jar file to the modal <code>Upload plugin</code></li>
+<li>And click the button <code>Upload</code></li>
+<li>Reload page </li>
+</ul>
+<p>As soon as the plugin has been added to the ReportPortal, a new <code>Quality Gates tab</code> will be added to the Project Settings.
+<img src="https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png" alt="image"></p>
+<p>On the All launches page, the system adds a label &quot;N/A&quot; to each launch.
+<img src="https://user-images.githubusercontent.com/30413511/143957615-51ac23c7-ec0c-4576-bba1-b37a89f2a66c.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png" alt="image"></p>
+<p><code>A label &quot;N/A&quot;</code> means that the Quality Gates has not been run for a launch yet.</p>
+<h2 id="quality-rules-configuration">Quality Rules Configuration</h2>
+<p>Now let&#39;s configure the Quality rule, which will be used for launch quality assessment. </p>
+<h3 id="quality-gate-creation">Quality Gate creation</h3>
+<p>Quality Gates can be configured on the Project Settings on the tab Quality Gate.</p>
+<p>The Project Manager or Admin can create several rules for one project.</p>
+<p>For Quality Gate creation Project Manager or Admin should:</p>
+<ul>
+<li>Open <code>Project Settings&gt; Quality Gates</code> </li>
+<li>Click on the <code>Create Gate</code> button</li>
+<li>In <code>Create Quality Gate</code> fill in the form</li>
+<li>Click on the button <code>&quot;Save&quot;</code></li>
+<li>A Quality Gate is created successfully</li>
+<li>Quality Gate is added to the Quality Gate List</li>
+</ul>
+<pre><code>Quality Gate Name: (Min length 1 - max length 55) A name that will be added to the Quality Gate report on All launches
+Analyzed Launch: Launch Name of a launch that should be analyzed   
+Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND test plan: Regression)</code></pre>
+<p><img src="https://user-images.githubusercontent.com/30413511/142935092-bc1996cf-8459-4563-86d8-6feffcf761eb.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142934937-01d850cc-2da5-4c5f-809d-3ff9f8bda8fe.png" alt="image"></p>
+<p><a href="https://youtu.be/dXp3Lf9bI30">https://youtu.be/dXp3Lf9bI30</a></p>
+<h3 id="quality-gate-rules">Quality Gate rules</h3>
+<p>When Quality Gate is created, you can fill your gate with quality rules.</p>
+<p>There are four types of Quality Gate rules:</p>
+<ul>
+<li>Amount of tests</li>
+<li>Amount of issues</li>
+<li>Percent </li>
+<li>New failures </li>
+<li>New errors (in 5.7 version)</li>
+</ul>
+<h4 id="amount-of-tests-in-the-run">Amount of tests in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that all tests should be run every time.</p>
+</blockquote>
+<p><a href="https://youtu.be/TC0J8BV_XBY">https://youtu.be/TC0J8BV_XBY</a></p>
+<blockquote>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if required tests are executed every time. </p>
+</blockquote>
+<p><a href="https://youtu.be/EwsG7RcmcDs">https://youtu.be/EwsG7RcmcDs</a></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142938190-16c81fd5-7a31-4552-b7e8-fecbe6a96bb9.png" alt="image"></p>
+<p>The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.</p>
+<p><strong>Amount of tests in a launch</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Amount.&quot;</li>
+<li>Choose the option &quot;All tests.&quot;</li>
+<li>Add a number of min allowable amount of tests in the launch - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, the system will automatically analyze a launch and compare the number of tests in the analyzed launch with the number in the &quot;amount&quot; rule in the Quality Gate. If the number of tests in the launch is less than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add only 1 &quot;All tests amount&quot; rule to 1 Quality Gate.  </p>
+<p><strong>Amount of tests in a component/feature/etc</strong></p>
+<p>You can also track the number of tests that belong to a feature, component, priority or others in a launch.
+For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
+<p>Then you need to add an &quot;amount&quot; rule with an attribute option:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Amount.&quot;</li>
+<li>Choose option &quot;Tests with attributes.&quot;</li>
+<li>Add a number of min allowable amount of tests for the component, feature etc. - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, the system will automatically analyze a launch and compare the number of tests with specified attributes in the analyzed launch with a number in the &quot;amount&quot; rule in the Quality Gate. If the number of tests is less than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add several &quot;Tests with attribute amount&quot; rules to the Quality Gate. But it is impossible to create duplicates.</p>
+<h4 id="failure-rate-of-the-run">Failure rate of the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the passing rate should be no more than 5%.</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. </p>
+</blockquote>
+<p><a href="https://youtu.be/bSO21gtT82E">https://youtu.be/bSO21gtT82E</a></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png" alt="image"></p>
+<p>The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.</p>
+<p><strong>Launch Failure rate</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Percent.&quot;</li>
+<li>Choose the option &quot;All tests.&quot;</li>
+<li>Add a % of min allowable failure rate - N% </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the &quot;failure per cent&quot; rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add only 1 &quot;All tests failure rate&quot; rule to 1 Quality Gate.  </p>
+<p><strong>Failure rate in a component/feature/etc</strong></p>
+<p>You can also track the failure rate of tests that belong to a feature, component, priority or others in a launch.
+For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
+<p>Then you need to add an &quot;amount&quot; rule with an attribute option:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Percent.&quot;</li>
+<li>Choose option &quot;Tests with attributes.&quot;</li>
+<li>Add a % of min allowable failure rate - N% </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare the failure rate (failed tests/total)of tests with a specified attribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add several &quot;Tests with attribute percent&quot; rules to the Quality Gate. But it is impossible to create duplicates.</p>
+<p><strong>Not passing rate in the launch or a component/feature/etc.</strong></p>
+<p>You can use the &quot;Percent rule&quot; in several options: Failure /Not passed.</p>
+<p>The failure rule is described in the previous sections.</p>
+<p>If you choose the &quot;Not passed&quot; option, the rate will be calculated as (failed + skipped)/total.</p>
+<h4 id="amount-of-issues-in-the-run">Amount of issues in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the run should not have a critical issue or Product bugs (or any other)</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in the 500 tests.</p>
+</blockquote>
+<p><a href="https://youtu.be/ajIvWB83bGg">https://youtu.be/ajIvWB83bGg</a></p>
+<h5 id="allowable-level-of-to-investigate">Allowable level of To investigate</h5>
+<p>When you choose a rule &quot;Amount of issues&quot;, the system automatically adds a parameter &quot;Allowable To investigate level&quot; to the Quality Gate.
+What does this parameter mean?</p>
+<p>The purpose of the rule is a check and a guarantee that the run does not contain specified issues. But if a launch includes &quot;To investigate&quot;, the system can not make an analysis of the system and guarantee that the forbidden problems are absent in a launch.</p>
+<p>For this reason, we have added the parameter &quot;Allowable To investigate level&quot;. By default, this parameter equals 0. It means that the system can do the Quality gate analysis. </p>
+<h4 id="new-failures-in-the-run">New failures in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. In the last released version, five tests failed in a regression suite. You want to track that the regression runs on the version in development should not have new failures.</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.</p>
+</blockquote>
+<p><a href="https://youtu.be/W05N7DQkalg">https://youtu.be/W05N7DQkalg</a></p>
+<p>Amount of issues also has 2 options &quot;All tests&quot; and &quot;Tests with the attribute&quot;. The purpose of the rule is to limit the number of unwanted defects in the run. With the option &quot;All tests&quot;, you can restrict issues for all tests in the launch.</p>
+<p>With the option &quot;Test with attributes&quot;, you can limit issues in the critical features, components, etc.</p>
+<p>The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
+<p>New failures also have 2 options &quot;All tests&quot; and &quot;Tests with an attribute&quot;. The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;New failure.&quot;</li>
+<li>Choose the option &quot;All tests&quot;/&quot;Test with attributes.&quot;</li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare failed tests /or failed tests with the specified attribute in the analyzed launch with tests in the baseline. It fails a rule if the system detects a new failure in the launch or in tests with specified attributes. </p>
+<h5 id="how-to-choose-a-baseline-for-the-new-failures-rule">How to choose a Baseline for the &quot;New failures&quot; rule</h5>
+<p><strong>Default Baseline</strong></p>
+<p>By default, a system will use <code>a previous launch</code> for comparison. For example, for &quot;Launch A #3&quot;, the system will use &quot;Launch A #2&quot; as a baseline. If there is no &quot;Launch A #2&quot; (f.e. this launch has been deleted by retention job) in the system, the system will use &quot;Launch A #1&quot;.</p>
+<p>If there is no fitting launch in the system, the &quot;New failure&quot; rule will get the status &quot;Undefine&quot;.</p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143959570-88bf90df-52f8-44b3-821b-90b4640349d0.png" alt="image"></p>
+<p><strong>Customized Baseline</strong></p>
+<p>If you want to choose other options for a baseline, you can do it:</p>
+<ul>
+<li>Login ReportPortal as Project Manager or Admin </li>
+<li>Open Project Settings&gt; Quality Gates</li>
+<li>Click on the pencil on the Quality Gate rule </li>
+<li>Click on &quot;Edit Details.&quot;</li>
+<li>Unclick a checkbox on &quot;Choose a previous launch as a baseline.&quot; </li>
+<li>The system activates fields for baseline configuration</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Case</th>
+<th style="text-align:center">Fileds configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">You want to specify a static launch that should always be used</td>
+<td style="text-align:center">Select launch name and add launch number in the baseline section</td>
+</tr>
+<tr>
+<td style="text-align:center">You want to specify dynamic launcg</td>
+<td style="text-align:center">Select launch name and check a button &quot;Latest&quot; (?)</td>
+</tr>
+</tbody>
+</table>
+<p>(?) When you use &quot;latest&quot;, the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
+If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.</p>
+<h2 id="assessment-of-test-results-using-quality-gates">Assessment of test results using Quality Gates</h2>
+<p>Now the system is preconfigured, and you can start using Quality Gates Analysis.</p>
+<p>Quality Gates plugin can be used with CI/CD tools - in this case, and Quality Gate status will be sent to CI/CD pipeline.
+But also, Quality Gates can be used just as a way of test results analysis.</p>
+<p>First, let&#39;s discuss how Report Portal assess a test run quality and provide a full report with results.
+Second, let&#39;s check how to send assessment results to CI/CD.</p>
+<h3 id="how-to-run-quality-gates-manually">How to run Quality Gates Manually</h3>
+<p>By default, all launches have &quot;N\A&quot; status. It means that Quality Gate analysis has not been run for these launches.</p>
+<p>If you want to run Quality Gate analysis manually, click on the label &quot;N/A&quot; and click on the &quot;Run Quality Gate&quot; in the opened pop-up.</p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143961414-b1e63a25-9976-4750-a3dd-f54df7564f2b.png" alt="image"></p>
+<h3 id="how-to-run-quality-gates-automatically">How to run Quality Gates Automatically</h3>
+<p>You can configure Auto Quality Gate Analysis on the Project Settings. If you switch Quality Gate Analysis ON, the system will start QG analysis on the launch finish. </p>
+<h3 id="quality-gate-status">Quality Gate Status</h3>
+<p>When Quality Gate analysis is finished, a launch gets a status. How is status calculated:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Status</th>
+<th style="text-align:center">Calculation</th>
+<th style="text-align:center">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Passed</td>
+<td style="text-align:center">All rules in a Quality Gate have status PASSED</td>
+<td style="text-align:center">Quality Assessment passed, a test run matches specified quality criteria</td>
+</tr>
+<tr>
+<td style="text-align:center">Undefined</td>
+<td style="text-align:center">If Quality Gate does not have FAILED rules, IN PROGRESS rules, but at least one rule has status Undefined</td>
+<td style="text-align:center">Quality Assessment can not be finished (?)</td>
+</tr>
+<tr>
+<td style="text-align:center">In Progress</td>
+<td style="text-align:center">If Quality Gate does not have FAILED rules, but at least one rule in a Quality Gate has status IN PROGRESS</td>
+<td style="text-align:center">Quality Assessment is in progress</td>
+</tr>
+<tr>
+<td style="text-align:center">Failed</td>
+<td style="text-align:center">At least one rule in a Quality Gate has status FAILED</td>
+<td style="text-align:center">Quality Assessment failed, a test run does not match specified quality criteria</td>
+</tr>
+</tbody>
+</table>
+<p>(?) The reasons why Quality Gates can get a status <strong>Undefined</strong>:</p>
+<ul>
+<li>For &quot;Amount of issues&quot; rule: if a number of To Investigate issues in the analyzed launch is more than allowable To Investigate level</li>
+<li>For &quot;New Failure&quot;: if a baseline is not found in the system</li>
+</ul>
+<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that:</p>
+<ul>
+<li>Click on the Quality Gate status label </li>
+<li>On the Quality Gate Popup, click on the &quot;Run Quality Gate.&quot;</li>
+<li>Reload Page</li>
+</ul>
+<h3 id="quality-gate-report">Quality Gate Report</h3>
+<h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
+<h3 id="integration-with-jenkins">Integration with Jenkins</h3>
+<h4 id="jenkins-configuration">Jenkins configuration</h4>
+<ol>
+<li>Go to “Manage Jenkins” -&gt; “Manage Plugins”.</li>
+<li>Make sure that the necessary Jenkins plugin is installed:
+a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.
+b. If no results of the search:
+i. Switch to the “Available” tab;
+ii. Search for “Webhook Step”;
+iii. Install the plugin with “Download now and install after restart”.</li>
+<li>Define webhook configuration to the Jenkins job/pipeline before tests execution:</li>
+</ol>
+<pre><code class="language-groovy">def hook = registerWebhook();
+def encodedUrl = sh(script: &quot;echo -n ${hook.getURL().toString()} | base64 -w 0&quot;, returnStdout: true)</code></pre>
+<p><code>encodedUrl</code> – this is a unique string that will be generated from the Jenkins job/pipeline and connect each reported launch with the appropriate Jenkins run from which the launch was reported.</p>
+<p>Put the <code>encodedUrl</code> variable into the test execution string at the enumeration of <code>RP.attributes</code>. For example(Maven build):</p>
+<pre><code class="language-groovy">Drp.attributes=&#39;k1:v1;k2:v2;rp.webhook.key:${encodedUrl}&#39;</code></pre>
+<ol>
+<li>Configure webhook waiting data from RP:</li>
+</ol>
+<p><strong>a. Option #1</strong></p>
+<p>This option allows sending the Quality Gates result status to the separate pipeline stage. It doesn’t affect the tests execution stage, and the status of that stage will be determined by the result of the Quality Gate status.
+Add additional pipeline stage Wait for webhook and define the particular TIMEOUT_TIME, how long Jenkins should wait for data from RP:</p>
+<pre><code class="language-groovy">stage(&#39;Wait for webhook&#39;) {
+     timeout(time: params.TIMEOUT_TIME, unit: params.TIMEOUT_UNIT) {
+
+         echo &#39;Waiting for RP processing...&#39;
+         data = waitForWebhook hook;
+         echo &quot;Processing finished... ${data}&quot;
+
+         def jsonData = readJSON text: data
+         assert jsonData[&#39;status&#39;] == &#39;PASSED&#39; 
+      }
+}</code></pre>
+<p>Parameters for <code>TIMEOUT_TIME</code> and <code>TIMEOUT_UNIT</code> can be defined like that:</p>
+<pre><code class="language-groovy">parameters {
+        string(name: &#39;TIMEOUT_TIME&#39;, defaultValue: &#39;30&#39;, description: &#39;&#39;)
+        string(name: &#39;TIMEOUT_UNIT&#39;, defaultValue: &#39;SECONDS&#39;, description: &#39;&#39;)
+}</code></pre>
+<p><strong>b. Option #2</strong></p>
+<p>This option should send the results from the RP to the tests run pipeline stage, and the status of that stage(tests execution) will be determined by the result of the Quality Gate status.
+Add next code in the pipeline stage, where tests run:</p>
+<pre><code class="language-groovy">echo &#39;Waiting for RP processing...&#39;
+data = waitForWebhook hook;
+echo &quot;Processing finished... ${data}&quot;
+
+def jsonData = readJSON text: data
+assert jsonData[&#39;status&#39;] == &#39;PASSED&#39;</code></pre>
+<p>If the Jenkins received a response about QualityGate status from RP, the build status should be appropriately marked:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Jenkins Job Status</th>
+<th style="text-align:center">Quality Gate Status</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SUCCESS</td>
+<td style="text-align:center">PASSED</td>
+<td style="text-align:left">Quality Gate is passed</td>
+</tr>
+<tr>
+<td style="text-align:center">ABORTED</td>
+<td style="text-align:center">UNDEFINED</td>
+<td style="text-align:left">The Jenkins timeout has been exceeded</td>
+</tr>
+<tr>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:left">Quality Gate is failed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configure-quality-gate-analysis-timeout">Configure Quality Gate Analysis timeout</h4>
+<p>Set the appropriate “Timeout” value, which defined the delay for Quality Gate status auto-sending to Jenkins.
+Quality Gate status example, if Jenkins configuration is working and the result has been sent to CI/CD pipeline:</p>
+<h2 id="quality-gate-purpose">Quality Gate Purpose</h2>
+<p> ReportPortal supports Continuous Testing with build-in functionality - Quality Gates. The primary Quality Gate purpose is to speed up a CI/CD pipeline.</p>
+<ul>
+<li>Create Quality Gate rules in ReportPortal </li>
+<li>Start a test job in CI/CD with webhook </li>
+<li>ReportPortal assesses launch quality using created rules</li>
+<li>ReportPortal sends feedback to CI/CD tool with status Passed or Failed</li>
+<li>Based on ReportPortal Feedback, CI/CD tool fails a build or promotes it to the next stage</li>
+</ul>
+<p>The second purpose of Quality Gate is to simplify interactions between a QA team and business stakeholders. Quality Gates provides a possibility to create business-friendly rules such as:</p>
+<ul>
+<li>define required number of tests in a job</li>
+<li>specify tests that should be executed (features, components</li>
+<li>executed tests failure rate</li>
+<li>failure of critical components </li>
+<li>number of issues in executed tests </li>
+<li>number of critical issues in the critical components </li>
+<li><p>new failures &amp; new errors in the build</p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="how-to-install-quality-gates">How to install Quality Gates</h2>
+<p>The Quality Gate feature is available in the scope of the ReportPortal enterprise version, which is provided for clients in the scope of support paid engagement( min contract amount 50K).</p>
+<p>If you are interested in this feature, please contact us via support@reportportal.io.</p>
+<h2 id="feature-overview">Feature overview</h2>
+<p>Quality Gate analysis provides capabilities to speed up CI/CD pipeline by sending auto-feedback to your CI/CD tools. ReportPortal assesses the build quality and sends auto feedback to CI/CD.</p>
+<p>Quality Gates plugin adds to ReportPortal possibilities:</p>
+<ul>
+<li>to create quality rules based on general test automation KPI: number of executed tests and executed tests, failure rate, failure of critical components, number of issues in executed tests, number of critical issues in the critical components, new failures &amp; new errors in the build</li>
+<li>run Quality Gates analysis for build and view build report that helps to troubleshoot issues in the build</li>
+<li>automatically send Quality Gates status to CI/CD. </li>
+</ul>
+<h2 id="quality-gate-adding-to-reportportal">Quality Gate adding to ReportPortal</h2>
+<p>The default configuration of ReportPortal doesn&#39;t contain Quality Gate. For adding this feature, you need to receive a link to the .jar file from ReportPortal. Download the .jar file and upload it to ReportPortal. Fo that pleases perform, following actions:</p>
+<ul>
+<li>Login ReportPortal as an Admin </li>
+<li>Open <code>Admin Page &gt; Plugins</code> </li>
+<li>Click on the button <code>Upload</code></li>
+<li>Add .jar file to the modal <code>Upload plugin</code></li>
+<li>And click the button <code>Upload</code></li>
+<li>Reload page </li>
+</ul>
+<p>As soon as the plugin has been added to the ReportPortal, a new <code>tab Quality Gates tab</code> will be added to the Project Settings.
+<img src="https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png" alt="image"></p>
+<p>On the All launches page, the system adds a label to each launch.
+<img src="https://user-images.githubusercontent.com/30413511/143957615-51ac23c7-ec0c-4576-bba1-b37a89f2a66c.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143957546-e3d0e83a-b7c7-4b46-bb6f-d98cddc25f7e.png" alt="image"></p>
+<p><code>A label &quot;N/A&quot;</code> means that the Quality Gates has not been run for a launch yet.</p>
+<h2 id="quality-rules-configuration">Quality Rules Configuration</h2>
+<p>Now let&#39;s configure the Quality rule, which will be used for launch quality assessment. </p>
+<h3 id="quality-gate-creation">Quality Gate creation</h3>
+<p>Quality Gates can be configured on the Project Settings on the tab Quality Gate.</p>
+<p>The Project Manager or Admin can create several rules for one project.</p>
+<p>For Quality Gate creation Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gates </li>
+<li>Click on the <code>Create Gate</code> button</li>
+<li>In <code>Create Quality Gate</code> fill in the form: </li>
+</ol>
+<pre><code>Quality Gate Name: (Min length 1 - max length 55) A name that will be added to the Quality Gate report on All launches
+Analyzed Launch: Launch Name of a launch that should be analyzed   
+Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND test plan: Regression)</code></pre>
+<p><img src="https://user-images.githubusercontent.com/30413511/142935092-bc1996cf-8459-4563-86d8-6feffcf761eb.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142934937-01d850cc-2da5-4c5f-809d-3ff9f8bda8fe.png" alt="image"></p>
+<ol>
+<li>Click on the button <code>&quot;Save&quot;</code></li>
+<li>A Quality Gate is created successfully</li>
+<li>Quality Gate is added to the Quality Gate List</li>
+</ol>
+<p><a href="https://youtu.be/dXp3Lf9bI30">https://youtu.be/dXp3Lf9bI30</a></p>
+<h3 id="quality-gate-rules">Quality Gate rules</h3>
+<p>When Quality Gate is created, you can fill your gate with quality rules.</p>
+<p>There are four types of Quality Gate rules:</p>
+<ul>
+<li>Amount of tests</li>
+<li>Amount of issues</li>
+<li>Percent </li>
+<li>New failures </li>
+<li>New errors (in 5.7 version)</li>
+</ul>
+<h4 id="amount-of-tests-in-the-run">Amount of tests in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that all tests should run every time.</p>
+</blockquote>
+<p><a href="https://youtu.be/TC0J8BV_XBY">https://youtu.be/TC0J8BV_XBY</a></p>
+<blockquote>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if critical tests are executed every time. </p>
+</blockquote>
+<p><a href="https://youtu.be/EwsG7RcmcDs">https://youtu.be/EwsG7RcmcDs</a></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142938190-16c81fd5-7a31-4552-b7e8-fecbe6a96bb9.png" alt="image"></p>
+<p>The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.</p>
+<p><strong>Amount of tests in a launch</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Amount.&quot;</li>
+<li>Choose the option &quot;All tests.&quot;</li>
+<li>Add a number of min allowable amount of tests in the launch - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, the system will automatically analyze a launch and compare the number of tests in the analyzed launch with a number in the &quot;amount&quot; rule in the Quality Gate. If the number of tests in the launch is less than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add only 1 &quot;All tests amount&quot; rule to 1 Quality Gate.  </p>
+<p><strong>Amount of tests in a component/feature/etc</strong></p>
+<p>You can also track the number of tests that belong to a feature, component, priority or others in a launch.
+For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
+<p>Then, you need to add an &quot;amount&quot; rule with an attribute option:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Amount.&quot;</li>
+<li>Choose option &quot;Tests with an attribute.&quot;</li>
+<li>Add a number of min allowable amount of tests for the component, feature etc. - N </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, the system will automatically analyze a launch and compare the number of tests with the specified attribute in the analyzed launch with a number in the &quot;amount&quot; rule in the Quality Gate. If the number of tests is less than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add several &quot;Tests with attribute amount&quot; rules to the Quality Gate. But it is impossible to create duplicates.</p>
+<h4 id="failure-rate-of-the-run">Failure rate of the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the passing rate should be no more than 5%.</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. </p>
+</blockquote>
+<p><a href="https://youtu.be/bSO21gtT82E">https://youtu.be/bSO21gtT82E</a></p>
+<p><img src="https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png" alt="image"></p>
+<p>The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.</p>
+<p><strong>Launch Failure rate</strong></p>
+<p>For adding this rule Project Manager or Admin should:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Percent.&quot;</li>
+<li>Choose the option &quot;All tests.&quot;</li>
+<li>Add a % of min allowable failure rate - N% </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the &quot;failure per cent&quot; rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add only 1 &quot;All tests failure rate&quot; rule to 1 Quality Gate.  </p>
+<p><strong>Failure rate in a component/feature/etc</strong></p>
+<p>You can also track the failure rate of tests that belong to a feature, component, priority or others in a launch.
+For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
+<p>Then, you need to add an &quot;amount&quot; rule with an attribute option:</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;Percent.&quot;</li>
+<li>Choose option &quot;Tests with attributes.&quot;</li>
+<li>Add a % of min allowable failure rate - N% </li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare the failure rate (failed tests/total)of tests with the specified attribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.</p>
+<p>You can add several &quot;Tests with attribute percent&quot; rules to the Quality Gate. But it is impossible to create duplicates.</p>
+<p><strong>Not passing rate in the launch or in a component/feature/etc</strong></p>
+<p>You can use the &quot;Percent rule&quot; in several options: Failure /Not passed.</p>
+<p>The failure rule is described in the previous sections.</p>
+<p>If you choose the &quot;Not passed&quot; option, the system will calculate the rate as (failed + skipped)/total.</p>
+<h4 id="amount-of-issues-in-the-run">Amount of issues in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the run should not have critical issues or Product bugs (or any other)</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in the 500 tests.</p>
+</blockquote>
+<p><a href="https://youtu.be/ajIvWB83bGg">https://youtu.be/ajIvWB83bGg</a></p>
+<h5 id="allowable-level-of-to-investigate">Allowable level of To investigate</h5>
+<p>When you choose a rule &quot;Amount of issues&quot;, the system automatically adds a parameter &quot;Allowable To investigate level&quot; to the Quality Gate.
+What does this parameter mean?</p>
+<p>The purpose of the rule is a check and a guarantee that the run does not contain specified issues. But if a launch contains &quot;To investigate&quot;, the system can not analyze the system and guarantee that the forbidden issues are absent in a launch.</p>
+<p>For this reason, we have added the parameter &quot;Allowable To investigate level&quot;. By default, this parameter equals 0. It means that the system can do the Quality gate analysis. </p>
+<h4 id="new-failures-in-the-run">New failures in the run</h4>
+<blockquote>
+<p><strong>Case 1:</strong> Regression suite has 1000 tests. In the last released version, five tests failed in a regression suite. You want to track that the regression runs on the version in development should not have new failures.</p>
+<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.</p>
+</blockquote>
+<p><a href="https://youtu.be/W05N7DQkalg">https://youtu.be/W05N7DQkalg</a></p>
+<p>Amount of issues also has 2 options &quot;All tests&quot; and &quot;Tests with an attribute&quot;. The purpose of the rule is to limit the number of unwanted defects in the run. With the option &quot;All tests&quot;, you can restrict issues for all tests in the launch.</p>
+<p>With the option &quot;Test with attributes&quot;, you can limit issues in the critical features, components, etc.</p>
+<p>The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
+<p>New failures also have 2 options &quot;All tests&quot; and &quot;Tests with an attribute&quot;. The purpose of the rule is to block a run that has new failures compared to a chosen baseline.</p>
+<ol>
+<li>Open Project Settings&gt; Quality Gate </li>
+<li>Click on the pencil on the Quality Gate</li>
+<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
+<li>Choose the option &quot;New failure.&quot;</li>
+<li>Choose the option &quot;All tests&quot;/&quot;Test with attributes.&quot;</li>
+<li>Click on the tick </li>
+<li>The rule is added to the Quality Gate</li>
+</ol>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare failed tests /or failed tests with the specified attribute in the analyzed launch with tests in the baseline. If the system detects a new failure in the launch or tests with specified attributes, it fails a rule. </p>
+<h5 id="how-to-choose-a-baseline-for-the-new-failures-rule">How to choose a Baseline for the &quot;New failures&quot; rule</h5>
+<p><strong>Default Baseline</strong></p>
+<p>By default, a system will use <code>a previous launch</code> for comparison. For example, for &quot;Launch A #3&quot;, the system will use &quot;Launch A #2&quot; as a baseline. If there is no &quot;Launch A #2&quot; (f.e. this launch has been deleted by retention job) in the system, the system will use &quot;Launch A #1&quot;.</p>
+<p>If there is no fitting launch in the system, the &quot;New failure&quot; rule will get the status &quot;Undefine&quot;.</p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143959570-88bf90df-52f8-44b3-821b-90b4640349d0.png" alt="image"></p>
+<p><strong>Customized Baseline</strong></p>
+<p>If you want to choose other options for a baseline, you can do it:</p>
+<ul>
+<li>Login ReportPortal as Project Manager or Admin </li>
+<li>Open Project Settings&gt; Quality Gates</li>
+<li>Click on the pencil on the Quality Gate rule </li>
+<li>Click on &quot;Edit Details.&quot;</li>
+<li>Unclick a checkbox on &quot;Choose a previous launch as a baseline.&quot; </li>
+<li>The system activates fields for baseline configuration</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Case</th>
+<th style="text-align:center">Fileds configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">You want to specify a static launch that should always be used</td>
+<td style="text-align:center">Select launch name and add launch number in the baseline section</td>
+</tr>
+<tr>
+<td style="text-align:center">You want to specify dynamic launcg</td>
+<td style="text-align:center">Select launch name and check a button &quot;Latest&quot; (?)</td>
+</tr>
+</tbody>
+</table>
+<p>(?) When you use &quot;latest&quot;, the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
+If you want to specify a baseline, you also can add a launch attribute. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.</p>
+<h2 id="assessment-of-test-results-using-quality-gates">Assessment of test results using Quality Gates</h2>
+<p>Now the system is preconfigured, and you can start using Quality Gates Analysis.</p>
+<p>Quality Gates plugin can be used as CI/CD tools - in this case, and Quality Gate status will be sent to CI/CD pipeline.
+But also, Quality Gates can be used just as a way of test results analysis.</p>
+<p>First, let&#39;s discuss how Report Portal assess a test run quality and provide a full report with results.
+Second, let&#39;s check how to send assessment results to CI/CD.</p>
+<h3 id="how-to-run-quality-gates-manually">How to run Quality Gates Manually</h3>
+<p>By default, all launches have &quot;N\A&quot; status. It means that Quality Gate analysis has not been run for these launches.</p>
+<p>If you want to run Quality Gate analysis manually, click on the label &quot;N/A&quot; and click on the &quot;Run Quality Gate&quot; in the opened pop-up.</p>
+<p><img src="https://user-images.githubusercontent.com/30413511/143961414-b1e63a25-9976-4750-a3dd-f54df7564f2b.png" alt="image"></p>
+<h3 id="how-to-run-quality-gates-automatically">How to run Quality Gates Automatically</h3>
+<p>You can configure Auto Quality Gate Analysis on the Project Settings. If you switch Quality Gate Analysis ON, the system will start QG analysis on the launch finish. </p>
+<h3 id="quality-gate-status">Quality Gate Status</h3>
+<p>When Quality Gate analysis is finished, a launch gets a status. How is status calculated:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Status</th>
+<th style="text-align:center">Calculation</th>
+<th style="text-align:center">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Passed</td>
+<td style="text-align:center">All rules in a Quality Gate have status PASSED</td>
+<td style="text-align:center">Quality Assessment passed, a test run matches specified quality criteria</td>
+</tr>
+<tr>
+<td style="text-align:center">Undefined</td>
+<td style="text-align:center">If Quality Gate does not have FAILED rules, IN PROGRESS rules, but at least one rule has status Undefined</td>
+<td style="text-align:center">Quality Assessment can not be finished (?)</td>
+</tr>
+<tr>
+<td style="text-align:center">In Progress</td>
+<td style="text-align:center">If Quality Gate does not have FAILED rules, but at least one rule in a Quality Gate has status IN PROGRESS</td>
+<td style="text-align:center">Quality Assessment is in progress</td>
+</tr>
+<tr>
+<td style="text-align:center">Failed</td>
+<td style="text-align:center">At least one rule in a Quality Gate has status FAILED</td>
+<td style="text-align:center">Quality Assessment failed, a test run does not match specified quality criteria</td>
+</tr>
+</tbody>
+</table>
+<p>(?) The reasons why Quality Gates can get a status <strong>Undefined</strong>:</p>
+<ul>
+<li>For &quot;Amount of issues&quot; rule: if a number of To Investigate issues in the analyzed launch is more than allowable To Investigate level</li>
+<li>For &quot;New Failure&quot;: if a baseline is not found in the system</li>
+</ul>
+<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that:</p>
+<ul>
+<li>Click on the Quality Gate status label </li>
+<li>On the Quality Gate Popup, click on the &quot;Run Quality Gate&quot;.</li>
+<li>Reload Page</li>
+</ul>
+<h3 id="quality-gate-report">Quality Gate Report</h3>
+<h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
+<h3 id="integration-with-jenkins">Integration with Jenkins</h3>
+<h4 id="jenkins-configuration">Jenkins configuration</h4>
+<ol>
+<li>Go to “Manage Jenkins” -&gt; “Manage Plugins”.</li>
+<li>Make sure that the necessary Jenkins plugin is installed:
+a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.
+b. If no results of the search:
+i. Switch to the “Available” tab;
+ii. Search for “Webhook Step”;
+iii. Install the plugin with “Download now and install after restart”.</li>
+<li>Define webhook configuration to the Jenkins job/pipeline before tests execution:</li>
+</ol>
+<pre><code class="language-groovy">def hook = registerWebhook();
+def encodedUrl = sh(script: &quot;echo -n ${hook.getURL().toString()} | base64 -w 0&quot;, returnStdout: true)</code></pre>
+<p><code>encodedUrl</code> – this is a unique string that will be generated from the Jenkins job/pipeline and connect each reported launch with the appropriate Jenkins run from which the launch was reported.</p>
+<p>Put the <code>encodedUrl</code> variable into the test execution string at the enumeration of <code>RP.attributes</code>. For example(Maven build):</p>
+<pre><code class="language-groovy">Drp.attributes=&#39;k1:v1;k2:v2;rp.webhook.key:${encodedUrl}&#39;</code></pre>
+<ol>
+<li>Configure webhook waiting data from RP:</li>
+</ol>
+<p><strong>a. Option #1</strong></p>
+<p>This option allows sending the Quality Gates result status to the separate pipeline stage. It doesn’t affect the tests execution stage, and the status of that stage will be determined by the result of the Quality Gate status.
+Add additional pipeline stage Wait for webhook and define the particular TIMEOUT_TIME, how long Jenkins should wait for data from RP:</p>
+<pre><code class="language-groovy">stage(&#39;Wait for webhook&#39;) {
+     timeout(time: params.TIMEOUT_TIME, unit: params.TIMEOUT_UNIT) {
+
+         echo &#39;Waiting for RP processing...&#39;
+         data = waitForWebhook hook;
+         echo &quot;Processing finished... ${data}&quot;
+
+         def jsonData = readJSON text: data
+         assert jsonData[&#39;status&#39;] == &#39;PASSED&#39; 
+      }
+}</code></pre>
+<p>Parameters for <code>TIMEOUT_TIME</code> and <code>TIMEOUT_UNIT</code> can be defined like that:</p>
+<pre><code class="language-groovy">parameters {
+        string(name: &#39;TIMEOUT_TIME&#39;, defaultValue: &#39;30&#39;, description: &#39;&#39;)
+        string(name: &#39;TIMEOUT_UNIT&#39;, defaultValue: &#39;SECONDS&#39;, description: &#39;&#39;)
+}</code></pre>
+<p><strong>b. Option #2</strong></p>
+<p>This option should send the results from the RP to the tests run pipeline stage, and the status of that stage(tests execution) will be determined by the result of the Quality Gate status.
+Add next code in the pipeline stage, where tests run:</p>
+<pre><code class="language-groovy">echo &#39;Waiting for RP processing...&#39;
+data = waitForWebhook hook;
+echo &quot;Processing finished... ${data}&quot;
+
+def jsonData = readJSON text: data
+assert jsonData[&#39;status&#39;] == &#39;PASSED&#39;</code></pre>
+<p>If the Jenkins received a response about QualityGate status from RP, the build status should be adequately marked:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Jenkins Job Status</th>
+<th style="text-align:center">Quality Gate Status</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SUCCESS</td>
+<td style="text-align:center">PASSED</td>
+<td style="text-align:left">Quality Gate is passed</td>
+</tr>
+<tr>
+<td style="text-align:center">ABORTED</td>
+<td style="text-align:center">UNDEFINED</td>
+<td style="text-align:left">The Jenkins timeout has been exceeded</td>
+</tr>
+<tr>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:left">Quality Gate is failed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configure-quality-gate-analysis-timeout">Configure Quality Gate Analysis timeout</h4>
+<p>Set the appropriate “Timeout” value, which defined the delay for Quality Gate status auto-sending to Jenkins.
+Quality Gate status example, if Jenkins configuration is working and the result has been sent to CI/CD pipeline:</p>
+
   <div data-js-md-path="src/computeds/md/src/QualityGates/QualityGates.md"></div>
   <h1 id="management-board">Management Board</h1>
 
