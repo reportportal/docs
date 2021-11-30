@@ -1,6 +1,22 @@
 ## Quality Gate Purpose 
 
- we support Continuous Testing with build-in functionality - Quality Gates
+ ReportPortal supports Continuous Testing with build-in functionality - Quality Gates. The main Quality Gate purpose is to speed up a CI/CD pipeline.
+ 
+ * Create a Quality Gate rules in ReportPortal 
+ * Start a test job in CI/CD with webhook 
+ * ReportPortal assesses launch quality using created rules
+ * ReportPortal sends feedback to CI/CD tool with status Passed or Failed
+ * Based on ReportPortal Feedback, CI/CD tool fails a build or promotes it to the next stage
+
+The second purpose of Quality Gate is simplify interactions between  a QA team and business stackeholders. Quality Gates provides a possibility to create a business -friendly rules such as:
+
+* define required number of tests in a job
+* specify tests that should be executed (features, components
+* executed tests failure rate
+* failure of critical components 
+* number of issues in executed tests 
+* number of critical issues in the critical components 
+* new failures & new errors in the build
  
  ![image](https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png)
 
