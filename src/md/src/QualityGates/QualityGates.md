@@ -73,6 +73,8 @@ Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND dev
 5. A Quality Gate is created successfully
 6. Quality Gate is added to the Quality Gate List
 
+https://youtu.be/dXp3Lf9bI30
+
 ### Quality Gate rules
 
 When Quality Gate is created, you can fill you gate with quality rules.
@@ -86,10 +88,13 @@ There are 4 types of Quality Gate rules:
 
 #### Amount of tests in the run 
 
->**Case 1:** Regression suite has 1000 tests. You want to track that all tests should be run every time. 
+>**Case 1:** Regression suite has 1000 tests. You want to track that all tests should be run every time.
+
+https://youtu.be/TC0J8BV_XBY
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track if critical tests are executed every time. 
 
+https://youtu.be/EwsG7RcmcDs
 
 ![image](https://user-images.githubusercontent.com/30413511/142938190-16c81fd5-7a31-4552-b7e8-fecbe6a96bb9.png)
 
@@ -142,6 +147,8 @@ You can add several "Tests with attribute amount" rule to the Quality Gate. But 
 >**Case 1:** Regression suite has 1000 tests. You want to track that passing rate should be no more than 5%.
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. 
+
+https://youtu.be/bSO21gtT82E
 
 ![image](https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png)
 
@@ -204,6 +211,8 @@ If you choose "Not passed" option, rate will be calculated as (failed + skipped)
 >**Case 1:** Regression suite has 1000 tests. You want to track that the run should not have critical issue or Product bugs (or any other)
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issue or Product bugs (or any other) in the 500 tests.
+
+https://youtu.be/ajIvWB83bGg
 
 
 
