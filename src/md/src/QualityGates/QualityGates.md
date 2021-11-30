@@ -113,8 +113,6 @@ There are four types of Quality Gate rules:
 
 The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.
 
-**Amount of tests in a launch**
-
 For adding this rule Project Manager or Admin should:
 
 1.  Open ```Project Settings> Quality Gate``` 
@@ -160,13 +158,11 @@ Now the system will automatically analyze a launch and compare the number of tes
 
 #### Failure rate of the run 
 
->**Case 1:** Regression suite has 1000 tests. You want to track that the passing rate should be no more than 5%.
+>**Case 1:** You want to track that the passing rate for regression suite should be no more than 20%.
+>**Case 2:** You want to track that all critical tests in regression suite are always passed. 
 
->**Case 2:** Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. 
+[ ![Rule: Percent of Tests](Images/userGuide/QualityGates/Failure Rate All.png) ](https://youtu.be/bSO21gtT82E)
 
-https://youtu.be/bSO21gtT82E
-
-![image](https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png)
 
 The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.
 
