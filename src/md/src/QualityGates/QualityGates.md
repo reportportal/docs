@@ -163,23 +163,26 @@ Now the system will automatically analyze a launch and compare the number of tes
 
 [ ![Rule: Percent of Tests](Images/userGuide/QualityGates/Failure Rate All.png) ](https://youtu.be/bSO21gtT82E)
 
-
 The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.
 
 **Launch Failure rate**
 
 For adding this rule Project Manager or Admin should:
 
-1.  Open Project Settings> Quality Gate 
-2.  Click on the pencil on the Quality Gate
-3.  Click on the drop-down: "Add a new rule."
-4.  Choose the option "Percent."
-5.  Choose the option "All tests."
-6.  Add a % of min allowable failure rate - N% 
-7.  Click on the tick 
+1.  Open ```Project Settings> Quality Gate``` 
+2.  Click on ```the pencil``` on the Quality Gate
+3.  Click on the drop-down: ```"Add a new rule"```
+4.  Choose the option ```"Percent"```
+5.  Choose the option ```"All tests"```
+6.  Add a % of min allowable failure rate - ```N%``` 
+7.  Click on ```the tick``` 
 8.  The rule is added to the Quality Gate
 
-In this case, on the finish, the system will automatically analyze a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the "failure per cent" rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.
+On the finish, the system will automatically analyze a launch and compare failure rate in the analyzed launch with % in the "failure per cent" rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.
+
+>**Note:** How a failure rate is calculated
+>
+> ```Failure rate``` = items with type STEP with status FAILED / ALL items with type STEP in the analyzed launch 
 
 You can add only 1 "All tests failure rate" rule to 1 Quality Gate.  
 
@@ -190,31 +193,37 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 
 Then you need to add an "amount" rule with an attribute option:
 
-1.  Open Project Settings> Quality Gate 
-2.  Click on the pencil on the Quality Gate
-3.  Click on the drop-down: "Add a new rule."
-4.  Choose the option "Percent."
-5.  Choose option "Tests with attributes."
-6.  Add a % of min allowable failure rate - N% 
-7.  Click on the tick 
+1.  Open ```Project Settings> Quality Gate``` 
+2.  Click on ```the pencil``` on the Quality Gate
+3.  Click on the drop-down: ```"Add a new rule"```
+4.  Choose the option ```"Percent"```
+5.  Choose option ```"Tests with attributes"```
+6.  Add a % of min allowable failure rate - ```N%``` 
+7.  Click on ```the tick```
 8.  The rule is added to the Quality Gate
 
 
-In this case, on the finish, the system will automatically analyze a launch and compare the failure rate (failed tests/total)of tests with a specified attribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.
+In this case, on the finish, the system will automatically analyze a launch and compare the failure rate of tests with a specified attribute in the analyzed launch with failure rate from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.
+
+>**Note:** How a failure rate is calculated
+>
+> ```Failure rate for tests with a attribute``` = items with type STEP with status FAILED and with a specified attribut / ALL items with type STEP in the analyzed launch and with a specified attribut
 
 You can add several "Tests with attribute percent" rules to the Quality Gate. But it is impossible to create duplicates.
 
 **Not passing rate in the launch or a component/feature/etc.**
 
-You can use the "Percent rule" in several options: Failure /Not passed.
+You can use the "Percent rule" in several options: ```Failure /Not passed```.
 
 The failure rule is described in the previous sections.
 
-If you choose the "Not passed" option, the rate will be calculated as (failed + skipped)/total.
+If you choose the "Not passed" option, the system will use another calculation method.
 
-
-
-
+>**Note:** How a notpassed rate is calculated
+>
+> ```Not passed rate``` = items with type STEP with status FAILED and SKIPPED / ALL items with type STEP in the analyzed launch 
+>
+> ```Not passed rate for tests with a attribute``` = items with type STEP with status FAILED and SKIPPED  and with a specified attribut / ALL items with type STEP > in the analyzed launch and with a specified attribut
 
 
 
