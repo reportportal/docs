@@ -235,6 +235,8 @@ For this reasons, we have added a parameter "Allowable To investigate level". By
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.
 
+https://youtu.be/W05N7DQkalg
+
 Amount of issues has also 2 option "All tests" and "Tests with attribute". The purpose for the rule is to limit number of unwanted defects in the run. With option "All tests" you can limit issues for all tests in the launch.
 
 With the option "Test with attributes" you can limit issues in the critical features, components or etc.
