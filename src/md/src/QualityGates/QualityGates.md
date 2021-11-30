@@ -315,6 +315,12 @@ New failures also have 2 options "All tests" and "Tests with an attribute". The 
 
 In this case, on the finish, the system will automatically analyze a launch and compare failed tests /or failed tests with the specified attribute in the analyzed launch with tests in the baseline. It fails a rule if the system detects a new failure in the launch or in tests with specified attributes. 
 
+##### How does the rule works 
+
+For defining test uniqueness, ReportPortal uses [Test Case ID principles](https://reportportal.io/docs/Test-case-ID%3Ewhat-is-it-test-case-id).
+
+>**Note:** For now, ReportPortal can not process items with the same Test Case ID correctly.
+ 
 ##### How to choose a Baseline for the "New failures" rule
 
 **Default Baseline**
@@ -323,19 +329,20 @@ By default, a system will use ```a previous launch``` for comparison. For exampl
 
 If there is no fitting launch in the system, the "New failure" rule will get the status "Undefine".
 
-![image](https://user-images.githubusercontent.com/30413511/143959570-88bf90df-52f8-44b3-821b-90b4640349d0.png)
+[ ![Rule: Baseline Latest](Images/userGuide/QualityGates/Baseline Latest.png) ](Images/userGuide/QualityGates/Baseline Latest.png)
 
 **Customized Baseline**
 
 If you want to choose other options for a baseline, you can do it:
 
 * Login ReportPortal as Project Manager or Admin 
-* Open Project Settings> Quality Gates
-* Click on the pencil on the Quality Gate rule 
-* Click on "Edit Details."
-* Unclick a checkbox on "Choose a previous launch as a baseline." 
+* Open ```Project Settings> Quality Gates```
+* Click on ```the pencil``` on the Quality Gate rule 
+* Click on ```"Edit Details."```
+* Unclick a checkbox on ```"Choose a previous launch as a baseline."``` 
 * The system activates fields for baseline configuration
 
+[ ![Rule: Baseline Custom](Images/userGuide/QualityGates/Custom Baseline.png) ](Images/userGuide/QualityGates/Custom Baseline.png)
 
 | Case | Fileds configuration | 
 | :----:      |    :----:   | 
@@ -345,6 +352,23 @@ If you want to choose other options for a baseline, you can do it:
 (?) When you use "latest", the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
 If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.
 
+## Qulaity Gate Edit
+
+If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.
+
+If you want to recalculate Quality Gate with a new values, please chekc section ### How to recalculate Qulaity Gates.
+
+
+
+## Delete Quality Gates
+
+If you want to delete Quality Gate:
+
+* Login ReportPortal as Project Manager or Admin 
+* Open ```Project Settings> Quality Gates```
+* Click on ```the trash``` on the Quality Gate rule 
+* The system removes Quality Gate from the DB
+* All Quality Gate report for this rule also will be deleted form the system
 
 
 ## Assessment of test results using Quality Gates 
@@ -363,11 +387,22 @@ By default, all launches have "N\A" status. It means that Quality Gate analysis 
 
 If you want to run Quality Gate analysis manually, click on the label "N/A" and click on the "Run Quality Gate" in the opened pop-up.
 
-![image](https://user-images.githubusercontent.com/30413511/143961414-b1e63a25-9976-4750-a3dd-f54df7564f2b.png)
+### How to recalculate Qulaity Gates 
 
+If you want to recalculate Quality Gate status for a launch, just perform next actions: 
+
+* click on ```the label with a status``` of a launch
+* click on the ```"Recalculate"``` in the opened pop-up
+
+[ ![Report](Images/userGuide/QualityGates/Quality Gates Report.png) ](Images/userGuide/QualityGates/Quality Gates Report.png)
+
+>**Note:** If Quality Gate status has been alredy sent to CI/CD, a status can not be recalculated for a such launch. 
+ 
 ### How to run Quality Gates Automatically
 
 You can configure Auto Quality Gate Analysis on the Project Settings. If you switch Quality Gate Analysis ON, the system will start QG analysis on the launch finish. 
+
+[ ![Report](Images/userGuide/QualityGates/Quality Gates Auto.png) ](Images/userGuide/QualityGates/Quality Gates Auto.png)
 
 ### Quality Gate Status
 
@@ -386,13 +421,22 @@ When Quality Gate analysis is finished, a launch gets a status. How is status ca
 
 If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that:
 
-* Click on the Quality Gate status label 
-* On the Quality Gate Popup, click on the "Run Quality Gate."
+* Click on ```the Quality Gate status label``` 
+* On the Quality Gate Popup, click on the ```"Run Quality Gate."```
 * Reload Page
 
 ### Quality Gate Report 
 
+A Quality Gate report is a full report that shows information on Quality gate results. This is a table that shows:
+ 
+ * all rules in a Quality Gate
+ *  rule status: ```Passed/Faile/Skipped``` 
+ *  expected results
+ *  actual results 
 
+[ ![Report](Images/userGuide/QualityGates/Quality Gates Report.png) ](Images/userGuide/QualityGates/Quality Gates Report.png)
+
+All actual results are clickable in the report except New Failure. A clickable area for New failure will be available in the version 5.7. So user can drill down and investigate items, that became a reason of build failure.
 
 ## Integration with CI/CD
 
