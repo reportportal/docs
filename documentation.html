@@ -5699,7 +5699,6 @@ Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND dev
 </blockquote>
 <p><a href="https://youtu.be/TC0J8BV_XBY"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Amount of tests ALL.png" alt="Rule: Amount of All Tests in the launch"> </a></p>
 <p>The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.</p>
-<p><strong>Amount of tests in a launch</strong></p>
 <p>For adding this rule Project Manager or Admin should:</p>
 <ol>
 <li>Open <code>Project Settings&gt; Quality Gate</code> </li>
@@ -5739,11 +5738,10 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 </blockquote>
 <h4 id="failure-rate-of-the-run">Failure rate of the run</h4>
 <blockquote>
-<p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the passing rate should be no more than 5%.</p>
-<p><strong>Case 2:</strong> Regression suite contains 500 tests with critical priority. You want to track if critical tests are passed in each run. </p>
+<p><strong>Case 1:</strong> You want to track that the passing rate for regression suite should be no more than 20%.
+<strong>Case 2:</strong> You want to track that all critical tests in regression suite are always passed. </p>
 </blockquote>
-<p><a href="https://youtu.be/bSO21gtT82E">https://youtu.be/bSO21gtT82E</a></p>
-<p><img src="https://user-images.githubusercontent.com/30413511/142943514-e6f1f989-49fc-49d5-983a-d7d0261941df.png" alt="image"></p>
+<p><a href="https://youtu.be/bSO21gtT82E"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Failure Rate All.png" alt="Rule: Percent of Tests"> </a></p>
 <p>The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.</p>
 <p><strong>Launch Failure rate</strong></p>
 <p>For adding this rule Project Manager or Admin should:</p>
