@@ -21,11 +21,11 @@ The second purpose of Quality Gate is to simplify interactions between a QA team
 * new failures & new errors in the build
 
 And it leads us to the third purpose of Quality Gates. It is a full-featured report on Quality Gates analysis results which helps to troubleshoot problems and fix them.
+ src/Images/userGuide/QualityGates/Quality Gates Intro.jpg
  
- ![image](https://user-images.githubusercontent.com/30413511/142943040-4eed81c4-b58f-44c2-8ef1-81479cef5064.png)
+ [ ![QulaityGatesIntro](src/Images/userGuide/QualityGates/Quality Gates Intro.jpg) ](src/Images/userGuide/QualityGates/Quality Gates Intro.jpg)
 
  
-
 ## How to install Quality Gates
 
 The Quality Gate feature is available in the scope of the ReportPortal enterprise version started from [version 5.6](https://reportportal.io/releases/5.6.0). ReportPortal provides it for clients in the scope of paid support engagement( min contract amount 50K).
