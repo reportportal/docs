@@ -5746,37 +5746,50 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 <p><strong>Launch Failure rate</strong></p>
 <p>For adding this rule Project Manager or Admin should:</p>
 <ol>
-<li>Open Project Settings&gt; Quality Gate </li>
-<li>Click on the pencil on the Quality Gate</li>
-<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
-<li>Choose the option &quot;Percent.&quot;</li>
-<li>Choose the option &quot;All tests.&quot;</li>
-<li>Add a % of min allowable failure rate - N% </li>
-<li>Click on the tick </li>
+<li>Open <code>Project Settings&gt; Quality Gate</code> </li>
+<li>Click on <code>the pencil</code> on the Quality Gate</li>
+<li>Click on the drop-down: <code>&quot;Add a new rule&quot;</code></li>
+<li>Choose the option <code>&quot;Percent&quot;</code></li>
+<li>Choose the option <code>&quot;All tests&quot;</code></li>
+<li>Add a % of min allowable failure rate - <code>N%</code> </li>
+<li>Click on <code>the tick</code> </li>
 <li>The rule is added to the Quality Gate</li>
 </ol>
-<p>In this case, on the finish, the system will automatically analyze a launch and compare failure rate (failed tests/total) in the analyzed launch with % in the &quot;failure per cent&quot; rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.</p>
+<p>On the finish, the system will automatically analyze a launch and compare failure rate in the analyzed launch with % in the &quot;failure per cent&quot; rule in the Quality Gate. If the failure rate in the launch is more than in the rule, the system fails the rule and Quality Gate.</p>
+<blockquote>
+<p><strong>Note:</strong> How a failure rate is calculated</p>
+<p><code>Failure rate</code> = items with type STEP with status FAILED / ALL items with type STEP in the analyzed launch </p>
+</blockquote>
 <p>You can add only 1 &quot;All tests failure rate&quot; rule to 1 Quality Gate.  </p>
 <p><strong>Failure rate in a component/feature/etc</strong></p>
 <p>You can also track the failure rate of tests that belong to a feature, component, priority or others in a launch.
 For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).</p>
 <p>Then you need to add an &quot;amount&quot; rule with an attribute option:</p>
 <ol>
-<li>Open Project Settings&gt; Quality Gate </li>
-<li>Click on the pencil on the Quality Gate</li>
-<li>Click on the drop-down: &quot;Add a new rule.&quot;</li>
-<li>Choose the option &quot;Percent.&quot;</li>
-<li>Choose option &quot;Tests with attributes.&quot;</li>
-<li>Add a % of min allowable failure rate - N% </li>
-<li>Click on the tick </li>
+<li>Open <code>Project Settings&gt; Quality Gate</code> </li>
+<li>Click on <code>the pencil</code> on the Quality Gate</li>
+<li>Click on the drop-down: <code>&quot;Add a new rule&quot;</code></li>
+<li>Choose the option <code>&quot;Percent&quot;</code></li>
+<li>Choose option <code>&quot;Tests with attributes&quot;</code></li>
+<li>Add a % of min allowable failure rate - <code>N%</code> </li>
+<li>Click on <code>the tick</code></li>
 <li>The rule is added to the Quality Gate</li>
 </ol>
-<p>In this case, on the finish, the system will automatically analyze a launch and compare the failure rate (failed tests/total)of tests with a specified attribute in the analyzed launch with failure rate (failed tests/total) from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.</p>
+<p>In this case, on the finish, the system will automatically analyze a launch and compare the failure rate of tests with a specified attribute in the analyzed launch with failure rate from the rule in the Quality Gate. If the failure rate is more than specified in the rule, the system fails the rule and Quality Gate.</p>
+<blockquote>
+<p><strong>Note:</strong> How a failure rate is calculated</p>
+<p><code>Failure rate for tests with a attribute</code> = items with type STEP with status FAILED and with a specified attribut / ALL items with type STEP in the analyzed launch and with a specified attribut</p>
+</blockquote>
 <p>You can add several &quot;Tests with attribute percent&quot; rules to the Quality Gate. But it is impossible to create duplicates.</p>
 <p><strong>Not passing rate in the launch or a component/feature/etc.</strong></p>
-<p>You can use the &quot;Percent rule&quot; in several options: Failure /Not passed.</p>
+<p>You can use the &quot;Percent rule&quot; in several options: <code>Failure /Not passed</code>.</p>
 <p>The failure rule is described in the previous sections.</p>
-<p>If you choose the &quot;Not passed&quot; option, the rate will be calculated as (failed + skipped)/total.</p>
+<p>If you choose the &quot;Not passed&quot; option, the system will use another calculation method.</p>
+<blockquote>
+<p><strong>Note:</strong> How a notpassed rate is calculated</p>
+<p><code>Not passed rate</code> = items with type STEP with status FAILED and SKIPPED / ALL items with type STEP in the analyzed launch </p>
+<p><code>Not passed rate for tests with a attribute</code> = items with type STEP with status FAILED and SKIPPED  and with a specified attribut / ALL items with type STEP &gt; in the analyzed launch and with a specified attribut</p>
+</blockquote>
 <h4 id="amount-of-issues-in-the-run">Amount of issues in the run</h4>
 <blockquote>
 <p><strong>Case 1:</strong> Regression suite has 1000 tests. You want to track that the run should not have a critical issue or Product bugs (or any other)</p>
