@@ -5912,6 +5912,7 @@ If you want to specify a baseline, you also can add launch attributes. In this c
 But also, Quality Gates can be used just as a way of test results analysis.</p>
 <p>First, let&#39;s discuss how Report Portal assess a test run quality and provide a full report with results.
 Second, let&#39;s check how to send assessment results to CI/CD.</p>
+<h3 id="quality-gate-analaysis">Quality Gate Analaysis</h3>
 <h3 id="how-to-run-quality-gates-manually">How to run Quality Gates Manually</h3>
 <p>By default, all launches have &quot;N\A&quot; status. It means that Quality Gate analysis has not been run for these launches.</p>
 <p>If you want to run Quality Gate analysis manually, click on the label &quot;N/A&quot; and click on the &quot;Run Quality Gate&quot; in the opened pop-up.</p>
@@ -5922,6 +5923,7 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 <li>click on the <code>&quot;Recalculate&quot;</code> in the opened pop-up</li>
 </ul>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png" alt="Report"> </a></p>
+<p>Quality Gates can not be run for launches in progress.</p>
 <blockquote>
 <p><strong>Note:</strong> If Quality Gate status has been alredy sent to CI/CD, a status can not be recalculated for a such launch. 
 <a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Report That is already sent .png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Report That is already sent .png" alt="Report"> </a></p>
@@ -5929,8 +5931,12 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 <h3 id="how-to-run-quality-gates-automatically">How to run Quality Gates Automatically</h3>
 <p>You can configure Auto Quality Gate Analysis on the Project Settings. If you switch Quality Gate Analysis ON, the system will start QG analysis on the launch finish. </p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Auto.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Auto.png" alt="Report"> </a></p>
-<h3 id="quality-gate-status">Quality Gate Status</h3>
-<p>When Quality Gate analysis is finished, a launch gets a status. How is status calculated:</p>
+<h3 id="quality-gate-status-and-timeout">Quality Gate Status and Timeout</h3>
+<p>When a launch finishes, the system starts Quality Gate Analysis. </p>
+<p><strong>First,</strong> the system checks if there Quality Gate for a launch under analysis. If there is no, such Quality Gate, the system shows error message.
+<strong>Second,</strong> if Quality Gates is found, the systems checks all rules in Quality Gate one by one and define a status for each rule
+<strong>Third,</strong> if all rules are done, the system defines the status of a whole Quality Gate.</p>
+<p>How is status calculated:</p>
 <table>
 <thead>
 <tr>
@@ -5947,8 +5953,8 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 </tr>
 <tr>
 <td style="text-align:center">Undefined</td>
-<td style="text-align:center">If Quality Gate does not have FAILED rules, IN PROGRESS rules, but at least one rule has status Undefined</td>
-<td style="text-align:center">Quality Assessment can not be finished (?)</td>
+<td style="text-align:center">If Quality Gate does not have FAILED, IN PROGRESS rules, but at least one rule has status Undefined</td>
+<td style="text-align:center">Quality Assessment can not be finished :question:</td>
 </tr>
 <tr>
 <td style="text-align:center">In Progress</td>
@@ -5962,17 +5968,46 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 </tr>
 </tbody>
 </table>
-<p>(?) The reasons why Quality Gates can get a status <strong>Undefined</strong>:</p>
+<p><strong>Forth,</strong> if there is an integration with CI/CD, the system sends status to CI/CD tools to a pipeline.</p>
+<p>:question: The reasons why Quality Gates can get a status <strong>Undefined</strong>:</p>
 <ul>
 <li>For &quot;Amount of issues&quot; rule: if a number of To Investigate issues in the analyzed launch is more than allowable To Investigate level</li>
 <li>For &quot;New Failure&quot;: if a baseline is not found in the system</li>
 </ul>
-<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that:</p>
+<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section ### How to recalculate Qulaity Gates.</p>
+<h4 id="timeout">Timeout</h4>
+<p>Specially for integration with CI\CD, Quality Gates has parameter <code>Timeout</code>. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from <code>Timeout</code>. Default <code>Timeout</code> equals to 2 hours. It means, that after 2 hours after launch finish, the system force recaluculats Quality Gate Status and defined status. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Jenkins Job Status</th>
+<th style="text-align:center">Quality Gate Status</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SUCCESS</td>
+<td style="text-align:center">PASSED</td>
+<td style="text-align:left">All Rulles Passed</td>
+</tr>
+<tr>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:center">FAILED</td>
+<td style="text-align:left">At least one rule does not pass</td>
+</tr>
+</tbody>
+</table>
+<p>If you want to choose other options for a timeout, you can do it:</p>
 <ul>
-<li>Click on <code>the Quality Gate status label</code> </li>
-<li>On the Quality Gate Popup, click on the <code>&quot;Run Quality Gate.&quot;</code></li>
-<li>Reload Page</li>
+<li>Login ReportPortal as Project Manager or Admin </li>
+<li>Open <code>Project Settings&gt; Quality Gates</code></li>
+<li>Click on <code>the pencil</code> on the Quality Gate rule </li>
+<li>Click on <code>&quot;Edit Details.&quot;</code></li>
+<li>Choose needed option in a dropdown <code>&quot;Timeout&quot;</code> </li>
+<li>Save a Quality Gate</li>
 </ul>
+<p>If there is no needed option in the dropdown, you can specify custome value via API.</p>
 <h3 id="quality-gate-report">Quality Gate Report</h3>
 <p>A Quality Gate report is a full report that shows information on Quality gate results. This is a table that shows:</p>
 <ul>
@@ -5984,17 +6019,19 @@ Second, let&#39;s check how to send assessment results to CI/CD.</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Quality Gates Report.png" alt="Report"> </a></p>
 <p>All actual results are clickable in the report except New Failure. A clickable area for New failure will be available in the version 5.7. So user can drill down and investigate items, that became a reason of build failure.</p>
 <h2 id="integration-with-ci-cd">Integration with CI/CD</h2>
-<p><a href="https://youtu.be/W7BBhni9ANU"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Report That is already sent .png" alt="Report"> </a></p>
 <h3 id="integration-with-jenkins">Integration with Jenkins</h3>
+<p><a href="https://youtu.be/W7BBhni9ANU"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/Report That is already sent .png" alt="Report"> </a></p>
 <h4 id="jenkins-configuration">Jenkins configuration</h4>
 <ol>
 <li>Go to “Manage Jenkins” -&gt; “Manage Plugins”.</li>
-<li>Make sure that the necessary Jenkins plugin is installed:
-a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.
-b. If no results of the search:
-i. Switch to the “Available” tab;
-ii. Search for “Webhook Step”;
-iii. Install the plugin with “Download now and install after restart”.</li>
+<li>Make sure that the necessary Jenkins plugin is installed:</li>
+</ol>
+<p>a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.</p>
+<p>b. If no results of the search:</p>
+<p>i. Switch to the “Available” tab;</p>
+<p>ii. Search for “Webhook Step”;</p>
+<p>iii. Install the plugin with “Download now and install after restart”.</p>
+<ol>
 <li>Define webhook configuration to the Jenkins job/pipeline before tests execution:</li>
 </ol>
 <pre><code class="language-groovy">def hook = registerWebhook();
@@ -6060,9 +6097,6 @@ assert jsonData[&#39;status&#39;] == &#39;PASSED&#39;</code></pre>
 </tr>
 </tbody>
 </table>
-<h4 id="configure-quality-gate-analysis-timeout">Configure Quality Gate Analysis timeout</h4>
-<p>Set the appropriate “Timeout” value, which defined the delay for Quality Gate status auto-sending to Jenkins.
-Quality Gate status example, if Jenkins configuration is working and the result has been sent to CI/CD pipeline:</p>
 
   <div data-js-md-path="src/computeds/md/src/QualityGates/QualityGates.md"></div>
   <h1 id="management-board">Management Board</h1>
