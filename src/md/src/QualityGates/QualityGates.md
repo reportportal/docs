@@ -83,17 +83,15 @@ For Quality Gate creation Project Manager or Admin should:
 * A Quality Gate is created successfully
 * Quality Gate is added to the Quality Gate List
 
-```
+```html
 Quality Gate Name: (Min length 1 - max length 55) A name that will be added to the Quality Gate report on All launches
 Analyzed Launch: Launch Name of a launch that should be analyzed   
 Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND test plan: Regression) 
 ```
 
-![image](https://user-images.githubusercontent.com/30413511/142935092-bc1996cf-8459-4563-86d8-6feffcf761eb.png)
+[ ![Quality Gate Creation](Images/userGuide/QualityGates/Quality Gates Creation.png) ](https://youtu.be/dXp3Lf9bI30)
 
-![image](https://user-images.githubusercontent.com/30413511/142934937-01d850cc-2da5-4c5f-809d-3ff9f8bda8fe.png)
 
-https://youtu.be/dXp3Lf9bI30
 
 ### Quality Gate rules
 
