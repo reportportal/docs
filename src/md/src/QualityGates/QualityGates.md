@@ -23,7 +23,7 @@ The second purpose of Quality Gate is to simplify interactions between a QA team
 And it leads us to the third purpose of Quality Gates. It is a full-featured report on Quality Gates analysis results which helps to troubleshoot problems and fix them.
  
 
- [ ![QulaityGatesIntro](Images/userGuide/QualityGates/Quality Gates Intro.jpg) ](Images/userGuide/QualityGates/Quality Gates Intro.jpg)
+ [ ![QualityGatesIntro](Images/userGuide/QualityGates/Quality Gates Intro.jpg) ](Images/userGuide/QualityGates/Quality Gates Intro.jpg)
 
  
 ## How to install Quality Gates
@@ -352,11 +352,11 @@ If you want to choose other options for a baseline, you can do it:
 :question: When you use "latest", the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
 If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.
 
-## Qulaity Gate Edit
+## Quality Gate Edit
 
 If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.
 
-If you want to recalculate Quality Gate with a new values, please chekc section ### How to recalculate Qulaity Gates.
+If you want to recalculate Quality Gate with a new values, please check the  section ###How to recalculate Quality Gates.
 
 
 
@@ -389,7 +389,7 @@ By default, all launches have "N\A" status. It means that Quality Gate analysis 
 
 If you want to run Quality Gate analysis manually, click on the label "N/A" and click on the "Run Quality Gate" in the opened pop-up.
 
-### How to recalculate Qulaity Gates 
+### How to recalculate Quality Gates 
 
 If you want to recalculate Quality Gate status for a launch, just perform next actions: 
 
