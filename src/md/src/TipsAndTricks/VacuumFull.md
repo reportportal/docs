@@ -1,6 +1,6 @@
-# How to clean up the ReportPortal database using VACUUM FULL
+## How to clean up the ReportPortal database using VACUUM FULL
 
-## General information
+### General information
 
 `VACUUM` reclaims storage occupied by dead tuples. In normal PostgreSQL operation, tuples that are deleted or obsoleted by an update are not physically removed from their table; they remain present until a `VACUUM` is done. Therefore it's necessary to do `VACUUM` periodically, especially on frequently-updated tables.
 `VACUUM ANALYZE` performs a `VACUUM` and then an `ANALYZE` for each selected table. This is a handy combination form for routine maintenance scripts. See [PostgreSQL documentation](https://www.postgresql.org/docs/12/sql-vacuum.html) for more details about those operations.
@@ -12,7 +12,7 @@ The main goals for performing `VACUUM FULL` at the ReportPoral database:
 - reclaim storage space occupied by dead tuples;
 - prevent bloating tables.
 
-## Parameters
+### Parameters
 
 | Parameter | Description |
 | ----------- | ----- |
@@ -32,9 +32,10 @@ The main goals for performing `VACUUM FULL` at the ReportPoral database:
 
 The main suggestion is to perform `VACUUM FULL` operation periodically not for the whole database, but only for the particular tables defined below, which helps increase overall SQL queries performance. `VACUUM FULL` frequency for the databases more than 1Tb with high reporting amount - at least once per 3 months.
 
-Tables list and it's operations duration on our database(AWS RDS PostgreSQL Database spec: db.m5.4xlarge 16CPUs, 64Gb RAM):
+Tables list and it's operations duration on our database(AWS RDS PostgreSQL Database spec: db.m5.4xlarge 16CPUs, 64Gb RAM):<br/>
+
 | Table |Rows count| VACUUM Operation |	Duration|
-| ----------- | ---- | ----- | -----|
+|-|-|-|-|
 |log|614 372 224|FULL|14h 30m|
 |log|614 372 224|ANALYZE|1h 30m|
 |test_item|207 311 552|FULL|1h 50m|
@@ -45,7 +46,7 @@ Tables list and it's operations duration on our database(AWS RDS PostgreSQL Data
 |test_item_results|450 264 992|ANALYZE|4m 12s|
 
 
-## VACUUM FULL execution
+### VACUUM FULL execution
 
 **Preconditions:**
 Apply next configuration to PostgreSQL Parameter Group(database restart not needed after applying):
@@ -78,7 +79,7 @@ maintenance_work_mem=2000000
 max_parallel_maintenance_workers=8
 ```
 
-## Useful PostgreSQL queries
+### Useful PostgreSQL queries
 
 Total database size:
 
