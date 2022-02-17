@@ -268,8 +268,10 @@ This file will be updated in next sections, but we can already start developing 
 ### Service Authorization
 
 To start up Service Authorization you should make changes in the `application.yaml` file:
+
 ![](/src/Images/devguide/backend/auth_db_config.png)
 ![](/src/Images/devguide/backend/auth_binary_config.png)
+
 (Optional) change `context-path` value from `/` to `/uat` if you are planning to deploy Service UI locally (will be described later)
 
 ### Service API
@@ -347,8 +349,18 @@ We need to deploy Service Analyzer and all its required services. So we add the 
 As the result our `docker-compose.yml` should be like [this](/src/Images/devguide/backend/docker-compose.yml)
 
 To start up Service API you should make changes in the `application.yaml` file:
+
 ![](/src/Images/devguide/backend/auth_db_config.png)
 ![](/src/Images/devguide/backend/auth_binary_config.png)
 ![](/src/Images/devguide/backend/rabbitmq_config.png)
+
 (Optional) change `context-path` value from `/` to `/api` if you are planning to deploy Service UI locally (will be described later)
+
+### Service Jobs
+To start up Service Jobs you should make changes in the `application.yaml` file:
+
+![](/src/Images/devguide/backend/auth_db_config.png)
+![](/src/Images/devguide/backend/auth_binary_config.png)
+![](/src/Images/devguide/backend/rabbitmq_config.png)
+
 
