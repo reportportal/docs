@@ -65,10 +65,16 @@ code auto-generation (@repository for example) and so on(another real needed cas
 ### Git branch requirements
 - Working branch name must be started with jira-id(EPMRPP-DDD)(-optional-description), for example:
 `EPMRPP-444` or `EPMRPP-443-fix-some-bugs`. That also means, all Jira branches must be related to some Jira ticked, only jira-id should be a trigger for branch creation
-(excluding some technical branches master, develop, release etc). <b>For contributors that have no access to our Jira tasks jira-id prefix isn't required</b>
+(excluding some technical branches master, develop, release etc).
 - All commit messages in `master`, `develop` and `release` branches must be started with jira-id as well: EPMRPP-445 Some important fix.
 - Better to divide commits into small bug logic completed parts into the branch, to ease understanding during code review.
 - When merging a PR into the mainstream branch (`master`, `develop`, `release`) all commits should be squashed and provided with suitable description with jira-id by person who performs merge.
+
+<b>For contributors that have no access to our Jira tasks branch name prefix should be GitHub `issue` name</b>
+It is highly recommended creating an issue that doesn't already exist and then fix it within your PR. 
+Even if it's some new function. Issue will stay there with all your ideas and comments from other contributors. 
+Also, RP users who are not developers might prefer to look through issues 
+rather than PRs to check if something is already fixed in a new version of Report Portal.
 
 ## Open-source contribution workflow
 
@@ -137,6 +143,19 @@ services:
       POSTGRES_PASSWORD: rppass
     restart: on-failure
 ```
+
+`image: reportportal/migrations:5.6.0` is the released version of the migrations service, but if there were any changes in the `develop` branch
+they won't be available in released version so migrated DB schema may be outdated.
+To prevent this and have DB data up-to-date you should do the following:
+- clone/update [Migrations Repository](https://github.com/reportportal/migrations)
+- checkout `develop` branch
+- run the following command:
+```shell
+docker-compose run --rm migrations
+```
+This flow will use all SQL scripts in the `develop` branch and update your locally running DB instance.
+
+<br>
 
 By default, filesystem storage is used for binary data (all data will be stored on your local filesystem).
 If you want to store binaries using Minio (as we do on our production) you should deploy it too by adding this to already existing `docker-compose.yml`:
@@ -248,6 +267,88 @@ This file will be updated in next sections, but we can already start developing 
 
 ### Service Authorization
 
+To start up Service Authorization you should make changes in the `application.yaml` file:
+![](/src/Images/devguide/backend/auth_db_config.png)
+![](/src/Images/devguide/backend/auth_binary_config.png)
+(Optional) change `context-path` value from `/` to `/uat` if you are planning to deploy Service UI locally (will be described later)
 
+### Service API
 
+Before starting Service API we should add RabbitMQ to our deployment. 
+
+In Report Portal RabbitMQ is required for 3 purposes:
+- inter-service communication between Service API and Service Analyzer. 
+- async reporting feature
+- user activity event publishing
+
+To add RabbitMQ to our deployment we should add the following to our existing `docker-compose.yml`:
+
+```yaml
+  rabbitmq:
+    image: rabbitmq:3.7.16-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      retries: 5
+    restart: always
+```
+
+We may start deploying Service API right now without any issues, but all Analyzer-related interactions (publishing to analyzer queues and receiving response) won't succeed.
+We need to deploy Service Analyzer and all its required services. So we add the following to our `docker-compose.yml`:
+
+```yaml
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+    environment:
+      - "ES_JAVA_OPTS=-Dlog4j2.formatMsgNoLookups=true"
+      - "bootstrap.memory_lock=true"
+      - "discovery.type=single-node"
+      - "logger.level=INFO"
+      - "xpack.security.enabled=true"
+      - "ELASTIC_PASSWORD=elastic1q2w3e"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD", "curl","-s" ,"-f", "http://elastic:elastic1q2w3e@localhost:9200/_cat/health"]
+    restart: always
+
+  analyzer: 
+    image: reportportal/service-auto-analyzer:5.6.0
+    environment:
+      LOGGING_LEVEL: info
+      AMQP_EXCHANGE_NAME: analyzer-default
+      AMQP_URL: amqp://rabbitmq:rabbitmq@rabbitmq:5672
+      ES_HOSTS: http://elastic:elastic1q2w3e@elasticsearch:9200
+      MINIO_SHORT_HOST: minio:9000
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    depends_on:
+      elasticsearch:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    restart: always
+```
+
+As the result our `docker-compose.yml` should be like [this](/src/Images/devguide/backend/docker-compose.yml)
+
+To start up Service API you should make changes in the `application.yaml` file:
+![](/src/Images/devguide/backend/auth_db_config.png)
+![](/src/Images/devguide/backend/auth_binary_config.png)
+![](/src/Images/devguide/backend/rabbitmq_config.png)
+(Optional) change `context-path` value from `/` to `/api` if you are planning to deploy Service UI locally (will be described later)
 
