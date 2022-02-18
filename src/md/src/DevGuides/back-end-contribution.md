@@ -144,6 +144,8 @@ services:
     restart: on-failure
 ```
 
+#### How to keep DB data up-to-date
+
 `image: reportportal/migrations:5.6.0` is the released version of the migrations service, but if there were any changes in the `develop` branch
 they won't be available in released version so migrated DB schema may be outdated.
 To prevent this and have DB data up-to-date you should do the following:
@@ -357,10 +359,108 @@ To start up Service API you should fill marked values in the `application.yaml` 
 (Optional) change `context-path` value from `/` to `/api` if you are planning to deploy Service UI locally (will be described later)
 
 ### Service Jobs
+
 To start up Service Jobs you should fill marked values in the `application.yaml` file:
 
 ![](/src/Images/devguide/backend/auth_db_config.png)
 ![](/src/Images/devguide/backend/auth_binary_config.png)
 ![](/src/Images/devguide/backend/rabbitmq_config.png)
+
+### Service UI
+
+After all back-end services deployed you may want to interact with them not only using tool like Postman but use Report Portal UI too.
+To do this you should do the next steps:
+- clone/update [Service UI repository](https://github.com/reportportal/service-ui)
+- checkout `develop` branch
+- apply changes to `dev.config.js` file
+before:
+```javascript
+proxy: [
+        {
+          context: ['/composite', '/api/', '/uat/'],
+          target: process.env.PROXY_PATH,
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+      ]
+```
+after:
+```javascript
+proxy: [
+        {
+          context: ['/composite', '/api/'],
+          target: 'http://localhost:8585',
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+        {
+          context: ['/uat/'],
+          target: 'http://localhost:9999',
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+      ]
+```
+- install NodeJs if it's not installed yet (minimum version is 10)
+- run Service UI from the root folder(service-ui) using commands:
+```shell
+cd app
+npm install
+npm run dev
+```
+- open Service UI page on `localhost` with port `3000` and try to login using default credentials
+
+## Development workflow
+
+### Introduction to dependencies
+
+All our Java services besides common dependencies like `spring-...` also have Report Portal libraries that are separated to different repositories.
+There is a full list of these dependencies:
+- [Commons DAO](https://github.com/reportportal/commons-dao) - Data layer dependency with domain model configuration
+- [Commons Model](https://github.com/reportportal/commons-model) - REST models dependency
+- [Commons](https://github.com/reportportal/commons) - Some common utils for multiple usage purposes
+- [Commons Rules](https://github.com/reportportal/commons-rules) - Business rules validation dependency
+- [Plugin API](https://github.com/reportportal/plugin-api) - Report Portal plugin API
+- [Commons BOM](https://github.com/reportportal/commons-bom) - POM config for releases
+
+### Updates in dependencies
+
+Let's pretend that you found a bug when you try to get user from the DB.
+All logic is invoked within `Service API` but the code with the bug is not directly in sources but in `Commons DAO` dependency.
+How to apply a fix and check if everything works fine?
+To do this you should follow these steps:
+- clone/update `Commons DAO` repository
+- checkout `develop` branch
+- make changes
+- create branch according to the name policy
+- push to the remote
+- create PR to the `develop` branch
+Now you have your branch on the GitHub page and can see the `commit hash`:
+![](/src/Images/devguide/backend/commit_hash.png)
+- go to the service where your changes should be applied (Service API in our example)
+- copy `commit hash` and replace already existing in the `build.gradle` of the required service (Service API in our example):
+![](/src/Images/devguide/backend/build_gradle_updated.png)
+- after re-building project using `gradle` dependency will be resolved and downloaded using [Jitpack](https://jitpack.io) tool
+- create branch according to the name policy
+- push to the remote
+- create a PR to the `develop` branch
+
+## Summary notes
+
+This documentation should help you save your time by configuring Report Portal local dev environment and give you understanding of some standards/conventions that we try stick to.
+
+Simplified development workflow should look like this:
+- always have the latest schema and data in your local DB instance using [this instructions](#how-to-keep-db-data-up-to-date) 
+- checkout `develop` branch in the required repository
+- make changes
+- if changes in dependencies are required:
+  - go to the dependency repository, make changes, create a branch and PR according to conventions
+  - using `commit hash` update dependency in the `build.gradle`
+- create branch according to the name policy
+- push to the remote
+- create a PR according to the name policy
 
 
