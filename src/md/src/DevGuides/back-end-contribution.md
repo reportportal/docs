@@ -373,6 +373,7 @@ To do this you should do the next steps:
 - clone/update [Service UI repository](https://github.com/reportportal/service-ui)
 - checkout `develop` branch
 - apply changes to `dev.config.js` file
+
 before:
 ```javascript
 proxy: [
@@ -385,6 +386,7 @@ proxy: [
         },
       ]
 ```
+
 after:
 ```javascript
 proxy: [
@@ -404,6 +406,7 @@ proxy: [
         },
       ]
 ```
+
 - install NodeJs if it's not installed yet (minimum version is 10)
 - run Service UI from the root folder(service-ui) using commands:
 ```shell
@@ -411,6 +414,7 @@ cd app
 npm install
 npm run dev
 ```
+
 - open Service UI page on `localhost` with port `3000` and try to login using default credentials
 
 ## Development workflow
