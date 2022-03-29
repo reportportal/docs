@@ -1,0 +1,122 @@
+version: '2.4'
+services:
+
+  postgres:
+    image: postgres:12-alpine
+    shm_size: '512m'
+    environment:
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+      POSTGRES_DB: reportportal
+    volumes:
+      # For unix host
+      - ./data/postgres:/var/lib/postgresql/data
+      # For windows host
+      # - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    command:
+      -c checkpoint_completion_target=0.9
+      -c work_mem=96MB
+      -c wal_writer_delay=20ms
+      -c synchronous_commit=off
+      -c wal_buffers=32MB
+      -c min_wal_size=2GB
+      -c max_wal_size=4GB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 120s
+      retries: 10
+    restart: always
+
+  db-scripts:
+    image: reportportal/migrations:5.6.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_SERVER: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: reportportal
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+    restart: on-failure
+
+  minio:
+    image: minio/minio:RELEASE.2020-10-27T04-03-55Z
+    ports:
+      - '9000:9000'
+    volumes:
+      # For unix host
+      - ./data/storage:/data
+      # For windows host
+      # - minio:/data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3.7.16-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status" ]
+      retries: 5
+    restart: always
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+    environment:
+      - "ES_JAVA_OPTS=-Dlog4j2.formatMsgNoLookups=true"
+      - "bootstrap.memory_lock=true"
+      - "discovery.type=single-node"
+      - "logger.level=INFO"
+      - "xpack.security.enabled=true"
+      - "ELASTIC_PASSWORD=elastic1q2w3e"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: [ "CMD", "curl","-s" ,"-f", "http://elastic:elastic1q2w3e@localhost:9200/_cat/health" ]
+    restart: always
+
+  analyzer:
+    image: reportportal/service-auto-analyzer:5.6.0
+    environment:
+      LOGGING_LEVEL: info
+      AMQP_EXCHANGE_NAME: analyzer-default
+      AMQP_URL: amqp://rabbitmq:rabbitmq@rabbitmq:5672
+      ES_HOSTS: http://elastic:elastic1q2w3e@elasticsearch:9200
+      MINIO_SHORT_HOST: minio:9000
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    depends_on:
+      elasticsearch:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    restart: always
+
+volumes:
+  postgres:
+  minio:
