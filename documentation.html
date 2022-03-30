@@ -694,10 +694,17 @@ For Windows native docker:
 <p>If you haven’t done this, you will get an error</p>
 <pre><code class="language-Shell">data directory “/var/lib/postgresql/data/pgdata” has wrong ownership</code></pre>
 </blockquote>
-<p>Then uncomment the following:  </p>
+<p>Then uncomment the following:</p>
+<pre><code class="language-Shell">    volumes:
+     # For unix host
+     # - ./data/storage:/data 
+     # For windows host
+      - minio:/data</code></pre>
+<p>And after that uncomment the following:  </p>
 <pre><code class="language-Shell"># Docker volume for Windows host
 volumes:
-  postgres:</code></pre>
+  postgres:
+  minio:</code></pre>
 <h3 id="updating-reportportal-with-docker">Updating ReportPortal with Docker</h3>
 <p>Updating ReportPortal with Docker is a two step process.  </p>
 <p>In the first step, your Docker Compose file should be replaced with a new one (with the latest version services) from <a href="https://github.com/reportportal/reportportal/blob/master/docker-compose.yml">here</a>.</p>
