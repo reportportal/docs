@@ -401,7 +401,7 @@ Issue part for finish test item model:
 
 | Attribute            | Required | Description                                                                                                 | Default value | Example                                   |
 |----------------------|----------|-------------------------------------------------------------------------------------------------------------|---------------|-------------------------------------------|
-| issueType            | Yes      | Issue type locator. Allowable values: "pb***", "ab***", "si***", "ti***", "nd001". Where *** is locator id. | -             | pb001                                     |
+| issueType            | Yes      | Issue type locator. Allowable values: "pb***", "ab***", "si***", "ti***", "nd001" or "NOT_ISSUE". Where *** is locator id. | -             | pb001                                     |
 | comment              | No       | Issue comment                                                                                               | empty         | Framework issue. Script outdated          |
 | autoAnalyzed         | No       | Is issue was submitted by auto analyzer                                                                     | false         | false                                     |
 | ignoreAnalyzer       | No       | Is issue should be ignored during auto analysis                                                             | false         | false                                     |
@@ -444,6 +444,8 @@ With body:
 ```
 
 We can report other child items (`updatePlugin`, `removePlugin`) the same way as described above.
+All skipped and failed items are marked as `To Investigate` by default. To mark them as not issue just send a special issue type:
+`"issue": {"issueType": "NOT_ISSUE"}`.
 
 ## Finish parent(container) item
 
