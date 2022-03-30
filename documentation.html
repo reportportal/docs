@@ -1027,10 +1027,10 @@ services:
       - &quot;--providers.file.directory=/etc/traefik/dynamic&quot;
       - &quot;--entrypoints.websecure.address=:443&quot;
     restart: always</code></pre>
-<h5 id="add-the-following-labels-to-existing-services-api-uat-index-ui-and-replacing-service-with-the-corresponding-services-names">Add the following labels to existing services <code>api</code>, <code>uat</code>, <code>index</code>, <code>ui</code>  and replacing <code>&lt;service&gt;</code> with the corresponding services names</h5>
+<h5 id="add-the-following-labels-to-existing-services-api-uat-index-ui-replacing-service-with-the-corresponding-service-name">Add the following labels to existing services <code>api</code>, <code>uat</code>, <code>index</code>, <code>ui</code>, replacing <code>&lt;service&gt;</code> with the corresponding service name</h5>
 <pre><code class="language-yaml">labels:
   - &quot;traefik.http.routers.&lt;service&gt;.tls=true&quot;</code></pre>
-<p>Check the UI and API services as an expample:</p>
+<p>Check the UI and API services as an example:</p>
 <pre><code class="language-yaml">version: &#39;2.4&#39;
 services:
 
@@ -1048,7 +1048,7 @@ services:
       - &quot;traefik.expose=true&quot;
       - &quot;traefik.http.routers.ui.tls=true&quot; # label is here
     restart: always</code></pre>
-<p><strong>NOTE</strong>: You need to make sure that the required ports are opened, please check your firewall settings.</p>
+<p><strong>NOTE</strong>: Make sure that the required ports are opened. Please check your firewall settings.</p>
 <h3 id="helpful-links">Helpful links</h3>
 <ol>
 <li><a href="https://doc.traefik.io/traefik/https/tls/">Traefik HTTPS&amp;TLS Offical documentation</a></li>
