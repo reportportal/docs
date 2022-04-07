@@ -27,7 +27,7 @@ The goal for this report to show the status of the latest test run. For instance
 [ ![ImageName](Images/userGuide/dashboards/Launch Report.png) ](Images/userGuide/dashboards/Launch Report.png)
 
 You can configure:
-[**Passing rate widget**]() that shows a passing rate for a latest launch "API suite'
+[**Passing rate widget**](https://reportportal.io/docs/Passing-rate-summary) that shows a passing rate for a latest launch "API suite'
 
 [**Most popular pattern**](https://reportportal.io/docs/Most-popular-pattern) tracks TOP-20 problems in the last and previous runs of this suite. 
 
@@ -45,7 +45,7 @@ Also, you can create [**"Most flaky test cases"**](https://reportportal.io/docs/
 
 Let's assume that you have a lot of test results and a lot of teams.
 
-You can create [**Overall statistics**]() and [**Launches table**](https://reportportal.io/docs/Launches-table), and now a team who is responsible for API suite has no need to go to the test results. It can use only this dashboard which gives enough information for test failure management.
+You can create [**Overall statistics**](https://reportportal.io/docs/Overall-statistics) and [**Launches table**](https://reportportal.io/docs/Launches-table), and now a team who is responsible for API suite has no need to go to the test results. It can use only this dashboard which gives enough information for test failure management.
 
 
 ###  Build / Release/ Sprint Report (A dashboard for an Team leads, PM, DM)
@@ -72,7 +72,7 @@ Also with a help of [**Component Health Check Widget**](https://reportportal.io/
 
 >**Note**: you need to report test executions with attributes which specified needed metrics or envs
 
-- [**Unique bugs table**]() helps you collect and analyze new bugs in the system
+- [**Unique bugs table**](https://reportportal.io/docs/Unique-bugs-table) helps you collect and analyze new bugs in the system
 
 >**Note** Component Health Check Widget and Cumulative trend chart are very configurable and you can create your own widget based on project needs.
 
