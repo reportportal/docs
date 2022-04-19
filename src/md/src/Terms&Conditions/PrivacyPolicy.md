@@ -22,9 +22,9 @@ EPAM will only use your personal information for the purposes for which it was c
 ### Sharing of Information
 
 EPAM may disclose your personal information to the following categories of recipients:
-  -	to its group companies, professional advisers, third party services providers and partners who provide data processing services to EPAM (for example, to support the delivery of, provide functionality on, or help to enhance the security of EPAM websites), or who otherwise process personal information for purposes that are described in Privacy Notices or notified to you when EPAM collects your personal information. A list of EPAM's current group companies is available upon request.
-  -	to any competent law enforcement body, regulatory, government agency, court or other third party where EPAM believes disclosure is necessary (a) as a matter of applicable law or regulation, (b) to exercise, establish or defend its legal rights, or (c) to protect your vital interests or those of any other person.
-  -	to any other person with your consent to the disclosure.
+  -	to its **group companies, professional advisers, third party services providers and partners** who provide data processing services to EPAM (for example, to support the delivery of, provide functionality on, or help to enhance the security of EPAM websites), or who otherwise process personal information for purposes that are described in Privacy Notices or notified to you when EPAM collects your personal information. A list of EPAM's current group companies is available upon request.
+  -	to any **competent law enforcement body, regulatory, government agency, court or other third party** where EPAM believes disclosure is necessary (a) as a matter of applicable law or regulation, (b) to exercise, establish or defend its legal rights, or (c) to protect your vital interests or those of any other person.
+  -	to any **other person with your consent** to the disclosure.
 
 ### Legal Basis of Processing
 
@@ -54,11 +54,11 @@ EPAM websites contains links, plug-ins and applications to various third party w
 ### Your Data Protection Rights
 
 If your personal information is protected by EU data protection law, you have the following data protection rights which you may be able to exercise by contacting EPAM using the contact details provided under the "Contact Details" heading below and in the right-hand side column:
-  -	If you wish to access, correct, update or request deletion of your personal information, you can do so at any time by contacting EPAM.
-  -	In addition, you can object to processing of your personal information, ask EPAM to restrict processing of your personal information or request portability of your personal information by contacting EPAM.
-  -	You have the right to opt-out of marketing communications that EPAM sends you at any time. You can exercise this right by clicking on the "unsubscribe" or "opt-out" link in the marketing emails EPAM sends you or by using the relevant opt-out mechanism for non-email based marketing.
-  -	Similarly, if EPAM has collected and processes your personal information based on your consent, then you can withdraw your consent at any time. Withdrawing your consent will not affect the lawfulness of any processing EPAM conducted prior to your withdrawal, nor will it affect processing of your personal information conducted in reliance on lawful processing grounds other than consent.
-  -	You have the right to complain to a data protection authority about EPAM's collection and use of your personal information. For more information, please contact your local data protection authority.
+  -	If you wish to **access, correct, update or request deletion** of your personal information, you can do so at any time by contacting EPAM.
+  -	In addition, you can **object to processing** of your personal information, ask EPAM to **restrict processing** of your personal information or **request portability** of your personal information by contacting EPAM.
+  -	You have the right to **opt-out of marketing communications** that EPAM sends you at any time. You can exercise this right by clicking on the "unsubscribe" or "opt-out" link in the marketing emails EPAM sends you or by using the relevant opt-out mechanism for non-email based marketing.
+  -	Similarly, if EPAM has collected and processes your personal information based on your consent, then you can **withdraw your consent** at any time. Withdrawing your consent will not affect the lawfulness of any processing EPAM conducted prior to your withdrawal, nor will it affect processing of your personal information conducted in reliance on lawful processing grounds other than consent.
+  -	You have the **right to complain to a data protection authority** about EPAM's collection and use of your personal information. For more information, please contact your local data protection authority.
 
 You will not have to pay a fee to access your personal information (or to exercise any of the other rights). However, EPAM may charge a reasonable fee or refuse to comply with your request if your request is clearly unfounded, repetitive or excessive. EPAM tries to respond to all legitimate requests within one month. Occasionally, it may take longer if your request is particularly complex or you have made a number of requests. In this case, EPAM will notify you and keep you updated.
 ### Cookies
