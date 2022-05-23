@@ -76,7 +76,7 @@ Configure [Auto-Analyzer](https://reportportal.io/docs/Analysis)
 
 ### I want post issue to BTS from ReportPortal
 
-* [Jira](https://reportportal.io/docs/Jira-Integration)
+* [Jira Server](https://reportportal.io/docs/Jira-Server-Integration)
 * [Rally](https://reportportal.io/docs/Rally-Integration)
 
 ### I want view video from SauceLabs in ReportPortal
