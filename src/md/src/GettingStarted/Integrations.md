@@ -170,7 +170,7 @@ If you need to remove Jira Server integration, please perform actions:
 
 4. Click on a tab with existing integration
 
-5. Click on "Remove integration" link
+5. Click on "Remove integration"
 
 6. Submit the action
 
@@ -272,7 +272,7 @@ Post issue via Step view
 
 1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
 
-2. Go to a step view
+2. Go to a Step view
 
 3. Choose a needed item
 
@@ -308,7 +308,7 @@ Link issue via Step view
 
 1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
 
-2. Go to a step view
+2. Go to a Step view
 
 3. Choose a needed item
 
@@ -447,7 +447,7 @@ If you need to remove RALLY integration, please perform actions:
 
 4. Click on a tab with existing integration
 
-5. Click on "Remove integration" link
+5. Click on "Remove integration"
 
 6. Submit the action
 
@@ -521,7 +521,7 @@ Post issue via Step view
 
 1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
 
-2. Go to a step view
+2. Go to a Step view
 
 3. Choose a needed item
 
@@ -559,7 +559,7 @@ Post issue via Step view
 
 1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
 
-2. Go to a step view
+2. Go to a Step view
 
 3. Choose a needed item
 
