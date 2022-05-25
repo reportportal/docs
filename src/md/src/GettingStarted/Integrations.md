@@ -67,7 +67,7 @@ If all projects on your instance are using the same Jira projects, you will be a
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project key in BTS': <project key in bug tracking system>            
@@ -196,7 +196,7 @@ For that,
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project key in BTS': <project key in bug tracking system>            
@@ -353,7 +353,7 @@ If all projects on your instance are using the same Jira projects, you will be a
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project key in BTS': <project key in bug tracking system>                     
@@ -472,7 +472,7 @@ For that,
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project key in BTS': <project key in bug tracking system>
@@ -600,7 +600,7 @@ If all projects on your instance are using the same RALLY  projects, you will be
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project ID in BTS': <project ID in bug tracking system>
@@ -718,7 +718,7 @@ For that,
 
 5. Fill and confirm the authorization form
 
-```java
+```javascript
 'Integration Name ': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
 'Project ID in BTS': <project ID in bug tracking system>            
