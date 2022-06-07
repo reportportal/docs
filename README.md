@@ -11,6 +11,18 @@ Subsections files can have headers of the second and higher level.
 
 # Guide
 
+## Add new section to navigation
+
+Open file `src/md/pages/documentation.hbs`.
+
+Add new line in the list with necessary doc file in the following way:
+
+`'src/computeds/md/src/{sectionFolderName}/index.md'`
+>**Note**
+The section order is important.
+
+Subsection can be added in the same way with corresponding folder, file name and indentation.
+
 ## Block image
 To display the picture, use the following syntax:
 ```$xslt
