@@ -95,14 +95,15 @@ If the user configures a plugin on the **project level**, then these configurati
 
 Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Integrations):
 
-*    [integration with Jira](https://reportportal.io/docs/Integrations%3Eintegration-with-jira) 
-*    [integration with Rally](https://reportportal.io/docs/Integrations%3Eintegration-with-rally)
-*    [integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
-*    [integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
-*    [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
-*    [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
-*    [integration with SAML](https://reportportal.io/docs/SAML-integration)
- 
+* [integration with Jira](https://reportportal.io/docs/Integrations%3Eintegration-with-jira) 
+* [integration with Rally](https://reportportal.io/docs/Integrations%3Eintegration-with-rally)
+* [integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
+* [integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
+* [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
+* [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
+* [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
+* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
+
 > **Use case 1:** 
 > 
 > **Situation:** A small team, on ReportPortal instance there are several projects. Separate projects are added for different test types (UI, API, Unit and other). The team works with one project in Jira (or Rally). Different projects post new bugs in the same Jira (or Rally) project.
