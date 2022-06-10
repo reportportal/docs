@@ -1210,7 +1210,7 @@ Firstly, configure SAML on Azure side.
 
 6) Select a tenant type (```Azure Active Directory```) and click ```Next: Configuration >``` button.
 
-[ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_19h24_56.png ](Images/Plugins/AzureSAML/2022-05-30_19h24_56.png)
+[ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_19h24_56.png) ](Images/Plugins/AzureSAML/2022-05-30_19h24_56.png)
 
 7) Fill in the necessary fields and click ```Next: Review + create >``` button.
 
