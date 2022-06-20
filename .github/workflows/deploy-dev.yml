@@ -46,16 +46,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12.13.0
+          node-version: 10.x
 
       - name: Install of node dependencies
         run: npm install
 
-      - name: create env file
-        run: |
-          touch .env
-          echo SALESFORCE_URL=${{ env.SALESFORCE_URL }} >> .env
-          echo SALESFORCE_OID=${{ env.SALESFORCE_OID }} >> .env
       - name: Build the source code
         run: npm run build
 
