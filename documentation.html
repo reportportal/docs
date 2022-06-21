@@ -5969,7 +5969,7 @@ Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND dev
 <li>Amount of issues</li>
 <li>Percent </li>
 <li>New failures </li>
-<li>New errors (in 5.7 version)</li>
+<li>New errors (from version 5.7)</li>
 </ul>
 <h4 id="amount-of-tests-in-the-run">Amount of tests in the run</h4>
 <blockquote>
@@ -6172,6 +6172,53 @@ For that, tests in the analyzed launch should have attributes (f.i. feature: Pay
 </table>
 <p>:question: When you use &quot;latest&quot;, the system will use the latest launch with a specified launch name, which has been run before the analyzed launch.
 If you want to specify a baseline, you also can add launch attributes. In this case, the system will use the latest launch with specified launch name and attributes, which have been run before the analyzed launch.</p>
+<h4 id="new-errors-in-the-run">New errors in the run</h4>
+<p>“Unique errors” functionality with a new Quality Gates rule – New Errors – was implemented in version 5.7. This feature saves your time for searching and analyzing repeated errors in launches. <strong>“New Errors” rule</strong> will help to group errors into new and known ones and, for example, fail build if there are new error not seen previously.</p>
+<p>To begin using this functionality, you need to create a Quality Gate and add the “New Errors” rule. Please follow the steps below:</p>
+<p>1) Log in to ReportPortal as Admin/PM.</p>
+<p>2) Go to <code>Project Settings</code>.</p>
+<p>3) Select <code>Quality Gates</code> section.</p>
+<p>4) Click <code>Create Quality Gate</code> button.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule1.png" alt="ImageName"> </a></p>
+<p>5) Enter <code>Quality Gate Name</code> and <code>Analyzed Launch</code>, then click <code>Save</code> button.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule2.png" alt="ImageName"> </a></p>
+<blockquote>
+<p><strong>Note:</strong> if you want the Quality Gate not to run for all launches, you can adjust it only for the launches with specific attributes. Click <code>Add attribute</code> and specify value and key, e.g., browser.</p>
+</blockquote>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule3.png" alt="ImageName"> </a></p>
+<p>On the example in the screenshot above Quality Gate will run for launches with name <strong>“Test”</strong> with attributes <em>Browser Chrome</em>, <em>Feature Reporting</em>, <em>Device MacBook</em>.</p>
+<p>6) Click on the <code>Add a new rule</code> dropdown and select <code>New Errors</code>.</p>
+<p>Click the <strong>“confirm”</strong> icon.</p>
+<blockquote>
+<p>Please, note that “New Errors” rule can be created with <strong>“All tests”</strong> condition only.</p>
+</blockquote>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule4.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule5.png" alt="ImageName"> </a></p>
+<p>Before running automation tests, make sure that <strong>“Quality Gates”</strong> feature is ON.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule6.png" alt="ImageName"> </a></p>
+<p>Now everything is ready to use.</p>
+<p>7) Go to automation testing tool.</p>
+<p>8) Run autotests.</p>
+<p>9) Go to ReportPortal.</p>
+<p>10) Open the <code>Launches</code> section and click the <code>Refresh</code> button at the top.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule7.png" alt="ImageName"> </a></p>
+<p>11) Verify the Quality Gates&#39; status.</p>
+<p><strong><em>Passed</em></strong> - there are no failures.</p>
+<p><strong><em>Failed</em></strong> - there are new errors.</p>
+<p><strong><em>N/A</em></strong> - appears if the quality gate was created after a launch was finished, or there is no quality gate for this launch. If the status is Not Available, click on the “N/A” and then click “Run Quality Gate” button (+ “Refresh”).</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule8.png" alt="ImageName"> </a></p>
+<p>12) To look at the failed test results, click on the <code>Failed</code> status and then click on the number under <code>Current</code> column.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule9.png" alt="ImageName"> </a></p>
+<p>You will be redirected to the <code>Unique errors</code> tab with a list of all new error logs of the launch. If you want to see known issues as well, open the <code>All Unique Errors</code> dropdown at the top and click the <code>Known Errors</code> checkbox.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule10.png" alt="ImageName"> </a></p>
+<p>By default, <strong><em>a previous launch execution</em></strong> is used as a Baseline Launch for the Quality Gate. Besides, you can as well define any other launch by specifying its name and sequence number or select <code>Latest</code> for the prior run of the specified launch to be used as a baseline.</p>
+<p>To make these changes, click <code>Edit Details</code> on the Quality Gate page and uncheck the <code>Choose a previous launch as a baseline</code> checkbox.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule11.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule11.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule12.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule12.png" alt="ImageName"> </a></p>
+<p>Follow the steps below depending on the preferable settings for the Baseline Launch.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.pngg"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png" alt="ImageName"> </a></p>
+<p>In this way you can compare analyzed launch not only with its previous execution but also with another launch.</p>
 <h2 id="quality-gate-edit">Quality Gate Edit</h2>
 <p>If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.</p>
 <p>If you want to recalculate Quality Gate with a new values, please check the  section ###How to recalculate Quality Gates.</p>
