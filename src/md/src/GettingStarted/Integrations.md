@@ -13,7 +13,6 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 * [Active Directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
 * [Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
 * [Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
-* Test BTS
 
 If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](https://reportportal.io/docs/Plugins).
 
