@@ -18,31 +18,36 @@ Open the terminal from desired directory and run the following commands:
 git clone https://github.com/reportportal/documentation.git
 ```
 
-2. Go to the repository root folder
+2. Go to the repository root folder:
 ```bash
 cd documentation
 ```
 
 3. Checkout to branch
 
-3.1 Checkout to existing branch (if it's already created on GitHub)
+3.1 Checkout to existing branch (if it's already created on GitHub):
 ```bash
 git checkout my-branch
 ```
 
-3.2 Checkout to the new branch (if not exists)
+3.2 Checkout to the new branch (if not exists):
 ```bash
 git checkout -b my-branch
 ```
 
 Now the workspace is ready to add changes.
 
-4. To run the builder in the developer mode run
+4. Install the dependencies:
+```bash
+npm install
+```
+
+5. To run the builder in the developer mode run:
 ```bash
 npm run develop
 ```
 
-Open another terminal window and execute
+Open another terminal window and execute:
 ```bash
 npm run server
 ```
@@ -59,12 +64,17 @@ Open the terminal from desired directory and run the following commands:
 git clone https://github.com/reportportal/reportportal.github.io.git
 ```
 
-2. Go to the repository root folder
+2. Go to the repository root folder:
 ```bash
 cd reportportal.github.io
 ```
 
-3. Run the development server with local proxy to documentation:
+3. Install the dependencies:
+```bash
+npm install
+```
+
+4. Run the development server with local proxy to documentation:
 ```bash
 npm run dev:local:documentation
 ```
@@ -74,17 +84,17 @@ Now the documentation is available in browser via [http://localhost:9000/docs](h
 
 When some changes are ready to code review, follow the next steps in documentation repo:
 
-1. Add changes to be staged for commit
+1. Add changes to be staged for commit:
 ```bash
 git add <path-to-folder/file>
 ```
 
-2. Commit changes
+2. Commit changes:
 ```bash
 git commit -m "commit_message"
 ```
 
-3. Push changes to GitHub
+3. Push changes to GitHub:
 ```bash
 git push origin my-branch
 ```
