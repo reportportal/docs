@@ -25,7 +25,7 @@ cd documentation
 
 3. Checkout to branch
 
-3.1 Checkout to existing branch (if it has been already created on GitHub)
+3.1 Checkout to existing branch (if it's already created on GitHub)
 ```bash
 git checkout <branch-name>
 ```
