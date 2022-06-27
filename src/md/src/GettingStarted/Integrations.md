@@ -7,6 +7,7 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 * [Jira Server](https://reportportal.io/docs/Jira-Server-Integration)
 * [Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
 * [Rally](https://reportportal.io/docs/Rally-Integration)
+* [Azure DevOps](https://reportportal.io/docs/Integration-with-Azure-DevOps-Bug-Tracking-System)
 * [Sauce Labs](https://reportportal.io/docs/Sauce-Labs-integration)
 * [E-mail server](https://reportportal.io/docs/E-mail-server-integration)
 * [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
@@ -1325,3 +1326,5 @@ Example of GitHub auth configuration:
  Click on 'Submit' button.
  A confirmation message in status bar should be shown.
  A 'Login with GitHub' button will appear on login form.
+
+## Integration with Azure DevOps Bug Tracking System
