@@ -432,7 +432,7 @@ To make these changes, click ```Edit Details``` on the Quality Gate page and unc
 
 Follow the steps below depending on the preferable settings for the Baseline Launch.
 
-[ ![ImageName](Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png) ](Images/userGuide/QualityGates/NewErrors/new-errors-rule13.pngg)
+[ ![ImageName](Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png) ](Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png)
 
 [ ![ImageName](Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png) ](Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png)
 
