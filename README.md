@@ -27,12 +27,12 @@ cd documentation
 
 3.1 Checkout to existing branch (if it's already created on GitHub)
 ```bash
-git checkout <branch-name>
+git checkout my-branch
 ```
 
 3.2 Checkout to the new branch (if not exists)
 ```bash
-git checkout -b <branch-name>
+git checkout -b my-branch
 ```
 
 Now the workspace is ready to add changes.
@@ -86,7 +86,7 @@ git commit -m "commit_message"
 
 3. Push changes to GitHub
 ```bash
-git push origin <branch-name>
+git push origin my-branch
 ```
 
 4. Create a new Pull Request on GitHub to `develop` branch & add reviewers.
