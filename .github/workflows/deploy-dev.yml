@@ -44,12 +44,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 10.x
+          node-version: 14.x
 
       - name: Install of node dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the source code
         run: npm run build
