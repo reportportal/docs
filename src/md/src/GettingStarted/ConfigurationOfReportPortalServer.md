@@ -4,7 +4,7 @@ ReportPortal Admin can configure an easy authorization on the instance. From the
 
 * GitHub
 * [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
-* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
+* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
 * SAML (in progress)
 
 ### GitHub Authorization

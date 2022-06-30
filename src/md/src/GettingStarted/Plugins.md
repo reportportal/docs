@@ -102,7 +102,7 @@ Details on how to configure a specific plugin please find in the [Integration se
 * [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
 * [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
 * [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
-* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
+* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML-Integration)
 
 > **Use case 1:** 
 > 
