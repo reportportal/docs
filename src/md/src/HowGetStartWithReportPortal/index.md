@@ -89,7 +89,7 @@ Configure  [E-mail server](https://reportportal.io/docs/E-mail-server-integratio
 ### I want to configure Auth
 
 * [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
-* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
+* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
 
 ### I want to have a beautiful report with graphs and tables
 

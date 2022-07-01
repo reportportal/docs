@@ -11,7 +11,7 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 * [Sauce Labs](https://reportportal.io/docs/Sauce-Labs-integration)
 * [E-mail server](https://reportportal.io/docs/E-mail-server-integration)
 * [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
-* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
+* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
 * [Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
 * [Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
 
@@ -1177,7 +1177,7 @@ https://your domain adress/uat/saml/sp/SSO/alias/report-portal-sp
 
 “RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. "https://reportportal.com/uat"). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations. 
 
-## Azure SAML Integration
+## Azure SAML integration
 
 Login to ReportPortal via Azure SAML is available starting from version 5.7 (SAML Okta was implemented in versions before 5.7).
 
