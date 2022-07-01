@@ -100,7 +100,7 @@ Details on how to configure a specific plugin please find in the [Integration se
 * [integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
 * [integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
 * [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
-* [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth-integration)
+* [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
 * [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
 * [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
 
