@@ -1745,6 +1745,7 @@ ADMINISTRATOR and PROJECT MANAGER can make project configurations of a plugin.</
 <li><a href="https://reportportal.io/docs/Jira-Server-Integration">Jira Server</a></li>
 <li><a href="https://reportportal.io/docs/Jira-Cloud-Integration">Jira Cloud</a></li>
 <li><a href="https://reportportal.io/docs/Rally-Integration">Rally</a></li>
+<li><a href="https://reportportal.io/docs/Azure-DevOps-BTS">Azure DevOps</a></li>
 <li><a href="https://reportportal.io/docs/Sauce-Labs-integration">Sauce Labs</a></li>
 <li><a href="https://reportportal.io/docs/E-mail-server-integration">E-mail server</a></li>
 <li><a href="https://reportportal.io/docs/LDAP-Auth-integration">LDAP</a></li>
@@ -2837,6 +2838,168 @@ If the &#39;Organization Name&#39; is specified, only users of this organization
 <p> Click on &#39;Submit&#39; button.
  A confirmation message in status bar should be shown.
  A &#39;Login with GitHub&#39; button will appear on login form.</p>
+<h2 id="azure-devops-bts">Azure DevOps BTS</h2>
+<p>Integration with ReportPortal can be helpful for projects which are already using Azure DevOps BTS (Bug Tracking System) as a tracking tool. This feature allows posting issues and linking/unlinking issues, getting updates on their statuses. For example, just a few clicks – and bug with detailed logs is created! </p>
+<p>Azure DevOps BTS integration can be configured on the global level (for all projects on the instance) or on the project level (only for one project). </p>
+<h3 id="global-azure-devops-bts-integration">Global Azure DevOps BTS integration</h3>
+<h4 id="add-new-global-azure-devops-bts-integration">Add new global Azure DevOps BTS integration</h4>
+<p> You might want to configure <strong>global integrations</strong> which will be applied on all projects if all projects on your instance are using the same Azure DevOps BTS projects. </p>
+<p>1) Log in as ADMIN. </p>
+<p>2) Go to Administrate &gt; Plugins. </p>
+<p>3) Click on Azure DevOps plugin. </p>
+<p>4) Click on the “Add integration” button. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops1.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops1.png" alt="ImageName"> </a></p>
+<p>5) Fill and Save the authorization form. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops2.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops2.png" alt="ImageName"> </a></p>
+<p>Please, follow the steps below to get a token for Azure DevOps integration: </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops3.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops3.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops4.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops4.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops5.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops5.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops6.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops6.png" alt="ImageName"> </a></p>
+<p>You can choose predefined Azure DevOps ticket fields after you have created a connection with the Azure DevOps BTS project. These fields will be shown to you all the time when you post an issue to the Azure DevOps BTS. </p>
+<p>This feature also gives you the ability to choose proper issue type for newly created issues in Azure DevOps BTS. </p>
+<p>To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions on the opened <strong>Configuration</strong> form: </p>
+<p>1) Choose issue type from the drop-down. </p>
+<p>2) Check the fields needed and fill them in if necessary. </p>
+<p>3) Click on “Submit” button. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops7.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops7.png" alt="ImageName"> </a></p>
+<p>Now team members on all your projects will be able to submit issues in Azure DevOps BTS. Options for Post Issue/Link issue are activated. </p>
+<p>You can add more integrations by clicking on “Add integration”.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops8.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops8.png" alt="ImageName"> </a></p>
+<p> User can add several integrations, but with a different name to the <strong>one Azure DevOps BTS project</strong>. </p>
+<p><strong>Use case:</strong></p>
+<p><strong>Situation:</strong> User wants to post to Azure DevOps BTS issues with type <strong>Issue</strong> and <strong>Task</strong> to the project NNN-MMM in Azure DevOps BTS. Is it possible? Yes! </p>
+<p><strong>Solution:</strong> Add two integrations to the project NNN-MMM in Azure DevOps BTS with names e.g., “Project -1” and “Project -2”. Add to the “Project -1” issue type <strong>Issue</strong> and for “Project -2” - issue type <strong>Task</strong>. While posing issue procedure, choose integration with needed type. </p>
+<h4 id="update-global-azure-devops-bts-integration">Update global Azure DevOps BTS integration</h4>
+<p>If you need to edit Azure DevOps BTS integration authorization parameters, please perform actions: </p>
+<p>1) Log in as ADMIN. </p>
+<p>2) Go to Administrate &gt; Plugins. </p>
+<p>3) Click on Azure DevOps plugin. </p>
+<p>4) Click on a tab with existing integration. </p>
+<p>5) Click on “Edit authorization” link. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops9.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops9.png" alt="ImageName"> </a></p>
+<p>6) Change “Integration name”. </p>
+<p>7) Type your Azure DevOps credentials. </p>
+<p>8) Submit the form. </p>
+<blockquote>
+<p><strong>Note:</strong>
+You can edit only “Integration name”. If you need other changes, please submit new integration. </p>
+</blockquote>
+<p>If you need to edit fields which should be posted in Azure DevOps BTS, please perform actions: </p>
+<p>1) Log in as ADMIN. </p>
+<p>2) Go to Administrate &gt; Plugins. </p>
+<p>3) Click on Azure DevOps plugin. </p>
+<p>4) Click on the tab with existing integration. </p>
+<p>5) Click on “Configure” button. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops10.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops10.png" alt="ImageName"> </a></p>
+<p>6) Choose issue type from the drop-down. </p>
+<p>7) Check the fields needed and fill them in if necessary. </p>
+<p>8) Click on “Submit” button. </p>
+<h4 id="remove-global-azure-devops-bts-integration">Remove global Azure DevOps BTS integration</h4>
+<p>If you need to remove Azure DevOps BTS integration, please perform actions: </p>
+<p>1) Log in as ADMIN. </p>
+<p>2) Go to Administrate &gt; Plugins. </p>
+<p>3) Click on Azure DevOps plugin. </p>
+<p>4) Click on the tab with existing integration. </p>
+<p>5) Click on “Remove integration”. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops11.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops11.png" alt="ImageName"> </a></p>
+<p>6) Submit the action. </p>
+<h3 id="project-azure-devops-bts-integration">Project Azure DevOps BTS integration</h3>
+<h4 id="add-new-project-azure-devops-bts-integration">Add new project Azure DevOps BTS integration</h4>
+<p>If any project needs different Azure DevOps BTS configurations, you should unlink a project from Global configurations and add a Project configuration. It means that now when a new global integration is added to the ReportPortal, it won&#39;t be applied to the unlinked project. </p>
+<p>For that, </p>
+<p>1) Log in as an ADMIN or Project Manager. </p>
+<p>2) Go to Project Settings &gt; Integrations. </p>
+<p>3) Click on the Azure DevOps integration panel. </p>
+<p>4) Click on “Unlink and setup manually” button. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops12.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops12.png" alt="ImageName"> </a></p>
+<p>5) Fill and confirm the authorization form. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops13.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops13.png" alt="ImageName"> </a></p>
+<blockquote>
+<p><strong>Note:</strong>
+Please, have a look at <strong>Global Azure DevOps BTS</strong> integration for detailed configuration steps.  </p>
+</blockquote>
+<p>You can choose predefined Azure DevOps ticket fields after you have created a connection with the Azure DevOps BTS project. These fields will be shown to you all the time when you post an issue to the Azure DevOps BTS. </p>
+<p>This feature also gives you the ability to choose proper issue type for newly created issues in Azure DevOps BTS. </p>
+<p>To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions on the opened <strong>Configuration</strong> form: </p>
+<p>1) Choose issue type from the drop-down. </p>
+<p>2) Check the needed fields and fill them in if necessary. </p>
+<p>3) Click on “Submit” button. </p>
+<p>Now team members on this project will be able to submit issues in Azure DevOps BTS. Options for Post Issue/Link issue are activated. </p>
+<p>You can add more integrations by clicking on “Add integration” button.</p>
+<h4 id="reset-to-project-azure-devops-bts-integrations">Reset to project Azure DevOps BTS Integrations</h4>
+<p>If you want to delete project integrations with Azure DevOps BTS and link your project with global configurations, please perform actions described below: </p>
+<p>1) Log in as an ADMIN or Project Manager. </p>
+<p>2) Go to Project Settings &gt; Integrations. </p>
+<p>3) Click on the Azure DevOps integration panel. </p>
+<p>4) Click on “Reset to global settings” button. </p>
+<p>5) Confirm the action. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops14.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops14.png" alt="ImageName"> </a></p>
+<h3 id="post-issue-to-azure-devops-bts">Post issue to Azure DevOps BTS</h3>
+<p>Posting an issue to Azure DevOps BTS means creating a new issue in Azure DevOps BTS from ReportPortal and uploading logs and attachments from an execution. </p>
+<p>If you want to post a new issue to Azure DevOps BTS, you need to have a project or global integration with Azure DevOps BTS. </p>
+<p>1) Log in to ReportPortal as Admin, PM, Member, Customer or Operator. </p>
+<p>2) Go to Launches. </p>
+<p>3) Choose a needed item. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops15.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops15.png" alt="ImageName"> </a></p>
+<p>4) Click on the pencil icon to open “Make decision” modal. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops16.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops16.png" alt="ImageName"> </a></p>
+<p>5) Choose “Post issue” option and then “Apply &amp; Continue”. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops17.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops17.png" alt="ImageName"> </a></p>
+<p>6) Fill in the “Post Issue” form with valid data and submit the form. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops18.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops18.png" alt="ImageName"> </a></p>
+<p>7) A new issue will be posted in Azure DevOps BTS with information from ReportPortal. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops19.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops19.png" alt="ImageName"> </a></p>
+<p>8) A label with issue ID will be added to the test item. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops20.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops20.png" alt="ImageName"> </a></p>
+<h3 id="link-an-issue-with-an-issue-in-azure-devops-bts">Link an issue with an issue in Azure DevOps BTS</h3>
+<p>Linking an issue with an issue in Azure DevOps BTS means adding a clickable link to an existing issue in Azure DevOps BTS from ReportPortal that will show a status of this issue. </p>
+<p>1) Log in to ReportPortal as Admin, PM, Member, Customer or Operator. </p>
+<p>2) Go to Launches. </p>
+<p>3) Choose a needed item. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops21.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops21.png" alt="ImageName"> </a></p>
+<p>4) Click on the pencil icon to open “Make decision” modal.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops22.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops22.png" alt="ImageName"> </a></p>
+<p>5) Choose “Link issue” option and then “Apply &amp; Continue”.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops23.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops23.png" alt="ImageName"> </a></p>
+<p>6) Fill in the “Link issue” form with valid data and submit the form.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops24.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops24.png" alt="ImageName"> </a></p>
+<p>7) A label with issue ID will be added to the test item. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops25.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops25.png" alt="ImageName"> </a></p>
+<p>8) Link is redirected to this issue in Azure DevOps BTS.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops26.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops26.png" alt="ImageName"> </a></p>
+<h3 id="unlink-an-issue-in-azure-devops-bts">Unlink an issue in Azure DevOps BTS</h3>
+<p>You can also unlink an issue. </p>
+<p>1) Click on the “remove” icon. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops27.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops27.png" alt="ImageName"> </a></p>
+<p>2) Click “Unlink Issue”.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops28.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops28.png" alt="ImageName"> </a></p>
+<p>3) Link to the issue in Azure DevOps BTS is removed. </p>
+<h3 id="custom-issue-type-in-azure-devops-bts">Custom issue type in Azure DevOps BTS</h3>
+<p>You can configure any custom issue type (e.g., Bug for Adam) in Azure DevOps BTS and then choose it as predefined Azure DevOps ticket field. So, developer Adam will see on the Azure DevOps BTS all issues from ReporPortal which assigned to him. </p>
+<p>Follow the steps below to configure custom issue type: </p>
+<p>1) Log in to <a href="https://dev.azure.com">Azure portal</a>.</p>
+<p>2) Go to Organization settings. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops29.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops29.png" alt="ImageName"> </a></p>
+<p>3) Click on the “Process” menu item.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops30.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops30.png" alt="ImageName"> </a></p>
+<p>4) Select three dots near the current process and create a new one.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops31.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops31.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops32.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops32.png" alt="ImageName"> </a></p>
+<p>5) Click on the name of the just created process.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops33.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops33.png" alt="ImageName"> </a></p>
+<p>6) Create custom issue type.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops34.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops34.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops35.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops35.png" alt="ImageName"> </a></p>
+<p>7) Click on the project quantity and change the process for your project.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops36.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops36.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops37.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops37.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops38.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops38.png" alt="ImageName"> </a></p>
+<p>8) Change Issue Type for Azure DevOps BTS integration on ReportPortal.</p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops39.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops39.png" alt="ImageName"> </a></p>
+<p>9) Post issues to Azure DevOps BTS. </p>
+<p>10) Now you can see issues with custom issue type on Azure DevOps BTS. </p>
+<p><a href="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops40.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureDevOps/azure-devops40.png" alt="ImageName"> </a></p>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/Integrations.md"></div>
   <h1 id="user-account">User account</h1>
@@ -6216,7 +6379,7 @@ If you want to specify a baseline, you also can add launch attributes. In this c
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule11.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule11.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule12.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule12.png" alt="ImageName"> </a></p>
 <p>Follow the steps below depending on the preferable settings for the Baseline Launch.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.pngg"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule13.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png"> <img src="http://reportportal.io/documentation/Images/userGuide/QualityGates/NewErrors/new-errors-rule14.png" alt="ImageName"> </a></p>
 <p>In this way you can compare analyzed launch not only with its previous execution but also with another launch.</p>
 <h2 id="quality-gate-edit">Quality Gate Edit</h2>
