@@ -97,7 +97,7 @@ And do not forget to configure <a href="https://reportportal.io/docs/E-mail-serv
 <h3 id="i-want-to-configure-auth">I want to configure Auth</h3>
 <ul>
 <li><a href="https://reportportal.io/docs/LDAP-Auth-integration">LDAP</a></li>
-<li><a href="https://reportportal.io/docs/Active-Directory-Auth-integration">Active Directory</a></li>
+<li><a href="https://reportportal.io/docs/Active-Directory-Auth">Active Directory</a></li>
 </ul>
 <h3 id="i-want-to-have-a-beautiful-report-with-graphs-and-tables">I want to have a beautiful report with graphs and tables</h3>
 <p>Configure dashboards with <a href="https://reportportal.io/docs/Widget-Creation">Widgets</a></p>
@@ -1749,7 +1749,7 @@ ADMINISTRATOR and PROJECT MANAGER can make project configurations of a plugin.</
 <li><a href="https://reportportal.io/docs/Sauce-Labs-integration">Sauce Labs</a></li>
 <li><a href="https://reportportal.io/docs/E-mail-server-integration">E-mail server</a></li>
 <li><a href="https://reportportal.io/docs/LDAP-Auth-integration">LDAP</a></li>
-<li><a href="https://reportportal.io/docs/Active-Directory-Auth-integration">Active Directory</a></li>
+<li><a href="https://reportportal.io/docs/Active-Directory-Auth">Active Directory</a></li>
 <li><a href="https://reportportal.io/docs/Okta-SAML-integration">Okta SAML</a></li>
 <li><a href="https://reportportal.io/docs/Azure-SAML-integration">Azure SAML</a></li>
 </ul>
@@ -2753,7 +2753,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p>On Octa side you should to specify SSO url. The format for url is the next:</p>
 <pre><code class="language-java">https:<span class="comment">//your domain adress/uat/saml/sp/SSO/alias/report-portal-sp</span></code></pre>
 <p>“RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. &quot;<a href="https://reportportal.com/uat">https://reportportal.com/uat</a>&quot;). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations. </p>
-<h2 id="azure-saml-integration">Azure SAML Integration</h2>
+<h2 id="azure-saml-integration">Azure SAML integration</h2>
 <p>Login to ReportPortal via Azure SAML is available starting from version 5.7 (SAML Okta was implemented in versions before 5.7).</p>
 <p>Azure SAML is a useful authorization method for big companies with 100+ employees, especially if this organization is already presented in Azure service. The main benefit here is no need for manual account creation. Users can log in to the ReportPortal using Azure SAML in an uncomplicated way: select login with SAML, then choose Azure, and upon login users’ data is synchronized with ReportPortal automatically.</p>
 <p>If your organization is using Azure SAML and some employees left, there is no need to remove their accounts from ReportPortal and from other Azure applications – just clearing their accounts in Azure will be enough.</p>
