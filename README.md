@@ -23,26 +23,31 @@ git clone https://github.com/reportportal/documentation.git
 cd documentation
 ```
 
-3. Checkout to branch
+3. Fetch latest repository changes:
+```bash
+git fetch
+```
 
-3.1 Checkout to existing branch (if it's already created on GitHub):
+4. Checkout to branch
+
+4.1 Checkout to existing branch (if it's already created on GitHub):
 ```bash
 git checkout my-branch
 ```
 
-3.2 Checkout to the new branch (if not exists):
+4.2 Checkout to the new branch from develop (if not exists):
 ```bash
-git checkout -b my-branch
+git checkout -b my-branch origin/develop
 ```
 
 Now the workspace is ready to add changes.
 
-4. Install the dependencies:
+5. Install the dependencies:
 ```bash
 npm install
 ```
 
-5. To run the builder in the developer mode run:
+6. To run the builder in the developer mode run:
 ```bash
 npm run develop
 ```
