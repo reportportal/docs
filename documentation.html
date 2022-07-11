@@ -4997,6 +4997,39 @@ The number of logs lines are using for analysis, a user can configure on Project
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/Analysis/AutoAnalysisOfLaunches.md"></div>
+  <h2 id="manual-analysis">Manual Analysis</h2>
+<p>Manual Analysis is presented on ReportPortal by “Make decision” modal. </p>
+<h3 id="-make-decision-modal-redesign">“Make decision” modal redesign</h3>
+<p>Redesign of the “Make decision” modal was implemented in version 5.7. This feature helps to sort out auto tests and decide: What is the problem? How can it be marked? Is it required to post issue or link issue? It became easier to use this functionality after the redesign.  </p>
+<p>The “Make decision” modal can be opened in three ways: </p>
+<p>1) from the Step level </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision1.png" alt="ImageName"> </a></p>
+<p>2) via Actions</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision2.png" alt="ImageName"> </a></p>
+<p>3) from the Log level </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision3.png" alt="ImageName"> </a></p>
+<p><strong>“Execution to change”</strong> section is displayed at the top left of the “Make decision” modal. It includes Step name, current defect type. Also it can have a log, a comment, a link to a Bug Tracking System (BTS), a label (AA, PA, Ignore AA) if exist. You can expand logs to understand why this step was failed.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision4.png" alt="ImageName"> </a></p>
+<p><strong>“Select defect”</strong> section is displayed at the top right of the “Make decision” modal. It includes “Manual selection”, “Analyzer suggestions”, “History of the test”.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision5.png" alt="ImageName"> </a></p>
+<p>You can <strong>select a defect type and type a comment manually</strong>. Selected defect type and added comment will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision6.png" alt="ImageName"> </a></p>
+<p>You also can select any step from the <strong>“Analyzer suggestions”</strong> with a similar log. Similar log is marked with a red asterisk. Then the defect type, the comment and linked BTS ticket (if exist) of the suggested step will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision7.png" alt="ImageName"> </a></p>
+<p>You can see the <strong>“History of the test”</strong> – which defect type this step had in previous runs. You can select any item from the “History of the test”. Then the defect type, the comment and linked BTS ticket (if exist) of the suggested step will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision8.png" alt="ImageName"> </a></p>
+<p>The “Make decision” modal works not only with the current step. This feature allows to select other steps with “To Investigate” defect type which can be changed as well. For that, please, expand the <strong>“Apply for”</strong> section and select the needed option.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision9.png" alt="ImageName"> </a></p>
+<p>The <strong>“Results will be applied for”</strong> message is displayed at the bottom after selection. This section was added in version 5.7.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision10.png" alt="ImageName"> </a></p>
+<p>Now you can view all changes before applying. Expand the “Results will be applied for” section to see information about changes. You should click <strong>“Apply”</strong> button to apply selected changes. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision11.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision11.png" alt="ImageName"> </a></p>
+<p>There is also a possibility for Bulk update, when the changes are applied to all selected test items.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision12.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision12.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision13.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision13.png" alt="ImageName"> </a></p>
+<p>As you can see, “Make desicion” modal is a time-saving tool for engineers.</p>
+
+  <div data-js-md-path="src/computeds/md/src/Analysis/ManualAnalysis.md"></div>
   <h2 id="pattern-analysis">Pattern Analysis</h2>
 <p>Pattern analysis is a feature that helps you to increase of finding the common patterns in error logs.</p>
 <blockquote>
