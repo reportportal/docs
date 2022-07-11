@@ -58,24 +58,4 @@ There is also a possibility for Bulk update, when the changes are applied to all
 
 [ ![ImageName](Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision13.png) ](Images/userGuide/analyzeLaunches/ManualAnalysis/make_decision13.png)
 
-As you can see, “Make desicion” modal is a time-saving tool for engineers. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+As you can see, “Make desicion” modal is a time-saving tool for engineers.
