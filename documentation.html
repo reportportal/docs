@@ -5052,6 +5052,37 @@ Find all items failed by the same reason by choosing a filter by Pattern Name on
 <p><a href="https://youtu.be/5YaN85x6_hc"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Manual Pattern.png" alt="ImageName"> </a></p>
 
   <div data-js-md-path="src/computeds/md/src/Analysis/PatternAnalysis.md"></div>
+  <h2 id="unique-error-analysis">Unique Error Analysis</h2>
+<h3 id="unique-error-analysis">Unique Error Analysis</h3>
+<p>“Unique Error analysis” functionality was implemented in version 5.7. This solution is used to detect unique errors in multiple logs. </p>
+<p><strong>“Unique error auto-analysis”</strong> is set ON by default.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error1.png" alt="ImageName"> </a></p>
+<p>There are 2 settings: “include/exclude numbers” – it depends if you decide that numbers in error logs have significant value for analysis or not.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error2.png" alt="ImageName"> </a></p>
+<p>Now, Unique error auto-analysis will be started after a launch has been finished. </p>
+<p>To see the list of “Unique errors” for the launch, open any item level in the launch and click <strong>“Unique errors”</strong> tab. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error3.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error4.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error5.png" alt="ImageName"> </a></p>
+<p>Finally, you can see the list of “Unique errors”.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error6.png" alt="ImageName"> </a></p>
+<p>There you can see a list of clusters with error logs, you can expand a cluster to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The clusters are formed based on unique error logs, some small error logs can be merged and displayed as one cluster. </p>
+<blockquote>
+<p><strong>NOTE: </strong>
+You can also run “Unique error analysis” manually from any item level in case auto analysis is set OFF. Please, follow the steps below: </p>
+</blockquote>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error7.png" alt="ImageName"> </a></p>
+<p>You can also run “Unique Error analysis” from the menu next to a particular launch.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error8.png" alt="ImageName"> </a></p>
+<p>Let’s consider some examples with the same Unique Errors but with different include/exclude numbers settings. </p>
+<p>We have 2 errors with identical text, but the difference is numeric value in the first error. </p>
+<p>1) An example with <strong>“Include numbers to analyzed logs”</strong> setting. Error with numeric value is displayed:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png" alt="ImageName"> </a></p>
+<p>2) An example with <strong>“Exclude numbers from analyzed logs”</strong> setting. As you can see, error with numeric value is not displayed:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png" alt="ImageName"> </a></p>
+<p>Thanks to “Unique Error analysis” functionality, it is no longer needed to spend time on analyzing: Is this failure a unique error or not? You can easily sort out the failures based on the found unique errors.</p>
+
+  <div data-js-md-path="src/computeds/md/src/Analysis/UniqueErrorAnalysis.md"></div>
   
   <div data-js-md-path="src/computeds/md/src/Analysis/Group &quot;To investigate&quot; items by failure reason.md"></div>
   <h1 id="saved-searches-filters-">Saved searches (Filters)</h1>
