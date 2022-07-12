@@ -13,7 +13,7 @@ You can use any code editor that you like (f.e. open-sourced [vscode](https://co
 
 Open the terminal from desired directory and run the following commands:
 
-1. Clone the remote repository:
+1. Clone the remote repository: (Once)
 ```bash
 git clone https://github.com/reportportal/documentation.git
 ```
@@ -42,7 +42,7 @@ git checkout -b my-branch origin/develop
 
 Now the workspace is ready to add changes.
 
-5. Install the dependencies:
+5. Install the dependencies: (Once)
 ```bash
 npm install
 ```
@@ -64,7 +64,7 @@ To see documentation via landing, it should be served locally and it requires ad
 
 Open the terminal from desired directory and run the following commands:
 
-1. Clone the remote repository:
+1. Clone the remote repository: (Once)
 ```bash
 git clone https://github.com/reportportal/reportportal.github.io.git
 ```
@@ -74,7 +74,7 @@ git clone https://github.com/reportportal/reportportal.github.io.git
 cd reportportal.github.io
 ```
 
-3. Install the dependencies:
+3. Install the dependencies: (Once)
 ```bash
 npm install
 ```
