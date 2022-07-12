@@ -45,7 +45,7 @@ We have 2 errors with identical text, but the difference is numeric value in the
 
 [ ![ImageName](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png) ](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png)
 
-2) An example with “Exclude numbers from analyzed logs” setting. As you can see, error with numeric value is not displayed:
+2) An example with **“Exclude numbers from analyzed logs”** setting. As you can see, error with numeric value is not displayed:
 
 [ ![ImageName](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png) ](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png)
 
