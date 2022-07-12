@@ -50,19 +50,3 @@ We have 2 errors with identical text, but the difference is numeric value in the
 [ ![ImageName](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png) ](Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png)
 
 Thanks to “Unique Error analysis” functionality, it is no longer needed to spend time on analyzing: Is this failure a unique error or not? You can easily sort out the failures based on the found unique errors.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
