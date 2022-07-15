@@ -2759,6 +2759,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p>If your organization is using Azure SAML and some employees left, there is no need to remove their accounts from ReportPortal and from other Azure applications – just clearing their accounts in Azure will be enough.</p>
 <p>To configure authorization via Azure SAML we need to synchronize Azure and ReportPortal.</p>
 <p>Firstly, configure SAML on Azure side.</p>
+<h3 id="configure-saml-on-azure-side">Configure SAML on Azure side</h3>
 <p>1) Log in to <a href="https://portal.azure.com">Azure portal</a> using your organization creds.</p>
 <p>2) Click <code>App Services</code>.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h14_42.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h14_42.png" alt="ImageName"> </a></p>
@@ -2766,6 +2767,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h15_26.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h15_26.png" alt="ImageName"> </a></p>
 <p>4) Click <code>Manage Tenants</code>.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_19h46_20.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_19h46_20.png" alt="ImageName"> </a></p>
+<h4 id="create-organization-in-azure">Create organization in Azure</h4>
 <p>5) If you haven’t configured organization in Azure yet, click <code>Create</code>.</p>
 <blockquote>
 <p><strong>NOTE:</strong> if you have configured organization in Azure, please, go to step 9.</p>
@@ -2777,6 +2779,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h32_38.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h32_38.png" alt="ImageName"> </a></p>
 <p>8) Pass the Captcha verification and click the <code>Create</code> button.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h33_55.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h33_55.png" alt="ImageName"> </a></p>
+<h4 id="create-your-application-in-azure">Create your application in Azure</h4>
 <p>9) After the creation of an organization go to the <code>Enterprise Applications</code> section.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h54_48.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h54_48.png" alt="ImageName"> </a></p>
 <p>10) Click <code>New application</code>.</p>
@@ -2785,22 +2788,27 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h56_44.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h56_44.png" alt="ImageName"> </a></p>
 <p>12) Enter the name of your application, choose <code>Integrate any other application you don&#39;t find in the gallery (Non-gallery)</code> bullet and click <code>Create</code> button.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h59_42.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_19h59_42.png" alt="ImageName"> </a></p>
+<h4 id="assign-users-to-the-application-in-azure">Assign users to the application in Azure</h4>
 <p>13) Assign users (e.g., yourself) to this application. Please, follow the next screenshots:</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h00_36.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h00_36.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h00_47.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h00_47.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h01_01renamed.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h01_01renamed.png" alt="ImageName"> </a></p>
+<h4 id="configure-single-sign-on-on-azure">Configure Single sign-on on Azure</h4>
 <p>14) Go to the <code>Single sign-on</code> section.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h01_28renamed.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-30_20h01_28renamed.png" alt="ImageName"> </a></p>
 <p>15) Choose SAML.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h10_19.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h10_19.png" alt="ImageName"> </a></p>
+<h4 id="basic-saml-configuration">Basic SAML Configuration</h4>
 <p>16) Configure <code>Basic SAML Configuration</code> settings as follows:</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h00_41.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h00_41.png" alt="ImageName"> </a></p>
+<h4 id="add-azure-attributes">Add Azure attributes</h4>
 <p>17) Edit <code>Attributes &amp; Claims</code> settings and add <strong><em>email</em></strong>, <strong><em>firstName</em></strong> and <strong><em>lastName</em></strong> attributes (default Azure attributes have ugly format). Please follow the next screenshots:</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h27_22.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h27_22.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h27_30.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h27_30.png" alt="ImageName"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h30_30.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_11h30_30.png" alt="ImageName"> </a></p>
 <p>SAML configuration is completed on Azure side after adding these attributes.</p>
 <p>Lastly, configure SAML on ReportPortal side.</p>
+<h3 id="configure-saml-on-reportportal-side">Configure SAML on ReportPortal side</h3>
 <p>1) Log in to <strong>ReportPortal</strong> as Admin.</p>
 <p>2) Open Menu at the bottom and choose <code>Administrate</code> section.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_13h28_02.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_13h28_02.png" alt="ImageName"> </a></p>
@@ -2810,6 +2818,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_13h28_26.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_13h28_26.png" alt="ImageName"> </a></p>
 <p>5) Click the <code>Add integration</code> button.</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_14h37_51.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/2022-05-31_14h37_51.png" alt="ImageName"> </a></p>
+<h3 id="synchronize-azure-saml-and-reportportal">Synchronize Azure SAML and ReportPortal</h3>
 <p>6) Synchronize Azure SAML and ReportPortal as follows:</p>
 <p><a href="http://reportportal.io/documentation/Images/Plugins/AzureSAML/SAML-integration.png"> <img src="http://reportportal.io/documentation/Images/Plugins/AzureSAML/SAML-integration.png" alt="ImageName"> </a></p>
 <p>Finally, you can log in to ReportPortal using Azure SAML.</p>
