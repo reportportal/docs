@@ -23,9 +23,9 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 
 |Plugin  | Link to download |
 | ------------- | ------------- |
-| JIRA  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira |
-| Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally |
-| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs |
+| JIRA  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira or https://github.com/reportportal/plugin-bts-jira/packages |
+| Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally or https://github.com/reportportal/plugin-bts-rally/packages |
+| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs or https://github.com/reportportal/plugin-saucelabs/packages |
 |E-mail/LDAP/ Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
 
 
