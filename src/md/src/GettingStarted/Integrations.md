@@ -1189,6 +1189,8 @@ To configure authorization via Azure SAML we need to synchronize Azure and Repor
 
 Firstly, configure SAML on Azure side.
 
+### Configure SAML on Azure side
+
 1) Log in to [Azure portal](https://portal.azure.com) using your organization creds.
 
 2) Click ```App Services```.
@@ -1202,6 +1204,8 @@ Firstly, configure SAML on Azure side.
 4) Click ```Manage Tenants```.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-31_19h46_20.png) ](Images/Plugins/AzureSAML/2022-05-31_19h46_20.png)
+
+#### Create organization in Azure
 
 5) If you haven’t configured organization in Azure yet, click ```Create```.
 
@@ -1221,6 +1225,8 @@ Firstly, configure SAML on Azure side.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_19h33_55.png) ](Images/Plugins/AzureSAML/2022-05-30_19h33_55.png)
 
+#### Create your application in Azure
+
 9) After the creation of an organization go to the ```Enterprise Applications``` section.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_19h54_48.png) ](Images/Plugins/AzureSAML/2022-05-30_19h54_48.png)
@@ -1237,6 +1243,8 @@ Firstly, configure SAML on Azure side.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_19h59_42.png) ](Images/Plugins/AzureSAML/2022-05-30_19h59_42.png)
 
+#### Assign users to the application in Azure
+
 13) Assign users (e.g., yourself) to this application. Please, follow the next screenshots:
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_20h00_36.png) ](Images/Plugins/AzureSAML/2022-05-30_20h00_36.png)
@@ -1244,6 +1252,8 @@ Firstly, configure SAML on Azure side.
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_20h00_47.png) ](Images/Plugins/AzureSAML/2022-05-30_20h00_47.png)
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-30_20h01_01renamed.png) ](Images/Plugins/AzureSAML/2022-05-30_20h01_01renamed.png)
+
+#### Configure Single sign-on on Azure
 
 14) Go to the ```Single sign-on``` section.
 
@@ -1253,9 +1263,13 @@ Firstly, configure SAML on Azure side.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-31_11h10_19.png) ](Images/Plugins/AzureSAML/2022-05-31_11h10_19.png)
 
+#### Basic SAML Configuration
+
 16) Configure ```Basic SAML Configuration``` settings as follows:
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-31_11h00_41.png) ](Images/Plugins/AzureSAML/2022-05-31_11h00_41.png)
+
+#### Add Azure attributes
 
 17) Edit ```Attributes & Claims``` settings and add ***email***, ***firstName*** and ***lastName*** attributes (default Azure attributes have ugly format). Please follow the next screenshots:
 
@@ -1268,6 +1282,8 @@ Firstly, configure SAML on Azure side.
 SAML configuration is completed on Azure side after adding these attributes.
 
 Lastly, configure SAML on ReportPortal side.
+
+### Configure SAML on ReportPortal side
 
 1) Log in to **ReportPortal** as Admin.
 
@@ -1286,6 +1302,8 @@ Lastly, configure SAML on ReportPortal side.
 5) Click the ```Add integration``` button.
 
 [ ![ImageName](Images/Plugins/AzureSAML/2022-05-31_14h37_51.png) ](Images/Plugins/AzureSAML/2022-05-31_14h37_51.png)
+
+### Synchronize Azure SAML and ReportPortal
 
 6) Synchronize Azure SAML and ReportPortal as follows:
 
