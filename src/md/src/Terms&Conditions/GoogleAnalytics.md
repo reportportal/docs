@@ -16,7 +16,7 @@ We collect only the following data by using Google Analytics on ReportPortal age
  
 We need this data to know what libraries and development platforms our users prefer. So, we do not spend a lot of time on support of rarely used components. 
 
-[ ![ImageName](Images/userGuide/GoogleAnalytics/google-analytics1.png) ](Images/userGuide/GoogleAnalytics/google-analytics1.png)
+[ ![ImageName](Images/userGuide/GA-Guide/google-analytics1.png) ](Images/userGuide/GA-Guide/google-analytics1.png)
 
 ### Google Analytics usage on ReportPortal UI 
  
@@ -30,7 +30,7 @@ These analytics helps us to improve performance and user-friendliness. Based on 
  
 >**NOTE**: We do not collect information that personally identifies you. We follow [privacy policy](https://privacy.epam.com/core/interaction/showpolicy?type=CommonPrivacyPolicy) in all cases.
 
-[ ![ImageName](Images/userGuide/GoogleAnalytics/google-analytics2.png) ](Images/userGuide/GoogleAnalytics/google-analytics2.png)
+[ ![ImageName](Images/userGuide/GA-Guide/google-analytics2.png) ](Images/userGuide/GA-Guide/google-analytics2.png)
 
 ### How to disable Google Analytics gathering on Report Portal agents
 
@@ -149,17 +149,17 @@ You can turn off Google Analytics on ReportPortal UI as well.
  
 2) Open Menu at the bottom and select “Administrate” section. 
 
-[ ![ImageName](Images/userGuide/GoogleAnalytics/google-analytics3.png) ](Images/userGuide/GoogleAnalytics/google-analytics3.png)
+[ ![ImageName](Images/userGuide/GA-Guide/google-analytics3.png) ](Images/userGuide/GA-Guide/google-analytics3.png)
 
 3) Select “Server Settings”.
 
-[ ![ImageName](Images/userGuide/GoogleAnalytics/google-analytics4.png) ](Images/userGuide/GoogleAnalytics/google-analytics4.png)
+[ ![ImageName](Images/userGuide/GA-Guide/google-analytics4.png) ](Images/userGuide/GA-Guide/google-analytics4.png)
 
 4) Open “Analytics” tab. 
  
 5) Uncheck “Help make ReportPortal better by automatically sending analytics to us” checkbox. 
 
-[ ![ImageName](Images/userGuide/GoogleAnalytics/google-analytics5.png) ](Images/userGuide/GoogleAnalytics/google-analytics5.png)
+[ ![ImageName](Images/userGuide/GA-Guide/google-analytics5.png) ](Images/userGuide/GA-Guide/google-analytics5.png)
 
 >**NOTE:** You can enable Google Analytics if you check “Help make ReportPortal better by automatically sending analytics to us” checkbox. 
  
