@@ -7561,4 +7561,111 @@ Files in Minio may be corrupted and deleted somehow before migration during Repo
 <p><a href="https://reportportal.io/docs/Quality-Gates"><strong>Quality Gates</strong></a></p>
 
   <div data-js-md-path="src/computeds/md/src/Terms&amp;Conditions/SAASFeatures.md"></div>
+  <h2 id="google-analytics-usage-by-reportportal">Google Analytics usage by ReportPortal</h2>
+<p>We use Google Analytics as the web analytics tool on ReportPortal. This platform helps us to make ReportPortal more convenient and useful for our users. But several clients raised concerns about collecting some personal or confidential data. To be clear, we do not gather personal information. In this article, we are going to explain how Google Analytics works on ReportPortal, its benefits, and how it can be turned off. </p>
+<h3 id="google-analytics-usage-on-reportportal-agents">Google Analytics usage on ReportPortal agents</h3>
+<p>We collect only the following data by using Google Analytics on ReportPortal agents:  </p>
+<p>1) Event date. </p>
+<p>2) Client name and version, e.g., reportportal 5.0.6. </p>
+<p>3) Agent name, e.g., pytest-reportportal, version 5.0.11. </p>
+<p>4) Interpreter name, e.g., Python 3.6.9. </p>
+<p>We need this data to know what libraries and development platforms our users prefer. So, we do not spend a lot of time on support of rarely used components. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics1.png" alt="ImageName"> </a></p>
+<h3 id="google-analytics-usage-on-reportportal-ui">Google Analytics usage on ReportPortal UI</h3>
+<p>We collect only the following data by using Google Analytics on ReportPortal UI:  </p>
+<p>1) Device information: hardware model, operating system version, screen resolution, browser version. </p>
+<p>2) Behavior information: how user interacts with ReportPortal, where user clicks, what actions he or she does, app usage time. </p>
+<p>These analytics helps us to improve performance and user-friendliness. Based on analytics, for example, we can decide to write a new documentation or optimize our features and app navigation. </p>
+<blockquote>
+<p><strong>NOTE</strong>: We do not collect information that personally identifies you. We follow <a href="https://privacy.epam.com/core/interaction/showpolicy?type=CommonPrivacyPolicy">privacy policy</a> in all cases.</p>
+</blockquote>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics2.png" alt="ImageName"> </a></p>
+<h3 id="how-to-disable-google-analytics-gathering-on-report-portal-agents">How to disable Google Analytics gathering on Report Portal agents</h3>
+<h4 id="basics">Basics</h4>
+<p>At the nutshell you need to set <code>AGENT_NO_ANALYTICS</code> environment variable with any non-empty value. In Unix or Linux you
+can use <code>export</code> command for that:</p>
+<pre><code class="language-shell">export AGENT_NO_ANALYTICS=1</code></pre>
+<p>For Windows systems there is analogue command <code>set</code>:</p>
+<pre><code class="language-shell">set AGENT_NO_ANALYTICS=1</code></pre>
+<p>Then you can run your tests in the same shell and analytics gathering will be disabled.</p>
+<p>To test that you actually have set the variable you can use <code>echo</code> command.</p>
+<p>Linux:</p>
+<pre><code class="language-shell">echo &quot;${AGENT_NO_ANALYTICS}&quot;</code></pre>
+<p>Windows:</p>
+<pre><code class="language-shell">echo %AGENT_NO_ANALYTICS%</code></pre>
+<p>If you don&#39;t want to set that variable each time you start a shell, there are several technics you can use.</p>
+<h4 id="constantly-disabling-analytics">Constantly disabling analytics</h4>
+<h4 id="unix-linux">Unix/Linux</h4>
+<p>Everything what you export in <code>.bash_profile</code> file in your test user&#39;s home directory will be automatically set each
+time you log in into console. To edit the file you can use <code>nano</code> - a simple text editor:</p>
+<pre><code class="language-shell">nano ~/.bash_profile</code></pre>
+<p>Put export line somewhere in the file and hit <code>Ctrl+O</code> to save it and <code>Ctrl+X</code> to close.</p>
+<h4 id="windows">Windows</h4>
+<p>To set environment variable on Windows 10 family systems right-click on it icon in taskbar and choose <code>System</code>. In
+opened window hit <code>Advanced system settings</code> in the right menu and then <code>Environment variables</code> button in opened
+<code>System Properties</code> window. Click <code>New</code> button in <code>System variables</code> section, enter variable name and value and close 
+everything with <code>OK</code> button. The changes will be applied after the system restart.</p>
+<h4 id="build-systems">Build systems</h4>
+<p>Some build systems can set environment variables on their own we can use this feature to set the variable.</p>
+<h4 id="gradle">Gradle</h4>
+<p>Gradle has <code>environment</code> keyword which sets variables for child processes, so all you need to do is to set it in <code>test</code>
+task:</p>
+<pre><code class="language-groovy">test {
+    environment &quot;AGENT_NO_ANALYTICS&quot;, &quot;1&quot;
+}</code></pre>
+<h4 id="maven">Maven</h4>
+<p><code>maven-surefire-plugin</code> has option to set environment variables for forked processes, so you can configure the plugin
+accordingly:</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">project</span> <span class="attribute">xmlns</span>=<span class="value">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="attribute">xsi:schemaLocation</span>=<span class="value">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="title">modelVersion</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.epam.reportportal.example<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>example-mute<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="title">build</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">plugins</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">plugin</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-surefire-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.22.2<span class="tag">&lt;/<span class="title">version</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">forkMode</span>&gt;</span>once<span class="tag">&lt;/<span class="title">forkMode</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">environmentVariables</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">AGENT_NO_ANALYTICS</span>&gt;</span>1<span class="tag">&lt;/<span class="title">AGENT_NO_ANALYTICS</span>&gt;</span>
+                    <span class="tag">&lt;/<span class="title">environmentVariables</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">plugin</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">plugins</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">build</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">project</span>&gt;</span></code></pre>
+<h4 id="tox">tox</h4>
+<p>Python&#39;s tox automation tool also provides a way to set necessary variables with <code>setenv</code> parameter in <code>tox.ini</code> file:</p>
+<pre><code class="language-text">[testenv]
+setenv   =
+    AGENT_NO_ANALYTICS = 1</code></pre>
+<h4 id="docker">Docker</h4>
+<p>If your tests are wrapped in a docker container you need to bypass this variable through command-line with <code>-e</code> flag:</p>
+<pre><code class="language-shell">docker run --rm -it \
+  -e &quot;AGENT_NO_ANALYTICS=1&quot;
+  selenium/standalone-chrome:103.0</code></pre>
+<p>Or you can use <code>ENV</code> keyword in your <code>Dockerfile</code> when building the image:</p>
+<pre><code class="language-dockerfile">ENV AGENT_NO_ANALYTICS=1</code></pre>
+<h3 id="how-to-disable-google-analytics-on-reportportal-ui">How to disable Google Analytics on ReportPortal UI</h3>
+<p>You can turn off Google Analytics on ReportPortal UI as well. </p>
+<p>1) Log in to ReportPortal as Admin. </p>
+<p>2) Open Menu at the bottom and select “Administrate” section. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics3.png" alt="ImageName"> </a></p>
+<p>3) Select “Server Settings”.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics4.png" alt="ImageName"> </a></p>
+<p>4) Open “Analytics” tab. </p>
+<p>5) Uncheck “Help make ReportPortal better by automatically sending analytics to us” checkbox. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GoogleAnalytics/google-analytics5.png" alt="ImageName"> </a></p>
+<blockquote>
+<p><strong>NOTE:</strong> You can enable Google Analytics if you check “Help make ReportPortal better by automatically sending analytics to us” checkbox. </p>
+</blockquote>
+<p>Thanks to Google Analytics, we can deliver interesting and helpful features to ReportPortal. As a result, you will have effective working instruments and better customer support.</p>
+
+  <div data-js-md-path="src/computeds/md/src/Terms&amp;Conditions/GoogleAnalytics.md"></div>
 
