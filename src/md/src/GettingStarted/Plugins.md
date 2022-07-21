@@ -1,14 +1,14 @@
 ## Plugins
 
 ReportPortal can be reinforced by uploading plugins. For now, you can install the next plugins from the box:
-* Bug Tracking Systems plugins: Jira and Rally
+* Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps and Rally
 *    E-mail server
 *    Sauce Labs
 
 
 | **Plugin**  | **Features**  |   
 |---|---|
-| Jira/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses| 
+| Jira Server/Jira Cloud/Azure DevOps/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses| 
 |E-mail server| With this plugin, you will be able to configure notifications about test result finish in real time.|
 |SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.
 |LDAP/Active directory/SAML| This plugin helps authorize without new user creation|
@@ -23,9 +23,11 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 
 |Plugin  | Link to download |
 | ------------- | ------------- |
-| JIRA  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira |
-| Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally |
-| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs |
+| JIRA Server  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira or https://github.com/reportportal/plugin-bts-jira/packages |
+| JIRA Cloud  | https://github.com/reportportal/plugin-bts-jira-cloud/packages |
+| Azure DevOps  | https://github.com/reportportal/plugin-bts-azure/packages |
+| Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally or https://github.com/reportportal/plugin-bts-rally/packages |
+| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs or https://github.com/reportportal/plugin-saucelabs/packages |
 |E-mail/LDAP/ Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
 
 
@@ -95,10 +97,12 @@ If the user configures a plugin on the **project level**, then these configurati
 
 Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Integrations):
 
-* [integration with Jira](https://reportportal.io/docs/Integrations%3Eintegration-with-jira) 
-* [integration with Rally](https://reportportal.io/docs/Integrations%3Eintegration-with-rally)
-* [integration with SauceLabs](https://reportportal.io/docs/Integrations%3Esauce-labs-integration)
-* [integration with E-mail server](https://reportportal.io/docs/Integrations%3Eglobal-e-mail-server-integration)
+* [integration with Jira Server](https://reportportal.io/docs/Jira-Server-Integration) 
+* [integration with Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
+* [integration with Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
+* [integration with Rally](https://reportportal.io/docs/Rally-Integration)
+* [integration with SauceLabs](https://reportportal.io/docs/Sauce-Labs-integration)
+* [integration with E-mail server](https://reportportal.io/docs/E-mail-server-integration)
 * [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
 * [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
 * [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
