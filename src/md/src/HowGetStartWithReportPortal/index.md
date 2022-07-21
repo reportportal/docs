@@ -78,6 +78,7 @@ Configure [Auto-Analyzer](https://reportportal.io/docs/Analysis)
 
 * [Jira Server](https://reportportal.io/docs/Jira-Server-Integration)
 * [Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
+* [Azure DevOps](https://reportportal.io/docs/Jira-Cloud-Integration)
 * [Rally](https://reportportal.io/docs/Rally-Integration)
 
 ### I want view video from SauceLabs in ReportPortal
