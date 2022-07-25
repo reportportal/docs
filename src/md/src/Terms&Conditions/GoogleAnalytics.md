@@ -1,36 +1,58 @@
 ## Google Analytics usage by ReportPortal
 
-We use Google Analytics as the web analytics tool on ReportPortal. This platform helps us to make ReportPortal more convenient and useful for our users. But several clients raised concerns about collecting some personal or confidential data. To be clear, we do not gather personal information. In this article, we are going to explain how Google Analytics works on ReportPortal, its benefits, and how it can be turned off. 
+ReportPortal uses Google Analytics (GA) for web analytics capabilities. GA helps the ReportPortal Team to understand product usage and make ReportPortal more convenient and useful for our users. To address any concerns about the data we collect, we want to be transparent about which data is sent to GA, and assure you that no personal or confidential data is transferred. To be clear, we do not gather personal information at all through GA. In this article, we explain how Google Analytics works on ReportPortal, its benefits, and how you can turn it off if you want.
 
-### Google Analytics usage on ReportPortal agents 
- 
-We collect only the following data by using Google Analytics on ReportPortal agents:  
- 
-1) Event date. 
+### Google Analytics usage on ReportPortal UI
 
-2) Client name and version, e.g., reportportal 5.0.6. 
+We collect only the following data by using Google Analytics on ReportPortal UI:
 
-3) Agent name, e.g., pytest-reportportal, version 5.0.11. 
+1) Device information: hardware model, operating system version, screen resolution, browser version.
 
-4) Interpreter name, e.g., Python 3.6.9. 
- 
-We need this data to know what libraries and development platforms our users prefer. So, we do not spend a lot of time on support of rarely used components. 
+2) Behavior information: how user interacts with ReportPortal, where user clicks, what actions he or she does, app usage time.
 
-[ ![ImageName](Images/userGuide/GA-Guide/ga1.png) ](Images/userGuide/GA-Guide/ga1.png)
+These analytics helps us to improve performance and user-friendliness. Based on analytics, for example, we can decide to write a new documentation or optimize our features and app navigation.
 
-### Google Analytics usage on ReportPortal UI 
- 
-We collect only the following data by using Google Analytics on ReportPortal UI:  
- 
-1) Device information: hardware model, operating system version, screen resolution, browser version. 
-
-2) Behavior information: how user interacts with ReportPortal, where user clicks, what actions he or she does, app usage time. 
- 
-These analytics helps us to improve performance and user-friendliness. Based on analytics, for example, we can decide to write a new documentation or optimize our features and app navigation. 
- 
 >**NOTE**: We do not collect information that personally identifies you. We follow [privacy policy](https://privacy.epam.com/core/interaction/showpolicy?type=CommonPrivacyPolicy) in all cases.
 
 [ ![ImageName](Images/userGuide/GA-Guide/ga2.png) ](Images/userGuide/GA-Guide/ga2.png)
+
+### How to disable Google Analytics on ReportPortal UI
+
+You can turn off Google Analytics on ReportPortal UI as well.
+
+1) Log in to ReportPortal as Admin.
+
+2) Open Menu at the bottom and select “Administrate” section.
+
+[ ![ImageName](Images/userGuide/GA-Guide/ga3.png) ](Images/userGuide/GA-Guide/ga3.png)
+
+3) Select “Server Settings”.
+
+[ ![ImageName](Images/userGuide/GA-Guide/ga4.png) ](Images/userGuide/GA-Guide/ga4.png)
+
+4) Open “Analytics” tab.
+
+5) Uncheck “Help make ReportPortal better by automatically sending analytics to us” checkbox.
+
+[ ![ImageName](Images/userGuide/GA-Guide/ga5.png) ](Images/userGuide/GA-Guide/ga5.png)
+
+>**NOTE:** You can enable Google Analytics if you check “Help make ReportPortal better by automatically sending analytics to us” checkbox.
+
+### Google Analytics usage on ReportPortal agents
+
+We collect only the following data by using Google Analytics on ReportPortal agents:
+
+1) Start of the Launch, and the calendar date of this event.
+
+2) ReportPortal SDK library name and it’s version, e.g., reportportal 5.0.6.
+
+3) ReportPortal Integration library (agent name), e.g., pytest-reportportal, version 5.0.11.
+
+4) Code Interpreter name, e.g., Python 3.6.9.
+
+We need this data to know what libraries and development platforms our users prefer. So, we can prioritize our work on agents in accordance to its actual usage.
+
+[ ![ImageName](Images/userGuide/GA-Guide/ga1.png) ](Images/userGuide/GA-Guide/ga1.png)
 
 ### How to disable Google Analytics gathering on Report Portal agents
 
@@ -74,7 +96,7 @@ Put export line somewhere in the file and hit `Ctrl+O` to save it and `Ctrl+X` t
 #### Windows
 To set environment variable on Windows 10 family systems right-click on it icon in taskbar and choose `System`. In
 opened window hit `Advanced system settings` in the right menu and then `Environment variables` button in opened
-`System Properties` window. Click `New` button in `System variables` section, enter variable name and value and close 
+`System Properties` window. Click `New` button in `System variables` section, enter variable name and value and close
 everything with `OK` button. The changes will be applied after the system restart.
 
 #### Build systems
@@ -140,27 +162,5 @@ docker run --rm -it \
 Or you can use `ENV` keyword in your `Dockerfile` when building the image:
 ```dockerfile
 ENV AGENT_NO_ANALYTICS=1
-```
-### How to disable Google Analytics on ReportPortal UI 
-
-You can turn off Google Analytics on ReportPortal UI as well. 
- 
-1) Log in to ReportPortal as Admin. 
- 
-2) Open Menu at the bottom and select “Administrate” section. 
-
-[ ![ImageName](Images/userGuide/GA-Guide/ga3.png) ](Images/userGuide/GA-Guide/ga3.png)
-
-3) Select “Server Settings”.
-
-[ ![ImageName](Images/userGuide/GA-Guide/ga4.png) ](Images/userGuide/GA-Guide/ga4.png)
-
-4) Open “Analytics” tab. 
- 
-5) Uncheck “Help make ReportPortal better by automatically sending analytics to us” checkbox. 
-
-[ ![ImageName](Images/userGuide/GA-Guide/ga5.png) ](Images/userGuide/GA-Guide/ga5.png)
-
->**NOTE:** You can enable Google Analytics if you check “Help make ReportPortal better by automatically sending analytics to us” checkbox. 
- 
+``` 
 Thanks to Google Analytics, we can deliver interesting and helpful features to ReportPortal. As a result, you will have effective working instruments and better customer support.
