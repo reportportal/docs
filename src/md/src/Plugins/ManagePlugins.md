@@ -1,9 +1,10 @@
-## Plugins
+## Manage plugins
 
 ReportPortal can be reinforced by uploading plugins. For now, you can install the next plugins from the box:
+
 * Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps and Rally
-*    E-mail server
-*    Sauce Labs
+* E-mail server
+* Sauce Labs
 
 
 | **Plugin**  | **Features**  |   
