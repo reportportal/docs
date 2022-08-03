@@ -1,4 +1,4 @@
-## Manage Plugins
+## Manage plugins
 
 ReportPortal can be reinforced by uploading plugins. For now, you can install the next plugins from the box:
 
