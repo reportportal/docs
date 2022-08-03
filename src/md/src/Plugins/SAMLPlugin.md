@@ -49,17 +49,21 @@ https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
 
 We support next formats:
 
-```
 UNSPECIFIED - used by default
 
+```urn
 urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+```
 
 EMAIL
 
-rn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+```urn
+urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+```
 
 PERSISTENT
 
+```urn
 urn:oasis:names:tc:SAML:2.0:nameid-format:persistent 
 ```
 
@@ -87,7 +91,7 @@ This field provides a redirect base path.
 
 Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.
 
-```
+```url
 https://<host>/uat
 ```
 
@@ -95,7 +99,7 @@ https://<host>/uat
 
 Attribute name from SAML metadata which contains an user first/given name.
 
-```
+```xml
 <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">William</saml:AttributeValue>
 </saml:Attribute>
@@ -105,16 +109,17 @@ Attribute name from SAML metadata which contains an user first/given name.
 
 Attribute name from SAML metadata which contains an user last/family name.
 
-```
+```xml
 <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">Gibson</saml:AttributeValue>
 </saml:Attribute>
 ```
 
 ***Full name***
+
 Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
 
-```
+```xml
 <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">William Gibson</saml:AttributeValu
 </saml:Attribute> 
