@@ -62,7 +62,7 @@ It is like a piece of cake. Go to the section [Work with reports](https://report
 
 Everything is awesome, and you have already fallen in love with ReportPortal. But you want to add your QA team to work together.
 Open the link [Create a project and add members](https://reportportal.io/docs/Creation-of-project) and start your collaborative work.
-And do not forget to configure [E-mail server](https://reportportal.io/docs/E-mail-server-integration).
+And do not forget to configure [E-mail server](https://reportportal.io/docs/E-mail-server).
 
 
 
@@ -76,20 +76,20 @@ Configure [Auto-Analyzer](https://reportportal.io/docs/Analysis)
 
 ### I want post issue to BTS from ReportPortal
 
-* [Jira Server](https://reportportal.io/docs/Jira-Server-Integration)
-* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
-* [Azure DevOps](https://reportportal.io/docs/Jira-Cloud-Integration)
-* [Rally](https://reportportal.io/docs/Rally-Integration)
+* [Jira Server](https://reportportal.io/docs/Jira-Server)
+* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
+* [Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
+* [Rally](https://reportportal.io/docs/Rally)
 
 ### I want view video from SauceLabs in ReportPortal
-* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs-integration)
+* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs)
 
 ### I want to send a test run results on the e-mail
-Configure  [E-mail server](https://reportportal.io/docs/E-mail-server-integration). And add [notification rules](https://reportportal.io/docs/Project-configuration%3Ee-mail-notifications)
+Configure  [E-mail server](https://reportportal.io/docs/E-mail-server). And add [notification rules](https://reportportal.io/docs/Project-configuration%3Ee-mail-notifications)
 
 ### I want to configure Auth
 
-* [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
+* [LDAP](https://reportportal.io/docs/LDAP-Auth)
 * [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
 
 ### I want to have a beautiful report with graphs and tables
