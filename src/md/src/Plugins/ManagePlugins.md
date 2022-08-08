@@ -98,16 +98,16 @@ If the user configures a plugin on the **project level**, then these configurati
 
 Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Integrations):
 
-* [integration with Jira Server](https://reportportal.io/docs/Jira-Server-Integration) 
-* [integration with Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
+* [integration with Jira Server](https://reportportal.io/docs/Jira-Server) 
+* [integration with Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
 * [integration with Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
-* [integration with Rally](https://reportportal.io/docs/Rally-Integration)
-* [integration with SauceLabs](https://reportportal.io/docs/Sauce-Labs-integration)
-* [integration with E-mail server](https://reportportal.io/docs/E-mail-server-integration)
-* [integration with LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
+* [integration with Rally](https://reportportal.io/docs/Rally)
+* [integration with SauceLabs](https://reportportal.io/docs/Sauce-Labs)
+* [integration with E-mail server](https://reportportal.io/docs/E-mail-server)
+* [integration with LDAP](https://reportportal.io/docs/LDAP-Auth)
 * [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
-* [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
-* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
+* [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML)
+* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML)
 
 > **Use case 1:** 
 > 

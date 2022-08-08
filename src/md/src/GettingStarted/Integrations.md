@@ -4,16 +4,16 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 
 [ ![Integrations](Images/userGuide/gettingStarted/Integrations.png) ](Images/userGuide/gettingStarted/Integrations.png)
 
-* [Jira Server](https://reportportal.io/docs/Jira-Server-Integration)
-* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud-Integration)
-* [Rally](https://reportportal.io/docs/Rally-Integration)
+* [Jira Server](https://reportportal.io/docs/Jira-Server)
+* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
+* [Rally](https://reportportal.io/docs/Rally)
 * [Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
-* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs-integration)
-* [E-mail server](https://reportportal.io/docs/E-mail-server-integration)
-* [LDAP](https://reportportal.io/docs/LDAP-Auth-integration)
+* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs)
+* [E-mail server](https://reportportal.io/docs/E-mail-server)
+* [LDAP](https://reportportal.io/docs/LDAP-Auth)
 * [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
-* [Okta SAML](https://reportportal.io/docs/Okta-SAML-integration)
-* [Azure SAML](https://reportportal.io/docs/Azure-SAML-integration)
+* [Okta SAML](https://reportportal.io/docs/Okta-SAML)
+* [Azure SAML](https://reportportal.io/docs/Azure-SAML)
 
 If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](https://reportportal.io/docs/Plugins).
 
