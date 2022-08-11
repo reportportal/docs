@@ -43,7 +43,7 @@ cutting edge technologies such as:</p>
 <p>This article helps you to navigate through the report portal documentation as a real guru and discover all capabilities of this tool.</p>
 <p>So choose what you want to do firstly and get started with ReportPortal.</p>
 <h2 id="a-user-without-reportportal-instance">A user without ReportPortal instance</h2>
-<h3 id="i-want-to-explore-reportportal-without-any-installation-steps-">I want to explore ReportPortal without any installation steps.</h3>
+<h3 id="i-want-to-explore-reportportal-without-any-installation-steps">I want to explore ReportPortal without any installation steps</h3>
 <p>It is easy! Just visit our Demo instance and use for login default credentials:</p>
 <pre><code class="language-html">login: default
 password: 1q2w3e</code></pre>
@@ -68,12 +68,51 @@ We will help you to find out how everything should work.</p>
 <p>You have checked demo test results, dashboards and widgets, but it is boring. And you want to see your real data in ReportPortal.
 We&#39;ve got your point.
 Please check a section with <a href="https://reportportal.io/docs/Log-Data-in">Reporting details</a></p>
-<h3 id="i-want-to-triage-test-failures">I want to triage test failures</h3>
-<p>It is like a piece of cake. Go to the section <a href="https://reportportal.io/docs/Work-with-reports">Work with reports</a>.</p>
+<h3 id="i-want-to-make-use-of-reportportal">I want to make use of ReportPortal</h3>
+<p>So far you have your launches successfully sent to ReportPortal. Next step is to triage failures to understand actual state of your product.</p>
+<p>Let’s imagine that your project has 3 types of test suites:</p>
 <ul>
-<li><a href="https://reportportal.io/docs/Investigation-of-failure">How to see the history of your executions</a></li>
-<li><a href="https://reportportal.io/docs/History-of-launches"> How to triage failures </a></li>
+<li><strong>Daily Smoke Suite</strong> is running on a daily basis,</li>
+<li><strong>Weekly Full Regression Suite</strong> is running every weekend,</li>
+<li><strong>API Tests</strong> are running after each commit.</li>
 </ul>
+<p>1) In the ReportPortal on “Launches” Tab you will see a list of corresponding launches. Each launch can be associated with a CI job or a testing session. Every launch will show you the statistics of Total, Passed, Failed or Skipped test cases. All failed (and skipped) test cases are initially marked with <strong>“To investigate”</strong> flag. Such test cases require the attention of an engineer in order to investigate the root cause of the failure.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice1.png" alt="ImageName"> </a></p>
+<p>2) To distinguish executions by type and focus only on required or related to your team today, you can use filters. Filters have “tab” capabilities, so you can easily navigate between different selections. You can filter by launch name, description, a number of failed or passed test cases and attributes.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice2.png" alt="ImageName"> </a></p>
+<p>3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision”</a>. There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision”</a> instructions from here to get more details about it.</p>
+<p>4) Once your team fully reviews the failed results and categorizes them accordingly, you will have a list of launches with more detailed information about the actual reasons of failure. This improves the visibility of both test automation status and the state of your software under test. The actual evidence of product issues vs automation issues gives you a clear picture of product stability, test automation validity or testing environment issues. The value of your test automation is the number of test cases that failed because of product bugs versus the number of test cases that failed because of other reasons.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice4.png" alt="ImageName"> </a></p>
+<p>5) Now, for the next step, let’s visualize your data for the entire team and managers. Since managers love charts, let’s build some self-updated charts! And let them see the actual statistics and value of your test automation along with you, at any given moment of the time, since dashboards and widgets will be updated in real-time as well.</p>
+<p>The best widgets to start from could be:</p>
+<ul>
+<li>Investigated percentage – How well does the QA team analyze failures?</li>
+<li>Overall statistics – What is the overall distribution of failure reasons inside the execution?</li>
+</ul>
+<p>In order to make it, the first step is to create a Dashboard.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice5.png" alt="ImageName"> </a></p>
+<p>6) Then pick a widget you need from a list of ready-to-go templates:</p>
+<p>We recommend starting with the <strong>“Investigated percentage of launches”</strong> chart. Once you selected a template, you should select a filtering basis, which will filter out the data of executions you want to focus on.</p>
+<p>The filter can be created on the &quot;Launches&quot; tab (see the screenshot for step#2) or right during the widget creation.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice6.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice7.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice8.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice9.png" alt="ImageName"> </a></p>
+<p>What we can see with this chart?</p>
+<p>There are 2 launches that meet the conditions of our filter. The first launch is completely analyzed, and the second one still requires the attention of the QA team. If the triaging process is still in progress, then it’s all right, just give them some time. But if you know that the process of triaging (categorization) is completed, and you still have a few test cases with no resolution, then it’s a point of discussion with your team.</p>
+<p>So, this chart helps to understand what your team is doing with failure categorization.</p>
+<p>7) Once the work with triaging is done, you can consider this launch for detailed information. For instance,  you can create another widget with the summary – <strong>“Overall statistics”</strong> widget.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice10.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice11.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice11.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice12.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice12.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice13.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice13.png" alt="ImageName"> </a></p>
+<p>The chart above shows that most of the issues are marked as Product Bugs. Based on this data, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing. Moreover, ReportPortal allows you to post issues in just a few clicks using <a href="https://reportportal.io/docs/Plugins">Bug Tracking Systems plugins</a>.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice14.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice14.png" alt="ImageName"> </a></p>
+<blockquote>
+<p><strong>NOTE</strong>:
+In case of many System Issues, you can ask a DevOps engineer to fix the environment or to review the testing infrastructure, and don’t waste your team&#39;s effort and time by receiving failed reports due to inconsistent environment.
+In case you have many Automation Bugs, put more effort into the test case stabilization, and convert test automation (flaky) fails into valuable test cases, which will test your application for real.</p>
+</blockquote>
 <h3 id="i-want-to-join-all-my-team-to-reportportal">I want to join all my team to ReportPortal</h3>
 <p>Everything is awesome, and you have already fallen in love with ReportPortal. But you want to add your QA team to work together.
 Open the link <a href="https://reportportal.io/docs/Creation-of-project">Create a project and add members</a> and start your collaborative work.
@@ -2762,206 +2801,25 @@ The system searches for the items with or without a specified Issue in BTS. Mult
 
   <div data-js-md-path="src/computeds/md/src/WorkWithReports/FilteringLaunches.md"></div>
   <h2 id="investigation-of-failure">Investigation of failure</h2>
-<h3 id="defect-types-and-comments">Defect types and comments</h3>
-<p>Report Portal provides the possibility to investigate the results of your runs. The investigation includes set the 
-appropriate defect type of failed items, post defect for them or link the id of defect that is already available
-in the bug tracking system. </p>
-<p>Using defect editor you can choose the real reason for your failure and provide the comment for this fail.</p>
-<p>When a defect is found in a test, it should be investigated and proper defect type should be assigned to it, 
-in order to have accurate statistics on test runs. You will be able to change a defect type for a test and mark it as Product Bug/Automation Bug/System Issue/No Defect at any time.</p>
-<p>Permission: All users on the project despite their role.</p>
-<p>To change a defect type, perform the following steps:</p>
-<ol>
-<li><p>Login into the Report Portal instance.</p>
-</li>
-<li><p>Navigate to the Step level of the launch.</p>
-</li>
-<li><p>Click on the defect label in the &quot;Defect Type&quot; column or small pencil icon.</p>
-</li>
-<li><p>&#39;EDIT DEFECT TYPE&#39; modal window will appear.</p>
-</li>
-<li><p>A proper defect type can be selected from the Defect type drop-down. Also, you
-can add a comment here, which should be no more than 255 symbols long. Mark up can be used to make the comment more beautiful, to add clickable links and images.</p>
-</li>
-</ol>
+<h3 id="set-defect-type">Set defect type</h3>
+<p>ReportPortal provides the possibility to investigate the results of your runs. The investigation includes setting the appropriate defect type of failed items, posting a defect for them or linking the ID of a defect that is already created in the bug tracking system.</p>
+<p>Using <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision” modal</a>, you can choose the real reason of your failure and provide a comment for this fail.</p>
+<p>When a defect is found in a test, it should be investigated and proper defect type should be assigned to it, in order to have accurate test runs statistics. You will be able to change a defect type for a test and mark it as a Product Bug/Automation Bug/System Issue/No Defect at any time.</p>
 <p>The available defect types are described below:</p>
-<blockquote>
-<p>  <em>To investigate</em> - means that no investigation was performed on this defect
-  yet.</p>
-<p>  <em>Product bug</em> (default and custom) - defect was investigated and production bug found as a
-  cause for this test failure.</p>
-<p>  <em>Automation bug</em> (default and custom) - defect was investigated and automation test is not
-  correct.</p>
-<p>  <em>System issue</em> (default and custom) - defect was investigated and it turns out that system-level
-  issue, like app crash, caused the test to fail.</p>
-<p>  <em>No defect</em> (default and custom) - defect was investigated and defined, that it&#39;s not a defect.</p>
-</blockquote>
-<p>After clicking on the tick button, the comment and the defect type will be saved for a selected item.</p>
-<p>Report Portal allows editing defects in bulk.</p>
-<p>To edit the defect type and comment for some item simultaneously, perform the next steps:</p>
-<ol>
-<li><p>Login into Report Portal instance</p>
-</li>
-<li><p>Navigate to the Step level of the launch.</p>
-</li>
-<li><p>Select the required test items by click on their checkboxes</p>
-</li>
-<li><p>Open &#39;Actions&#39; list</p>
-</li>
-<li><p>Click &quot;Edit Defects&quot; option</p>
-</li>
-<li><p>Select an appropriate defect type and a comment (if necessary) and save it.</p>
-</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong>
-The &#39;Replace comments&#39; option is selected by default. So, the same comment will be added to all items.
-Initial comments are removed in case you change defect type only (&#39;Comments&#39; is not filled in) via bulk operation.</p>
-</blockquote>
-<p>Also, you can change a defect type at the logs level.</p>
-<p><a href="https://youtu.be/Nf60EPDX3Co"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/analyze_launches.png" alt="Image"> </a></p>
+<p><strong><em>“To investigate”</em></strong> means that no investigation has been made on this defect yet.</p>
+<p><strong><em>“Product bug”</em></strong> means that the defect was investigated and a production bug found as the reason for the failure of this test.</p>
+<p><strong><em>“Automation bug”</em></strong> means that the defect was investigated and the automation test is not correct.</p>
+<p><strong><em>“System issue”</em></strong> means that the defect was investigated and it turns out that a system-level issue, like an app crash, caused the test to fail.</p>
+<p><strong><em>“No defect”</em></strong> means that the defect was investigated and was defined to be not a defect.</p>
 <h3 id="post-bug-to-bug-tracking-system">Post bug to Bug Tracking System</h3>
-<p>Report Portal allows us to connect JIRA or RALLY systems and post a bug to them.</p>
-<p>Before post, a bug, make sure that the bug tracking systems are connected to the
-project on the project settings page. To check it, please go to <a href="/docs/Getting started/Integration with Bug Tracking Systems">Integration with Bug Tracking
-System</a>.</p>
-<p>In case the bug tracking system is not connected, the &quot;Post bug&quot; button will be disabled.</p>
-<p>Permissions: The functionality is available for all users and does not depend on their project role.</p>
-<p><strong>POST BUG TO JIRA</strong></p>
-<p>In order to post a bug to JIRA, perform the following steps:</p>
-<ol>
-<li><p>Navigate to the &quot;Launches&quot; page.</p>
-</li>
-<li><p>Drill down to the Step or Log level of any failed item.</p>
-</li>
-<li><p>Click the &quot;Post Bug&quot; button.</p>
-</li>
-<li><p>Post bug pop-up form appears with a selected set of fields: required (with asterisk mark) and optional; 
-include data and credentials</p>
-</li>
-<li><p>Fill in the fields with correct information</p>
-</li>
-<li><p>Select include data options or leave the default.</p>
-</li>
-<li><p>Fill in credentials of your JIRA account and click &#39;Post&#39; button</p>
-</li>
-<li><p>The bug will be posted to the JIRA and link to the bug will be displayed on the
-Step and Log levels of the failed item.</p>
-</li>
-<li><p>Hover the mouse over the bug and you will see issue status and summary on
-tool-tip.</p>
-</li>
-<li><p>To view data of just submitted bug in JIRA, click the ticket. All selected data is present in the bug tracking system.
-Including logs, attachments, and comments.</p>
-</li>
-<li><p>To get to the item in Report Portal for which the bug was posted, click backlink &#39;Link to defect&#39;. </p>
-</li>
-</ol>
-<p>Sometimes it is necessary to add one bug to some items via bulk operation. To do this:</p>
-<ol>
-<li><p>Go to Step level of the launch</p>
-</li>
-<li><p>Select some failed items by click on their checkboxes</p>
-</li>
-<li><p>Expand the &#39;Actions&#39; list on the top of the page</p>
-</li>
-<li><p>Click &#39;Post Bug&#39; option</p>
-</li>
-<li><p>Fill in the fields with correct information</p>
-</li>
-<li><p>Fill in credentials of your JIRA account and click &#39;Post&#39; button</p>
-</li>
-<li><p>One ticket with the bug is added to JIRA as for single bug posting. The identifier of the JIRA ticket is added to all selected items. 
-Keep in mind that data of Report Portal items are excluded in a bulk posting.</p>
-</li>
-<li><p>Hover the mouse over the bug and you will see issue status and summary on tool-tip.</p>
-</li>
-</ol>
-<p><a href="https://youtu.be/fuk0kVRN7oI"> <img src="http://reportportal.io/documentation/Images/userGuide/postBugToBTS/postBugJira.png" alt="Image"> </a></p>
-<blockquote>
-<p><strong>Note:</strong>
-in case of bulk operation Include data option with be missed in Post Bug pop up. So, logs, comments, and attachments will not
-be present in the JIRA ticket.</p>
-</blockquote>
-<p><strong>POST BUG TO RALLY</strong></p>
-<p>In order to post a bug to RALLY, perform the following steps:</p>
-<ol>
-<li><p>Navigate to the &quot;Launches&quot; page.</p>
-</li>
-<li><p>Drill down to the Step or Log level of any failed issue.</p>
-</li>
-<li><p>Click the &quot;Defect editor&quot; link or pencil icon in the &quot;Defect Type&quot; column. </p>
-</li>
-<li><p>You will see the defect editor block. Click the &quot;Post Bug&quot; icon from the editor header.</p>
-</li>
-<li><p>Post bug pop-up form should appear.</p>
-</li>
-<li><p>Fill in the form and click the &quot;Submit&quot; button.</p>
-</li>
-<li><p>The bug will be posted to the RALLY and the link to the bug will be displayed on the Step and log levels of the failed item.</p>
-</li>
-</ol>
-<p>Hover the mouse over the bug and you will see issue status and summary on
-tool-tip.</p>
-<p>Also, you can post a bug on the Log level.</p>
-<h3 id="add-the-link-of-the-existed-defect-">Add the link of the existed defect.</h3>
-<p>This functionality allows attaching the ticket ID of the already posted defect to test item in Report Portal</p>
-<p>Depends on the used bug tracking system the procedure of adding a link could be different.</p>
-<p><strong>ADD LINK TO JIRA ISSUE</strong></p>
-<p>To add a link to existing JIRA issue to Report Portal, perform the following steps:</p>
-<ol>
-<li><p>Navigate to the &quot;Launches&quot; page.</p>
-</li>
-<li><p>Drill down to the Step or Log level of any failed item.</p>
-</li>
-<li><p>Click the &quot;Defect editor&quot; link or pencil icon in the &quot;Defect Type&quot; column. You will see the defect editor block. Click on arrow on the &quot;Save&quot; button&quot; and choose the &quot;Save and Link issue&quot;.</p>
-</li>
-<li><p>Link issue popup form should appear.</p>
-</li>
-<li><p>Select the JIRA project, input link to issue and issue ID, add more issues (if need).</p>
-</li>
-<li><p>Click the &quot;Add&quot; button. The link to the bug will be shown on the
- Step and Log levels of the failed item.</p>
-</li>
-</ol>
-<p>There are several ways to link an issue to Jira defect</p>
+<p>ReportPortal allows us to connect some popular bug tracking systems and post a bug to them or link the ticket ID of the already posted defect to the test item in ReportPortal.</p>
+<p>Before posting/linking a bug, make sure that the bug tracking systems are connected to the project on the project settings page. To check it, please, find the user guides below:</p>
 <ul>
-<li>via defect editor on Step and Log view;</li>
-<li>via Action menu on Step level (Actions &gt; Link issue);</li>
-<li>via &quot;Link issue&quot; on Log level;</li>
+<li><a href="https://reportportal.io/docs/Jira-Server">Jira Server</a></li>
+<li><a href="https://reportportal.io/docs/Jira-Cloud">Jira Cloud</a></li>
+<li><a href="https://reportportal.io/docs/Azure-DevOps-BTS">Azure DevOps BTS</a></li>
+<li><a href="https://reportportal.io/docs/Rally">Rally</a></li>
 </ul>
-<blockquote>
-<p><strong>Note:</strong><br>Project name in JIRA will be missing if only one JIRA is configured
-on the current project.</p>
-</blockquote>
-<p><a href="https://youtu.be/sKp632zgYNk"> <img src="http://reportportal.io/documentation/Images/userGuide/addLinkToExistingBug/addLinkToExistingBugJira.png" alt="Image"> </a></p>
-<p><strong>ADD LINK TO RALLY ISSUE</strong></p>
-<p>To add a link to existing RALLY issue to Report Portal, perform the following steps:</p>
-<ol>
-<li><p>Navigate to the &quot;Launches&quot; page.</p>
-</li>
-<li><p>Drill down to the Step or Log level to any failed item.</p>
-</li>
-<li><p>Click the &quot;Defect editor&quot; link or pencil. Click on arrow on the &quot;Save&quot; button&quot; and choose the &quot;Save and Link issue&quot;.</p>
-</li>
-<li><p>Link issue popup form should appear.</p>
-</li>
-<li><p>Go to the RALLY and copy link to issue.</p>
-</li>
-<li><p>Input link to issue and issue ID, add more issues (if need).</p>
-</li>
-<li><p>Click the &quot;Add&quot; button. The link to the bug will be shown on the
- Step and Log levels of the failed item.</p>
-</li>
-</ol>
-<p>There are several ways to link an issue to Rally defect:</p>
-<ul>
-<li>via defect editor on Step and Log view;</li>
-<li>via Action menu on Step level (Actions &gt; Link issue);</li>
-<li>via &quot;Link issue&quot; on Log level;</li>
-</ul>
-<p>To get an update on the defect&#39;s status, bring the cursor to the ticket. The tooltip will appear with actual information.</p>
-<p>If you want to remove a link to BTS, you can click the cross on a link label or unlink an issue from Defect Editor. For bulk, unlink operation use Actions Menu on Step Level.</p>
 
   <div data-js-md-path="src/computeds/md/src/WorkWithReports/InvestigationOfFailure.md"></div>
   <h2 id="history-of-launches">History of launches</h2>
