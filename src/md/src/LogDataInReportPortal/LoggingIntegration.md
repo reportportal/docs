@@ -4,7 +4,7 @@
 Logging is allowed only during test (step, test, suite, etc) execution.
 Consider the following scheme. Before the start and end of the test, logging context is available (marked in green):
 
-![Logging diagramm](Images/logging/logging_diagram.png) 
+![Logging diagramm](src/Images/logging/logging_diagram.png) 
 
 #### Log message format
 Loggers can be used the same way as it's described in some particular logger (logback, log4j) documentation.
