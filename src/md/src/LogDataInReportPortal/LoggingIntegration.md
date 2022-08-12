@@ -29,7 +29,8 @@ RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST
 
 There is a client parameter in reportportal.properties with boolean type values
 for screenshots sending in "black-white" or "color" view. By default it is set
-as "true" and all pictures for ReportPortal will be in a "black-white" format.
+as "false" and all pictures for ReportPortal will be in a "color" format. For mare
+information see [Client Properties](https://github.com/reportportal/client-java#common-parameters)
 
 #### Explicit logging
 You can call the ReportPortal logger explicitly. To do this consider the following example:
