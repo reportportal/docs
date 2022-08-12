@@ -1951,6 +1951,236 @@ Files that were copied earlier stay in the RP file storage</p>
 <p>Import performs as a regular import via API.  Link to the import via the API configuration.</p>
 
   <div data-js-md-path="src/computeds/md/src/LogDataInReportPortal/LogdataImport.md"></div>
+  <h2 id="logging-integration">Logging Integration</h2>
+<h3 id="jvm-based-loggers">JVM-based loggers</h3>
+<p>Logging is allowed only during test (step, test, suite, etc) execution.
+Consider the following scheme. Before the start and end of the test, logging context is available (marked in green):</p>
+<p><img src="/src/http://reportportal.io/documentation/Images/logging/logging_diagram.png" alt="Logging diagramm"> </p>
+<h4 id="log-message-format">Log message format</h4>
+<p>Loggers can be used the same way as it&#39;s described in some particular logger (logback, log4j) documentation.
+ReportPortal allows the attachment of binary data to the log entry. In this case consider the following message format:</p>
+<pre><code>RP_MESSAGE#FILE#FILENAME#MESSAGE_TEST</code></pre>
+<pre><code>RP_MESSAGE#BASE64#BASE_64_REPRESENTATION#MESSAGE_TEST</code></pre>
+<blockquote>
+<p>  RP_MESSAGE - message header</p>
+<p>  FILE, BASE64 - attaching data representation type</p>
+<p>  FILENAME, BASE_64_REPRESENTATION - path to sending file/ base64
+  representation of sending data</p>
+<p>  MESSAGE_TEST - string log message</p>
+</blockquote>
+<p>There is a client parameter in reportportal.properties with boolean type values
+for screenshots sending in &quot;black-white&quot; or &quot;color&quot; view. By default it is set
+as &quot;true&quot; and all pictures for ReportPortal will be in a &quot;black-white&quot; format.</p>
+<h4 id="explicit-logging">Explicit logging</h4>
+<p>You can call the ReportPortal logger explicitly. To do this consider the following example:</p>
+<pre><code class="language-java">File file = <span class="keyword">new</span> File(<span class="string">"my path to file"</span>);
+ReportPortal.emitLog(<span class="string">"My message"</span>, <span class="string">"INFO"</span>, Calendar.getInstance().getTime(), file);</code></pre>
+<h4 id="log4j">Log4j</h4>
+<h5 id="configuration">Configuration</h5>
+<p>Log4j provides a configuration opportunity via XML or properties files.</p>
+<p>Just add ReportPortal appender into log4j.xml configuration file.</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">appender</span> <span class="attribute">name</span>=<span class="value">"ReportPortalAppender"</span> <span class="attribute">class</span>=<span class="value">"com.epam.ta.reportportal.log4j.appender.ReportPortalAppender"</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">layout</span> <span class="attribute">class</span>=<span class="value">"org.apache.log4j.PatternLayout"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">param</span> <span class="attribute">name</span>=<span class="value">"ConversionPattern"</span> <span class="attribute">value</span>=<span class="value">"[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n"</span>/&gt;</span>
+   <span class="tag">&lt;/<span class="title">layout</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">appender</span>&gt;</span>
+<span class="tag">&lt;<span class="title">root</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">level</span> <span class="attribute">value</span>=<span class="value">"info"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"ReportPortalAppender"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">root</span>&gt;</span></code></pre>
+<p>For log4j.properties file it could be look like:</p>
+<pre><code class="language-properties">log4j.appender.reportportal=com.epam.ta.reportportal.log4j.appender.ReportPortalAppender
+log4j.appender.reportportal.layout=org.apache.log4j.PatternLayout
+log4j.appender.reportportal.layout.ConversionPattern=[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</code></pre>
+<p>ReportPortal&#39; agent logs can be hidded by increasing logging level for the following package:</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">logger</span> <span class="attribute">name</span>=<span class="value">"rp"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">level</span> <span class="attribute">value</span>=<span class="value">"WARN"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">logger</span>&gt;</span>
+<span class="tag">&lt;<span class="title">logger</span> <span class="attribute">name</span>=<span class="value">"com.epam.reportportal"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">level</span> <span class="attribute">value</span>=<span class="value">"WARN"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">logger</span>&gt;</span></code></pre>
+<h4 id="screenshots">Screenshots</h4>
+<p>For <em>log4j</em> case it is possible to send binary data in next ways.</p>
+<ul>
+<li>by using specific message wrapper.</li>
+</ul>
+<pre><code class="language-java"><span class="keyword">private</span> <span class="keyword">static</span> Logger logger;
+<span class="comment">/*
+ * Path to screenshot file
+ */</span>
+<span class="keyword">public</span> String screenshot_file_path = <span class="string">"demoScreenshoot.png"</span>;
+<span class="comment">/*
+ * Message for attached screenshot
+ */</span>
+<span class="keyword">public</span> String rp_message = <span class="string">"test message for ReportPortal"</span>;
+ReportPortalMessage message = <span class="keyword">new</span> ReportPortalMessage(<span class="keyword">new</span> File(screenshot_file_path), rp_message);
+logger.info(message);</code></pre>
+<ul>
+<li><p>sending File object as log4j log message. In this case log4j ReportPortal
+  appender sends log message which will contain sending file and string message &quot;<em>Binary data reported</em>&quot;.</p>
+</li>
+<li><p>adding to log message additional text information which specify attaching
+  file location or base64 representation of sending file. Described in <a href="#log-message-format">Log message format</a> section.</p>
+</li>
+</ul>
+<p><strong>reportportal.properties</strong></p>
+<pre><code class="language-properties">rp.convertimage=true</code></pre>
+<p>Possible values:</p>
+<ul>
+<li><p><strong>true</strong> - all images will be converted into &#39;black-white&#39;</p>
+</li>
+<li><p><strong>false</strong> - all images will be as &#39;color&#39;</p>
+</li>
+</ul>
+<h3 id="log4j2">Log4j2</h3>
+<h4 id="configuration">Configuration</h4>
+<p>Log4j2 provides configuration opportunity via XML or JSON files.</p>
+<p><strong>XML</strong></p>
+<p>log4j2.xml</p>
+<pre><code class="language-xml"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">properties</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"pattern"</span>&gt;</span>[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">appenders</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">ReportPortalLog4j2Appender</span> <span class="attribute">name</span>=<span class="value">"ReportPortalAppender"</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">PatternLayout</span> <span class="attribute">pattern</span>=<span class="value">"${pattern}"</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">ReportPortalLog4j2Appender</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">appenders</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">loggers</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">root</span> <span class="attribute">level</span>=<span class="value">"all"</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"ReportPortalAppender"</span>/&gt;</span>
+      <span class="tag">&lt;/<span class="title">root</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">loggers</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></code></pre>
+<p><strong>JSON</strong></p>
+<p>log4j2.json</p>
+<pre><code class="language-json">{
+  "<span class="attribute">configuration</span>": <span class="value">{
+    "<span class="attribute">properties</span>": <span class="value">{
+      "<span class="attribute">property</span>": <span class="value">{
+        "<span class="attribute">name</span>": <span class="value"><span class="string">"pattern"</span></span>,
+        "<span class="attribute">value</span>": <span class="value"><span class="string">"%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n"</span>
+      </span>}
+    </span>}</span>,
+    "<span class="attribute">appenders</span>": <span class="value">{
+      "<span class="attribute">ReportPortalLog4j2Appender</span>": <span class="value">{
+        "<span class="attribute">name</span>": <span class="value"><span class="string">"ReportPortalAppender"</span></span>,
+        "<span class="attribute">PatternLayout</span>": <span class="value">{
+          "<span class="attribute">pattern</span>": <span class="value"><span class="string">"${pattern}"</span>
+        </span>}
+      </span>}
+    </span>}</span>,
+    "<span class="attribute">loggers</span>": <span class="value">{
+      "<span class="attribute">root</span>": <span class="value">{
+        "<span class="attribute">level</span>": <span class="value"><span class="string">"all"</span></span>,
+        "<span class="attribute">AppenderRef</span>": <span class="value">{
+          "<span class="attribute">ref</span>": <span class="value"><span class="string">"ReportPortalAppender"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre>
+<p>ReportPortal&#39;s agent logs can be hided by increasing logging level for the following package:</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">Logger</span> <span class="attribute">name</span>=<span class="value">"rp"</span> <span class="attribute">level</span>=<span class="value">"WARN"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">Logger</span> <span class="attribute">name</span>=<span class="value">"com.epam.reportportal"</span> <span class="attribute">level</span>=<span class="value">"WARN"</span>/&gt;</span></code></pre>
+<h4 id="screenshots">Screenshots</h4>
+<p>For <em>log4j2</em> case it is possible to send binary data in next ways.</p>
+<ul>
+<li>by using specific message wrapper.</li>
+</ul>
+<pre><code class="language-java"><span class="keyword">private</span> <span class="keyword">static</span> Logger logger;
+<span class="comment">/*
+ * Path to screenshot file
+ */</span>
+<span class="keyword">public</span> String screenshot_file_path = <span class="string">"demoScreenshot.png"</span>;
+<span class="comment">/*
+ * Message for attached screenshot
+ */</span>
+<span class="keyword">public</span> String rp_message = <span class="string">"test message for ReportPortal"</span>;
+ReportPortalMessage message = <span class="keyword">new</span> ReportPortalMessage(<span class="keyword">new</span> File(screenshot_file_path), rp_message);
+logger.info(message);</code></pre>
+<ul>
+<li><p>sending File object as log4j2 log message. In this case log4j2 Report Portal
+  appender sends log message which will contain sending file and string message <em>&quot;Binary data reported&quot;</em>.</p>
+</li>
+<li><p>adding to log message additional text information which specify attaching
+  file location or base64 representation of sending file. Described in <a href="#log-message-format">Log message format</a> section.</p>
+</li>
+</ul>
+<h3 id="logback">Logback</h3>
+<h4 id="configuration">Configuration</h4>
+<p>Add Report Portal appender into logback.xml configuration file.</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">appender</span> <span class="attribute">name</span>=<span class="value">"ReportPortalAppender"</span> <span class="attribute">class</span>=<span class="value">"com.epam.reportportal.logback.appender.ReportPortalAppender"</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">encoder</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">pattern</span>&gt;</span>%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n<span class="tag">&lt;/<span class="title">pattern</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">encoder</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">appender</span>&gt;</span>
+<span class="tag">&lt;<span class="title">root</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"ReportPortalAppender"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">root</span>&gt;</span></code></pre>
+<p><strong>reportportal.properties</strong></p>
+<pre><code class="language-properties">rp.convertimage=true</code></pre>
+<p>Possible values:</p>
+<ul>
+<li><p><strong>true</strong> - all images will be converted into &#39;black-white&#39;</p>
+</li>
+<li><p><strong>false</strong> - all images will be as &#39;color&#39;</p>
+</li>
+</ul>
+<h3 id="jdk-logging-java-util-logger-jul-">JDK Logging / java.util.logger (JUL)</h3>
+<p>Due to low popularity of JUL logger, Report Portal does not have adapter for it. Bridge to SLF4J or Log4j may be used in this case: <a href="https://logging.apache.org/log4j/2.0/log4j-jul/index.html">Log4j2 JDK Logging Adapter</a></p>
+<h3 id="log4net">Log4Net</h3>
+<h4 id="installation">Installation</h4>
+<p>Install ReportPortal.Log4Net NuGet package. Missed dependencies will be
+installed automatically.</p>
+<blockquote>
+<p>  Read <a href="http://docs.nuget.org/consume/package-manager-dialog">here</a> how to
+  manage NuGet packages.</p>
+</blockquote>
+<h4 id="configuration">Configuration</h4>
+<p>Add custom appender into log4net configuration file.</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">log4net</span>&gt;</span>
+  ...
+  <span class="tag">&lt;<span class="title">appender</span> <span class="attribute">name</span>=<span class="value">"RP"</span> <span class="attribute">type</span>=<span class="value">"EPAM.ReportPortal.Logging.ReportPortalAppender, EPAM.ReportPortal.Logging.Log4Net"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">layout</span> <span class="attribute">type</span>=<span class="value">"log4net.Layout.SimpleLayout"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">layout</span> <span class="attribute">type</span>=<span class="value">"log4net.Layout.PatternLayout"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">conversionpattern</span> <span class="attribute">value</span>=<span class="value">"%message%newline"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">layout</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">appender</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="title">log4net</span>&gt;</span></code></pre>
+<p>Specify reference to appender in root section.</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">log4net</span>&gt;</span>
+  ...
+  <span class="tag">&lt;<span class="title">root</span>&gt;</span>
+      ...
+      <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"RP"</span> /&gt;</span>
+      ...
+  <span class="tag">&lt;/<span class="title">root</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="title">log4net</span>&gt;</span></code></pre>
+<h3 id="system-diagnostics-tracer">System.Diagnostics.Tracer</h3>
+<h4 id="installation">Installation</h4>
+<p>Install <strong>ReportPortal.Tracer</strong> NuGet package. Missed dependencies will be
+installed automatically.</p>
+<p>Read <a href="http://docs.nuget.org/consume/package-manager-dialog">here</a> how to
+manage NuGet packages.</p>
+<h4 id="configuration">Configuration</h4>
+<p>Add custom listener in your <em>App.config</em> file.</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
+  ...
+  <span class="tag">&lt;<span class="title">system.diagnostics</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">trace</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">listeners</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">add</span> <span class="attribute">name</span>=<span class="value">"ReportPortalListener"</span> <span class="attribute">type</span>=<span class="value">"EPAM.ReportPortal.Logging.ReportPortalTracer,EPAM.ReportPortal.Logging.Tracer"</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">listeners</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">trace</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">system.diagnostics</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></code></pre>
+
+  <div data-js-md-path="src/computeds/md/src/LogDataInReportPortal/LoggingIntegration.md"></div>
   <h1 id="work-with-reports">Work with reports</h1>
 
   <div data-js-md-path="src/computeds/md/src/WorkWithReports/index.md"></div>
