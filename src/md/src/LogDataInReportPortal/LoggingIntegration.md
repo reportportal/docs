@@ -128,7 +128,7 @@ log4j2.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration packages="com.epam.ta.reportportal.log4j.appender">
    <properties>
       <property name="pattern">[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</property>
    </properties>
@@ -152,6 +152,7 @@ log4j2.json
 ```json
 {
   "configuration": {
+    "packages": "com.epam.ta.reportportal.log4j.appender",
     "properties": {
       "property": {
         "name": "pattern",
