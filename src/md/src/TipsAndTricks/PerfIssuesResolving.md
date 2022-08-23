@@ -51,12 +51,17 @@ The approximate server's cost is relevant for the current cost of infrastructure
 
 **vUser** means _Virtual user_ which describes regular model of behaviour of user (API client) which interacts with your system. Under vUser we assume test framework integration which will generate:
 
-- 3 Launches with
-- - 3 suites inside, with
-- - - 3 test classes inside, with
-- - - - 3 test cases inside, with
-- - - - - 5 steps inside, with
-- - - - - - 10 logs inside for each step.
+◾️ 3 Launches with
+
+◾️◾️ 3 suites inside, with
+
+◾️◾️◾️ 3 test classes inside, with
+
+◾️◾️◾️◾️ 3 test cases inside, with
+
+◾️◾️◾️◾️◾️ 5 steps inside, with
+
+◾️◾️◾️◾️◾️◾️ 10 logs inside for each step.
 
 Which practically will generate:
 - 10 * 5 * 3 * 3 * 3 * 3 (4050) `createLog` requests.
