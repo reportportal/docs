@@ -221,59 +221,12 @@ And do not forget to configure <a href="https://reportportal.io/docs/E-mail-serv
 <p><strong>RPS</strong> means <em>Requests Per Second</em>. Any request to server to upload, create, read the data. In ReportPortal terms it can be request to create Launch (execution), Test Suite, Test case, log line. Read data or update data.</p>
 <p><strong>Saturation</strong> (in RPS) can be assumed as maximum capacity of your configuration (app deployed on specifics instance type) which can procced requests without significant response time degradation. Let&#39;s say <code>upper limit</code></p>
 <p><strong>vUser</strong> means <em>Virtual user</em> which describes regular model of behaviour of user (API client) which interacts with your system. Under vUser we assume test framework integration which will generate:</p>
-<ul>
-<li>3 Launches with</li>
-<li><ul>
-<li>3 suites inside, with</li>
-</ul>
-</li>
-<li><ul>
-<li><ul>
-<li>3 test classes inside, with</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><ul>
-<li><ul>
-<li><ul>
-<li>3 test cases inside, with</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><ul>
-<li><ul>
-<li><ul>
-<li><ul>
-<li>5 steps inside, with</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><ul>
-<li><ul>
-<li><ul>
-<li><ul>
-<li><ul>
-<li>10 logs inside for each step.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>◾️ 3 Launches with</p>
+<p>◾️◾️ 3 suites inside, with</p>
+<p>◾️◾️◾️ 3 test classes inside, with</p>
+<p>◾️◾️◾️◾️ 3 test cases inside, with</p>
+<p>◾️◾️◾️◾️◾️ 5 steps inside, with</p>
+<p>◾️◾️◾️◾️◾️◾️ 10 logs inside for each step.</p>
 <p>Which practically will generate:</p>
 <ul>
 <li>10 <em> 5 </em> 3 <em> 3 </em> 3 * 3 (4050) <code>createLog</code> requests.</li>
