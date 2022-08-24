@@ -229,12 +229,12 @@ And do not forget to configure <a href="https://reportportal.io/docs/E-mail-serv
 <p>◾️◾️◾️◾️◾️◾️ 10 logs inside for each step.</p>
 <p>Which practically will generate:</p>
 <ul>
-<li>10 <em> 5 </em> 3 <em> 3 </em> 3 * 3 (4050) <code>createLog</code> requests.</li>
-<li>5 <em> 3 </em> 3 <em> 3 </em> 3 (405) <code>startStep</code> requests and equal amount of <code>finishStep</code> requests. Total 910</li>
-<li>3 <em> 3 </em> 3 * 3 (81) <code>startTest</code> requests and equal amount of <code>finishTest</code> requests (inclluding all precondition methods, as <code>@After</code> and <code>@Before</code> in Java). Total 162</li>
-<li>3 <em> 3 </em> 3 (27) <code>startTestClass</code> requests and equal amount of <code>finishTestClass</code> requests. Total 54</li>
-<li>3 * 3 (9) <code>startSuite</code> requests and equal amount of <code>finishSuite</code> requests. Total 18</li>
-<li>3 (3) <code>startLaunch</code> requests and equal amount of <code>finishLaunch</code> requests. Total 6</li>
+<li><code>10 * 5 * 3 * 3 * 3 * 3 = (4050)</code> <code>createLog</code> requests.</li>
+<li><code>5 * 3 * 3 * 3 * 3 = (405)</code> <code>startStep</code> requests and equal amount of <code>finishStep</code> requests. Total 910</li>
+<li><code>3 * 3 * 3 * 3 = (81)</code> <code>startTest</code> requests and equal amount of <code>finishTest</code> requests (inclluding all precondition methods, as <code>@After</code> and <code>@Before</code> in Java). Total 162</li>
+<li><code>3 * 3 * 3 = (27)</code> <code>startTestClass</code> requests and equal amount of <code>finishTestClass</code> requests. Total 54</li>
+<li><code>3 * 3 = (9)</code> <code>startSuite</code> requests and equal amount of <code>finishSuite</code> requests. Total 18</li>
+<li><code>3 = (3)</code> <code>startLaunch</code> requests and equal amount of <code>finishLaunch</code> requests. Total 6</li>
 </ul>
 <p>Default configuration of integration sends logs in batches (<code>rp.batch.size.logs = 20</code>) which combines 20 requests at once into 1 batch request for <code>createLog</code>. And minimize count of <code>createLog</code> requests from 4050 to 203.
 In grand total such a structure creates 3 Launches with 243 test case inside and produces 1253 requests.</p>
