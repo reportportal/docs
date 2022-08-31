@@ -717,6 +717,166 @@ volumes:
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/InstallationSteps/DeployReportPortalDocker.md"></div>
+  <h2 id="deploy-with-aws-ecs-fargate">Deploy with AWS ECS Fargate</h2>
+<p>ReportPortal can be deployed using AWS ECS Fargate by interpreting the <a href="https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml">docker-compose.yml</a></p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>Ensure following services are available in the chosen AWS region &amp; you have permissions to create/modify the resources.</p>
+<ol>
+<li>Elastic File System</li>
+<li>Aurora PostgreSQL Serverless RDS instance</li>
+<li>AWS EC2</li>
+<li>AWS Secrets Manager</li>
+<li>AWS Lambda</li>
+<li>AWS ECS</li>
+<li>AWS Cloudwatch</li>
+<li>AWS IAM</li>
+<li>AWS KMS</li>
+<li>Route53</li>
+</ol>
+<h3 id="deployment">Deployment</h3>
+<h4 id="elastic-file-system">Elastic File System</h4>
+<p>Create Elastic FileSystem with 2 access points i.e., for minio &amp; elasticsearch.</p>
+<h4 id="postresql-database">PostreSQL database</h4>
+<p>Create Aurora Serverless RDS PostgreSQL instance (Engine Version: 13.6) with minimum 2 ACUs and maximum 16 ACUs</p>
+<h4 id="load-balancer">Load Balancer</h4>
+<p>Create Elastic Application LoadBalancer - internal OR internet facing (based on your requirement) with following target groups</p>
+<ol>
+<li>Traefik with target as IP, port 8080 and health-check path <code>/ping</code>.</li>
+<li>Index with target as Lambda &amp; health checks disabled.</li>
+</ol>
+<p>Also, create following rules on the listener of load-balancer</p>
+<ol>
+<li>Default rule should forward requests to Traefik target group.</li>
+<li>Paths matching pattern <code>/composite/info</code>, <code>/composite/health</code>, <code>/ui</code> &amp; <code>/</code> should be forwarded to Index target group.</li>
+</ol>
+<h4 id="kms-key">KMS Key</h4>
+<p>Create a symmetric encryption KMS key with relevant permissions to manage &amp; access key.</p>
+<h4 id="secrets">Secrets</h4>
+<p>Create Secrets to store the credentials &amp; config of the components &amp; refer the values in ECS task definition environment variables section. For the encryption key choose the custom KMS key created above.</p>
+<p>Secret Structure:</p>
+<pre><code class="language-json">{   
+    &quot;app_username&quot;: &quot;foo&quot;,
+    &quot;app_password: &quot;bar&quot;
+}</code></pre>
+<p>During the ECS Task Definition creation choose valueFrom by referring the SecretsManager ARN in the environment variables section as follows
+Eg:</p>
+<pre><code class="language-json">    {
+        "<span class="attribute">name</span>": <span class="value"><span class="string">"RABBITMQ_DEFAULT_PASS"</span></span>,
+        "<span class="attribute">valueFrom</span>": <span class="value"><span class="string">"arn:aws:secretsmanager:us-east-1:XXXXXXXXX:secret:report-portal-rmq-zBcd:app_password::"</span>
+    </span>}</code></pre>
+<h4 id="iam-role">IAM Role</h4>
+<p>Create an IAM role with following permissions</p>
+<ol>
+<li>KMS encryption &amp; decryption</li>
+<li>SecretsManager Read access</li>
+<li>ECS Task creation</li>
+<li>EFS access</li>
+<li>Write access to CloudWatch log groups</li>
+</ol>
+<h4 id="security-groups">Security Groups</h4>
+<p>Create Security Groups for</p>
+<ol>
+<li>Access to application - attach to Load Balancer</li>
+<li>Access to RP components (with the default ports of apps) &amp; EFS mount (inbound rule to port 2049) - attach to all ECS task definitions.</li>
+</ol>
+<h4 id="rp-applications">RP Applications</h4>
+<p>Most of the configuration remains same for the applications as per the docker-compose.yml file except few overrides as per cloud provider. Ensure the components are deployed within VPC scope &amp; disable public IP assignment where ever applicable.</p>
+<p><strong>Migrations:</strong>
+Create Task Def for migrations &amp; just run the task to apply the database schema. Since it&#39;s a one time task there&#39;s no need to create service.</p>
+<p><strong>Minio &amp; Elasticsearch:</strong>
+Create Task Def for these components by adding Elastic File System mountpoints &amp; launch the services.</p>
+<p><strong>RabbitMQ</strong>
+Create Task Def for RabbitMQ by mapping the credentials from SecretsManager in the environment variables.</p>
+<p><strong>API, jobs, metrics-gatherer, analyzer, analyzer-train &amp; ui:</strong></p>
+<p>Create Task Def for each of these components &amp; add dockerlabel with <code>@ecs</code> suffix as per the provider.
+Eg: &quot;traefik.http.routers.api.middlewares&quot;: &quot;api-strip-prefix@ecs&quot;</p>
+<p><strong>Traefik:</strong></p>
+<p>a. Create Task Def with following configuration (Launch Type as Fargate) </p>
+<pre><code>- image: &quot;traefik:v2.4&quot;,
+- entryPoint: &quot;traefik&quot;
+- command: &quot;--providers.ecs=true&quot;, &quot;--ping=true&quot;, &quot;--ping.entrypoint=web&quot;, &quot;--providers.ecs.region=AWS_REGION&quot;,&quot;--providers.ecs.clusters=report-portal&quot;,&quot;--providers.ecs.exposedByDefault=false&quot;,&quot;--providers.ecs.refreshSeconds=60&quot;,&quot;--entrypoints.web.address=:8080&quot;,&quot;--entrypoints.traefik.address=:8081&quot;,&quot;--api.dashboard=true&quot;,&quot;--api.insecure=true&quot;,&quot;--log.level=DEBUG&quot;,&quot;--accesslog=true&quot;,&quot;--accesslog.format=json&quot;</code></pre>
+<p>b. Create ECS Service mapping to the Traefik Target Group
+c. Now inspect the logs of traefik service to see if all RP components are being picked up in the configuration from ECS provider.</p>
+<p><strong>Index:</strong>
+For some obvious reasons the index (with Ruby runtime) service couldn&#39;t run on ECS - hence ported to Lambda with Python runtime.
+Create a lambda function with 128M memory &amp; 120s timeout with following code.</p>
+<p>Add environment variable <code>TRAEFIK_SERVICES_URL</code> with the IP address of Traefik endpoint (it can be fetched from the task details. Eg: <a href="http://192.168.2.120:8081">http://192.168.2.120:8081</a>)</p>
+<p>mureq can be obtained from <a href="https://github.com/slingamn/mureq/blob/master/mureq.py">mureq.py</a> - place it beside the <code>lamda_function.py</code> file.</p>
+<pre><code class="language-python"><span class="keyword">import</span> os
+<span class="keyword">import</span> json
+<span class="keyword">import</span> mureq
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">lambda_handler</span><span class="params">(event, context)</span>:</span>
+    print(<span class="string">"-------------------EVENT BEGIN-------------------------------"</span>)
+    print(event)
+    print(<span class="string">"-------------------EVENT END-------------------------------"</span>)
+    traefik_services= mureq.get(os.environ[<span class="string">'TRAEFIK_SERVICES_URL'</span>])
+
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/composite/info'</span>:
+        rp_status = {}
+        <span class="keyword">for</span> service <span class="keyword">in</span> traefik_services.json():
+            <span class="keyword">if</span> <span class="string">"loadBalancer"</span> <span class="keyword">in</span> service:
+                app_name = service[<span class="string">'name'</span>].replace(<span class="string">'@ecs'</span>,<span class="string">''</span>)
+                app_info = mureq.get(service[<span class="string">'loadBalancer'</span>][<span class="string">'servers'</span>][<span class="number">0</span>][<span class="string">'url'</span>] + <span class="string">'/info'</span>)
+                rp_status.update({app_name: app_info.json()})
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">200</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"200 OK"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+            },
+            <span class="string">"body"</span>: json.dumps(rp_status)
+        }
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/composite/health'</span>:
+        rp_health = {}
+        <span class="keyword">for</span> service <span class="keyword">in</span> traefik_services.json():
+            <span class="keyword">if</span> <span class="string">"loadBalancer"</span> <span class="keyword">in</span> service:
+                app_name = service[<span class="string">'name'</span>].replace(<span class="string">'@ecs'</span>,<span class="string">''</span>)
+                app_health = list(service[<span class="string">'serverStatus'</span>].values())[<span class="number">0</span>]
+                rp_health.update({app_name: app_health})
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">200</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"200 OK"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+            },
+            <span class="string">"body"</span>: json.dumps(rp_health)
+        }
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/'</span>:
+        redirect_url= event[<span class="string">'headers'</span>][<span class="string">'x-forwarded-proto'</span>] + <span class="string">"://"</span> + event[<span class="string">'headers'</span>][<span class="string">'host'</span>] + <span class="string">'/ui'</span>
+        print(redirect_url)
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">301</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"301 Found"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Location"</span>: redirect_url
+            },
+            <span class="string">"body"</span>: <span class="string">""</span>
+        }
+
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/ui'</span>:
+        redirect_url= event[<span class="string">'headers'</span>][<span class="string">'x-forwarded-proto'</span>] + <span class="string">"://"</span> + event[<span class="string">'headers'</span>][<span class="string">'host'</span>] + <span class="string">'/ui/'</span>
+        print(redirect_url)
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">301</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"301 Found"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Location"</span>: redirect_url
+            },
+            <span class="string">"body"</span>: <span class="string">""</span>
+        }</code></pre>
+<p>Now add this lambda to the Index TargetGroup created earlier.</p>
+<h4 id="dns">DNS</h4>
+<p>Add relevent DNS records in the Route53 hostedzone.</p>
+<h3 id="validation">Validation</h3>
+<p>Access the application with default credentials once the DNS record addition is propogated &amp; validate if all sections are loading without errors.</p>
+
+  <div data-js-md-path="src/md/src/InstallationSteps/DeployReportPortalECSFargate.md"></div>
   <h2 id="deploy-with-kubernetes-reportportal">Deploy with Kubernetes  ReportPortal</h2>
 <p>We use Helm package manager charts to bootstrap a ReportPortal deployment on a Kubernetes cluster  </p>
 <p>Kubernetes/Helm configs for installation ReportPortal can be find at the following link:   </p>
