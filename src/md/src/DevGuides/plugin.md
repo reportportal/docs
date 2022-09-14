@@ -11,6 +11,8 @@
     1. [Event listeners](#event-listeners)
 1. [Lazy initialization](#lazy-initialization)
 
+> 📍 Documentation for the UI plugins https://github.com/reportportal/service-ui/blob/master/docs/14-plugins.md
+
 ## Introduction
 
 Report Portal as a microservice application had services that integrate with external systems like JIRA or RALLY. These are problems of this
