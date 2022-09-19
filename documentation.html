@@ -3680,7 +3680,14 @@ Find all items failed by the same reason by choosing a filter by Pattern Name on
   <div data-js-md-path="src/computeds/md/src/Analysis/PatternAnalysis.md"></div>
   <h2 id="unique-error-analysis">Unique Error Analysis</h2>
 <h3 id="unique-error-analysis">Unique Error Analysis</h3>
-<p>“Unique Error analysis” functionality was implemented in version 5.7. This solution is used to detect unique errors in multiple logs. </p>
+<p>You can look at the problem of falling test cases from different points of view: do a qualitative analysis (passing rate – How many tests have failed?) and do a quantitative analysis (Why have they failed?). For example, if 1000 test cases are failed, then</p>
+<ol>
+<li><p>they could fail for the same reason</p>
+</li>
+<li><p>they could fail for various reasons</p>
+</li>
+</ol>
+<p>While failed tests allow you to understand what is broken, “Unique Error analysis” functionality implemented in version 5.7 will show you why it broke. The main advantage of this solution is that a list of all unique errors of the launch is presented in one place. Moreover, the system automatically groups tests by the same errors: when you expand some error, you see a list of steps where it occurred.</p>
 <p><strong>“Unique error auto-analysis”</strong> is set ON by default.</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error1.png" alt="ImageName"> </a></p>
 <p>There are 2 settings: “include/exclude numbers” – it depends if you decide that numbers in error logs have significant value for analysis or not.</p>
@@ -3692,7 +3699,8 @@ Find all items failed by the same reason by choosing a filter by Pattern Name on
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error5.png" alt="ImageName"> </a></p>
 <p>Finally, you can see the list of “Unique errors”.</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error6.png" alt="ImageName"> </a></p>
-<p>There you can see a list of clusters with error logs, you can expand a cluster to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The clusters are formed based on unique error logs, some small error logs can be merged and displayed as one cluster. </p>
+<p>There you can see a list with groups of error logs. You can expand a group to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The groups are formed based on unique error logs, some small error logs can be merged and displayed as one error.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition1.png" alt="ImageName"> </a></p>
 <blockquote>
 <p><strong>NOTE: </strong>
 You can also run “Unique error analysis” manually from any item level in case auto analysis is set OFF. Please, follow the steps below: </p>
@@ -3706,7 +3714,18 @@ You can also run “Unique error analysis” manually from any item level in cas
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error9.png" alt="ImageName"> </a></p>
 <p>2) An example with <strong>“Exclude numbers from analyzed logs”</strong> setting. As you can see, error with numeric value is not displayed:</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error10.png" alt="ImageName"> </a></p>
-<p>Thanks to “Unique Error analysis” functionality, it is no longer needed to spend time on analyzing: Is this failure a unique error or not? You can easily sort out the failures based on the found unique errors.</p>
+<p>In addition, there is a possibility to get <strong>ML suggestions</strong> for the group of steps. It speeds up the process of analyzing failed tests and assigning defect types by several times.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition2.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/UniqueErrorAnalysis/unique_error_addition3.png" alt="ImageName"> </a></p>
+<p>Also, the new Quality Gates rule – <a href="https://reportportal.io/docs/Quality-Rules-Configuration%3Enew-errors-in-the-run">“New Errors”</a> – was implemented based on the “Unique Error analysis” functionality. This rule helps to identify if there are new unique errors in the current launch by comparing it to another specified launch.</p>
+<p>To summarize, ReportPortal got the following benefits thanks to the “Unique Error analysis” functionality:</p>
+<ol>
+<li>a list of unique errors for the launch with grouping,</li>
+<li>facilitating tests results analysis,</li>
+<li>ML suggestions for a group of steps,</li>
+<li>new Quality Gates rule.</li>
+</ol>
+<p>This way you can easily sort out the failures based on the unique errors found.</p>
 
   <div data-js-md-path="src/computeds/md/src/Analysis/UniqueErrorAnalysis.md"></div>
   
