@@ -51,20 +51,25 @@ The approximate server's cost is relevant for the current cost of infrastructure
 
 **vUser** means _Virtual user_ which describes regular model of behaviour of user (API client) which interacts with your system. Under vUser we assume test framework integration which will generate:
 
-- 3 Launches with
-- - 3 suites inside, with
-- - - 3 test classes inside, with
-- - - - 3 test cases inside, with
-- - - - - 5 steps inside, with
-- - - - - - 10 logs inside for each step.
+◾️ 3 Launches with
+
+◾️◾️ 3 suites inside, with
+
+◾️◾️◾️ 3 test classes inside, with
+
+◾️◾️◾️◾️ 3 test cases inside, with
+
+◾️◾️◾️◾️◾️ 5 steps inside, with
+
+◾️◾️◾️◾️◾️◾️ 10 logs inside for each step.
 
 Which practically will generate:
-- 10 * 5 * 3 * 3 * 3 * 3 (4050) `createLog` requests.
--  5 * 3 * 3 * 3 * 3 (405) `startStep` requests and equal amount of `finishStep` requests. Total 910
--  3 * 3 * 3 * 3 (81) `startTest` requests and equal amount of `finishTest` requests (inclluding all precondition methods, as `@After` and `@Before` in Java). Total 162
--  3 * 3 * 3 (27) `startTestClass` requests and equal amount of `finishTestClass` requests. Total 54
--  3 * 3 (9) `startSuite` requests and equal amount of `finishSuite` requests. Total 18
--  3 (3) `startLaunch` requests and equal amount of `finishLaunch` requests. Total 6
+- `10 * 5 * 3 * 3 * 3 * 3 = (4050)` `createLog` requests.
+- `5 * 3 * 3 * 3 * 3 = (405)` `startStep` requests and equal amount of `finishStep` requests. Total 910
+- `3 * 3 * 3 * 3 = (81)` `startTest` requests and equal amount of `finishTest` requests (inclluding all precondition methods, as `@After` and `@Before` in Java). Total 162
+- `3 * 3 * 3 = (27)` `startTestClass` requests and equal amount of `finishTestClass` requests. Total 54
+- `3 * 3 = (9)` `startSuite` requests and equal amount of `finishSuite` requests. Total 18
+- `3 = (3)` `startLaunch` requests and equal amount of `finishLaunch` requests. Total 6
 
 Default configuration of integration sends logs in batches (`rp.batch.size.logs = 20`) which combines 20 requests at once into 1 batch request for `createLog`. And minimize count of `createLog` requests from 4050 to 203.
 In grand total such a structure creates 3 Launches with 243 test case inside and produces 1253 requests.
