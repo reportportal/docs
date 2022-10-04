@@ -1,1 +1,0 @@
-# Report Portal Configuration
