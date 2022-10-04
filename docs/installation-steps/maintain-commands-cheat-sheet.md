@@ -61,4 +61,4 @@ docker exec -i <postgres_container_name> psql -U <POSTGRES_USER> -d <database_na
 ```
 
 
-You can download [PDF file](/documentation/resources/CheatSheet.pdf) with commands.
+You can download [PDF file](./resources/CheatSheet.pdf) with commands.

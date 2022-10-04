@@ -163,7 +163,7 @@ To create custom defect types, perform the following steps:
 Add more custom defects, if you need it. The system allows us to add up to ten subtypes of each default defect type.
 
 Now you can investigate found defects as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
-For more information refer to the [Investigation of failure](/docs/Work-with-reports>Investigation-of-failure) topic.
+For more information refer to the [Investigation of failure](https://reportportal.io/docs/Work-with-reports>Investigation-of-failure) topic.
 
 >**Note:**
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
@@ -183,7 +183,7 @@ will be shown as "Product Bug".
 
 The "Auto-Analysis" and "Pattern analysis" tabs can allow reducing analysis routine on the project.
 
-For more information on this topic, please refer to [Analysis]('src/computeds/md/src/Analysis/index.md').
+For more information on this topic, please refer to [Analysis](https://reportportal.io/src/computeds/md/src/Analysis/index.md).
 
 ### Demo data
 
