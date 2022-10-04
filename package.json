@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/reportportal/documentation.git"
   },
-  "author": "reportportal.io",
-  "license": "ISC",
+  "author": "ReportPortal.io",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/reportportal/documentation/issues"
   },

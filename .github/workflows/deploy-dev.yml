@@ -20,7 +20,7 @@ env:
 on:
   push:
     branches:
-      - new-docs
+      - develop
 
 jobs:
   empty-s3-bucket:
