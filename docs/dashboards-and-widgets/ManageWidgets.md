@@ -1,6 +1,11 @@
-## Manage Widgets
+---
+sidebar_position: 4
+sidebar_label: Manage Widgets
+---
 
-### Customize widget
+# Manage Widgets
+
+## Customize widget
 
 When you create a widget, it has a basic size. Afterward, you may change the widget size.
 
@@ -21,7 +26,7 @@ The widgets located in this space, are moved to the relocatable widget place. Us
 
 [![Image](img/manage-widgets/customizeWidget.png)](https://youtu.be/6nPsNI2v_po)
 
-### Edit widget
+## Edit widget
 
 To create a new widget, perform the following steps:
 
@@ -33,7 +38,7 @@ To create a new widget, perform the following steps:
 
 [![Image](img/manage-widgets/editWidget.png)](https://youtu.be/VlpvP7IIEoY)
 
-### View widgets in full-screen mode
+## View widgets in full-screen mode
 
 To view widgets on the whole screen, click the 'Full Screen' button in the right top corner of the dashboard.
 
@@ -42,7 +47,7 @@ Note: Clickable areas or elements are disabled for the full-screen mode selected
 
 The auto-refresh timeout for widgets in full-screen mode is 30 sec.
 
-### Delete widget
+## Delete widget
 
 To delete the widget: 
 

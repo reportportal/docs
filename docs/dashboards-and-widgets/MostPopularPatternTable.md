@@ -1,0 +1,30 @@
+---
+sidebar_position: 22
+sidebar_label: Most popular pattern table (TOP-20)
+---
+
+# Most popular pattern table (TOP-20)
+
+**Widget's parameters:**
+- Filter
+- Parameters: All launches/ Latest launches
+- Number of shown patterns on the widget: 20
+- Attribute key for the first level (mandatory)
+
+
+For this widget, the system chooses 600 last launches by start time from the filter.
+Then it leaves only launches that have an attribute with mentioned key and group launches by attribute value.
+The system leaves only the latest launches in each group (if the user has chosen option Latest launches in the widget wizard).
+For each group of launches, a list with pattern aggregated.
+
+**Widget view**
+
+On the widget a user can view a table which shows:
+
+* 20 patterns with the biggest number of test cases in each defined group.
+
+Via drop-down user can transit from group to group.
+A pattern name is clickable. By clicking on pattern name a user is redirected to a list with all test cases which have clicked pattern. A list of test cases includes test cases from different launches.
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.

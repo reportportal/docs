@@ -1,4 +1,9 @@
-## Work with dashboards
+---
+sidebar_position: 2
+sidebar_label: Work with dashboards
+---
+
+# Work with dashboards
 
 Dashboards on ReportPortal are special containers, where users can create widgets.
 
@@ -6,7 +11,7 @@ To create and use dashboards, navigate to the "Dashboards" tab.
 
 You can create a dashboard that will be visible on the current project. If you share dashboard on the project, it will be available to all users of the project the dashboard is created in.
 
-### Create dashboard
+## Create dashboard
 
 To create a new dashboard, perform the following steps:
 
@@ -28,7 +33,7 @@ Now you can add widgets to the dashboard.
 
 [![Create dashboard](img/dashboards/createDashboard.png)](https://youtu.be/-3JkuMxiGE4)
 
-### Edit own dashboard
+## Edit own dashboard
 
 To edit a dashboard, perform the following steps: 
 
@@ -44,7 +49,7 @@ be displayed with updates.
 
 [![Edit dashboard](img/dashboards/editDashboard.png)](https://youtu.be/649Zk8awSM0)
 
-### Delete dashboard
+## Delete dashboard
 
 To remove a dashboard from the project, perform the following steps: 
 
@@ -59,7 +64,7 @@ The dashboard and related widgets will be deleted from the system.
 >**Note:** A user with a PROJECT MANAGER role can delete a dashboard shared by other members by clicking on the ‘Delete’ button 
 in the top right corner of the dashboard tile. The dashboard will be deleted from the system.
 
-### Shared dashboard
+## Shared dashboard
 
 Dashboards that were created and shared by another project member are stored in Shared Dashboards.
 
