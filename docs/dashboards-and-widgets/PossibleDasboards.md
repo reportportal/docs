@@ -1,4 +1,9 @@
-## Possible Dashboards in ReportPortal
+---
+sidebar_position: 1
+sidebar_label: Possible Dashboards in ReportPortal
+---
+
+# Possible Dashboards in ReportPortal
 
 ReportPortal.io is a powerful tool that acquires a lot of analytics. With this manual, we are wanting to help you to configure simple and understandable reports for your teams.
 
@@ -18,7 +23,7 @@ Let's look on 2 examples of dashboards which you can generate:
 >
 > Which dashboard I can create in such conditions?
 
-###  Report for one tests run (A dashboard for an engineer)
+##  Report for one tests run (A dashboard for an engineer)
 
 The goal for this report to show the status of the latest test run. For instance to see the latest results for launch with an API suite. 
 
@@ -45,7 +50,7 @@ Let's assume that you have a lot of test results and a lot of teams.
 
 You can create [**Overall statistics**](https://reportportal.io/docs/Overall-statistics) and [**Launches table**](https://reportportal.io/docs/Launches-table), and now a team who is responsible for API suite has no need to go to the test results. It can use only this dashboard which gives enough information for test failure management.
 
-###  Build / Release/ Sprint Report (A dashboard for a Team leads, PM, DM)
+##  Build / Release/ Sprint Report (A dashboard for a Team leads, PM, DM)
 
 The goal of this report to show status for the whole version. It means for this report we want to see the latest results of aggregated statistics for several lanches.
 
