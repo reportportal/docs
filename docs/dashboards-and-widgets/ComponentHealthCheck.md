@@ -9,7 +9,7 @@ Shows the passing rate of the application components which are indicated by the 
 
 >**Note:** for using this widget you need to report (or add manually) attributes to test items.
 
-[![ComponentHEalthCheckWidgetVideo](img/widget-types/ComponentHealthCheckView.png)](https://youtu.be/T98iy0mJk0s)
+<media-view thumbnail='/img/widget-types/ComponentHealthCheckView.png' src="https://youtu.be/T98iy0mJk0s" alt="ComponentHealthCheckVideo" type="video"></media-view>
 
 **Widget's parameters:**
 - Filter
@@ -18,7 +18,7 @@ Shows the passing rate of the application components which are indicated by the 
 - Attribute key for the first level (mandatory)
 - Attribute key for the 2-10 levels (optional)
 
-![ComponentHEalthCheckWidgetVideo](img/widget-types/ComponentHealthCheckCreation.png)
+<media-view src='/img/widget-types/ComponentHealthCheckCreation.png' alt="ComponentHealthCheckCreation" type="photo"></media-view>
 
 **Widget view**
 
