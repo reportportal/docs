@@ -4420,15 +4420,75 @@ The widget doesn&#39;t contain &quot;IN PROGRESS&quot; launches.</p>
 The widget doesn&#39;t contain &#39;IN PROGRESS&quot; launches.</p>
 </blockquote>
 <h2 id="passing-rate-per-launch">Passing rate per launch</h2>
+<p>Shows the percentage ratio of Passed test cases to Total test cases for the last run of selected launch.</p>
+<blockquote>
+<p><strong>Note:</strong>
+Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)</p>
+</blockquote>
 <p><strong>Widget&#39;s parameters:</strong></p>
+<ul>
+<li><p>Launch Name: the name of any finished launch</p>
+</li>
+<li><p>Mode: Bar View/Pie View</p>
+</li>
+<li><p>Widget name: any text</p>
+</li>
+<li><p>Description: any text</p>
+</li>
+</ul>
+<p>Please find below an example of configuration:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch1.png" alt="Image"> </a></p>
+<p>As you can see, this widget was built based on the test results of the last run of the Daily Smoke Suite:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch2.png" alt="Image"> </a></p>
 <p><strong>Widget view</strong></p>
+<p>The widget can be displayed in two options as shown on the pictures below:</p>
+<p>Bar View</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch3.png" alt="Image"> </a></p>
+<p>Pie View</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch4.png" alt="Image"> </a></p>
+<p>The tooltip on mouse hover over chart area shows the quantity of Passed/Failed test cases and percentage ratio of Passed/Failed test cases to Total cases for the last run.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRatePerLaunch5.png" alt="Image"> </a></p>
+<p>The widget has clickable sections. When you click on a specific section in the widget, the system forwards you to the launch view for appropriate selection.</p>
 <blockquote>
 <p><strong>Note:</strong>
 The widget doesn&#39;t contain &#39;IN PROGRESS&quot; launches.</p>
 </blockquote>
 <h2 id="passing-rate-summary">Passing rate summary</h2>
+<p>Shows the percentage ratio of Passed test cases to Total test cases for set of launches.</p>
+<blockquote>
+<p><strong>Note:</strong>
+Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)</p>
+</blockquote>
 <p><strong>Widget&#39;s parameters:</strong></p>
+<ul>
+<li><p>Filter: At least one filter is required</p>
+</li>
+<li><p>Items: 1-600. The default meaning is 50.</p>
+</li>
+<li><p>Mode: Bar View/Pie View</p>
+</li>
+<li><p>Widget name: any text</p>
+</li>
+<li><p>Description: any text</p>
+</li>
+</ul>
+<p>Please find below an example of configuration:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary1.png" alt="Image"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary2.png" alt="Image"> </a></p>
 <p><strong>Widget view</strong></p>
+<p>The widget can be displayed in two options as shown on the pictures below:</p>
+<p>Bar View</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary3.png" alt="Image"> </a></p>
+<p>Pie view</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary4.png" alt="Image"> </a></p>
+<p>As you can see, this widget was built based on the “regression” filter.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary5.png" alt="Image"> </a></p>
+<p>The tooltip on mouse hover over chart area shows the quantity of Passed/Not passed test cases and percentage ratio of Passed/Not passed test cases to Total test cases for the specified set of launches.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/PassingRateSummary6.png" alt="Image"> </a></p>
+<p>The widget has clickable sections. When you click on a specific section in the widget, the system forwards you to the launches view for the appropriate selection.</p>
+<p>Thanks to “Passing rate summary” widget, it is no longer needed to spend time on calculating Passing rate of the specified set of launches. ReportPortal provides these statistics as a visualization – it is a quick and convenient decision. You can take the screenshot of widget and use it in the Test results report.</p>
 <blockquote>
 <p><strong>Note:</strong>
 The widget doesn&#39;t contain &#39;IN PROGRESS&quot; launches.</p>
