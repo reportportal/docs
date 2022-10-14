@@ -18,7 +18,7 @@ import React, { useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import './MediaViewer.css';
+import './mediaViewer.css';
 
 const TYPE_PHOTO = "photo";
 const TYPE_VIDEO = "video";
