@@ -468,14 +468,47 @@ The widget doesn't contain 'IN PROGRESS" launches.
 
 ## Passing rate per launch
 
+Shows the percentage ratio of Passed test cases to Total test cases for the last run of selected launch.
+
+>**Note:**
+Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
 
 **Widget's parameters:**
 
+- Launch Name: the name of any finished launch
 
+- Mode: Bar View/Pie View
+
+- Widget name: any text
+
+- Description: any text
+
+Please find below an example of configuration:
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRatePerLaunch1.png) ](Images/userGuide/widgetTypes/PassingRatePerLaunch1.png)
+
+As you can see, this widget was built based on the test results of the last run of the Daily Smoke Suite:
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRatePerLaunch2.png) ](Images/userGuide/widgetTypes/PassingRatePerLaunch2.png)
 
 **Widget view**
 
+The widget can be displayed in two options as shown on the pictures below:
 
+Bar View
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRatePerLaunch3.png) ](Images/userGuide/widgetTypes/PassingRatePerLaunch3.png)
+
+Pie View
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRatePerLaunch4.png) ](Images/userGuide/widgetTypes/PassingRatePerLaunch4.png)
+
+The tooltip on mouse hover over chart area shows the quantity of Passed/Failed test cases and percentage ratio of Passed/Failed test cases to Total cases for the last run.
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRatePerLaunch5.png) ](Images/userGuide/widgetTypes/PassingRatePerLaunch5.png)
+
+The widget has clickable sections. When you click on a specific section in the widget, the system forwards you to the launch view for appropriate selection.
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
@@ -483,13 +516,53 @@ The widget doesn't contain 'IN PROGRESS" launches.
 
 ## Passing rate summary
 
+Shows the percentage ratio of Passed test cases to Total test cases for set of launches.
+
+>**Note:**
+Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
+
 **Widget's parameters:**
 
+- Filter: At least one filter is required
 
+- Items: 1-600. The default meaning is 50.
+
+- Mode: Bar View/Pie View
+
+- Widget name: any text
+
+- Description: any text
+
+Please find below an example of configuration:
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary1.png) ](Images/userGuide/widgetTypes/PassingRateSummary1.png)
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary2.png) ](Images/userGuide/widgetTypes/PassingRateSummary2.png)
 
 **Widget view**
 
+The widget can be displayed in two options as shown on the pictures below:
 
+Bar View
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary3.png) ](Images/userGuide/widgetTypes/PassingRateSummary3.png)
+
+Pie view
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary4.png) ](Images/userGuide/widgetTypes/PassingRateSummary4.png)
+
+As you can see, this widget was built based on the “regression” filter.
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary5.png) ](Images/userGuide/widgetTypes/PassingRateSummary5.png)
+
+The tooltip on mouse hover over chart area shows the quantity of Passed/Not passed test cases and percentage ratio of Passed/Not passed test cases to Total test cases for the specified set of launches.
+
+[ ![Image](Images/userGuide/widgetTypes/PassingRateSummary6.png) ](Images/userGuide/widgetTypes/PassingRateSummary6.png)
+
+The widget has clickable sections. When you click on a specific section in the widget, the system forwards you to the launches view for the appropriate selection.
+
+Thanks to “Passing rate summary” widget, it is no longer needed to spend time on calculating Passing rate of the specified set of launches. ReportPortal provides these statistics as a visualization – it is a quick and convenient decision. You can take the screenshot of widget and use it in the Test results report.
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
