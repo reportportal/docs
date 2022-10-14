@@ -471,8 +471,9 @@ The widget doesn't contain 'IN PROGRESS" launches.
 Shows the percentage ratio of Passed test cases to Total test cases for the last run of selected launch.
 
 >**Note:**
-Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
-Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
+>Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+>
+>Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
 
 **Widget's parameters:**
 
@@ -519,8 +520,9 @@ The widget doesn't contain 'IN PROGRESS" launches.
 Shows the percentage ratio of Passed test cases to Total test cases for set of launches.
 
 >**Note:**
-Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
-Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
+>Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+>
+>Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
 
 **Widget's parameters:**
 
