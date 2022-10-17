@@ -36,13 +36,11 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
 
                 if (type === TYPE_PHOTO) {
                     src = useBaseUrl(src);
-                }
-                if (isVideo) {
+                } else if (isVideo) {
                     src = src.replace('.be/', 'be.com/embed/');
                 }
 
                 return (
-                        assetSrc &&
                         <>
                             <div className={`${!isVideo ? 'media-container' : 'video-container'}` } onClick={() => setOpen(true)} >
                                 <img className={'thumbnail'} src={assetSrc} alt={alt} />
