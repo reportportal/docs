@@ -17,6 +17,7 @@
 import React, { useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
 
 import './mediaViewer.css';
 
@@ -29,8 +30,6 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
     return (
         <BrowserOnly>
             {() => {
-                const ReactImageVideoLightbox =
-                    require('react-image-video-lightbox').default;
                 const assetSrc = useBaseUrl(thumbnail ? thumbnail : src);
                 const isVideo = type === TYPE_VIDEO;
 
@@ -51,7 +50,6 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
                                     data={[
                                         {
                                             url: src,
-                                            thumbnail: assetSrc,
                                             type,
                                             alt,
                                         },

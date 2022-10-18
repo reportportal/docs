@@ -19,8 +19,19 @@
 }
 
 .video-container {
+  display: inline-block;
   position: relative;
   cursor: pointer;
+}
+
+.video-container:before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all .1s linear;
+  width: 100%;
 }
 
 .video-container:after {
