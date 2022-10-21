@@ -1744,7 +1744,18 @@ Environment variables for configuration with default values:</p>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/ReportPortalJobs.md"></div>
   <h2 id="github-authorization">GitHub Authorization</h2>
-<p>To setup access with GitHub auth:</p>
+<p>ReportPortal allows logging in via GitHub OAuth Web Application Flow.</p>
+<h3 id="presequences">Presequences</h3>
+<p>To enable this feature you need to <a href="https://github.com/settings/applications/new">register new application in Github</a></p>
+<p>Fill the following fields:
+| Name                       | Value                                      | Description                                           |
+|----------------------------|--------------------------------------------|-------------------------------------------------------|
+| Application name           | Report Portal                              | Just something which allow you recognize what&#39;s this. |
+| Homepage URL               | <a href="https://{HOST}:{PORT}/uat/sso/user">https://{HOST}:{PORT}/uat/sso/user</a>         | Replace with <code>{HOST}</code> and <code>{PORT}</code> with appropriate values of your instance. Naturally you can omit <code>:{PORT}</code> if it&#39;s default port for HTTPS protocol. | 
+| Authorization callback URL | <a href="https://{HOST}:{PORT}/uat/sso/login/github">https://{HOST}:{PORT}/uat/sso/login/github</a> | As in the previous field replace with <code>{HOST}</code> and <code>{PORT}</code> with your appropriate values. | </p>
+<p>Once new application is created, you will have Client ID. Click on &quot;Generate a new client secret&quot; to get Client Secret, but do not close the window until you configure the Authorization on RP, since it will never show you the Secret again.</p>
+<h3 id="report-portal-configuration">Report Portal configuration</h3>
+<p>To setup access with GitHub auth on Report Portal:</p>
 <ol>
 <li>Log in to the ReportPortal as an ADMIN user</li>
 <li>Open the list on the right of the user&#39;s image.</li>
@@ -1754,17 +1765,17 @@ Environment variables for configuration with default values:</p>
 <li>Then change the switcher position of &#39;Activate GitHub Authorization&#39; to ON</li>
 <li>The Next fields should appear:</li>
 </ol>
-<pre><code class="language-javascript">  <span class="string">'Client ID'</span>: <span class="xml"><span class="tag">&lt;<span class="title">value_of_clientId</span>&gt;</span>
-  'Client Secret': <span class="tag">&lt;<span class="title">value_of_clientSecret</span>&gt;</span>
-  'Add GitHub Organization' button-link: (optional)</span></code></pre>
+<pre><code class="language-javascript"><span class="string">'Client ID'</span>: <span class="xml"><span class="tag">&lt;<span class="title">value_of_clientId</span>&gt;</span>
+'Client Secret': <span class="tag">&lt;<span class="title">value_of_clientSecret</span>&gt;</span>
+'Add GitHub Organization' button-link: (optional)</span></code></pre>
 <p>Note, in case the &#39;Organization Name&#39; is not added, all GitHub users will have access to the ReportPortal instance.
 If the &#39;Organization Name&#39; is specified, only users of this organization will have an access to ReportPortal instance.</p>
 <p>If the Name of GitHub organization is not validated, verify that the name is correct.</p>
 <p>Example of GitHub auth configuration:
 Fill in the form:</p>
-<pre><code class="language-javascript">               <span class="string">'Client Id'</span>: <span class="number">8767988</span>c424a0e7a2640
-           <span class="string">'Client Secret'</span>: ef22c9f804257afaf399a2dada7c8f22dee5fd1b
-       <span class="string">'Organization Name'</span>: reportportal</code></pre>
+<pre><code class="language-javascript"><span class="string">'Client Id'</span>: <span class="number">8767988</span>c424a0e7a2640
+<span class="string">'Client Secret'</span>: ef22c9f804257afaf399a2dada7c8f22dee5fd1b
+<span class="string">'Organization Name'</span>: reportportal</code></pre>
 <p>Click on &#39;Submit&#39; button.
 A confirmation message in status bar should be shown.
 A &#39;Login with GitHub&#39; button will appear on login form.</p>
