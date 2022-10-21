@@ -7,6 +7,7 @@ ReportPortal allows logging in via GitHub OAuth Web Application Flow.
 To enable this feature you need to [register new application in Github](https://github.com/settings/applications/new)
 
 Fill the following fields:
+
 | Name                       | Value                                      | Description                                           |
 |----------------------------|--------------------------------------------|-------------------------------------------------------|
 | Application name           | Report Portal                              | Just something which allow you recognize what's this. |
