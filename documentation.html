@@ -1747,12 +1747,33 @@ Environment variables for configuration with default values:</p>
 <p>ReportPortal allows logging in via GitHub OAuth Web Application Flow.</p>
 <h3 id="presequences">Presequences</h3>
 <p>To enable this feature you need to <a href="https://github.com/settings/applications/new">register new application in Github</a></p>
-<p>Fill the following fields:
-| Name                       | Value                                      | Description                                           |
-|----------------------------|--------------------------------------------|-------------------------------------------------------|
-| Application name           | Report Portal                              | Just something which allow you recognize what&#39;s this. |
-| Homepage URL               | <a href="https://{HOST}:{PORT}/uat/sso/user">https://{HOST}:{PORT}/uat/sso/user</a>         | Replace with <code>{HOST}</code> and <code>{PORT}</code> with appropriate values of your instance. Naturally you can omit <code>:{PORT}</code> if it&#39;s default port for HTTPS protocol. | 
-| Authorization callback URL | <a href="https://{HOST}:{PORT}/uat/sso/login/github">https://{HOST}:{PORT}/uat/sso/login/github</a> | As in the previous field replace with <code>{HOST}</code> and <code>{PORT}</code> with your appropriate values. | </p>
+<p>Fill the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application name</td>
+<td>Report Portal</td>
+<td>Just something which allow you recognize what&#39;s this.</td>
+</tr>
+<tr>
+<td>Homepage URL</td>
+<td><a href="https://{HOST}:{PORT}/uat/sso/user">https://{HOST}:{PORT}/uat/sso/user</a></td>
+<td>Replace with <code>{HOST}</code> and <code>{PORT}</code> with appropriate values of your instance. Naturally you can omit <code>:{PORT}</code> if it&#39;s default port for HTTPS protocol.</td>
+</tr>
+<tr>
+<td>Authorization callback URL</td>
+<td><a href="https://{HOST}:{PORT}/uat/sso/login/github">https://{HOST}:{PORT}/uat/sso/login/github</a></td>
+<td>As in the previous field replace with <code>{HOST}</code> and <code>{PORT}</code> with your appropriate values.</td>
+</tr>
+</tbody>
+</table>
 <p>Once new application is created, you will have Client ID. Click on &quot;Generate a new client secret&quot; to get Client Secret, but do not close the window until you configure the Authorization on RP, since it will never show you the Secret again.</p>
 <h3 id="report-portal-configuration">Report Portal configuration</h3>
 <p>To setup access with GitHub auth on Report Portal:</p>
