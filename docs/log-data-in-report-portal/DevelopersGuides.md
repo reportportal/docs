@@ -36,6 +36,4 @@ JAVA Agents
   
   .NET Agents
  * https://github.com/reportportal/commons-net/blob/master/docs/Logging.md
-  
-* [Asynchronous reporting](https://github.com/reportportal/documentation/blob/async-reporting/src/md/src/DevGuides/async-reporting.md)
 * [How to report retried items](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/retries.md)

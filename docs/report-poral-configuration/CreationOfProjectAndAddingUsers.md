@@ -55,7 +55,7 @@ The name should be unique and cannot be changed after saving.
 
 An Admin can configure the project settings or leave them as the default. 
 Project members with PROJECT_MANAGER roles are able to set up the project settings.
-To know how project settings could be updated, go to the [ProjectConfiguration](https://reportportal.io/docs/Project-configuration) section
+To know how project settings could be updated, go to the [ProjectConfiguration](./ProjectConfiguration) section
 
 To know more about the project's management, go to Management Board > All Projects page.
 

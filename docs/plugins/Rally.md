@@ -5,7 +5,7 @@ sidebar_label: Rally
 
 # Rally
 
-For Rally plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+For Rally plugin installation please check [documentation](./ManagePlugins#upload-plugin)
 
 ## Global RALLY integration
 

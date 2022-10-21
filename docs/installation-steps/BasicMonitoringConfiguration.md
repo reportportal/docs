@@ -36,23 +36,28 @@ In addition to that, for the basic database monitoring is used PGHero tool - use
 
 Not recommended mixing the ReportPortal services and monitoring services on the same machine, especially in docker installation. 
 To avoid competition for resources with the services of the ReportPortal, deploy a separate virtual machine for monitoring (for our instances we using m5.large shape for the monitoring node) and install the following services: 
+
 1) InfluxDB database: https://docs.influxdata.com/influxdb/v2.0/install/?t=Docker;
-2) Grafana: https://grafana.com/docs/grafana/latest/installation/docker/;
+
+2) Grafana:
 Dashboard examples(Grafana IDs): 5955, 3056.
+
 3) Telegraf:
+
    - Kubernetes deployment: telegraf agent needs to be installed at each cluster node.
+   
    - Docker deployment: telegraf agent should be installed at the ReportPortal VM. In case of rollouting the Database server on the separate VM, telegraf agent should be installed also at that VM.
 
 **Telegraf installation guide:**
 
 Update your system.
 
-    ```yaml
+```yaml
     sudo yum -y update
-    ```
+```
 Add Influxdata RPM repository.
 
-    ```yaml
+```yaml
     cat <<EOF | sudo tee /etc/yum.repos.d/influxdb.repo
     [influxdb]
     name = InfluxDB Repository - RHEL 
@@ -61,66 +66,66 @@ Add Influxdata RPM repository.
     gpgcheck = 1
     gpgkey = https://repos.influxdata.com/influxdb.key
     EOF
-    ```
+```
 
 Install Telegraf on RHEL 8 / CentOS 8. Once the repository has been added, install Telegraf on RHEL 8 using the command below.
 
-    ```yaml
+```yaml
     sudo dnf -y install telegraf
-    ```
+```
 Open "telegraf.conf" file for the monitoring configuration. In the case of Kubernetes deployment need to configure telegraf on each cluster node separately.
 
-    ```yaml
+```yaml
     sudo nano /etc/telegraf/telegraf.conf
-    ```
+```
 Change following configs(press **Ctrl+W** to search for the particular configs):
 
-    ```yaml
+```yaml
     hostname = "api_node_1"
-    ```
+```
 
 Search for the "outputs.influxdb" and update URL and database name for the InfluxDB:
 
-    ```yaml
+```yaml
     [[outputs.influxdb]]
     urls = ["http://<influxdb_host>:8086"]
     database = "telegraf"
-    ```
+```
 
 Search for the "inputs.docker" and update next configs(should be uncommented each value which you need to add to the monitoring):
 
-    ```yaml
+```yaml
     [[inputs.docker]]
     endpoint = "unix://var/run/docker.sock"
     perdevice_include = ["cpu"]
     total_include = ["cpu", "blkio", "network"]
-    ```
+```
 
 Search for the "inputs.net" for adding the network metrics to the monitoring. Uncomment only the plugin name:
 
-    ```yaml
+```yaml
     [[inputs.net]]
-    ```
+```
 
 Save changes, close "telegraf.conf" and start telegraf service:
 
-    ```yaml
+```yaml
     sudo systemctl enable --now telegraf
-    ```
+```
 
 Check the status(should be green and in active running status):
 
-    ```yaml
+```yaml
     sudo systemctl status telegraf
-    ```
+```
 
 In case of errors _"E! [inputs.docker] Error in plugin: Got permission denied while trying to connect to the Docker daemon socket at unix://var/run/docker.sock Permission denied"_
 
 Need to add permissions to the _/var/run/docker.sock_:
 
-    ```yaml
+```yaml
     sudo chmod 666 /var/run/docker.sock
-    ```
+```
 
 ### PGHero - simple monitoring dashboard for PostgreSQL
 
@@ -140,19 +145,19 @@ Need to add permissions to the _/var/run/docker.sock_:
 
 In the database settings(for RDS database - in parameter group) add/change the following parameters:
 
-    ```yaml
+```yaml
     shared_preload_libraries = 'pg_stat_statements'
     pg_stat_statements.track = all
     pg_stat_statements.max = 10000
     track_activity_query_size = 2048
-    ```
+```
 
 Restart the database or reboot the RDS instance.
 As a superuser from the psql console, run:
 
-    ```yaml
+```yaml
     CREATE extension pg_stat_statements;
-    ```
+```
 
 **How to configure historical query stats**
 
@@ -160,7 +165,7 @@ To track query stats over time, create a table to store them.
 
 Execute the following query for table creation:
 
-    ```yaml
+```yaml
     CREATE TABLE "pghero_query_stats" (
     "id" bigserial primary key,
     "database" text,
@@ -171,26 +176,25 @@ Execute the following query for table creation:
     "calls" bigint,
     "captured_at" timestamp
     );
-    ```
+```
 
 Build index on the created table:
 
-    ```yaml
+```yaml
     CREATE INDEX ON "pghero_query_stats" ("database", "captured_at");
-    ```
+```
 
 Include the following to the installation string to schedule the task to run every 5 minutes:
 
-    ```yaml
+```yaml
     bin/rake pghero:capture_query_stats
-    ```
+```
 
 The query stats table can grow large over time. Remove old stats with:
 
-    ```yaml
+```yaml
     bin/rake pghero:clean_query_stats
-    ```
-
+```
 
 
 

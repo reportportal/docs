@@ -5,7 +5,7 @@ sidebar_label: Upload Quality Gate to ReportPortal
 
 # Upload Quality Gate to ReportPortal
 
-The default configuration of ReportPortal doesn't contain Quality Gate. For adding this feature, you need to [receive a link to the .jar file from ReportPortal](# How to install Quality Gates).
+The default configuration of ReportPortal doesn't contain Quality Gate. For adding this feature, you need to [receive a link to the .jar file from ReportPortal](/quality-gates/HowToInstallQualityGates).
 
 Download the .jar file and upload it to ReportPortal. Fo that pleases perform, following actions:
 

@@ -23,7 +23,7 @@ The plugin provides a mechanism to exchange information between ReportPortal and
     - last name
     - full name (instead first and last name)
 
->**NOTE**: There are detailed manuals for configuration of [Azure SAML](https://reportportal.io/docs/Azure-SAML) and [Okta SAML](https://reportportal.io/docs/Okta-SAML).
+>**NOTE**: There are detailed manuals for configuration of [Azure SAML](./AzureSAML) and [Okta SAML](./OktaSAML).
 
 ## Add integration
 

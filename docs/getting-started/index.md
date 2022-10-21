@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-sidebar_label: Getting Started with Report Portal
+sidebar_label: Getting Started with ReportPortal
 ---
 
-# Getting Started with Report Portal
+# Getting Started with ReportPortal
 
 You have decided to get started with the ReportPortal. So what are your next steps?
 
@@ -26,12 +26,11 @@ Or you can use a button "Login with GitHub" for login.
 ### I want to deploy my ReportPortal instance 
 
 Visit our detailed documentation on how deploy ReportPortal:
-* [with Kubernetes](https://reportportal.io/docs/Deploy-with-Kubernetes)
-* [with Docker](https://reportportal.io/docs/Deploy-with-Docker)
-* [with Docker on Windows](https://reportportal.io/docs/Deploy-with-Docker%3Edeploy-reportportal-with-docker-on-windows)
-* [with without Docker](https://reportportal.io/docs/Deploy-ReportPortal-without)
+* [with Kubernetes](/installation-steps/DeployReportPortalKubernetes)
+* [with Docker on Linux/Mac](/installation-steps/DeployReportPortalDocker)
+* [with Docker on Windows](/installation-steps/DeployWithDockerWindows)
 
-Please also check the [technical requirements for your system](https://reportportal.io/docs/Optimal-Performance-Hardware)
+Please also check the [technical requirements for your system](/installation-steps/optimal-performance-hardware-setup)
 
 ## Novice user in ReportPortal
 
@@ -43,13 +42,13 @@ We will help you to find out how everything should work.
 ### I want just look around and see how it works without any additional steps
 
 You can generate demo data that could demonstrate how the launches, filter, and dashboard will look.
-[How to generate demo data](https://reportportal.io/docs/Project-configuration%3Edemo-data)
+[How to generate demo data](/report-poral-configuration/ProjectConfiguration#demo-data)
 
 ###  I want to try to add test result to ReportPortal  
 
 You have checked demo test results, dashboards and widgets, but it is boring. And you want to see your real data in ReportPortal.
 We've got your point.
-Please check a section with [Reporting details](https://reportportal.io/docs/Log-Data-in)
+Please check a section with [Reporting details](/category/log-data-in-reportportal)
 
 ### I want to make use of ReportPortal
 
@@ -69,7 +68,7 @@ Let’s imagine that your project has 3 types of test suites:
 
 [ ![ImageName](img/getting-started-novice2.png) ](img/getting-started-novice2.png)
 
-3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action [“Make decision”](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign). There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the [“Make decision”](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign) instructions from here to get more details about it.
+3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action [“Make decision”](/analysis/Manual-Analysis). There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the [“Make decision”](/analysis/Manual-Analysis) instructions from here to get more details about it.
 
 4) Once your team fully reviews the failed results and categorizes them accordingly, you will have a list of launches with more detailed information about the actual reasons of failure. This improves the visibility of both test automation status and the state of your software under test. The actual evidence of product issues vs automation issues gives you a clear picture of product stability, test automation validity or testing environment issues. The value of your test automation is the number of test cases that failed because of product bugs versus the number of test cases that failed because of other reasons.
 
@@ -116,7 +115,7 @@ So, this chart helps to understand what your team is doing with failure categori
 
 [ ![ImageName](img/getting-started-novice13.png) ](img/getting-started-novice13.png)
 
-The chart above shows that most of the issues are marked as Product Bugs. Based on this data, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing. Moreover, ReportPortal allows you to post issues in just a few clicks using [Bug Tracking Systems plugins](https://reportportal.io/docs/Plugins).
+The chart above shows that most of the issues are marked as Product Bugs. Based on this data, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing. Moreover, ReportPortal allows you to post issues in just a few clicks using [Bug Tracking Systems plugins](/category/plugins).
 
 [ ![ImageName](img/getting-started-novice14.png) ](img/getting-started-novice14.png)
 
@@ -127,8 +126,8 @@ In case you have many Automation Bugs, put more effort into the test case stabil
 ### I want to join all my team to ReportPortal
 
 Everything is awesome, and you have already fallen in love with ReportPortal. But you want to add your QA team to work together.
-Open the link [Create a project and add members](https://reportportal.io/docs/Creation-of-project) and start your collaborative work.
-And do not forget to configure [E-mail server](https://reportportal.io/docs/E-mail-server).
+Open the link [Create a project and add members](/report-poral-configuration/CreationOfProjectAndAddingUsers) and start your collaborative work.
+And do not forget to configure [E-mail server](/plugins/EmailServer).
 
 ## Advanced user in ReportPortal
 
@@ -136,26 +135,26 @@ If you know all the basic features it is time to explore more sophisticated func
 
 ### I want ReportPortal to analyze test failures automatically
 
-Configure [Auto-Analyzer](https://reportportal.io/docs/Analysis) 
+Configure [Auto-Analyzer](/analysis/AutoAnalysisOfLaunches) 
 
 ### I want post issue to BTS from ReportPortal
 
-* [Jira Server](https://reportportal.io/docs/Jira-Server)
-* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
-* [Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
-* [Rally](https://reportportal.io/docs/Rally)
+* [Jira Server](/plugins/JiraServer)
+* [Jira Cloud](/plugins/JiraCloud)
+* [Azure DevOps](/plugins/AzureDevOpsBTS)
+* [Rally](/plugins/Rally)
 
 ### I want view video from SauceLabs in ReportPortal
-* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs)
+* [Sauce Labs](/plugins/SauceLabs)
 
 ### I want to send a test run results on the e-mail
-Configure  [E-mail server](https://reportportal.io/docs/E-mail-server). And add [notification rules](https://reportportal.io/docs/Project-configuration%3Ee-mail-notifications)
+Configure  [E-mail server](/plugins/EmailServer). And add [notification rules](/report-poral-configuration/ProjectConfiguration#e-mail-notifications)
 
 ### I want to configure Auth
 
-* [LDAP](https://reportportal.io/docs/LDAP-Auth)
-* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
+* [LDAP](/plugins/LDAPAuth)
+* [Active Directory](/plugins/ActiveDirectoryAuth)
 
 ### I want to have a beautiful report with graphs and tables
 
-Configure dashboards with [Widgets](https://reportportal.io/docs/Widget-Creation)
+Configure dashboards with [Widgets](/dashboards-and-widgets/WidgetCreation)

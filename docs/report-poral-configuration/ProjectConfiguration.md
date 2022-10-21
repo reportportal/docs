@@ -8,6 +8,7 @@ sidebar_label: Project configuration
 To see the list of available projects and open a project, click the drop-down list in the top left corner of the page.
 
 ReportPortal supports customization of the default settings.
+
 **Permission:** 
 Users with the Administrator role can edit project settings on the project "Settings" page in Management Board and on the Project space. 
 Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
@@ -26,7 +27,7 @@ The project settings are divided into five tabs: "General", "Integrations", "Not
 Report Portal allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
 
-The first one is API service back-end environment variables that are described in [Report Portal jobs configuration](https://reportportal.io/docs/Report-Portal-jobs)
+The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](./ReportPortalJobs)
 
 The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
@@ -70,7 +71,7 @@ After this period a launch will be deleted, and you can not see it in ReportPort
 
 The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
 
-For more information on this topic, please refer to [Integration with external systems](https://reportportal.io/docs/Integrations).
+For more information on this topic, please refer to [Integration with external systems](./Integrations).
 
 ### E-mail notifications
 
@@ -163,7 +164,7 @@ To create custom defect types, perform the following steps:
 Add more custom defects, if you need it. The system allows us to add up to ten subtypes of each default defect type.
 
 Now you can investigate found defects as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
-For more information refer to the [Investigation of failure](https://reportportal.io/docs/Work-with-reports>Investigation-of-failure) topic.
+For more information refer to the [Investigation of failure](/work-with-reports/InvestigationOfFailure) topic.
 
 >**Note:**
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
@@ -183,7 +184,7 @@ will be shown as "Product Bug".
 
 The "Auto-Analysis" and "Pattern analysis" tabs can allow reducing analysis routine on the project.
 
-For more information on this topic, please refer to [Analysis](https://reportportal.io/src/computeds/md/src/Analysis/index.md).
+For more information on this topic, please refer to [Analysis](/category/analysis).
 
 ### Demo data
 

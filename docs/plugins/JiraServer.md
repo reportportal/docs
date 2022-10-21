@@ -5,7 +5,7 @@ sidebar_label: Jira Server
 
 # Jira Server
 
-For Jira Server plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+For Jira Server plugin installation please check [documentation](./ManagePlugins#upload-plugin)
 
 Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 

@@ -100,18 +100,18 @@ If a user configures plugin on the **global level**, then these configurations w
 
 If the user configures a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
 
-Details on how to configure a specific plugin please find in the [Integration section](https://reportportal.io/docs/Integrations):
+Details on how to configure a specific plugin please find in the [Integration section](/report-poral-configuration/Integrations):
 
-* [integration with Jira Server](https://reportportal.io/docs/Jira-Server) 
-* [integration with Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
-* [integration with Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
-* [integration with Rally](https://reportportal.io/docs/Rally)
-* [integration with SauceLabs](https://reportportal.io/docs/Sauce-Labs)
-* [integration with E-mail server](https://reportportal.io/docs/E-mail-server)
-* [integration with LDAP](https://reportportal.io/docs/LDAP-Auth)
-* [integration with Active directory](https://reportportal.io/docs/Active-Directory-Auth)
-* [integration with Okta SAML](https://reportportal.io/docs/Okta-SAML)
-* [integration with Azure SAML](https://reportportal.io/docs/Azure-SAML)
+* [integration with Jira Server](./JiraServer) 
+* [integration with Jira Cloud](./JiraCloud)
+* [integration with Azure DevOps](./AzureDevOpsBTS)
+* [integration with Rally](./Rally)
+* [integration with SauceLabs](./SauceLabs)
+* [integration with E-mail server](./EmailServer)
+* [integration with LDAP](./LDAPAuth)
+* [integration with Active directory](./ActiveDirectoryAuth)
+* [integration with Okta SAML](./OktaSAML)
+* [integration with Azure SAML](./AzureSAML)
 
 > **Use case 1:** 
 > 

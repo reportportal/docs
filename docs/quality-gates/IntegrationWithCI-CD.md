@@ -11,7 +11,7 @@ sidebar_label: Integration with CI/CD
 
 ### Jenkins configuration
 
-1. Go to “Manage Jenkins” -> “Manage Plugins”.
+1. Go to “Manage Jenkins” -> “Manage Plugins”.
 2. Make sure that the necessary Jenkins plugin is installed:
 
 a. Switch to the “Installed” tab and search for the “Webhook Step” plugin.

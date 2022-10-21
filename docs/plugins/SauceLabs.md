@@ -5,7 +5,7 @@ sidebar_label: Sauce Labs
 
 # Sauce Labs
 
-For SauceLAbs plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+For SauceLAbs plugin installation please check [documentation](./ManagePlugins#upload-plugin)
 
 ## Add Sauce Labs integrations
 

@@ -37,7 +37,7 @@ But if you run a new version (for instance version: xxx+1), you should repeat pr
 
 ![ComponentHEalthCheckWidgetversion](img/widget-types/ComponentHealthCheckTableFeature.png)
 
-Widget logic is the same as for https://reportportal.io/docs/Component-health-check.
+Widget logic is the same as for [Component health check](./ComponentHealthCheck).
 
 [![ComponentHEalthCheckWidgetversion](img/widget-types/ComponentHealthCheckTableBuild.png)](https://youtu.be/uRCpA7zivZU)
 

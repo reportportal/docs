@@ -5,4 +5,4 @@ sidebar_label: Enterprise Features
 
 # Enterprise Features
 
-[**Quality Gates**](https://reportportal.io/docs/Quality-Gates)
+[**Quality Gates**](/category/quality-gates)
