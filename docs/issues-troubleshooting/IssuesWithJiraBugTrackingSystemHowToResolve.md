@@ -11,8 +11,11 @@ are some reasons could cause the issue.
 
 **First**, verify that the link to JIRA system is correct. There are some variants 
 are possible, for instance:
+
+```
 https://jira.company.com/jira
 https://jiraeu.company.com
+```
 
 **Second**, verify the project name is correct. Please fill in Project name field with 
 project key value, e.g. project ABC-DEF has key ABCDEF.

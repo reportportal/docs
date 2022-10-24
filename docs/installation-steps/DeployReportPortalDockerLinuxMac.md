@@ -3,7 +3,7 @@ sidebar_position: 3
 sidebar_label: Deploy with Docker on Linux/Mac
 ---
 
-# Deploy with Docker ReportPortal
+# Deploy with Docker on Linux/Mac
 
 ReportPortal can be easily deployed using Docker Compose.
 

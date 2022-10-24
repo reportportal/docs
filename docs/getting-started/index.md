@@ -27,10 +27,10 @@ Or you can use a button "Login with GitHub" for login.
 
 Visit our detailed documentation on how deploy ReportPortal:
 * [with Kubernetes](/installation-steps/DeployReportPortalKubernetes)
-* [with Docker on Linux/Mac](/installation-steps/DeployReportPortalDocker)
+* [with Docker on Linux/Mac](/installation-steps/DeployReportPortalDockerLinuxMac)
 * [with Docker on Windows](/installation-steps/DeployWithDockerWindows)
 
-Please also check the [technical requirements for your system](/installation-steps/optimal-performance-hardware-setup)
+Please also check the [technical requirements for your system](/installation-steps/OptimalPerformanceHardwareSetup)
 
 ## Novice user in ReportPortal
 
@@ -68,7 +68,7 @@ Let’s imagine that your project has 3 types of test suites:
 
 [ ![ImageName](img/getting-started-novice2.png) ](img/getting-started-novice2.png)
 
-3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action [“Make decision”](/analysis/Manual-Analysis). There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the [“Make decision”](/analysis/Manual-Analysis) instructions from here to get more details about it.
+3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action [“Make decision”](/analysis/ManualAnalysis). There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the [“Make decision”](/analysis/ManualAnalysis) instructions from here to get more details about it.
 
 4) Once your team fully reviews the failed results and categorizes them accordingly, you will have a list of launches with more detailed information about the actual reasons of failure. This improves the visibility of both test automation status and the state of your software under test. The actual evidence of product issues vs automation issues gives you a clear picture of product stability, test automation validity or testing environment issues. The value of your test automation is the number of test cases that failed because of product bugs versus the number of test cases that failed because of other reasons.
 

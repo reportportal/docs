@@ -42,9 +42,9 @@ With [**Investigated percentage of launches**](./InvestigatedPercentageOfLaunche
 
 [**Duration chart**](./LaunchesDurationChart) will be very helpful for those who track duration KPI and want to increase the speed of tests run. 
 
-[**Test growth trend chart**](./Test-casesGrowthTrendChart) shows you the speed of new test cases creation.
+[**Test growth trend chart**](./TestCasesGrowthTrendChart) shows you the speed of new test cases creation.
 
-Also, you can create [**"Most flaky test cases"**](./FlakyTestCasesTable) and [**"Most failed test case"**](./MostFailedTest-casesTable) and find the most unstable items which should be taken into account.
+Also, you can create [**"Most flaky test cases"**](./FlakyTestCasesTable) and [**"Most failed test case"**](./MostFailedTestCasesTable) and find the most unstable items which should be taken into account.
 
 Let's assume that you have a lot of test results and a lot of teams.
 

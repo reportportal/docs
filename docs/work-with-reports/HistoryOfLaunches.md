@@ -17,14 +17,14 @@ To see a table of the historical trend of executions, navigate to the "Launches"
 Report Portal acquires a lot of results and you can choose by which parameter you want the history of test results to get defined.
 There are 2 options:
 
-* by [Unique ID](./unique-id)
-* by [Test Case ID](./test-case-id) 
+* by [Unique ID](./UniqueId)
+* by [Test Case ID](./TestCaseId) 
 
 ### Difference between Test Case ID  and Unique ID
 
 Please find the description of what Test Case ID and Unique  by the links:
-* [UUID](./unique-id)
-* [Test Case ID](./test-case-id) 
+* [UUID](./UniqueId)
+* [Test Case ID](./TestCaseId) 
 
 They are both a unique identifiers of executions uniquness.
 

@@ -44,13 +44,13 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 | Track the longest launch in the filter                                           | [Launches duration chart](./LaunchesDurationChart)                         |
 | Track the passing rate and structure of problems of the latest run in the system | [Launch execution and issue statistic](./LaunchExecutionAndIssueStatistic) |
 | Track the activity of your QA team                                               | [Project activity panel](./ProjectActivityPanel)                           |
-| Track the growth of new test cases in your build                                 | [Test-cases growth trend chart](./Test-casesGrowthTrendChart)              |
+| Track the growth of new test cases in your build                                 | [Test-cases growth trend chart](./TestCasesGrowthTrendChart)              |
 | Track the speed of test failure analysis                                         | [Investigated percentage of launches](./InvestigatedPercentageOfLaunches)  |
 | Follow up information about only important launches for your team                | [Launches table](./LaunchesTable)                                          |
 | Track new BTS issues in your run                                                 | [Unique bugs table](./UniqueBugsTable)                                     |
-| Track the most unstable test cases in the build                                  | [Most failed test-cases table](./MostFailedTest-casesTable)                |
+| Track the most unstable test cases in the build                                  | [Most failed test-cases table](./MostFailedTestCasesTable)                |
 | See the trend of the number of failed test cases from build to build             | [Failed cases trend chart](./FailedCasesTrendChart)                        |
-| See the trend of the number of failed and skipped test cases from build to build | [Non-passed test-cases trend chart](./Non-passedTest-casesTrendChart)      |
+| See the trend of the number of failed and skipped test cases from build to build | [Non-passed test-cases trend chart](./NonPassedTestCasesTrendChart)      |
 | Compare two launches together                                                    | [Different launches comparison chart](./DifferentLaunchesComparisonChart)  |
 | Track passing rate for one launch                                                | [Passing rate per launch](./PassingRatePerLaunch)                          |
 | Track passing rate for the build                                                 | [Passing rate summary](./PassingRateSummary)                               |
@@ -59,4 +59,4 @@ There are 15 widget templates in ReportPortal for tracking different KPI:
 | Track the most popular failure reasons in the build                              | [Most popular pattern table (TOP-20)](./MostPopularPatternTable)           |
 | Track the passing rate of different components of your application               | [Component health check](./ComponentHealthCheck)                           |
 | Track the statistics of different components of your application                 | [Component health check (table)](./TableComponentHealthCheck)              |
-| Track the top-20 tests with longest execution time                               | [Most time-consuming test cases widget (TOP-20)](./MostTime-consumingTestCasesWidget)                        |
+| Track the top-20 tests with longest execution time                               | [Most time-consuming test cases widget (TOP-20)](./MostTimeConsumingTestCasesWidget)                        |

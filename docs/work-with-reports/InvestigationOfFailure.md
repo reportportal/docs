@@ -9,7 +9,7 @@ sidebar_label: Investigation of failure
 
 ReportPortal provides the possibility to investigate the results of your runs. The investigation includes setting the appropriate defect type of failed items, posting a defect for them or linking the ID of a defect that is already created in the bug tracking system.
 
-Using [“Make decision” modal](/analysis/Manual-Analysis#make-decision-modal-redesign), you can choose the real reason of your failure and provide a comment for this fail.
+Using [“Make decision” modal](/analysis/ManualAnalysis#make-decision-modal-redesign), you can choose the real reason of your failure and provide a comment for this fail.
 
 When a defect is found in a test, it should be investigated and proper defect type should be assigned to it, in order to have accurate test runs statistics. You will be able to change a defect type for a test and mark it as a Product Bug/Automation Bug/System Issue/No Defect at any time.
 

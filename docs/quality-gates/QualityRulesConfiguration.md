@@ -249,7 +249,7 @@ In this case, on the finish, the system will automatically analyze a launch and 
 
 #### How does the rule works
 
-For defining test uniqueness, ReportPortal uses [Test Case ID principles](https://reportportal.io/docs/Test-case-ID%3Ewhat-is-it-test-case-id).
+For defining test uniqueness, ReportPortal uses [Test Case ID principles](/work-with-reports/TestCaseId).
 
 >**Note:** For now, ReportPortal can not process items with the same Test Case ID correctly.
 

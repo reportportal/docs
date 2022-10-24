@@ -74,19 +74,19 @@ rp.reporting.async=true
 
 Async controllers have `/api/v2` prefix.
 Requests and responses have no differences with sync ones but there are some specific distinctions in the behavior that is described in 
-[reporting guide](./reporting.md).
+[reporting guide](./Reporting.md).
 
-* [Start launch](./reporting.md#start-launch)
-* [Start root(suite) item](./reporting.md#start-rootsuite-item)
-* [Start child(container) item](./reporting.md#start-childcontainer-item)
-* [Start child(step) item](./reporting.md#start-childstep-item)
-* [Finish child item](./reporting.md#finish-child-item)
-* [Finish parent(container) item](./reporting.md#finish-parentcontainer-item)
-* [Save single log without attachment](./reporting.md#save-single-log-without-attachment)
-* [Batch save logs](./reporting.md#batch-save-logs)
-* [Save launch log](./reporting.md#save-launch-log)
-* [Finish root(suite) item](./reporting.md#finish-rootsuite-item)
-* [Finish launch](./reporting.md#finish-launch)
+* [Start launch](./Reporting.md#start-launch)
+* [Start root(suite) item](./Reporting.md#start-rootsuite-item)
+* [Start child(container) item](./Reporting.md#start-childcontainer-item)
+* [Start child(step) item](./Reporting.md#start-childstep-item)
+* [Finish child item](./Reporting.md#finish-child-item)
+* [Finish parent(container) item](./Reporting.md#finish-parentcontainer-item)
+* [Save single log without attachment](./Reporting.md#save-single-log-without-attachment)
+* [Batch save logs](./Reporting.md#batch-save-logs)
+* [Save launch log](./Reporting.md#save-launch-log)
+* [Finish root(suite) item](./Reporting.md#finish-rootsuite-item)
+* [Finish launch](./Reporting.md#finish-launch)
 
 ### Detailed scheme of interactions between RabbitMq and API
 
