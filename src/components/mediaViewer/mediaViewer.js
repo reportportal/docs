@@ -15,55 +15,67 @@
  */
 
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
-
 import './mediaViewer.css';
+
+const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
 
 const TYPE_PHOTO = "photo";
 const TYPE_VIDEO = "video";
 
-export function MediaViewer({ src, type, alt, thumbnail }) {
-    const [open, setOpen] = useState(false);
-
-    return (
-        <BrowserOnly>
-            {() => {
-                const assetSrc = useBaseUrl(thumbnail ? thumbnail : src);
-                const isVideo = type === TYPE_VIDEO;
-
-                if (type === TYPE_PHOTO) {
-                    src = useBaseUrl(src);
-                } else if (isVideo) {
-                    src = src.replace('.be/', 'be.com/embed/');
-                }
-
-                return (
-                        <>
-                            <div className={`${!isVideo ? 'media-container' : 'video-container'}` } onClick={() => setOpen(true)} >
-                                <img className={'thumbnail'} src={assetSrc} alt={alt} />
-                            </div>
-                            {open &&
-                            <div className={'preview-container'}>
-                                <ReactImageVideoLightbox
-                                    data={[
-                                        {
-                                            url: src,
-                                            type,
-                                            alt,
-                                        },
-                                    ]}
-                                    startIndex={0}
-                                    onCloseCallback={() => setOpen(false)}
-                                />
-                            </div>
-                            }
-                        </>
-                );
-            }}
-        </BrowserOnly>
-    );
+const getSrc = (obj) => {
+  return typeof obj === 'string' ? obj : obj.default;
 }
 
+export function MediaViewer({ src, type, alt, thumbnail }) {
+  const [open, setOpen] = useState(false);
 
+  return (
+    <BrowserOnly>
+      {() => {
+        const thumbnailSrc = getSrc(thumbnail || src);
+        let contentSrc = getSrc(src);
+        const isVideo = type === TYPE_VIDEO;
+
+        if (isVideo) {
+          contentSrc = contentSrc.replace('.be/', 'be.com/embed/');
+        }
+
+        return (
+          <>
+            <div className={`${!isVideo ? 'media-container' : 'video-container'}` } onClick={() => setOpen(true)} >
+              <img className={'thumbnail'} src={thumbnailSrc} alt={alt} />
+            </div>
+            {open &&
+              <div className={'preview-container'}>
+                <ReactImageVideoLightbox
+                  data={[
+                    {
+                      url: contentSrc,
+                      type,
+                      alt,
+                    },
+                  ]}
+                  startIndex={0}
+                  onCloseCallback={() => setOpen(false)}
+                />
+              </div>
+            }
+          </>
+        );
+      }}
+    </BrowserOnly>
+  );
+}
+MediaViewer.propTypes = {
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  thumbnail: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  type: PropTypes.oneOf([TYPE_PHOTO, TYPE_VIDEO]),
+  alt: PropTypes.string,
+};
+MediaViewer.defaultProps = {
+  thumbnail: '',
+  type: TYPE_PHOTO,
+  alt: '',
+};
