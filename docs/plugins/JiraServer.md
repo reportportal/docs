@@ -5,7 +5,7 @@ sidebar_label: Jira Server
 
 # Jira Server
 
-For Jira Server plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+For Jira Server plugin installation please check [documentation](./ManagePlugins#upload-plugin)
 
 Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
@@ -204,11 +204,16 @@ If you want to delete project integrations with Jira Server and link your projec
 
 ## Some tricks when you create a new connection:
 
-1. Verify that the link to the JIRA Server system is correct. There are several possible variants are possible, for instance: https://jira.company.com/jira https://jiraeu.company.com
+1. Verify that the link to the JIRA Server system is correct. There are several possible variants are possible, for instance:
 
-2. Verify the project key in JIRA Server is correct. Please fill in the Project key field with project key-value, e.g. project ABC-DEF has key ABCDEF.
+```
+https://jira.company.com/jira
+https://jiraeu.company.com
+```
 
-3. Verify the username and password data. Make sure, that the login name and not the email are in the username field. In case all the data above is correct, but the error appears again, check whether the user's credentials to JIRA Server are not expired. As far as JIRA Server sends the request in HTML format, we are not able to display the real reason for the error. To check and/or resolve the issue, please do the next steps:
+3. Verify the project key in JIRA Server is correct. Please fill in the Project key field with project key-value, e.g. project ABC-DEF has key ABCDEF.
+
+4. Verify the username and password data. Make sure, that the login name and not the email are in the username field. In case all the data above is correct, but the error appears again, check whether the user's credentials to JIRA Server are not expired. As far as JIRA Server sends the request in HTML format, we are not able to display the real reason for the error. To check and/or resolve the issue, please do the next steps:
 
     *    Open JIRA Server page
     *    Log in to JIRA Server with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
@@ -217,7 +222,7 @@ If you want to delete project integrations with Jira Server and link your projec
     *    Submit the credentials again
     *    Now try to establish the connection to JIRA Server on the ReportPortal project.
 
-4. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of a password.
+5. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of a password.
    After you have connected Jira and ReportPortal, you can choose an issue type that you will be able to add to Jira during the “Post Issue” operation.  Also, the user can add predefined fields that the user can fill.
 
 ## Post issue to Jira Server

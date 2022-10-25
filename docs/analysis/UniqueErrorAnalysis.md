@@ -66,7 +66,7 @@ In addition, there is a possibility to get **ML suggestions** for the group of s
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error_addition3.png)
 
-Also, the new Quality Gates rule – [“New Errors”](https://reportportal.io/docs/Quality-Rules-Configuration%3Enew-errors-in-the-run) – was implemented based on the “Unique Error analysis” functionality. This rule helps to identify if there are new unique errors in the current launch by comparing it to another specified launch.
+Also, the new Quality Gates rule – [“New Errors”](/quality-gates/QualityRulesConfiguration#new-errors-in-the-run) – was implemented based on the “Unique Error analysis” functionality. This rule helps to identify if there are new unique errors in the current launch by comparing it to another specified launch.
 
 To summarize, ReportPortal got the following benefits thanks to the “Unique Error analysis” functionality:
 

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-sidebar_label: Report Portal jobs configuration
+sidebar_label: ReportPortal jobs configuration
 ---
 
-# Report Portal jobs configuration
+# ReportPortal jobs configuration
 
 Currently, Report Portal has 5 configurable jobs for data removing:
 * Clean launches

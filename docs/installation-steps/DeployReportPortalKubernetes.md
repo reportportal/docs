@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-sidebar_label: Deploy with Kubernetes ReportPortal
+sidebar_label: Deploy with Kubernetes
 ---
 
-# Deploy with Kubernetes ReportPortal
+# Deploy with Kubernetes
 
 We use Helm package manager charts to bootstrap a ReportPortal deployment on a Kubernetes cluster  
 

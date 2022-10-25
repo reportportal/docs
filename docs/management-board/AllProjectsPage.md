@@ -56,11 +56,11 @@ All Projects page allows:
 
 ## Create projects
 
-To create a project, please refer to [Creation of project and adding users](/docs/Getting Started/Creation of Project and Adding Users)
+To create a project, please refer to [Creation of project and adding users](/report-poral-configuration/CreationOfProjectAndAddingUsers)
 
 ## Modify project settings
 
-To modify project settings please refer to [Project Configuration](https://reportportal.io/docs/Project-configuration)
+To modify project settings please refer to [Project Configuration](/report-poral-configuration/ProjectConfiguration)
 
 ## Add user on All Projects' "Members" page
 

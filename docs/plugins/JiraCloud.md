@@ -5,7 +5,7 @@ sidebar_label: Jira Cloud
 
 # Jira Cloud
 
-For Jira Cloud plugin installation please check [documentation](https://reportportal.io/docs/Plugins%3Eupload-plugin)
+For Jira Cloud plugin installation please check [documentation](./ManagePlugins#upload-plugin)
 
 Integration with the JIRA Cloud can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and the JIRA Cloud, such as posting issues and linking issues, getting updates on their statuses.
 
