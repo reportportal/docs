@@ -11,7 +11,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Getting started](/getting-started/)  
 [User account](/category/user-account)  
 [Log data in ReportPortal](/category/log-data-in-reportportal)  
-[Logging Integration](/report-poral-configuration/Integrations)  
+[Logging Integration]( /report-poral-configuration/IntegrationsViaPlugin)  
 [Saved searches (Filters)](/category/saved-searches-filters)   
 [Dashboards and Widgets](/category/dashboards-and-widgets)  
 [Management Board](/category/management-board)  
@@ -32,7 +32,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Dashboards and Widgets](/category/dashboards-and-widgets)  
 [User account](/category/user-account)  
 [Log data in ReportPortal](/category/log-data-in-reportportal)  
-[Logging Integration](/report-poral-configuration/Integrations)  
+[Logging Integration](/report-poral-configuration/IntegrationsViaPlugin)  
 
 ## Operator
 [Work with reports](/category/work-with-reports)  
