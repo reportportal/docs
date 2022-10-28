@@ -100,7 +100,7 @@ If a user configures plugin on the **global level**, then these configurations w
 
 If the user configures a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
 
-Details on how to configure a specific plugin please find in the [Integration section](/report-poral-configuration/Integrations):
+Details on how to configure a specific plugin please find in the [Integration section](/report-poral-configuration/IntegrationsViaPlugin):
 
 * [integration with Jira Server](./JiraServer) 
 * [integration with Jira Cloud](./JiraCloud)
