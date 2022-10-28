@@ -17,6 +17,8 @@ While failed tests allow you to understand what is broken, “Unique Error analy
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error1.png)
 
+## “Include/exclude numbers” settings
+
 There are 2 settings: “include/exclude numbers” – it depends if you decide that numbers in error logs have significant value for analysis or not.
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error2.png)
@@ -39,6 +41,8 @@ There you can see a list with groups of error logs. You can expand a group to ch
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error_addition1.png)
 
+## How to run “Unique error analysis” manually
+
 >**NOTE: **
 You can also run “Unique error analysis” manually from any item level in case auto analysis is set OFF. Please, follow the steps below: 
 
@@ -48,7 +52,9 @@ You can also run “Unique Error analysis” from the menu next to a particular 
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error8.png)
 
-Let’s consider some examples with the same Unique Errors but with different include/exclude numbers settings. 
+## Examples with “Include/exclude numbers” settings
+
+Let’s consider some examples with the same Unique Errors but with different include/exclude numbers settings.
  
 We have 2 errors with identical text, but the difference is numeric value in the first error. 
  
@@ -59,6 +65,8 @@ We have 2 errors with identical text, but the difference is numeric value in the
 2. An example with **“Exclude numbers from analyzed logs”** setting. As you can see, error with numeric value is not displayed:
 
 ![ImageName](img/UniqueErrorAnalysis/unique_error10.png)
+
+## How to get ML suggestions for the group of steps
 
 In addition, there is a possibility to get **ML suggestions** for the group of steps. It speeds up the process of analyzing failed tests and assigning defect types by several times.
 

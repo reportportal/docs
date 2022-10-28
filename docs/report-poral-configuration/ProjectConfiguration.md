@@ -71,7 +71,7 @@ After this period a launch will be deleted, and you can not see it in ReportPort
 
 The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
 
-For more information on this topic, please refer to [Integration with external systems](./Integrations).
+For more information on this topic, please refer to [Integration with external systems](./IntegrationsViaPlugin).
 
 ### E-mail notifications
 

@@ -152,8 +152,8 @@ Configure  [E-mail server](/plugins/EmailServer). And add [notification rules](/
 
 ### I want to configure Auth
 
-* [LDAP](/plugins/LDAPAuth)
-* [Active Directory](/plugins/ActiveDirectoryAuth)
+* [LDAP](/report-poral-configuration/authorization/LDAP)
+* [Active Directory](/report-poral-configuration/authorization/ActiveDirectory)
 
 ### I want to have a beautiful report with graphs and tables
 

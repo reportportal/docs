@@ -108,10 +108,10 @@ Details on how to configure a specific plugin please find in the [Integration se
 * [integration with Rally](./Rally)
 * [integration with SauceLabs](./SauceLabs)
 * [integration with E-mail server](./EmailServer)
-* [integration with LDAP](./LDAPAuth)
-* [integration with Active directory](./ActiveDirectoryAuth)
-* [integration with Okta SAML](./OktaSAML)
-* [integration with Azure SAML](./AzureSAML)
+* [integration with LDAP](../report-poral-configuration/authorization/LDAP.md)
+* [integration with Active directory](../report-poral-configuration/authorization/ActiveDirectory.md)
+* [integration with Okta SAML](../report-poral-configuration/authorization/SAML/OktaSAML.md)
+* [integration with Azure SAML](../report-poral-configuration/authorization/SAML/AzureSAML.md)
 
 > **Use case 1:** 
 > 
