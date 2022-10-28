@@ -1,9 +1,8 @@
 ---
-sidebar_position: 6
-sidebar_label: SAML Plugin
+sidebar_label: SAML
 ---
 
-# SAML Plugin
+# SAML provider
 
 This plugin allows you to configure a connection with a SAML provider.
 
@@ -82,7 +81,7 @@ URL that provides data with information about SAML Provider.
 
 ***Email***
 
-Attribute name from SAML metadata which contains an user email. 
+Attribute name from SAML metadata which contains an user email.
 
 ```xml
 <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"> 

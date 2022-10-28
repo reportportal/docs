@@ -1,11 +1,10 @@
 ---
-sidebar_position: 7
 sidebar_label: Okta SAML
 ---
 
 # Okta SAML
 
-[![SAML configuration](img/saml/saml.png)](https://youtu.be/ljXvCVWG4mQ)
+[![SAML configuration](../../../plugins/img/saml/saml.png)](https://youtu.be/ljXvCVWG4mQ)
 
 To set up access with SAML:
 

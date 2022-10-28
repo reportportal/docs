@@ -1,9 +1,9 @@
 ---
 sidebar_position: 6
-sidebar_label: Integrations
+sidebar_label: Integration via plugin
 ---
 
-# Integrations
+# Integration via plugin
 
 Users can reinforce ReportPortal with adding additional integrtions with:
 
@@ -15,10 +15,10 @@ Users can reinforce ReportPortal with adding additional integrtions with:
 * [Azure DevOps](/plugins/AzureDevOpsBTS)
 * [Sauce Labs](/plugins/SauceLabs)
 * [E-mail server](/plugins/EmailServer)
-* [LDAP](/plugins/LDAPAuth)
-* [Active Directory](/plugins/ActiveDirectoryAuth)
-* [Okta SAML](/plugins/OktaSAML)
-* [Azure SAML](/plugins/AzureSAML)
+* [LDAP](/report-poral-configuration/authorization/LDAP)
+* [Active Directory](/report-poral-configuration/authorization/ActiveDirectory)
+* [Okta SAML](/report-poral-configuration/authorization/SAML/OktaSAML)
+* [Azure SAML](/report-poral-configuration/authorization/SAML/AzureSAML)
 
 If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](/category/plugins).
 

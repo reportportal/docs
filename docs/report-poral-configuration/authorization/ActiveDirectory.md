@@ -1,9 +1,8 @@
 ---
-sidebar_position: 11
-sidebar_label: Active Directory Auth
+sidebar_label: Active Directory
 ---
 
-# Active Directory Auth
+# Active Directory Authorization
 
 To set up access with Active Directory:
 
