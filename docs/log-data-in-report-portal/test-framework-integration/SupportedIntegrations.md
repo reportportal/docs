@@ -48,7 +48,7 @@ Choose which combination of agent, client, and logger you need, and then follow 
 
 Please find the full list of available integrations with test frameworks in our [GitHub repositories](https://github.com/reportportal).
 
-If you need further guidelines, you can explore our [Developers guides](/log-data-in-report-portal/DevelopersGuides).
+If you need further guidelines, you can explore our [Developers guides](/category/developers-guides).
 
 What you can do if you can not find your Test Framework?
 You can create custom integrations. To get started, please look at our [Implement own Integration](/log-data-in-report-portal/ImplementOwnIntegration) page.
