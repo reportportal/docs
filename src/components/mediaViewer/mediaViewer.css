@@ -49,13 +49,18 @@
 
 .preview-container {
   position: fixed;
-  z-index: 1000;
+  z-index: 200;
 }
 
 .preview-container > div {
-  background-color: rgba(0, 0, 0, 0.9) !important;;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.preview-container > div > div {
+  z-index: 1;
 }
 
 .thumbnail {
-  max-height: 500px;
+  height: auto;
+  width: 100%;
 }

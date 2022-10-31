@@ -24,8 +24,8 @@ const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
 const TYPE_PHOTO = "photo";
 const TYPE_VIDEO = "video";
 
-const getSrc = (obj) => {
-  return typeof obj === 'string' ? obj : obj.default;
+const getSrc = (src) => {
+  return typeof src === 'string' ? src : src.default;
 }
 
 export function MediaViewer({ src, type, alt, thumbnail }) {
@@ -34,17 +34,17 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
   return (
     <BrowserOnly>
       {() => {
-        const thumbnailSrc = getSrc(thumbnail || src);
         let contentSrc = getSrc(src);
+        const thumbnailSrc = thumbnail ? getSrc(thumbnail) : contentSrc;
         const isVideo = type === TYPE_VIDEO;
 
-        if (isVideo) {
+        if (isVideo && contentSrc.includes('youtu.be/')) {
           contentSrc = contentSrc.replace('.be/', 'be.com/embed/');
         }
 
         return (
           <>
-            <div className={`${!isVideo ? 'media-container' : 'video-container'}` } onClick={() => setOpen(true)} >
+            <div className={`${isVideo ? 'video-container' : 'media-container'}`} onClick={() => setOpen(true)} >
               <img className={'thumbnail'} src={thumbnailSrc} alt={alt} />
             </div>
             {open &&
