@@ -44,7 +44,7 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
 
         return (
           <>
-            <div className={`${isVideo ? 'video-container' : 'media-container'}`} onClick={() => setOpen(true)} >
+            <div className={isVideo ? 'video-container' : 'media-container'} onClick={() => setOpen(true)} >
               <img className={'thumbnail'} src={thumbnailSrc} alt={alt} />
             </div>
             {open &&
