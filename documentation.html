@@ -38,109 +38,155 @@ cutting edge technologies such as:</p>
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/WhatIsReportPortal/index.md"></div>
-  <h1 id="getting-started-with-report-portal">Getting Started With Report Portal</h1>
-<p>You have decided to get started with the ReportPortal. So what are your next steps?</p>
-<p>This article helps you to navigate through the report portal documentation as a real guru and discover all capabilities of this tool.</p>
-<p>So choose what you want to do firstly and get started with ReportPortal.</p>
-<h2 id="a-user-without-reportportal-instance">A user without ReportPortal instance</h2>
-<h3 id="i-want-to-explore-reportportal-without-any-installation-steps">I want to explore ReportPortal without any installation steps</h3>
-<p>It is easy! Just visit our Demo instance and use for login default credentials:</p>
-<pre><code class="language-html">login: default
+  <h1 id="tutorial-learn-how-reportportal-works">Tutorial: Learn how ReportPortal works</h1>
+<h2 id="overview">Overview</h2>
+<p>The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you&#39;ll learn how to use ReportPortal features and how to get the most out of them, as well as expert tips for using ReportPortal.</p>
+<h2 id="how-to-explore-reportportal-without-installation">How to explore ReportPortal without installation</h2>
+<p>One day you found ReportPortal which promises to simplify the analysis of failed tests and bring many more benefits.</p>
+<p>“Really? I don’t believe it”, – your first reaction.</p>
+<p>Do you just want to see how Reportportal works to make sure you need it? It is easy! Just visit our <a href="https://demo.reportportal.io/ui/">Demo instance</a> and use default credentials for login:</p>
+<pre><code>login: default
+
 password: 1q2w3e</code></pre>
-<p>Or you can use a button &quot;Login with GitHub&quot; for login.</p>
-<h3 id="i-want-to-deploy-my-reportportal-instance">I want to deploy my ReportPortal instance</h3>
-<p>Visit our detailed documentation on how deploy ReportPortal:</p>
+<p>Or you can use a button &quot;Login with GitHub&quot; to login.</p>
+<h2 id="how-to-deploy-reportportal-instance">How to deploy ReportPortal instance</h2>
+<p>You tried the demo session. You are impressed with ReportPortal features / possibilities and decided to install a ReportPortal. Excellent! Visit our detailed documentation on how deploy ReportPortal:</p>
 <ul>
 <li><a href="https://reportportal.io/docs/Deploy-with-Kubernetes">with Kubernetes</a></li>
 <li><a href="https://reportportal.io/docs/Deploy-with-Docker">with Docker</a></li>
 <li><a href="https://reportportal.io/docs/Deploy-with-Docker%3Edeploy-reportportal-with-docker-on-windows">with Docker on Windows</a></li>
-<li><a href="https://reportportal.io/docs/Deploy-ReportPortal-without">with without Docker</a></li>
 </ul>
 <p>Please also check the <a href="https://reportportal.io/docs/Optimal-Performance-Hardware">technical requirements for your system</a></p>
-<h2 id="novice-user-in-reportportal">Novice user in ReportPortal</h2>
-<p>You have deployed ReportPortal and login as a &#39;superadmin&#39; (or &#39;default&#39;) user. You can see an empty &#39;superadmin_personal&#39; project... And magic did not happen. </p>
-<p>&quot;Hmmm... What should I do the next?&quot; - you may think.
-We will help you to find out how everything should work.</p>
-<h3 id="i-want-just-look-around-and-see-how-it-works-without-any-additional-steps">I want just look around and see how it works without any additional steps</h3>
-<p>You can generate demo data that could demonstrate how the launches, filter, and dashboard will look.
-<a href="https://reportportal.io/docs/Project-configuration%3Edemo-data">How to generate demo data</a></p>
-<h3 id="i-want-to-try-to-add-test-result-to-reportportal">I want to try to add test result to ReportPortal</h3>
-<p>You have checked demo test results, dashboards and widgets, but it is boring. And you want to see your real data in ReportPortal.
-We&#39;ve got your point.
-Please check a section with <a href="https://reportportal.io/docs/Log-Data-in">Reporting details</a></p>
-<h3 id="i-want-to-make-use-of-reportportal">I want to make use of ReportPortal</h3>
-<p>So far you have your launches successfully sent to ReportPortal. Next step is to triage failures to understand actual state of your product.</p>
-<p>Let’s imagine that your project has 3 types of test suites:</p>
-<ul>
-<li><strong>Daily Smoke Suite</strong> is running on a daily basis,</li>
-<li><strong>Weekly Full Regression Suite</strong> is running every weekend,</li>
-<li><strong>API Tests</strong> are running after each commit.</li>
-</ul>
-<p>1) In the ReportPortal on “Launches” Tab you will see a list of corresponding launches. Each launch can be associated with a CI job or a testing session. Every launch will show you the statistics of Total, Passed, Failed or Skipped test cases. All failed (and skipped) test cases are initially marked with <strong>“To investigate”</strong> flag. Such test cases require the attention of an engineer in order to investigate the root cause of the failure.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice1.png" alt="ImageName"> </a></p>
-<p>2) To distinguish executions by type and focus only on required or related to your team today, you can use filters. Filters have “tab” capabilities, so you can easily navigate between different selections. You can filter by launch name, description, a number of failed or passed test cases and attributes.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice2.png" alt="ImageName"> </a></p>
-<p>3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision”</a>. There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision”</a> instructions from here to get more details about it.</p>
-<p>4) Once your team fully reviews the failed results and categorizes them accordingly, you will have a list of launches with more detailed information about the actual reasons of failure. This improves the visibility of both test automation status and the state of your software under test. The actual evidence of product issues vs automation issues gives you a clear picture of product stability, test automation validity or testing environment issues. The value of your test automation is the number of test cases that failed because of product bugs versus the number of test cases that failed because of other reasons.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice4.png" alt="ImageName"> </a></p>
-<p>5) Now, for the next step, let’s visualize your data for the entire team and managers. Since managers love charts, let’s build some self-updated charts! And let them see the actual statistics and value of your test automation along with you, at any given moment of the time, since dashboards and widgets will be updated in real-time as well.</p>
-<p>The best widgets to start from could be:</p>
-<ul>
-<li>Investigated percentage – How well does the QA team analyze failures?</li>
-<li>Overall statistics – What is the overall distribution of failure reasons inside the execution?</li>
-</ul>
-<p>In order to make it, the first step is to create a Dashboard.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice5.png" alt="ImageName"> </a></p>
-<p>6) Then pick a widget you need from a list of ready-to-go templates:</p>
-<p>We recommend starting with the <strong>“Investigated percentage of launches”</strong> chart. Once you selected a template, you should select a filtering basis, which will filter out the data of executions you want to focus on.</p>
-<p>The filter can be created on the &quot;Launches&quot; tab (see the screenshot for step#2) or right during the widget creation.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice6.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice7.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice8.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice9.png" alt="ImageName"> </a></p>
-<p>What we can see with this chart?</p>
-<p>There are 2 launches that meet the conditions of our filter. The first launch is completely analyzed, and the second one still requires the attention of the QA team. If the triaging process is still in progress, then it’s all right, just give them some time. But if you know that the process of triaging (categorization) is completed, and you still have a few test cases with no resolution, then it’s a point of discussion with your team.</p>
-<p>So, this chart helps to understand what your team is doing with failure categorization.</p>
-<p>7) Once the work with triaging is done, you can consider this launch for detailed information. For instance,  you can create another widget with the summary – <strong>“Overall statistics”</strong> widget.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice10.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice10.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice11.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice11.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice12.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice12.png" alt="ImageName"> </a></p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice13.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice13.png" alt="ImageName"> </a></p>
-<p>The chart above shows that most of the issues are marked as Product Bugs. Based on this data, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing. Moreover, ReportPortal allows you to post issues in just a few clicks using <a href="https://reportportal.io/docs/Plugins">Bug Tracking Systems plugins</a>.</p>
-<p><a href="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice14.png"> <img src="http://reportportal.io/documentation/Images/userGuide/GettingStartedNovice/getting-started-novice14.png" alt="ImageName"> </a></p>
-<blockquote>
-<p><strong>NOTE</strong>:
-In case of many System Issues, you can ask a DevOps engineer to fix the environment or to review the testing infrastructure, and don’t waste your team&#39;s effort and time by receiving failed reports due to inconsistent environment.
-In case you have many Automation Bugs, put more effort into the test case stabilization, and convert test automation (flaky) fails into valuable test cases, which will test your application for real.</p>
-</blockquote>
-<h3 id="i-want-to-join-all-my-team-to-reportportal">I want to join all my team to ReportPortal</h3>
-<p>Everything is awesome, and you have already fallen in love with ReportPortal. But you want to add your QA team to work together.
-Open the link <a href="https://reportportal.io/docs/Creation-of-project">Create a project and add members</a> and start your collaborative work.
-And do not forget to configure <a href="https://reportportal.io/docs/E-mail-server">E-mail server</a>.</p>
-<h2 id="advanced-user-in-reportportal">Advanced user in ReportPortal</h2>
-<p>If you know all the basic features it is time to explore more sophisticated functionality.</p>
-<h3 id="i-want-reportportal-to-analyze-test-failures-automatically">I want ReportPortal to analyze test failures automatically</h3>
-<p>Configure <a href="https://reportportal.io/docs/Analysis">Auto-Analyzer</a> </p>
-<h3 id="i-want-post-issue-to-bts-from-reportportal">I want post issue to BTS from ReportPortal</h3>
-<ul>
-<li><a href="https://reportportal.io/docs/Jira-Server">Jira Server</a></li>
-<li><a href="https://reportportal.io/docs/Jira-Cloud">Jira Cloud</a></li>
-<li><a href="https://reportportal.io/docs/Azure-DevOps-BTS">Azure DevOps</a></li>
-<li><a href="https://reportportal.io/docs/Rally">Rally</a></li>
-</ul>
-<h3 id="i-want-view-video-from-saucelabs-in-reportportal">I want view video from SauceLabs in ReportPortal</h3>
-<ul>
-<li><a href="https://reportportal.io/docs/Sauce-Labs">Sauce Labs</a></li>
-</ul>
-<h3 id="i-want-to-send-a-test-run-results-on-the-e-mail">I want to send a test run results on the e-mail</h3>
-<p>Configure  <a href="https://reportportal.io/docs/E-mail-server">E-mail server</a>. And add <a href="https://reportportal.io/docs/Project-configuration%3Ee-mail-notifications">notification rules</a></p>
-<h3 id="i-want-to-configure-auth">I want to configure Auth</h3>
-<ul>
-<li><a href="https://reportportal.io/docs/LDAP-Auth">LDAP</a></li>
-<li><a href="https://reportportal.io/docs/Active-Directory-Auth">Active Directory</a></li>
-</ul>
-<h3 id="i-want-to-have-a-beautiful-report-with-graphs-and-tables">I want to have a beautiful report with graphs and tables</h3>
-<p>Configure dashboards with <a href="https://reportportal.io/docs/Widget-Creation">Widgets</a></p>
+<p>If you don’t want to deal with technical details, we will be happy to <a href="https://reportportal.io/pricing">assist you</a>.</p>
+<h2 id="how-to-invite-team-to-reportportal">How to invite Team to ReportPortal</h2>
+<p>Finally, you logged into ReportPortal. And you see just empty tabs... Looks confusing for the first step. What can we do to get started?</p>
+<p>Let’s start by inviting your team members. You can also do it as a final step, but it would be nice to investigate ReportPortal together.</p>
+<p>In order to add other users to ReportPortal you can send invitations via email. To make sure that the Email service is configured, please follow the next steps (as an admin user): <a href="https://reportportal.io/docs/E-mail-server">E-mail server configuration</a>. Once emailing is configured, you can either <a href="https://reportportal.io/docs/Creation-of-project%3Einvite-a-user-to-a-project">invite new users</a> or <a href="https://reportportal.io/docs/Creation-of-project%3Eadd-users-to-project">create a new user</a> in the project.</p>
+<p>After this step you will have emailing capabilities enabled, and several more users invited to ReportPortal.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/InviteUsers.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/InviteUsers.png" alt="ImageName"> </a></p>
+<h2 id="how-to-generate-first-data-in-reportportal">How to generate first data in ReportPortal</h2>
+<p>The main section for work with ReportPortal is Launches tab in the left menu. But Launches table is empty and it’s hard to understand what ReportPortal can do and what to do next.</p>
+<p><a href="https://reportportal.io/docs/Project-configuration%3Edemo-data">Generate demo data</a> feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/GenerateFirstData.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/GenerateFirstData.png" alt="ImageName"> </a></p>
+<p>Once generated, you will see 5 launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.</p>
+<p>Let’s understand how ReportPortal works based on demo data, and later we can return to the upload of your actual data from your testing frameworks. You can <a href="https://reportportal.io/docs/How-to-add">navigate to this section</a> right now if you wish.</p>
+<h2 id="how-to-triage-test-failures-with-reportportal">How to triage test failures with ReportPortal</h2>
+<p>So far you have Demo launches in ReportPortal. You see the list of test executions on the Launches page with Total/Passed/Failed/Skipped numbers of test cases, and some of the issues are already sorted: Product Bug, Auto Bug, System Issue. But some issues required the attention of engineers, and they are marked with the “To Investigate” flag.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/TriageTestFailures.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/TriageTestFailures.png" alt="ImageName"> </a></p>
+<p>The next step and the main goal for QA engineers is to triage failed test cases. This means opening each test case, identifying the root of the failure reason, and categorizing/associating it with a particular defect type. We call this action <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">“Make decision”</a>.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/MakeDecision.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/MakeDecision.png" alt="ImageName"> </a></p>
+<p>Based on test results, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing, if you have a lot of Product Bugs.</p>
+<p>In case of a large number of System Issues, you can ask a DevOps engineer to fix the environment or to review the testing infrastructure. Thus, you won‘t waste your team&#39;s effort and time by receiving failed reports due to an inconsistent environment.</p>
+<p>If you have a lot of Automation Bugs, put more effort into the test cases stabilization, and convert test automation (flaky) fails into valuable test cases, which will test your application for real.</p>
+<p>Moreover, you can post and link issues in just a few clicks using Bug Tracking System plugins:</p>
+<p><a href="https://reportportal.io/docs/Jira-Server">Jira Server</a></p>
+<p><a href="https://reportportal.io/docs/Jira-Cloud">Jira Cloud</a></p>
+<p><a href="https://reportportal.io/docs/Azure-DevOps-BTS">Azure DevOps</a></p>
+<p><a href="https://reportportal.io/docs/Rally">Rally</a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PostLink.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PostLink.png" alt="ImageName"> </a></p>
+<h2 id="how-to-filter-test-executions-in-reportportal">How to filter test executions in ReportPortal</h2>
+<p>To distinguish executions by type and focus only on required or related to your team today, you can use filters. Filters have “tab” capabilities, so you can easily navigate between different selections. You can filter by different criteria like launch name, description, number of failed or passed test cases, attributes, etc.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/FilterTestExecutions.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/FilterTestExecutions.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/Filters.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/Filters.png" alt="ImageName"> </a></p>
+<h2 id="how-to-add-more-attributes-for-filtering-launches-in-reportportal">How to add more attributes for filtering launches in ReportPortal</h2>
+<p>There is also a possibility to filter by attributes. You can find an example of setting attributes in your <a href="https://reportportal.io/docs/Edit-personal-information">profile</a>. You can include them in the parameters of automation, then additional attributes will appear under the Launch name, and you can filter test executions by these attributes as well.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/ProfileAttributes.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/ProfileAttributes.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/Attributes.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/Attributes.png" alt="ImageName"> </a></p>
+<h2 id="how-to-visualize-test-results-in-reportportal">How to visualize test results in ReportPortal</h2>
+<p>So, you’ve separated your own test data from others. Now let’s visualize our test results. Navigate to the Dashboards tab and open the Demo Dashboard. Here you can see basic visualizations that will help you understand the state of the product.</p>
+<p>You can also create new Dashboards. Since managers love charts, let’s practice building some self-updated charts! And let them see the actual statistics and value of your test automation along with you, at any given moment of the time, since dashboards and widgets will be updated in real-time.
+The best widget to start from is <a href="https://reportportal.io/docs/Investigated-percentage-of">Investigated percentage of launches</a> which shows how well the QA team analyzes failures.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/InvestigatedPercentage1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/InvestigatedPercentage1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/InvestigatedPercentage2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/InvestigatedPercentage2.png" alt="ImageName"> </a></p>
+<p>Once QA team categorized all issues, we can understand why automation tests fail. Create <a href="https://reportportal.io/docs/Launch-statistics-chart">Launch statistics chart</a> widget for that. It shows the reasons of failures, for example, broken environment, outdated tests, product bugs.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/LaunchStatisticsChart1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/LaunchStatisticsChart1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/LaunchStatisticsChart2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/LaunchStatisticsChart2.png" alt="ImageName"> </a></p>
+<p>The next step can be creating the <a href="https://reportportal.io/docs/Overall-statistics">Overall statistics chart</a> to define the Total test cases number and how many of them are Passed/Failed/Skipped. This widget can be applied for all launches or for the latest launches only.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/OverallStatistics1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/OverallStatistics1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/OverallStatistics2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/OverallStatistics2.png" alt="ImageName"> </a></p>
+<p>We&#39;ve reviewed basic widgets. How can I get some insights from launches? Our suggestion is to create a <a href="https://reportportal.io/docs/Flaky-test-cases">Flaky test cases</a> table to find tests that often change status from passed to failed in different launches. These unstable tests do not give any confidence. The widget allows you to identify them so that you can pay special attention to them and fix them faster.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/FlakyTests1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/FlakyTests1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/FlakyTests2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/FlakyTests2.png" alt="ImageName"> </a></p>
+<p>Next, you might want to understand how long it takes to pass each test case. <a href="https://reportportal.io/docs/Most-time-consuming-test">Most time-consuming test cases</a> widget helps to find the longest scenarios.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/MostTime1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/MostTime1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/MostTime2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/MostTime2.png" alt="ImageName"> </a></p>
+<h2 id="how-to-use-ml-power-of-reportportal">How to use ML power of ReportPortal</h2>
+<p><a href="https://reportportal.io/docs/ML-Suggestions">ML suggestions</a> feature prompts similar tests and defect types they have. In this way we don’t waste time re-reading the log but use ML hints instead.</p>
+<p>ML suggestions analysis is running every time you enter &quot;Make decision&quot; editor. ML suggestions are executed for all test items no matter what defect type they currently have.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/MLSuggestions.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/MLSuggestions.png" alt="ImageName"> </a></p>
+<h2 id="how-to-use-pattern-analysis">How to use Pattern Analysis</h2>
+<p><a href="https://reportportal.io/docs/Pattern-Analysis">Pattern Analysis</a> feature helps to find static repeating patterns within automation. For example, you know that a 404 error in your application might be caused by a specific product bug. Create the rule with a problem phrase, launch a test run, and Pattern Analysis will find all failed items which have known patterns in error logs. This allows you to draw a quick conclusion.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis2.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis3.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis4.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis5.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis6.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/PatternAnalysis6.png" alt="ImageName"> </a></p>
+<h2 id="how-to-run-auto-analysis-in-reportportal">How to run Auto-Analysis in ReportPortal</h2>
+<p>ReportPortal has <a href="https://reportportal.io/docs/Auto-Analysis-of-launches">Auto-Analysis</a> feature which makes it possible for the application to independently check and perform some of the routine tasks.</p>
+<p>When you have test executions on the Launches page, you might need to analyze them automatically using ML. You can <strong>switch ON Auto-Analysis in the settings</strong> – then it will start as soon as any launch finishes. Auto-Analysis takes a part of your routine work and defines the reason for the test item failure based on the previous launches and sets: a defect type; a link to BTS (in case it exists); comment (in case it exists). As a result, you save time, and you can create new test cases instead of analyzing test results.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis1.png" alt="ImageName"> </a></p>
+<p>You can <strong>run Auto-Analysis manually</strong> as well.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis2.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis3.png" alt="ImageName"> </a></p>
+<p>When the test item is analyzed by ReportPortal, a label “AA” is set on the test item on a Step Level.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/AutoAnalysis4.png" alt="ImageName"> </a></p>
+<h2 id="how-to-see-the-historical-trend-of-the-causes-of-falls">How to see the historical trend of the causes of falls</h2>
+<p>And now let&#39;s build a more detailed “Launch statistics chart” widget with the historical changes in tests results. So, I can see how the results of my launches have changed over time.</p>
+<p><strong>Use case</strong></p>
+<p>Goal: Create a widget to show historical changes in Passed/Failed test cases in my API tests.</p>
+<p>Follow the instructions below to create this <a href="https://reportportal.io/docs/Launch-statistics-chart">Launch statistics chart</a>.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends1.png" alt="ImageName"> </a></p>
+<p>Here you can see the historical distribution of your test results: there are Passed or Failed tests.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends2.png" alt="ImageName"> </a></p>
+<p>Instead of just Failed tests, you can see the dynamics of the total number of Product bugs, Automation bugs, System issues and No Defect.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends3.png" alt="ImageName"> </a></p>
+<p>In this way, you see the historical trend of the causes of falls.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/HistoricalTrends4.png" alt="ImageName"> </a></p>
+<h2 id="how-to-make-automated-test-results-part-of-my-pipeline">How to make automated test results part of my pipeline</h2>
+<p>ReportPortal supports Continuous Testing with built-in functionality – <a href="https://reportportal.io/docs/Quality-Gates">Quality Gates</a> (enterprise feature). Quality Gate is a set of predefined criteria that should be met in order launch run to be considered as successful.</p>
+<p>Firstly, navigate to Project settings and create a Quality Gate with the rules which will be applied to a specific launch that matches the conditions.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate2.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate3.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate4.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate5.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/QualityGate5.png" alt="ImageName"> </a></p>
+<p>Finally, configure <a href="https://reportportal.io/docs/Integration-with-CI%2FCD">integration with CI/CD</a> to send results to the pipeline.</p>
+<h2 id="how-to-use-nested-steps-and-attributes-in-reportportal">How to use nested steps and attributes in ReportPortal</h2>
+<p>Usually, you see the results of automation as a carpet of error logs, and only an automation engineer can understand what is happening inside. Adding nested steps (<a href="https://github.com/reportportal/client-java/wiki/Nested-steps">Java</a>, <a href="https://github.com/reportportal/client-Python/wiki/Nested-steps">Python</a>) allows applying a one-time change in the test code to make a logical grouping of steps and make these error logs more readable for the whole team.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/NestedSteps.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/NestedSteps.png" alt="ImageName"> </a></p>
+<p>You can also use <a href="https://github.com/reportportal/client-java/wiki/Test-item-attributes">attributes</a> on any level (launch/suite/test/step) to provide more contextual information.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/TestAttributes.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/TestAttributes.png" alt="ImageName"> </a></p>
+<h2 id="how-to-evaluate-product-health-with-reportportal">How to evaluate product health with ReportPortal</h2>
+<p>You can create a <a href="https://reportportal.io/docs/Component-health-check">“Component health check”</a> widget based on attributes to understand which components do not work well, and which areas we need to pay more attention to.</p>
+<p><strong>Use case 1</strong></p>
+<p><strong>Goal:</strong> define which features are affected by failed scenarios.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-1.png" alt="ImageName"> </a></p>
+<p>You can see scenarios on the first screenshot.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-2.png" alt="ImageName"> </a></p>
+<p>Select failed scenario to see which features were affected.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-3.png" alt="ImageName"> </a></p>
+<p>Finally, let’s see what is the priority of the failed test cases.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase1-4.png" alt="ImageName"> </a></p>
+<p><strong>Use case 2</strong></p>
+<p><strong>Goal:</strong> define the priority of failed test cases.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-1.png" alt="ImageName"> </a></p>
+<p>You can see that failures occurred in test cases with critical priority.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-2.png" alt="ImageName"> </a></p>
+<p>Select Critical to understand which operating system is having problems.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-3.png" alt="ImageName"> </a></p>
+<p>Next, select Android to see the list of features that need more attention.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-4.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase2-4.png" alt="ImageName"> </a></p>
+<p><strong>Use case 3</strong></p>
+<p><strong>Goal:</strong> define state of test cases on mobile devices.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-1.png" alt="ImageName"> </a></p>
+<p>On the screenshot below you can see that our trouble spot is Android.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-2.png" alt="ImageName"> </a></p>
+<p>You can go to the test cases level and see what problems they had.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/Tutorial/UseCase3-3.png" alt="ImageName"> </a></p>
+<h2 id="how-to-add-test-results-to-reportportal">How to add test results to ReportPortal</h2>
+<p>You have checked demo test results, dashboards and widgets. And now you want to see your real data in ReportPortal.</p>
+<p>ReportPortal is a system that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can <a href="https://reportportal.io/docs/Test-Framework-Integration">integrate ReportPortal with a Test Framework</a> or <a href="https://reportportal.io/docs/Implement-own-integration">Implement own integration</a>.</p>
 
   <div data-js-md-path="src/computeds/md/src/HowGetStartWithReportPortal/index.md"></div>
   <h1 id="installation-steps">Installation steps</h1>
@@ -717,6 +763,167 @@ volumes:
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/InstallationSteps/DeployReportPortalDocker.md"></div>
+  <h2 id="deploy-with-aws-ecs-fargate">Deploy with AWS ECS Fargate</h2>
+<p><em>(provided by contributor, not verified by RP team, please use with caution)</em></p>
+<p>ReportPortal can be deployed using AWS ECS Fargate by interpreting the <a href="https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml">docker-compose.yml</a></p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>Ensure following services are available in the chosen AWS region &amp; you have permissions to create/modify the resources.</p>
+<ol>
+<li>Elastic File System</li>
+<li>Aurora PostgreSQL Serverless RDS instance</li>
+<li>AWS EC2</li>
+<li>AWS Secrets Manager</li>
+<li>AWS Lambda</li>
+<li>AWS ECS</li>
+<li>AWS Cloudwatch</li>
+<li>AWS IAM</li>
+<li>AWS KMS</li>
+<li>Route53</li>
+</ol>
+<h3 id="deployment">Deployment</h3>
+<h4 id="elastic-file-system">Elastic File System</h4>
+<p>Create Elastic FileSystem with 2 access points i.e., for minio &amp; elasticsearch.</p>
+<h4 id="postresql-database">PostreSQL database</h4>
+<p>Create Aurora Serverless RDS PostgreSQL instance (Engine Version: 13.6) with minimum 2 ACUs and maximum 16 ACUs</p>
+<h4 id="load-balancer">Load Balancer</h4>
+<p>Create Elastic Application LoadBalancer - internal OR internet facing (based on your requirement) with following target groups</p>
+<ol>
+<li>Traefik with target as IP, port 8080 and health-check path <code>/ping</code>.</li>
+<li>Index with target as Lambda &amp; health checks disabled.</li>
+</ol>
+<p>Also, create following rules on the listener of load-balancer</p>
+<ol>
+<li>Default rule should forward requests to Traefik target group.</li>
+<li>Paths matching pattern <code>/composite/info</code>, <code>/composite/health</code>, <code>/ui</code> &amp; <code>/</code> should be forwarded to Index target group.</li>
+</ol>
+<h4 id="kms-key">KMS Key</h4>
+<p>Create a symmetric encryption KMS key with relevant permissions to manage &amp; access key.</p>
+<h4 id="secrets">Secrets</h4>
+<p>Create Secrets to store the credentials &amp; config of the components &amp; refer the values in ECS task definition environment variables section. For the encryption key choose the custom KMS key created above.</p>
+<p>Secret Structure:</p>
+<pre><code class="language-json">{   
+    &quot;app_username&quot;: &quot;foo&quot;,
+    &quot;app_password: &quot;bar&quot;
+}</code></pre>
+<p>During the ECS Task Definition creation choose valueFrom by referring the SecretsManager ARN in the environment variables section as follows
+Eg:</p>
+<pre><code class="language-json">    {
+        "<span class="attribute">name</span>": <span class="value"><span class="string">"RABBITMQ_DEFAULT_PASS"</span></span>,
+        "<span class="attribute">valueFrom</span>": <span class="value"><span class="string">"arn:aws:secretsmanager:us-east-1:XXXXXXXXX:secret:report-portal-rmq-zBcd:app_password::"</span>
+    </span>}</code></pre>
+<h4 id="iam-role">IAM Role</h4>
+<p>Create an IAM role with following permissions</p>
+<ol>
+<li>KMS encryption &amp; decryption</li>
+<li>SecretsManager Read access</li>
+<li>ECS Task creation</li>
+<li>EFS access</li>
+<li>Write access to CloudWatch log groups</li>
+</ol>
+<h4 id="security-groups">Security Groups</h4>
+<p>Create Security Groups for</p>
+<ol>
+<li>Access to application - attach to Load Balancer</li>
+<li>Access to RP components (with the default ports of apps) &amp; EFS mount (inbound rule to port 2049) - attach to all ECS task definitions.</li>
+</ol>
+<h4 id="rp-applications">RP Applications</h4>
+<p>Most of the configuration remains same for the applications as per the docker-compose.yml file except few overrides as per cloud provider. Ensure the components are deployed within VPC scope &amp; disable public IP assignment where ever applicable.</p>
+<p><strong>Migrations:</strong>
+Create Task Def for migrations &amp; just run the task to apply the database schema. Since it&#39;s a one time task there&#39;s no need to create service.</p>
+<p><strong>Minio &amp; Elasticsearch:</strong>
+Create Task Def for these components by adding Elastic File System mountpoints &amp; launch the services.</p>
+<p><strong>RabbitMQ</strong>
+Create Task Def for RabbitMQ by mapping the credentials from SecretsManager in the environment variables.</p>
+<p><strong>API, jobs, metrics-gatherer, analyzer, analyzer-train &amp; ui:</strong></p>
+<p>Create Task Def for each of these components &amp; add dockerlabel with <code>@ecs</code> suffix as per the provider.
+Eg: &quot;traefik.http.routers.api.middlewares&quot;: &quot;api-strip-prefix@ecs&quot;</p>
+<p><strong>Traefik:</strong></p>
+<p>a. Create Task Def with following configuration (Launch Type as Fargate) </p>
+<pre><code>- image: &quot;traefik:v2.4&quot;,
+- entryPoint: &quot;traefik&quot;
+- command: &quot;--providers.ecs=true&quot;, &quot;--ping=true&quot;, &quot;--ping.entrypoint=web&quot;, &quot;--providers.ecs.region=AWS_REGION&quot;,&quot;--providers.ecs.clusters=report-portal&quot;,&quot;--providers.ecs.exposedByDefault=false&quot;,&quot;--providers.ecs.refreshSeconds=60&quot;,&quot;--entrypoints.web.address=:8080&quot;,&quot;--entrypoints.traefik.address=:8081&quot;,&quot;--api.dashboard=true&quot;,&quot;--api.insecure=true&quot;,&quot;--log.level=DEBUG&quot;,&quot;--accesslog=true&quot;,&quot;--accesslog.format=json&quot;</code></pre>
+<p>b. Create ECS Service mapping to the Traefik Target Group
+c. Now inspect the logs of traefik service to see if all RP components are being picked up in the configuration from ECS provider.</p>
+<p><strong>Index:</strong>
+For some obvious reasons the index (with Ruby runtime) service couldn&#39;t run on ECS - hence ported to Lambda with Python runtime.
+Create a lambda function with 128M memory &amp; 120s timeout with following code.</p>
+<p>Add environment variable <code>TRAEFIK_SERVICES_URL</code> with the IP address of Traefik endpoint (it can be fetched from the task details. Eg: <a href="http://192.168.2.120:8081">http://192.168.2.120:8081</a>)</p>
+<p>mureq can be obtained from <a href="https://github.com/slingamn/mureq/blob/master/mureq.py">mureq.py</a> - place it beside the <code>lamda_function.py</code> file.</p>
+<pre><code class="language-python"><span class="keyword">import</span> os
+<span class="keyword">import</span> json
+<span class="keyword">import</span> mureq
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">lambda_handler</span><span class="params">(event, context)</span>:</span>
+    print(<span class="string">"-------------------EVENT BEGIN-------------------------------"</span>)
+    print(event)
+    print(<span class="string">"-------------------EVENT END-------------------------------"</span>)
+    traefik_services= mureq.get(os.environ[<span class="string">'TRAEFIK_SERVICES_URL'</span>])
+
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/composite/info'</span>:
+        rp_status = {}
+        <span class="keyword">for</span> service <span class="keyword">in</span> traefik_services.json():
+            <span class="keyword">if</span> <span class="string">"loadBalancer"</span> <span class="keyword">in</span> service:
+                app_name = service[<span class="string">'name'</span>].replace(<span class="string">'@ecs'</span>,<span class="string">''</span>)
+                app_info = mureq.get(service[<span class="string">'loadBalancer'</span>][<span class="string">'servers'</span>][<span class="number">0</span>][<span class="string">'url'</span>] + <span class="string">'/info'</span>)
+                rp_status.update({app_name: app_info.json()})
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">200</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"200 OK"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+            },
+            <span class="string">"body"</span>: json.dumps(rp_status)
+        }
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/composite/health'</span>:
+        rp_health = {}
+        <span class="keyword">for</span> service <span class="keyword">in</span> traefik_services.json():
+            <span class="keyword">if</span> <span class="string">"loadBalancer"</span> <span class="keyword">in</span> service:
+                app_name = service[<span class="string">'name'</span>].replace(<span class="string">'@ecs'</span>,<span class="string">''</span>)
+                app_health = list(service[<span class="string">'serverStatus'</span>].values())[<span class="number">0</span>]
+                rp_health.update({app_name: app_health})
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">200</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"200 OK"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+            },
+            <span class="string">"body"</span>: json.dumps(rp_health)
+        }
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/'</span>:
+        redirect_url= event[<span class="string">'headers'</span>][<span class="string">'x-forwarded-proto'</span>] + <span class="string">"://"</span> + event[<span class="string">'headers'</span>][<span class="string">'host'</span>] + <span class="string">'/ui'</span>
+        print(redirect_url)
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">301</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"301 Found"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Location"</span>: redirect_url
+            },
+            <span class="string">"body"</span>: <span class="string">""</span>
+        }
+
+    <span class="keyword">if</span> event[<span class="string">'path'</span>] == <span class="string">'/ui'</span>:
+        redirect_url= event[<span class="string">'headers'</span>][<span class="string">'x-forwarded-proto'</span>] + <span class="string">"://"</span> + event[<span class="string">'headers'</span>][<span class="string">'host'</span>] + <span class="string">'/ui/'</span>
+        print(redirect_url)
+        <span class="keyword">return</span>{
+            <span class="string">"statusCode"</span>: <span class="number">301</span>,
+            <span class="string">"statusDescription"</span>: <span class="string">"301 Found"</span>,
+            <span class="string">"isBase64Encoded"</span>: <span class="built_in">False</span>,
+            <span class="string">"headers"</span>: {
+                <span class="string">"Location"</span>: redirect_url
+            },
+            <span class="string">"body"</span>: <span class="string">""</span>
+        }</code></pre>
+<p>Now add this lambda to the Index TargetGroup created earlier.</p>
+<h4 id="dns">DNS</h4>
+<p>Add relevent DNS records in the Route53 hostedzone.</p>
+<h3 id="validation">Validation</h3>
+<p>Access the application with default credentials once the DNS record addition is propogated &amp; validate if all sections are loading without errors.</p>
+
+  <div data-js-md-path="src/md/src/InstallationSteps/DeployReportPortalECSFargate.md"></div>
   <h2 id="deploy-with-kubernetes-reportportal">Deploy with Kubernetes  ReportPortal</h2>
 <p>We use Helm package manager charts to bootstrap a ReportPortal deployment on a Kubernetes cluster  </p>
 <p>Kubernetes/Helm configs for installation ReportPortal can be find at the following link:   </p>
@@ -7004,7 +7211,7 @@ SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, use
 </blockquote>
 
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/HowToAvoidLocalExecutionReportedIntoProjectSpace.md"></div>
-  <h2 id="how-to-add-a-test-stack-trace-to-a-description-automatically">How to add a test stack trace to a description automatically</h2>
+  <h2 id="add-a-test-stack-trace-to-a-description-automatically">Add a test stack trace to a description automatically</h2>
 <p>You can make your process of a test analysis more convenient and quick by adding a description for failed tests that will include a last error message from the test log.</p>
 <p>You will not need to open an every single test to see the failure reason. With this new functionality you will see test failures reasons right in a table on All launches (step level), so that you can perform group actions to items.</p>
 <p><strong>How to activate this option:</strong></p>
