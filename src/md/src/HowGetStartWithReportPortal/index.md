@@ -1,168 +1,289 @@
-# Getting Started With Report Portal
+# Tutorial: Learn how ReportPortal works
 
-You have decided to get started with the ReportPortal. So what are your next steps?
+## Overview
 
-This article helps you to navigate through the report portal documentation as a real guru and discover all capabilities of this tool.
+The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you'll learn how to use ReportPortal features and how to get the most out of them, as well as expert tips for using ReportPortal.
 
-So choose what you want to do firstly and get started with ReportPortal.
+## How to explore ReportPortal without installation
 
+One day you found ReportPortal which promises to simplify the analysis of failed tests and bring many more benefits.
 
+“Really? I don’t believe it”, – your first reaction.
 
-## A user without ReportPortal instance
+Do you just want to see how Reportportal works to make sure you need it? It is easy! Just visit our [Demo instance](https://demo.reportportal.io/ui/) and use default credentials for login:
 
-### I want to explore ReportPortal without any installation steps
-
-It is easy! Just visit our Demo instance and use for login default credentials:
-
-```html
+```
 login: default
+
 password: 1q2w3e
 ```
-Or you can use a button "Login with GitHub" for login.
 
-### I want to deploy my ReportPortal instance 
+Or you can use a button "Login with GitHub" to login.
 
-Visit our detailed documentation on how deploy ReportPortal:
+## How to deploy ReportPortal instance
+
+You tried the demo session. You are impressed with ReportPortal features / possibilities and decided to install a ReportPortal. Excellent! Visit our detailed documentation on how deploy ReportPortal:
 * [with Kubernetes](https://reportportal.io/docs/Deploy-with-Kubernetes)
 * [with Docker](https://reportportal.io/docs/Deploy-with-Docker)
 * [with Docker on Windows](https://reportportal.io/docs/Deploy-with-Docker%3Edeploy-reportportal-with-docker-on-windows)
-* [with without Docker](https://reportportal.io/docs/Deploy-ReportPortal-without)
 
 Please also check the [technical requirements for your system](https://reportportal.io/docs/Optimal-Performance-Hardware)
 
+If you don’t want to deal with technical details, we will be happy to [assist you](https://reportportal.io/pricing).
 
+## How to invite Team to ReportPortal
 
-## Novice user in ReportPortal
+Finally, you logged into ReportPortal. And you see just empty tabs... Looks confusing for the first step. What can we do to get started?
 
-You have deployed ReportPortal and login as a 'superadmin' (or 'default') user. You can see an empty 'superadmin_personal' project... And magic did not happen. 
+Let’s start by inviting your team members. You can also do it as a final step, but it would be nice to investigate ReportPortal together.
 
-"Hmmm... What should I do the next?" - you may think.
-We will help you to find out how everything should work.
+In order to add other users to ReportPortal you can send invitations via email. To make sure that the Email service is configured, please follow the next steps (as an admin user): [E-mail server configuration](https://reportportal.io/docs/E-mail-server). Once emailing is configured, you can either [invite new users](https://reportportal.io/docs/Creation-of-project%3Einvite-a-user-to-a-project) or [create a new user](https://reportportal.io/docs/Creation-of-project%3Eadd-users-to-project) in the project.
 
+After this step you will have emailing capabilities enabled, and several more users invited to ReportPortal.
 
-### I want just look around and see how it works without any additional steps
+[ ![ImageName](Images/userGuide/Tutorial/InviteUsers.png) ](Images/userGuide/Tutorial/InviteUsers.png)
 
-You can generate demo data that could demonstrate how the launches, filter, and dashboard will look.
-[How to generate demo data](https://reportportal.io/docs/Project-configuration%3Edemo-data)
+## How to generate first data in ReportPortal
 
-###  I want to try to add test result to ReportPortal  
+The main section for work with ReportPortal is Launches tab in the left menu. But Launches table is empty and it’s hard to understand what ReportPortal can do and what to do next.
 
-You have checked demo test results, dashboards and widgets, but it is boring. And you want to see your real data in ReportPortal.
-We've got your point.
-Please check a section with [Reporting details](https://reportportal.io/docs/Log-Data-in)
+[Generate demo data](https://reportportal.io/docs/Project-configuration%3Edemo-data) feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.
 
-### I want to make use of ReportPortal
+[ ![ImageName](Images/userGuide/Tutorial/GenerateFirstData.png) ](Images/userGuide/Tutorial/GenerateFirstData.png)
 
-So far you have your launches successfully sent to ReportPortal. Next step is to triage failures to understand actual state of your product.
+Once generated, you will see 5 launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.
 
-Let’s imagine that your project has 3 types of test suites:
+Let’s understand how ReportPortal works based on demo data, and later we can return to the upload of your actual data from your testing frameworks. You can [navigate to this section](https://reportportal.io/docs/How-to-add) right now if you wish.
 
-* **Daily Smoke Suite** is running on a daily basis,
-* **Weekly Full Regression Suite** is running every weekend,
-* **API Tests** are running after each commit.
+## How to triage test failures with ReportPortal
 
-1) In the ReportPortal on “Launches” Tab you will see a list of corresponding launches. Each launch can be associated with a CI job or a testing session. Every launch will show you the statistics of Total, Passed, Failed or Skipped test cases. All failed (and skipped) test cases are initially marked with **“To investigate”** flag. Such test cases require the attention of an engineer in order to investigate the root cause of the failure.
+So far you have Demo launches in ReportPortal. You see the list of test executions on the Launches page with Total/Passed/Failed/Skipped numbers of test cases, and some of the issues are already sorted: Product Bug, Auto Bug, System Issue. But some issues required the attention of engineers, and they are marked with the “To Investigate” flag.
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice1.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice1.png)
+[ ![ImageName](Images/userGuide/Tutorial/TriageTestFailures.png) ](Images/userGuide/Tutorial/TriageTestFailures.png)
 
-2) To distinguish executions by type and focus only on required or related to your team today, you can use filters. Filters have “tab” capabilities, so you can easily navigate between different selections. You can filter by launch name, description, a number of failed or passed test cases and attributes.
+The next step and the main goal for QA engineers is to triage failed test cases. This means opening each test case, identifying the root of the failure reason, and categorizing/associating it with a particular defect type. We call this action [“Make decision”](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign).
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice2.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice2.png)
+[ ![ImageName](Images/userGuide/Tutorial/MakeDecision.png) ](Images/userGuide/Tutorial/MakeDecision.png)
 
-3) The next step and the main goal for engineers is to Triage failed test cases. This means to open each test case, identify the root of the failure reason, and categorize/associate it with a particular defect type. We call this action [“Make decision”](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign). There are 5 main groups of issues in ReportPortal: Product Bug, Automation Issue, System Issue, No Defect and To Investigate category. Please follow the [“Make decision”](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign) instructions from here to get more details about it.
+Based on test results, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing, if you have a lot of Product Bugs.
 
-4) Once your team fully reviews the failed results and categorizes them accordingly, you will have a list of launches with more detailed information about the actual reasons of failure. This improves the visibility of both test automation status and the state of your software under test. The actual evidence of product issues vs automation issues gives you a clear picture of product stability, test automation validity or testing environment issues. The value of your test automation is the number of test cases that failed because of product bugs versus the number of test cases that failed because of other reasons.
+In case of a large number of System Issues, you can ask a DevOps engineer to fix the environment or to review the testing infrastructure. Thus, you won‘t waste your team's effort and time by receiving failed reports due to an inconsistent environment.
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice4.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice4.png)
+If you have a lot of Automation Bugs, put more effort into the test cases stabilization, and convert test automation (flaky) fails into valuable test cases, which will test your application for real.
 
-5) Now, for the next step, let’s visualize your data for the entire team and managers. Since managers love charts, let’s build some self-updated charts! And let them see the actual statistics and value of your test automation along with you, at any given moment of the time, since dashboards and widgets will be updated in real-time as well.
+Moreover, you can post and link issues in just a few clicks using Bug Tracking System plugins:
 
-The best widgets to start from could be:
+[Jira Server](https://reportportal.io/docs/Jira-Server)
 
-* Investigated percentage – How well does the QA team analyze failures?
-* Overall statistics – What is the overall distribution of failure reasons inside the execution?
+[Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
 
-In order to make it, the first step is to create a Dashboard.
+[Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice5.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice5.png)
+[Rally](https://reportportal.io/docs/Rally)
 
-6) Then pick a widget you need from a list of ready-to-go templates:
+[ ![ImageName](Images/userGuide/Tutorial/PostLink.png) ](Images/userGuide/Tutorial/PostLink.png)
 
-We recommend starting with the **“Investigated percentage of launches”** chart. Once you selected a template, you should select a filtering basis, which will filter out the data of executions you want to focus on.
+## How to filter test executions in ReportPortal
 
-The filter can be created on the "Launches" tab (see the screenshot for step#2) or right during the widget creation.
+To distinguish executions by type and focus only on required or related to your team today, you can use filters. Filters have “tab” capabilities, so you can easily navigate between different selections. You can filter by different criteria like launch name, description, number of failed or passed test cases, attributes, etc.
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice6.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice6.png)
+[ ![ImageName](Images/userGuide/Tutorial/FilterTestExecutions.png) ](Images/userGuide/Tutorial/FilterTestExecutions.png)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice7.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice7.png)
+[ ![ImageName](Images/userGuide/Tutorial/Filters.png) ](Images/userGuide/Tutorial/Filters.png)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice8.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice8.png)
+## How to add more attributes for filtering launches in ReportPortal
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice9.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice9.png)
+There is also a possibility to filter by attributes. You can find an example of setting attributes in your [profile](https://reportportal.io/docs/Edit-personal-information). You can include them in the parameters of automation, then additional attributes will appear under the Launch name, and you can filter test executions by these attributes as well.
 
-What we can see with this chart?
+[ ![ImageName](Images/userGuide/Tutorial/ProfileAttributes.png) ](Images/userGuide/Tutorial/ProfileAttributes.png)
 
-There are 2 launches that meet the conditions of our filter. The first launch is completely analyzed, and the second one still requires the attention of the QA team. If the triaging process is still in progress, then it’s all right, just give them some time. But if you know that the process of triaging (categorization) is completed, and you still have a few test cases with no resolution, then it’s a point of discussion with your team.
+[ ![ImageName](Images/userGuide/Tutorial/Attributes.png) ](Images/userGuide/Tutorial/Attributes.png)
 
-So, this chart helps to understand what your team is doing with failure categorization.
+## How to visualize test results in ReportPortal
 
-7) Once the work with triaging is done, you can consider this launch for detailed information. For instance,  you can create another widget with the summary – **“Overall statistics”** widget.
+So, you’ve separated your own test data from others. Now let’s visualize our test results. Navigate to the Dashboards tab and open the Demo Dashboard. Here you can see basic visualizations that will help you understand the state of the product.
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice10.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice10.png)
+You can also create new Dashboards. Since managers love charts, let’s practice building some self-updated charts! And let them see the actual statistics and value of your test automation along with you, at any given moment of the time, since dashboards and widgets will be updated in real-time.
+The best widget to start from is [Investigated percentage of launches](https://reportportal.io/docs/Investigated-percentage-of) which shows how well the QA team analyzes failures.
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice11.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice11.png)
+[ ![ImageName](Images/userGuide/Tutorial/InvestigatedPercentage1.png) ](Images/userGuide/Tutorial/InvestigatedPercentage1.png)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice12.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice12.png)
+[ ![ImageName](Images/userGuide/Tutorial/InvestigatedPercentage2.png) ](Images/userGuide/Tutorial/InvestigatedPercentage2.png)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice13.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice13.png)
+Once QA team categorized all issues, we can understand why automation tests fail. Create [Launch statistics chart](https://reportportal.io/docs/Launch-statistics-chart) widget for that. It shows the reasons of failures, for example, broken environment, outdated tests, product bugs.
 
-The chart above shows that most of the issues are marked as Product Bugs. Based on this data, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing. Moreover, ReportPortal allows you to post issues in just a few clicks using [Bug Tracking Systems plugins](https://reportportal.io/docs/Plugins).
+[ ![ImageName](Images/userGuide/Tutorial/LaunchStatisticsChart1.png) ](Images/userGuide/Tutorial/LaunchStatisticsChart1.png)
 
-[ ![ImageName](Images/userGuide/GettingStartedNovice/getting-started-novice14.png) ](Images/userGuide/GettingStartedNovice/getting-started-novice14.png)
+[ ![ImageName](Images/userGuide/Tutorial/LaunchStatisticsChart2.png) ](Images/userGuide/Tutorial/LaunchStatisticsChart2.png)
 
->**NOTE**:
-In case of many System Issues, you can ask a DevOps engineer to fix the environment or to review the testing infrastructure, and don’t waste your team's effort and time by receiving failed reports due to inconsistent environment.
-In case you have many Automation Bugs, put more effort into the test case stabilization, and convert test automation (flaky) fails into valuable test cases, which will test your application for real.
+The next step can be creating the [Overall statistics chart](https://reportportal.io/docs/Overall-statistics) to define the Total test cases number and how many of them are Passed/Failed/Skipped. This widget can be applied for all launches or for the latest launches only.
 
+[ ![ImageName](Images/userGuide/Tutorial/OverallStatistics1.png) ](Images/userGuide/Tutorial/OverallStatistics1.png)
 
+[ ![ImageName](Images/userGuide/Tutorial/OverallStatistics2.png) ](Images/userGuide/Tutorial/OverallStatistics2.png)
 
+We've reviewed basic widgets. How can I get some insights from launches? Our suggestion is to create a [Flaky test cases](https://reportportal.io/docs/Flaky-test-cases) table to find tests that often change status from passed to failed in different launches. These unstable tests do not give any confidence. The widget allows you to identify them so that you can pay special attention to them and fix them faster.
 
+[ ![ImageName](Images/userGuide/Tutorial/FlakyTests1.png) ](Images/userGuide/Tutorial/FlakyTests1.png)
 
+[ ![ImageName](Images/userGuide/Tutorial/FlakyTests2.png) ](Images/userGuide/Tutorial/FlakyTests2.png)
 
-### I want to join all my team to ReportPortal
+Next, you might want to understand how long it takes to pass each test case. [Most time-consuming test cases](https://reportportal.io/docs/Most-time-consuming-test) widget helps to find the longest scenarios.
 
-Everything is awesome, and you have already fallen in love with ReportPortal. But you want to add your QA team to work together.
-Open the link [Create a project and add members](https://reportportal.io/docs/Creation-of-project) and start your collaborative work.
-And do not forget to configure [E-mail server](https://reportportal.io/docs/E-mail-server).
+[ ![ImageName](Images/userGuide/Tutorial/MostTime1.png) ](Images/userGuide/Tutorial/MostTime1.png)
 
+[ ![ImageName](Images/userGuide/Tutorial/MostTime2.png) ](Images/userGuide/Tutorial/MostTime2.png)
 
+## How to use ML power of ReportPortal
 
-## Advanced user in ReportPortal
+[ML suggestions](https://reportportal.io/docs/ML-Suggestions) feature prompts similar tests and defect types they have. In this way we don’t waste time re-reading the log but use ML hints instead.
 
-If you know all the basic features it is time to explore more sophisticated functionality.
+ML suggestions analysis is running every time you enter "Make decision" editor. ML suggestions are executed for all test items no matter what defect type they currently have.
 
-### I want ReportPortal to analyze test failures automatically
+[ ![ImageName](Images/userGuide/Tutorial/MLSuggestions.png) ](Images/userGuide/Tutorial/MLSuggestions.png)
 
-Configure [Auto-Analyzer](https://reportportal.io/docs/Analysis) 
+## How to use Pattern Analysis
 
-### I want post issue to BTS from ReportPortal
+[Pattern Analysis](https://reportportal.io/docs/Pattern-Analysis) feature helps to find static repeating patterns within automation. For example, you know that a 404 error in your application might be caused by a specific product bug. Create the rule with a problem phrase, launch a test run, and Pattern Analysis will find all failed items which have known patterns in error logs. This allows you to draw a quick conclusion.
 
-* [Jira Server](https://reportportal.io/docs/Jira-Server)
-* [Jira Cloud](https://reportportal.io/docs/Jira-Cloud)
-* [Azure DevOps](https://reportportal.io/docs/Azure-DevOps-BTS)
-* [Rally](https://reportportal.io/docs/Rally)
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis1.png) ](Images/userGuide/Tutorial/PatternAnalysis1.png)
 
-### I want view video from SauceLabs in ReportPortal
-* [Sauce Labs](https://reportportal.io/docs/Sauce-Labs)
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis2.png) ](Images/userGuide/Tutorial/PatternAnalysis2.png)
 
-### I want to send a test run results on the e-mail
-Configure  [E-mail server](https://reportportal.io/docs/E-mail-server). And add [notification rules](https://reportportal.io/docs/Project-configuration%3Ee-mail-notifications)
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis3.png) ](Images/userGuide/Tutorial/PatternAnalysis3.png)
 
-### I want to configure Auth
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis4.png) ](Images/userGuide/Tutorial/PatternAnalysis4.png)
 
-* [LDAP](https://reportportal.io/docs/LDAP-Auth)
-* [Active Directory](https://reportportal.io/docs/Active-Directory-Auth)
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis5.png) ](Images/userGuide/Tutorial/PatternAnalysis5.png)
 
-### I want to have a beautiful report with graphs and tables
+[ ![ImageName](Images/userGuide/Tutorial/PatternAnalysis6.png) ](Images/userGuide/Tutorial/PatternAnalysis6.png)
 
-Configure dashboards with [Widgets](https://reportportal.io/docs/Widget-Creation)
+## How to run Auto-Analysis in ReportPortal
+
+ReportPortal has [Auto-Analysis](https://reportportal.io/docs/Auto-Analysis-of-launches) feature which makes it possible for the application to independently check and perform some of the routine tasks.
+
+When you have test executions on the Launches page, you might need to analyze them automatically using ML. You can **switch ON Auto-Analysis in the settings** – then it will start as soon as any launch finishes. Auto-Analysis takes a part of your routine work and defines the reason for the test item failure based on the previous launches and sets: a defect type; a link to BTS (in case it exists); comment (in case it exists). As a result, you save time, and you can create new test cases instead of analyzing test results.
+
+[ ![ImageName](Images/userGuide/Tutorial/AutoAnalysis1.png) ](Images/userGuide/Tutorial/AutoAnalysis1.png)
+
+You can **run Auto-Analysis manually** as well.
+
+[ ![ImageName](Images/userGuide/Tutorial/AutoAnalysis2.png) ](Images/userGuide/Tutorial/AutoAnalysis2.png)
+
+[ ![ImageName](Images/userGuide/Tutorial/AutoAnalysis3.png) ](Images/userGuide/Tutorial/AutoAnalysis3.png)
+
+When the test item is analyzed by ReportPortal, a label “AA” is set on the test item on a Step Level.
+
+[ ![ImageName](Images/userGuide/Tutorial/AutoAnalysis4.png) ](Images/userGuide/Tutorial/AutoAnalysis4.png)
+
+## How to see the historical trend of the causes of falls
+
+And now let's build a more detailed “Launch statistics chart” widget with the historical changes in tests results. So, I can see how the results of my launches have changed over time.
+
+**Use case**
+
+Goal: Create a widget to show historical changes in Passed/Failed test cases in my API tests.
+
+Follow the instructions below to create this [Launch statistics chart](https://reportportal.io/docs/Launch-statistics-chart).
+
+[ ![ImageName](Images/userGuide/Tutorial/HistoricalTrends1.png) ](Images/userGuide/Tutorial/HistoricalTrends1.png)
+
+Here you can see the historical distribution of your test results: there are Passed or Failed tests.
+
+[ ![ImageName](Images/userGuide/Tutorial/HistoricalTrends2.png) ](Images/userGuide/Tutorial/HistoricalTrends2.png)
+
+Instead of just Failed tests, you can see the dynamics of the total number of Product bugs, Automation bugs, System issues and No Defect.
+
+[ ![ImageName](Images/userGuide/Tutorial/HistoricalTrends3.png) ](Images/userGuide/Tutorial/HistoricalTrends3.png)
+
+In this way, you see the historical trend of the causes of falls.
+
+[ ![ImageName](Images/userGuide/Tutorial/HistoricalTrends4.png) ](Images/userGuide/Tutorial/HistoricalTrends4.png)
+
+## How to make automated test results part of my pipeline
+
+ReportPortal supports Continuous Testing with built-in functionality – [Quality Gates](https://reportportal.io/docs/Quality-Gates) (enterprise feature). Quality Gate is a set of predefined criteria that should be met in order launch run to be considered as successful.
+
+Firstly, navigate to Project settings and create a Quality Gate with the rules which will be applied to a specific launch that matches the conditions.
+
+[ ![ImageName](Images/userGuide/Tutorial/QualityGate1.png) ](Images/userGuide/Tutorial/QualityGate1.png)
+
+[ ![ImageName](Images/userGuide/Tutorial/QualityGate2.png) ](Images/userGuide/Tutorial/QualityGate2.png)
+
+[ ![ImageName](Images/userGuide/Tutorial/QualityGate3.png) ](Images/userGuide/Tutorial/QualityGate3.png)
+
+[ ![ImageName](Images/userGuide/Tutorial/QualityGate4.png) ](Images/userGuide/Tutorial/QualityGate4.png)
+
+[ ![ImageName](Images/userGuide/Tutorial/QualityGate5.png) ](Images/userGuide/Tutorial/QualityGate5.png)
+
+Finally, configure [integration with CI/CD](https://reportportal.io/docs/Integration-with-CI%2FCD) to send results to the pipeline.
+
+## How to use nested steps and attributes in ReportPortal
+
+Usually, you see the results of automation as a carpet of error logs, and only an automation engineer can understand what is happening inside. Adding nested steps ([Java](https://github.com/reportportal/client-java/wiki/Nested-steps), [Python](https://github.com/reportportal/client-Python/wiki/Nested-steps)) allows applying a one-time change in the test code to make a logical grouping of steps and make these error logs more readable for the whole team.
+
+[ ![ImageName](Images/userGuide/Tutorial/NestedSteps.png) ](Images/userGuide/Tutorial/NestedSteps.png)
+
+You can also use [attributes](https://github.com/reportportal/client-java/wiki/Test-item-attributes) on any level (launch/suite/test/step) to provide more contextual information.
+
+[ ![ImageName](Images/userGuide/Tutorial/TestAttributes.png) ](Images/userGuide/Tutorial/TestAttributes.png)
+
+## How to evaluate product health with ReportPortal
+
+You can create a [“Component health check”](https://reportportal.io/docs/Component-health-check) widget based on attributes to understand which components do not work well, and which areas we need to pay more attention to.
+
+**Use case 1**
+
+**Goal:** define which features are affected by failed scenarios.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase1-1.png) ](Images/userGuide/Tutorial/UseCase1-1.png)
+
+You can see scenarios on the first screenshot.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase1-2.png) ](Images/userGuide/Tutorial/UseCase1-2.png)
+
+Select failed scenario to see which features were affected.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase1-3.png) ](Images/userGuide/Tutorial/UseCase1-3.png)
+
+Finally, let’s see what is the priority of the failed test cases.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase1-4.png) ](Images/userGuide/Tutorial/UseCase1-4.png)
+
+**Use case 2**
+
+**Goal:** define the priority of failed test cases.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase2-1.png) ](Images/userGuide/Tutorial/UseCase2-1.png)
+
+You can see that failures occurred in test cases with critical priority.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase2-2.png) ](Images/userGuide/Tutorial/UseCase2-2.png)
+
+Select Critical to understand which operating system is having problems.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase2-3.png) ](Images/userGuide/Tutorial/UseCase2-3.png)
+
+Next, select Android to see the list of features that need more attention.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase2-4.png) ](Images/userGuide/Tutorial/UseCase2-4.png)
+
+**Use case 3**
+
+**Goal:** define state of test cases on mobile devices.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase3-1.png) ](Images/userGuide/Tutorial/UseCase3-1.png)
+
+On the screenshot below you can see that our trouble spot is Android.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase3-2.png) ](Images/userGuide/Tutorial/UseCase3-2.png)
+
+You can go to the test cases level and see what problems they had.
+
+[ ![ImageName](Images/userGuide/Tutorial/UseCase3-3.png) ](Images/userGuide/Tutorial/UseCase3-3.png)
+
+## How to add test results to ReportPortal
+
+You have checked demo test results, dashboards and widgets. And now you want to see your real data in ReportPortal.
+
+ReportPortal is a system that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](https://reportportal.io/docs/Test-Framework-Integration) or [Implement own integration](https://reportportal.io/docs/Implement-own-integration).
