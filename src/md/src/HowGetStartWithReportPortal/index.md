@@ -53,7 +53,7 @@ The main section for work with ReportPortal is Launches tab in the left menu. Bu
 
 Once generated, you will see 5 launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.
 
-Let’s understand how ReportPortal works based on demo data, and later we can return to the upload of your actual data from your testing frameworks. You can [navigate to this section](https://reportportal.io/docs/Tutorial:-Learn-how>How-to-add) right now if you wish.
+Let’s understand how ReportPortal works based on demo data, and later we can return to the upload of your actual data from your testing frameworks. You can [navigate to this section](https://reportportal.io/docs/How-to-add) right now if you wish.
 
 ## How to triage test failures with ReportPortal
 

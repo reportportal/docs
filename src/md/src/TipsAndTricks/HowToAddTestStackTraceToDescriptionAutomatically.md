@@ -1,4 +1,4 @@
-## How to add a test stack trace to a description automatically
+## Add a test stack trace to a description automatically
 
 You can make your process of a test analysis more convenient and quick by adding a description for failed tests that will include a last error message from the test log.
 
