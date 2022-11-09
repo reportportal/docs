@@ -1,0 +1,30 @@
+---
+sidebar_position: 13
+sidebar_label: Unique bugs table
+---
+
+# Unique bugs table
+
+The widget shows real identified bugs, posted to the Bug Tracking System from ReportPortal, and existing bugs, that were added to the items on ReportPortal.
+
+**Widget's parameters:**
+
+- Filter: At least one filter is required
+- Items: 1-150. The default meaning is 10.
+
+**Widget view**
+
+The widget has a table view and bugs that are found are then sorted by the date they were posted or added.
+
+The widget has the following data displayed:
+
+- Bug ID  -  links to the issue in Bug Tracking System.
+- Found in - links to the test item, to which the bug was posted/added.
+- Submit date  - the date the bug was submitted/added. Time is displayed in 'time ago' format (i.e. "10 minutes ago"). On mouse hover, the system should display accurate action time.
+- Submitter  - user, who submitted/added the bug.
+
+<media-view src={require('./img/widget-types/uniqueBugsTable.png')} alt="uniqueBugsTable" />
+
+>**Note:**
+The bugs from launches "IN PROGRESS" are not shown on the widget.
+In case a bug is found in multiple items, all of the items will be listed in the "Found in" column.

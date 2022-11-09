@@ -1,0 +1,78 @@
+---
+sidebar_position: 6
+sidebar_label: Manual Analysis
+---
+
+# Manual Analysis
+
+Manual Analysis is presented on ReportPortal by “Make decision” modal. 
+
+## “Make decision” modal redesign 
+ 
+Redesign of the “Make decision” modal was implemented in version 5.7. This feature helps to sort out auto tests and decide: What is the problem? How can it be marked? Is it required to post issue or link issue? It became easier to use this functionality after the redesign.  
+ 
+The “Make decision” modal can be opened in three ways: 
+ 
+1) from the Step level 
+
+<media-view src={require('./img/ManualAnalysis/make_decision1.png')} alt="make_decision1" />
+
+2) via Actions
+
+<media-view src={require('./img/ManualAnalysis/make_decision2.png')} alt="make_decision2" />
+
+3) from the Log level 
+
+<media-view src={require('./img/ManualAnalysis/make_decision3.png')} alt="make_decision3" />
+
+## “Execution to change” section
+
+**“Execution to change”** section is displayed at the top left of the “Make decision” modal. It includes Step name, current defect type. Also it can have a log, a comment, a link to a Bug Tracking System (BTS), a label (AA, PA, Ignore AA) if exist. You can expand logs to understand why this step was failed.
+
+<media-view src={require('./img/ManualAnalysis/make_decision4.png')} alt="make_decision4" />
+
+## How to set a defect type and type a comment
+
+**“Select defect”** section is displayed at the top right of the “Make decision” modal. It includes “Manual selection”, “Analyzer suggestions”, “History of the test”.
+
+<media-view src={require('./img/ManualAnalysis/make_decision5.png')} alt="make_decision5" />
+
+You can **select a defect type and type a comment manually**. Selected defect type and added comment will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).
+
+<media-view src={require('./img/ManualAnalysis/make_decision6.png')} alt="make_decision6" />
+
+## How to use “Analyzer suggestions”
+
+You also can select any step from the **“Analyzer suggestions”** with a similar log. Similar log is marked with a red asterisk. Then the defect type, the comment and linked BTS ticket (if exist) of the suggested step will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).
+
+<media-view src={require('./img/ManualAnalysis/make_decision7.png')} alt="make_decision7" />
+
+## “History of the test” section
+
+You can see the **“History of the test”** – which defect type this step had in previous runs. You can select any item from the “History of the test”. Then the defect type, the comment and linked BTS ticket (if exist) of the suggested step will be applied to the current item (there is also a possibility to apply them to other items – please, have a look at “Apply for” section).
+
+<media-view src={require('./img/ManualAnalysis/make_decision8.png')} alt="make_decision8" />
+
+## How to select other steps for analysis
+
+The “Make decision” modal works not only with the current step. This feature allows to select other steps with “To Investigate” defect type which can be changed as well. For that, please, expand the **“Apply for”** section and select the needed option.
+
+<media-view src={require('./img/ManualAnalysis/make_decision9.png')} alt="make_decision9" />
+
+The **“Results will be applied for”** message is displayed at the bottom after selection. This section was added in version 5.7.
+
+<media-view src={require('./img/ManualAnalysis/make_decision10.png')} alt="make_decision10" />
+
+Now you can view all changes before applying. Expand the “Results will be applied for” section to see information about changes. You should click **“Apply”** button to apply selected changes. 
+
+<media-view src={require('./img/ManualAnalysis/make_decision11.png')} alt="make_decision11" />
+
+## Bulk update
+
+There is also a possibility for Bulk update, when the changes are applied to all selected test items.
+
+<media-view src={require('./img/ManualAnalysis/make_decision12.png')} alt="make_decision12" />
+
+<media-view src={require('./img/ManualAnalysis/make_decision13.png')} alt="make_decision13" />
+
+As you can see, “Make decision” modal is a time-saving tool for engineers.

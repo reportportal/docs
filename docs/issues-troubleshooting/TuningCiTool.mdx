@@ -1,0 +1,42 @@
+---
+sidebar_position: 1
+sidebar_label: Tuning CI tool
+---
+
+# Tuning CI tool
+
+How to provide parameters via system variables in the CI tool (for example - Jenkins)
+
+In order to provide specific parameters (Such as tags) for different
+executions that are based on the parameters loading order, you can provide them as system
+variables.
+
+To do so, follow the steps below:
+
+1. Open the Job configuration in Jenkins.  
+
+<media-view src={require('./img/tuning-ci-tool/1.png')} alt="tuning-ci-tool/1" />
+
+2. Select the "This build is parameterized" check-box.
+
+3. Click the "Add Parameter" and select "Text Parameter".  
+
+<media-view src={require('./img/tuning-ci-tool/2.png')} alt="tuning-ci-tool/2" />
+
+4. Define any name for the parameter and set the default value (note that tags should have semicolon-separated values, with no spaces).
+
+<media-view src={require('./img/tuning-ci-tool/2.png')} alt="tuning-ci-tool/3" />
+
+5. Update the execution command at the "Build" section: add ReportPortal parameters using –D for a system variable parameters. For tags it is "rp.tags":
+
+<media-view src={require('./img/tuning-ci-tool/4.png')} alt="tuning-ci-tool/4" />
+
+6. Click the "Build with Parameters" button.
+
+<media-view src={require('./img/tuning-ci-tool/5.png')} alt="tuning-ci-tool/5" />
+
+7. In the opened dialog, specify the needed parameters, using semicolons to separate values.  
+
+<media-view src={require('./img/tuning-ci-tool/6.png')} alt="tuning-ci-tool/6" />
+
+8. Then Click the "Build" button.

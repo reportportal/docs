@@ -1,0 +1,62 @@
+---
+sidebar_position: 3
+sidebar_label: Widget Creation
+---
+
+# Widget Creation
+
+Widgets - contain special graphical control elements that were designed to provide a simple and 
+easy-to-use way of displaying and analyzing your automation trends and data.
+
+The widgets can be added to dashboards on the "Dashboards" tab. Widgets will be visible within the project, they are created.
+
+## Create widget
+
+To create a new widget, perform the following steps:
+
+1. Navigate to the "All Dashboards" page and create a new dashboard or choose the existing one.
+
+2. Click the "Add New Widget" button.
+
+3. The Widget Wizard will be opened. To add a new widget, you need to pass all the required steps.
+
+    • Step 1. Select the template of the widget (detailed description is below).
+
+    • Step 2. Select a filter from the list below or create a new filter. Search functionality helps to find the filter quicker. Select other widget options: Criteria, Items, Launch or Timeline mode (if applicable for selected widget template)
+
+    • Step 3. Enter a widget name, description and share a widget (if need). 
+      A widget name should be unique for a user on the project.
+
+4. After you have completed all steps, click the "Save" button. The new widget will be added to the dashboard on the top.
+
+Widgets are automatically refreshed every minute.
+
+<media-view thumbnail={require('./img/manage-widgets/createWidget.png')} src="https://youtu.be/uRY_ihUe_oU" alt="createWidget" type="video" />
+
+## Predefined widgets types
+
+There are 15 widget templates in ReportPortal for tracking different KPI:
+
+| KPI                                                                              | Widget template                                                        |
+|----------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Track the reasons of failures                                                    | [Launch statistics chart](./LaunchStatisticsChart)                     |
+| Passing rate for filter summary, and structure of problems                       | [Overall statistics](./OverallStatistics)                              |
+| Track the longest launch in the filter                                           | [Launches duration chart](./LaunchesDurationChart)                     |
+| Track the passing rate and structure of problems of the latest run in the system | [Launch execution and issue statistic](./LaunchExecutionAndIssueStatistic) |
+| Track the activity of your QA team                                               | [Project activity panel](./ProjectActivityPanel)                       |
+| Track the growth of new test cases in your build                                 | [Test-cases growth trend chart](./TestCasesGrowthTrendChart)           |
+| Track the speed of test failure analysis                                         | [Investigated percentage of launches](./InvestigatedPercentageOfLaunches) |
+| Follow up information about only important launches for your team                | [Launches table](./LaunchesTable)                                      |
+| Track new BTS issues in your run                                                 | [Unique bugs table](./UniqueBugsTable)                                 |
+| Track the most unstable test cases in the build                                  | [Most failed test-cases table](./MostFailedTestCasesTable)             |
+| See the trend of the number of failed test cases from build to build             | [Failed cases trend chart](./FailedCasesTrendChart)                    |
+| See the trend of the number of failed and skipped test cases from build to build | [Non-passed test-cases trend chart](./NonPassedTestCasesTrendChart)    |
+| Compare two launches together                                                    | [Different launches comparison chart](./DifferentLaunchesComparisonChart) |
+| Track passing rate for one launch                                                | [Passing rate per launch](./PassingRatePerLaunch)                      |
+| Track passing rate for the build                                                 | [Passing rate summary](./PassingRateSummary)                           |
+| Find the most flakiest test in the build                                         | [Flaky test cases table (TOP-20)](./FlakyTestCasesTable)               |
+| Compare statistics for different builds on one graph                             | [Cumulative trend chart](./CumulativeTrendChart)                       |
+| Track the most popular failure reasons in the build                              | [Most popular pattern table (TOP-20)](./MostPopularPatternTable)       |
+| Track the passing rate of different components of your application               | [Component health check](./ComponentHealthCheck)                       |
+| Track the statistics of different components of your application                 | [Component health check (table)](./TableComponentHealthCheck)          |
+| Track the top-20 tests with longest execution time                               | [Most time-consuming test cases widget (TOP-20)](./MostTimeConsumingTestCasesWidget)                |

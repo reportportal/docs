@@ -1,0 +1,490 @@
+# Plugin developer guide
+
+1. [Introduction](#introduction)
+1. [How does it work](#how-does-it-work)
+1. [Creating your first plugin](#creating-your-first-plugin)
+    1. [Base plugin configuration](#base-plugin-configuration)
+    1. [Create extension](#create-extension)
+    1. [Autowire dependencies](#autowire-dependencies)
+    1. [Get file command](#get-file-command)
+    1. [Assemble plugin](#assemble-plugin)
+    1. [Event listeners](#event-listeners)
+1. [Lazy initialization](#lazy-initialization)
+
+> Documentation for the UI plugins https://github.com/reportportal/service-ui/blob/master/docs/14-plugins.md
+
+## Introduction
+
+Report Portal as a microservice application had services that integrate with external systems like JIRA or RALLY. These are problems of this
+approach:
+
+- every service will run as a separate application consuming additional amount of resources for environment;
+- user may not need all the integrations at the moment but need some (or a new one) later, so he should modify deployment configuration
+  every time;
+- every service modification requires re-deployment.
+
+To solve these problems and support dynamic integrations Report Portal implements plugin system on top
+of [PF4J](https://github.com/pf4j/pf4j).
+
+## How does it work
+
+<media-view src={require('./img/plugin/install_plugin.png')} alt="install_plugin" />
+
+## Creating your first plugin
+
+Result of the following steps can be found here - [Plugin example](https://github.com/reportportal/plugin-example).
+This is fully configured and ready-to-use plugin
+
+### Base plugin configuration
+
+We configure our build.gradle file as follows:
+
+```groovy
+plugins {
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.epam.reportportal:plugin-api:5.4.0'
+    annotationProcessor 'com.epam.reportportal:plugin-api:5.4.0'
+}
+
+task plugin(type: Jar) {
+    getArchiveBaseName().set("plugin-${pluginId}")
+    into('classes') {
+        with jar
+    }
+    into('lib') {
+        from configurations.compile
+    }
+    extension('zip')
+}
+
+task assemblePlugin(type: Copy) {
+    from plugin
+    into pluginsDir
+}
+
+task assemblePlugins(type: Copy) {
+    dependsOn subprojects.assemblePlugin
+}
+```
+
+This base configuration with `plugin-api` dependency grants access to extension points and core Report Portal dependencies.
+
+<br/>
+
+### Create extension
+
+Firstly we create our plugin representation (we also can override `start()` and `stop()` methods) that will be managed by `pf4j` plugin
+manager.
+
+```java
+package com.epam.reportportal.extension.example;
+
+import org.pf4j.Plugin;
+import org.pf4j.PluginWrapper;
+
+public class ExamplePlugin extends Plugin {
+	public ExamplePlugin(PluginWrapper wrapper) {
+		super(wrapper);
+	}
+}
+```
+
+Then we create our plugin entry point. We start with `ReportPortalExtensionPoint` implementation:
+
+```java
+
+@Extension
+public class ExampleExtension implements ReportPortalExtensionPoint {
+
+	private final Supplier<Map<String, PluginCommand<?>>> pluginCommandMapping = new MemoizingSupplier<>(this::getCommands);
+
+	public ExampleExtension(Map<String, Object> initParams) {
+
+	}
+
+	@Override
+	public Map<String, ?> getPluginParams() {
+		Map<String, Object> params = new HashMap<>();
+		params.put(ALLOWED_COMMANDS, new ArrayList<>(pluginCommandMapping.get().keySet()));
+		return params;
+	}
+
+	@Override
+	public PluginCommand<?> getCommandToExecute(String commandName) {
+		return pluginCommandMapping.get().get(commandName);
+	}
+
+	private Map<String, PluginCommand<?>> getCommands() {
+		Map<String, PluginCommand<?>> pluginCommandMapping = new HashMap<>();
+		pluginCommandMapping.put("testConnection", (integration, params) -> true);
+		return pluginCommandMapping;
+	}
+}
+```
+
+We implement `getPluginParams()` to get list of supported plugin `commands` from the client side. We implement `getCommandToExecute()` to
+get command from mapping to execute. As for now we only have `testConnection` command that implements base command interface:
+
+```java
+public interface PluginCommand<T> {
+	/**
+	 * Executes plugin command
+	 *
+	 * @param integration Configured ReportPortal integration
+	 * @param params      Plugin Command parameters
+	 * @return Result
+	 */
+	T executeCommand(Integration integration, Map<String, Object> params);
+}
+```
+
+Command `testConnection` is mandatory and should either always return `true` or execute logic of connection test with external system.
+
+<br/>
+
+### Autowire dependencies
+
+Being loaded in runtime plugin extension can be handled as `Spring bean`. That's why we can autowire dependencies just as we do in core
+application:
+
+```java
+
+@Extension
+public class ExampleExtension implements ReportPortalExtensionPoint {
+  ...
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private IntegrationTypeRepository integrationTypeRepository;
+
+	@Autowired
+	private IntegrationRepository integrationRepository;
+
+	public ExampleExtension(Map<String, Object> initParams) {
+	}
+  ...
+}      
+```
+
+<br/>
+
+### Get file command
+
+We can store in `resources` folder files that can be loaded from the client side later. During plugin installation `plugin manager` provides
+directory in the file system to store plugin resources. This directory passed through the constructor (with Map parameter) and can be
+accessed as follows:
+
+```java
+
+@Extension
+public class ExampleExtension implements ReportPortalExtensionPoint {
+
+	private final String resourcesDir;
+
+	...
+
+	public ExampleExtension(Map<String, Object> initParams) {
+		resourcesDir = IntegrationTypeProperties.RESOURCES_DIRECTORY.getValue(initParams).map(String::valueOf).orElse("");
+	}
+
+	...
+}
+```
+
+`GetFileCommand` accepts `resourcesDir` and `propertyFile` as constructor parameters. Property file should be stored in `resources` folder
+of the plugin. It contains *key-value* mapping that represents files allowed to be loaded from the client side:
+
+```properties
+icon=plugin-icon.svg
+```
+
+We created `example-binary-data.properties` file with these contents and now can access `plugin-icon.svg` file by passing `icon` key
+to `getFileCommand`.
+
+That's how our extension looks now:
+
+```java
+
+@Extension
+public class ExampleExtension implements ReportPortalExtensionPoint {
+
+	public static final String BINARY_DATA_PROPERTIES_FILE_ID = "example-binary-data.properties";
+	private final String resourcesDir;
+
+	private final Supplier<Map<String, PluginCommand<?>>> pluginCommandMapping = new MemoizingSupplier<>(this::getCommands);
+
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private IntegrationTypeRepository integrationTypeRepository;
+
+	@Autowired
+	private IntegrationRepository integrationRepository;
+
+	public ExampleExtension(Map<String, Object> initParams) {
+		resourcesDir = IntegrationTypeProperties.RESOURCES_DIRECTORY.getValue(initParams).map(String::valueOf).orElse("");
+	}
+
+	@Override
+	public Map<String, ?> getPluginParams() {
+		Map<String, Object> params = new HashMap<>();
+		params.put(ALLOWED_COMMANDS, new ArrayList<>(pluginCommandMapping.get().keySet()));
+		return params;
+	}
+
+	@Override
+	public PluginCommand<?> getCommandToExecute(String commandName) {
+		return pluginCommandMapping.get().get(commandName);
+	}
+
+	private Map<String, PluginCommand<?>> getCommands() {
+		Map<String, PluginCommand<?>> pluginCommandMapping = new HashMap<>();
+		pluginCommandMapping.put("getFile", new GetFileCommand(resourcesDir, BINARY_DATA_PROPERTIES_FILE_ID));
+		pluginCommandMapping.put("testConnection", (integration, params) -> true);
+		return pluginCommandMapping;
+	}
+}
+```
+
+<br/>
+
+### Assemble plugin
+
+Our plugin can be built either as:
+  - simple jar (without external dependencies) and use dependencies from core application;
+  - shadow jar (with external dependencies) and still use dependencies from core application.
+
+We should configure plugin jar manifest with mandatory properties:
+  - id
+  - version
+  - plugin class (class marked with @Extension - our entry point)
+
+We should configure `resource` folder contents handling.
+
+As we load api plugin contents in runtime we can do so with ui contents too. To make it possible we should modify our configuration.
+We provide new `ui.gradle` config:
+
+```groovy
+node {
+    version = '10.14.1'
+    npmVersion = '6.4.1'
+    download = true
+    workDir = file("${project.buildDir}/ui")
+    nodeModulesDir = file("${project.rootDir}/ui")
+}
+
+npm_run_build {
+    inputs.files fileTree("ui/src")
+    inputs.file 'ui/package.json'
+    inputs.file 'ui/package-lock.json'
+    outputs.dir 'ui/build'
+}
+```
+
+Load it to the main configuration as a dependency and make some changes to include generated `main.js` file to `resources` folder that
+allows us to load it using `GetFileCommand`.
+
+That's how our `build.gradle` looks now:
+
+```groovy
+import com.github.spotbugs.SpotBugsTask
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id "com.moowork.node" version "1.3.1"
+}
+
+apply from: 'ui.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.epam.reportportal:plugin-api:5.4.0'
+    annotationProcessor 'com.epam.reportportal:plugin-api:5.4.0'
+}
+
+artifacts {
+    archives shadowJar
+}
+
+sourceSets {
+    main {
+        resources
+                {
+                    exclude '**'
+                }
+    }
+}
+
+jar {
+    from("src/main/resources") {
+        into("/resources")
+    }
+    from("ui/build") {
+        into("/resources")
+    }
+    manifest {
+        attributes(
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' '),
+                "Plugin-Id": "${pluginId}",
+                "Plugin-Version": "${project.version}",
+                "Plugin-Provider": "Report Portal",
+                "Plugin-Class": "com.epam.reportportal.extension.example.ExamplePlugin",
+                "Plugin-Service": "api"
+        )
+    }
+}
+
+shadowJar {
+    from("src/main/resources") {
+        into("/resources")
+    }
+    from("ui/build") {
+        into("/resources")
+    }
+    configurations = [project.configurations.compile]
+    zip64 true
+    dependencies {
+    }
+}
+
+task plugin(type: Jar) {
+    getArchiveBaseName().set("plugin-${pluginId}")
+    into('classes') {
+        with jar
+    }
+    into('lib') {
+        from configurations.compile
+    }
+    extension('zip')
+}
+
+task assemblePlugin(type: Copy) {
+    from plugin
+    into pluginsDir
+}
+
+task assemblePlugins(type: Copy) {
+    dependsOn subprojects.assemblePlugin
+}
+
+compileJava.dependsOn npm_run_build
+```
+
+Now we can just execute *./gradlew build* and get plugin binaries (as jar and as shadowJar) that can be loaded to the application.
+
+### Event listeners
+
+All plugin commands are executed through the core application end-point with mapping:
+
+`https://host:port/v1/integration/{projectName}/{integrationId}/{command}`
+
+As we can see `integrationId` is a mandatory parameter that specifies integration to be used in the command execution.
+
+We can affect logic executed in core application from the plugin by handling predefined set of events. As for now we will use
+mandatory `PluginLoadedEventHandler` as an example.
+
+This handler creates the very first integration and uses `PluginInfoProvider` to update plugin data in the database.
+
+To add a new listener we should use `ApplicationContext` after plugin was loaded - so we do it in the method marked by `@PostConstruct`.
+
+Also, we should remove listeners when we unload plugin - so we implement `DisposableBean` interface and provide this logic in the `preDestroy()` method.
+
+That's how our extension looks now:
+
+```java
+
+@Extension
+public class ExampleExtension implements ReportPortalExtensionPoint, DisposableBean {
+
+	public static final String BINARY_DATA_PROPERTIES_FILE_ID = "example-binary-data.properties";
+	private static final String PLUGIN_ID = "example";
+	private final String resourcesDir;
+
+	private final Supplier<Map<String, PluginCommand<?>>> pluginCommandMapping = new MemoizingSupplier<>(this::getCommands);
+	private final Supplier<ApplicationListener<PluginEvent>> pluginLoadedListenerSupplier;
+
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private IntegrationTypeRepository integrationTypeRepository;
+
+	@Autowired
+	private IntegrationRepository integrationRepository;
+
+	public ExampleExtension(Map<String, Object> initParams) {
+		resourcesDir = IntegrationTypeProperties.RESOURCES_DIRECTORY.getValue(initParams).map(String::valueOf).orElse("");
+
+		pluginLoadedListenerSupplier = new MemoizingSupplier<>(() -> new ExamplePluginEventListener(PLUGIN_ID,
+				new PluginEventHandlerFactory(integrationTypeRepository,
+						integrationRepository,
+						new PluginInfoProviderImpl(resourcesDir, BINARY_DATA_PROPERTIES_FILE_ID)
+				)
+		));
+	}
+
+	@Override
+	public Map<String, ?> getPluginParams() {
+		Map<String, Object> params = new HashMap<>();
+		params.put(ALLOWED_COMMANDS, new ArrayList<>(pluginCommandMapping.get().keySet()));
+		return params;
+	}
+
+	@Override
+	public PluginCommand<?> getCommandToExecute(String commandName) {
+		return pluginCommandMapping.get().get(commandName);
+	}
+
+	@PostConstruct
+	public void createIntegration() throws IOException {
+		initListeners();
+	}
+
+	private void initListeners() {
+		ApplicationEventMulticaster applicationEventMulticaster = applicationContext.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME,
+				ApplicationEventMulticaster.class
+		);
+		applicationEventMulticaster.addApplicationListener(pluginLoadedListenerSupplier.get());
+	}
+
+	@Override
+	public void destroy() {
+		removeListeners();
+	}
+
+	private void removeListeners() {
+		ApplicationEventMulticaster applicationEventMulticaster = applicationContext.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME,
+				ApplicationEventMulticaster.class
+		);
+		applicationEventMulticaster.removeApplicationListener(pluginLoadedListenerSupplier.get());
+	}
+
+	private Map<String, PluginCommand<?>> getCommands() {
+		Map<String, PluginCommand<?>> pluginCommandMapping = new HashMap<>();
+		pluginCommandMapping.put("getFile", new GetFileCommand(resourcesDir, BINARY_DATA_PROPERTIES_FILE_ID));
+		pluginCommandMapping.put("testConnection", (integration, params) -> true);
+		return pluginCommandMapping;
+	}
+}
+```
+
+## Lazy initialization
+
+All plugin components that relies on `@Autowired` dependencies should be loaded lazily using `MemoizingSupplier` or another lazy-load mechanism.
+This is the restriction of plugin installation flow: 
+##### We create extension object using constructor and only then we autowire dependencies. If we don't use lazy initialization - all objects created in the constructor will be created with `NULL` objects that were marked as `@Autowired`

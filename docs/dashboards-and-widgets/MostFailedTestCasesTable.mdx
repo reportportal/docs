@@ -1,0 +1,32 @@
+---
+sidebar_position: 14
+sidebar_label: Most failed test-cases table (TOP-20)
+---
+
+# Most failed test-cases table (TOP-20)
+
+The widget contains a table with statistical information about the TOP-20 most problematic test cases.
+
+**Widget's parameters:**
+
+- The widget criteria are as follows: Failed, Skipped, Product Bug, Automation Bug, System Issue, No Defect. Failed is selected by default.
+
+- Launches count: 2-150. By default, "Launches count" is 30.
+
+- Launch name: Is required.
+
+- Include /Exclude  Before and After methods
+
+**Widget view**
+
+The widget has a table view with the following data displayed:
+
+- Test Item name - link to the Step level of the last launch
+- Failed - count of found failed results
+- Last failure - date and time of the last run, when the test item was failed, displayed in 'time ago' format (i.e. "10 minutes ago").
+  On mouse hover, the system will display accurate start times.
+
+<media-view src={require('./img/widget-types/mostFailureTestCasesTable.png')} alt="mostFailureTestCasesTable" />
+
+>**Note:**
+The widget contains statistics of the most problematic test cases in all launches, except "IN PROGRESS" and "INTERRUPTED" launches.
