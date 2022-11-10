@@ -8,6 +8,7 @@
   --ifm-font-family-base: 'Noto Sans';
   --ifm-heading-font-family: 'Poppins';
   --ifm-heading-font-weight: 700;
+  --ifm-code-font-size: 95%;
 }
 
 [data-theme='light'] {
@@ -18,11 +19,10 @@
   --ifm-color-primary-light: #01bfe3;
   --ifm-color-primary-lighter: #01c8ed;
   --ifm-color-primary-lightest: #0fd9fe;
-  --ifm-font-color-base: #2F3C5F;
-  --ifm-navbar-link-color: #5F6578;
-  --ifm-toc-link-color: #8791AB;
-  --ifm-menu-color: #5F6578;
-  --ifm-code-font-size: 95%;
+  --ifm-font-color-base: #2f3c5f;
+  --ifm-navbar-link-color: #5f6578;
+  --ifm-toc-link-color: #8791ab;
+  --ifm-menu-color: #5f6578;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
