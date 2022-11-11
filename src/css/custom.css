@@ -4,36 +4,45 @@
  * work well for content-centric websites.
  */
 
+@font-face {
+  src: url("/static/fonts/NotoSans-Regular.ttf");
+  font-family: NotoSans-Regular;
+}
+
+@font-face {
+  src: url("/static/fonts/Poppins-Regular.ttf");
+  font-family: Poppins-Regular;
+}
+
 :root {
-  --ifm-font-family-base: 'Noto Sans';
-  --ifm-heading-font-family: 'Poppins';
-  --ifm-heading-font-weight: 700;
+  --ifm-color-primary: #009dbb;
+  --ifm-color-primary-dark: #008da8;
+  --ifm-color-primary-darker: #00859f;
+  --ifm-color-primary-darkest: #006e83;
+  --ifm-color-primary-light: #00adce;
+  --ifm-color-primary-lighter: #00b5d7;
+  --ifm-color-primary-lightest: #00ccf3;
+  --ifm-font-family-base: 'NotoSans-Regular';
+  --ifm-heading-font-family: 'Poppins-Regular';
   --ifm-code-font-size: 95%;
 }
 
 [data-theme='light'] {
-  --ifm-color-primary: #01aece;
-  --ifm-color-primary-dark: #019db9;
-  --ifm-color-primary-darker: #0194af;
-  --ifm-color-primary-darkest: #017a90;
-  --ifm-color-primary-light: #01bfe3;
-  --ifm-color-primary-lighter: #01c8ed;
-  --ifm-color-primary-lightest: #0fd9fe;
   --ifm-font-color-base: #2f3c5f;
-  --ifm-navbar-link-color: #5f6578;
   --ifm-toc-link-color: #8791ab;
   --ifm-menu-color: #5f6578;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #01aece;
-  --ifm-color-primary-dark: #019db9;
-  --ifm-color-primary-darker: #0194af;
-  --ifm-color-primary-darkest: #017a90;
-  --ifm-color-primary-light: #01bfe3;
-  --ifm-color-primary-lighter: #01c8ed;
-  --ifm-color-primary-lightest: #0fd9fe;
   --ifm-font-color-base: #e3e3e3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  font-family: 'Poppins-Regular' !important;
+}
+
+h1 {
+  padding-top: 24px;
 }
