@@ -4,27 +4,45 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+@font-face {
+  src: url("/static/fonts/NotoSans-Regular.ttf");
+  font-family: NotoSans-Regular;
+}
+
+@font-face {
+  src: url("/static/fonts/Poppins-Regular.ttf");
+  font-family: Poppins-Regular;
+}
+
 :root {
-  --ifm-color-primary: #00829B;
-  --ifm-color-primary-dark: #00829B;
-  --ifm-color-primary-darker: #00758C;
-  --ifm-color-primary-darkest: #00758C;
-  --ifm-color-primary-light: #009DBB;
-  --ifm-color-primary-lighter: #00B0D1;
-  --ifm-color-primary-lightest: #00B0D1;
+  --ifm-color-primary: #009dbb;
+  --ifm-color-primary-dark: #008da8;
+  --ifm-color-primary-darker: #00859f;
+  --ifm-color-primary-darkest: #006e83;
+  --ifm-color-primary-light: #00adce;
+  --ifm-color-primary-lighter: #00b5d7;
+  --ifm-color-primary-lightest: #00ccf3;
+  --ifm-font-family-base: 'NotoSans-Regular';
+  --ifm-heading-font-family: 'Poppins-Regular';
   --ifm-code-font-size: 95%;
+}
+
+[data-theme='light'] {
+  --ifm-font-color-base: #2f3c5f;
+  --ifm-toc-link-color: #8791ab;
+  --ifm-menu-color: #5f6578;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #1A9CB0;
-  --ifm-color-primary-dark: #00758C;
-  --ifm-color-primary-darker: #00758C;
-  --ifm-color-primary-darkest: #00505D;
-  --ifm-color-primary-light: #1CB0C7;
-  --ifm-color-primary-lighter: #1DBDD6;
-  --ifm-color-primary-lightest: #9EE7F2;
+  --ifm-font-color-base: #e3e3e3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  font-family: 'Poppins-Regular' !important;
+}
+
+h1 {
+  padding-top: 24px;
 }
