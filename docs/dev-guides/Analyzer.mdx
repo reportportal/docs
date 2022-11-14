@@ -13,7 +13,7 @@
 
 Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](http://www.amqp.org/specification/0-9-1/amqp-org-download) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates [virtual host](https://www.rabbitmq.com/vhosts.html) inside RabbitMQ with name `analyzer` on start. Analyzers in theirs turn connect to the virtual host and declare exchange with name and arguments. Any type of request from `API` and response from `analyzer` stores in the same queue. Request and response messages is presented as JSON.  
 
-<media-view src={require('./img/analyzer/api-analyzer.png')} alt="api-analyzer" />
+<media-view src={require('./img/analyzer/ApiAnalyzer.png')} alt="API Analyzer" />
 
 ## Declaring exchange
 
@@ -25,13 +25,13 @@ Each analyzer has to declare direct exchange with the following arguments:
 - `analyzer_log_search` - Is log searching supported (boolean, false by default)
 - `analyzer_priority` - Priority of analyzer (number). The lower the number, the higher the priority. 
 
-<media-view src={require('./img/analyzer/exchange.png')} alt="exchange" />
+<media-view src={require('./img/analyzer/Exchange.png')} alt="Exchange" />
 
 ## Declaring queues
 
 Each analyzer has to declare 5 queues with names: `analyze`, `search`, `index`, `clean`, `delete`.
 
-<media-view src={require('./img/analyzer/queues.png')} alt="queues" />
+<media-view src={require('./img/analyzer/Queues.png')} alt="Queues" />
 
 ## Indexing
 

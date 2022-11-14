@@ -15,42 +15,42 @@ While failed tests allow you to understand what is broken, “Unique Error analy
 
 **“Unique error auto-analysis”** is set ON by default.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error1.png')} alt="unique_error1" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError1.png')} alt="Unique error auto-analysis ON" />
 
 ## “Include/exclude numbers” settings
 
 There are 2 settings: “include/exclude numbers” – it depends if you decide that numbers in error logs have significant value for analysis or not.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error2.png')} alt="unique_error2" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError2.png')} alt="Include/exclude numbers" />
 
 Now, Unique error auto-analysis will be started after a launch has been finished. 
  
 To see the list of “Unique errors” for the launch, open any item level in the launch and click **“Unique errors”** tab. 
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error3.png')} alt="unique_error3" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError3.png')} alt="Unique errors Suite level" />
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error4.png')} alt="unique_error4" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError4.png')} alt="Unique errors Test level" />
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error5.png')} alt="unique_error5" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError5.png')} alt="Unique errors Step level" />
 
 Finally, you can see the list of “Unique errors”.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error6.png')} alt="unique_error6" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError6.png')} alt="Unique errors Log level" />
 
 There you can see a list with groups of error logs. You can expand a group to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The groups are formed based on unique error logs, some small error logs can be merged and displayed as one error.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error_addition1.png')} alt="unique_error_addition1" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition1.png')} alt="List with groups of error logs" />
 
 ## How to run “Unique error analysis” manually
 
 >**NOTE: **
 You can also run “Unique error analysis” manually from any item level in case auto analysis is set OFF. Please, follow the steps below: 
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error7.png')} alt="unique_error7" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError7.png')} alt="Run “Unique error analysis” manually" />
 
 You can also run “Unique Error analysis” from the menu next to a particular launch.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error8.png')} alt="unique_error8" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError8.png')} alt="run “Unique error analysis” for particular launch" />
 
 ## Examples with “Include/exclude numbers” settings
 
@@ -60,19 +60,19 @@ We have 2 errors with identical text, but the difference is numeric value in the
  
 1. An example with **“Include numbers to analyzed logs”** setting. Error with numeric value is displayed:
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error9.png')} alt="unique_error9" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError9.png')} alt="Include numbers to analyzed logs setting" />
 
 2. An example with **“Exclude numbers from analyzed logs”** setting. As you can see, error with numeric value is not displayed:
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error10.png')} alt="unique_error10" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueError10.png')} alt="Exclude numbers from analyzed logs setting" />
 
 ## How to get ML suggestions for the group of steps
 
 In addition, there is a possibility to get **ML suggestions** for the group of steps. It speeds up the process of analyzing failed tests and assigning defect types by several times.
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error_addition2.png')} alt="unique_error_addition2" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition2.png')} alt="Select steps" />
 
-<media-view src={require('./img/UniqueErrorAnalysis/unique_error_addition3.png')} alt="unique_error_addition3" />
+<media-view src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition3.png')} alt="Get ML suggestions for the group of steps" />
 
 Also, the new Quality Gates rule – [“New Errors”](/quality-gates/QualityRulesConfiguration#new-errors-in-the-run) – was implemented based on the “Unique Error analysis” functionality. This rule helps to identify if there are new unique errors in the current launch by comparing it to another specified launch.
 

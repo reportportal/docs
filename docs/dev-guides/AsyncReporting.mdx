@@ -52,7 +52,7 @@ After that, a `controller` returns HTTP response to the `client` that contains U
 After a successful processing, the entity will be stored in a database and obtain a physical id. 
 In case of an exception, it is logged and the entity is not saved.
 
-<media-view src={require('./img/async/simple-scheme.png')} alt="simple-scheme" />
+<media-view src={require('./img/async/SimpleScheme.png')} alt="Simple Scheme" />
 
 ### Enable asynchronous reporting in agents
 
@@ -123,21 +123,21 @@ exchange. The amount of the queues in the exchanges depends on `rp.amqp.queues` 
 In case message from `reporting.retry` was consumed with exception more than 10 times, the message will be stored in reporting.dlq which is 
 [dead letter queue](https://www.rabbitmq.com/dlx.html).
 
-<media-view src={require('./img/async/exchanges-queues.png')} alt="exchanges-queues" />
+<media-view src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
 
 #### Scheme
 
 All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue. 
 It is achieved using the following algorithm that maps launch uuid to a queue key:
 
-<media-view src={require('./img/async/uuid-queus-mapping.png')} alt="uuid-queus-mapping" />
+<media-view src={require('./img/async/UuidQueusMapping.png')} alt="Uuid Queus Mapping" />
 
 Messages in the queue don't have a strict order but they are stored mostly in the same order as they arrive from `client`. 
 This ensures a minimal amount of exceptions (causing the sending of such messages to the retry queue) caused by cases when a child is handled before its own parent. 
 
 Consuming scheme:
 
-<media-view src={require('./img/async/consuming.png')} alt="consuming" />
+<media-view src={require('./img/async/Consuming.png')} alt="Consuming" />
 
 `(!)` Possible exceptions that may be thrown and lead to sending the message to the retry queue:
 * On start launch/test item:
@@ -156,7 +156,7 @@ Consuming scheme:
 
 If the order is not broken, launch finish request will be handled when there are no more child item requests in the queue.
 
-<media-view src={require('./img/async/finish-launch.png')} alt="finish-launch" />
+<media-view src={require('./img/async/FinishLaunch.png')} alt="Finish Launch" />
 
 `(!)` It is a main difference in reporting mechanism between Report Portal version 4 and 5. 
 In case the launch finish request is not last in the queue it will be finished anyway. 

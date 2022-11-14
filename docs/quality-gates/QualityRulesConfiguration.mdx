@@ -27,7 +27,7 @@ Analyzed Launch: Launch Name of a launch that should be analyzed
 Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND test plan: Regression) 
 ```
 
-<media-view thumbnail={require('./img/Quality Gates Creation.png')} src="https://youtu.be/dXp3Lf9bI30" alt="Quality Gate Creation" type="video" />
+<media-view thumbnail={require('./img/QualityGatesCreation.png')} src="https://youtu.be/dXp3Lf9bI30" alt="Quality Gate Creation" type="video" />
 
 ## Quality Gate ordering
 
@@ -47,7 +47,7 @@ There are four types of Quality Gate rules:
 
 >**Case:** Regression suite has 224 tests. You want to track that all tests should be run every time.
 
-<media-view thumbnail={require('./img/Amount of tests ALL.png')} src="https://youtu.be/TC0J8BV_XBY" alt="Rule: Amount of All Tests in the launch" type="video" />
+<media-view thumbnail={require('./img/AmountOfTestsALL.png')} src="https://youtu.be/TC0J8BV_XBY" alt="Rule: Amount of All Tests in the launch" type="video" />
 
 The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.
 
@@ -70,7 +70,7 @@ Now the system will automatically analyze a launch and compare the number of tes
 
 >**Case:** Regression suite contains 24 tests with critical priority. You want to track if these tests are executed every time.
 
-<media-view thumbnail={require('./img/Amount Attribute.png')} src="https://youtu.be/EwsG7RcmcDs" alt="Rule: Amount of Tests with attributes in the launch" type="video" />
+<media-view thumbnail={require('./img/AmountAttribute.png')} src="https://youtu.be/EwsG7RcmcDs" alt="Rule: Amount of Tests with attributes in the launch" type="video" />
 
 You can also track the number of tests that belong to a feature, component, priority or others in a launch.
 For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).
@@ -97,7 +97,7 @@ Now the system will automatically analyze a launch and compare the number of tes
 >
 >**Case 2:** You want to track that all critical tests in regression suite are always passed.
 
-<media-view thumbnail={require('./img/Failure Rate All.png')} src="https://youtu.be/bSO21gtT82E" alt="Failure Rate" type="video" />
+<media-view thumbnail={require('./img/FailureRateAll.png')} src="https://youtu.be/bSO21gtT82E" alt="Failure Rate" type="video" />
 
 The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.
 
@@ -168,7 +168,7 @@ If you choose the "Not passed" option, the system will use another calculation m
 >
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in these 500 tests.
 
-<media-view thumbnail={require('./img/Issues.png')} src="https://youtu.be/ajIvWB83bGg" alt="[Rule: Issues in the run" type="video" />
+<media-view thumbnail={require('./img/Issues.png')} src="https://youtu.be/ajIvWB83bGg" alt="Rule: Issues in the run" type="video" />
 
 Amount of issues also has 2 options "All tests" and "Tests with the attribute". The purpose of the rule is to limit the number of unwanted defects in the run. With the option "All tests", you can restrict issues for all tests in the launch.
 
@@ -230,7 +230,7 @@ For this Project Manager or Admin can edit Quality Gate:
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.
 
-<media-view thumbnail={require('./img/New failure.png')} src="https://youtu.be/W05N7DQkalg" alt="Rule: New Failure" type="video" />
+<media-view thumbnail={require('./img/NewFailure.png')} src="https://youtu.be/W05N7DQkalg" alt="Rule: New Failure" type="video" />
 
 The purpose of the rule is to block a run that has new failures compared to a chosen baseline.
 
@@ -261,7 +261,7 @@ By default, a system will use ```a previous launch``` for comparison. For exampl
 
 If there is no fitting launch in the system, the "New failure" rule will get the status "Undefine".
 
-<media-view src={require('./img/Baseline Latest.png')} alt="Rule: Baseline Latest" />
+<media-view src={require('./img/BaselineLatest.png')} alt="Rule: Baseline Latest" />
 
 **Customized Baseline**
 
@@ -274,7 +274,7 @@ If you want to choose other options for a baseline, you can do it:
 * Unclick a checkbox on ```"Choose a previous launch as a baseline."```
 * The system activates fields for baseline configuration
 
-<media-view src={require('./img/Custom Baseline.png')} alt="Rule: Baseline Custom" />
+<media-view src={require('./img/CustomBaseline.png')} alt="Rule: Baseline Custom" />
 
 | Case | Fileds configuration | 
 | :----:      |    :----:   | 
@@ -298,15 +298,15 @@ To begin using this functionality, you need to create a Quality Gate and add the
 
 4) Click ```Create Quality Gate``` button.
 
-<media-view src={require('./img/NewErrors/new-errors-rule1.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors1.png')} alt="Create Quality Gate button" />
 
 5) Enter ```Quality Gate Name``` and ```Analyzed Launch```, then click ```Save``` button.
 
-<media-view src={require('./img/NewErrors/new-errors-rule2.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors2.png')} alt="Quality Gate Name" />
 
 >**Note:** if you want the Quality Gate not to run for all launches, you can adjust it only for the launches with specific attributes. Click ```Add attribute``` and specify value and key, e.g., browser.
 
-<media-view src={require('./img/NewErrors/new-errors-rule3.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors3.png')} alt="Quality Gate for the launth with attributes" />
 
 On the example in the screenshot above Quality Gate will run for launches with name **“Test”** with attributes _Browser Chrome_, _Feature Reporting_, _Device MacBook_.
 
@@ -316,13 +316,13 @@ Click the **“confirm”** icon.
 
 >Please, note that “New Errors” rule can be created with **“All tests”** condition only.
 
-<media-view src={require('./img/NewErrors/new-errors-rule4.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors4.png')} alt="Add a new rule dropdown" />
 
-<media-view src={require('./img/NewErrors/new-errors-rule5.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors5.png')} alt="Create Quality Gate rule New errors in the run" />
 
 Before running automation tests, make sure that **“Quality Gates”** feature is ON.
 
-<media-view src={require('./img/NewErrors/new-errors-rule6.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors6.png')} alt="Quality Gates feature is ON" />
 
 Now everything is ready to use.
 
@@ -334,7 +334,7 @@ Now everything is ready to use.
 
 10) Open the ```Launches``` section and click the ```Refresh``` button at the top.
 
-<media-view src={require('./img/NewErrors/new-errors-rule7.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors7.png')} alt="Refresh button on the Launches section" />
 
 11) Verify the Quality Gates' status.
 
@@ -344,28 +344,28 @@ Now everything is ready to use.
 
 **_N/A_** - appears if the quality gate was created after a launch was finished, or there is no quality gate for this launch. If the status is Not Available, click on the “N/A” and then click “Run Quality Gate” button (+ “Refresh”).
 
-<media-view src={require('./img/NewErrors/new-errors-rule8.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors8.png')} alt="Quality Gates' status" />
 
 12) To look at the failed test results, click on the ```Failed``` status and then click on the number under ```Current``` column.
 
-<media-view src={require('./img/NewErrors/new-errors-rule9.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors9.png')} alt="Failed test results" />
 
 You will be redirected to the ```Unique errors``` tab with a list of all new error logs of the launch. If you want to see known issues as well, open the ```All Unique Errors``` dropdown at the top and click the ```Known Errors``` checkbox.
 
-<media-view src={require('./img/NewErrors/new-errors-rule10.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors10.png')} alt="All Unique Errors" />
 
 By default, ***a previous launch execution*** is used as a Baseline Launch for the Quality Gate. Besides, you can as well define any other launch by specifying its name and sequence number or select ```Latest``` for the prior run of the specified launch to be used as a baseline.
 
 To make these changes, click ```Edit Details``` on the Quality Gate page and uncheck the ```Choose a previous launch as a baseline``` checkbox.
 
-<media-view src={require('./img/NewErrors/new-errors-rule11.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors11.png')} alt="Define Baseline Launch for the Quality Gate" />
 
-<media-view src={require('./img/NewErrors/new-errors-rule12.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors12.png')} alt="Choose a previous launch as a baseline checkbox" />
 
 Follow the steps below depending on the preferable settings for the Baseline Launch.
 
-<media-view src={require('./img/NewErrors/new-errors-rule13.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors13.png')} alt="Specific Launch as a Baseline Launch" />
 
-<media-view src={require('./img/NewErrors/new-errors-rule14.png')} alt="New errors in the run" />
+<media-view src={require('./img/NewErrors/NewErrors14.png')} alt="Latest Launch as a Baseline Launch" />
 
 In this way you can compare analyzed launch not only with its previous execution but also with another launch.
