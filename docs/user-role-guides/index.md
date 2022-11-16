@@ -8,7 +8,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 
 ## Administrator
 [Installation steps](/category/installation-steps)  
-[Getting started](/getting-started/)  
+[Tutorial](/tutorial/)  
 [User account](/category/user-account)  
 [Log data in ReportPortal](/category/log-data-in-reportportal)  
 [Logging Integration]( /report-poral-configuration/IntegrationsViaPlugin)  
@@ -18,7 +18,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Tips and tricks](/category/issues-troubleshooting)  
 
 ## Project Manager
-[Getting started](/getting-started/)  
+[Tutorial](/tutorial/)    
 [Management Board](/category/management-board)  
 [Work with reports](/category/work-with-reports)  
 [Saved searches (Filters)](/category/saved-searches-filters)    
