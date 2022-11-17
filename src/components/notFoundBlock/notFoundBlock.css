@@ -15,11 +15,11 @@
  */
 
 [data-theme='light'] {
-  --not-found-color: #000000;
+  --not-found-text-color: #000000;
 }
 
 [data-theme='dark'] {
-  --not-found-color: #E3E3E3;
+  --not-found-text-color: #E3E3E3;
 }
 
 .not-found-content {
@@ -30,7 +30,7 @@
   margin-top: 5rem;
   margin-bottom: 6.5rem;
   line-height: 1.5rem;
-  color: var(--not-found-color);
+  color: var(--not-found-text-color);
 }
 
 .not-found-title {
@@ -51,6 +51,7 @@
     margin-top: 8.5rem;
     margin-left: 16px;
   }
+
   .not-found-content > img {
     display: none;
   }
