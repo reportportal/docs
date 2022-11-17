@@ -10,7 +10,7 @@ Do not hesitate to contribute and send us a pull request with updates. We apprec
 
 In order to get started with ReportPortal on Red Hat Family and Ubuntu Linux distributions non-Docker/Kubernetes usage, please use the following links
 
-### 1. [[Latest] ReportPortal 5.3.5](https://github.com/reportportal/linux-installation)
+### 1. [[Outdated] ReportPortal 5.3.5](https://github.com/reportportal/linux-installation)
 [ReportPortal 5.3.5 installation guide](https://github.com/reportportal/linux-installation)
 
 #### Supported OS 
