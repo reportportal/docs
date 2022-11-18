@@ -12,13 +12,13 @@ To see a table of the historical trend of executions, navigate to the "Launches"
 Report Portal acquires a lot of results and you can choose by which parameter you want the history of test results to get defined.
 There are 2 options:
 
-* by [Unique ID](https://reportportal.io/docs/Unique-ID-(deprecated/ )
+* by [Unique ID](https://reportportal.io/docs/Unique-ID)
 * by [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 #### Difference between Test Case ID  and Unique ID
 
 Please find the description of what Test Case ID and Unique  by the links:
-* [UUID](https://reportportal.io/docs/Unique-ID-(deprecated/ )
+* [UUID](https://reportportal.io/docs/Unique-ID)
 * [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 They are both a unique identifiers of executions uniquness.
@@ -159,7 +159,7 @@ From the History table you will be able to perform the next actions:
 - edit items
 - [edit defect](https://reportportal.io/docs/Investigation-of-failure%3Edefect-types-and-comments)
 - [post issue](https://reportportal.io/docs/Investigation-of-failure%3Epost-bug-to-bug-tracking-system)
-- [link / unlink issue](https://reportportal.io/docs/Investigation-of-failure%3Eadd-link-of-existed-defect-)
+- link / unlink issue
 - delete items
 
 For that:
