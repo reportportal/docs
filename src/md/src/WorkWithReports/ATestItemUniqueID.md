@@ -45,7 +45,10 @@ If users do not report Test Case ID and Code reference, then test case ID is gen
 
 
 
-## Unique ID (deprecated/ will be replaced by Test Case ID gradually)
+## Unique ID
+
+***(deprecated/ will be replaced by Test Case ID gradually)***
+
 
 ReportPortal generates an ID automatically for all test items by default. 
 The UniqueID generation is based on:
