@@ -17,30 +17,46 @@ Choose which combination of agent, client, and logger you need, and then follow 
 
 ## JavaScript
 
-All agents use [client-javascript](https://github.com/reportportal/client-javascript) to communicate with Report Portal API.
+**Test Framework Integration (agents):**
 
-| **Test Framework**                                                                                                  | **Agent**                                                                    |
-|---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| [Playwright](https://playwright.dev)                                                                                | [agent-js-playwright](https://github.com/reportportal/agent-js-playwright)   |
-| [CucumberJS](https://cucumber.io/docs/installation/javascript)                                                      | [agent-js-cucumber](https://github.com/reportportal/agent-js-cucumber)       |
-| [Codecept](https://codecept.io)                                                                                     | [agent-js-codecept](https://github.com/reportportal/agent-js-codecept)       |
-| [WebdriverIO](https://webdriver.io)                                                                                 | [agent-js-webdriverio](https://github.com/reportportal/agent-js-webdriverio) |
-| [Postman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman) | [agent-js-postman](https://github.com/reportportal/agent-js-postman)         |
-| [Cypress](https://www.cypress.io)                                                                                   | [agent-js-cypress](https://github.com/reportportal/agent-js-cypress)         |
-| [Mocha](https://mochajs.org)                                                                                        | [agent-js-mocha](https://github.com/reportportal/agent-js-mocha)             |
-| [Jest](https://jestjs.io)                                                                                           | [agent-js-jest](https://github.com/reportportal/agent-js-jest)               |
-| [TestCafe](https://testcafe.io)                                                                                     | [agent-js-testcafe](https://github.com/reportportal/agent-js-testcafe)       |
-| [Jasmine](https://jasmine.github.io)                                                                                | [agent-js-jasmine](https://github.com/reportportal/agent-js-jasmine)         |
-| [Nightwatch](https://nightwatchjs.org)                                                                              | [agent-js-nightwatch](https://github.com/reportportal/agent-js-nightwatch)   |
+All agents use [client-javascript](https://github.com/reportportal/client-javascript) to communicate with ReportPortal API.
+
+- [Playwright](https://github.com/reportportal/agent-js-playwright)
+- [CucumberJS](https://github.com/reportportal/agent-js-cucumber)
+- [Codecept](https://github.com/reportportal/agent-js-codecept)
+- [WebdriverIO](https://github.com/reportportal/agent-js-webdriverio)
+- [Postman](https://github.com/reportportal/agent-js-postman)
+- [Cypress](https://github.com/reportportal/agent-js-cypress)
+- [Mocha](https://github.com/reportportal/agent-js-mocha)
+- [Jest](https://github.com/reportportal/agent-js-jest)
+- [TestCafe](https://github.com/reportportal/agent-js-testcafe)
+- [Jasmine](https://github.com/reportportal/agent-js-jasmine)
+- [Nightwatch](https://github.com/reportportal/agent-js-nightwatch)
 
 Each agent can be installed from [npm](https://www.npmjs.com/settings/reportportal/packages?page=1&perPage=10) or [GitHub packages](https://github.com/orgs/reportportal/packages?ecosystem=npm) registry.
 
 ## .Net
 
-| **Test Framework**         | **Agents** |**Client** | **Logger**| 
-|----------------------------| ------------- |------------- | ------------- |
-|       | | | |
-|  | | | |
+User can use any combination of client/agent/logger.
+
+**Clients:**
+
+- [Rest api client](https://github.com/reportportal/client-net)
+- [Multi-threaded client](https://github.com/reportportal/commons-net)
+
+**Test Framework Integration (agents):**
+
+- [NUnit](https://github.com/reportportal/agent-net-nunit)
+- [VSTest](https://github.com/reportportal/agent-net-vstest)
+- [SpecFlow](https://github.com/reportportal/agent-net-specflow)
+- [xUnit](https://github.com/reportportal/agent-net-xunit)
+
+**Loggers:**
+
+- [Serilog](https://github.com/reportportal/logger-net-serilog)
+- [Log4Net](https://github.com/reportportal/logger-net-log4net)
+- [NLog](https://github.com/reportportal/logger-net-nlog)
+- [TraceListener](https://github.com/reportportal/logger-net-tracelistener)
 
 ## Python
 
@@ -52,12 +68,13 @@ Each agent can be installed from [npm](https://www.npmjs.com/settings/reportport
 
 ## PHP
 
+**Test Framework Integration (agents):**
 
-| **Test Framework**         | **Agents** |**Client** | **Logger**| 
-|----------------------------| ------------- |------------- | ------------- |
-|       | | | |
-|  | | | |
+All agents use [client-php](https://github.com/reportportal/client-php).
 
+- [PHPUnit](https://github.com/reportportal/agent-php-PHPUnit)
+- [Behat](https://github.com/reportportal/agent-php-Behat)
+- [Codeception](https://github.com/reportportal/agent-php-Codeception)
 
 Please find the full list of available integrations with test frameworks in our [GitHub repositories](https://github.com/reportportal).
 
