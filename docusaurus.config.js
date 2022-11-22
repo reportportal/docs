@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Report Portal Documentation',
-  url: 'https://documentation.reportportal.io',
+  url: 'https://docs.reportportal.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -139,6 +139,98 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/tutorial',
+            from: [
+              '/Tutorial:-Learn-how',
+              '/Overview',
+              '/How-to-explore',
+              '/How-to-deploy',
+              '/How-to-invite',
+              '/How-to-generate',
+              '/How-to-triage',
+              '/How-to-filter',
+              '/How-to-add',
+              '/How-to-visualize',
+              '/How-to-use',
+              '/How-to-run',
+              '/How-to-see',
+              '/How-to-make',
+              '/How-to-evaluate',
+            ],
+          },
+          {
+            to: '/category/installation-steps',
+            from: '/Installation-steps',
+          },
+          {
+            to: '/category/reportportal-configuration',
+            from: '/Report-Portal-Configuration',
+          },
+          {
+            to: '/category/user-account',
+            from: '/User-account',
+          },
+          {
+            to: '/category/log-data-in-reportportal',
+            from: '/Log-Data-in',
+          },
+          {
+            to: '/category/work-with-reports',
+            from: '/Work-with-reports',
+          },
+          {
+            to: '/category/analysis',
+            from: '/Analysis',
+          },
+          {
+            to: '/category/saved-searches-filters',
+            from: '/Saved-searches-(Filters)',
+          },
+          {
+            to: '/category/dashboards-and-widgets',
+            from: '/Dashboards-and-Widgets',
+          },
+          {
+            to: '/category/quality-gates',
+            from: '/Quality-Gates',
+          },
+          {
+            to: '/category/management-board',
+            from: '/Management-Board',
+          },
+          {
+            to: '/category/plugins',
+            from: '/Plugins',
+          },
+          {
+            to: '/user-role-guides',
+            from: [
+              '/User-role-guides>administrator',
+              '/User-role-guides>project-manager',
+              '/User-role-guides>member',
+              '/User-role-guides>operator',
+              '/User-role-guides>customer',
+            ],
+          },
+          {
+            to: '/category/issues-troubleshooting',
+            from: '/Issues-Troubleshooting',
+          },
+          {
+            to: '/category/terms--conditions',
+            from: '/Terms-&-Conditions',
+          },
+        ],
+      },
+    ],
+  ],
 };
 
 module.exports = config;
