@@ -34,7 +34,7 @@
 }
 
 .not-found-title {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .not-found-text {
@@ -44,12 +44,10 @@
   font-size: 1rem;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 767px) {
   .not-found-content {
     align-items: start;
-    margin-bottom: 8.5rem;
-    margin-top: 8.5rem;
-    margin-left: 16px;
+    margin: 8.5rem 16px;
   }
 
   .not-found-content > img {
@@ -58,6 +56,6 @@
 
   .not-found-text {
     text-align: left;
-    max-width: 328px;
+    max-width: 700px;
   }
 }
