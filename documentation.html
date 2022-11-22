@@ -2112,6 +2112,74 @@ We can propose a paid support for integration with a new framework or supporting
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/LogDataInReportPortal/DevelopersGuides.md"></div>
+  <h2 id="attachments-guide">Attachments Guide</h2>
+<p>The Attachments feature allows you to add any file or screenshot to the test case logs. It can be useful for further analysis.</p>
+<p>An example of image attachment:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide1.png" alt="ImageName"> </a></p>
+<p>An example of file attachment:</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide2.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide3.png"> <img src="http://reportportal.io/documentation/Images/userGuide/AttachmentsGuide/AttachmentsGuide3.png" alt="ImageName"> </a></p>
+<h3 id="how-to-log-attachments-on-java-agents-">How to log attachments on Java agents?</h3>
+<p>Java agents have numerous methods to log attachments, the easiest one is calling <code>ReportPortal#emitLog</code> static method:</p>
+<pre><code class="language-java"><span class="keyword">import</span> com.epam.reportportal.listeners.LogLevel;
+<span class="keyword">import</span> com.epam.reportportal.service.ReportPortal;
+<span class="keyword">import</span> java.util.Date;
+<span class="keyword">import</span> java.io.File;
+<span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> log(String message, File file) {
+        ReportPortal.emitLog(message, LogLevel.INFO.name(), <span class="keyword">new</span> Date(), file);
+    }
+}</code></pre>
+<p>If you don&#39;t want to put ReportPortal dependencies in your code, there is a way to pass attachments through your logger.</p>
+<p>Check out our loggers&#39; documentation:</p>
+<ul>
+<li><a href="https://github.com/reportportal/logger-java-log4j#attaching-files-screenshots-videos-archives-reports-etc">Log4j</a></li>
+<li><a href="https://github.com/reportportal/logger-java-logback#attaching-files-screenshots-videos-archives-reports-etc">Logback</a></li>
+</ul>
+<h3 id="how-to-log-attachments-on-python-agents-">How to log attachments on Python agents?</h3>
+<p>To log attachments in Python you first need to configure a logger, depending on your current test framework. These are the instructions:</p>
+<ul>
+<li><a href="https://github.com/reportportal/agent-python-pytest#examples">Pytest</a></li>
+<li><a href="https://github.com/reportportal/agent-Python-RobotFramework#logging">Robot Framework</a></li>
+<li><a href="https://github.com/reportportal/agent-python-behave#logging">Behave</a></li>
+</ul>
+<p>Then you can use common method to attach any files to logs which is described <a href="https://github.com/reportportal/client-Python#send-attachment-screenshots">here</a>.</p>
+<h3 id="how-to-log-attachments-on-javascript-agents-">How to log attachments on JavaScript agents?</h3>
+<p>Attachment reports are supported by our <a href="https://github.com/reportportal/client-javascript">client-javascript</a>. The attachment file can be added as a part of a log request, see the <a href="https://github.com/reportportal/client-javascript#sendlog">link</a> for details.</p>
+<p>The implementation of attachments reporting varies from agent to agent.</p>
+<p><a href="https://github.com/reportportal/agent-js-playwright">agent-js-playwright</a>:
+The attachment can be added via built-in <a href="https://playwright.dev/docs/api/class-testinfo#test-info-attachments">playwright testInfo attachments</a> or <a href="https://github.com/reportportal/agent-js-playwright#log">ReportingAPI</a>.</p>
+<p><a href="https://github.com/reportportal/agent-js-webdriverio">agent-js-webdriverio</a>:
+The attachment can be added via ReportingAPI, follow <a href="https://github.com/reportportal/agent-js-webdriverio#log">docs</a> for details.</p>
+<p><a href="https://github.com/reportportal/agent-js-testcafe">agent-js-testcafe</a>:
+The attachment can be added via ReportingAPI, follow <a href="https://github.com/reportportal/agent-js-testcafe#log">docs</a> for details.</p>
+<p><a href="https://github.com/reportportal/agent-js-codecept">agent-js-codecept</a>:
+The attachment can be added via ReportPortal plugin reportPortal.addLog, captured screenshots will be also attached to the report, see <a href="https://github.com/reportportal/agent-js-codecept#add-log-message">add-log-message</a>.</p>
+<p><a href="https://github.com/reportportal/agent-js-cucumber">agent-js-cucumber</a>:
+The attachment can be added via this.attach Cucumber feature, captured screenshots will be also attached to the report, see <a href="https://github.com/reportportal/agent-js-cucumber#attachments">attachments</a>.</p>
+<p><a href="https://github.com/reportportal/agent-js-cypress">agent-js-cypress</a>:
+The attachment can be added via ReportPortal logging custom commands for Cypress, see <a href="https://github.com/reportportal/agent-js-cypress#logging">logging</a>.</p>
+<p><a href="https://github.com/reportportal/agent-js-mocha">agent-js-mocha</a>:
+The attachment can be added via PublicReportingAPI, follow <a href="https://github.com/reportportal/agent-js-mocha#report-logs-and-attachments">docs</a> for details.</p>
+<p><a href="https://github.com/reportportal/agent-js-jasmine">agent-js-jasmine</a>:
+The attachment can be added via PublicReportingAPI, follow <a href="https://github.com/reportportal/agent-js-jasmine#report-logs-and-attachments">docs</a> for details.</p>
+<p><a href="https://github.com/reportportal/agent-js-jest">agent-js-jest</a>:
+There is no built-in capability to send attachments during test execution as the Jest Reporter works post-factum and does not allow to provide specific data to the report.</p>
+<p><a href="https://github.com/reportportal/agent-js-postman">agent-js-postman</a>:
+There is no built-in capability at the moment to send attachments during test execution due to the specifics of postman nature.</p>
+<p><a href="https://github.com/reportportal/agent-js-nightwatch">agent-js-nightwatch</a>:
+The attachment can be added via ReportingAPI, follow <a href="https://github.com/reportportal/agent-js-nightwatch#log">docs</a> for details.</p>
+<p>An example for each agent can be found <a href="https://github.com/reportportal/examples-js">here</a>.</p>
+<h3 id="how-to-log-attachments-on-net-agents-">How to log attachments on .Net agents?</h3>
+<p>You can attach any binary content:</p>
+<pre><code>Context.Current.Log.Info(&quot;my binary&quot;, &quot;image/png&quot;, bytes);
+// where bytes is byte[] and image/png is mime type of content</code></pre>
+<p>Or use file instead:</p>
+<pre><code>Context.Current.Log.Info(&quot;my file&quot;, new FileInfo(filePath));
+// where filePath is relative/absolute path to your file
+// mime type is determined automatically</code></pre>
+
+  <div data-js-md-path="src/computeds/md/src/LogDataInReportPortal/AttachmentsGuide.md"></div>
   <h2 id="import-data-to-reportportal">Import data to ReportPortal</h2>
 <p>Import functionality gives the opportunity to upload log files via UI.
 To start the import process, you should hit the &#39;Import&#39; button on the Launch page (All Launches tab). In a new pop-up window <strong>&#39;Import Launch&#39;</strong> you can drop files or add them by adding a link.</p>
