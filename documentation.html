@@ -7848,6 +7848,108 @@ Files in Minio may be corrupted and deleted somehow before migration during Repo
 </ol>
 
   <div data-js-md-path="src/computeds/md/src/TipsAndTricks/MigrationIssue.md"></div>
+  <h1 id="case-studies">Case Studies</h1>
+
+  <div data-js-md-path="src/computeds/md/src/CaseStudies/index.md"></div>
+  <h2 id="reducing-regression-time-by-50-">Reducing regression time by 50%</h2>
+<p>EPAM helps a Canadian retail company to reverse-engineer their legacy IBM-based store management system to a modern tech stack. As part of this project, Report Portal was deployed as a centralized test reporting system.</p>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Unavailble environments (15VMs) blocked by aggregation scripts</li>
+<li>High risk of aggregation fail: 1 in 10 aggregations fails. In case of a fail, the whole regression should be re-run.</li>
+<li>Constant regression fails move weekly releases for 1 day</li>
+<li>Lack of information for investigation: no screnshots/no history/no structure/no all info</li>
+<li>Duplicated analysis efforts: missing history of test cases and known issues</li>
+</ul>
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Simplified test run reporting by integrating the test framework with ReportPortal.io</li>
+<li>Distributed test execution data for root cause analysis: logs/screenshots/ attachments</li>
+<li>Provided a possibility to triage failed items (AI-based and manual)</li>
+<li>Provided clear reporting for non-technical stakeholders</li>
+<li>Real-time reporting</li>
+<li>Save on early reaction: team result analysis right after execution started in real time</li>
+<li>Collaborative results analysis</li>
+<li>Test Case History helped to identify flaky test cases</li>
+<li>Extended ML Analyzer</li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy1.png"> <img src="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy1.png" alt="ImageName"> </a></p>
+<h2 id="increasing-test-automation-stability-and-visibility">Increasing test automation stability and visibility</h2>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>2,000 unique tests had low stability (25% passing rate)</li>
+<li>Complex and inconvenient test results reporting</li>
+<li>QA team didn’t have capacity to analyze the results of failed tests</li>
+<li>Automation results were ignored by decision makers: no analysis of the causes of failed tests, no trust in the automation testing process</li>
+<li>Lack of visibility into failed tests and failure causes</li>
+<li>Absence of clear reporting of QA engineers’ workload and performance</li>
+</ul>
+<p><strong>Highlights</strong></p>
+<p>Integration with ReportPortal.io allowed the client to:</p>
+<ul>
+<li>Collect history for previous test runs</li>
+<li>Identify passing, failing, and unstable tests</li>
+<li>Select stable tests in a separate run</li>
+<li>Assign unstable test for refactoring and add them to a separate run for implementation</li>
+<li>Configure ReportPortal.io charts to track a refactoring progress</li>
+<li>Accelerate failure analysis through access to related logs, screenshots, and attachments in one place</li>
+</ul>
+<p><strong>Results</strong></p>
+<ul>
+<li>Automation stability improved from 25% to 95%</li>
+<li>Analysis efforts of QA engineers decreased by 10 times</li>
+<li>Client stakeholders use ReportPortal.io data to make release decisions</li>
+<li>ReportPortal.io became the main tool for tracking test automation progress and health</li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy2.png"> <img src="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy2.png" alt="ImageName"> </a></p>
+<h2 id="reducing-regression-analysis-efforts">Reducing regression analysis efforts</h2>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Test analysis could only start after full execution was completed (4 hours wasted daily)</li>
+<li>All test failures had to be analyzed manually</li>
+<li>No visibility into causes for tests failures</li>
+<li>Absence of history and trends of test failures</li>
+<li>No tools to manage team workload</li>
+<li>Test execution reports were done manually (1 hour of daily efforts)</li>
+</ul>
+<p>Highlights</p>
+<ul>
+<li>Real-time analysis during test runs: results available after the first job execution, saving team capacity and providing an early reaction</li>
+<li>Automatic re-run of failed tests provided additional value and saved up to 5.5 of team’s hours per day</li>
+<li>About 20% of defects previously analyzed manually are being updated automatically through ML capabilities</li>
+<li>Clear visibility into the number of new /existing production defects, auto test related issues, and environment related issues</li>
+<li>Full understanding of application quality, correct planning of maintenance time, and transparent communication of environment instability based on real-time statistics</li>
+<li>History of tests execution helps to analyze causes of test failures more efficiently</li>
+<li>Improved task management due to possibility to plan work allocation and track tests assigned to each team member</li>
+<li>Real-time dashboards were tailored to client’s KPIs, giving full transparency of test execution results</li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy3.png"> <img src="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy3.png" alt="ImageName"> </a></p>
+<h2 id="improving-test-automation-stability">Improving test automation stability</h2>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Complex, manual test runs</li>
+<li>Low stability of regression for unclear reasons (60% passing rate)</li>
+<li>Unclear reporting for non-technical stakeholders, leading to the lack of transparency in test automation results and progress</li>
+<li>Test automation feedback is unclear, unreliable, incomprehensible, and insufficient to decide to push the app to production</li>
+</ul>
+<p><strong>Highlights</strong></p>
+<p>By integrating the test framework with ReportPortal.io, EPAM&#39;s team provided:</p>
+<ul>
+<li>Simplified test runs</li>
+<li>Key info for the manual root cause analysis of test failures, such as logs, screenshots, attachments</li>
+<li>A possibility to triage failed items (AI-based and manual)</li>
+<li>Clear reporting for non-technical stakeholders</li>
+</ul>
+<p><strong>Results</strong></p>
+<ul>
+<li>Improved automation stability from 60% to 77% in one sprint</li>
+<li>Discovered that most failures were caused by environment issues and reduced the number of such failures from 20% to 2%</li>
+<li>Reduced test automation results analysis effort by 45%</li>
+<li>Provided clear and comprehensive test automation reporting: number of test cases, regression passing rate, reasons for failures, product status</li>
+</ul>
+<p><a href="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy4.png"> <img src="http://reportportal.io/documentation/Images/CaseStudies/CaseStudy4.png" alt="ImageName"> </a></p>
+
+  <div data-js-md-path="src/computeds/md/src/CaseStudies/CaseStudies.md"></div>
   <h1 id="terms-conditions">Terms &amp; Conditions</h1>
 
   <div data-js-md-path="src/computeds/md/src/Terms&amp;Conditions/index.md"></div>
