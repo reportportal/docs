@@ -16,10 +16,12 @@
 
 [data-theme='light'] {
   --not-found-text-color: #000000;
+  --not-found-img-url: url("/static/img/404-light.svg")
 }
 
 [data-theme='dark'] {
   --not-found-text-color: #E3E3E3;
+  --not-found-img-url: url("/static/img/404-dark.svg")
 }
 
 .not-found-content {
@@ -27,9 +29,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
-  margin-bottom: 6.5rem;
-  line-height: 1.5rem;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  line-height: 24px;
   color: var(--not-found-text-color);
 }
 
@@ -41,13 +43,17 @@
   max-width: 500px;
   margin-bottom: 16px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 16px;
+}
+
+.not-found-img {
+  background: var(--not-found-img-url) no-repeat;
 }
 
 @media (max-width: 540px) {
   .not-found-content {
     align-items: start;
-    margin: 8.5rem 16px;
+    margin: 135px 16px;
   }
 
   .not-found-content > img {

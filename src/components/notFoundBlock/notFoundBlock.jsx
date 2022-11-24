@@ -27,7 +27,7 @@ export const NotFoundBlock = () => {
         />
         <Layout>
           <div className={'not-found-content'}>
-                <img src='/img/404.svg' alt='Page not found' />
+                <div className={'not-found-img'} />
                 <h1 className={'not-found-title'}>
                   Page Not Found
                 </h1>
