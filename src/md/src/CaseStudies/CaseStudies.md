@@ -68,7 +68,7 @@ Integration with ReportPortal.io allowed the client to:
 - No tools to manage team workload
 - Test execution reports were done manually (1 hour of daily efforts)
 
-Highlights
+**Highlights**
 
 - Real-time analysis during test runs: results available after the first job execution, saving team capacity and providing an early reaction
 - Automatic re-run of failed tests provided additional value and saved up to 5.5 of team’s hours per day
