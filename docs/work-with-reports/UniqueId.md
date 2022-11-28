@@ -5,6 +5,8 @@ sidebar_label: Unique ID
 
 # Unique ID
 
+***(deprecated/ will be replaced by Test Case ID gradually)***
+
 ReportPortal generates an ID automatically for all test items by default.
 The UniqueID generation is based on:
 
