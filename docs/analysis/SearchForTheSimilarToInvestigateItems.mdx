@@ -7,13 +7,15 @@ sidebar_label: Search for the similar "To investigate" items
 
 **Use case:**
 
-**Situation:** Analyzer has been finished its work, and marked with defect types known issues.
+**Situation:** Analyzer has completed its work and marked known issues with defect types.
 
-But in the run there are a lot of failures with a similar unknown reason. All such items have "To investigate" defect type.
+But there are a lot of failures with a similar unknown reason in the run. All such items have "To investigate" defect type.
 
 **Problem:** A user should check and analyze all failed items.
 
-**Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil near a defect type, the system opens a ["Make decision" modal](./ManualAnalysis#make-decision-modal-redesign). In this modal users can see all items with "To investigate" defect type and the same failure reason.
+**Solution:**
+
+A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil next to a defect type, the system opens the ["Make decision" modal](./ManualAnalysis#make-decision-modal-redesign). In this modal a user can see all items with "To investigate" defect type and the same failure reason.
 
 There are 3 options for search the similar "To investigate" items on the Step level:
 
@@ -32,6 +34,6 @@ If launches are filtered by filter on All Launches page, then addition option ``
 
 <media-view src={require('./img/SearchSimilarToInvestigate1.png')} alt="All options for search the similar To investigate items" />
 
-User can check all same failure and perform the bulk operation for them.
+A user can select all identical failures and perform the bulk operation for them.
 
 <media-view src={require('./img/SearchSimilarToInvestigate2.png')} alt="Bulk operation for similar To Investigate items" />
