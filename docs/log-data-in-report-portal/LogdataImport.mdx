@@ -9,8 +9,9 @@ Import functionality gives the opportunity to upload log files via UI.
 To start the import process, you should hit the 'Import' button on the Launch page (All Launches tab). In a new pop-up window **'Import Launch'** you can drop files or add them by adding a link.
 
 ReportPortal checks file size and format first. Imported files should meet the following requirements:
-* File format is zip archive.
+* File format is zip archive or XML file.
 * File size is up to 32Mb.
+* Timestamp format is 2022-11-17T10:15:43
 
 If the file format is incorrect, it is marked in red and the reason is shown in the tooltip on hovering over the file in the pop-up window. This is to prevent any incorrect files from being run through the import process. 
 
@@ -40,4 +41,8 @@ You can only interrupt the import in UI when files are being downloaded into the
 
 <media-view thumbnail={require('./img/ImportBreak.png')} src="https://youtu.be/Qf_vY0J7xGA" alt="Import Break" type="video" />
 
-Import performs as a regular import via API.  Link to the import via the API configuration.
+## Import via API
+
+The details about import via API you can find on the ReportPortal menu at the bottom: API -> launch controller -> Import junit xml report
+
+<media-view src={require('./img/ImportJunitXMLReport.png')} alt="Import junit xml report" />
