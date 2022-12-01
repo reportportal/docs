@@ -2185,16 +2185,17 @@ The attachment can be added via ReportingAPI, follow <a href="https://github.com
 To start the import process, you should hit the &#39;Import&#39; button on the Launch page (All Launches tab). In a new pop-up window <strong>&#39;Import Launch&#39;</strong> you can drop files or add them by adding a link.</p>
 <p>ReportPortal checks file size and format first. Imported files should meet the following requirements:</p>
 <ul>
-<li>File format is zip archive.</li>
+<li>File format is zip archive or XML file.</li>
 <li>File size is up to 32Mb.</li>
+<li>Timestamp format is 2022-11-17T10:15:43</li>
 </ul>
-<p>If the file format is incorrect, it is marked in red and the reason is shown in the tooltip on hovering over the file in the pop-up window. This is to prevent any incorrect files from being run through the import process. </p>
+<p>If the file format is incorrect, it is marked in red and the reason is shown in the tooltip on hovering over the file in the pop-up window. This is to prevent any incorrect files from being run through the import process.</p>
 <p>If all the files added are correct you may hit the &#39;Import&#39; or &#39;Cancel&#39; buttons:</p>
 <ul>
-<li>The Cancel button closes the pop-up window without any operation under log files. </li>
-<li>The Import button starts copying files into the RP file storage and disables the &#39;Import&#39; button. </li>
+<li>The Cancel button closes the pop-up window without any operation under log files.</li>
+<li>The Import button starts copying files into the RP file storage and disables the &#39;Import&#39; button.</li>
 </ul>
-<p>The System will start copying files into the RP file storage if the files meet the following requirements: </p>
+<p>The System will start copying files into the RP file storage if the files meet the following requirements:</p>
 <ul>
 <li>The File format is a zip archive.</li>
 <li>The File size is up to 32Mb.</li>
@@ -2211,7 +2212,9 @@ Files that were copied earlier stay in the RP file storage</p>
 <p><a href="https://youtu.be/238DO03guaA"> <img src="http://reportportal.io/documentation/Images/userGuide/import/import.png" alt="Image"> </a></p>
 <p>You can only interrupt the import in UI when files are being downloaded into the RP file storage. In this case, you should hit the &#39;Cancel&#39; button (or X button in the pop-up window) and confirm the cancellation of import and then hit the &#39;Cancel&#39; button again.</p>
 <p><a href="https://youtu.be/Qf_vY0J7xGA"> <img src="http://reportportal.io/documentation/Images/userGuide/import/import-break.png" alt="Image"> </a></p>
-<p>Import performs as a regular import via API.  Link to the import via the API configuration.</p>
+<h3 id="import-via-api">Import via API</h3>
+<p>The details about import via API you can find on the ReportPortal menu at the bottom: API -&gt; launch controller -&gt; Import junit xml report</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/import/ImportJunitXMLReport.png"> <img src="http://reportportal.io/documentation/Images/userGuide/import/ImportJunitXMLReport.png" alt="Image"> </a></p>
 
   <div data-js-md-path="src/computeds/md/src/LogDataInReportPortal/LogdataImport.md"></div>
   <h1 id="work-with-reports">Work with reports</h1>
@@ -3654,49 +3657,29 @@ For option <strong>Only current lunch</strong> you can not choose <em>Items anal
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Auto-Analysis-IgnoreActionList.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Auto-Analysis-IgnoreActionList.png" alt="Image"> </a></p>
 <p>When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch. </p>
 <h2 id="search-for-the-similar-to-investigate-items">Search for the similar &quot;To investigate&quot; items</h2>
-<blockquote>
-<p><strong>Use case:</strong>
-<strong>Situation:</strong> Analyzer has been finished its work, and marked with defect types known issues.
-But in the run there are a lot of failures with a similar unknown reason. All such items have &quot;To investigate&quot; defect type.</p>
+<p><strong>Use case:</strong></p>
+<p><strong>Situation:</strong> Analyzer has completed its work and marked known issues with defect types.</p>
+<p>But there are a lot of failures with a similar unknown reason in the run. All such items have &quot;To investigate&quot; defect type.</p>
 <p><strong>Problem:</strong> A user should check and analyze all failed items.</p>
-<p><strong>Solution:</strong> A user is on All launches, he clicks on &quot;To investigate&quot; and opens a list with items. When a user clicks on a pencil &gt;near a defect type, the system opens a Defect editor modal. In this modal users can see all items with &quot;To investigate&quot; defect type and &gt;the same failure reason. 
-A user can check all same failure and perform the bulk operation for them.</p>
-</blockquote>
-<p>There are 3 options for search:</p>
+<p><strong>Solution:</strong></p>
+<p>A user is on All launches, he clicks on &quot;To investigate&quot; and opens a list with items. When a user clicks on a pencil next to a defect type, the system opens the <a href="https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign">&quot;Make decision&quot; modal</a>. In this modal a user can see all items with &quot;To investigate&quot; defect type and the same failure reason.</p>
+<p>There are 3 options for search the similar &quot;To investigate&quot; items on the Step level:</p>
 <ul>
-<li>For the current launch
-The system is looking for similar items through the one launch.
-For using this feature:</li>
-<li>Click on the filter on All launches view</li>
-<li>click on To investigate items</li>
-<li>open a Defect editor modal </li>
-<li>choose For the current launch in the drop-down</li>
+<li>Current item only</li>
+<li>Similar &quot;To investigate&quot; in the launch &amp; current item</li>
+<li>Similar &quot;To investigate&quot; in 10 launches &amp; current item</li>
 </ul>
-<p><a href="https://youtu.be/O5cBESXX0l0">https://youtu.be/O5cBESXX0l0</a></p>
+<p>There are 4 options for search the similar &quot;To investigate&quot; items on the Log level:</p>
 <ul>
-<li>For the launches with the same name
-The system is looking for similar items through the 10 last launches with the same name.
-For using this feature:</li>
-<li>Click on the filter on All launches view</li>
-<li>click on To investigate items</li>
-<li>open a Defect editor modal </li>
-<li>choose For the launches with the same name in the drop-down</li>
+<li>Current item only</li>
+<li>Similar &quot;To investigate&quot; in the launch &amp; current item</li>
+<li>Similar &quot;To investigate&quot; in 10 launches &amp; current item</li>
+<li>&quot;To investigate&quot; from the history line &amp; current item</li>
 </ul>
-<p><a href="https://youtu.be/q7YRSvAZU18">https://youtu.be/q7YRSvAZU18</a></p>
-<ul>
-<li>For the applied filter</li>
-</ul>
-<p>The system is looking for similar items through the 10 last launches from the applied filter.
-For using this feature:</p>
-<ul>
-<li>Click on the filter on All launches view</li>
-<li>click on To investigate items</li>
-<li>open a Defect editor modal </li>
-<li>choose For the applied filter in the drop-down</li>
-</ul>
-<p><a href="https://youtu.be/PZSfQRsNDrM">https://youtu.be/PZSfQRsNDrM</a></p>
-<p>The function can be used only for items that belong to the finished launch.
-The number of logs lines are using for analysis, a user can configure on Project Settings &gt; Analysis.</p>
+<p>If launches are filtered by filter on All Launches page, then addition option <code>Similar &quot;To investigate&quot; in the Filter &amp; current item</code> appears on the Step and Log levels.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate1.png" alt="Image"> </a></p>
+<p>A user can select all identical failures and perform the bulk operation for them.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate2.png" alt="Image"> </a></p>
 <h2 id="copy-results-from-a-previous-run">Copy results from a previous run</h2>
 <p>In case you do not want to use Auto-Analyzer we provide you a possibility to get results from previous runs.  So that you can set for a test item: Defect type, linked bug, and comment from the previous run at once. For that, you can hit a button &quot;Copy defect from #&quot; in the last test item and copy a defect from the last but one test item with defect type.</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/CopyResults.png"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/CopyResults.png" alt="Image"></a></p>
@@ -4787,36 +4770,44 @@ The same logic will be applied for the next levels.</p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme7.png" alt="ComponentHEalthCheckWidgetScheme"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme8.png" alt="ComponentHEalthCheckWidgetScheme"> </a></p>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme9.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckScheme9.png" alt="ComponentHEalthCheckWidgetScheme"> </a></p>
-<p><strong>Widget level</strong>
-Each level shows all available attributes with corresponded to his level attribute key.
+<p><strong>Widget level</strong></p>
+<p>Each level shows all available attributes with corresponded to his level attribute key.
 For each level system analyze the last 600 launches.</p>
-<p><strong>Widget section</strong>
-The widget has two sections: Passed and Failed
-<strong>Failed section has:</strong> all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard</p>
-<p><strong>Passed section has:</strong> all groups which have a passing rate higher than passing rated which has been specified on widget wizard</p>
+<p><strong>Widget section</strong></p>
+<p>The widget has two sections: Passed and Failed.</p>
+<p><strong>Failed section has:</strong> all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard.</p>
+<p><strong>Passed section has:</strong> all groups which have a passing rate higher than passing rated which has been specified on widget wizard.</p>
 <p>Each group on the widget has a name which equals to attribute value, passing rate = passed test cases with attribute / total test cases with attribute
 number of test cases with attribute 
 link to the widget list view: Filter list view + test method: Test + status: Passed, Failed, Skipped, Interrupted, InProgress; the number of items is equal to the number of Test cases in the widget
-a color line which depends on passing rate (see section Widget legend)
-Widget legend</p>
-<p>Widget legend has two lines: Passed and Failed
- Failed</p>
+a color line which depends on passing rate (see section Widget legend).</p>
+<p><strong>Widget legend</strong></p>
+<p>Widget legend has two lines: Passed and Failed</p>
+<p><strong>Failed</strong></p>
 <p>The failed line has four colors:</p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li>And have values - less than specified on widget wizard -1
-Passed</li>
+<li>light red</li>
+<li>regular red</li>
+<li>strong red</li>
+<li>dark red</li>
 </ul>
+<p>And have values - less than specified on widget wizard -1</p>
+<p><strong>Passed</strong></p>
 <p>The passing line has only two colors:</p>
-<p>  slightly green<br>green = Passed
-And have values - from specified on widget wizard to 100%
-Depends on this color scheme each group on the widget has own color. 
-Groups which have passing rate 100% - has color passed green
-Groups which passing rate from 99 - specified on widget wizard  - has color slightly green
-from 3<em> (Value specified on WW -  1)/4  to (Value specified on WW -1)<br>from (Value specified on WW- 1)/2  to 3</em> (Value specified on WW- 1)/4 - 
-from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4<br>0  - ((Value specified on WW- 1)/4 -1) -</p>
+<ul>
+<li>slightly green</li>
+<li>green = Passed</li>
+</ul>
+<p>And have values - from specified on widget wizard to 100%. Depends on this color scheme each group on the widget has its own color.</p>
+<p>Let&#39;s say we set &#39;The min allowable passing rate for the component&#39; to be 90%.</p>
+<ul>
+<li>passed green: groups which have passing rate 100%.</li>
+<li>slightly green: groups which passing rate from 99 - specified on widget wizard.</li>
+<li>light red: from 3* (90% - 1)/4  to (90% - 1)</li>
+<li>strong red: from (90% - 1)/2  to 3* (90% - 1)/4</li>
+<li>regular red: from  (90% - 1)/4 to  2*(90% - 1)/4</li>
+<li>dark red: 0  - ((90% - 1)/4 -1)</li>
+</ul>
 <p><a href="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckView.png"> <img src="http://reportportal.io/documentation/Images/userGuide/widgetTypes/ComponentHealthCheckView.png" alt="ComponentHEalthCheckWidgetVideo"> </a></p>
 <blockquote>
 <p><strong>Note:</strong>
