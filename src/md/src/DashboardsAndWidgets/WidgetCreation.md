@@ -767,46 +767,55 @@ Shows the passing rate of the application components which are indicated by the 
 
 
 **Widget level**
+
 Each level shows all available attributes with corresponded to his level attribute key.
 For each level system analyze the last 600 launches.
 
 **Widget section**
-The widget has two sections: Passed and Failed
-**Failed section has:** all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard
 
-**Passed section has:** all groups which have a passing rate higher than passing rated which has been specified on widget wizard
+The widget has two sections: Passed and Failed.
+
+**Failed section has:** all groups (test cases with the same attribute) which have passing rate less than passing rated which has been specified on widget wizard.
+
+**Passed section has:** all groups which have a passing rate higher than passing rated which has been specified on widget wizard.
 
 Each group on the widget has a name which equals to attribute value, passing rate = passed test cases with attribute / total test cases with attribute
 number of test cases with attribute 
 link to the widget list view: Filter list view + test method: Test + status: Passed, Failed, Skipped, Interrupted, InProgress; the number of items is equal to the number of Test cases in the widget
-a color line which depends on passing rate (see section Widget legend)
-Widget legend
+a color line which depends on passing rate (see section Widget legend).
+
+**Widget legend**
 
 Widget legend has two lines: Passed and Failed
- Failed
+
+**Failed**
 
 The failed line has four colors:
--    
--  
--  
--  
+
+- light red
+- regular red
+- strong red
+- dark red
+
 And have values - less than specified on widget wizard -1
-Passed
+
+**Passed**
 
 The passing line has only two colors:
 
-  slightly green  
-green = Passed
-And have values - from specified on widget wizard to 100%
-Depends on this color scheme each group on the widget has own color. 
-Groups which have passing rate 100% - has color passed green
-Groups which passing rate from 99 - specified on widget wizard  - has color slightly green
-from 3* (Value specified on WW -  1)/4  to (Value specified on WW -1)   
-from (Value specified on WW- 1)/2  to 3* (Value specified on WW- 1)/4 - 
-from  (Value specified on WW- 1)/4 to  2*(Value specified on WW- 1)/4  
-0  - ((Value specified on WW- 1)/4 -1) -
+- slightly green
+- green = Passed
 
+And have values - from specified on widget wizard to 100%. Depends on this color scheme each group on the widget has its own color.
 
+Let's say we set 'The min allowable passing rate for the component' to be 90%.
+
+- passed green: groups which have passing rate 100%.
+- slightly green: groups which passing rate from 99 - specified on widget wizard.
+- light red: from 3* (90% - 1)/4  to (90% - 1)
+- strong red: from (90% - 1)/2  to 3* (90% - 1)/4
+- regular red: from  (90% - 1)/4 to  2*(90% - 1)/4
+- dark red: 0  - ((90% - 1)/4 -1)
 
 [ ![ComponentHEalthCheckWidgetVideo](Images/userGuide/widgetTypes/ComponentHealthCheckView.png) ](Images/userGuide/widgetTypes/ComponentHealthCheckView.png)
 

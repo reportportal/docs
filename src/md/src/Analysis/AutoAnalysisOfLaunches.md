@@ -320,53 +320,38 @@ When you choose “Ignore in AA”, logs of the chosen item are removed from the
 
 ## Search for the similar "To investigate" items
 
->**Use case:**
-> **Situation:** Analyzer has been finished its work, and marked with defect types known issues.
-> But in the run there are a lot of failures with a similar unknown reason. All such items have "To investigate" defect type.
->
->**Problem:** A user should check and analyze all failed items.
->
-> **Solution:** A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil >near a defect type, the system opens a Defect editor modal. In this modal users can see all items with "To investigate" defect type and >the same failure reason. 
->A user can check all same failure and perform the bulk operation for them.
+**Use case:**
 
+**Situation:** Analyzer has completed its work and marked known issues with defect types.
 
+But there are a lot of failures with a similar unknown reason in the run. All such items have "To investigate" defect type.
 
-There are 3 options for search:
-- For the current launch
-The system is looking for similar items through the one launch.
-For using this feature:
-- Click on the filter on All launches view
-- click on To investigate items
-- open a Defect editor modal 
-- choose For the current launch in the drop-down
+**Problem:** A user should check and analyze all failed items.
 
-https://youtu.be/O5cBESXX0l0
+**Solution:**
 
+A user is on All launches, he clicks on "To investigate" and opens a list with items. When a user clicks on a pencil next to a defect type, the system opens the ["Make decision" modal](https://reportportal.io/docs/Manual-Analysis%3E-make-decision-modal-redesign). In this modal a user can see all items with "To investigate" defect type and the same failure reason.
 
-- For the launches with the same name
-The system is looking for similar items through the 10 last launches with the same name.
-For using this feature:
-- Click on the filter on All launches view
-- click on To investigate items
-- open a Defect editor modal 
-- choose For the launches with the same name in the drop-down
+There are 3 options for search the similar "To investigate" items on the Step level:
 
-https://youtu.be/q7YRSvAZU18
+- Current item only
+- Similar "To investigate" in the launch & current item
+- Similar "To investigate" in 10 launches & current item
 
-- For the applied filter
+There are 4 options for search the similar "To investigate" items on the Log level:
 
-The system is looking for similar items through the 10 last launches from the applied filter.
-For using this feature:
-- Click on the filter on All launches view
-- click on To investigate items
-- open a Defect editor modal 
-- choose For the applied filter in the drop-down
+- Current item only
+- Similar "To investigate" in the launch & current item
+- Similar "To investigate" in 10 launches & current item
+- "To investigate" from the history line & current item
 
-https://youtu.be/PZSfQRsNDrM
+If launches are filtered by filter on All Launches page, then addition option ```Similar "To investigate" in the Filter & current item``` appears on the Step and Log levels.
 
-The function can be used only for items that belong to the finished launch.
-The number of logs lines are using for analysis, a user can configure on Project Settings > Analysis.
+[ ![Image](Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate1.png) ](Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate1.png)
 
+A user can select all identical failures and perform the bulk operation for them.
+
+[ ![Image](Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate2.png) ](Images/userGuide/analyzeLaunches/SearchSimilarToInvestigate2.png)
 
 
 
