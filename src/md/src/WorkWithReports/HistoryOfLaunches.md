@@ -23,12 +23,12 @@ Please find the description of what Test Case ID and Unique  by the links:
 
 They are both a unique identifiers of executions uniquness.
 
-But Unique ID generates on the base of a launch name where test execution is situated.
+But Unique ID ***(deprecated)*** generates on the base of a launch name where test execution is situated.
 And Test Case ID usually doesn't contain a launch name. 
 
-So that the main difference between a history table based on Unique ID and Tets Case ID is that:
+So that the main difference between a history table based on Unique ID ***(deprecated)*** and Test Case ID is that:
 
-* History on Unique ID  shows only executions from launches with the same name
+* History on Unique ID ***(deprecated)*** shows only executions from launches with the same name
 * History on Test Case ID shows executions from all launches.
 
 
@@ -121,7 +121,7 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 
 #### History table for launches with the same name
 
-If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id) or with Unique ID ***(deprecated/ will be replaced by Test Case ID gradually)***. 
+If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id) or with Unique ID ***(deprecated)***. 
 This option is for you.
 
 
@@ -132,7 +132,7 @@ This option is for you.
 - Click on the button 'History'
 - Choose the option **'Launches with the same name'** in the drop-down 'BASE'
 
-**What information is shown on the table basedon Unique ID ot Test Case ID (with option "Launches with the same name"?**
+**What information is shown on the table based on Unique ID (deprecated) ot Test Case ID (with option "Launches with the same name")?**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from only launches with the same name on the project.
 Each column on the history table is equaled to a number of the execution.
