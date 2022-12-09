@@ -12,13 +12,13 @@ To see a table of the historical trend of executions, navigate to the "Launches"
 Report Portal acquires a lot of results and you can choose by which parameter you want the history of test results to get defined.
 There are 2 options:
 
-* by [Unique ID](https://reportportal.io/docs/Unique-ID)
+* by [Unique ID](https://reportportal.io/docs/Unique-ID) ***(deprecated/ will be replaced by Test Case ID gradually)***
 * by [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 #### Difference between Test Case ID  and Unique ID
 
 Please find the description of what Test Case ID and Unique  by the links:
-* [UUID](https://reportportal.io/docs/Unique-ID)
+* [UUID](https://reportportal.io/docs/Unique-ID) ***(deprecated/ will be replaced by Test Case ID gradually)***
 * [Test Case ID](https://reportportal.io/docs/Test-case-ID) 
 
 They are both a unique identifiers of executions uniquness.
@@ -33,6 +33,7 @@ So that the main difference between a history table based on Unique ID and Tets 
 
 
 #### Unique ID history
+***(deprecated/ will be replaced by Test Case ID gradually)***
 
 1. Take the ReportPortal release version 5.2.2 or higher. docker-compose.yml
 
@@ -120,7 +121,7 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 
 #### History table for launches with the same name
 
-If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id) or with Unique ID. 
+If you have configured ReportPortal with [TestCase History table](https://reportportal.io/docs/History-of-launches%3Ehistory-table-test-case-id-or-unique-id) or with Unique ID ***(deprecated/ will be replaced by Test Case ID gradually)***. 
 This option is for you.
 
 
