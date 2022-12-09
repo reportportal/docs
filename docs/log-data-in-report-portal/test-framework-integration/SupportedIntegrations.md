@@ -37,7 +37,7 @@ All agents use [client-java](https://github.com/reportportal/client-java) to com
 
 ## JavaScript
 
-**Test Framework Integration (agents)::**
+**Test Framework Integration (agents):**
 
 All agents use [client-javascript](https://github.com/reportportal/client-javascript) to communicate with ReportPortal API.
 
@@ -64,7 +64,7 @@ User can use any combination of client/agent/logger.
 - [Rest api client](https://github.com/reportportal/client-net)
 - [Multi-threaded client](https://github.com/reportportal/commons-net)
 
-**Test Framework Integration (agents)::**
+**Test Framework Integration (agents):**
 
 - [NUnit](https://github.com/reportportal/agent-net-nunit)
 - [VSTest](https://github.com/reportportal/agent-net-vstest)
@@ -82,7 +82,7 @@ User can use any combination of client/agent/logger.
 
 All agents use [client-python](https://github.com/reportportal/client-Python).
 
-**Test Framework Integration (agents)::**
+**Test Framework Integration (agents):**
 
 - [pytest](https://github.com/reportportal/agent-python-pytest)
 - [Robot Framework](https://github.com/reportportal/agent-Python-RobotFramework)
