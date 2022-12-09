@@ -9,15 +9,35 @@ Choose which combination of agent, client, and logger you need, and then follow 
 
 ## Java
 
-| **Test Framework**         | **Agents** |**Client** | **Logger**| 
-|----------------------------| ------------- |------------- | ------------- |
-|       | | | |
-|  | | | |
+All agents use [client-java](https://github.com/reportportal/client-java) to communicate with ReportPortal API and as common code library. Also you can use any combination of agent and logger.
 
+**Test Framework Integration (agents):**
+
+- [JUnit5](https://github.com/reportportal/agent-java-junit5)
+- [JUnit4](https://github.com/reportportal/agent-java-junit)
+- [TestNG](https://github.com/reportportal/agent-java-testNG)
+- [Cucumber (the first version)](https://github.com/reportportal/agent-java-cucumber)
+- [Cucumber 2](https://github.com/reportportal/agent-java-cucumber2)
+- [Cucumber 3](https://github.com/reportportal/agent-java-cucumber3)
+- [Cucumber 4](https://github.com/reportportal/agent-java-cucumber4)
+- [Cucumber 5](https://github.com/reportportal/agent-java-cucumber5)
+- [Cucumber 6, 7](https://github.com/reportportal/agent-java-cucumber6)
+- [JBehave](https://github.com/reportportal/agent-java-jbehave)
+- [Spock](https://github.com/reportportal/agent-java-spock)
+- [SoapUI (outdated)](https://github.com/reportportal/agent-java-soapui)
+
+**Loggers:**
+
+- [Logback](https://github.com/reportportal/logger-java-logback)
+- [Log4J](https://github.com/reportportal/logger-java-log4j)
+- [Rest Assured](https://github.com/reportportal/logger-java-rest-assured)
+- [Selenide](https://github.com/reportportal/logger-java-selenide)
+- [OkHttp3](https://github.com/reportportal/logger-java-okhttp3)
+- [Apache HttpComponents](https://github.com/reportportal/logger-java-httpcomponents)
 
 ## JavaScript
 
-**Test Framework Integration (agents):**
+**Agents:**
 
 All agents use [client-javascript](https://github.com/reportportal/client-javascript) to communicate with ReportPortal API.
 
@@ -44,7 +64,7 @@ User can use any combination of client/agent/logger.
 - [Rest api client](https://github.com/reportportal/client-net)
 - [Multi-threaded client](https://github.com/reportportal/commons-net)
 
-**Test Framework Integration (agents):**
+**Agents:**
 
 - [NUnit](https://github.com/reportportal/agent-net-nunit)
 - [VSTest](https://github.com/reportportal/agent-net-vstest)
@@ -60,11 +80,14 @@ User can use any combination of client/agent/logger.
 
 ## Python
 
-| **Test Framework**         | **Agents** |**Client** | **Logger**| 
-|----------------------------| ------------- |------------- | ------------- |
-|       | | | |
-|  | | | |
+All agents use [client-python](https://github.com/reportportal/client-Python).
 
+**Agents:**
+
+- [pytest](https://github.com/reportportal/agent-python-pytest)
+- [Robot Framework](https://github.com/reportportal/agent-Python-RobotFramework)
+- [behave](https://github.com/reportportal/agent-python-behave)
+- [nosetests](https://github.com/reportportal/agent-python-nosetests)
 
 ## PHP
 
