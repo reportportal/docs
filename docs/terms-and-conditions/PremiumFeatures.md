@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: Enterprise Features
+sidebar_label: Premium Features
 ---
 
-# Enterprise Features
+# Premium Features
 
 [**Quality Gates**](/category/quality-gates)
