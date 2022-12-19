@@ -3797,25 +3797,23 @@ For option <strong>Only current lunch</strong> you can not choose <em>Items anal
 
   <div data-js-md-path="src/computeds/md/src/Analysis/ManualAnalysis.md"></div>
   <h2 id="pattern-analysis">Pattern Analysis</h2>
-<p>Pattern analysis is a feature that helps you to increase of finding the common patterns in error logs.</p>
-<blockquote>
+<p>Pattern analysis is a feature that helps you to speed up the process of finding common patterns in error logs.</p>
+<h3 id="types-of-pattern-analysis">Types of Pattern Analysis</h3>
+<p><strong>String</strong> – any problem phrase.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisString1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisString1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisString2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisString2.png" alt="ImageName"> </a></p>
+<p><strong>Regex</strong> – regular expression.</p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisRegex1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisRegex1.png" alt="ImageName"> </a></p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisRegex2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/PatternAnalysis/PatternAnalysisRegex2.png" alt="ImageName"> </a></p>
 <p><strong>Use case 1:</strong></p>
 <p><strong>Problem:</strong> A user knows the several common problems why test cases fail. During tests run a lot of test have failed. A user need to check logs a of tests to know by what reason test cases have failed.</p>
-<p><strong>Solution:</strong> Create a pattern rules for all common reasons which contains a problem phrase (for example: <em>&quot;Expected status code <404> but &gt; was <500>&quot;</em> or &quot;<em>Null response&quot;</em>) or with Regex quiry. Swithc On a pattern analysis.
-Launch a test run. 
-So that the ReportPortal systems finds all failed items which have known patterns in error logs and marks them with a label with pattern name.
-Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
-Add The most popular pattern widget (TOP-20) and track the TOP-20 the most popular reason of test failing in the build.</p>
-</blockquote>
-<p><a href="https://youtu.be/XgJr5Nm7OrI"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Auto Pattern.png" alt="ImageName"> </a></p>
-<blockquote>
+<p><strong>Solution:</strong> Create a pattern rules for all common reasons which contains a problem phrase (for example: <em>&quot;Expected status code <404> but &gt; was <500>&quot;</em> or &quot;<em>Null response&quot;</em>) or with Regex query. Switch On a pattern analysis. Launch a test run. So that the ReportPortal systems finds all failed items which have known patterns in error logs and marks them with a label with pattern name. Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view. Add The most popular pattern widget (TOP-20) and track the TOP-20 the most popular reason of test failing in the build.</p>
+<p><a href="https://youtu.be/5YaN85x6_hc"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Manual Pattern.png" alt="ImageName"> </a></p>
 <p><strong>Use case 2:</strong></p>
 <p><strong>Problem:</strong> Test run has finished. A user found that more than 3 items have failed by the same reason. And he want to find all such items.</p>
 <p><strong>Solution:</strong> Create a new pattern rule on Project Settings. Launch a pattern analysis manually for one launch. 
-name.
-Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.</p>
-</blockquote>
-<p><a href="https://youtu.be/5YaN85x6_hc"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Manual Pattern.png" alt="ImageName"> </a></p>
+name. Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.</p>
+<p><a href="https://youtu.be/XgJr5Nm7OrI"> <img src="http://reportportal.io/documentation/Images/userGuide/analyzeLaunches/Auto Pattern.png" alt="ImageName"> </a></p>
 
   <div data-js-md-path="src/computeds/md/src/Analysis/PatternAnalysis.md"></div>
   <h2 id="unique-error-analysis">Unique Error Analysis</h2>
