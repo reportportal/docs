@@ -60,7 +60,7 @@ const config = {
         logo: {
           alt: 'ReportPortal logo',
           src: 'img/logo.svg',
-          href: 'https://reportportal.io',
+          href: '/',
         },
         items: [
           {
