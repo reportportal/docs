@@ -28,9 +28,9 @@ Or you can use a button "Login with GitHub" to login.
 ## How to deploy ReportPortal instance
 
 You tried the demo session. You are impressed with ReportPortal features / possibilities and decided to install a ReportPortal. Excellent! Visit our detailed documentation on how deploy ReportPortal:
-* [with Kubernetes](/installation-steps/DeployReportPortalKubernetes)
-* [with Docker](/installation-steps/DeployReportPortalDockerLinuxMac)
-* [with Docker on Windows](/installation-steps/DeployWithDockerWindows)
+* [with Kubernetes](/installation-steps/DeployWithKubernetes)
+* [with Docker](/installation-steps/DeployWithDockerOnLinuxMac)
+* [with Docker on Windows](/installation-steps/DeployWithDockerOnWindows)
 
 Please also check the [technical requirements for your system](/installation-steps/OptimalPerformanceHardwareSetup)
 
@@ -42,7 +42,7 @@ Finally, you logged into ReportPortal. And you see just empty tabs... Looks conf
 
 Let’s start by inviting your team members. You can also do it as a final step, but it would be nice to investigate ReportPortal together.
 
-In order to add other users to ReportPortal you can send invitations via email. To make sure that the Email service is configured, please follow the next steps (as an admin user): [E-mail server configuration](/plugins/EmailServer). Once emailing is configured, you can either [invite new users](/report-poral-configuration/CreationOfProjectAndAddingUsers#invite-a-user-to-a-project) or [create a new user](/report-poral-configuration/CreationOfProjectAndAddingUsers#add-users-to-project) in the project.
+In order to add other users to ReportPortal you can send invitations via email. To make sure that the Email service is configured, please follow the next steps (as an admin user): [E-mail server configuration](/plugins/EmailServer). Once emailing is configured, you can either [invite new users](/reportportal-configuration/CreationOfProjectAndAddingUsers#invite-a-user-to-a-project) or [create a new user](/reportportal-configuration/CreationOfProjectAndAddingUsers#add-users-to-project) in the project.
 
 After this step you will have emailing capabilities enabled, and several more users invited to ReportPortal.
 
@@ -52,7 +52,7 @@ After this step you will have emailing capabilities enabled, and several more us
 
 The main section for work with ReportPortal is Launches tab in the left menu. But Launches table is empty and it’s hard to understand what ReportPortal can do and what to do next.
 
-[Generate demo data](/report-poral-configuration/ProjectConfiguration#demo-data) feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.
+[Generate demo data](/reportportal-configuration/ProjectConfiguration#demo-data) feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.
 
 <media-view src={require('./img/GenerateFirstData.png')} alt="Generate First Data" />
 
@@ -127,13 +127,13 @@ The next step can be creating the [Overall statistics chart](/dashboards-and-wid
 
 <media-view src={require('./img/OverallStatistics2.png')} alt="Overall statistics chart example" />
 
-We've reviewed basic widgets. How can I get some insights from launches? Our suggestion is to create a [Flaky test cases](/dashboards-and-widgets/FlakyTestCasesTable) table to find tests that often change status from passed to failed in different launches. These unstable tests do not give any confidence. The widget allows you to identify them so that you can pay special attention to them and fix them faster.
+We've reviewed basic widgets. How can I get some insights from launches? Our suggestion is to create a [Flaky test cases](/dashboards-and-widgets/FlakyTestCasesTableTop20) table to find tests that often change status from passed to failed in different launches. These unstable tests do not give any confidence. The widget allows you to identify them so that you can pay special attention to them and fix them faster.
 
 <media-view src={require('./img/FlakyTests1.png')} alt="Create Flaky test cases widget" />
 
 <media-view src={require('./img/FlakyTests2.png')} alt="Flaky test cases example" />
 
-Next, you might want to understand how long it takes to pass each test case. [Most time-consuming test cases](/dashboards-and-widgets/MostTimeConsumingTestCasesWidget) widget helps to find the longest scenarios.
+Next, you might want to understand how long it takes to pass each test case. [Most time-consuming test cases](/dashboards-and-widgets/MostTimeConsumingTestCasesWidgetTop20) widget helps to find the longest scenarios.
 
 <media-view src={require('./img/MostTime1.png')} alt="Create Most time-consuming test cases widget" />
 
@@ -291,4 +291,4 @@ You can go to the test cases level and see what problems they had.
 
 You have checked demo test results, dashboards and widgets. And now you want to see your real data in ReportPortal.
 
-ReportPortal is a system that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](/log-data-in-report-portal/test-framework-integration/) or [Implement own integration](/log-data-in-report-portal/ImplementOwnIntegration).
+ReportPortal is a system that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](/log-data-in-reportportal/test-framework-integration/) or [Implement own integration](/log-data-in-reportportal/ImplementOwnIntegration).

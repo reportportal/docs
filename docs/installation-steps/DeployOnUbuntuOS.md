@@ -1,4 +1,4 @@
-# Deploy ReportPortal on Ubuntu OS
+# Deploy on Ubuntu OS
 
 ***Provided by @Tset Noitamotuahe. The article might be outdated.
 Do not hesitate to contribute and send us a pull request with updates. We appreciate your help!***
