@@ -1089,6 +1089,8 @@ All users of LDAP will have access to the ReportPortal instance. For access to t
 
 ## Okta SAML
 
+***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
+
 [ ![SAML configuration](Images/userGuide/SAML.png) ](https://youtu.be/ljXvCVWG4mQ)
 
 To set up access with SAML:
@@ -1134,6 +1136,8 @@ https://your domain adress/uat/saml/sp/SSO/alias/report-portal-sp
 “RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. "https://reportportal.com/uat"). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.
 
 ## Azure SAML
+
+***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
 
 Login to ReportPortal via Azure SAML is available starting from version 5.7 (SAML Okta was implemented in versions before 5.7).
 
