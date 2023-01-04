@@ -1,5 +1,7 @@
 ## SAML Plugin
 
+***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
+
 This plugin allows you to configure a connection with a SAML provider.
 
 Integration with SAML will allow you to login into ReportPortal using SSO instead of tedious manual user creation.
