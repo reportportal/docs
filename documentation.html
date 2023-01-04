@@ -5983,6 +5983,7 @@ ADMINISTRATOR and PROJECT MANAGER can make project configurations of a plugin.</
 
   <div data-js-md-path="src/computeds/md/src/Plugins/ManagePlugins.md"></div>
   <h2 id="saml-plugin">SAML Plugin</h2>
+<p><strong><em>If you have a pre-created Internal user, you can&#39;t log in by SAML using their credentials (Email or Name).</em></strong></p>
 <p>This plugin allows you to configure a connection with a SAML provider.</p>
 <p>Integration with SAML will allow you to login into ReportPortal using SSO instead of tedious manual user creation.</p>
 <p>The plugin provides a mechanism to exchange information between ReportPortal and SAML provider, such as the possibility to login to ReportPortal with SAML credentials.</p>
@@ -7001,6 +7002,7 @@ All users of Active Directory will have access to the ReportPortal instance.<br>
 Click the &#39;Submit&#39; button.
 All users of LDAP will have access to the ReportPortal instance. For access to the ReportPortal, the user should use their domain credentials (Login and password).</p>
 <h2 id="okta-saml">Okta SAML</h2>
+<p><strong><em>If you have a pre-created Internal user, you can&#39;t log in by SAML using their credentials (Email or Name).</em></strong></p>
 <p><a href="https://youtu.be/ljXvCVWG4mQ"> <img src="http://reportportal.io/documentation/Images/userGuide/SAML.png" alt="SAML configuration"> </a></p>
 <p>To set up access with SAML:</p>
 <ol>
@@ -7036,6 +7038,7 @@ All users of SAML will have access to the ReportPortal instance.<br>Just click o
 <pre><code class="language-java">https:<span class="comment">//your domain adress/uat/saml/sp/SSO/alias/report-portal-sp</span></code></pre>
 <p>“RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat” (e.g. &quot;<a href="https://reportportal.com/uat">https://reportportal.com/uat</a>&quot;). Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.</p>
 <h2 id="azure-saml">Azure SAML</h2>
+<p><strong><em>If you have a pre-created Internal user, you can&#39;t log in by SAML using their credentials (Email or Name).</em></strong></p>
 <p>Login to ReportPortal via Azure SAML is available starting from version 5.7 (SAML Okta was implemented in versions before 5.7).</p>
 <p>Azure SAML is a useful authorization method for big companies with 100+ employees, especially if this organization is already presented in Azure service. The main benefit here is no need for manual account creation. Users can log in to the ReportPortal using Azure SAML in an uncomplicated way: select login with SAML, then choose Azure, and upon login users’ data is synchronized with ReportPortal automatically.</p>
 <p>If your organization is using Azure SAML and some employees left, there is no need to remove their accounts from ReportPortal and from other Azure applications – just clearing their accounts in Azure will be enough.</p>
