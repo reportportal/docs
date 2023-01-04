@@ -2,7 +2,7 @@
 sidebar_label: GitHub
 ---
 
-# GitHub Authorization
+# GitHub
 
 ReportPortal allows logging in via GitHub OAuth Web Application Flow.
 

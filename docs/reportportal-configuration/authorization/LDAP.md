@@ -2,7 +2,8 @@
 sidebar_label: LDAP
 ---
 
-# LDAP Authorization
+# LDAP
+
 To set up access with LDAP:
 
 1. Log in to the ReportPortal as an ADMIN user
