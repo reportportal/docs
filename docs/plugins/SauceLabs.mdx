@@ -45,6 +45,15 @@ To configure Sauce Labs for the whole instance:
 
 After Sauce Labs integration adding, you can use Sauce Labs integration.
 
+## Project Sauce Labs integration
+
+If plugin is configured on global level, then all projects at this instance will use this configuration by default.
+However, every project can “unlink” configuration from the global level and use a project level configuration.
+
+Here is the button to click.
+And then follow the instructions.
+
+<media-view src={require('./img/sauce-labs/SauceLabsUnlinkGlobal.png')} alt="Sauce Labs Unlink Global integration" />
 
 ## How to use Sauce Labs Integration
 
@@ -59,4 +68,3 @@ By the attribute `SLID: XXXXXXXX` you link the execution in ReportPortal and a j
 So that if a test item has an attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs from the appropriate job in ReportPortal on a log view.
 
 <media-view thumbnail={require('./img/sauce-labs/SauceLabs.png')} src="https://youtu.be/RQAxGz6koh0" alt="Sauce Labs configuration" type="video" />
-
