@@ -87,7 +87,7 @@ const config = {
               },
               {
                 label: 'ReportPortal Tutorial',
-                to: '/tutorial/',
+                to: '/tutorial',
               },
               {
                 label: 'Installation steps',
@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'RP Configuration',
-                to: '/category/rp-configuration',
+                to: '/category/reportportal-configuration',
               },
               {
                 label: 'Developers Guide',
