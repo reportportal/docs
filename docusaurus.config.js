@@ -55,7 +55,6 @@ const config = {
           }
       ],
       navbar: {
-        title: 'ReportPortal.io',
         hideOnScroll: true,
         logo: {
           alt: 'ReportPortal logo',
@@ -143,7 +142,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ReportPortal. Sponsored by EPAM.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ReportPortal. Sponsored by EPAM. <br> Licensed under Apache v2.0.`,
       },
       prism: {
         theme: lightCodeTheme,
