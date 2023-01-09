@@ -2,7 +2,7 @@
 sidebar_label: Active Directory
 ---
 
-# Active Directory Authorization
+# Active Directory
 
 To set up access with Active Directory:
 

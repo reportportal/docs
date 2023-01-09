@@ -9,4 +9,4 @@ ReportPortal Admin can configure an easy authorization on the instance. From the
 * [Active Directory](./ActiveDirectory)
 * [GitHub](./GitHub)
 * [LDAP](./LDAP)
-* [SAML](./SAML)
+* [SAML](./SAMLProvider)
