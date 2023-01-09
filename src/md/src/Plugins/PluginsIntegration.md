@@ -861,7 +861,7 @@ Example of an email server configuration for a Yandex email server (detailed inf
 
 After E-mail server integration adding, the configuration will be applied to all projects on the instance.
 
-**Project E-mail integration**
+### Project E-mail integration
 
 If E-mail integration has not to be added on the project, or if Project Manager or Admin want to specified special configurations for a special project, they can configure E-mail server in the project settings.
 
@@ -981,6 +981,13 @@ To configure Sauce Labs for the whole instance:
 
 After Sauce Labs integration adding, you can use Sauce Labs integration.
 
+### Project Sauce Labs integration
+
+If plugin is configured on global level, then all projects at this instance will use this configuration by default. However, every project can “unlink” configuration from the global level and use a project level configuration.
+
+Here is the button to click. And then follow the instructions.
+
+[ ![Link issue](Images/userGuide/gettingStarted/SauceLabsUnlinkGlobal.png) ](Images/userGuide/gettingStarted/SauceLabsUnlinkGlobal.png)
 
 ### How to use Sauce Labs Integration
 
