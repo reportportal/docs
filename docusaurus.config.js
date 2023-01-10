@@ -55,19 +55,18 @@ const config = {
           }
       ],
       navbar: {
-        title: 'ReportPortal.io',
         hideOnScroll: true,
         logo: {
           alt: 'ReportPortal logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
           href: '/',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Docs',
+            href: 'https://reportportal.io/',
+            label: 'ReportPortal.io',
+            position: 'right',
           },
           {
             href: 'https://github.com/reportportal',
@@ -86,19 +85,27 @@ const config = {
                 label: 'What is ReportPortal?',
                 to: '/',
               },
+              {
+                label: 'ReportPortal Tutorial',
+                to: '/reportportal-tutorial/',
+              },
+              {
+                label: 'Installation steps',
+                to: '/category/installation-steps',
+              },
+              {
+                label: 'RP Configuration',
+                to: '/category/reportportal-configuration',
+              },
+              {
+                label: 'Developers Guide',
+                to: '/category/developers-guides',
+              }
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/reportportal',
-              },
-              {
-                label: 'Facebook',
-                href: 'https://www.facebook.com/ReportPortal.io',
-              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/ReportPortal_io',
@@ -117,6 +124,10 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'ReportPortal.io',
+                href: 'https://reportportal.io/',
+              },
+              {
                 label: 'GitHub',
                 href: 'https://github.com/reportportal',
               },
@@ -132,7 +143,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ReportPortal. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ReportPortal. Sponsored by EPAM. <br> Licensed under Apache v2.0.`,
       },
       prism: {
         theme: lightCodeTheme,
