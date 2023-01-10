@@ -59,6 +59,7 @@ const config = {
         logo: {
           alt: 'ReportPortal logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
           href: '/',
         },
         items: [
