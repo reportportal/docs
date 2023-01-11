@@ -693,10 +693,11 @@ Then it leaves only launches that have an attribute with mentioned key and group
 The system leaves only the latest launches in each group (if the user has chosen option Latest launches in the widget wizard).
 For each group of launches, a list with pattern aggregated.
 
-
+[ ![ImageName](Images/userGuide/widgetTypes/MostPopularPatternTable1.png) ](Images/userGuide/widgetTypes/MostPopularPatternTable1.png)
 
 
 **Widget view**
+
 On the widget a user can view a table which shows: 
 
 * 20 patterns with the biggest number of test cases in each defined group.
@@ -707,6 +708,7 @@ A pattern name is clickable. By clicking on pattern name a user is redirected to
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
 
+[ ![ImageName](Images/userGuide/widgetTypes/MostPopularPatternTable2.png) ](Images/userGuide/widgetTypes/MostPopularPatternTable2.png)
 
 ## Component health check
 
