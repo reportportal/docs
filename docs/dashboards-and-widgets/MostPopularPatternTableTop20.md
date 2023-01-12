@@ -17,6 +17,8 @@ Then it leaves only launches that have an attribute with mentioned key and group
 The system leaves only the latest launches in each group (if the user has chosen option Latest launches in the widget wizard).
 For each group of launches, a list with pattern aggregated.
 
+<media-view src={require('./img/widget-types/MostPopularPatternTable1.png')} alt="Create Most Popular Pattern Table Widget" />
+
 **Widget view**
 
 On the widget a user can view a table which shows:
@@ -25,6 +27,8 @@ On the widget a user can view a table which shows:
 
 Via drop-down user can transit from group to group.
 A pattern name is clickable. By clicking on pattern name a user is redirected to a list with all test cases which have clicked pattern. A list of test cases includes test cases from different launches.
+
+<media-view src={require('./img/widget-types/MostPopularPatternTable2.png')} alt="Most Popular Pattern Table Widget - how it looks" />
 
 >**Note:**
 The widget doesn't contain 'IN PROGRESS" launches.
