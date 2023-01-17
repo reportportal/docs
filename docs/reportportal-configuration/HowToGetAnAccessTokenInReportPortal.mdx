@@ -1,0 +1,65 @@
+# How to get an access token in ReportPortal
+
+There are two ways to authorize in the ReportPortal API:
+
+## 1. Authorization with user’s login and password
+
+This is the main and **recommended way** to get access to ReportPortal API.
+
+Make the following HTTP request to get user's access token using login and password:
+
+```
+POST <report_portal_url>/uat/sso/oauth/token
+
+BODY with parameters:
+grant_type: password
+username: <username>
+password: <password> 
+```
+<media-view src={require('./img/AccessToken/AccessToken1.png')} alt="Authorization with user’s login and password" />
+
+Or you can use the following curl request:
+
+```
+curl --header "Content-Type: application/x-www-form-urlencoded" \
+--request POST \
+--data "grant_type=password&username=<username>&password=<password>" \
+--user "ui:uiman" \
+<report_portal_url>/uat/sso/oauth/token
+```
+
+Then you will receive a response with an access token:
+
+```
+{
+"access_token": <access_token>,
+"token_type": "bearer",
+"expires_in": <token_lifetime_ms>,
+"refresh_token": <refresh_token>,
+...
+}
+```
+Now you can use “access_token” with any request to API by sending it as HTTP Authorization header:
+
+```
+HTTP Header:
+Authorization: Bearer <access_token>
+
+```
+
+Please note, that the token has a validity expiration time which is specified in the “expires_in” field. 
+
+## 2. Authorization with user's UUID Access Token (for agents)
+
+Another way is to use the UUID Access Token from the user's Profile page. Pay attention, that this type of token is designed to be used by ReportPortal client tools and is **not a recommended way** to provide access directly to API endpoints.
+
+Go to the Profile page when logged in and find the Access token. 
+
+<media-view src={require('./img/AccessToken/AccessToken2.png')} alt="Authorization with user's UUID Access Token (for agents)" />
+
+The UUID token works in the same way as the regular token – just add it in the HTTP Authorization header when making requests to the ReportPoral API:
+
+```
+HTTP Header:
+Authorization: Bearer <access_token>  
+```
