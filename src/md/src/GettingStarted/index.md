@@ -1,1 +1,1 @@
-# Report Portal Configuration
+# ReportPortal Configuration
