@@ -1281,7 +1281,7 @@ javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: 
 </ol>
 
   <div data-js-md-path="src/computeds/md/src/InstallationSteps/TraefikTLS.md"></div>
-  <h1 id="report-portal-configuration">Report Portal Configuration</h1>
+  <h1 id="reportportal-configuration">ReportPortal Configuration</h1>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/index.md"></div>
   <h2 id="components-overview">Components Overview</h2>
@@ -1743,7 +1743,7 @@ with a similar and lower role only.</p>
 </blockquote>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/ProjectConfiguration.md"></div>
-  <h2 id="report-portal-jobs-configuration">Report Portal jobs configuration</h2>
+  <h2 id="reportportal-jobs-configuration">ReportPortal jobs configuration</h2>
 <p>Currently, Report Portal has 5 configurable jobs for data removing:</p>
 <ul>
 <li>Clean launches</li>
@@ -1793,6 +1793,45 @@ Environment variables for configuration with default values:</p>
 </ul>
 
   <div data-js-md-path="src/computeds/md/src/GettingStarted/ReportPortalJobs.md"></div>
+  <h2 id="how-to-get-an-access-token-in-reportportal">How to get an access token in ReportPortal</h2>
+<p>There are two ways to authorize in the ReportPortal API:</p>
+<h3 id="1-authorization-with-user-s-login-and-password">1. Authorization with user’s login and password</h3>
+<p>This is the main and <strong>recommended way</strong> to get access to ReportPortal API.</p>
+<p>Make the following HTTP request to get user&#39;s access token using login and password:</p>
+<pre><code>POST &lt;report_portal_url&gt;/uat/sso/oauth/token
+
+BODY with parameters:
+grant_type: password
+username: &lt;username&gt;
+password: &lt;password&gt;</code></pre>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/gettingStarted/AccessToken1.png"> <img src="http://reportportal.io/documentation/Images/userGuide/gettingStarted/AccessToken1.png" alt="ImageName"> </a></p>
+<p>Or you can use the following curl request:</p>
+<pre><code>curl --header &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+--request POST \
+--data &quot;grant_type=password&amp;username=&lt;username&gt;&amp;password=&lt;password&gt;&quot; \
+--user &quot;ui:uiman&quot; \
+&lt;report_portal_url&gt;/uat/sso/oauth/token</code></pre>
+<p>Then you will receive a response with an access token:</p>
+<pre><code>{
+&quot;access_token&quot;: &lt;access_token&gt;,
+&quot;token_type&quot;: &quot;bearer&quot;,
+&quot;expires_in&quot;: &lt;token_lifetime_ms&gt;,
+&quot;refresh_token&quot;: &lt;refresh_token&gt;,
+...
+}</code></pre>
+<p>Now you can use “access_token” with any request to API by sending it as HTTP Authorization header:</p>
+<pre><code>HTTP Header:
+Authorization: Bearer &lt;access_token&gt;</code></pre>
+<p>Please note, that the token has a validity expiration time which is specified in the “expires_in” field. </p>
+<h3 id="2-authorization-with-user-s-uuid-access-token-for-agents-">2. Authorization with user&#39;s UUID Access Token (for agents)</h3>
+<p>Another way is to use the UUID Access Token from the user&#39;s Profile page. Pay attention, that this type of token is designed to be used by ReportPortal client tools and is <strong>not a recommended way</strong> to provide access directly to API endpoints.</p>
+<p>Go to the Profile page when logged in and find the Access token. </p>
+<p><a href="http://reportportal.io/documentation/Images/userGuide/gettingStarted/AccessToken2.png"> <img src="http://reportportal.io/documentation/Images/userGuide/gettingStarted/AccessToken2.png" alt="ImageName"> </a></p>
+<p>The UUID token works in the same way as the regular token – just add it in the HTTP Authorization header when making requests to the ReportPoral API:</p>
+<pre><code>HTTP Header:
+Authorization: Bearer &lt;access_token&gt;</code></pre>
+
+  <div data-js-md-path="src/computeds/md/src/GettingStarted/HowToGetAnAccessTokenInReportPortal.md"></div>
   <h2 id="github-authorization">GitHub Authorization</h2>
 <p>ReportPortal allows logging in via GitHub OAuth Web Application Flow.</p>
 <h3 id="presequences">Presequences</h3>
