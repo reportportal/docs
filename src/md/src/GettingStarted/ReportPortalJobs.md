@@ -1,4 +1,4 @@
-## Report Portal jobs configuration
+## ReportPortal jobs configuration
 
 Currently, Report Portal has 5 configurable jobs for data removing:
 * Clean launches
