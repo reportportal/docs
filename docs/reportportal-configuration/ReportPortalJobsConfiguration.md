@@ -5,7 +5,7 @@ sidebar_label: ReportPortal jobs configuration
 
 # ReportPortal jobs configuration
 
-Currently, Report Portal has 5 configurable jobs for data removing:
+Currently, ReportPortal has 5 configurable jobs for data removing:
 * Clean launches
 * Clean logs
 * Clean attachments info

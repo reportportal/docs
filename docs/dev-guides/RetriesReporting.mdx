@@ -2,7 +2,7 @@
 
 Some frameworks allow to retry `Test` execution according to provided conditions (TestNG) or just retry it predefined number of times.
 First execution is a simple `TestItem` and next ones are called `Retries`.
-In Report Portal these items are grouped and displayed as a sequence of executions for the same `Test`:
+In ReportPortal these items are grouped and displayed as a sequence of executions for the same `Test`:
 
 <media-view src={require('./img/retry/Retry.png')} alt="Retry" />
 
@@ -91,6 +91,6 @@ Second request won't trigger retries handling, because `retry=false` is specifie
 
 As a result 2 separate `Test items` will be displayed, so ORDER of sent requests matters (if send this items in reversed order they will be grouped as `retries`).
 
-In Report Portal the only `Test item` from the `Retries` group that has statistics and can have an `issue` attached is the one with max `startTime`.
+In ReportPortal the only `Test item` from the `Retries` group that has statistics and can have an `issue` attached is the one with max `startTime`.
 In previous requests `startTime` was `1574423237000` for the first one and `1574423237100` for the second one, so the second one is a 'main' `Test Item`
 with statistics and `issue` (if attached).  

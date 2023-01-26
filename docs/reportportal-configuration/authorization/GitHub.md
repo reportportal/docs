@@ -20,9 +20,9 @@ Fill the following fields:
 
 Once new application is created, you will have Client ID. Click on "Generate a new client secret" to get Client Secret, but do not close the window until you configure the Authorization on RP, since it will never show you the Secret again.
 
-### Report Portal configuration
+### ReportPortal configuration
 
-To setup access with GitHub auth on Report Portal:
+To setup access with GitHub auth on ReportPortal:
 1. Log in to the ReportPortal as an ADMIN user
 2. Open the list on the right of the user's image.
 3. Click the 'Administrative' link

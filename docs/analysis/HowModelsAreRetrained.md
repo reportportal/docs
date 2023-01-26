@@ -10,7 +10,9 @@ In the Auto-analysis and ML suggestions processes several models take part:
 * ML suggestions XGBoost model, which gives the probability for a test item to be similar to the test item from the history
 * Error message language model on Tf-Idf vectors(Random Forest Classifier), which gives a probability for the error message to be of a specific defect type or its subtype based on the words in the message. The probability from this model is taken as a feature in the main boosting algorithm.
 
-At the start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized analysis, the models should be retrained on the data from the project. **Note:** If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
+At the start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized analysis, the models should be retrained on the data from the project.
+
+**Note:** If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
 
 Triggering information and retrained models are saved in Minio(or a filesystem) as you set up in the Analyzer service settings.
 
