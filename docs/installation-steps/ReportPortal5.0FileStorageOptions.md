@@ -7,7 +7,7 @@ In ReportPortal 5.0 we use two ways to store log attachments, user pictures and 
 
 ### MinIO
 
-[MiIO](https://min.io) is a high performance distributed object storage server and a preferable way of using our file storage. It stays on top of S3 or any other cloud storage, and allows to have a shared FS for several API and UAT pods in Kubernetes.  
+[MinIO](https://min.io) is a high performance distributed object storage server and a preferable way of using our file storage. It stays on top of S3 or any other cloud storage, and allows to have a shared FS for several API and UAT pods in Kubernetes.  
 
 To set it up please use the following environment variables  
 

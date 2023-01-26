@@ -33,8 +33,8 @@ Let's imagine we have the following tests structure:
         (Step) deleteUser
 ```
 
-So our goal is run the tests and send results to Report Portal.
-We can interact with Report Portal API instance trough HTTP requests.
+So our goal is run the tests and send results to ReportPortal.
+We can interact with ReportPortal API instance trough HTTP requests.
 
 The main flow is set of HTTP requests:
 1. Start launch
@@ -45,7 +45,7 @@ The main flow is set of HTTP requests:
 
 Steps 2-4 should execute for each test item in structure.
 
-Let's assume that our Report Portal instance deployed at `http://rp.com`. And our project name is `rp_project`.
+Let's assume that our ReportPortal instance deployed at `http://rp.com`. And our project name is `rp_project`.
 
 Also we need token to get access to API. There are two ways to retrieve it.
 

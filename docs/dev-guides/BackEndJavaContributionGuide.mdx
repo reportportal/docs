@@ -22,10 +22,10 @@
 - [RabbitMQ](https://www.rabbitmq.com) - message broker for inter-service communication
 - [Minio](https://min.io) - binary data storage (alternative to plain filesystem storage)
 - [Service Index](https://github.com/reportportal/service-index) - gateway service with services metadata resolving mechanism
-- [Service UI](https://github.com/reportportal/service-ui) - Report Portal web UI
+- [Service UI](https://github.com/reportportal/service-ui) - ReportPortal web UI
 
 There are three Java repositories that are part of the whole RP deployment:
-- [Service API](https://github.com/reportportal/service-api) - REST API service as Report Portal functionality provider
+- [Service API](https://github.com/reportportal/service-api) - REST API service as ReportPortal functionality provider
 - [Service Authorization](https://github.com/reportportal/service-authorization) - REST Authorization service for users authentication
 - [Service Jobs](https://github.com/reportportal/service-jobs) - Service with jobs to process data in the back-ground
 
@@ -73,7 +73,7 @@ code auto-generation (@repository for example) and so on(another real needed cas
 It is highly recommended creating an issue that doesn't already exist and then fix it within your PR. 
 Even if it's some new function. Issue will stay there with all your ideas and comments from other contributors. 
 Also, RP users who are not developers might prefer to look through issues 
-rather than PRs to check if something is already fixed in a new version of Report Portal.
+rather than PRs to check if something is already fixed in a new version of ReportPortal.
 
 ## Open-source contribution workflow
 
@@ -280,7 +280,7 @@ To start up Service Authorization you should fill marked values in the `applicat
 
 Before starting Service API we should add RabbitMQ to our deployment. 
 
-In Report Portal RabbitMQ is required for 3 purposes:
+In ReportPortal RabbitMQ is required for 3 purposes:
 - inter-service communication between Service API and Service Analyzer. 
 - async reporting feature
 - user activity event publishing
@@ -372,7 +372,7 @@ To start up Service Jobs you should fill marked values in the `application.yaml`
 
 ### Service UI
 
-After all back-end services deployed you may want to interact with them not only using tool like Postman but use Report Portal UI too.
+After all back-end services deployed you may want to interact with them not only using tool like Postman but use ReportPortal UI too.
 To do this you should do the next steps:
 - clone/update [Service UI repository](https://github.com/reportportal/service-ui)
 - checkout `develop` branch
@@ -425,13 +425,13 @@ npm run dev
 
 ### Introduction to dependencies
 
-All our Java services besides common dependencies like `spring-...` also have Report Portal libraries that are separated to different repositories.
+All our Java services besides common dependencies like `spring-...` also have ReportPortal libraries that are separated to different repositories.
 There is a full list of these dependencies:
 - [Commons DAO](https://github.com/reportportal/commons-dao) - Data layer dependency with domain model configuration
 - [Commons Model](https://github.com/reportportal/commons-model) - REST models dependency
 - [Commons](https://github.com/reportportal/commons) - Some common utils for multiple usage purposes
 - [Commons Rules](https://github.com/reportportal/commons-rules) - Business rules validation dependency
-- [Plugin API](https://github.com/reportportal/plugin-api) - Report Portal plugin API
+- [Plugin API](https://github.com/reportportal/plugin-api) - ReportPortal plugin API
 - [Commons BOM](https://github.com/reportportal/commons-bom) - POM config for releases
 
 ### Updates in dependencies
@@ -462,7 +462,7 @@ Now you have your branch on the GitHub page and can see the `commit hash`:
 
 ## Summary notes
 
-This documentation should help you save your time by configuring Report Portal local dev environment and give you understanding of some standards/conventions that we try stick to.
+This documentation should help you save your time by configuring ReportPortal local dev environment and give you understanding of some standards/conventions that we try stick to.
 
 Simplified development workflow should look like this:
 - always have the latest schema and data in your local DB instance using [this instructions](#how-to-keep-db-data-up-to-date) 

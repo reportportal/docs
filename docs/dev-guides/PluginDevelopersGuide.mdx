@@ -15,7 +15,7 @@
 
 ## Introduction
 
-Report Portal as a microservice application had services that integrate with external systems like JIRA or RALLY. These are problems of this
+ReportPortal as a microservice application had services that integrate with external systems like JIRA or RALLY. These are problems of this
 approach:
 
 - every service will run as a separate application consuming additional amount of resources for environment;
@@ -23,7 +23,7 @@ approach:
   every time;
 - every service modification requires re-deployment.
 
-To solve these problems and support dynamic integrations Report Portal implements plugin system on top
+To solve these problems and support dynamic integrations ReportPortal implements plugin system on top
 of [PF4J](https://github.com/pf4j/pf4j).
 
 ## How does it work
@@ -75,7 +75,7 @@ task assemblePlugins(type: Copy) {
 }
 ```
 
-This base configuration with `plugin-api` dependency grants access to extension points and core Report Portal dependencies.
+This base configuration with `plugin-api` dependency grants access to extension points and core ReportPortal dependencies.
 
 <br/>
 

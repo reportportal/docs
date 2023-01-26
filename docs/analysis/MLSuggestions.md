@@ -5,7 +5,7 @@ sidebar_label: ML Suggestions
 
 # ML Suggestions
 
-ML suggestions functionality is based on previously analyzed results (either manually or via Auto-analysis feature) using Machine Learning. The functionality is provided by the Analyzer service in combination with ElasticSearch. All the installations steps can be found in the "ReportPortal Analyzer. How to install" section above.
+ML suggestions functionality is based on previously analyzed results (either manually or via Auto-analysis feature) using Machine Learning. The functionality is provided by the Analyzer service in combination with ElasticSearch.
 
 This analysis hints what are the most similar analyzed items to the current test item. You can interact with this functionality in several ways:
 * Choose one of the suggested items if you see that the reason for the current test item is similar to the suggested one. When you choose the item and apply changes to the current item, the following test item characteristics will be copied from the chosen test item:
@@ -17,7 +17,7 @@ This analysis hints what are the most similar analyzed items to the current test
 
 ## How the ML suggestions functionality is working
 
-ML Suggestions searches for similar previously analyzed items to the current test item, so it requires an analytical base saved in Elasticsearch. How an analytical base is created you can find in the subsection "Create an analytical base in the ElasticSearch" above. ML suggestions takes into account all user-investigated, auto-analyzed items or items chosen from ML suggestions. While the analytical base is growing ML suggestions functionality will have more examples to search by and suggest you the best options.
+ML Suggestions searches for similar previously analyzed items to the current test item, so it requires an analytical base saved in Elasticsearch. ML suggestions takes into account all user-investigated, auto-analyzed items or items chosen from ML suggestions. While the analytical base is growing ML suggestions functionality will have more examples to search by and suggest you the best options.
 
 ML suggestions analysis is run everytime you enter "Make decision" editor. ML suggestions are run for all test items no matter what defect type they have now. This functionality is processing only test items with logs (log level >= 40000).
 
@@ -31,7 +31,9 @@ The request for the suggestions part looks like this:
 * analyzerConfig;
 * logs = List of log objects (logId, logLevel, message)
 
-The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs. **Note:** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
+The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs.
+
+**Note:** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
 
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. The ML model is an XGBoost model which features (about 40 features) represent different statistics about the test item, log message texts, launch info and etc, for example:
 * the percent of selected test items with the following defect type
