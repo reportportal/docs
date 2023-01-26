@@ -116,7 +116,7 @@ const config = {
               },
               {
                 label: 'Slack',
-                href: 'https://reportportal-slack-auto.herokuapp.com',
+                href: 'https://slack.epmrpp.reportportal.io/',
               }
             ],
           },
