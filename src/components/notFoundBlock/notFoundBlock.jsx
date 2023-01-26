@@ -33,7 +33,8 @@ export const NotFoundBlock = () =>
                     documentation.
                 </p>
                 <p className={'not-found-text'}>
-                    But it's clearly here somewhere. <br/> Use the keyword search to find!
+                    But it's clearly here somewhere. <br/>
+                    Please, go to <b>“Home page”</b> instead and use navigation menu to find it.
                 </p>
             </div>
         </Layout>
