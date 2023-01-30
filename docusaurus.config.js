@@ -51,7 +51,7 @@ const config = {
       metadata: [
           {
             name: 'keywords',
-            content: 'reportportal, reports, reporting, automation, documentation'
+            content: 'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting'
           }
       ],
       navbar: {
