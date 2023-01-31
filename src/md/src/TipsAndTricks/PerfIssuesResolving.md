@@ -28,8 +28,19 @@
 <br/>
 
    Kubernetes:
-   [ ![Image](Images/Kubernetes_server_types.png) ](Images/Kubernetes_server_types.png)
 
+   [ ![Image](Images/Kubernetes_server_types.png) ](Images/Kubernetes_server_types.png)
+   
+**NOTE**
+
+After the Report Portal version 5.7.2 additional nodes for Elasticsearch are required:
+
+   [ ![Image](Images/Elastic_nodes.png) ](Images/Elastic_nodes.png)
+   
+   Kubernetes with additional nodes for Elasticsearch:
+
+   [ ![Image](Images/Kubernetes_server_types_elastic.png) ](Images/Kubernetes_server_types_elastic.png)
+   
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
 
@@ -253,3 +264,28 @@ max_connections=500
 *The values of these parameters are given for example only, but in general, can be valid for all types of loads for servers middle+ and large.*
 
 Please note, that the max_connections paramether must be more than the sum of the RP_DATASOURCE_MAXIMUMPOOLSIZE for the API and the UAT services + several connections for connecting to the database from outside.
+
+### 7. Elasticsearch Performance Tuning
+
+To retrieve statistics from a cluster:
+
+```
+GET /_cluster/stats
+```
+
+The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).
+
+To increase the limits of the total number of primary and replica shards for the cluster:
+
+```
+PUT /_cluster/settings
+
+{
+  "persistent" : {
+    "cluster.max_shards_per_node": 10000
+  }
+}
+```
+Keep in mind, that the more shards you allow per node the more resources each node will need and the worse the performance can get.
+
+
