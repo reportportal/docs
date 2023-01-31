@@ -34,7 +34,7 @@
 ---
 **NOTE**
 
-In Report Portal version 5.7.3 the log double-entry saving approach to DB and Elasticsearch (to data streams) was implemented. Thus, additional nodes for Elasticsearch are required. This saving approach reduces the DB footprint in almost x10 times, improves speed of logging, minimizes computation power to clean-up data and brings Full text search capabilities. During the testing, for better performance and optimal operation of the service, the number of required nodes, their configuration and the number of shards per node were determined. How to increase the limits of shards see part. 7.
+In Report Portal version 5.7.3 the log double-entry saving approach to DB and Elasticsearch (to data streams) was implemented. Thus, additional nodes for Elasticsearch are required. This saving approach reduces the DB footprint in almost x10 times, improves speed of logging, minimizes computation power to clean-up data and brings full text search capabilities. During the testing, for better performance and optimal operation of the service, the number of required nodes, their configuration and the number of shards per node were determined. How to increase the limits of shards see part. 7.
 
 Additional nodes for Elasticsearch:
 
