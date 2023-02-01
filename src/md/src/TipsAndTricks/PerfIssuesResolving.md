@@ -34,7 +34,7 @@
 ---
 **NOTE**
 
-In Report Portal version 5.7.3 the log double-entry saving approach to DB and Elasticsearch (to data streams) was implemented. Thus, additional nodes for Elasticsearch are required. This saving approach reduces the DB footprint in almost x10 times, improves speed of logging, minimizes computation power to clean-up data and brings full text search capabilities. During the testing, for better performance and optimal operation of the service, the number of required nodes, their configuration and the number of shards per node were determined. How to increase the limits of shards see part. 7.
+In Report Portal version 5.7.3 the log double-entry saving approach to DB and Elasticsearch (to data streams) was implemented. This saving approach reduces the DB footprint in almost x10 times, improves speed of reporting logs, minimizes computation power to clean-up data and brings full text search capabilities. The rollout of additional nodes for Elasticsearch is a recommendation. But in case of a large amount of data that is reported, additional nodes for Elasticsearch are required. During the testing, for better performance and optimal operation of the service, the number of required nodes, their configuration and the number of shards per node were determined. Also, it was verified that such Elasticsearch configuration works stable and without performance degradation on all types of server configuration (from Small server type to Large). However, if you have the big amount of reported data, it is possible to tune nodes configuration (_e.g. increase the Disk size_) according to your needs. Also, in such cases it may be necessary to increase the limits of shards (_how to increase the limits of shards see part. 7_).
 
 Additional nodes for Elasticsearch:
 
@@ -268,11 +268,39 @@ Please note, that the max_connections paramether must be more than the sum of th
 
 ### 7. Elasticsearch Performance Tuning
 
-To retrieve statistics from a cluster:
+As mentioned above, in some cases it may be necessary to increase the limits of shards. Such tune should be done if you have a large number of projects (1 index = 1 project). Please consider that the number of Elasticsearch shards on default configuration is insufficient for large number of projects. As a result, after creating 2000 indices the logs saving behavior may be incorrect.
+
+To retrieve statistics from a cluster (_to check the value of shard_):
 
 ```
 GET /_cluster/stats
+
+{
+    "_nodes": {
+        "total": 3,
+        "successful": 3,
+        "failed": 0
+    },
+    "cluster_name": "elasticsearch",
+    "cluster_uuid": "Oq5UUZUg3RGE0Pa_Trfds",
+    "timestamp": 172365897412,
+    "status": "green",
+    "indices": {
+        "count": 470,
+        "shards": {
+            "total": 940,
+            "primaries": 470,
+            "replication": 1.0,
+            "index": {
+                "shards": {
+                    "min": 2,
+                    "max": 2,
+                    "avg": 2.0
+                },
+...
+}
 ```
+
 
 The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).
 
@@ -283,7 +311,7 @@ PUT /_cluster/settings
 
 {
   "persistent" : {
-    "cluster.max_shards_per_node": 10000
+    "cluster.max_shards_per_node": 3000
   }
 }
 ```
