@@ -1,22 +1,5 @@
 # Reporting developers guide
 
-1. [Preconditions](#preconditions)
-1. [Retrieving api token](#retrieving-api-token)
-1. [Start launch](#start-launch)
-1. [Start root(suite) item](#start-rootsuite-item)
-1. [Start child(container) item](#start-childcontainer-item)
-1. [Start child(step) item](#start-childstep-item)
-1. [Start child(nested step) item](#start-childnested-step-item)
-1. [Finish child(nested step) item](#finish-childnested-step-item)
-1. [Finish child item](#finish-child-item)
-1. [Finish parent(container) item](#finish-parentcontainer-item)
-1. [Save single log without attachment](#save-single-log-without-attachment)
-1. [Batch save logs](#batch-save-logs)
-1. [Save launch log](#save-launch-log)
-1. [Finish root(suite) item](#finish-rootsuite-item)
-1. [Finish launch](#finish-launch)
-1. [Example](#example)
-
 ## Preconditions
 
 Let's imagine we have the following tests structure:
