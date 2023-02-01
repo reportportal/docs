@@ -54,7 +54,6 @@
 
 @media (max-width: 540px) {
   .not-found-content {
-    align-items: start;
     margin: 135px 16px;
   }
 
@@ -63,7 +62,6 @@
   }
 
   .not-found-text {
-    text-align: left;
     max-width: 540px;
   }
 }
