@@ -5,13 +5,35 @@
  */
 
 @font-face {
-  src: url("/static/fonts/NotoSans-Regular.ttf");
-  font-family: NotoSans-Regular;
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 @font-face {
-  src: url("/static/fonts/Poppins-Regular.ttf");
-  font-family: Poppins-Regular;
+  font-family: NotoSans;
+  src: url("/static/fonts/noto-sans/NotoSans-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: NotoSans;
+  src: url("/static/fonts/noto-sans/NotoSans-Medium.ttf");
+  font-weight: 500;
 }
 
 :root {
@@ -22,8 +44,8 @@
   --ifm-color-primary-light: #00adce;
   --ifm-color-primary-lighter: #00b5d7;
   --ifm-color-primary-lightest: #00ccf3;
-  --ifm-font-family-base: 'NotoSans-Regular';
-  --ifm-heading-font-family: 'Poppins-Regular';
+  --ifm-font-family-base: NotoSans;
+  --ifm-heading-font-family: Poppins;
   --ifm-code-font-size: 95%;
 }
 
@@ -44,7 +66,7 @@
 }
 
 button {
-  font-family: 'Poppins-Regular' !important;
+  font-family: Poppins !important;
 }
 
 h1 {
