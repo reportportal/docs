@@ -38,11 +38,6 @@ In Report Portal version 5.7.3, the log double-entry saving approach to DB and E
 
 Additional nodes for Elasticsearch:
 
-|       |               | Elastic Nodes |                |           | Monthly | Yearly |
-|-------|---------------|---------------|----------------|-----------|---------|--------|
-| Count | Instance type | IOPS          | Disk size (GB) | Disk type | $183.75 | $2,205 |
-| 3     | t3.medium     | -             | 200            | gp2       |         |        |
-
 <table cellspacing="0" border="0">
 	<colgroup width="64"></colgroup>
 	<colgroup width="102"></colgroup>
