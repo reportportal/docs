@@ -65,8 +65,6 @@ Additional nodes for Elasticsearch:
 		</tr>
 </table>
 
-   [ ![Image](Images/Elastic_nodes.png) ](Images/Elastic_nodes.png)
-
 ---
    
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
