@@ -38,6 +38,56 @@ In Report Portal version 5.7.3, the log double-entry saving approach to DB and E
 
 Additional nodes for Elasticsearch:
 
+|       |               | Elastic Nodes |                |           | Monthly | Yearly |
+|-------|---------------|---------------|----------------|-----------|---------|--------|
+| Count | Instance type | IOPS          | Disk size (GB) | Disk type | $183.75 | $2,205 |
+| 3     | t3.medium     | -             | 200            | gp2       |         |        |
+
+<table border=0 cellpadding=0 cellspacing=0 width=480 style='border-collapse:
+ collapse;table-layout:fixed;width:360pt'>
+ <col width=64 style='width:48pt'>
+ <col width=96 style='mso-width-source:userset;mso-width-alt:3510;width:72pt'>
+ <col width=64 span=5 style='width:48pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td colspan=5 height=20 class=xl636064 width=352 style='height:15.0pt;
+  width:264pt'>Elastic Nodes</td>
+  <td class=xl646064 width=64 style='border-left:none;width:48pt'>Monthly</td>
+  <td class=xl646064 width=64 style='border-left:none;width:48pt'>Yearly</td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl656064 style='height:30.0pt;border-top:none'>Count</td>
+  <td class=xl666064 width=96 style='border-top:none;border-left:none;
+  width:72pt'>Instance type</td>
+  <td class=xl656064 style='border-top:none;border-left:none'>IOPS</td>
+  <td class=xl666064 width=64 style='border-top:none;border-left:none;
+  width:48pt'>Disk size (GB)</td>
+  <td class=xl656064 style='border-top:none;border-left:none'>Disk type</td>
+  <td rowspan=2 class=xl676064 width=64 style='border-bottom:.5pt solid black;
+  border-top:none;width:48pt'>$183.75</td>
+  <td rowspan=2 class=xl686064 width=64 style='border-bottom:.5pt solid black;
+  border-top:none;width:48pt'>$2,205</td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl656064 style='height:30.0pt;border-top:none'>3</td>
+  <td class=xl666064 width=96 style='border-top:none;border-left:none;
+  width:72pt'>t3.medium</td>
+  <td class=xl696064 style='border-top:none;border-left:none'>-</td>
+  <td class=xl656064 style='border-top:none;border-left:none'>200</td>
+  <td class=xl656064 style='border-top:none;border-left:none'>gp2</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=64 style='width:48pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
    [ ![Image](Images/Elastic_nodes.png) ](Images/Elastic_nodes.png)
 
 ---
