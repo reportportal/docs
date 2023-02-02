@@ -268,7 +268,9 @@ Please note, that the max_connections paramether must be more than the sum of th
 
 ### 7. Elasticsearch Performance Tuning
 
-As mentioned above, in some cases it may be necessary to increase the limits of shards. Such tune should be done if you have a large number of projects (1 index = 1 project). Please consider that the number of Elasticsearch shards on default configuration is insufficient for large number of projects. As a result, after creating 2000 indices the logs saving behavior may be incorrect.
+As mentioned above, in some cases may be necessary to increase the limits of shards. The general rule is 2 active shards per 1 data stream(1 data stream equals 1 project in the ReportPortal on the default configuration). If the data stream reaches the default 50 GB storage limit, it will be rollovered and a new generation will be created (please see the diagram below). Please consider that the number of Elasticsearch shards on the default configuration is insufficient for ReportPortal installations with a large number of projects. As a result, after storing close to 3000 indices without any tuning the logs-saving behavior may be incorrect.
+
+[ ![Image](Images/data_streams.png) ](Images/data_streams.png)
 
 To retrieve statistics from a cluster (_to check the value of shard_):
 
@@ -316,5 +318,11 @@ PUT /_cluster/settings
 }
 ```
 Keep in mind, that the more shards you allow per node the more resources each node will need and the worse the performance can get.
+
+We also recommend to check the next guides in the official Elasticsearch documentation:
+
+[Data streams](https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html)
+
+[Size your shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html)
 
 
