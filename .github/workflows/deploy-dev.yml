@@ -16,6 +16,7 @@ env:
   AWS_S3_BUCKET_NAME : "rpp-docs"
   AWS_REGION_NAME : "eu-central-1"
   BUILD_DIR : "build/"
+  DOCS_BASE_URL: "/"
 
 on:
   push:
@@ -51,6 +52,11 @@ jobs:
 
       - name: Install of node dependencies
         run: npm ci --legacy-peer-deps
+
+      - name: create env file
+        run: |
+          touch .env
+          echo DOCS_BASE_URL=${{ env.DOCS_BASE_URL }} >> .env
 
       - name: Build the source code
         run: npm run build
