@@ -3,12 +3,16 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+require('dotenv').config();
+
+// the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
+const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Report Portal Documentation',
   url: 'https://reportportal.io',
-  baseUrl: '/docs/',
+  baseUrl,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

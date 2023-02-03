@@ -1,5 +1,10 @@
 # Report Portal documentation
 
+To serve the documentation on base path other than `/docs/` follow the next steps:
+1. create a file `.env` in the project root
+2. Add `DOCS_BASE_URL=/` with your preferred base path.
+
+[To be updated]
 ## Local development
 
 To see and develop the documentation locally please follow the next steps:
