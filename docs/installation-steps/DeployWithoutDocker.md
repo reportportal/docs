@@ -8,6 +8,10 @@ sidebar_label: Deploy without Docker
 ***The instruction designed for the version 5.3.5 and might be outdated for the latest versions.
 Do not hesitate to contribute and send us a pull request with updates. We appreciate your help!***
 
+***The instruction designed for the version 5.3.5 and might be outdated for the latest versions.
+Do not hesitate to contribute and send us a pull request with updates.
+We appreciate your help!***
+
 In order to get started with ReportPortal on Red Hat Family and Ubuntu Linux distributions non-Docker/Kubernetes usage, please use the following links
 
 ### 1. [[Outdated] ReportPortal 5.3.5](https://github.com/reportportal/linux-installation)
