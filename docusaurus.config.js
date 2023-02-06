@@ -38,8 +38,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           // sidebarPath: require.resolve('./sidebars.js'), // TODO
-          editUrl:
-            'https://github.com/reportportal/documentation',
         },
         blog:  false,
         theme: {
