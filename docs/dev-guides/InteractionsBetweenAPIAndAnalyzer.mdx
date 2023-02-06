@@ -1,0 +1,179 @@
+# Interactions between API and Analyzer
+
+## Overview
+
+Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](http://www.amqp.org/specification/0-9-1/amqp-org-download) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates [virtual host](https://www.rabbitmq.com/vhosts.html) inside RabbitMQ with name `analyzer` on start. Analyzers in theirs turn connect to the virtual host and declare exchange with name and arguments. Any type of request from `API` and response from `analyzer` stores in the same queue. Request and response messages is presented as JSON.  
+
+<media-view src={require('./img/analyzer/ApiAnalyzer.png')} alt="API Analyzer" />
+
+## Declaring exchange
+
+Each analyzer has to declare direct exchange with the following arguments:
+
+- `analyzer` - Name of analyzer (string)
+- `version` - Analyzer version (string)
+- `analyzer_index` - Is indexing supported (boolean, false by default)
+- `analyzer_log_search` - Is log searching supported (boolean, false by default)
+- `analyzer_priority` - Priority of analyzer (number). The lower the number, the higher the priority. 
+
+<media-view src={require('./img/analyzer/Exchange.png')} alt="Exchange" />
+
+## Declaring queues
+
+Each analyzer has to declare 5 queues with names: `analyze`, `search`, `index`, `clean`, `delete`.
+
+<media-view src={require('./img/analyzer/Queues.png')} alt="Queues" />
+
+## Indexing
+
+Index request can be used to store info about logs and then analysis will be proceed based on the info. Requests and responses use `index` queue. 
+
+Index request structure from `API`:
+
+IndexLaunch:
+
+| Attribute      | Description            | Example    |
+|----------------|------------------------|------------|
+| launchId       | Id of launch           | 101        |
+| launchName     | Name of launch         | Smoke Test |
+| project        | Id of project          | 12         |
+| analyzerConfig | Analyzer configuration |            |
+| testItems      | Array of test items    |            |
+
+AnalyzerConfig:
+
+| Attribute             | Description                                                                  | Example |
+|-----------------------|------------------------------------------------------------------------------|---------|
+| minDocFreq            | The minimum frequency of the saved logs                                      | 1       |
+| minTermFreq           | The minimum frequency of the word in the analyzed log                        | 1       |
+| minShouldMatch        | Percent of words equality between analyzed log and particular log from index | 95      |
+| numberOfLogLines      | The number of first lines of log message that should be considered in indeT  | -1      |
+| isAutoAnalyzerEnabled | Is auto analysis enabled                                                     | true    |
+| analyzerMode          | Analysis mode. Allowable values: "all", "launch_name", "current_launch"      | all     |
+| indexingRunning       | Is indexing running                                                          | false   |
+
+IndexTestItem:
+
+| Attribute      | Description                | Example                               |
+|----------------|----------------------------|---------------------------------------|
+| testItemId     | Id of test item            | 123                                   |
+| issueType      | Issue type locator         | pb001                                 |
+| uniqueId       | Unique id of test item     | auto:c6edafc24a03c6f69b6ec070d1fd0089 |
+| isAutoAnalyzed | Is test item auto analyzed | false                                 |
+| logs           | Array of test item logs    |                                       |
+
+IndexLog:
+
+| Attribute | Descrioption | Example                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| logId     | Id of log    | 125                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| logLevel  | Log level    | 40000                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| message   | Log message  | java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <400>.  	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) |
+
+`API` send array of IndexLaunch entities that have to be indexed.
+
+Example in json :
+
+```json
+[
+   {
+      "launchId":110,
+      "launchName":"Smoke Test",
+      "project":11,
+      "analyzerConfig":{
+         "minDocFreq":1,
+         "minTermFreq":1,
+         "minShouldMatch":95,
+         "numberOfLogLines":-1,
+         "isAutoAnalyzerEnabled":true,
+         "analyzerMode":"all",
+         "indexingRunning":false
+      },
+      "testItems":[
+         {
+            "testItemId":101,
+            "issueType":"pb001",
+            "uniqueId":"auto:c6edafc24a03c6f69b6ec070d1fd0089",
+            "isAutoAnalyzed":false,
+            "logs":[
+               {
+                  "logId":111,
+                  "logLevel":40000,
+                  "message":"java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <400>."
+               },
+               {
+                  "logId":112,
+                  "logLevel":40000,
+                  "message":"java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <500>."
+               }
+            ]
+         }
+      ]
+   }
+]
+```
+
+Analyzer should return response with number of indexed logs.
+
+## Analyze
+
+Analyze request can be used to find matches from request in indexed data. Requests and responses use `analyze` queue. 
+
+Analyze request is the same as IndexLaunch entity used for indexing. It contains info about test items and logs thad have to be analyzed.
+
+Response from analyzer should contain array of the following entities (info about analyzed test items):
+
+AnalyzedItemRs:
+
+| Attribute      | Description              | Example |
+|----------------|--------------------------|---------|
+| itemId         | Id of analyzed test item | 111     |
+| relevantItemId | Id of relevant test item | 123     |
+| issueType      | Issue type locator       | pb001   |
+
+## Search logs
+
+Search request can be used to find similar logs from test items with `to_investigate` type. Requests and responses use `search` queue. 
+
+Search logs request from `API`:
+
+SearchRq:
+
+| Attribute         | Description                                             | Example                             |
+|-------------------|---------------------------------------------------------|-------------------------------------|
+| launchId          | Id of launch                                            | 111                                 |
+| launchName        | Name of launch                                          | Smoke Test                          |
+| itemId            | Id of test item                                         | 112                                 |
+| projectId         | Id of project                                           | 10                                  |
+| filteredLaunchIds | Array of launch ids, among with search would be applied | [1,2,3]                             |
+| logMessages       | Array of log messages looking for                       | ["first message", "second message"] |
+| logLines          | Number of logs lines that will be used in comparison    | 5                                   |
+
+Analyzer should return array of log ids that matches as a response.
+
+## Clean
+
+Clean request can be used to remove stored log from index. Requests use `clean` queue. 
+
+Clean logs request from `API`:
+
+CleanIndexRq:
+
+| Attribute | Description                     | Example         |
+|-----------|---------------------------------|-----------------|
+| project   | Id of project                   | 10              |
+| ids       | Array of log ids to be removed  | [111, 122, 123] |
+
+Analyzer do not send response on the request.
+
+## Delete 
+
+Delete request can be used to delete entire index. Requests use `delete` queue. 
+
+Request message from `API` contains only id of index.
+
+Analyzer do not send response on the request.
+
+## Examples
+
+Custom [analyzer](https://github.com/ihar-kahadouski/custom-analyzer) written in java using [Spring AMQP](https://spring.io/projects/spring-amqp).

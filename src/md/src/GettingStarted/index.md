@@ -1,1 +1,0 @@
-# ReportPortal Configuration

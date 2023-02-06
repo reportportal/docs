@@ -1,1 +1,0 @@
-# Log Data in ReportPortal

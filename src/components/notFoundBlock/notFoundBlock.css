@@ -1,0 +1,67 @@
+/*!
+ * Copyright 2022 EPAM Systems
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+[data-theme='light'] {
+  --not-found-text-color: #000000;
+  --not-found-img-url: url("/static/img/404-light.svg")
+}
+
+[data-theme='dark'] {
+  --not-found-text-color: #E3E3E3;
+  --not-found-img-url: url("/static/img/404-dark.svg")
+}
+
+.not-found-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  line-height: 24px;
+  color: var(--not-found-text-color);
+}
+
+.not-found-title {
+  margin-bottom: 16px;
+}
+
+.not-found-text {
+  max-width: 500px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.not-found-img {
+  width: 200px;
+  height: 200px;
+  background: var(--not-found-img-url) no-repeat;
+}
+
+@media (max-width: 540px) {
+  .not-found-content {
+    margin: 135px 16px;
+  }
+
+  .not-found-img {
+    display: none;
+  }
+
+  .not-found-text {
+    max-width: 540px;
+  }
+}

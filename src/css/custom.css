@@ -1,0 +1,74 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/static/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url("/static/fonts/noto-sans/NotoSans-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: NotoSans;
+  src: url("/static/fonts/noto-sans/NotoSans-Medium.ttf");
+  font-weight: 500;
+}
+
+:root {
+  --ifm-color-primary: #009dbb;
+  --ifm-color-primary-dark: #008da8;
+  --ifm-color-primary-darker: #00859f;
+  --ifm-color-primary-darkest: #006e83;
+  --ifm-color-primary-light: #00adce;
+  --ifm-color-primary-lighter: #00b5d7;
+  --ifm-color-primary-lightest: #00ccf3;
+  --ifm-font-family-base: NotoSans;
+  --ifm-heading-font-family: Poppins;
+  --ifm-code-font-size: 95%;
+}
+
+[data-theme='light'] {
+  --ifm-font-color-base: #2f3c5f;
+  --ifm-toc-link-color: #8791ab;
+  --ifm-menu-color: #5f6578;
+  --ifm-blockquote-color: #8791ab;
+  --ifm-color-emphasis-800:#5F6578;
+  --ifm-color-emphasis-700: #8791ab;
+  --ifm-color-content-secondary: #8791ab;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-font-color-base: #e3e3e3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  font-family: Poppins !important;
+}
+
+h1 {
+  padding-top: 24px;
+}

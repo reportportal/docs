@@ -1,0 +1,53 @@
+---
+sidebar_position: 18
+sidebar_label: Passing rate per launch
+---
+
+# Passing rate per launch
+
+Shows the percentage ratio of Passed test cases to Total test cases for the last run of selected launch.
+
+>**Note:**
+>Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted
+> 
+>Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted)
+
+
+**Widget's parameters:**
+
+- Launch Name: the name of any finished launch
+
+- Mode: Bar View/Pie View
+
+- Widget name: any text
+
+- Description: any text
+
+Please find below an example of configuration:
+
+<media-view src={require('./img/widget-types/PassingRatePerLaunch1.png')} alt="Configuration Passing Rate Per Launch Widget" />
+
+As you can see, this widget was built based on the test results of the last run of the Daily Smoke Suite:
+
+<media-view src={require('./img/widget-types/PassingRatePerLaunch2.png')} alt="Last run of the Daily Smoke Suite" />
+
+**Widget view**
+
+The widget can be displayed in two options as shown on the pictures below:
+
+Bar View
+
+<media-view src={require('./img/widget-types/PassingRatePerLaunch3.png')} alt="Passing Rate Per Launch Bar View" />
+
+Pie View
+
+<media-view src={require('./img/widget-types/PassingRatePerLaunch4.png')} alt="Passing Rate Per Launch Pie View" />
+
+The tooltip on mouse hover over chart area shows the quantity of Passed/Failed test cases and percentage ratio of Passed/Failed test cases to Total cases for the last run.
+
+<media-view src={require('./img/widget-types/PassingRatePerLaunch5.png')} alt="Percentage ratio for the last run" />
+
+The widget has clickable sections. When you click on a specific section in the widget, the system forwards you to the launch view for appropriate selection.
+
+>**Note:**
+The widget doesn't contain 'IN PROGRESS" launches.

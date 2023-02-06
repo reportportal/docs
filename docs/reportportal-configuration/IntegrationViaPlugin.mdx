@@ -1,0 +1,47 @@
+---
+sidebar_position: 6
+sidebar_label: Integration via plugin
+---
+
+# Integration via plugin
+
+Users can reinforce ReportPortal with adding additional integrtions with:
+
+<media-view src={require('./img/Integrations.png')} alt="Additional Integration" />
+
+* [Jira Server](/plugins/JiraServer)
+* [Jira Cloud](/plugins/JiraCloud)
+* [Rally](/plugins/Rally)
+* [Azure DevOps](/plugins/AzureDevOpsBTS)
+* [Sauce Labs](/plugins/SauceLabs)
+* [E-mail server](/plugins/EmailServer)
+* [LDAP](/reportportal-configuration/authorization/LDAP)
+* [Active Directory](/reportportal-configuration/authorization/ActiveDirectory)
+* [Okta SAML](/reportportal-configuration/authorization/SAMLProvider/OktaSAML)
+* [Azure SAML](/reportportal-configuration/authorization/SAMLProvider/AzureSAML)
+
+If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](/category/plugins).
+
+Integration configurations can be added on the global level (for all projects on the instance) in the Administrate section or the project level (only for one project) on Project Settings.
+
+If you have another configuration than other projects have or you want to integrate only your project with an external system, you should perform the next actions:
+
+1. Log in to ReportPortal as PROJECT MANAGER or ADMIN
+
+2. Go to Project settings > Integrations
+
+3. Click on one of the integration panels
+
+4. And click the button "Unlink and setup manually"
+
+By this action, you unlink the current project from the global settings and configure your integration.
+
+<media-view src={require('./img/UnlinkGlobalIntegration.png')} alt="Unlink Global Jira Integration" />
+
+>**Note:**
+> If you unlink project setting and ADMIN changes global settings for the whole instance, your project will use your project settings.
+
+To return global settings, you need to click a button "Reset to global settings".
+In this case, your settings will be deleted, and integration will use global settings.
+
+You can always reset to the global settings.
