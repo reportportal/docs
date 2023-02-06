@@ -10,7 +10,7 @@ const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Report Portal Documentation',
+  title: 'ReportPortal Documentation',
   url: 'https://reportportal.io',
   baseUrl,
   onBrokenLinks: 'throw',

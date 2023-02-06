@@ -5,7 +5,7 @@ sidebar_label: Implement own integration
 
 # Implement own integration
 
-You can find a detailed description of how report results to ReportPortal in our [developers` guide](https://github.com/reportportal/documentation/blob/master/src/md/src/DevGuides/reporting.md).
+You can find a detailed description of how report results to ReportPortal in our [developers` guide](/dev-guides/ReportingDevelopersGuide).
 
 Based on this information you can create your integration with a test framework.
 

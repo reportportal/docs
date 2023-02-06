@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "version": "2.0.0",
-  "description": "Report Portal Documentation",
+  "description": "ReportPortal Documentation",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
