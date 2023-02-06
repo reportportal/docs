@@ -39,7 +39,7 @@ const config = {
           routeBasePath: '/',
           // sidebarPath: require.resolve('./sidebars.js'), // TODO
           editUrl:
-            'https://github.com/reportportal/documentation',
+            'https://github.com/reportportal/docs/blob/develop',
         },
         blog:  false,
         theme: {
