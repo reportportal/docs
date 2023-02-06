@@ -6,8 +6,6 @@ sidebar_label: SAML Provider
 
 ***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
 
-***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
-
 This plugin allows you to configure a connection with a SAML provider.
 
 Integration with SAML will allow you to login into ReportPortal using SSO instead of tedious manual user creation.
@@ -72,7 +70,7 @@ urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
 PERSISTENT
 
 ```urn
-urn:oasis:names:tc:SAML:2.0:nameid-format:persistent 
+urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
 ```
 
 ***Provider name***
@@ -88,9 +86,9 @@ URL that provides data with information about SAML Provider.
 Attribute name from SAML metadata which contains an user email.
 
 ```xml
-<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"> 
-   <saml:AttributeValue xsi:type="xs:string">neuromancer@cyberspace.net</saml:AttributeValue> 
- </saml:Attribute> 
+<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+   <saml:AttributeValue xsi:type="xs:string">neuromancer@cyberspace.net</saml:AttributeValue>
+ </saml:Attribute>
 ```
 
 ***ReportPortal Callback URL (Optional)***
@@ -130,5 +128,5 @@ Attribute name from SAML metadata which contains a full user name. You can use e
 ```xml
 <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">William Gibson</saml:AttributeValu
-</saml:Attribute> 
+</saml:Attribute>
 ```
