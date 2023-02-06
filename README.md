@@ -1,4 +1,4 @@
-# Report Portal documentation
+# ReportPortal documentation
 
 To serve the documentation on base path other than `/docs/` follow the next steps:
 1. create a file `.env` in the project root
