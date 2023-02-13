@@ -91,7 +91,7 @@ const config = {
               },
               {
                 label: 'ReportPortal Tutorial',
-                to: '/reportportal-tutorial/',
+                to: '/category/reportportal-tutorial/',
               },
               {
                 label: 'Installation steps',
