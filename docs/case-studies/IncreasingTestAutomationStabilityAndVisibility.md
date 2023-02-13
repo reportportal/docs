@@ -1,0 +1,35 @@
+---
+sidebar_position: 2
+sidebar_label: Increasing test automation stability and visibility
+---
+
+# Increasing test automation stability and visibility
+
+**Challenges**
+
+- 2,000 unique tests had low stability (25% passing rate)
+- Complex and inconvenient test results reporting
+- QA team didn’t have capacity to analyze the results of failed tests
+- Automation results were ignored by decision makers: no analysis of the causes of failed tests, no trust in the automation testing process
+- Lack of visibility into failed tests and failure causes
+- Absence of clear reporting of QA engineers’ workload and performance
+
+**Highlights**
+
+Integration with ReportPortal.io allowed the client to:
+
+- Collect history for previous test runs
+- Identify passing, failing, and unstable tests
+- Select stable tests in a separate run
+- Assign unstable test for refactoring and add them to a separate run for implementation
+- Configure ReportPortal.io charts to track a refactoring progress
+- Accelerate failure analysis through access to related logs, screenshots, and attachments in one place
+
+**Results**
+
+- Automation stability improved from 25% to 95%
+- Analysis efforts of QA engineers decreased by 10 times
+- Client stakeholders use ReportPortal.io data to make release decisions
+- ReportPortal.io became the main tool for tracking test automation progress and health
+
+<media-view src={require('./img/CaseStudy2.png')} alt="Case Study Increasing test automation stability and visibility" />
