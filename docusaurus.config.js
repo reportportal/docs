@@ -58,6 +58,16 @@ const config = {
             content: 'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting'
           }
       ],
+      algolia: {
+        appId: 'CRZVCU6DFV',
+        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
+        indexName: 'reportportal',
+        replaceSearchResultPathname: {
+          from: '/docs/',
+          to: baseUrl, // To suggest URLs correctly for local and dev deployment
+        },
+        searchPagePath: 'search',
+      },
       navbar: {
         hideOnScroll: true,
         logo: {
