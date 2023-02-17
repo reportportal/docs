@@ -17,6 +17,7 @@
 import React from 'react';
 import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
+import { SearchButton } from './searchButton';
 import './notFoundBlock.css';
 
 export const NotFoundBlock = () =>
@@ -36,6 +37,7 @@ export const NotFoundBlock = () =>
                     But it's clearly here somewhere! <br/>
                     Please, use the <strong>keyword search</strong> to find it!
                 </p>
+                <SearchButton />
             </div>
         </Layout>
     </>
