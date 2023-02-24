@@ -21,7 +21,7 @@ We use Traefik as a layer-7 load balancer with TLS/SSL termination for the set o
 
 Provided below is an example of using Traefik (gateway service) in docker-compose.yaml. If you don't have any custom configurations, you are free to use the example below.
 
-### Create a directory on the server for Traefik data and storing certificates
+*** Create a directory on the server for Traefik data and storing certificates ***
 
 ```bash
 mkdir data/traefik/ && mkdir -p data/certs/traefik
@@ -37,7 +37,7 @@ data
 |-- traefik
 ```
 
-### Create config file for Traefik with certificate and key path.
+*** Create config file for Traefik with certificate and key path.***
 
 ```bash
 cat << EOF | tee -a data/traefik/certs-traefik.yaml
@@ -48,9 +48,9 @@ tls:
 EOF
 ```
  
-### Place certificate `examplecert.crt` and key `examplecert.key` to directory `data/certs/traefik/` you created earlier.
+Place certificate `examplecert.crt` and key `examplecert.key` to directory `data/certs/traefik/` you created earlier.
 
-### Edit Traefik service in the `docker-compose.yaml`
+*** Edit Traefik service in the `docker-compose.yaml`***
 
 Add the following volumes to Traefik:
 
@@ -110,7 +110,7 @@ services:
     restart: always
 ```
 
-### Add the following labels to existing services `api`, `uat`, `index`, `ui`, replacing `<service>` with the corresponding service name
+*** Add the following labels to existing services `api`, `uat`, `index`, `ui`, replacing `<service>` with the corresponding service name ***
 
 ```yaml
 labels:
@@ -150,7 +150,7 @@ services:
 ---
 ## Issues
 
-### Unable to find valid certification path to requested target
+*** Unable to find valid certification path to requested target ***
 
 ```java
 Feb-2 00:00:00.000 [rp-io-1] ERROR Launch - [18] ReportPortal execution error
