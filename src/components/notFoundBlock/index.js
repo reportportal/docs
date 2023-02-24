@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { NotFoundPage } from './notFoundPage';
+import { NotFoundBlock } from './notFoundBlock';
 
-export { NotFoundPage };
+export { NotFoundBlock };
 
-export default NotFoundPage;
+export default NotFoundBlock;

@@ -35,7 +35,7 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 
-import { Button } from '../../../components/button';
+import { Button } from '../../button';
 import styles from './searchButton.module.css';
 
 function Hit({ hit, children }) {

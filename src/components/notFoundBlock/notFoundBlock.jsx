@@ -18,9 +18,9 @@ import React from 'react';
 import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import { SearchButton } from './searchButton';
-import styles from './notFoundPage.module.css';
+import styles from './notFoundBlock.module.css';
 
-export const NotFoundPage = () => (
+export const NotFoundBlock = () => (
     <>
         <PageMetadata title='Page Not Found' />
         <Layout>
@@ -44,4 +44,3 @@ export const NotFoundPage = () => (
         </Layout>
     </>
 );
-

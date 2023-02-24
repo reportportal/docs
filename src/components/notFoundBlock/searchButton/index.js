@@ -14,4 +14,8 @@
  * limitations under the License.
  */
 
-export { SearchButton } from './searchButton';
+import { SearchButton } from './searchButton';
+
+export { SearchButton };
+
+export default SearchButton;
