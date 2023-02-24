@@ -1,4 +1,4 @@
 import React from 'react';
-import { NotFoundBlock } from '../components/notFoundBlock';
+import { NotFoundPage } from '../pages/notFoundPage';
 
-export default () => <NotFoundBlock />;
+export default () => <NotFoundPage />;

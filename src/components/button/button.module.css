@@ -1,5 +1,5 @@
-/*
- * Copyright 2022 EPAM Systems
+/*!
+ * Copyright 2023 EPAM Systems
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,23 @@
  * limitations under the License.
  */
 
-import { NotFoundBlock } from './notFoundBlock';
-
-export { NotFoundBlock };
-
-export default NotFoundBlock;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 34px;
+  border-radius: 4px;
+  border: none;
+  color: var(--ifm-color-white);
+  background: linear-gradient(55deg, #0081a7 19.29%, var(--ifm-color-primary) 90.72%);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button:hover {
+  background: #00b4d5;
+}
+.button:active {
+  background: #0081a7;
+}

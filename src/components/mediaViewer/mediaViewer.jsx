@@ -17,7 +17,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import './mediaViewer.css';
+import styles from './mediaViewer.module.css';
 
 const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
 
@@ -44,11 +44,11 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
 
         return (
           <>
-            <div className={isVideo ? 'video-container' : 'media-container'} onClick={() => setOpen(true)} >
-              <img className={'thumbnail'} src={thumbnailSrc} alt={alt} />
+            <div className={styles[isVideo ? 'video-container' : 'media-container']} onClick={() => setOpen(true)} >
+              <img className={styles.thumbnail} src={thumbnailSrc} alt={alt} />
             </div>
             {open &&
-              <div className={'preview-container'}>
+              <div className={styles['preview-container']}>
                 <ReactImageVideoLightbox
                   data={[
                     {

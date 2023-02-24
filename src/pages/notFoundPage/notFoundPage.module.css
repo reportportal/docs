@@ -52,6 +52,10 @@
   background: var(--not-found-img-url) no-repeat;
 }
 
+.search-button-wrapper {
+  margin-top: 24px;
+}
+
 @media (max-width: 540px) {
   .not-found-content {
     margin: 135px 16px;

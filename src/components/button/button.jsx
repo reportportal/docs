@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DocSearch } from '@docsearch/react';
-import { ALGOLIA_APP_ID, ALGOLIA_API_KEY, ALGOLIA_INDEX_NAME } from '../../../configs/search';
+import React, { forwardRef } from 'react';
+import styles from './button.module.css';
 
-export function SearchButton() {
-
-    return (
-        <DocSearch
-            appId={ALGOLIA_APP_ID}
-            apiKey={ALGOLIA_API_KEY}
-            indexName={ALGOLIA_INDEX_NAME}
-        />
-    );
-}
+export const Button = forwardRef(({ children, onClick, ariaLabel }, ref) => (
+    <button
+        type="button"
+        aria-label={ariaLabel}
+        onClick={onClick}
+        className={styles.button}
+        ref={ref}
+    >
+        {children}
+    </button>
+));

@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const searchConfig = require('./src/configs/search');
 require('dotenv').config();
 
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
@@ -55,9 +54,9 @@ const config = {
           }
       ],
       algolia: {
-        appId: searchConfig.ALGOLIA_APP_ID,
-        apiKey: searchConfig.ALGOLIA_API_KEY,
-        indexName: searchConfig.ALGOLIA_INDEX_NAME,
+        appId: 'CRZVCU6DFV',
+        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
+        indexName: 'reportportal',
         replaceSearchResultPathname: {
           from: '/docs/',
           to: baseUrl, // To suggest URLs correctly for local and dev deployment
