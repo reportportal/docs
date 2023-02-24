@@ -20,7 +20,6 @@
  to functionally be fully the same as default search in header provided by `docusaurus-theme-search-algolia`.
 */
 
-
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
