@@ -1,6 +1,7 @@
 # ReportPortal documentation
 
 The documentation built with [Docusaurus](https://docusaurus.io).
+
 The search is implemented using [DocSearch](https://docsearch.algolia.com).
 
 ## Running locally
@@ -34,5 +35,3 @@ Each changes pushing (direct pushing or via merging a PR) to the:
 ## Contribution
 
 If you would like to contribute to the docs, feel free to open your Pull Requests to the default branch.
-
-```
