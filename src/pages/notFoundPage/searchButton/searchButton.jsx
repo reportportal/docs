@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+/*
+ The code in this file based on SearchBar component from
+ https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-search-algolia/src/theme/SearchBar/index.tsx
+ to functionally be fully the same as default search in header provided by `docusaurus-theme-search-algolia`.
+*/
+
+
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
