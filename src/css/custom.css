@@ -44,8 +44,8 @@
   --ifm-color-primary-light: #00adce;
   --ifm-color-primary-lighter: #00b5d7;
   --ifm-color-primary-lightest: #00ccf3;
-  --ifm-font-family-base: NotoSans;
-  --ifm-heading-font-family: Poppins;
+  --ifm-font-family-base: NotoSans, Arial, sans-serif;
+  --ifm-heading-font-family: Poppins, Arial, sans-serif;
   --ifm-code-font-size: 95%;
 }
 
@@ -66,7 +66,7 @@
 }
 
 button {
-  font-family: Poppins !important;
+  font-family: Poppins, Arial, sans-serif !important;
 }
 
 h1 {
