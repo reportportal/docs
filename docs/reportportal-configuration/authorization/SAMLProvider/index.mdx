@@ -40,11 +40,36 @@ ReportPortal contains the SAML Plugin by default.
 
 ***ReportPortal SSO initial URL***
 
+#### Metafata URL
 You need to provide a URL for a SAML Provider to deliver SAML data for the identity federation.
 
 ```url
 https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
 ```
+
+#### Identifier
+
+Set up identifier (aka Audience Restriction, aka Entity ID) for application as `report.portal.sp.id`.
+You can specify personal Entity id when you deploy the Authorization service by environment variable `RP_AUTH_AML_ENTITYID`.
+
+#### Custom attribute as claims in token
+
+The IDp app user profile must provide attributes like this:
+
+```
+- user.email
+- user.firstName
+- user.lastName
+```
+
+Also, Make sure there is a mapping created according to the values that you use in the ReportPortal SAML plugin like this:
+
+```
+- user.email -> Email
+- user.firstName -> FirstName
+- user.lastName -> LastName
+```
+
 ### ReportPortal configuration
 
 <media-view src={require('./img/SAMLPlugin.png')} alt="SAML plugin configuration" />
@@ -86,7 +111,7 @@ URL that provides data with information about SAML Provider.
 Attribute name from SAML metadata which contains an user email.
 
 ```xml
-<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+<saml:Attribute Name="Email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
    <saml:AttributeValue xsi:type="xs:string">neuromancer@cyberspace.net</saml:AttributeValue>
  </saml:Attribute>
 ```
@@ -106,7 +131,7 @@ https://<host>/uat
 Attribute name from SAML metadata which contains an user first/given name.
 
 ```xml
-<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+<saml:Attribute Name="FirstName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">William</saml:AttributeValue>
 </saml:Attribute>
 ```
@@ -116,7 +141,7 @@ Attribute name from SAML metadata which contains an user first/given name.
 Attribute name from SAML metadata which contains an user last/family name.
 
 ```xml
-<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+<saml:Attribute Name="LastName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">Gibson</saml:AttributeValue>
 </saml:Attribute>
 ```
@@ -126,7 +151,7 @@ Attribute name from SAML metadata which contains an user last/family name.
 Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
 
 ```xml
-<saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+<saml:Attribute Name="FullName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 <saml:AttributeValue xsi:type="xs:string">William Gibson</saml:AttributeValu
 </saml:Attribute>
 ```
