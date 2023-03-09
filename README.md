@@ -1,4 +1,4 @@
-# ReportPortal documentation
+# ReportPortal documentation portal
 
 The documentation built with [Docusaurus](https://docusaurus.io).
 
@@ -27,7 +27,7 @@ npm run build
 
 ## Deployment
 
-Each changes pushing (direct pushing or via merging a PR) to the:
+Each changes pushing (direct pushing or via merging a Pull Request) to the:
 
 - `develop` branch will trigger the deployment to the dev environment to AWS S3 bucket.
 - `master` branch will trigger the deployment to the prod environment to GitHub Pages (https://reportportal.io/docs).
