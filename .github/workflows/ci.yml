@@ -36,5 +36,8 @@ jobs:
       - name: Install of node dependencies
         run: npm ci --legacy-peer-deps # see https://github.com/Ngineer101/react-image-video-lightbox/pull/64
 
+      - name: Run lint
+        run: npm run lint
+
       - name: Build the source code
         run: npm run build
