@@ -14,17 +14,29 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
+
 import styles from './button.module.css';
 
-export const Button = forwardRef(({ children, onClick, ariaLabel }, ref) => (
-    <button
-        type="button"
-        aria-label={ariaLabel}
-        onClick={onClick}
-        className={styles.button}
-        ref={ref}
-    >
-        {children}
-    </button>
+export const Button = forwardRef(({ children, ariaLabel, onClick }, ref) => (
+  <button
+    type="button"
+    aria-label={ariaLabel}
+    onClick={onClick}
+    className={styles.button}
+    ref={ref}
+  >
+    {children}
+  </button>
 ));
+Button.propTypes = {
+  children: PropTypes.node,
+  ariaLabel: PropTypes.string,
+  onClick: PropTypes.func,
+};
+Button.defaultProps = {
+  children: null,
+  ariaLabel: '',
+  onClick: () => {},
+};

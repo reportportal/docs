@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import styles from './mediaViewer.module.css';
 
 const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
 
-const TYPE_PHOTO = "photo";
-const TYPE_VIDEO = "video";
+const TYPE_PHOTO = 'photo';
+const TYPE_VIDEO = 'video';
 
 const getSrc = (src) => {
   return typeof src === 'string' ? src : src.default;
-}
+};
 
 export function MediaViewer({ src, type, alt, thumbnail }) {
   const [open, setOpen] = useState(false);
+
+  const openViewer = () => setOpen(true);
 
   return (
     <BrowserOnly>
@@ -44,10 +47,15 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
 
         return (
           <>
-            <div className={styles[isVideo ? 'video-container' : 'media-container']} onClick={() => setOpen(true)} >
+            <button
+              type="button"
+              className={styles[isVideo ? 'video-container' : 'media-container']}
+              onClick={openViewer}
+              onKeyPress={openViewer}
+            >
               <img className={styles.thumbnail} src={thumbnailSrc} alt={alt} />
-            </div>
-            {open &&
+            </button>
+            {open && (
               <div className={styles['preview-container']}>
                 <ReactImageVideoLightbox
                   data={[
@@ -61,7 +69,7 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
                   onCloseCallback={() => setOpen(false)}
                 />
               </div>
-            }
+            )}
           </>
         );
       }}
