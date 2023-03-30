@@ -54,7 +54,7 @@ jobs:
           node-version: 16
 
       - name: Install of node dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci --legacy-peer-deps # see https://github.com/Ngineer101/react-image-video-lightbox/pull/64
 
       - name: create env file
         run: |
