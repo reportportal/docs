@@ -14,33 +14,35 @@
  * limitations under the License.
  */
 
-import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
-import { SearchButton } from './searchButton';
-import styles from './notFoundBlock.module.css';
+import React from 'react';
 
-export const NotFoundBlock = () => (
+import styles from './notFoundBlock.module.css';
+import { SearchButton } from './searchButton';
+
+export function NotFoundBlock() {
+  return (
     <>
-        <PageMetadata title='Page Not Found' />
-        <Layout>
-            <div className={styles['not-found-content']}>
-                <div className={styles['not-found-img']} />
-                <h1 className={styles['not-found-title']}>
-                    Page Not Found
-                </h1>
-                <p className={styles['not-found-text']}>
-                    You may have used an outdated link as there have been some changes in the structure of the
-                    documentation.
-                </p>
-                <p className={styles['not-found-text']}>
-                    But it's clearly here somewhere! <br/>
-                    Please, use the <strong>keyword search</strong> to find it!
-                </p>
-                <div className={styles['search-button-wrapper']}>
-                    <SearchButton />
-                </div>
-            </div>
-        </Layout>
+      <PageMetadata title="Page Not Found" />
+      <Layout>
+        <div className={styles['not-found-content']}>
+          <div className={styles['not-found-img']} />
+          <h1 className={styles['not-found-title']}>Page Not Found</h1>
+          <p className={styles['not-found-text']}>
+            You may have used an outdated link as there have been some changes in the structure of
+            the documentation.
+          </p>
+          <p className={styles['not-found-text']}>
+            But it/'s clearly here somewhere! <br />
+            Please, use the <strong>keyword search</strong> to find it!
+          </p>
+          <div className={styles['search-button-wrapper']}>
+            <SearchButton />
+          </div>
+        </div>
+      </Layout>
     </>
-);
+  );
+}

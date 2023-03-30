@@ -1,0 +1,6 @@
+.idea/
+.docusaurus/
+node_modules/*
+package.json
+package-lock.json
+build/
