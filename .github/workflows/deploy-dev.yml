@@ -51,7 +51,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install of node dependencies
         run: npm ci --legacy-peer-deps # see https://github.com/Ngineer101/react-image-video-lightbox/pull/64
