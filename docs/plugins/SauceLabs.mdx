@@ -9,7 +9,7 @@ To install the Sauce Labs plugin, see [Upload plugin](./ManagePlugins#upload-plu
 
 ## Add the Sauce Labs integration
 
-Configure the integration with Sauce Labs, and watch a video of test executions in the ReportPortal application.
+Configure the integration with Sauce Labs to watch a video of test executions in the ReportPortal application.
 
 
 **Permissions:**
@@ -27,34 +27,35 @@ To configure Sauce Labs for the whole instance:
 
 3. Click the 'Administrative' link.
 
-4. Click the 'Plugins' from the left-hand sidebar.
+4. Click 'Plugins' from the left-hand sidebar.
 
 5. Click the 'Sauce Labs' tab.
 
-6. Click Add new integration.
+6. Click 'Add integration'.
 
 7. The following fields should be present:
 
   ```javascript 
   `User name`: <host_name_of_email_server>
-  `Access token`: <youe access token>
+  `Access token`: <your access token>
   `Data center`: <Europe, USA>
   ```
 
 8. Confirm data in the form.
 
-After you've added the Sauce Labs integration, you can use the Sauce Labs integration in ReportPortal.
+After you've added the Sauce Labs integration, you can use the Sauce Labs in ReportPortal.
 
 ## Project Sauce Labs integration
 
-If plugin is configured on global level, then all projects at this instance will use this configuration by default.
+If the plugin is configured on the global level, then all projects at this instance will use this configuration by default.
+
 However, you can unlink the integration from the global level and use a project level configuration instead.
 
 To unlink the integration, click 'Unlink & Setup Manually', then follow the on-screen instructions.
 
 <media-view src={require('./img/sauce-labs/SauceLabsUnlinkGlobal.png')} alt="Sauce Labs Unlink Global integration" />
 
-## How to use Sauce Labs Integration
+## How to use the Sauce Labs integration
 
 Before using this feature, you should report test results to ReportPortal with the attribute: `SLID: XXXXXXXX`.
 
