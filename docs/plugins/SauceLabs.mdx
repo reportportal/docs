@@ -5,66 +5,62 @@ sidebar_label: Sauce Labs
 
 # Sauce Labs
 
-For SauceLAbs plugin installation please check [documentation](./ManagePlugins#upload-plugin)
+To install the Sauce Labs plugin, see [Upload plugin](./ManagePlugins#upload-plugin).
 
-## Add Sauce Labs integrations
+## Add the Sauce Labs integration
 
-Configure integration with Sauce Labs and watch a video of test executions right in the ReportPortal application.
+Configure the integration with Sauce Labs to watch a video of test executions in the ReportPortal application.
 
 
 **Permissions:**
 
-user with account role *ADMINISTRATOR* can configure integration for the whole instance or per project.
-User with account role *PROJECT MANAGER* can configure integration only on a project where he is assigned on as Project Manager.
+- User with account role *ADMINISTRATOR* can configure the integration for the whole instance or per project.
+- User with account role *PROJECT MANAGER* can configure the integration only on a project where they are assigned on as Project Manager.
 
 ## Global Sauce Labs integration
 
 To configure Sauce Labs for the whole instance:
 
-1. Log in to the ReportPortal as an ADMIN user
+1. Log in to ReportPortal as an ADMIN user.
 
-2. Then open the list on the right of the user's image.
+2. Open the list on the right of the user's image.
 
-3. Click the 'Administrative' link
+3. Click the 'Administrative' link.
 
-4. Click the 'Plugins' from the left-hand sidebar
+4. Click 'Plugins' from the left-hand sidebar.
 
-5. Click on the'Sauce Labs' tab.
+5. Click the 'Sauce Labs' tab.
 
-6. Click on Add new integration
+6. Click 'Add integration'.
 
-7. The next fields should be present:
+7. The following fields should be present:
 
-```javascript 
-`User name`: <host_name_of_email_server>
-`Access token`: <youe access token>
-`Data center`: <Europe, USA>
-```
+  ```javascript 
+  `User name`: <host_name_of_email_server>
+  `Access token`: <your access token>
+  `Data center`: <Europe, USA>
+  ```
 
-8. Confirm data in the form
+8. Confirm data in the form.
 
-After Sauce Labs integration adding, you can use Sauce Labs integration.
+After you've added the Sauce Labs integration, you can use the Sauce Labs in ReportPortal.
 
 ## Project Sauce Labs integration
 
-If plugin is configured on global level, then all projects at this instance will use this configuration by default.
-However, every project can “unlink” configuration from the global level and use a project level configuration.
+If the plugin is configured on the global level, then all projects at this instance will use this configuration by default.
 
-Here is the button to click.
-And then follow the instructions.
+However, you can unlink the integration from the global level and use a project level configuration instead.
+
+To unlink the integration, click 'Unlink & Setup Manually', then follow the on-screen instructions.
 
 <media-view src={require('./img/sauce-labs/SauceLabsUnlinkGlobal.png')} alt="Sauce Labs Unlink Global integration" />
 
-## How to use Sauce Labs Integration
+## How to use the Sauce Labs integration
 
-Before using this feature a user should report test results to ReportPortal with the attribute:`SLID: XXXXXXXX`.
+Before using this feature, you should report test results to ReportPortal with the attribute: `SLID: XXXXXXXX`.
 
-Where SLID - `Sauce Labs ID`
+Where: SLID = `Sauce Labs ID` and XXXXXXXX = `# of job in Sauce Labs`
 
-XXXXXXXX - `# of job in Sauce Labs`
-
-By the attribute `SLID: XXXXXXXX` you link the execution in ReportPortal and a job in Sauce Labs.
-
-So that if a test item has an attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs from the appropriate job in ReportPortal on a log view.
+The `SLID: XXXXXXXX` attribute links the execution in ReportPortal and a job in Sauce Labs. If a test item has attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs for the appropriate job in ReportPortal on a log view.
 
 <media-view thumbnail={require('./img/sauce-labs/SauceLabs.png')} src="https://youtu.be/RQAxGz6koh0" alt="Sauce Labs configuration" type="video" />
