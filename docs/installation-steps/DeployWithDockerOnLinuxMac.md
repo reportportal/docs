@@ -25,9 +25,9 @@ Docker is supported by all major Linux distributions, MacOS and Windows.
 curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
   ```
 
-3. Make the ElasticSearch configuration prerequisites for the analyzer service
+2. Make the ElasticSearch configuration prerequisites for the analyzer service
 
-    * Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
+    * OPTIONAL: Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
     * Give right permissions to ElasticSearch data folder using the following commands:
 
 ```bash
