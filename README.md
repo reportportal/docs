@@ -8,7 +8,7 @@ The search is implemented using [DocSearch](https://docsearch.algolia.com).
 
 1. Install the dependencies
 ```bash
-npm install --legacy-peer-deps # see https://github.com/Ngineer101/react-image-video-lightbox/pull/64
+npm install
 ```
 
 2. Run application in development mode
