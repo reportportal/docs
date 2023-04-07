@@ -1,0 +1,147 @@
+/* Cookie Pro style overriding start */
+
+#onetrust-consent-sdk * {
+    outline: none !important;
+}
+
+#onetrust-policy-text {
+    margin-bottom: 0 !important;
+}
+@media only screen and (min-width: 769px) {
+    #onetrust-policy-text {
+        font-size: 15px !important;
+    }
+}
+
+#onetrust-button-group-parent {
+    position: static !important;
+    transform: translateX(0) !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+}
+
+#onetrust-button-group {
+    display: flex !important;
+    flex-direction: column !important;
+}
+@media only screen and (min-width: 769px) {
+    #onetrust-banner-sdk #onetrust-button-group {
+        margin-right: 0 !important;
+    }
+}
+@media only screen and (min-width: 890px) {
+    #onetrust-button-group {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+}
+
+#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler {
+    background-color: #39C2D7 !important;
+    border-color: #39C2D7 !important;
+
+    height: 34px !important;
+    border-radius: 3px;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+    padding: 0 !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link {
+    color: #1A9CB0 !important;
+    font-size: 15px !important;
+    margin-bottom: 0 !important;
+}
+@media only screen and (min-width: 890px) {
+    #onetrust-consent-sdk #onetrust-pc-btn-handler {
+        position: static !important;
+    }
+}
+
+#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn {
+    color: #1A9CB0 !important;
+}
+
+#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn:focus {
+    outline: none !important;
+}
+
+@media only screen and (min-width: 890px) {
+    #onetrust-banner-sdk .ot-sdk-row, #onetrust-pc-sdk .ot-sdk-row:not(.ot-cat-grp), #ot-sdk-cookie-policy .ot-sdk-row {
+        display: flex !important;
+        align-items: center;
+    }
+
+    #onetrust-policy {
+        display: flex !important;
+        align-items: center;
+    }
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn):not(.ot-pc-refuse-all-handler), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn,
+#onetrust-consent-sdk button.ot-pc-refuse-all-handler {
+    height: 34px !important;
+    padding: 0 15px !important;
+    border-radius: 3px !important;
+    border-color: #39C2D7 !important;
+    background-color: #39C2D7 !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+#onetrust-consent-sdk button.ot-pc-refuse-all-handler {
+    background-color: #ffffff !important;
+    color: #39C2D7 !important;
+}
+
+#onetrust-pc-sdk .ot-pc-logo {
+    width: 70px !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-pc-sdk .ot-accordion-layout h4~.ot-always-active {
+    color: #1A9CB0 !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc {
+    font-size: 14px !important;
+}
+
+#onetrust-pc-sdk .ot-switch {
+    width: 28px !important;
+    height: 16px !important;
+}
+#onetrust-pc-sdk .ot-switch-nob {
+    border: none !important;
+    background-color: #626262 !important;
+}
+
+#onetrust-pc-sdk .ot-switch-nob:before {
+    left: 1px !important;
+    width: 14px !important;
+    height: 14px !important;
+    background-color: #ffffff !important;
+}
+
+#onetrust-pc-sdk .ot-tgl input:checked+.ot-switch .ot-switch-nob:before {
+    -webkit-transform: translateX(12px) !important;
+    -ms-transform: translateX(12px) !important;
+    transform: translateX(12px) !important;
+    background-color: #ffffff !important;
+}
+#onetrust-pc-sdk .ot-tgl input:checked+.ot-switch .ot-switch-nob {
+    background-color: #39C2D7 !important;
+}
+
+#onetrust-pc-sdk .ot-tgl input:focus+.ot-switch span.ot-switch-nob {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler {
+    color: #1A9CB0 !important;
+}
+
+/* Cookie Pro style overriding end */

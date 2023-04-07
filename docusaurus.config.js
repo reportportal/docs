@@ -162,6 +162,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: ['./plugins/plugin-cookie-pro'],
 };
 
 module.exports = config;
