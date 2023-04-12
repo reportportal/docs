@@ -40,6 +40,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleTagManager: {
+          containerId: 'GTM-MK7ZHTL',
+        },
       }),
     ],
   ],
@@ -159,14 +162,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  plugins: [
-    [
-      require.resolve('docusaurus-gtm-plugin'),
-      {
-        id: 'GTM-MK7ZHTL',
-      }
-    ]
-  ],
+  plugins: ['./plugins/plugin-cookie-pro'],
 };
 
 module.exports = config;

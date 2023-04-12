@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 EPAM Systems
+ * Copyright 2023 EPAM Systems
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import MediaViewer from '@site/src/components/mediaViewer';
 import MDXComponents from '@theme-original/MDXComponents';
 
 export default {
-    ...MDXComponents,
-    'media-view': MediaViewer,
+  ...MDXComponents,
+  'media-view': MediaViewer,
 };

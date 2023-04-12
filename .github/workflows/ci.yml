@@ -18,21 +18,26 @@ on:
     branches:
       - master
       - develop
+    paths-ignore:
+      - README.md
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install of node dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint
 
       - name: Build the source code
         run: npm run build

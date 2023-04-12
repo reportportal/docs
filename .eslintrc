@@ -1,0 +1,39 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:@docusaurus/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "prettier", "jsx-a11y", "react-hooks", "@docusaurus"],
+  "rules": {
+    "import/prefer-default-export": 0,
+    "react/no-unescaped-entities": 0,
+    "import/no-unresolved": [
+      0,
+      {
+        // Ignore certain webpack aliases because they can't be resolved
+        "ignore": [
+          "^@theme",
+          "^@docusaurus",
+          "^@generated",
+          "^@site"
+        ]
+      }
+    ]
+  }
+}
