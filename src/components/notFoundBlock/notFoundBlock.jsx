@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import React from 'react';
