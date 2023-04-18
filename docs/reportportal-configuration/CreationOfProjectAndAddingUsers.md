@@ -48,7 +48,7 @@ To create a project for a team:
 
 A confirmation message in the status bar should appear.
 
-> **Note**
+> **Note:**
 The name of the project should contain between 3-256 symbols. 
 It can include Latin and numeric characters, as well as underscores and dashes. 
 The name should be unique and cannot be changed after saving.
@@ -100,6 +100,9 @@ Submit the form.
 A confirmation message in the status bar should appear.
 
 The notification email letter is sent to the email address of the new user.
+
+> **Note:**
+Please, do not forget to review project roles on regular basis. We recommend to do it at least quarterly. 
 
 By default, the system creates a personal project for new users. All new users which have been added to the ReportPortal will have a personal project along with the project where they have been assigned on. The user will be assigned to  "Personal Project" with the PROJECT MANAGER project role.
 
@@ -180,6 +183,9 @@ To edit the project role, perform the following steps:
 **Permission:**
 Via Administrative page, only ADMINISTRATOR can unassign users.
 Via Project Space ADMINISTRATOR and PROJECT MANAGER can unassign users.
+
+> **Note:**
+Please, do not forget to review project roles on regular basis. We recommend to do it at least quarterly.
 
 Depending on the project needs the assignment could be removed. 
 To unassign the assignment for the user on the project, perform the following steps:
