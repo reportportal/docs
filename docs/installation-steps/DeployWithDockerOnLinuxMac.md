@@ -77,7 +77,7 @@ Useful commands:
 - **docker-compose logs** shows logs from all containers
 - **docker logs &lt;container_name&gt;** shows logs from selected container
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
-- **docker-compose dowm**
+- **docker-compose down**
 
 
 5. Open your web-browser with an IP address of the deployed environment at port **8080**
