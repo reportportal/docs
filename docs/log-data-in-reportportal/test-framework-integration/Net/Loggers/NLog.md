@@ -5,6 +5,6 @@ sidebar_label: NLog
 
 # ReportPortal NLog Integration
 
-NLog is a logging platform for .NET platforms. It supports a range of logging formats, including plain text and JSON.
+[NLog](https://nlog-project.org/) is a logging platform for .NET platforms. It supports a range of logging formats, including plain text and JSON.
 
-**Click [here](https://github.com/reportportal/logger-net-nlog) to see details and examples.**
+[Installation guide](https://github.com/reportportal/logger-net-nlog#readme)
