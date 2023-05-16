@@ -14,12 +14,12 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Logging Integration]( /reportportal-configuration/IntegrationViaPlugin)  
 [Saved searches (Filters)](/category/saved-searches-filters)   
 [Dashboards and Widgets](/category/dashboards-and-widgets)  
-[Management Board](/category/management-board)  
+[Admin Panel](/category/admin-panel)  
 [Tips and tricks](/category/issues-troubleshooting)  
 
 ## Project Manager
 [Tutorial](/reportportal-tutorial/)    
-[Management Board](/category/management-board)  
+[Admin Panel](/category/admin-panel)   
 [Work with reports](/category/work-with-reports)  
 [Saved searches (Filters)](/category/saved-searches-filters)    
 [Dashboards and Widgets](/category/dashboards-and-widgets)  
