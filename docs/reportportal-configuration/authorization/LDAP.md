@@ -4,6 +4,8 @@ sidebar_label: LDAP
 
 # LDAP
 
+LDAP plugin is available in ReportPortal on the Plugins page.
+
 To set up access with LDAP:
 
 1. Log in to the ReportPortal as an ADMIN user
