@@ -4,6 +4,8 @@ sidebar_label: Active Directory
 
 # Active Directory
 
+Active Directory plugin is available in ReportPortal on the Plugins page.
+
 To set up access with Active Directory:
 
 1. Log in to the ReportPortal as an ADMIN user
