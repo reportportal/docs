@@ -12,7 +12,7 @@ There are two options proposed:
 * [NGINX Ingress Controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller) for Kubernetes
 
 ## API Service
-The API service is the core of ReportPortal. It is in-charge of handling incoming requests from agents and UI. 
+The API service is the core of ReportPortal TestOps tool. It is in-charge of handling incoming requests from agents and UI. 
 
 ## UAT Service
 The UAT (Unified Authorization Trap) service is module that authenticate users and creates/revokes user tokens. 

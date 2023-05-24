@@ -21,7 +21,7 @@ The filter will be opened as a tab on the "Launches" page.
 
 >**Note:** You can share with a quick filter on All launches with your team members by sending them a link to this filter. To perform this operation, filter should be shared. If user clicks on the link, he is redirected to this filter on All launches view, where a quick filter has been already.
 
-It is the only place where it is possible to delete the filter from ReportPortal.
+It is the only place where it is possible to delete the filter from our test report&analytics dashboard.
 
 To do this, click the 'delete' icon of your filter and confirm the action.
 The filter will be deleted but not launches in it.

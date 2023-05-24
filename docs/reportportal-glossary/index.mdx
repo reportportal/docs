@@ -35,39 +35,39 @@ Like agents and clients, loggers have their own naming pattern: logger-{ languag
 
 ## Plugin
 
-Plugins are co-applications which add additional functionality to ReportPortal. We have separate examples and development guide for our users. You are free to extend ReportPortal as you wish, we don’t limit or obligate our users with any clauses. ReportPortal provides some plugins for free like Jira and Rally integrations but also has closed plugins, which we provide only with our paid plans, e.g., “Quality Gates” plugin:
+Plugins are co-applications which add additional functionality to ReportPortal. We have separate examples and development guide for our users. You are free to extend our test automation results dashboard as you wish, we don’t limit or obligate our users with any clauses. ReportPortal provides some plugins for free like Jira and Rally integrations but also has closed plugins, which we provide only with our paid plans, e.g., “Quality Gates” plugin:
 
-<media-view src={require('./img/Glossary4.png')} alt="Quality Gates plugin on ReportPortal" />
+<media-view src={require('./img/Glossary4.png')} alt="Quality Gates plugin in our test reporting tool" />
 
 ## Launch
 
 The first reporting-related word in our list. The Launch is a collection of all reported tests which were run at single test execution. Launches allows you to monitor your application-under-test state. The idea is that you take certain number of tests and test suites and run them periodically on different environments and our widgets draws you the picture of your application health from launch to launch. You are not obligated to stop adding new test reports into a launch after the launch finish, you are free to add more data. Or, for example, you can create several Launches and merge them into one. Or run your tests in a distributed way and report everything into a single Launch. The key concept here is that Launch is the biggest data point on our widgets, everything else is up to you.
 
-<media-view src={require('./img/Glossary5.png')} alt="Example of Launches on ReportPortal" />
+<media-view src={require('./img/Glossary5.png')} alt="Example of Launches in our test automation results dashboard" />
 
 ## Suite
 
 For the convenience of locating and navigating data, you can put your tests into test suites. Features, Stories, Suites, Test Classes, Test (sic!), etc., they are all Suites from ReportPortal view, just with different names. Suites are hierarchical, to put one Suite inside another you should specify Parent Suite UUID. Also, as a limitation, child Suite and Items start time should not be earlier than Parent Suite start time due to Database limitations, please keep that in mind.
 
-<media-view src={require('./img/Glossary6.png')} alt="Example of Suites on ReportPortal" />
+<media-view src={require('./img/Glossary6.png')} alt="Example of Suites in our real time dashboard open source" />
 
 ## Step
 
-Step is the only entity with statistics in ReportPortal. Every time you report a step, ReportPortal adds 1 to test count and every time a Step fails it counts it as a test failure.
+Step is the only entity with statistics in our centralized test automation tool. Every time you report a step, ReportPortal adds 1 to test count and every time a Step fails it counts it as a test failure.
 
-<media-view src={require('./img/Glossary7.png')} alt="Example of Steps on ReportPortal" />
+<media-view src={require('./img/Glossary7.png')} alt="Example of Steps in our test automation dashboard" />
 
 ## Nested step
 
 Nested steps are like suites but located as child step elements. They are like containers for test logs and represented as dropdown lists inside Log View. On the screen below Nested step is the first entity.
 
-<media-view src={require('./img/Glossary3.png')} alt="Example of Nested step on ReportPortal" />
+<media-view src={require('./img/Glossary3.png')} alt="Example of Nested step in our centralized test automation tool" />
 
 ## Log
 
 Logs are textual data necessary for debugging and problem solving. Our Analyzer uses them in the same way. Logs should be neat and informative, but not too much verbose. Tons of logs usually the same problem as their full absence.
 
-<media-view src={require('./img/Glossary8.png')} alt="Example of Logs on ReportPortal" />
+<media-view src={require('./img/Glossary8.png')} alt="Example of Logs in our continuous testing platform" />
 
 ## Test Case ID
 
