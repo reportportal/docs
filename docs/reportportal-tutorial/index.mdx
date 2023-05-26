@@ -7,7 +7,7 @@ sidebar_label: ReportPortal Tutorial
 
 ## Overview
 
-The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you'll learn how to use ReportPortal features and how to get the most out of them, as well as expert tips for using ReportPortal.
+The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you'll learn how to use ReportPortal features and how to get the most out of them, as well as expert tips for using our test automation results dashboard.
 
 ## How to explore ReportPortal without installation
 
@@ -46,7 +46,7 @@ In order to add other users to ReportPortal you can send invitations via email. 
 
 After this step you will have emailing capabilities enabled, and several more users invited to ReportPortal.
 
-<media-view src={require('./img/InviteUsers.png')} alt="Invite Users" />
+<media-view src={require('./img/InviteUsers.png')} alt="Invite Users to our test automation reporting dashboard" />
 
 ## How to generate first data in ReportPortal
 
@@ -54,7 +54,7 @@ The main section for work with ReportPortal is Launches tab in the left menu. Bu
 
 [Generate demo data](/reportportal-configuration/ProjectConfiguration#demo-data) feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.
 
-<media-view src={require('./img/GenerateFirstData.png')} alt="Generate First Data" />
+<media-view src={require('./img/GenerateFirstData.png')} alt="Generate First Data in our open source test reporting tool" />
 
 Once generated, you will see 5 launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.
 
@@ -66,9 +66,9 @@ So far you have Demo launches in ReportPortal. You see the list of test executio
 
 <media-view src={require('./img/TriageTestFailures.png')} alt="Triage Test Failures" />
 
-The next step and the main goal for QA engineers is to triage failed test cases. This means opening each test case, identifying the root of the failure reason, and categorizing/associating it with a particular defect type. We call this action [“Make decision”](/analysis/ManualAnalysis).
+The next step and the main goal for QA engineers is defect triage. This means opening each test case, identifying the root of the failure reason, and categorizing/associating it with a particular defect type. We call this action [“Make decision”](/analysis/ManualAnalysis).
 
-<media-view src={require('./img/MakeDecision.png')} alt="Make Decision modal" />
+<media-view src={require('./img/MakeDecision.png')} alt="Test failure analysis and Make Decision modal" />
 
 Based on test results, you can make decisions on further steps to improve your product. For example, you can arrange a call with a Development Team Leader to discuss bug fixing, if you have a lot of Product Bugs.
 
@@ -113,13 +113,13 @@ The best widget to start from is [Investigated percentage of launches](/dashboar
 
 <media-view src={require('./img/InvestigatedPercentage1.png')} alt="Create Investigated percentage of launches widget" />
 
-<media-view src={require('./img/InvestigatedPercentage2.png')} alt="Investigated percentage of launches example" />
+<media-view src={require('./img/InvestigatedPercentage2.png')} alt="Example of dashboard to manage test results: Investigated percentage of launches" />
 
 Once QA team categorized all issues, we can understand why automation tests fail. Create [Launch statistics chart](/dashboards-and-widgets/LaunchStatisticsChart) widget for that. It shows the reasons of failures, for example, broken environment, outdated tests, product bugs.
 
 <media-view src={require('./img/LaunchStatisticsChart1.png')} alt="Create Launch statistics chart widget" />
 
-<media-view src={require('./img/LaunchStatisticsChart2.png')} alt="Launch statistics chart example" />
+<media-view src={require('./img/LaunchStatisticsChart2.png')} alt="Example of dashboard for QA automation: Launch statistics chart example" />
 
 The next step can be creating the [Overall statistics chart](/dashboards-and-widgets/OverallStatistics) to define the Total test cases number and how many of them are Passed/Failed/Skipped. This widget can be applied for all launches or for the latest launches only.
 
@@ -179,7 +179,7 @@ You can **run Auto-Analysis manually** as well.
 
 When the test item is analyzed by ReportPortal, a label “AA” is set on the test item on a Step Level.
 
-<media-view src={require('./img/AutoAnalysis4.png')} alt="Auto-Analysis results" />
+<media-view src={require('./img/AutoAnalysis4.png')} alt="AI-based defects triage" />
 
 ## How to see the historical trend of the causes of falls
 
@@ -213,7 +213,7 @@ Firstly, navigate to Project settings and create a Quality Gate with the rules w
 
 <media-view src={require('./img/QualityGate1.png')} alt="Create Quality Gate" />
 
-<media-view src={require('./img/QualityGate2.png')} alt="Quality Gate parameters" />
+<media-view src={require('./img/QualityGate2.png')} alt="Quality Gate parameters for our continuous testing platform" />
 
 <media-view src={require('./img/QualityGate3.png')} alt="Run Quality Gate for specific launch" />
 
@@ -291,4 +291,4 @@ You can go to the test cases level and see what problems they had.
 
 You have checked demo test results, dashboards and widgets. And now you want to see your real data in ReportPortal.
 
-ReportPortal is a system that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](/log-data-in-reportportal/test-framework-integration/) or [Implement own integration](/log-data-in-reportportal/ImplementOwnIntegration).
+ReportPortal is a TestOps service that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](/log-data-in-reportportal/test-framework-integration/) or [Implement own integration](/log-data-in-reportportal/ImplementOwnIntegration).

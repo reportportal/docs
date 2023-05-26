@@ -5,9 +5,9 @@ sidebar_label: Jira Server
 
 # Jira Server
 
-For Jira Server plugin installation please check [documentation](./ManagePlugins#upload-plugin)
+To install the Jira Server plugin, see [Upload plugin](./ManagePlugins#upload-plugin) section.
 
-Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
+Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
 **Permission:**
 
@@ -71,7 +71,7 @@ User can add several integrations, but with a different name to the **one JIRA p
 > Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
 > While posing issue procedure, choose integration with needed type.
 >
-<media-view thumbnail={require('./img/jira/JiraProject.png')} src="https://youtu.be/med4tuL4plU" alt="Jira Project" type="video" />
+<media-view thumbnail={require('./img/jira/JiraProject.png')} src="https://youtu.be/med4tuL4plU" alt="Global Integration Jira and Post Issue in our test reporting tool" type="video" />
 
 ### Update global Jira Server integration
 
@@ -140,7 +140,7 @@ If you need to remove Jira Server integration, please perform actions:
 
 ### Add new project Jira Server integration
 
-If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to the ReportPortal, it won't be applied to the unlinked project.
+If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to the our centralized test automation tool, it won't be applied to the unlinked project.
 
 For that,
 
@@ -221,7 +221,7 @@ https://jiraeu.company.com
     *    Now try to establish the connection to JIRA Server on the ReportPortal project.
 
 5. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of a password.
-   After you have connected Jira and ReportPortal, you can choose an issue type that you will be able to add to Jira during the “Post Issue” operation.  Also, the user can add predefined fields that the user can fill.
+   After you have connected Jira and our test automation results dashboard, you can choose an issue type that you will be able to add to Jira during the “Post Issue” operation.  Also, the user can add predefined fields that the user can fill.
 
 ## Post issue to Jira Server
 
