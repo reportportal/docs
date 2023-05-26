@@ -4,7 +4,7 @@ sidebar_label: GitHub
 
 # GitHub
 
-ReportPortal allows logging in via GitHub OAuth Web Application Flow.
+Our open source test reporting tool  allows logging in via GitHub OAuth Web Application Flow.
 
 ### Presequences
 
