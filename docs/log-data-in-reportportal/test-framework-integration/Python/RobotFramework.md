@@ -5,7 +5,7 @@ sidebar_label: Robot Framework
 
 # ReportPortal Robot Framework Integration
 
-Listener for [RobotFramework](https://robotframework.org/) to report results to ReportPortal.
+There is a Listener for [RobotFramework](https://robotframework.org/) to report results to ReportPortal.
 
 Robot Framework is a generic test automation framework for test automation and robotic process automation (RPA). Robot has a simple syntax with keywords that are easy to understand.
 

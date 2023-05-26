@@ -5,7 +5,7 @@ sidebar_label: Spock
 
 # ReportPortal Spock Integration
 
-Agent to integrate [Spock](https://spockframework.org/) with ReportPortal.
+There is an agent to integrate [Spock](https://spockframework.org/) with ReportPortal.
 
 Spock is an open-source testing framework for Java and Groovy applications. It allows to write automated tests and specifications using a simple and intuitive syntax.
 

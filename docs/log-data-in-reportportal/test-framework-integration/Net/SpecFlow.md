@@ -5,7 +5,7 @@ sidebar_label: SpecFlow
 
 # ReportPortal SpecFlow Integration
 
-Agent to integrate [SpecFlow](https://specflow.org/) with ReportPortal.
+There is an agent to integrate [SpecFlow](https://specflow.org/) with ReportPortal.
 
 Can be integrated with popular development tools (for example, Visual Studio). Thus, developers can write and execute acceptance tests directly from their development environment.
 

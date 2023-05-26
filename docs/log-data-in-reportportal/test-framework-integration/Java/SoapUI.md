@@ -5,7 +5,7 @@ sidebar_label: SoapUI (outdated)
 
 # ReportPortal SoapUI Integration
 
-Agent to integrate [SoapUI](https://www.soapui.org/) with ReportPortal.
+There is an agent to integrate [SoapUI](https://www.soapui.org/) with ReportPortal.
 
 SoapUI is the most popular testing tool for SOAP and REST APIs. It offers clear interface for the creation and execution of automated functional, regression, and load tests.
 

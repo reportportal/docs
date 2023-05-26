@@ -5,7 +5,7 @@ sidebar_label: Postman
 
 # ReportPortal Postman Integration
 
-Agent to integrate [Postman](https://www.postman.com/) (based on Newman collection runner) with ReportPortal.
+There is an agent to integrate [Postman](https://www.postman.com/) (based on Newman collection runner) with ReportPortal.
 
 Postman is a popular API development tool for the building, testing and documenting APIs.
 

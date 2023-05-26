@@ -5,7 +5,7 @@ sidebar_label: JUnit4
 
 # ReportPortal JUnit4 Integration
 
-Agent to integrate [JUnit4](https://junit.org/junit4/) with ReportPortal.
+There is an agent to integrate [JUnit4](https://junit.org/junit4/) with ReportPortal.
 
 JUnit4 is one of the most popular unit testing framework which has a significant role in the test-driven development process.
 

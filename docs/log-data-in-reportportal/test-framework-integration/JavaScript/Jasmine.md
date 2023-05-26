@@ -5,7 +5,7 @@ sidebar_label: Jasmine
 
 # ReportPortal Jasmine Integration
 
-Agent to integrate [Jasmine](https://jasmine.github.io/) with ReportPortal.
+There is an agent to integrate [Jasmine](https://jasmine.github.io/) with ReportPortal.
 
 Jasmine is a testing framework for JavaScript with intuitive way to write and run tests for web applications.
 

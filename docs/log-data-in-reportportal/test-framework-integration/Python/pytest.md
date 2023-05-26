@@ -5,7 +5,7 @@ sidebar_label: pytest
 
 # ReportPortal pytest Integration
 
-Agent to integrate [pytest](https://docs.pytest.org/en/7.3.x/) with ReportPortal.
+There is an agent to integrate [pytest](https://docs.pytest.org/en/7.3.x/) with ReportPortal.
 
 Pytest is a popular testing framework for Python applications. One of its advantages is the ability to run tests automatically without the manual configuration.
 

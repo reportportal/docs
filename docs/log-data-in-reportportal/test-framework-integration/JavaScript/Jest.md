@@ -5,7 +5,7 @@ sidebar_label: Jest
 
 # ReportPortal Jest Integration
 
-Agent to integrate [Jest](https://jestjs.io/) with ReportPortal.
+There is an agent to integrate [Jest](https://jestjs.io/) with ReportPortal.
 
 Jest is a flexible JavaScript testing framework with a focus on simplicity.
 

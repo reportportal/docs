@@ -5,7 +5,7 @@ sidebar_label: Codeception
 
 # ReportPortal Codeception Integration
 
-Specific class to integrate [Codeception](https://codeception.com/)-based test framework with ReportPortal
+There is an agent to integrate [Codeception](https://codeception.com/)-based test framework with ReportPortal.
 
 Codeception is a modern PHP testing framework for web applications. One of its primary advantages is ability to integrate with various testing tools. So, developers can write tests in different environments.
 

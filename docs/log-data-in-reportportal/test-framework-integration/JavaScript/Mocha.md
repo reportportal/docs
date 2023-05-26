@@ -5,7 +5,7 @@ sidebar_label: Mocha
 
 # ReportPortal Mocha Integration
 
-Agent to integrate [Mocha](https://mochajs.org/) with ReportPortal. It was designed to work with mocha programmatically, in order to be able to parametrize each test run.
+There is an agent to integrate [Mocha](https://mochajs.org/) with ReportPortal. It was designed to work with mocha programmatically, in order to be able to parametrize each test run.
 
 Mocha is a popular JavaScript testing framework for both front-end and back-end applications. 
 
