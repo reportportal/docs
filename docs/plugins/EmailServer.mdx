@@ -11,7 +11,7 @@ You don't need to download . It is already available in ReportPortal on the Plug
 
 ## Add E-mail server integrations
 
-You can integrate our centralized test automation tool with an E-mail server. With this integration, you will be able to perform such functions as:
+You can integrate our centralized test automation tool with an E-mail server via SMTP protocol. With this integration, you will be able to perform such functions as:
 
 - invite a new user to the project
 - configure notification rules on launch finish
@@ -24,7 +24,7 @@ User with account role *PROJECT MANAGER* can configure E-mail integration only o
 
 ## Global E-mail server integration
 
-To configure the Email server for the whole instance:
+To configure the SMTP server for the whole instance:
 
 1. Log in to the ReportPortal as an ADMIN user
 
@@ -51,7 +51,7 @@ To configure the Email server for the whole instance:
 'TLS' or 'SSL': should be checked depends on the selected port.
 ```
 
-Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
 
 ```javascript
 `Host`: smtp.gmail.com
@@ -64,7 +64,7 @@ Example of email server configuration for Gmail email server (detailed info coul
 `SSL`: checkbox should be checked.
 ```
 
-Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
+Example of an SMTP server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
 
 ```javascript
 `Host`: smtp.yandex.com
@@ -87,7 +87,7 @@ After E-mail server integration adding, the configuration will be applied to all
 
 If E-mail integration has not to be added on the project, or if Project Manager or Admin want to specified special configurations for a special project, they can configure E-mail server in the project settings.
 
-To configure Email server for one single project instance:
+To configure SMTP server for one single project instance:
 
 1. Log in to the ReportPortal as an ADMIN or PM user
 2. Then click on the Project settings icon.
@@ -106,7 +106,7 @@ To configure Email server for one single project instance:
 'TLS' or 'SSL': should be checked depends on the selected port.
 ```
 
-Example of email server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
 
 ```javascript
 `Host`: smtp.gmail.com
@@ -119,7 +119,7 @@ Example of email server configuration for Gmail email server (detailed info coul
 `SSL`: checkbox should be checked.
 ```
 
-Example of an email server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
+Example of an SMTP server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
 
 ```javascript
 Host: smtp.yandex.com
