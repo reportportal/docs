@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Deploy with Docker on Linux/Mac
+description: Make your test automation reporting more portable. Reduce the risk of configuration issues with your test reporting tool using Docker.
 ---
 
 # Deploy with Docker on Linux/Mac

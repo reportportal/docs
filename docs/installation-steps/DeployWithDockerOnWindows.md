@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Deploy with Docker on Windows
+description: A portable way to manage your real time test results. Using Docker makes it easy to share test execution report and collaborate with other team members.
 ---
 
 # Deploy with Docker on Windows
