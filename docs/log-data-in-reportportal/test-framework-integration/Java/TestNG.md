@@ -5,7 +5,7 @@ sidebar_label: TestNG
 
 # ReportPortal TestNG Integration
 
-A [TestNG](https://testng.org/doc/) reporter uploads the results to a ReportPortal server.
+There is an agent to integrate [TestNG](https://testng.org/doc/) with ReportPortal.
 
 TestNG provides support for attaching custom listeners, reporters, annotation transformers and method interceptors to your tests.
 

@@ -5,7 +5,7 @@ sidebar_label: Playwright
 
 # ReportPortal Playwright Integration
 
-Agent to integrate [Playwright](https://playwright.dev/) with ReportPortal.
+There is an agent to integrate [Playwright](https://playwright.dev/) with ReportPortal.
 
 Playwright is an open-source JavaScript framework for web testing.
 

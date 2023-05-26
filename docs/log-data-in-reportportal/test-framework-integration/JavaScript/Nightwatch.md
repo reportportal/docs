@@ -5,7 +5,9 @@ sidebar_label: Nightwatch
 
 # ReportPortal Nightwatch Integration
 
-[Nightwatch](https://nightwatchjs.org/) is a testing framework to automate tests for web applications, supports testing on mobile browsers and native apps as well.
+There is an agent to integrate [Nightwatch](https://nightwatchjs.org/) with ReportPortal.
+
+Nightwatch is a testing framework to automate tests for web applications, supports testing on mobile browsers and native apps as well.
 
 [Installation guide](https://github.com/reportportal/agent-js-nightwatch#readme)
 

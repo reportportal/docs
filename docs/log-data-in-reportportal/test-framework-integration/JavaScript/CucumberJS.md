@@ -5,7 +5,7 @@ sidebar_label: CucumberJS
 
 # ReportPortal CucumberJS Integration
 
-Agent to integrate [CucumberJS](https://cucumber.io/docs/installation/javascript/) with ReportPortal.
+There is an agent to integrate [CucumberJS](https://cucumber.io/docs/installation/javascript/) with ReportPortal.
 
 CucumberJS is an open-source JavaScript testing framework for writing and running automated tests in plain language.
 

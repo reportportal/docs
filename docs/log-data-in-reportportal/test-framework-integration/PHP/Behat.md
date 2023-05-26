@@ -5,7 +5,7 @@ sidebar_label: Behat
 
 # ReportPortal Behat Integration
 
-Agent to integrate [Behat](https://docs.behat.org/en/latest/) with ReportPortal.
+There is an agent to integrate [Behat](https://docs.behat.org/en/latest/) with ReportPortal.
 
 Behat is a test framework for PHP.
 

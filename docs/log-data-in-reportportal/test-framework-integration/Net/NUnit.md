@@ -5,7 +5,7 @@ sidebar_label: NUnit
 
 # ReportPortal NUnit Integration
 
-Agent to integrate [NUnit](https://nunit.org/) with ReportPortal.
+There is an agent to integrate [NUnit](https://nunit.org/) with ReportPortal.
 
 NUnit is a testing framework to write and run unit tests for .NET applications. Supports all .Net languages.
 

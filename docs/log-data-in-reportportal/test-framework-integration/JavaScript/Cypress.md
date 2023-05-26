@@ -5,7 +5,7 @@ sidebar_label: Cypress
 
 # ReportPortal Cypress Integration
 
-Agent to integrate [Cypress](https://www.cypress.io/) with ReportPortal.
+There is an agent to integrate [Cypress](https://www.cypress.io/) with ReportPortal.
 
 Cypress is a testing framework for web applications.
 

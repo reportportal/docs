@@ -5,7 +5,7 @@ sidebar_label: JBehave
 
 # ReportPortal JBehave Integration
 
-Agent to integrate [JBehave](https://jbehave.org/) with ReportPortal.
+There is an agent to integrate [JBehave](https://jbehave.org/) with ReportPortal.
 
 JBehave is a Java framework which can be used for creating clear and readable automated acceptance tests.
 

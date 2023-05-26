@@ -5,7 +5,7 @@ sidebar_label: WebdriverIO
 
 # ReportPortal WebdriverIO Integration
 
-Agent to integrate [Webdriver.io](https://webdriver.io/) with ReportPortal.
+There is an agent to integrate [Webdriver.io](https://webdriver.io/) with ReportPortal.
 
 WebdriverIO is a JavaScript test automation framework for browser and mobile automation.
 

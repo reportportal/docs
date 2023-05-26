@@ -5,7 +5,7 @@ sidebar_label: JUnit5
 
 # ReportPortal JUnit5 Integration
 
-Agent to integrate [JUnit5](https://junit.org/junit5/docs/current/user-guide/#extensions) with ReportPortal.
+There is an agent to integrate [JUnit5](https://junit.org/junit5/docs/current/user-guide/#extensions) with ReportPortal.
 
 The most recent JUnit testing framework for Java-based applications is JUnit5.
 
