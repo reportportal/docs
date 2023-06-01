@@ -72,3 +72,7 @@ button {
 h1 {
   padding-top: 24px;
 }
+
+.navbar__logo {
+  height: 38px;
+}
