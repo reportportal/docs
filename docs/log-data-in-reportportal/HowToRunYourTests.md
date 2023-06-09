@@ -1,4 +1,4 @@
-# Hot to run your tests
+# How to run your tests
 
 Automated tests can be executed in the any CI tool you are using on the project (Jenkins, Bamboo, Azure DevOps, GitHub Actions, CircleCI, TeamCity, GitLab, Travis CI, Codeship, Buddy, GoCD, Wercker and more).
 It doesn't require any settings from ReportPortal.
