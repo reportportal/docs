@@ -68,5 +68,5 @@ ReportPortal offers widgets with a user-friendly visual interface to create inte
 
 - ***Easily running CI/CD tests***
 
-ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](/log-data-in-reportportal/HotToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
+ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](/log-data-in-reportportal/HowToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
 
