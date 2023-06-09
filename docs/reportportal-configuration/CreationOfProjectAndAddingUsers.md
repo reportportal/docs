@@ -57,7 +57,7 @@ An Admin can configure the project settings or leave them as the default.
 Project members with PROJECT_MANAGER roles are able to set up the project settings.
 To know how project settings could be updated, go to the [ProjectConfiguration](./ProjectConfiguration) section.
 
-To know more about the project's management, go to "Administrate" section > All Projects page.
+To know more about the project's management, go to "Administrate" section > "All Projects" page.
 
 You have a project, now add your team members to it.  You can create a new user and send credentials for them - **Add user** or you can send them an invite link - **Invite user**.
 
@@ -74,7 +74,7 @@ To add a user, perform the following steps:
 
 3. Click "Add User" button.
 
-4. "Add new user to the project" form will appear.
+4. Fill all fields with valid data in the "Add user" form and click on the "Add" button.
 
 ```javascript
 'login': <unique_login_name>
@@ -98,8 +98,7 @@ Add password: 1q2w3e
 
 >**Note:**  
 This is the only place in the system where an Administrator can be created
-from. "Project role" is disabled, if Administrator has been selected in the
-"Account role" field. The "ProjectRole" parameter is not specified for
+from. "Project role" is disabled, if "Administrator" value has been selected in the "Account role" field. The "ProjectRole" parameter is not specified for
 Administrator, the Administrator has full privileges on the project.
 
 Submit the form.
@@ -116,7 +115,7 @@ By default, the system creates a personal project for new users. All new users w
 >**Note:**
 If you do not need a personal project, ADMINISTRATOR can delete it. This project will be removed from the instance. But if the user is unassigned from all projects in the system, and he/she will log in to the ReportPortal after that - the deleted personal project will be created once more time.
 
-If you wish to know more about adding user options, go to "Administrate" section > All Users page.
+If you wish to know more about adding user options, go to "Administrate" section > "All Users" page.
 
 ## Invite a user to a project
 **Permission:**
@@ -129,19 +128,17 @@ To invite a user on the "All Users" page, perform the following steps:
 
 2. Navigate to the "Administrate" section -\> "All users" page.
 
-3. Click the "Invite User" button.
+3. Click on the "Invite User" button.
 
-4. The "Invite user to the project" form will appear.
-
-5. Fill in the form and click the "Invite" button. The invitation
+4. Fill all fields with valid data in the "Invite user" form and click on the "Invite" button. - The invitation
    has been sent. You can copy the link to the invitation from the "Link to
    invitation" field.
 
-6. The user will receive an email with the link to the invitation. Registration
+5. The user will receive an email with the link to the invitation. Registration
    link will be active until the user registers in the system by this reference,
    but not more than 24 hours. When the user clicks the link, he/she will see a registration form.
 
-7. The user needs to fill in the registration form and click the "Register" button to complete the registration.
+6. The user needs to fill in the registration form and click the "Register" button to complete the registration.
    The user will be assigned to the project that was specified by you during the invitation,
    and to "Personal Project" with the PROJECT MANAGER project role.
 
@@ -163,7 +160,7 @@ Perform the following steps:
 
 5. Select a project role.
 
-6. Click the tick button. The user will be assigned to the project.
+6. Click on the "Tick" button. - The user will be assigned to the project.
 
 ## Edit project role
 
@@ -177,13 +174,13 @@ To edit the project role, perform the following steps:
 
 2. Navigate to the "Administrate" section -\> "All Users" page.
 
-3. Find a user and find the name of project in the "Projects and roles" section.
+3. Find a user and their project in the "Projects and roles" column.
 
 4. Click on the name of project.
 
 5. Select a new value from the "Project Role" drop-down.
 
-6. Click the tick button.
+6. Click on the "Tick" icon.
 
 ## Unassign user from the project
 
@@ -199,14 +196,13 @@ To unassign the assignment for the user on the project, perform the following st
 
 1. Navigate to the "Administrate" section -\> "All Users" page.
 
-2. Find a user and find the name of project in the "Projects and roles" section.
+2. Find a user and their project in the "Projects and roles" column.
 
 3. Click on the name of project.
 
-4. Click "remove" icon near the needed project and role.
+4. Click on "Cross" icon near the needed project.
 
-5. Confirm the warning message: "Are you sure you want to unassign
-   user from the project?". The user will be unassigned from the current project but will stay in the system.
+5. Confirm the action. - The user will be unassigned from the current project but will stay in the system.
 
 >**Note:**
 Users can not be unassign from their own personal projects.
