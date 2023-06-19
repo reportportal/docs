@@ -5,24 +5,24 @@ sidebar_label: Project configuration
 
 # Project configuration
 
-To see the list of available projects and open a project, click the drop-down list in the top left corner of the page.
+To see the list of available projects and open a project, click the drop-down list in the top of the left menu.
 
 ReportPortal supports customization of the default settings.
 
 **Permission:** 
 Users with the Administrator role can edit project settings on the project "Settings" page in Administrate section and on the Project space.
-Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
+Users with the PROJECT_MANAGER role can edit the settings on the project space only.
 MEMBER/ OPERATOR/ CUSTOMER can only view applied project settings.
 
 ## Project settings
 
-To go to the project settings page, click the "Settings" icon in the header of the page.
+To go to the project settings page, click the "Project Settings" icon in the left menu.
 
 The project configuration page will be opened.
 
-The project settings are divided into five tabs: "General", "Integrations", "Notifications", "Defect Types", "Auto-Analysis", "Pattern Analysis" and "Demo Data".
+The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](/category/quality-gates)).
 
-### General settings 
+### General settings
 
 Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
@@ -39,32 +39,33 @@ The second one is the "General" tab you can configure parameter of data storage 
 * 6 hours, 
 * 12 hours, 
 * 1 day, 
-* 1 week.
+* 7 days.
 
-- **Keep launchess** - this parameter specifies how long the system will keep old launches in the data base. There are 5 options: 
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep launches** - this parameter specifies how long the system will keep old launches in the data base. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
+
 After this period a launch will be deleted, and you can not see it in ReportPortal.
 
-- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are 5 options:
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
 
-- **Keep screenshots** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
-    in the system. There are five options: 
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep attachments** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
+    in the system. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
 
-<media-view thumbnail={require('./img/managingProjects/GeneralConf.png')} src="https://youtu.be/GsBGyhj-V6s" alt="Manage project General Config in our real time dashboard open source" type="video" />
+<media-view thumbnail={require('./img/ProjectSettingsGeneral.png')} src="https://youtu.be/ih-ECyC29f0" alt="Project settings in our real time dashboard open source" type="video" />
 
 ### Integrations 
 
@@ -177,7 +178,7 @@ For example, if you create a custom "Product Bug-1" as a subtype of "Product Bug
 defects as "Product Bug-1", then remove "Product Bug-1" from your project, all investigated "Product Bug-1" defects
 will be shown as "Product Bug".
 
-<media-view thumbnail={require('./img/managingProjects/DefectTypesConf.png')} src="https://youtu.be/z8iWXXk6A6Q" alt="Defect Type Configuration for clear test execution report" type="video" />
+<media-view thumbnail={require('./img/CustomDefectTypes.png')} src="https://youtu.be/CcU2_dEu59k" alt="Defect Type Configuration for clear test execution report" type="video" />
 
 ### Auto-analysis and Pattern analysis
 
@@ -192,7 +193,7 @@ The "Demo Data" tab provides a way to generate demo data on the project.
 The generated data could demonstrate how the launches, filter, and dashboard will look. On the other hand, demo data could be 
 modified or removed without any effect of your real objects.
 
-<media-view thumbnail={require('./img/managingProjects/DemoData.png')} src="https://youtu.be/YGBZfCvfdVw" alt="Generate Demo Data with test report&analytics dashboard" type="video" />
+<media-view thumbnail={require('./img/DemoData.png')} src="https://youtu.be/bXHY0_sXAF8" alt="Generate Demo Data with test report&analytics dashboard" type="video" />
 
 ## Management of users on the project
 
@@ -233,7 +234,7 @@ button to complete the registration.
 11. The user will be assigned to the project that the invitation was sent from, and to "Personal Project" with the PROJECT
  MANAGER project role. 
 
-<media-view thumbnail={require('./img/manageUsers/InviteUserFromProjectMembersPage.png')} src="https://youtu.be/BLI-IlTkSgI" alt="Invite User From Project Members Page" type="video" />
+<media-view thumbnail={require('./img/InviteUserProjectMembers.png')} src="https://youtu.be/VOk80XZHpWc" alt="Invite User From Project Members Page" type="video" />
 
 ### Project role
 
@@ -262,7 +263,7 @@ To edit the project role, perform the following steps:
 
 3. Select a new value from the "Project Role" drop-down for the user. - The new project role will be automatically saved.
 
-<media-view thumbnail={require('./img/manageUsers/EditProjectRoleFromProjectMembersPage.png')} src="https://youtu.be/aH1viL0FFlw" alt="Edit Project Role From Project Members Page" type="video" />
+<media-view thumbnail={require('./img/EditProjectRole.png')} src="https://youtu.be/DF38BbE5vws" alt="Edit Project Role From Project Members Page" type="video" />
 
 ### Unassign user from the project
 
