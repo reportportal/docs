@@ -49,17 +49,34 @@ Authorization: Bearer <access_token>
 
 Please note, that the token has a validity expiration time which is specified in the “expires_in” field. 
 
-## 2. Authorization with user's UUID Access Token (for agents)
+## 2. Authorization with user's API Key (for agents)
 
-Another way is to use the UUID Access Token from the user's Profile page. Pay attention, that this type of token is designed to be used by ReportPortal client tools and is **not a recommended way** to provide access directly to API endpoints.
+Another way is to use the API Key from the user's Profile page.
 
-Go to the Profile page when logged in and find the Access token. 
+API Key is a unique string to access ReportPortal REST API.
 
-<media-view src={require('./img/AccessToken/AccessToken2.png')} alt="Authorization with user's UUID Access Token (for agents)" />
+To use it, go to the Profile page when logged in and find API Keys tab. If you have created a token previously, it is transformed to Legacy API Key via migration script and it is still working. It will be active even if you generate new API Keys.
 
-The UUID token works in the same way as the regular token – just add it in the HTTP Authorization header when making requests to the ReportPoral API:
+<media-view src={require('./img/AccessToken/LegacyAPIKey.png')} alt="Authorization with user's API Key (for agents)" />
 
-```
-HTTP Header:
-Authorization: Bearer <access_token>  
-```
+Click on the "Generate API Key" button to create a new API Key. You can give any name for API Key. API Key name should be unique and have a size from 1 to 40 characters. You cannot have API Keys with the same name. Further, the generated API Key contains the API Key name as a prefix for identification. If the API Key name includes a space or an underscore, these symbols will be replaced by a hyphen in the API Key prefix.
+
+Please, note that API Key is visible on this step only: you should copy and save it somewhere if you want to use this API Key further.
+
+<media-view src={require('./img/AccessToken/NewAPIKeys.png')} alt="API Keys" />
+
+You can create several API Keys for different purposes, for example, for automation, or for sending to third-party services. But in general, all API Keys from the user's Profile page are equivalent.
+
+Users can revoke API Key, so their related information will be removed from the database and the user won’t be able to use revoked API Key.
+
+The user's API Key works in the same way as the regular token – just add it in the HTTP Authorization header when making requests to the ReportPoral API:
+
+HTTP Header:<br />
+Authorization: Bearer <access_token>
+
+<media-view src={require('./img/AccessToken/APIKeyUsing.png')} alt="How to use API Key" />
+
+
+:::note
+Pay attention, that this type of token is designed to be used by ReportPortal client tools and we don't recommend a way to provide access directly to API endpoints.
+:::
