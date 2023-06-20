@@ -9,5 +9,6 @@ You can find a detailed description of how report results to ReportPortal in our
 
 Based on this information you can create your integration with a test framework.
 
->**Note:**
-> We can propose a paid support for integration with a new framework or supporting an existing one. If you need more details, please drop a letter on support@reportportal.io.
+:::note
+We can propose a paid support for integration with a new framework or supporting an existing one. If you need more details, please drop a letter on support@reportportal.io.
+:::

@@ -11,5 +11,6 @@ If you need further guidelines, you can explore our [Developers guides](/categor
 What you can do if you can not find your Test Framework?
 You can create custom integrations. To get started, please look at our [Implement own Integration](/log-data-in-reportportal/ImplementOwnIntegration) page.
 
->**Note:**
-> We offer paid support for new or existing integrations. If you need more details, please send an email to support@reportportal.io.
+:::note
+We offer paid support for new or existing integrations. If you need more details, please send an email to support@reportportal.io.
+:::

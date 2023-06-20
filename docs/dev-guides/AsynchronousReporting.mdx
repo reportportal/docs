@@ -101,8 +101,9 @@ Requests and responses have no differences with sync ones but there are some spe
 `rp.amqp.queues` - Number of queues to be processed by this service-api.  
 `rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod 
 (default effectively infinite).
-Note: should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster.
-
+:::note
+should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster.
+:::
 #### Exchanges and queues for reporting
 
 `API` produces two reporting exchanges - `reporting` and `reporting.retry`. Exchange `reporting` contains queues for storing messages 

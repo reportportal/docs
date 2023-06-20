@@ -48,11 +48,11 @@ To create a project for a team:
 
 A confirmation message in the status bar should appear.
 
-> **Note:**
+:::note
 The name of the project should contain between 3-256 symbols. 
 It can include Latin and numeric characters, as well as underscores and dashes. 
 The name should be unique and cannot be changed after saving.
-
+:::
 An Admin can configure the project settings or leave them as the default. 
 Project members with PROJECT_MANAGER roles are able to set up the project settings.
 To know how project settings could be updated, go to the [ProjectConfiguration](./ProjectConfiguration) section.
@@ -96,25 +96,25 @@ Enter the user's email: demo_user@example.com
 Add password: 1q2w3e 
 ```
 
->**Note:**  
+:::note
 This is the only place in the system where an Administrator can be created
 from. "Project role" is disabled, if "Administrator" value has been selected in the "Account role" field. The "ProjectRole" parameter is not specified for
 Administrator, the Administrator has full privileges on the project.
-
+:::
 Submit the form.
 
 A confirmation message in the status bar should appear.
 
 The notification email letter is sent to the email address of the new user.
 
-> **Note:**
-Please, do not forget to review project roles on regular basis. We recommend to do it at least quarterly. 
-
+:::note
+Please, do not forget to review project roles on regular basis. We recommend to do it at least quarterly.
+:::
 By default, the system creates a personal project for new users. All new users which have been added to the ReportPortal will have a personal project along with the project where they have been assigned on. The user will be assigned to  "Personal Project" with the PROJECT MANAGER project role.
 
->**Note:**
+:::note
 If you do not need a personal project, ADMINISTRATOR can delete it. This project will be removed from the instance. But if the user is unassigned from all projects in the system, and he/she will log in to the ReportPortal after that - the deleted personal project will be created once more time.
-
+:::
 If you wish to know more about adding user options, go to "Administrate" section > "All Users" page.
 
 ## Invite a user to a project
@@ -188,9 +188,9 @@ To edit the project role, perform the following steps:
 Via "Administrate" section, only ADMINISTRATOR can unassign users.
 Via Project Space ADMINISTRATOR and PROJECT MANAGER can unassign users.
 
-> **Note:**
+:::note
 Please, do not forget to review project roles on regular basis. We recommend to do it at least quarterly.
-
+:::
 Depending on the project needs the assignment could be removed. 
 To unassign the assignment for the user on the project, perform the following steps:
 
@@ -204,5 +204,6 @@ To unassign the assignment for the user on the project, perform the following st
 
 5. Confirm the action. - The user will be unassigned from the current project but will stay in the system.
 
->**Note:**
+:::note
 Users can not be unassign from their own personal projects.
+:::

@@ -33,7 +33,9 @@ The request for the suggestions part looks like this:
 
 The Analyzer preprocesses log messages from the request for analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. We make several requests to the Elasticsearch to find similar test items by all the error logs.
 
-**Note:** When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
+:::note
+When a test item has several error logs, we will use the log with the highest score as a representative of this test item.
+:::
 
 The ElasticSearch returns to the service Analyzer 10 logs with the highest score for each query and all these candidates will be processed further by the ML model. The ML model is an XGBoost model which features (about 40 features) represent different statistics about the test item, log message texts, launch info and etc, for example:
 * the percent of selected test items with the following defect type

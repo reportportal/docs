@@ -117,12 +117,12 @@ You can select an item from the auto-complete tool-tip using the "Up" and "Down"
 13. You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.  
 
 
->**Note:**  
+:::note
 Users with a MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however, they do have the permissions to view them.
-
->**Note:**
+:::
+:::tip
 For using this functionality be sure that the E-mail server is configured.
-
+:::
 ### Custom defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
@@ -166,18 +166,17 @@ Add more custom defects, if you need it. The system allows us to add up to ten s
 Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
 For more information refer to the [Investigation of failure](/work-with-reports/InvestigationOfFailure) topic.
 
->**Note:**
+:::note
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
 
->**Note:**
 You can create up to 15 custom defect types for each group.
-
->**Note:**
+:::
+:::tip
 If you have deleted a custom type from the system, all test executions with this deleted defect type get the parent type of the group in which deleted defect has belonged. Statistics updates in all launches where a deleted defect was present.  
 For example, if you create a custom "Product Bug-1" as a subtype of "Product Bugs" group and investigate a few
 defects as "Product Bug-1", then remove "Product Bug-1" from your project, all investigated "Product Bug-1" defects
 will be shown as "Product Bug".
-
+:::
 <media-view thumbnail={require('./img/CustomDefectTypes.png')} src="https://youtu.be/CcU2_dEu59k" alt="Defect Type Configuration for clear test execution report" type="video" />
 
 ### Auto-analysis and Pattern analysis
@@ -249,9 +248,9 @@ There are 4 possible Project roles in ReportPortal:
 - OPERATOR
 - CUSTOMER
 
->**Note:**
+:::note
 The administrator has all privileges on the project.
-
+:::
 
 ### Edit project role
 
@@ -283,6 +282,7 @@ To unassign the assignment for the user on the project, perform the following st
 6. The user will be unassigned from the current project but will stay in the system.
 
  
->**Note:**
+:::note
 Invite user, Assign/Unassign internal user to/from the project, change user's role on a project action can be done for a user 
 with a similar and lower role only.
+:::

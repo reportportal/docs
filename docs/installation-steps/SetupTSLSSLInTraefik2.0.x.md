@@ -139,8 +139,9 @@ services:
     restart: always
 ```
 
-**NOTE**: Make sure that the required ports are opened. Please check your firewall settings.
-
+:::note
+Make sure that the required ports are opened. Please check your firewall settings.
+:::
 ## Helpful links
 
 1. [Traefik HTTPS&TLS Offical documentation](https://doc.traefik.io/traefik/https/tls/)
