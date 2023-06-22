@@ -45,7 +45,7 @@ This will turn off reporting for local launches
 
 Set all users on the project with the Role `Operator`. This role can’t report data into RP.
 
-Create an internal user for Jenkins executions, set him/her as a lead role. 
+Create an internal user for Jenkins executions, set him/her as a PROJECT MANAGER role. 
 
 This will make it possible to create launches only for Jenkins users
 
