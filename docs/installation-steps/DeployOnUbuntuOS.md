@@ -86,11 +86,14 @@ After download is completed and containers started open another terminal and run
 `docker ps` to check that all containers from previous step are up and running.
 
 9. Check that ReportPortal is running
-In the VM opten browser to `0.0.0.0:8080` --> ReportPortal login page will open
-**NOTE:** If you are behind a proxy you need to add `0.0.0.0` to the `NO_PROXY` (no_proxy) ENV.
-After setting the port forwarding like explained in video PART 2 (link below) open browser on your host machine to `localhost:8080` or `127.0.0.1:8080` --> ReportPortal loginpage will open
+In the VM opten browser to `0.0.0.0:8080` --> ReportPortal login page will open.
 
+:::note
+If you are behind a proxy you need to add `0.0.0.0` to the `NO_PROXY` (no_proxy) ENV.<br />
+After setting the port forwarding like explained in video PART 2 (link below) open browser on your host machine to `localhost:8080` or `127.0.0.1:8080` --> ReportPortal loginpage will open
+:::
 OPTIONAL
+
 If you don't like to write 'sudo' before each docker-command do this but be aware of possible security issue with that!
 ```shell
    sudo groupadd docker

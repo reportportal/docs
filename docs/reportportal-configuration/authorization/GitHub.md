@@ -37,11 +37,11 @@ To setup access with GitHub auth on ReportPortal:
 'Add GitHub Organization' button-link: (optional)
  ```
 
-Note, in case the 'Organization Name' is not added, all GitHub users will have access to the ReportPortal instance.
-If the 'Organization Name' is specified, only users of this organization will have an access to ReportPortal instance.
-
+:::note
+In case the 'Organization Name' is not added, all GitHub users will have access to the ReportPortal instance.<br/>
+If the 'Organization Name' is specified, only users of this organization will have an access to ReportPortal instance.<br/>
 If the Name of GitHub organization is not validated, verify that the name is correct.
-
+:::
 Example of GitHub auth configuration:
 Fill in the form:
 

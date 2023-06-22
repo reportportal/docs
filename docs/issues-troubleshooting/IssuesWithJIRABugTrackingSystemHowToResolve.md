@@ -53,8 +53,8 @@ or
 4. Now try to establish the connection to JIRA on ReportPortal project.
 
 
-**Note:**
+:::note
 SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of password.
-
+:::
 
 If these didn't resolve your issues, please contact us.

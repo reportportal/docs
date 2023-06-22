@@ -39,10 +39,10 @@ Find below the recommended hardware configuration to set up ReportPortal and hav
 <media-view src={require('./img/OptimalPerformanceHardwareSetup1.png')} alt="Kubernetes server types for our centralized test automation tool" />
 
 ---
-**NOTE**
+:::note
 
 In Report Portal version 5.7.3, the log double-entry saving approach to DB and Elasticsearch (to data streams) has been implemented. This saving approach reduces the DB footprint almost x10 times, improves the speed of reporting logs, minimizes computation power to clean up data, and brings full-text search capabilities. Our general recommendation is to roll out Elasticsearch on the separate cluster nodes if you have a Kubernetes deployment (consider creating the node group for Elasticsearch). But if you have or expect a large amount of the logs reporting, separate cluster nodes for Elasticsearch are required. The proposed shapes for Elasticsearch nodes have been verified during performance testing and perform stable without degradation on all server configurations (from Small server type to Large). However, if you report many logs, you can tune the node's Disk size or scale up the shapes according to your needs. In addition, please pay attention to the number of Elasticsearch active shards (primary and total). In case you have a large count of projects, additional tuning for Elasticsearch might be needed(due to limitations that Elasticsearch has on the number of active shards). Please see Part 7 below for the tips.
-
+:::
 Additional nodes for Elasticsearch:
 
 <media-view src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for Elasticsearch in ReportPortal Testops" />
@@ -51,12 +51,11 @@ Additional nodes for Elasticsearch:
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
    ***Replica*
 
----
-**NOTE**
+
+:::note
 
 The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
-
----
+:::
 <br/>
 
 ## 3. Which scale I need? Configuration testing results and saturation points<br/>

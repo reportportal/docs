@@ -18,10 +18,11 @@ DELETE `/v1/{projectName}/dashboard/{dashboardId}/{widgetId}` - Delete specified
 
 ### Launch controller
 
-Note: Tags from v4 was replaced by attributes in v5.
+:::note
+Tags from v4 was replaced by attributes in v5.
 Attribute contains key and value. It may have null key, but non-null value.
 Attribute with null value is analog for v4 tag.
-
+:::
 GET `/v1/{projectName}/launch/attribute/keys` - Retrieve all unique attribute keys of project launches.
 
 GET `/v1/{projectName}/launch/attribute/values` - Retrieve all unique attribute values of project launches.
@@ -30,10 +31,11 @@ GET `/v1/{projectName}/launch/status` - Get launches statuses.
 
 GET `/v1/{projectName}/launch/uuid/{launchUuid}` - Get launch by uuid.
 
-Note: Response from start(create) launch request contains object with key `id` and string value (example: `id="33fa80b9-8ec9-4d52-8cb7-68b7bb4070f1"`).
+:::note
+Response from start(create) launch request contains object with key `id` and string value (example: `id="33fa80b9-8ec9-4d52-8cb7-68b7bb4070f1"`).
 It is not physical `id` in database. It is UUID (virtual id of launch, part of asynchronous reporting implementation).
 Using request above you can retrieve physical `id` from database of just reported launch and use it in next queries for items, filters etc.
-
+:::
 PUT `/v1/{projectName}/launch/info` - Bulk update launches attributes and descriptions.
 
 ---
@@ -96,9 +98,11 @@ DELETE `/v1/{projectName}/settings/pattern/{id}` - Delete specified pattern temp
 
 ### Test item controller
 
-Note: Tags from v4 was replaced by attributes in v5.
-Attribute contains key and value. It may have null key, but non-null value.
+:::note
+Tags from v4 was replaced by attributes in v5.<br />
+Attribute contains key and value. It may have null key, but non-null value.<br />
 Attribute with null value is analog for v4 tag.
+:::
 
 GET `/v1/{projectName}/item/attribute/keys` - Retrieve all unique attributes keys of specified launch.
 
@@ -110,10 +114,11 @@ GET `/v1/{projectName}/item/ticket/ids` - Get tickets that contains a term as a 
 
 GET `/v1/{projectName}/item/uuid/{itemId}` - Get test item by uuid.
 
-Note: Response from start(create) test item request contains object with key `id` and string value (example: `id="1f8233b0-6a2d-4a82-989b-a33463287130"`).
+:::note
+Response from start(create) test item request contains object with key `id` and string value (example: `id="1f8233b0-6a2d-4a82-989b-a33463287130"`).
 It is not physical `id` in database. It is UUID (virtual id of test item, part of asynchronous reporting implementation).
 Using request above you can retrieve physical `id` from database of just reported test item and use it in next queries for items, logs etc.
-
+:::
 PUT `/v1/{projectName}/item/info` - Bulk update items attributes and descriptions.
 
 PUT `/v1/{projectName}/item/issue/link` - Link external issue for specified test items.

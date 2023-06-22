@@ -130,12 +130,12 @@ Checkbox 'Extend child suites description with original launches names': Uncheck
 8. Make changes and click the "Merge" button on the "Merge Launches" window.
    After the merge, a new run will be shown on the common launches list.
 
->**Note:**
+:::note
 The following launches cannot be merged:
 - Launches in progress
 - Launches with active "Analysis" process
 - Launches with active "Match issues in launch" process
-
+:::
 <media-view thumbnail={require('./img/manage-launches/Merge.png')} src="https://youtu.be/tGTGFO0cGCM" alt="Merge Launches in our centralized test automation tool" type="video" />
 
 ## Compare launches
@@ -158,9 +158,9 @@ In order to compare launches, perform the following steps:
 Passed/Failed/Skipped and Product Bug/Automation Bug/System Issue/To
 Investigate test items.
 
->**Note:**
+:::note
 Launches can be compared on the 'Launches' page and not on the 'Debug' page.
-
+:::
 <media-view thumbnail={require('./img/manage-launches/CompareLaunches.png')} src="https://youtu.be/1MjgTxbRH5c" alt="Compare Launches" type="video" />
 
 ## Move launches to Debug
@@ -269,9 +269,9 @@ In order to export a launch, perform the following steps:
 
 <media-view thumbnail={require('./img/manage-launches/ExportLaunch.png')} src="https://youtu.be/NZIolEFI7zc" alt="Export Launch in our real time dashboard open source" type="video" />
 
->**Note:**
+:::note
 The export operation works for a separate launch only. No multiple actions for the export of launches.
-
+:::
 ## Delete launches
 
 The system allows deleting launches on the "Launches" and "Debug" pages.
@@ -316,9 +316,9 @@ In order to delete more than one launch simultaneously, perform the following st
 
 7. The launches will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
 
->**Note:**
+:::note
 It is impossible to delete launches IN PROGRESS - "Delete" launch option will be disabled.
- 
+:::
 ## Delete test item
 
 The system allows deleting test items in all levels of launch in the "Launches" and "Debug" pages.
@@ -365,5 +365,6 @@ In order to delete some test items simultaneously, perform the following steps:
 
 7. Test items will be deleted from ReportPortal with all related content (logs, screenshots).
 
->**Note:**
+:::note
 It is impossible to delete test items in launches IN PROGRESS - "Delete" test item option is disabled for test items in launches IN PROGRESS.
+:::
