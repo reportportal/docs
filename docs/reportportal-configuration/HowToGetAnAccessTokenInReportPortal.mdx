@@ -47,29 +47,37 @@ Authorization: Bearer <access_token>
 
 ```
 
-Please note, that the token has a validity expiration time which is specified in the “expires_in” field. 
-
 ## 2. Authorization with user's API Key (for agents)
 
-Another way is to use the API Key from the user's Profile page.
+Another method involves using the API Key found on the user's Profile page.
 
-API Key is a unique string to access ReportPortal REST API.
+The API Key is a unique token that grants access to the ReportPortal REST API.
 
-To use it, go to the Profile page when logged in and find API Keys tab. If you have created a token previously, it is transformed to Legacy API Key via migration script and it is still working. It will be active even if you generate new API Keys.
+To use it, log in and navigate to the Profile page, then find the API Keys tab. If you've previously created a token, it now has been converted to a Legacy API Key at the moment of migration to newest version and it remains valid and operational.
+
+:::note
+It will continue to work even if you generate new API Keys.
+:::
+
+Thus, you can use several API keys at the same time. And revoke unused, expired or publicly exposed keys.
 
 <media-view src={require('./img/AccessToken/LegacyAPIKey.png')} alt="Authorization with user's API Key (for agents)" />
 
-Click on the "Generate API Key" button to create a new API Key. You can give any name for API Key. API Key name should be unique and have a size from 1 to 40 characters. You cannot have API Keys with the same name. Further, the generated API Key contains the API Key name as a prefix for identification. If the API Key name includes a space or an underscore, these symbols will be replaced by a hyphen in the API Key prefix.
+To generate a new API key in the ReportPortal app, click on the "Generate API Key" button.
 
-Please, note that API Key is visible on this step only: you should copy and save it somewhere if you want to use this API Key further.
+You are free to assign any name to this API key, as long as it is unique and consists of 1 to 40 characters. Keep in mind that duplicate API key names are not allowed.
+
+The system will automatically prefix the generated API key with its assigned name for easy identification. If the API key name contains spaces or underscores, these will be replaced by hyphens in the API key prefix.
+
+It's crucial to understand that the API key will be visible only at the point of creation. We strongly recommend copying and securely storing it for future use, as it will be impossible to retrieve later. This practice aligns with stringent security measures and standards.
 
 <media-view src={require('./img/AccessToken/NewAPIKeys.png')} alt="API Keys" />
 
-You can create several API Keys for different purposes, for example, for automation, or for sending to third-party services. But in general, all API Keys from the user's Profile page are equivalent.
+You have the ability to create multiple API keys for various purposes, such as for automation or for integration with third-party services. However, it's important to note that all API keys generated from the user's Profile page are functionally equivalent from the permissions standpoint.
 
-Users can revoke API Key, so their related information will be removed from the database and the user won’t be able to use revoked API Key.
+Users can also revoke an API key at any time. Upon revocation, all related information will be removed from the database, and the revoked API key will no longer be usable.
 
-The user's API Key works in the same way as the regular token – just add it in the HTTP Authorization header when making requests to the ReportPoral API:
+An API key functions similarly to a regular token. When making requests to the ReportPortal API, simply include it in the HTTP Authorization header as follows:
 
 HTTP Header:<br />
 Authorization: Bearer <access_token>
@@ -78,5 +86,5 @@ Authorization: Bearer <access_token>
 
 
 :::note
-Pay attention, that this type of token is designed to be used by ReportPortal client tools and we don't recommend a way to provide access directly to API endpoints.
+Please be aware that this type of token is specifically designed for use by ReportPortal client tools (agents). We do not recommend using it to provide direct access to API endpoints.
 :::
