@@ -7,13 +7,13 @@ sidebar_label: How to avoid local execution reported into project space
 
 **Option 1:** 
 
-Use a specific tag for launches, which should represent the state.
+Use a specific attribute for launches, which should represent the state.
 
-Create filters using those tags. Build widgets and dashboards, based on those tags. 
+Create filters using those attributes. Build widgets and dashboards, based on those attributes. 
 
-You can add those additional tags via the CI command line. 
+You can add those additional attributes via the CI command line. 
 
-So, only Jenkins will generate launches with those tags
+So, only Jenkins will generate launches with those attributes.
 
 **Option 2:**
 
