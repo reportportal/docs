@@ -38,7 +38,6 @@ ReportPortal provides enhanced capabilities along with auto-results analysis by
 
 With each execution, ReportPortal automatically figures out the root cause of a fail. As a result of AI-based defects triage, ReportPortal is marking a test result with a flag. Engineers will be alerted about this issue to provide further analysis: if it has been resolved already or which test results require actual human analysis.
 
-
 ## What technologies are used?
 
 Considering a high load rate and performance requirements, we use
@@ -69,4 +68,3 @@ ReportPortal offers widgets with a user-friendly visual interface to create inte
 - ***Easily running CI/CD tests***
 
 ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](/log-data-in-reportportal/HowToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
-
