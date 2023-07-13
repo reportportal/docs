@@ -7,15 +7,15 @@ sidebar_label: Operations under launches
 
 There are several ways of how launches could be modified and managed in our test automation reporting dashboard.
 
-## Edit launch tags and description
+## Edit launch attributes and description
 
-The system allows editing tags and descriptions for the launch on the "Launches" and "Debug" modes.
+The system allows editing attributes and descriptions for the launch on the "Launches" and "Debug" modes.
 
 Permission: next users are able to modify launches:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -29,17 +29,17 @@ In order to edit a launch, perform the following steps:
 
 6. Make the required changes and click the "Save" button.
 
-<media-view thumbnail={require('./img/manage-launches/EditLaunch.png')} src="https://youtu.be/87dTCdsFD-I" alt="Edit Launch in our test automation reporting dashboard" type="video" />
+<media-view thumbnail={require('./img/manage-launches/EditLaunch.png')} src="https://youtu.be/XRjtJ8Dq468" alt="Edit Launch in our test automation reporting dashboard" type="video" />
 
-## Edit test item tags and description
+## Edit test item attributes and description
 
-The system allows to edit tags and description for the test items on the "Launches" and "Debug" pages.
+The system allows to edit attributes and description for the test items on the "Launches" and "Debug" pages.
 
 Permission: next users are able to modify test items:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -55,7 +55,7 @@ In order to edit a test item, perform the following steps:
 
 5. Make the required changes and click the "Save" button.
 
-<media-view thumbnail={require('./img/manage-launches/EditItem.png')} src="https://youtu.be/7PZIowd9III" alt="Edit Item" type="video" />
+<media-view thumbnail={require('./img/manage-launches/EditTestItem.png')} src="https://youtu.be/mGhwWwq_R3g" alt="Edit Item" type="video" />
 
 ## Merge launches
 
@@ -100,7 +100,7 @@ Permission: Next users are able to merge launches:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -123,20 +123,20 @@ In order to merge launches, perform the following steps:
                       Launch name: (editable)
                             Owner: The field is filled in with the current user.
                       Description: collect data from all launches 
-                             Tags: collect unique tags from all launches
+                             Attributes: collect unique attributes from all launches
                    Time Start/End: filled in and disabled.
 Checkbox 'Extend child suites description with original launches names': Unchecked by default
 ```
 8. Make changes and click the "Merge" button on the "Merge Launches" window.
    After the merge, a new run will be shown on the common launches list.
 
->**Note:**
+:::note
 The following launches cannot be merged:
 - Launches in progress
 - Launches with active "Analysis" process
 - Launches with active "Match issues in launch" process
-
-<media-view thumbnail={require('./img/manage-launches/Merge.png')} src="https://youtu.be/tGTGFO0cGCM" alt="Merge Launches in our centralized test automation tool" type="video" />
+:::
+<media-view thumbnail={require('./img/manage-launches/MergeLaunches.png')} src="https://youtu.be/oOyuiYEZLnQ" alt="Merge Launches in our centralized test automation tool" type="video" />
 
 ## Compare launches
 
@@ -158,10 +158,10 @@ In order to compare launches, perform the following steps:
 Passed/Failed/Skipped and Product Bug/Automation Bug/System Issue/To
 Investigate test items.
 
->**Note:**
+:::note
 Launches can be compared on the 'Launches' page and not on the 'Debug' page.
-
-<media-view thumbnail={require('./img/manage-launches/CompareLaunches.png')} src="https://youtu.be/1MjgTxbRH5c" alt="Compare Launches" type="video" />
+:::
+<media-view thumbnail={require('./img/manage-launches/CompareLaunches.png')} src="https://youtu.be/bfLVTKIHf7U" alt="Compare Launches" type="video" />
 
 ## Move launches to Debug
 
@@ -171,9 +171,9 @@ Permission: Next users are able to move launches to "Debug"/"Launches" mode:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD}
+- User with PROJECT MANAGER Project Role
 
-- User with {MEMBER} Project Role  - Launch Owner
+- User with MEMBER Project Role  - Launch Owner
 
 In order to move a launch to the "Debug" section, perform the following steps:
 
@@ -209,7 +209,7 @@ In order to move some launches to the "Debug" section simultaneously, perform th
 To return the launches to the "Launches" section, navigate to the "Debug" section, select them 
 and select "Move to All Launches" from the 'Actions' list.
 
-<media-view thumbnail={require('./img/manage-launches/MoveToDebugLaunches.png')} src="https://youtu.be/UW1oMNy1-qo" alt="Move launches to Debug" type="video" />
+<media-view thumbnail={require('./img/manage-launches/MoveLaunchesToDebug.png')} src="https://youtu.be/-DBDmyWEQ5A" alt="Move launches to Debug" type="video" />
 
 ## Force finish launches
 
@@ -219,7 +219,7 @@ Permission: Next users are able to stop launches:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -235,7 +235,7 @@ In order to finish a launch that is in progress now, perform the following steps
 
 5. The launch will be stopped and shown in the launches table with the "stopped" tag and the *"stopped"* description. All the statistics collected by this time will be displayed.
 
-<media-view thumbnail={require('./img/manage-launches/ForceFinish.png')} src="https://youtu.be/nI1u4ZvKX1Y" alt="Force finish" type="video" />
+<media-view thumbnail={require('./img/manage-launches/ForceFinish.png')} src="https://youtu.be/rRyfktuvhH0" alt="Force finish" type="video" />
 
 In order to finish some launches simultaneously those are in progress now, perform the following steps:
 
@@ -267,11 +267,11 @@ In order to export a launch, perform the following steps:
 
 3. The launch report in the selected format will be opened.
 
-<media-view thumbnail={require('./img/manage-launches/ExportLaunch.png')} src="https://youtu.be/NZIolEFI7zc" alt="Export Launch in our real time dashboard open source" type="video" />
+<media-view thumbnail={require('./img/manage-launches/ExportLaunches.png')} src="https://youtu.be/3AvmRyrh8f4" alt="Export Launch in our real time dashboard open source" type="video" />
 
->**Note:**
+:::note
 The export operation works for a separate launch only. No multiple actions for the export of launches.
-
+:::
 ## Delete launches
 
 The system allows deleting launches on the "Launches" and "Debug" pages.
@@ -280,7 +280,7 @@ Permission: next users are able to delete launches:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -298,7 +298,7 @@ In order to delete a launch, perform the following steps:
 
 5.  The launch will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
 
-<media-view thumbnail={require('./img/manage-launches/DeleteLaunch.png')} src="https://youtu.be/DNy9aqPz3NQ" alt="Delete launch in our test reporting tool" type="video" />
+<media-view thumbnail={require('./img/manage-launches/DeleteLaunches.png')} src="https://youtu.be/_KQk6qgc1g0" alt="Delete launch in our test reporting tool" type="video" />
 
 In order to delete more than one launch simultaneously, perform the following steps:
 
@@ -316,9 +316,9 @@ In order to delete more than one launch simultaneously, perform the following st
 
 7. The launches will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
 
->**Note:**
+:::note
 It is impossible to delete launches IN PROGRESS - "Delete" launch option will be disabled.
- 
+:::
 ## Delete test item
 
 The system allows deleting test items in all levels of launch in the "Launches" and "Debug" pages.
@@ -327,7 +327,7 @@ Permission: Next users are able to delete the test item:
 
 - Administrator
 
-- User with one of Project Role {PROJECT MANAGER, LEAD} on the project
+- User with PROJECT MANAGER Project Role
 
 - User with one of Project Role {MEMBER, CUSTOMER} on the project - Launch Owner
 
@@ -345,7 +345,7 @@ In order to delete a test item, perform the following steps:
 
 6. The test item will be deleted from ReportPortal with all related content (logs, screenshots).
 
-<media-view thumbnail={require('./img/manage-launches/DeleteItems.png')} src="https://youtu.be/r2r5OHwVt-U" alt="Delete Items" type="video" />
+<media-view thumbnail={require('./img/manage-launches/DeleteTestItem.png')} src="https://youtu.be/w6wFP86bvJQ" alt="Delete Items" type="video" />
 
 In order to delete some test items simultaneously, perform the following steps:
 
@@ -365,5 +365,6 @@ In order to delete some test items simultaneously, perform the following steps:
 
 7. Test items will be deleted from ReportPortal with all related content (logs, screenshots).
 
->**Note:**
+:::note
 It is impossible to delete test items in launches IN PROGRESS - "Delete" test item option is disabled for test items in launches IN PROGRESS.
+:::

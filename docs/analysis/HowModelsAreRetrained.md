@@ -12,7 +12,9 @@ In the Auto-analysis and ML suggestions processes several models take part:
 
 At the start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized test failure analysis, the models should be retrained on the data from the project.
 
-**Note:** If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
+:::note
+If a global model performs better on your data, the retrained model won't be saved. As far as we save a custom model only if it performs better for your data than the global one.
+:::
 
 Triggering information and retrained models are saved in Minio(or a filesystem) as you set up in the Analyzer service settings.
 

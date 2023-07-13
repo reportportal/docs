@@ -7,13 +7,13 @@ sidebar_label: How to avoid local execution reported into project space
 
 **Option 1:** 
 
-Use a specific tag for launches, which should represent the state.
+Use a specific attribute for launches, which should represent the state.
 
-Create filters using those tags. Build widgets and dashboards, based on those tags. 
+Create filters using those attributes. Build widgets and dashboards, based on those attributes. 
 
-You can add those additional tags via the CI command line. 
+You can add those additional attributes via the CI command line. 
 
-So, only Jenkins will generate launches with those tags
+So, only Jenkins will generate launches with those attributes.
 
 **Option 2:**
 
@@ -45,10 +45,11 @@ This will turn off reporting for local launches
 
 Set all users on the project with the Role `Operator`. This role can’t report data into RP.
 
-Create an internal user for Jenkins executions, set him/her as a lead role. 
+Create an internal user for Jenkins executions, set him/her as a PROJECT MANAGER role. 
 
 This will make it possible to create launches only for Jenkins users
 
->**Note:** It is also possible to combine all those options at the same time.
-
+:::note
+It is also possible to combine all those options at the same time.
+:::
 

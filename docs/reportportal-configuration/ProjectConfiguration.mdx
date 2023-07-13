@@ -5,24 +5,24 @@ sidebar_label: Project configuration
 
 # Project configuration
 
-To see the list of available projects and open a project, click the drop-down list in the top left corner of the page.
+To see the list of available projects and open a project, click the drop-down list in the top of the left menu.
 
 ReportPortal supports customization of the default settings.
 
 **Permission:** 
-Users with the Administrator role can edit project settings on the project "Settings" page in Management Board and on the Project space. 
-Users with the PROJECT_MANAGER or LEAD roles can edit the settings on the project space only.
+Users with the Administrator role can edit project settings on the project "Settings" page in Administrate section and on the Project space.
+Users with the PROJECT_MANAGER role can edit the settings on the project space only.
 MEMBER/ OPERATOR/ CUSTOMER can only view applied project settings.
 
 ## Project settings
 
-To go to the project settings page, click the "Settings" icon in the header of the page.
+To go to the project settings page, click the "Project Settings" icon in the left menu.
 
 The project configuration page will be opened.
 
-The project settings are divided into five tabs: "General", "Integrations", "Notifications", "Defect Types", "Auto-Analysis", "Pattern Analysis" and "Demo Data".
+The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](/category/quality-gates)).
 
-### General settings 
+### General settings
 
 Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
@@ -39,32 +39,33 @@ The second one is the "General" tab you can configure parameter of data storage 
 * 6 hours, 
 * 12 hours, 
 * 1 day, 
-* 1 week.
+* 7 days.
 
-- **Keep launchess** - this parameter specifies how long the system will keep old launches in the data base. There are 5 options: 
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep launches** - this parameter specifies how long the system will keep old launches in the data base. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
+
 After this period a launch will be deleted, and you can not see it in ReportPortal.
 
-- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are 5 options:
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
 
-- **Keep screenshots** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
-    in the system. There are five options: 
-* 2 weeks, 
-* 1 month, 
-* 3 months, 
-* 6 months,
-* forever.
+- **Keep attachments** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
+    in the system. There are five options:
+* 7 days,
+* 14 days,
+* 21 days,
+* 30 days,
+* 90 days.
 
-<media-view thumbnail={require('./img/managingProjects/GeneralConf.png')} src="https://youtu.be/GsBGyhj-V6s" alt="Manage project General Config in our real time dashboard open source" type="video" />
+<media-view thumbnail={require('./img/ProjectSettingsGeneral.png')} src="https://youtu.be/ih-ECyC29f0" alt="Project settings in our real time dashboard open source" type="video" />
 
 ### Integrations 
 
@@ -76,10 +77,10 @@ For more information on this topic, please refer to [Integration with external s
 
 The "Notifications" tab provides the administrator with the ability to activate e-mail notifications on the project.
 
-ReportPortal provides a way to add multiple rules with specific conditions. The Notification rule should be unique per project, have a unique parameter set, and specify recipients. For Example: In case, Launch names, tags).
+ReportPortal provides a way to add multiple rules with specific conditions. The Notification rule should be unique per project, have a unique parameter set, and specify recipients. For Example: In case, Launch names, attributes).
 
 Permissions: 
-Users with Administrator a role can configure "Notifications" in the Management Board.
+Users with Administrator a role can configure "Notifications" in the Administrate section.
 Users with PROJECT_MANAGER roles can edit the settings on the project space only.
 
 To do that, perform the following steps:
@@ -116,12 +117,12 @@ You can select an item from the auto-complete tool-tip using the "Up" and "Down"
 13. You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.  
 
 
->**Note:**  
+:::note
 Users with a MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however, they do have the permissions to view them.
-
->**Note:**
+:::
+:::tip
 For using this functionality be sure that the E-mail server is configured.
-
+:::
 ### Custom defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
@@ -165,19 +166,18 @@ Add more custom defects, if you need it. The system allows us to add up to ten s
 Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
 For more information refer to the [Investigation of failure](/work-with-reports/InvestigationOfFailure) topic.
 
->**Note:**
+:::note
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
 
->**Note:**
 You can create up to 15 custom defect types for each group.
-
->**Note:**
+:::
+:::tip
 If you have deleted a custom type from the system, all test executions with this deleted defect type get the parent type of the group in which deleted defect has belonged. Statistics updates in all launches where a deleted defect was present.  
 For example, if you create a custom "Product Bug-1" as a subtype of "Product Bugs" group and investigate a few
 defects as "Product Bug-1", then remove "Product Bug-1" from your project, all investigated "Product Bug-1" defects
 will be shown as "Product Bug".
-
-<media-view thumbnail={require('./img/managingProjects/DefectTypesConf.png')} src="https://youtu.be/z8iWXXk6A6Q" alt="Defect Type Configuration for clear test execution report" type="video" />
+:::
+<media-view thumbnail={require('./img/CustomDefectTypes.png')} src="https://youtu.be/CcU2_dEu59k" alt="Defect Type Configuration for clear test execution report" type="video" />
 
 ### Auto-analysis and Pattern analysis
 
@@ -192,11 +192,11 @@ The "Demo Data" tab provides a way to generate demo data on the project.
 The generated data could demonstrate how the launches, filter, and dashboard will look. On the other hand, demo data could be 
 modified or removed without any effect of your real objects.
 
-<media-view thumbnail={require('./img/managingProjects/DemoData.png')} src="https://youtu.be/YGBZfCvfdVw" alt="Generate Demo Data with test report&analytics dashboard" type="video" />
+<media-view thumbnail={require('./img/DemoData.png')} src="https://youtu.be/bXHY0_sXAF8" alt="Generate Demo Data with test report&analytics dashboard" type="video" />
 
 ## Management of users on the project
 
-On the Members page of a particular project, users with the appropriate roles can invite new members.
+On the "Project Members" page users with the appropriate roles can invite new members.
 
 Permissions: 
 
@@ -204,44 +204,42 @@ User with Administrator role and users with project role PROJECT_MANAGER.
 
 ### Invite user on a project
 
-To invite a user on the project "Members" page, perform the following steps:
+To invite a user on the "Project Members" page, perform the following steps:
 
 1. Login into ReportPortal instance as with the PROJECT_MANAGER project role.
 
-2. Click the "Members" icon on the project page.
+2. Navigate to the "Project Members" page on the left menu.
 
-3. Click the "Invite" tab. 
+3. Click the "Invite User" tab.
 
-4. "Invite a new member to the project" form will appear.
-
-5. Enter the email address of the user in case he/she is not present in the ReportPortal database or enter his/her login name.
+4. Enter the email address of the user in case he/she is not present in the ReportPortal database or enter his/her login name.
  
-6. In case the user is already available in the ReportPortal, his/her name will appear in the suggestion list.
+5. In case the user is already available in the ReportPortal, his/her name will appear in the suggestion list.
 If not, the Admin should enter the correct email address.
 
-7. Select an appropriate role.
+6. Select an appropriate role.
 
-8. Then click 'Invite'.
+7. Then click 'Invite'.
 
-9. In case the user is already available in ReportPortal s/he will be assigned to the project
+8. In case the user is already available in ReportPortal s/he will be assigned to the project
 If not, the letter with an invitation link will be sent to the user email address.
 
-10. The user will receive an email with the link to the registration. 
+9. The user will receive an email with the link to the registration.
 When the user clicks the link, he/she will see a registration form.
 
-11. The user needs to fill in the registration form and click the "Register"
+10. The user needs to fill in the registration form and click the "Register"
 button to complete the registration. 
 
-12. The user will be assigned to the project that the invitation was sent from, and to "Personal Project" with the PROJECT
+11. The user will be assigned to the project that the invitation was sent from, and to "Personal Project" with the PROJECT
  MANAGER project role. 
 
-<media-view thumbnail={require('./img/manageUsers/InviteUserFromProjectMembersPage.png')} src="https://youtu.be/BLI-IlTkSgI" alt="Invite User From Project Members Page" type="video" />
+<media-view thumbnail={require('./img/InviteUserProjectMembers.png')} src="https://youtu.be/VOk80XZHpWc" alt="Invite User From Project Members Page" type="video" />
 
 ### Project role
 
 Every user is given a specific Project role within a specific project.
 
-Depends on the role, the user is able or not able to perform some actions. For more details, please see the Permissions map below
+Depends on the role, the user is able or not able to perform some actions. For more details, please see the "Permissions map".
 
 There are 4 possible Project roles in ReportPortal:
 
@@ -250,34 +248,32 @@ There are 4 possible Project roles in ReportPortal:
 - OPERATOR
 - CUSTOMER
 
->**Note:**
+:::note
 The administrator has all privileges on the project.
-
+:::
 
 ### Edit project role
 
 To edit the project role, perform the following steps:
 
-1. Login into the ReportPortal as a user with PROJECT_MANAGER or LEAD project role.
+1. Login into the ReportPortal as a user with PROJECT_MANAGER project role.
 
-2. Then click the "Members" icon on the project page.
+2. Navigate to the "Project Members" page on the left menu.
 
-3. Select a new value from the "Project Role" drop-down for the user
+3. Select a new value from the "Project Role" drop-down for the user. - The new project role will be automatically saved.
 
-4. The new project role will be automatically saved.
-
-<media-view thumbnail={require('./img/manageUsers/EditProjectRoleFromProjectMembersPage.png')} src="https://youtu.be/aH1viL0FFlw" alt="Edit Project Role From Project Members Page" type="video" />
+<media-view thumbnail={require('./img/EditProjectRole.png')} src="https://youtu.be/DF38BbE5vws" alt="Edit Project Role From Project Members Page" type="video" />
 
 ### Unassign user from the project
 
 Depending on the project needs the assignment could be removed. 
 To unassign the assignment for the user on the project, perform the following steps:
 
-1. Login into the ReportPortal as a user with PROJECT_MANAGER or LEAD project role.
+1. Login into the ReportPortal as a user with PROJECT_MANAGER project role.
 
-2. Click the "Members" icon on the project page.
+2. Navigate to the "Project Members" page on the left menu.
 
-3. Find the required member
+3. Find the required member.
 
 4. Click the 'Unassign' button for the user.
 
@@ -286,6 +282,7 @@ To unassign the assignment for the user on the project, perform the following st
 6. The user will be unassigned from the current project but will stay in the system.
 
  
->**Note:**
+:::note
 Invite user, Assign/Unassign internal user to/from the project, change user's role on a project action can be done for a user 
 with a similar and lower role only.
+:::

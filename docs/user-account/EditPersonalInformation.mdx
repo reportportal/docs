@@ -5,29 +5,28 @@ sidebar_label: Edit personal information
 
 # Edit personal information
 
-To navigate to the user profile page, click the username drop-down in the right
-header and select the "Profile" option.
+To navigate to the User Profile page, open menu at the bottom of the page and select "Profile" option.
 
 The User Profile page consists of the following elements:
 
 - Personal information and photo – JPEG, PNG, GIF file, with a file size limit no more than 1 MB and 300x500px.
 
-- "UUID" – is a unique user identifier. UUID is used in automated test
-configuration files for user authentication instead of a password. It will
-allow you to post data, without logging it in the UI.
+- Project Assignment – is the list of your projects and the specified roles that are tied to them. This
+is a read-only list.
 
-- "Regenerate UUID" button – this button regenerates a new UUID. If a
-new UUID is generated, you have to update the automated test configuration file.
+- API Keys - unique tokens that grant access to the ReportPortal REST API.
 
-- "Projects and roles" – is the list of your projects and the specified roles that are tied to them. This
-is a read-only list. Note: The current project is highlighted.
+- Configuration Examples
 
 ## Edit name, email and password
 
-You can edit the name, email and password fields. Note: The specified login at user
-creation cannot be changed.
+You can edit the name, email and password fields.
 
-To edit the full name and/or email, click on the "Edit personal info" button. The full
+:::note
+The specified login at user
+creation cannot be changed.
+:::
+To edit the full name and/or email, click on the "Edit personal information" button. The full
 name and email fields will become available.
 
 The full name allows: 3-256 symbols, English, Latin, Cyrillic, numeric characters and the
@@ -35,11 +34,11 @@ following symbols: hyphen, underscore, dot, and space. The email should be uniqu
 
 Make changes and click the "Save" button.
 
-<media-view thumbnail={require('./img/EditPersonalInfo.png')} src="https://youtu.be/OLjn090hk18" alt="Edit Personal Info in our test automation results dashboard" type="video" />
+<media-view thumbnail={require('./img/EditPersonalInformation.png')} src="https://youtu.be/yVdo-C8kkkU" alt="Edit Personal Info in our test automation results dashboard" type="video" />
 
->**Note:**
+:::note
 Personal information for a GitHub user cannot be changed.  
-
+:::
 ## Change password
 
 To change your password in ReportPortal, click on the "Change password" button
@@ -51,9 +50,10 @@ above the form and enter:
 
 Check the box "Show password" to verify the password entered is what you intended to enter.
 
-Fill in these fields and click the "Change Password" button under the form.
+Fill in these fields and click the "Submit" button under the form.
 
-<media-view thumbnail={require('./img/ChangePassword.png')} src="https://youtu.be/sb_TNHGAIMw" alt="Change Password real time dashboard open source" type="video" />
+<media-view thumbnail={require('./img/ChangePassword.png')} src="https://youtu.be/WzcQsK-PzyM" alt="Change Password real time dashboard open source" type="video" />
 
->**Note:**  
+:::note
 GitHub users cannot change the password on ReportPortal.
+:::
