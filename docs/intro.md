@@ -63,7 +63,7 @@ In ReportPortal, you have fully real-time analytic report automation. Since the 
 
 - ***Advanced reporting***
 
-ReportPortal offers widgets with a user-friendly visual interface to create interactive reports for all your needs. For example, you can build qa metrics dashboard using [Overall statistics](https://reportportal.io/docs/dashboards-and-widgets/OverallStatistics), [Unique bugs table](https://reportportal.io/docs/dashboards-and-widgets/UniqueBugsTable), [Passing rate summary](https://reportportal.io/docs/dashboards-and-widgets/PassingRateSummary) widgets. 
+ReportPortal offers widgets with a user-friendly visual interface to create interactive reports for all your needs. For example, you can build qa metrics dashboard using [Overall statistics](/dashboards-and-widgets/OverallStatistics), [Unique bugs table](/dashboards-and-widgets/UniqueBugsTable), [Passing rate summary](/dashboards-and-widgets/PassingRateSummary) widgets. 
 
 - ***Easily running CI/CD tests***
 
