@@ -7,7 +7,7 @@ sidebar_label: Cucumber
 
 There is an agent to integrate [Cucumber](https://cucumber.io/) with ReportPortal.
 
-Cucumber is a popular open-source framework for behavior-driven development (BDD) which allows developers, testers, and business stakeholders to work together and define an application's behavior.
+Cucumber is a popular open-source framework for behavior-driven development (BDD) which based on Gherkin language and allows developers, testers, and business stakeholders to work together and define an application's behavior.
 
 ## Compatibility matrix for cucumber agents
 
