@@ -11,6 +11,10 @@ ReportPortal is a TestOps service, that provides increased capabilities to speed
 ReportPortal is a great addition to Continuous Integration and Continuous
 Testing process.
 
+ReportPortal is distributed under the Apache v2.0 license, and it is free to use and modify, even for commercial purposes. We offer the only paid premium feature – [Quality Gates](/category/quality-gates).
+
+If a company is interested in our services, we can provide support hours to deploy, integrate, configure, or customize the tool, as well as [SaaS options](https://reportportal.io/pricing).
+
 ## What ReportPortal can do?
 
 - ***Mainstream platforms integration***
