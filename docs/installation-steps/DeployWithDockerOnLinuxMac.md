@@ -74,7 +74,7 @@ services:
      RP_INITIAL_ADMIN_PASSWORD: "My_Strong_Password!"
 ``` 
 
-We've modified the current approach: during the initial installation and the first login of the SuperAdmin, they will need to create a unique initial password, different from the default password provided in the ReportPortal installation documentation. Failure to do so will prevent the Auth service from starting.
+We've modified the current approach: during the initial installation and the first login of the superadmin, they will need to create a unique initial password, different from the default password provided in the ReportPortal installation documentation. Failure to do so will prevent the Auth service from starting.
 
 4. Start the application using the following command:
 
