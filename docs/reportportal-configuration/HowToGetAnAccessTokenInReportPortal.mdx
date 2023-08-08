@@ -20,7 +20,7 @@ password: <password>
 
 Or you can use the following curl request:
 
-```
+```curl
 curl --header "Content-Type: application/x-www-form-urlencoded" \
      --request POST \
      --data "grant_type=password&username=<username>&password=<password>" \
@@ -41,7 +41,7 @@ Then you will receive a response with an access token:
 ```
 Now you can use “access_token” with any request to API by sending it as HTTP Authorization header:
 
-```
+```http
 HTTP Header:
 Authorization: Bearer <access_token>
 
