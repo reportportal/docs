@@ -9,17 +9,11 @@ LDAP plugin is available in ReportPortal on the Plugins page.
 To set up access with LDAP:
 
 1. Log in to the ReportPortal as an ADMIN user
-
 2. Then open the list on the right of the user's image.
-
 3. Click the 'Administrative' link
-
 4. Click the 'Plugins' from the left-hand sidebar
-
 5. Click on the'LDAP' tab.
-
 6. Click on Add new integration
-
 7. The next fields should be present:
 
 ```javascript 
