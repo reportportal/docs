@@ -98,17 +98,11 @@ PERSISTENT
 urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
 ```
 
-***Provider name***
+***Provider name*** - Provider name associated with IDP.
 
-  Provider name associated with IDP.
+***Metadata URL*** - URL that provides data with information about SAML Provider.
 
-***Metadata URL***
-
-  URL that provides data with information about SAML Provider.
-
-***Email***
-
-  Attribute name from SAML metadata which contains an user email.
+***Email*** - Attribute name from SAML metadata which contains an user email.
 
 ```xml
 <saml:Attribute Name="Email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -116,9 +110,7 @@ urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
  </saml:Attribute>
 ```
 
-***ReportPortal Callback URL (Optional)***
-
-  This field provides a redirect base path.
+***ReportPortal Callback URL (Optional)*** - This field provides a redirect base path.
 
 Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.
 
@@ -126,8 +118,7 @@ Once you have submitted an integration with “RP callback URL”, the URL will 
 https://<host>/uat
 ```
 
-***First name***
-  Attribute name from SAML metadata which contains an user first/given name.
+***First name*** - Attribute name from SAML metadata which contains an user first/given name.
 
 ```xml
 <saml:Attribute Name="FirstName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -135,9 +126,7 @@ https://<host>/uat
 </saml:Attribute>
 ```
 
-***Last name***
-
-  Attribute name from SAML metadata which contains an user last/family name.
+***Last name*** - Attribute name from SAML metadata which contains an user last/family name.
 
 ```xml
 <saml:Attribute Name="LastName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -145,9 +134,7 @@ https://<host>/uat
 </saml:Attribute>
 ```
 
-***Full name***
-
-  Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
+***Full name*** - Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
 
 ```xml
 <saml:Attribute Name="FullName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
