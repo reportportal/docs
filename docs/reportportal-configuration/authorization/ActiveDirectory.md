@@ -41,8 +41,8 @@ Please find the example with configurations for Microsoft Active Directory that 
 |:---------------------:|:----------------------------------------------------------------------------------------------------------------------:|
 | Url                   | `auth-servers.domain.org.int:3358`                                                                                     |
 | Base DN               | `OU=MAIN,DC=DOMAIN,DC=ORG,DC=INT`                                                                                      |
-| Manager DN            | `cn=Service UserBind,ou=Service Accounts,ou=Colombia,ou=America,ou=ServiceAccounts,dc=DOMAIN,dc=ORG,dc=INT              |
-| User search filter    | (&(objectClass=user)(sAMAccountName={0}))` |
+| Manager DN            | `cn=Service UserBind,ou=Service Accounts,ou=Colombia,ou=America,ou=ServiceAccounts,dc=DOMAIN,dc=ORG,dc=INT`              |
+| User search filter    | `(&(objectClass=user)(sAMAccountName={0}))` |
 | Password encoder type | `NO`                                                                                                                     |
 | Email attribute       | `mail`                                                                                                                   |
 | Full name attribute   | `displayName`                                                                                                            |
