@@ -34,7 +34,6 @@ There are detailed manuals for configuration of [Azure SAML](./AzureSAML) and [O
 ReportPortal contains the SAML Plugin by default.
 
 1. Go to `Administration` -> `Plugins` -> `SAML`
-
 2. Select `Add integration`.
 
 ## Set up connection
@@ -101,15 +100,15 @@ urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
 
 ***Provider name***
 
-Provider name associated with IDP.
+  Provider name associated with IDP.
 
 ***Metadata URL***
 
-URL that provides data with information about SAML Provider.
+  URL that provides data with information about SAML Provider.
 
 ***Email***
 
-Attribute name from SAML metadata which contains an user email.
+  Attribute name from SAML metadata which contains an user email.
 
 ```xml
 <saml:Attribute Name="Email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -119,7 +118,7 @@ Attribute name from SAML metadata which contains an user email.
 
 ***ReportPortal Callback URL (Optional)***
 
-This field provides a redirect base path.
+  This field provides a redirect base path.
 
 Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.
 
@@ -128,8 +127,7 @@ https://<host>/uat
 ```
 
 ***First name***
-
-Attribute name from SAML metadata which contains an user first/given name.
+  Attribute name from SAML metadata which contains an user first/given name.
 
 ```xml
 <saml:Attribute Name="FirstName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -139,7 +137,7 @@ Attribute name from SAML metadata which contains an user first/given name.
 
 ***Last name***
 
-Attribute name from SAML metadata which contains an user last/family name.
+  Attribute name from SAML metadata which contains an user last/family name.
 
 ```xml
 <saml:Attribute Name="LastName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
@@ -149,7 +147,7 @@ Attribute name from SAML metadata which contains an user last/family name.
 
 ***Full name***
 
-Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
+  Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
 
 ```xml
 <saml:Attribute Name="FullName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
