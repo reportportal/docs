@@ -12,32 +12,14 @@ the most unstable test cases in your suites/ launches/ builds.
 
 To see a table of the historical trend of executions, navigate to the "Launches" page and drill down to launch structure/ or launch statistics.
 
-### History table: Test Case ID or Unique ID
+### History table based on Test Case Hash
 
-ReportPortal acquires a lot of real-time test results and you can choose by which parameter you want the history of test results to get defined.
-There are 2 options:
+Test case hash is a parameter that is automatically generated based on the Test Case ID (if specified) or the full path to the test.
 
-* by [Unique ID](./UniqueId) ***(deprecated/ will be replaced by Test Case ID gradually)***
-* by [Test Case ID](./TestCaseId) 
-
-### Difference between Test Case ID  and Unique ID
-
-Please find the description of what Test Case ID and Unique  by the links:
-* [UUID](./UniqueId) ***(deprecated/ will be replaced by Test Case ID gradually)***
-* [Test Case ID](./TestCaseId) 
-
-They are both a unique identifiers of executions uniquness.
-
-But Unique ID ***(deprecated)*** generates on the base of a launch name where test execution is situated.
-And Test Case ID usually doesn't contain a launch name. 
-
-So that the main difference between a history table based on Unique ID ***(deprecated)*** and Test Case ID is that:
-
-* History on Unique ID ***(deprecated)*** shows only executions from launches with the same name
-* History on Test Case ID shows executions from all launches.
+You can read about the Test Case ID [here](/work-with-reports/TestCaseId).
 
 ### Unique ID history
-***(deprecated/ will be replaced by Test Case ID gradually)***
+***(deprecated)***
 
 1. Take the ReportPortal release version 5.2.2 or higher. docker-compose.yml
 
@@ -49,7 +31,7 @@ RP_ENVIRONMENT_VARIABLE_HISTORY_OLD=true
 
 3. Redeploy ReportPortal
 
-### Test Case ID history
+### Test Case Hash history
 
 Run ReportPortal without env variable.
 
@@ -83,7 +65,7 @@ There are two options for a History table:
 - history for all launches
 - history for launches with the same name
 
-If your are using History table based on Test Case ID, you will be able to use both of this options.
+If your are using History table based on Test Case Hash, you will be able to use both of this options.
 In case you use a history table based on UID, a history table will show you results in mode: "History for launches with the same name".
 
 ### History for all launches
@@ -98,7 +80,7 @@ This option is for you.
 - Click on the button 'History'
 - Choose the option '**All launches'** in the drop-down 'BASE'
 
-**What information is shown on the table based on Test Case ID?**
+**What information is shown on the table based on Test Case Hash?**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from all launches on the project.
 Each column on the history table is equaled to a number of the execution.
@@ -132,7 +114,7 @@ This option is for you.
 - Click on the button 'History'
 - Choose the option **'Launches with the same name'** in the drop-down 'BASE'
 
-**What information is shown on the table based on Unique ID (deprecated) ot Test Case ID (with option "Launches with the same name"?)**
+**What information is shown on the table based on Unique ID (deprecated) or Test Case Hash (with option "Launches with the same name"?)**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from only launches with the same name on the project.
 Each column on the history table is equaled to a number of the execution.
