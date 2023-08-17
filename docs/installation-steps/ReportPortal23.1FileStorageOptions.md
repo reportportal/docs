@@ -4,7 +4,7 @@ In ReportPortal 23.1 we can use multiple ways to store log attachments, user pic
 
 - AWS S3
 - MinIO distributed object storage
-- Container's File system
+- File system
 
 Currently we have 2 file storage systems: **multi-bucket** and **single-bucket**.
 
@@ -64,9 +64,9 @@ To set the **single-bucket** system, use the following environment variables:
 - DATASTORE_DEFAULTBUCKETNAME for single-bucket name
 - RP_FEATURE_FLAGS : singleBucket
 
-## Container's File system
+## File system
 
-The container's file system option is used when you want to store this data in a mounted folder in the service-api or/and service-uat containers.
+The file system option is used when you want to store this data in a mounted folder in the service-api or/and service-uat.
 
 To use this option, set up environment variables like this:
 

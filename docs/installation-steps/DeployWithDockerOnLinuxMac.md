@@ -63,6 +63,19 @@ For more details about ElasticSearch visit ElasticSearch [guide](https://www.ela
 >
 > You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment [variable](./AdditionalConfigurationParameters).
 
+3. Ensure you override the UAT Service environment variable RP_INITIAL_ADMIN_PASSWORD
+
+```bash
+version: '2.4'
+services:
+
+  uat:
+   environment:
+     RP_INITIAL_ADMIN_PASSWORD: "My_Strong_Password!"
+``` 
+
+We've modified the current approach: during the initial installation and the first login of the superadmin, they will need to create a unique initial password, different from the default password provided in the ReportPortal installation documentation. Failure to do so will prevent the Auth service from starting.
+
 4. Start the application using the following command:
 
 ```bash
