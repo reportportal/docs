@@ -46,3 +46,53 @@ You can only interrupt the import in UI when files are being downloaded into the
 The details about import via API you can find on the ReportPortal menu at the bottom: API -> launch controller -> Import junit xml report
 
 <media-view src={require('./img/ImportJunitXMLReport.png')} alt="Import junit xml report in our qa automation dashboard" />
+
+You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
+
+The endpoint **POST /v1/{projectName}/launch/import** allows importing a launch into the specified project using an XML or ZIP file in JUnit format.
+
+**Permissions:** Admin, PM, Member, Customer, Operator.
+
+Here's an example of a request to the endpoint:
+
+```yaml
+curl -X 'POST' \
+ 'http://localhost:8585/api/v1/testProject/launch/import?attributeKey=someKey&attributeValue=someValue&description=someDescription&launchName=someName&skippedIsNotIssue=true'
+ -F 'file=@Launch.zip;type=application/x-zip-compressed'
+```
+
+Query parameters:
+
+**attributeKey** (String) – Launch attribute key. If this parameter is specified, "attributeValue" is required.
+
+**attributeValue** (String) – Launch attribute value. Can be specified without the "attributeKey" parameter.
+
+**description** (String) – Launch description.
+
+**launchName** (String) – Launch name. If this parameter is not specified, the file name will be used as the launch name.
+
+**skippedIsNotIssue** (Boolean) – When set to **"true"**, all skipped issues are processed without applying a defect type; when set to **"false"**, skipped issues are processed and marked with the defect type "To Investigate". If the parameter is not set, the default behavior is equivalent to "false".
+
+:::note
+These parameters are optional and can be used individually, in any combination, or all together.
+:::
+
+**Scenario 1**
+
+If you want to mark skipped items as "To Investigate", use the following request:
+
+```yaml
+curl -X 'POST' 'http://localhost:8585/api/v1/testProject/launch/import'
+```
+
+**Scenario 2**
+
+If you don't want to mark skipped items as "To Investigate", use the following request:
+
+```yaml
+curl -X 'POST' 'http://localhost:8585/api/v1/testProject/launch/import?skippedIsNotIssue=true'
+```
+
+<media-view thumbnail={require('./img/ImportViaAPI.png')} src="https://youtu.be/SkUBTNBWiqs" alt="Import via API on our test automation results dashboard" type="video" />
+
+
