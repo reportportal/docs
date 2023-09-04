@@ -49,7 +49,7 @@ sidebar_label: Version v.23.1
 # 3. Enhancements Based on Community Feedback:
 
 - [#41](https://github.com/reportportal/plugin-bts-jira/issues/41). JIRA integration throws errors while setting up.
-- [#243]([url](https://github.com/reportportal/service-authorization/issues/243)). Email not synchronized after change.
+- [#243](https://github.com/reportportal/service-authorization/issues/243). Email not synchronized after change.
 - [#287](https://github.com/reportportal/kubernetes/issues/287). Serviceui securityContext issue:
   The release UI image is now based on the non-root nginx image, which is more secure.
 - [#1013](https://github.com/reportportal/reportportal/issues/1013). Display more results in Flaky/Most Failed test case tables:
