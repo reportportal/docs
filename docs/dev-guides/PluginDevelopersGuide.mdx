@@ -477,4 +477,7 @@ public class ExampleExtension implements ReportPortalExtensionPoint, DisposableB
 
 All plugin components that relies on `@Autowired` dependencies should be loaded lazily using `MemoizingSupplier` or another lazy-load mechanism.
 This is the restriction of plugin installation flow: 
-##### We create extension object using constructor and only then we autowire dependencies. If we don't use lazy initialization - all objects created in the constructor will be created with `NULL` objects that were marked as `@Autowired`
+:::note
+
+We create extension object using constructor and only then we autowire dependencies. If we don't use lazy initialization - all objects created in the constructor will be created with `NULL` objects that were marked as `@Autowired`
+:::
