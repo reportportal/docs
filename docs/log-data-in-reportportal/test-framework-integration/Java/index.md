@@ -28,6 +28,10 @@ rp.launch={NAME_OF_YOUR_LAUNCH}
 
 `rp.launch` - a user-selected identifier of test launches.
 
+:::note
+Starting from the Service Release 23.1++, `rp.uuid` was renamed to `rp.api.key`. 
+:::
+
 This set of properties will allow you to report your tests. And there are more properties available for fine grain tuning of integration. Details available [here](https://github.com/reportportal/client-java#property-file).
 
 If you need a sophisticated and full-featured integration with a test framework, you can configure it by your self.
