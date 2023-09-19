@@ -1,22 +1,22 @@
 ---
 sidebar_position: 2
-sidebar_label: Jira Server
+sidebar_label: Atlassian Jira Server
 ---
 
-# Jira Server
+# Atlassian Jira Server
 
 To install the Jira Server plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
 
-Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
+Integration with the Atlassian JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the Atlassian JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
 **Permission:**
 
 The *Administrator* can upload a plugin and create global integrations on the Plugin tab in the Administrate section. Also, the Administrator can unlink project configurations from global.
 The *Project Manager* can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
 
-## Global JIRA Server integration
+## Global Atlassian JIRA Server integration
 
-### Add new global Jira Server integration
+### Add new global Atlassian Jira Server integration
 
 If all projects on your instance are using the same Jira projects, you will be able to configure **global integrations** which will be applied on all projects.
 
@@ -73,7 +73,7 @@ User can add several integrations, but with a different name to the **one JIRA p
 >
 <media-view thumbnail={require('./img/jira/JiraProject.png')} src="https://youtu.be/med4tuL4plU" alt="Global Integration Jira and Post Issue in our test reporting tool" type="video" />
 
-### Update global Jira Server integration
+### Update global Atlassian Jira Server integration
 
 If you need to edit Jira Server integration authorization parameters, please perform actions:
 
@@ -118,7 +118,7 @@ If you need to edit fields which should be posted in Jira Server, please perform
 
 <media-view thumbnail={require('./img/jira/JiraGlobal.png')} src="https://youtu.be/yvYwxs4zTYA" alt="Edit Global Jira Integration" type="video" />
 
-### Remove global Jira Server integration
+### Remove global Atlassian Jira Server integration
 
 If you need to remove Jira Server integration, please perform actions:
 
@@ -136,9 +136,9 @@ If you need to remove Jira Server integration, please perform actions:
 
 <media-view thumbnail={require('./img/jira/JiraGlobal.png')} src="https://youtu.be/mEWP4txdJFA" alt="Remove Global Jira Integration" type="video" />
 
-## Project JIRA Server integration
+## Project Atlassian JIRA Server integration
 
-### Add new project Jira Server integration
+### Add new project Atlassian Jira Server integration
 
 If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to the our centralized test automation tool, it won't be applied to the unlinked project.
 
@@ -184,7 +184,7 @@ You can add more integrations by clicking on "Add integration" button.
 
 <media-view thumbnail={require('./img/jira/JiraProject.png')} src="https://youtu.be/tCRh30KDpKc" alt="Project Jira Integration" type="video" />
 
-### Reset to project Jira Server Integrations
+### Reset to project Atlassian Jira Server Integrations
 
 If you want to delete project integrations with Jira Server and link your project with global configurations, please perform actions described below:
 
@@ -223,7 +223,7 @@ https://jiraeu.company.com
 5. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of a password.
    After you have connected Jira and our test automation results dashboard, you can choose an issue type that you will be able to add to Jira during the “Post Issue” operation.  Also, the user can add predefined fields that the user can fill.
 
-## Post issue to Jira Server
+## Post issue to Atlassian Jira Server
 
 Posting an issue to Jira Server means to create a new issue in Jira from ReportPortal and upload logs and attachments from an execution.
 
@@ -261,7 +261,7 @@ Post issue via Step view
 9. A label with issue ID will be added to the test item
 
 
-## Link an issue with an issue in Jira Server
+## Link an issue with an issue in Atlassian Jira Server
 
 Linking an issue with an issue in Jira Server means adding a clickable link to an existing issue in Jira from ReportPortal that will show a status of this issue.
 

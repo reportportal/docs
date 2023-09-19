@@ -31,7 +31,7 @@ ReportPortal allows to connect some popular bug tracking systems with our test a
 
 Before posting/linking a bug, make sure that the bug tracking systems are connected to the project on the project settings page. To check it, please, find the user guides below:
 
-* [Jira Server](/plugins/JiraServer)
-* [Jira Cloud](/plugins/JiraCloud)
+* [Atlassian Jira Server](/plugins/AtlassianJiraServer)
+* [Atlassian Jira Cloud](/plugins/AtlassianJiraCloud)
 * [Azure DevOps BTS](/plugins/AzureDevOpsBTS)
 * [Rally](/plugins/Rally)
