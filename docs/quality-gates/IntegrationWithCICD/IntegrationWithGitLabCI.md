@@ -289,7 +289,7 @@ UUID, which is a unique Launch identifier.
 
 Every Java Agent has specific properties which control Launch UUID printing,
 since July 2023. To ensure that check if your Agent has
-the `com.epam.reportportal:client-java` library dependency of version 5.1.21 or
+the `com.epam.reportportal:client-java` library dependency of version 5.1.23 or
 late. It’s generally safe to add exclusion and put a newer version of the library
 to get new features. So these properties are: `rp.launch.uuid.print` and
 `rp.launch.uuid.print.output`. You can put them into your
@@ -342,7 +342,7 @@ Some explanations here:
 ### Getting Launch UUID for Python tests
 
 ReportPortal pytest agent has specific properties which control Launch UUID printing,
-since version 5.2.0: `rp_launch_uuid_print` and `rp_launch_uuid_print_output`.
+since version 5.2.2: `rp_launch_uuid_print` and `rp_launch_uuid_print_output`.
 You can put them into your `pytest.ini` file. For this example, we just need
 one of them: `rp_launch_uuid_print = True`. It will output a line like this
 into the console:
