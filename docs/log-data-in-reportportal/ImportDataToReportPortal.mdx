@@ -57,7 +57,7 @@ Here's an example of a request to the endpoint:
 
 ```yaml
 curl -X 'POST' \
- 'http://localhost:8585/api/v1/testProject/launch/import?attributeKey=someKey&attributeValue=someValue&description=someDescription&launchName=someName&skippedIsNotIssue=true'
+ 'http://localhost:8585/api/v1/testProject/launch/import?attributeKey=someKey&attributeValue=someValue&description=someDescription&launchName=someName&skippedIsNotIssue=true' \
  -F 'file=@Launch.zip;type=application/x-zip-compressed'
 ```
 
