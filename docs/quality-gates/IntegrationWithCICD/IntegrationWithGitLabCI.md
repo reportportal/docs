@@ -289,13 +289,13 @@ UUID, which is a unique Launch identifier.
 
 Every Java Agent has specific properties which control Launch UUID printing,
 since July 2023. To ensure that check if your Agent has
-the `com.epam.reportportal:client-java` library dependency of version 5.1.21 or
+the `com.epam.reportportal:client-java` library dependency of version 5.1.23 or
 late. It’s generally safe to add exclusion and put a newer version of the library
 to get new features. So these properties are: `rp.launch.uuid.print` and
 `rp.launch.uuid.print.output`. You can put them into your
 `reportportal.properties` file. Enable Launch UUID printing with the property:
 `rp.launch.uuid.print = true`. It will output a line like this into the console:
-`Report Portal Launch UUID: 61ce1c26-842a-4bde-9abe-a4696e31d626`.
+`ReportPortal Launch UUID: 61ce1c26-842a-4bde-9abe-a4696e31d626`.
 
 Our tests use Gradle to build and run them, unlike other build systems Gradle
 usually hides test output streams and just prints truncated stack trace in case
@@ -330,7 +330,7 @@ test:
     - chmod +x ./gradlew
     - ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=$RP_DEMO_KEY -Prp.admin.password=$RP_ADMIN_PASSWORD | tee ./console.log
     - >
-      sed -rn 's/[ ]+Report Portal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
+      sed -rn 's/[ ]+ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
 ```
 
 Some explanations here:
@@ -342,11 +342,11 @@ Some explanations here:
 ### Getting Launch UUID for Python tests
 
 ReportPortal pytest agent has specific properties which control Launch UUID printing,
-since version 5.2.0: `rp_launch_uuid_print` and `rp_launch_uuid_print_output`.
+since version 5.2.2: `rp_launch_uuid_print` and `rp_launch_uuid_print_output`.
 You can put them into your `pytest.ini` file. For this example, we just need
 one of them: `rp_launch_uuid_print = True`. It will output a line like this
 into the console:
-`Report Portal Launch UUID: 61ce1c26-842a-4bde-9abe-a4696e31d626`.
+`ReportPortal Launch UUID: 61ce1c26-842a-4bde-9abe-a4696e31d626`.
 
 Next, we need to save this UUID to an environment variable which we later will
 use in a separate stage in polling ReportPortal API. GitLab allows this with [dotenv
@@ -364,7 +364,7 @@ test:
   script:
     - pytest -sv --reportportal -m "not command_skip" -n 2 -o "rp_api_key=$RP_DEMO_KEY" tests | tee ./console.log
     - >
-      sed -rn 's/Report Portal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
+      sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
 ```
 
 Some explanations here:
