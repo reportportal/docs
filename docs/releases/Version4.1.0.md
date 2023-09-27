@@ -1,0 +1,16 @@
+---
+sidebar_position: 27
+sidebar_label: Version 4.1.0
+---
+
+# Version 4.1.0
+
+Issues and features in milestone 4.1
+
+## Improvements
+
+* [#369](https://github.com/reportportal/reportportal/issues/369) Custom rules for Auto-Analysis: AA based on launches with the same name and on all launches on a project
+* [#66](https://github.com/reportportal/reportportal/issues/66) JIRA & RALLY: possibility to select issue type
+* [#106](https://github.com/reportportal/reportportal/pull/106) Replace enum with simple string for better bts extension
+* Parameter "rp.project" should have the current project as a value and not the default_project
+* MERGE: Possibility to merge launches by specifying only launch ID and merge type via APIrequest
