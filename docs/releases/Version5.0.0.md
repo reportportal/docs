@@ -26,7 +26,7 @@ Jira, Rally, SauceLabs integration now will work through the plugin functionalit
 Read more [here](/plugins/ManagePlugins#upload-plugin).
 
 Available plugins to download:
-- [Jira](/plugins/JiraServer)
+- [Jira](/plugins/AtlassianJiraServer)
 - [Rally](/plugins/Rally)
 - [SauceLabs](/plugins/SauceLabs)
 ## Brand new features
