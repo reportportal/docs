@@ -1,0 +1,26 @@
+---
+sidebar_position: 3
+sidebar_label: Delete account
+---
+
+# Delete account
+
+Starting from version 23.2, ReportPortal users can delete their accounts along with their personal data.
+
+During the instance setup, the DevOps engineer (or whoever is deploying the instance) can use a variable to decide whether the "Delete account" button will appear in each user's profile or not. This setting is specific to each instance.
+
+```
+RP_ENVIRONMENT_VARIABLE_ALLOW_DELETE_ACCOUNT: true
+```
+
+When a user clicks on the **"Delete account" button**, a modal window with feedback options appears. The user can select from predefined options or choose "Other" and provide a specific reason for deleting their account. Alternatively, they can simply select "Other" without leaving any comments.
+
+<media-view src={require('./img/DeleteAccount1.png')} alt="Feedback options" />
+
+To prevent accidental deletions, the user must enter "Delete" in capital letters to confirm their intention to delete the account. This extra step ensures that the user genuinely wants to proceed with the account deletion. Once the user clicks the "Delete" button, all personal information related to their account, including account name, email, and photo, will be removed from our test automation reporting platform. However, any data created or reported by the user in ReportPortal, such as launches, filters, widgets, and dashboards, will still be retained in the application but will no longer be accessible to the user. Additionally, the user will receive an email notification confirming the account deletion.
+
+<media-view src={require('./img/DeleteAccount2.png')} alt="Confirming the account deletion in our test automation reporting dashboard" />
+
+In summary, allowing users to delete their accounts and personal data from our automated testing tool is a critical measure to protect user privacy. ReportPortal is committed to adhering to data protection regulations and staying up to date with industry trends to ensure compliance.
+
+<media-view thumbnail={require('./img/DeleteAccount2.png')} src="https://youtu.be/BdIP6Jj9pHg" alt="Delete Account in our test automation results dashboard" type="video" />
