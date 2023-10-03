@@ -29,7 +29,7 @@ servicejobs:
 coreJobs:
     # Int (days) 
     notifyExpiredUserCron: 
-    
+
     # CRON 
     cleanExpiredUserCron: 
     cleanExpiredUserRetention: 
