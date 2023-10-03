@@ -13,13 +13,10 @@ To activate data retention, add the following environment variables to Service J
 
 ```
 # Int (days)
-
 RP_ENVIRONMENT_VARIABLE_CLEAN_EXPIREDUSER_RETENTIONPERIOD:
 
 # CRON
-
 RP_ENVIRONMENT_VARIABLE_CLEAN_EXPIREDUSER_CRON:
-
 RP_ENVIRONMENT_VARIABLE_NOTIFICATION_EXPIREDUSER_CRON:
 ```
 
@@ -29,17 +26,12 @@ Fill in Service Jobs values in the [values.yaml](https://github.com/reportportal
 
 ```
 servicejobs:
-
 coreJobs:
-
     # Int (days) 
-
     notifyExpiredUserCron: 
-
+    
     # CRON 
-
     cleanExpiredUserCron: 
-
     cleanExpiredUserRetention: 
 ```
 
