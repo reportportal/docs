@@ -10,33 +10,38 @@ sidebar_label: Version v.23.2
 - **New feature - Monitoring:**
 
 A new Event Monitoring interface has been introduced, providing administrators with a convenient means to review all activities at the Project level through the Search & Filter functionality within the Admin panel. Events at the instance level are not visible on the UI, but they are securely stored in the database. This data can be easily transmitted to SIEM systems for future monitoring and analysis.  
-[More details](/admin-panel/EventMonitoring)
+
+More details can be found via the [link](/admin-panel/EventMonitoring).
 
 - **Project Activity Panel Adjustments:**
 
-The list of project activities displayed in the Project Activity Panel has been expanded.  
-[More details](/dashboards-and-widgets/ProjectActivityPanel)
+The list of project activities displayed in the Project Activity Panel has been expanded.
+
+More details can be found via the [link](/dashboards-and-widgets/ProjectActivityPanel).
 
 - **New feature – Delete Account:**
 
-Now instance administrators can empower users to delete their accounts and obfuscate associated personal data.  
-[More details](/user-account/DeleteAccount)
+Now instance administrators can empower users to delete their accounts and obfuscate associated personal data. 
+
+More details can be found via the [link](/user-account/DeleteAccount).
 
 - **New feature – Personal Data Retention policy:**
 
-ReportPortal now offers the option to set a retention period for collected personal data during instance configuration.  
-[More details](/user-account/DataRetentionProcedure)
+ReportPortal now offers the option to set a retention period for collected personal data during instance configuration.
+
+More details can be found via the [link](/user-account/DataRetentionProcedure).
 
 Please note that Features 3 and 4 are configurable, giving you the flexibility to decide whether you want to use these features or not. If you choose to utilize them, you can configure them using environmental variables. Further details can be found in the respective documentation.
 
 - **New feature – API Key:**
 
 You can now generate as many API Keys as you need. You also have the ability to keep track of the creation date of API Keys and revoke any that are unused. Old tokens will still continue to function. Additionally, easy identification of the purpose of API Keys is facilitated through the use of prefixes.  
-[More details](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal/#2-authorization-with-users-api-key-for-agents)
+
+More details can be found via the [link](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal/#2-authorization-with-users-api-key-for-agents).
 
 - **Gitlab CI integration Workaround:**  
 
-[More details](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI)
+More details can be found via the [link](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI).
 
 ## 2. Small updates:
 
