@@ -101,4 +101,4 @@ Depending on your hardware configuration and the parameters of your system, you 
 
 Please choose to set the values of these variables that are right for your system. You can also change the PostgreSQL host by passing a new value to the `POSTGRES_SERVER` environment [variable](./AdditionalConfigurationParameters).
 
-More info can be found at the following (link)[./OptimalPerformanceHardwareSetup#5-postgresql-performance-tuning]
+More info can be found at the following [link](./OptimalPerformanceHardwareSetup#5-postgresql-performance-tuning)
