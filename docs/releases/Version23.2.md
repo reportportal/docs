@@ -19,6 +19,11 @@ The list of project activities displayed in the Project Activity Panel has been 
 
 More details can be found via the [link](/dashboards-and-widgets/ProjectActivityPanel).
 
+:::important
+
+Please take into account that starting from this point forward, all events will have a new format for their storing in the database. Consequently, all events which have been stored prior to version 23.2 will be deleted.
+:::
+
 - **New feature – Delete Account:**
 
 Now instance administrators can empower users to delete their accounts and obfuscate associated personal data. 
@@ -31,7 +36,9 @@ ReportPortal now offers the option to set a retention period for collected perso
 
 More details can be found via the [link](/user-account/DataRetentionProcedure).
 
+:::note
 Please note that Features 3 and 4 are configurable, giving you the flexibility to decide whether you want to use these features or not. If you choose to utilize them, you can configure them using environmental variables. Further details can be found in the respective documentation.
+:::
 
 - **New feature – API Key:**
 
@@ -89,6 +96,19 @@ Configuration examples on the user profile page have been updated.
 
 - [#1970](https://github.com/reportportal/reportportal/issues/1970). Deserialization issue has been fixed. 
 
-## 5. Link to Migration guide:
+## 5. Released versions
+
+|Service Name|Repository|Tag|
+|---|---| --- |
+|Index|reportportal/service-index|5.10.0|
+|Authorization|reportportal/service-authorization|5.10.0|
+|UI|reportportal/service-ui|5.10.0|
+|API|reportportal/service-api|5.10.0|
+|Jobs|reportportal/service-jobs|5.10.0|
+|Migrations|reportportal/migrations|5.10.0|
+|Auto Analyzer|reportportal/service-auto-analyzer|5.10.0|
+|Metrics Gatherer|reportportal/service-metrics-gatherer|5.10.0|
+
+## 6. Link to Migration guide:
 
 [Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.23.2)
