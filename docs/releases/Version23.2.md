@@ -89,6 +89,19 @@ Configuration examples on the user profile page have been updated.
 
 - [#1970](https://github.com/reportportal/reportportal/issues/1970). Deserialization issue has been fixed. 
 
-## 5. Link to Migration guide:
+## 5. Released versions
+
+|Service Name|Repository|Tag|
+|---|---| --- |
+|Index|reportportal/service-index|5.10.0|
+|Authorization|reportportal/service-authorization|5.10.0|
+|UI|reportportal/service-ui|5.10.0|
+|API|reportportal/service-api|5.10.0|
+|Jobs|reportportal/service-jobs|5.10.0|
+|Migrations|reportportal/migrations|5.10.0|
+|Auto Analyzer|reportportal/service-auto-analyzer|5.10.0|
+|Metrics Gatherer|reportportal/service-metrics-gatherer|5.10.0|
+
+## 6. Link to Migration guide:
 
 [Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.23.2)
