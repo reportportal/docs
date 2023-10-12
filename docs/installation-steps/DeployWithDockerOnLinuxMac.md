@@ -24,46 +24,9 @@ Docker is supported by all major Linux distributions, MacOS and Windows.
 
 ```bash
 curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
-  ```
-
-2. Make the ElasticSearch configuration prerequisites for the analyzer service
-
-    * OPTIONAL: Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
-    * Give right permissions to ElasticSearch data folder using the following commands:
-
-```bash
-mkdir -p data/elasticsearch
-chmod 777 data/elasticsearch
-chgrp 1000 data/elasticsearch
 ```
 
-For more details about ElasticSearch visit ElasticSearch [guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#_notes_for_production_use_and_defaults)
-
-> OPTIONAL
->
-> **PostgreSQL Performance Tuning**
->
-> Depends on your hardware configuration and parameters of your system, you can additionally optimize your PostgreSQL performance by adding the following parameters to "command" option in the Docker compose file:
->
-> ```bash
->  -c effective_io_concurrency=
->  -c shared_buffers=
->  -c max_connections=
->  -c effective_cache_size=
->  -c maintenance_work_mem=
->  -c random_page_cost=
->  -c seq_page_cost= 
->  -c min_wal_size= 
->  -c max_wal_size=
->  -c max_worker_processes=
->  -c max_parallel_workers_per_gather=
->``` 
->
-> Please choose set the values of these variables that are right for your system.
->
-> You can also change PostgreSQL host by passing a new value to POSTGRES_SERVER environment [variable](./AdditionalConfigurationParameters).
-
-3. Ensure you override the UAT Service environment variable RP_INITIAL_ADMIN_PASSWORD
+2. Ensure you override the UAT Service environment variable `RP_INITIAL_ADMIN_PASSWORD`
 
 ```bash
 version: '2.4'
@@ -76,7 +39,7 @@ services:
 
 We've modified the current approach: during the initial installation and the first login of the superadmin, they will need to create a unique initial password, different from the default password provided in the ReportPortal installation documentation. Failure to do so will prevent the Auth service from starting.
 
-4. Start the application using the following command:
+3. Start the application using the following command:
 
 ```bash
 docker-compose -p reportportal up -d --force-recreate
@@ -94,10 +57,48 @@ Useful commands:
 - **docker-compose down**
 
 
-5. Open your web-browser with an IP address of the deployed environment at port **8080**
+4. Open your web browser with an IP address of the deployed environment at port **8080**
 
 Use the following **login\pass** to access:
 * Default User: `default\1q2w3e`
 * Administrator: `superadmin\erebus`
 
 > ⚠️ Please change the admin password for better security
+
+## Optional Customisation
+
+1. Expose Docker Volumes to the file system
+
+> OPTIONAL: Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
+
+Give the right permissions to the ElasticSearch data folder using the following commands:
+
+```bash
+mkdir -p data/elasticsearch
+chmod 777 data/elasticsearch
+chgrp 1000 data/elasticsearch
+```
+
+> For more details about ElasticSearch visit ElasticSearch [guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#_notes_for_production_use_and_defaults)
+
+2. PostgreSQL Performance Tuning
+
+Depending on your hardware configuration and the parameters of your system, you can additionally optimize your PostgreSQL performance by adding the following parameters to the "command" option in the Docker compose file:
+
+```bash
+ -c effective_io_concurrency=
+ -c shared_buffers=
+ -c max_connections=
+ -c effective_cache_size=
+ -c maintenance_work_mem=
+ -c random_page_cost=
+ -c seq_page_cost= 
+ -c min_wal_size= 
+ -c max_wal_size=
+ -c max_worker_processes=
+ -c max_parallel_workers_per_gather=
+``` 
+
+Please choose to set the values of these variables that are right for your system. You can also change the PostgreSQL host by passing a new value to the `POSTGRES_SERVER` environment [variable](./AdditionalConfigurationParameters).
+
+More info can be found at the following [link](./OptimalPerformanceHardwareSetup#5-postgresql-performance-tuning)
