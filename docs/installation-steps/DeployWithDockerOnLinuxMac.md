@@ -75,7 +75,7 @@ Give the right permissions to the ElasticSearch data folder using the following 
 
 ```bash
 mkdir -p data/elasticsearch
-chmod 777 data/elasticsearch
+chmod 775 data/elasticsearch
 chgrp 1000 data/elasticsearch
 ```
 
