@@ -25,21 +25,9 @@ Docker is supported by all major Linux distributions, MacOS and Windows.
 ```bash
 curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
 ```
+Ensure you override the UAT Service environment variable `RP_INITIAL_ADMIN_PASSWORD`.
 
-2. Ensure you override the UAT Service environment variable `RP_INITIAL_ADMIN_PASSWORD`
-
-```bash
-version: '2.4'
-services:
-
-  uat:
-   environment:
-     RP_INITIAL_ADMIN_PASSWORD: "My_Strong_Password!"
-``` 
-
-We've modified the current approach: during the initial installation and the first login of the superadmin, they will need to create a unique initial password, different from the default password provided in the ReportPortal installation documentation. Failure to do so will prevent the Auth service from starting.
-
-3. Start the application using the following command:
+2. Start the application using the following command:
 
 ```bash
 docker-compose -p reportportal up -d --force-recreate
@@ -56,8 +44,7 @@ Useful commands:
 - **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 - **docker-compose down**
 
-
-4. Open your web browser with an IP address of the deployed environment at port **8080**
+3. Open your web browser with an IP address of the deployed environment at port **8080**
 
 Use the following **login\pass** to access:
 * Default User: `default\1q2w3e`
