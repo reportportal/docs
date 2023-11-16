@@ -13,11 +13,11 @@ In simpler terms, this means that a launch that arrives later in time has the ch
 To scale your ReportPortal services in Kubernetes, you need to adjust the `replicaCount` and `queues.totalNumber` in your `values.yaml` file.
 
 1. **Update Replica Count**:
-   Change `replicaCount` from 1 to 2 for additional replication.<br />
+   Change `replicaCount` from `1` to `2` for additional replication.<br />
    [values.yaml replicaCount](https://github.com/reportportal/kubernetes/blob/develop/values.yaml#L57)
 
 2. **Edit Total Number of Queues**:
-   Modify `queues.totalNumber` from 10 to 20 to increase the total available queues.<br />
+   Modify `queues.totalNumber` from `10` to `20` to increase the total available queues.<br />
    [values.yaml queues.totalNumber](https://github.com/reportportal/kubernetes/blob/develop/values.yaml#L101)
 
    Use the following formula for calculation:<br />
@@ -28,11 +28,53 @@ To scale your ReportPortal services in Kubernetes, you need to adjust the `repli
 To scale your ReportPortal services using Docker, update the environment variables and duplicate the API values block.
 
 1. **Set Environment Variables**:
-   Add `RP_AMQP_QUEUES: 20` and `RP_AMQP_QUEUESPERPOD: 10` to your environment variables.<br />
-   [docker-compose.yml environment](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L202)
+   Add `RP_AMQP_QUEUES` and `RP_AMQP_QUEUESPERPOD` to your API environment variables.<br />
+   [docker-compose.yml environment](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L202)<br />
+   ```bash
+   version: '3.8'
+   services:
+   
+     api:
+       <...>
+       environment:
+         RP_AMQP_QUEUES: 20
+         RP_AMQP_QUEUESPERPOD: 10
+   <...>
+   ```
 
+#### Docker Compose v2
 2. **Duplicate API Values Block**:
-   Create a copy of the API values block to facilitate scaling.<br />
-   [docker-compose.yml API values block](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L191-L241)
- 
+   Create a copy of the API values block and rename `api` to `api_replica_1` to facilitate scaling.<br />
+   [docker-compose.yml API values block](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L191-L241)<br />
+    ```bash
+   version: '3.8'
+   services:
+   
+     api:
+       <...>
+       environment:
+         RP_AMQP_QUEUES: 20
+         RP_AMQP_QUEUESPERPOD: 10
+      <...>
 
+    api_replica_1:
+       <...>
+       environment:
+         RP_AMQP_QUEUES: 20
+         RP_AMQP_QUEUESPERPOD: 10
+    <...>
+   ```
+    
+#### Docker Compose v3.3+
+2. **Add replicas**:
+   Add `deploy.replicas: 2` to your API:
+   ```bash
+   version: '3.8'
+   services:
+   
+     api:
+       <...>
+       deploy:
+         replicas: 2
+   <...>
+   ```
