@@ -27,7 +27,7 @@ To scale your ReportPortal services in Kubernetes, you need to adjust the `repli
 
 To scale your ReportPortal services using Docker, update the environment variables and duplicate the API values block.
 
-1. **Set Environment Variables**:
+- **Set Environment Variables**:
    Add `RP_AMQP_QUEUES` and `RP_AMQP_QUEUESPERPOD` to your API environment variables.<br />
    [docker-compose.yml environment](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L202)<br />
    ```bash
@@ -43,7 +43,7 @@ To scale your ReportPortal services using Docker, update the environment variabl
    ```
 
 #### Docker Compose v2
-2. **Duplicate API Values Block**:
+- **Duplicate API Values Block**:
    Create a copy of the API values block and rename `api` to `api_replica_1` to facilitate scaling.<br />
    [docker-compose.yml API values block](https://github.com/reportportal/reportportal/blob/v23.2/docker-compose.yml#L191-L241)<br />
     ```bash
@@ -66,7 +66,7 @@ To scale your ReportPortal services using Docker, update the environment variabl
    ```
     
 #### Docker Compose v3.3+
-2. **Add replicas**:
+- **Add replicas**:
    Add `deploy.replicas: 2` to your API:
    ```bash
    version: '3.8'
