@@ -31,7 +31,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Saved searches (Filters)](/category/saved-searches-filters)    
 [Dashboards and Widgets](/category/dashboards-and-widgets)  
 [User account](/category/user-account)  
-[Log data in ReportPortal](/category/log-data-in-reportportal)  
+[Log data in ReportPortal](/log-data-in-reportportal)  
 [Logging Integration](/reportportal-configuration/IntegrationViaPlugin)  
 
 ## Operator
