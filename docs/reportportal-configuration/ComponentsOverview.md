@@ -27,7 +27,7 @@ below and creates internal OAuth2 token which is used by UI and agents. There ar
 
 ## Analyzer Service
 Keeps index of user logs per project and provides ability to perform search by that index. Used by auto-analysis functionality.  
-Collects and processes the information, then sends it to Elasticsearch.
+Collects and processes the information, then sends it to OpenSearch.
 
 ## Migrations Service
 Database migrations written in Go. Migrate reads migrations from sources and applies them in correct order to a database.  
