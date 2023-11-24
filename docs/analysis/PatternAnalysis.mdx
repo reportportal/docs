@@ -21,11 +21,15 @@ Pattern analysis is a feature that helps you to speed up test failure analysis b
 
 <media-view src={require('./img/PatternAnalysis/PatternAnalysisRegex2.png')} alt="Pattern Analysis Regex in the logs for automated bug triage process" />
 
+:::note
+It would be better to use STRING rule instead of REGEX rule in all possible cases to speed up the Pattern Analysis processing in the database. As a result, you can get your analysis completed faster using the STRING patterns rather than REGEX and reduce the database workload.
+:::
+
 ## Use case 1:
 
 **Problem:** A user knows the several common problems why test cases fail. During tests run a lot of test have failed. A user need to check logs a of tests to know by what reason test cases have failed.
 
-**Solution:** Create a pattern rules for all common reasons which contains a problem phrase (for example: *"Expected status code <404> but > was <500>"* or "*Null response"*) or with Regex query. Switch On a pattern analysis.
+**Solution:** Create a pattern rules for all common reasons which contains a problem phrase (for example: *"Expected status code <404> but > was <500>"* or "*Null response"*) or with Regex query (for example: java:[0-9]*). Switch On a pattern analysis.
 Launch a test run.
 So that the ReportPortal systems finds all failed items which have known patterns in error logs and marks them with a label with pattern name.
 Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
@@ -41,7 +45,7 @@ Add The most popular pattern widget (TOP-20) and track the TOP-20 the most popul
 name.
 Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
 
-<media-view thumbnail={require('./img/PatternAnalysis/ManualPatternAnalysis.png')} src="https://youtu.be/mN_wSJArZjQ" alt="Pattern Analysis launched Manually" type="video" />
+<media-view thumbnail={require('./img/PatternAnalysis/ManualPatternAnalysis.png')} src="https://youtu.be/_BhG0Tu4H_I" alt="Pattern Analysis launched Manually" type="video" />
 
 
 
