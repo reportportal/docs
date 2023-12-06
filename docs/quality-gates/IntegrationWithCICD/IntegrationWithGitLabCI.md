@@ -330,7 +330,7 @@ test:
     - chmod +x ./gradlew
     - ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=$RP_DEMO_KEY -Prp.admin.password=$RP_ADMIN_PASSWORD | tee ./console.log
     - >
-      sed -rn 's/[ ]+ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
+      sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
 ```
 
 Some explanations here:
