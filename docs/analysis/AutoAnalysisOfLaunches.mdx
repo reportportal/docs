@@ -29,23 +29,6 @@ There are several ways to use an analyzer in our test automation reporting dashb
 
 * Do not use any Analyzers at all and do an analytical routine by yourself;
 
-## ReportPortal Analyzer. How to install
-
-* Add info about Service Analyzer and service OpenSearch in the docker-compose file;
-
-* Set {vm.max_map_count} kernel setting before ReportPortal deploying with [command>](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode);
-
-* Give right permissions to ElasticSearch data folder using the following command:
-```javascript
-mkdir data/elasticsearch
-```
-```javascript
-chmod g+rwx data/elasticsearch
-```
-```javascript
-chgrp 1000 data/elasticsearch
-```
-
 ## ReportPortal Analyzer. How the Auto-Analysis is working
 
 ReportPortal's auto-analyzer allows users to reduce the time spent on test execution investigation by analyzing test failures in automatic mode. For that reason, you can deploy the  ReportPortal with a service Analyzer by adding info about this service in a docker-compose file. The default analysis component is running along with OpenSearch which is used for test logs indexing.
@@ -212,23 +195,6 @@ If you choose **“All launches”**, test results in the launch will have analy
 If you choose **“Launches with the same name”**, test results in the launch will have analyzed on the base of all data in Elastic search that have the same Launch name.
 
 You can choose those configurations via Project configuration or from the list of actions on All launches view.
-
-### Configure ElasticSearch settings
-
-Also, we give the possibility for our users to configure 2 main parameters of ElasticSearch manually:
-
-*    **MinShouldMatch** - percent of words equality between analyzed log and particular log from the ElasticSearch. If a log from ElasticSearch has the value less then set, this log will be ignored for AA. Min value 50, max value 100.
-*    **Number of log lines** - the number of first lines of log message that should be considered in ElasticSearch. Only the chosen number of logline will be saved in ElasticSearch. Possible values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, All.  In case you choose “ALL”, the full text of log will be saved in ElasticSearch Index.
-
-Parameter **MinShouldMatch** is involved in the calculation of a score. It is a minimum value for coord(q,d) (the percent of words equality between an analyzed log and a particular log from the ElasticSearch). So you can increase search hardness and choose a minimum level of similarity that is required.
-
-With the parameter **Number of log lines** - you can write the root cause of test failure in the first lines and configure the analyzer to take into account only the required lines. 
-
-With these 2 parameters, you can configure the accuracy of the analysis that you need. For your facilities we have prepared 3 pre-sets with values:
-
-*    *Light* - search conditions are freer. You will get more results, but with the less level of similarity;
-*    *Moderate* - "happy medium";
-*    *Classic* - search conditions are strict. You will get fewer results, but with a higher level of similarity;
 
 ### Remove/Generate ElasticSearch index
 
