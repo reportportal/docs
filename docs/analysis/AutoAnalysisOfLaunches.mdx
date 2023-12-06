@@ -13,7 +13,7 @@ Auto-analysis performs automated defect triaging and defines the reason for the 
 * a link to BTS _(in case if it exists)_;
 * comment _(in case if it exists)_;
 
-The process of Auto-Analysis is based on previous user-investigated users' results using Machine Learning.  
+The process of Auto-Analysis is based on previous user-investigated users' results using Machine Learning.
 
 An auto-analyzer is presented by a combination of several services: OpenSearch, Analyzer service(two instances Analyzer and Analyzer train), Metrics gatherer:
 * OpenSearch contains an analytical base, stores training data for retraining of models and saves metrics for metrics gatherer.
@@ -49,13 +49,13 @@ chgrp 1000 data/elasticsearch
 ## ReportPortal Analyzer. How the Auto-Analysis is working
 
 ReportPortal's auto-analyzer allows users to reduce the time spent on test execution investigation by analyzing test failures in automatic mode. For that reason, you can deploy the  ReportPortal with a service Analyzer by adding info about this service in a docker-compose file. The default analysis component is running along with OpenSearch which is used for test logs indexing.
-For effective using Auto–Analysis you should come through several stages. 
+For effective using Auto–Analysis you should come through several stages.
 
 ### Create an analytical base in the OpenSearch
 
-First of all, you need to create an analytical base. For that, you should start to analyze test results manually. 
+First of all, you need to create an analytical base. For that, you should start to analyze test results manually.
 
-All test items with a defect type which have been analyzed manually or automatically by ReportPortal are sent to the Elastic Search. 
+All test items with a defect type which have been analyzed manually or automatically by ReportPortal are sent to the Elastic Search.
 
 The following info is sent:
 
@@ -96,7 +96,7 @@ Analysis can be launched automatically (via Project Settings) or manually (via t
 
 Here is a simplified procedure of the Auto-analysis candidates searching via OpenSearch.
 
-When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.). 
+When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.).
 
 Then OpenSearch receives a log message and divides it into the terms (words) with a tokenizer and calculates the importance of each term (word). For that ElasticSearch computes TF-IDF for each term (word) in the analyzed log. If the level of term importance is low, the ElasticSearch ignores it.
 
@@ -110,7 +110,7 @@ Then OpenSearch receives a log message and divides it into the terms (words) wit
 :::
 
 The term (word) with the highest level of importance is the term (word) that is used very frequently in analyzed log and moderately in the Index.
- 
+
 After all important terms are defined, OpenSearch calculates the level of equality between an analyzed log and each log in the Index.  For each log from the Index is calculated a score.
 
 :::note
@@ -207,34 +207,17 @@ There two options:
 
 * Launches with the same name;
 
-If you choose **“All launches”**, test results in the launch will have analyzed on the base of all data in Elastic search of the project. 
+If you choose **“All launches”**, test results in the launch will have analyzed on the base of all data in Elastic search of the project.
 
 If you choose **“Launches with the same name”**, test results in the launch will have analyzed on the base of all data in Elastic search that have the same Launch name.
 
 You can choose those configurations via Project configuration or from the list of actions on All launches view.
 
-### Configure ElasticSearch settings
-
-Also, we give the possibility for our users to configure 2 main parameters of ElasticSearch manually:
-
-*    **MinShouldMatch** - percent of words equality between analyzed log and particular log from the ElasticSearch. If a log from ElasticSearch has the value less then set, this log will be ignored for AA. Min value 50, max value 100.
-*    **Number of log lines** - the number of first lines of log message that should be considered in ElasticSearch. Only the chosen number of logline will be saved in ElasticSearch. Possible values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, All.  In case you choose “ALL”, the full text of log will be saved in ElasticSearch Index.
-
-Parameter **MinShouldMatch** is involved in the calculation of a score. It is a minimum value for coord(q,d) (the percent of words equality between an analyzed log and a particular log from the ElasticSearch). So you can increase search hardness and choose a minimum level of similarity that is required.
-
-With the parameter **Number of log lines** - you can write the root cause of test failure in the first lines and configure the analyzer to take into account only the required lines. 
-
-With these 2 parameters, you can configure the accuracy of the analysis that you need. For your facilities we have prepared 3 pre-sets with values:
-
-*    *Light* - search conditions are freer. You will get more results, but with the less level of similarity;
-*    *Moderate* - "happy medium";
-*    *Classic* - search conditions are strict. You will get fewer results, but with a higher level of similarity;
-
 ### Remove/Generate ElasticSearch index
 
-There two possible actions that can be performed under Index in ElasticSearch. 
+There two possible actions that can be performed under Index in ElasticSearch.
 
-You can **remove the Index from ElasticSearch** and all logs with there defect type will be deleted. ML will be set to zero. All data with your investigations will be deleted from the ElasticSearch. For creating a new one you could start to investigate test results manually or generate data based on previous results on the project once again. 
+You can **remove the Index from ElasticSearch** and all logs with there defect type will be deleted. ML will be set to zero. All data with your investigations will be deleted from the ElasticSearch. For creating a new one you could start to investigate test results manually or generate data based on previous results on the project once again.
 
 :::note
 Your investigations in ReportPortal will not be changed. The operation concerns only ElasticSearch base.
@@ -242,18 +225,18 @@ Your investigations in ReportPortal will not be changed. The operation concerns 
 
 <MediaViewer thumbnail={require('./img/RemoveIndex.png')} src="https://youtu.be/4Xhwu7NSeQ4" alt="Remove Index" type="video" />
 
-Another option, you can **generate the Index in ElasticSearch**. In the case of generation, all data will be removed from ElasticSearch and the new one will be generated based on all previous investigations on the project following current analysis settings. 
+Another option, you can **generate the Index in ElasticSearch**. In the case of generation, all data will be removed from ElasticSearch and the new one will be generated based on all previous investigations on the project following current analysis settings.
 
 At the end of the process, you will receive a letter with info about the end of the process and with several items that will be appeared in ElasticSearch.
 
 You can use index generation for several goals. For example, assume two hypothetical situations when index generation can be used:
 
-* by accident you remove the index, but now you want to restore it. 
+* by accident you remove the index, but now you want to restore it.
 
 :::note
-The new base will be generated following logs and settings that are existing on the moment of operating. So index before removing and index after generation can be different. 
+The new base will be generated following logs and settings that are existing on the moment of operating. So index before removing and index after generation can be different.
 :::
-* you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate a new index, the old index will be removed, and a new one will be generated. Logs in the new index will contain 3 lines;  
+* you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate a new index, the old index will be removed, and a new one will be generated. Logs in the new index will contain 3 lines;
 
 <MediaViewer thumbnail={require('./img/GenerateIndex.png')} src="https://youtu.be/HYvtZmIzfiA" alt="Generate Index" type="video" />
 
@@ -269,7 +252,7 @@ Analysis can be launched manually. To start the analysis manually, perform the f
 
 3. Choose the scope of previous results on the base of which test items should be auto-analyzed.  The default is the one that is chosen on the setting page, but you can change it manually.
 
-Via this menu you can choose 3 options unlike on Project Settings: 
+Via this menu you can choose 3 options unlike on Project Settings:
 
 * All launches;
 
@@ -277,12 +260,12 @@ Via this menu you can choose 3 options unlike on Project Settings:
 
 * Only current launch;
 
-Options **All launches** and **Launches with the same name** are working the same as on project settings. 
+Options **All launches** and **Launches with the same name** are working the same as on project settings.
 If you choose **Only current launch**, the system is analyzing the test items of chosen launch only on a base of already investigated date of this launch.
 
 4. Choose which items from launch should be analyzed:
 
-* Only To investigated; 
+* Only To investigated;
 * Items analyzed automatically (by AA);
 * Items analyzed manually;
 
@@ -304,7 +287,7 @@ For option **Only current launch** you can not choose *Items analyzed automatica
 
 4. Click the "Analysis" button. Now "Auto-Analysis" will start.
 
-Any launches with an active analyzing process will be marked with the "Analysis" label. 
+Any launches with an active analyzing process will be marked with the "Analysis" label.
 
 <MediaViewer thumbnail={require('./img/AutoAnalysisLaunchedManually.png')} src="https://youtu.be/OmT2exhOdC4" alt="Auto-Analysis Launched Manually" type="video" />
 
@@ -324,4 +307,4 @@ Or from the action list for several test items:
 
 <MediaViewer src={require('./img/IgnoreInAutoAnalysis2.png')} alt="Auto-Analysis Ignore Action List" />
 
-When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch. 
+When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch.
