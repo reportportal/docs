@@ -82,7 +82,7 @@ The approximate server's cost is relevant for the current cost of infrastructure
 
 Which practically will generate:
 - `10 * 5 * 3 * 3 * 3 * 3 = (4050)` `createLog` requests.
-- `5 * 3 * 3 * 3 * 3 = (405)` `startStep` requests and equal amount of `finishStep` requests. Total 910
+- `5 * 3 * 3 * 3 * 3 = (405)` `startStep` requests and equal amount of `finishStep` requests. Total 810
 - `3 * 3 * 3 * 3 = (81)` `startTest` requests and equal amount of `finishTest` requests (inclluding all precondition methods, as `@After` and `@Before` in Java). Total 162
 - `3 * 3 * 3 = (27)` `startTestClass` requests and equal amount of `finishTestClass` requests. Total 54
 - `3 * 3 = (9)` `startSuite` requests and equal amount of `finishSuite` requests. Total 18
