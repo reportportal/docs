@@ -78,14 +78,14 @@ in official documentation and enable CI/CD on your project:
 
 Next, we are going to need Vault CLI to connect to the Vault Server. While we
 can definitely install it in the `before_script` section, it's better to use
-the `vault:latest` base image to just get it. Instead in the `before_script` we will
+the `vault:1.13.3` base image to just get it. Instead in the `before_script` we will
 install just a `curl` tool to be able to call GitLab API.
 
 This is how the Secrets section will look like:
 ```yaml
 secrets:
   stage: secrets
-  image: vault:latest
+  image: vault:1.13.3
   before_script:
     - apk add --no-cache curl
 ```
@@ -102,7 +102,7 @@ So, our Secrets section in the pipeline file will look like that:
 ```yaml
 secrets:
   stage: secrets
-  image: vault:latest
+  image: vault:1.13.3
   before_script:
     - apk add --no-cache curl
   script:
@@ -153,7 +153,7 @@ again:
 ```yaml
 secrets:
   stage: secrets
-  image: vault:latest
+  image: vault:1.13.3
   before_script:
     - apk add --no-cache curl
   variables:
