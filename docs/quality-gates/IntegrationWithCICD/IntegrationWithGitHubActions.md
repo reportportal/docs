@@ -278,13 +278,14 @@ jobs:
         run: |
           # Cast execution flag on gradle wrapper script file, just in case
           chmod +x ./gradlew
-          ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=${{ secrets.RP_DEMO_KEY }} -Prp.admin.password=${{ secrets.RP_ADMIN_PASSWORD }} | tee ./console.log
+          ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=${{ secrets.RP_DEMO_KEY }} -Prp.admin.password=${{ secrets.RP_ADMIN_PASSWORD }} | tee ./console.log || true
           sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ p' ./console.log  >> "$GITHUB_ENV"
 ```
 
 Some explanations here:
 * We used the `--console=plain` Gradle parameter to make output suitable for saving in a file.
 * To preserve console output, we used the `tee` command, which copies standard input to each specified file, and to standard output.
+* We need to configure our "test" stage not to fail in case of unsuccessful tests, since we are going to decide about test status on the Quality Gates step. This is done by adding the ` || true` suffix to test run command.
 * We used the `sed` command to format and print our Launch UUID.
 * Thus, we got a preformatted string and write it to `$GITHUB_ENV` file.
 
@@ -327,33 +328,22 @@ jobs:
           pip install -rrequirements.txt -rrequirements-dev.txt
       - name: Test
         run: |
-          pytest -sv --reportportal -m "not command_skip" -n 2 -o "rp_api_key=${{ secrets.RP_DEMO_KEY }}" tests | tee ./console.log
+          pytest -sv --reportportal -m "not command_skip" -n 2 -o "rp_api_key=${{ secrets.RP_DEMO_KEY }}" tests | tee ./console.log || true
           sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ p' ./console.log  >> "$GITHUB_ENV"
 ```
 
 Some explanations here:
 * To preserve console output, we used the `tee` command, which copies standard input to each specified file, and to standard output.
+* We need to configure our "test" stage not to fail in case of unsuccessful tests, since we are going to decide about test status on the Quality Gates step. This is done by adding the ` || true` suffix to test run command.
 * We used the `sed` command to format and print our Launch UUID.
 * Thus, we got a preformatted string and write it to `$GITHUB_ENV` file.
 
 ### Adding Quality Gates stage
 
 If you did your pipeline configuration in the same manner as in this article
-this step will be the same for you, no matter which language do you use. First,
-we need to configure our "test" stage not to fail in case of unsuccessful
-tests, since we are going to decide about test status on the Quality Gates step. This can be
-done by adding the `continue-on-error: true` field:
-```yaml
-jobs:
-  build:
-    steps:
-      - ...
-      - name: Test
-        continue-on-error: true
-        run: ...
-```
+this step will be the same for you, no matter which language do you use.
 
-As the next step we need to add the `quality-gate` step to our pipeline:
+First, we need to add the `quality-gate` step to our pipeline:
 ```yaml
 jobs:
   build:
@@ -381,7 +371,7 @@ jobs:
           echo "LAUNCH_UUID: $LAUNCH_UUID"
           QUALITY_GATE_STATUS=""
           START_TIME=$(date +%s)
-          while [ -z "$QUALITY_GATE_STATUS" ] && [ $(( $(date +%s) - START_TIME )) -lt ${{ env.SCRIPT_TIMEOUT_SECONDS }} ]; do
+          while ( [ -z "$QUALITY_GATE_STATUS" ] || [ "$QUALITY_GATE_STATUS" == "UNDEFINED" ] ) && [ $(( $(date +%s) - START_TIME )) -lt ${{ env.SCRIPT_TIMEOUT_SECONDS }} ]; do
             echo "Waiting for quality gate status..."
             sleep 10
             QUALITY_GATE_JSON=$(curl -s -H "Authorization: Bearer ${{ secrets.RP_DEMO_KEY }}" --max-time "${{ env.REQUEST_TIMEOUT_SECONDS }}" "${{ env.RP_INSTANCE }}/api/v1/report_portal_demo/launch/${LAUNCH_UUID}")

@@ -328,7 +328,7 @@ test:
   script:
     # Cast execution flag on gradle wrapper script file, just in case
     - chmod +x ./gradlew
-    - ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=$RP_DEMO_KEY -Prp.admin.password=$RP_ADMIN_PASSWORD | tee ./console.log
+    - ./gradlew --console=plain :service-api:demoSmoke -Prp.api.key=$RP_DEMO_KEY -Prp.admin.password=$RP_ADMIN_PASSWORD | tee ./console.log  || true
     - >
       sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
 ```
@@ -336,6 +336,7 @@ test:
 Some explanations here:
 * We used the `--console=plain` Gradle parameter to make output suitable for saving in a file.
 * To preserve console output, we used the `tee` command, which copies standard input to each specified file, and to standard output.
+* We need to configure our "test" stage not to fail in case of unsuccessful tests, since we are going to decide about test status on the Quality Gates step. This is done by adding the ` || true` suffix to test run command.
 * We used the `sed` command to format and save our Launch UUID into `launch.env` file.
 * Thus, we got a preformatted `launch.env` file and attached it as an artifact, which then will be used to populate environment variables by GitLab.
 
@@ -362,31 +363,23 @@ test:
     - python -m pip install --upgrade pip
     - pip install -rrequirements-dev.txt
   script:
-    - pytest -sv --reportportal -m "not command_skip" -n 2 -o "rp_api_key=$RP_DEMO_KEY" tests | tee ./console.log
+    - pytest -sv --reportportal -m "not command_skip" -n 2 -o "rp_api_key=$RP_DEMO_KEY" tests | tee ./console.log || true
     - >
       sed -rn 's/ReportPortal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ w launch.env' ./console.log
 ```
 
 Some explanations here:
 * To preserve console output, we used the `tee` command, which copies standard input to each specified file, and to standard output.
+* We need to configure our "test" stage not to fail in case of unsuccessful tests, since we are going to decide about test status on the Quality Gates step. This is done by adding the ` || true` suffix to test run command.
 * We used the `sed` command to format and save our Launch UUID into `launch.env` file.
 * Thus, we got a preformatted the `launch.env` file and attached it as an artifact, which then will be used to populate environment variables by GitLab.
 
 ### Adding Quality Gates stage
 
 If you did your pipeline configuration in the same manner as in this article
-this step will be the same for you, no matter which language do you use. First,
-we need to configure our "test" stage not to fail in case of unsuccessful
-tests, since we are going to decide about test status on the Quality Gates step. This can be
-done by adding the `allow_failure: true` field:
-```yaml
-test:
-  stage: test
-  needs: ['secrets']
-  allow_failure: true
-```
+this step will be the same for you, no matter which language do you use.
 
-As the next step we need to add the `quality-gate` stage to our pipeline:
+As the first step we need to add the `quality-gate` stage to our pipeline:
 ```yaml
 stages:
   - secrets
@@ -401,7 +394,7 @@ quality-gate:
 Notice that we put the `needs: ['test']` property to run the Quality Gates job only after we pass
 tests.
 
-The third step will be a little bit tricky. Since we don't specify any image, we
+The second step will be a little bit tricky. Since we don't specify any image, we
 don't really know which base image is used in our GitLab instance. This might
 be an Ubuntu/Debian based image, or Alpine Linux, or anything else, depending
 on which workers were chosen by your operations team. But we need to ensure we
@@ -438,7 +431,7 @@ quality-gate:
     echo "LAUNCH_UUID: $LAUNCH_UUID"
     QUALITY_GATE_STATUS=""
     START_TIME=$(date +%s)
-    while [ -z "$QUALITY_GATE_STATUS" ] && [ $(( $(date +%s) - START_TIME )) -lt $SCRIPT_TIMEOUT_SECONDS ]; do
+    while ( [ -z "$QUALITY_GATE_STATUS" ] || [ "$QUALITY_GATE_STATUS" == "UNDEFINED" ] ) && [ $(( $(date +%s) - START_TIME )) -lt $TIMEOUT_SECONDS ]; do
       echo "Waiting for quality gate status..."
       sleep 10
       QUALITY_GATE_JSON=$(curl -s -H "Authorization: Bearer $RP_DEMO_KEY" --max-time "$REQUEST_TIMEOUT_SECONDS" "${RP_INSTANCE}/api/v1/report_portal_demo/launch/${LAUNCH_UUID}")
