@@ -56,43 +56,85 @@ The endpoint **POST /v1/{projectName}/launch/import** allows importing a launch 
 Here's an example of a request to the endpoint:
 
 ```yaml
-curl -X 'POST' \
- 'http://localhost:8585/api/v1/testProject/launch/import?attributeKey=someKey&attributeValue=someValue&description=someDescription&launchName=someName&skippedIsNotIssue=true' \
- -F 'file=@Launch.zip;type=application/x-zip-compressed'
+curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+-H 'Content-Type: multipart/form-data' \
+-H 'Authorization: Bearer {token}' \
+-F 'file=@"file_path.zip";type=application/x-zip-compressed' \
+-F 'launchImportRq="{
+  \"attributes\": [
+    {
+      \"key\": \"skippedIsNotIssue\",
+      \"system\": true,
+      \"value\": \"true\"
+    }
+  ],
+  \"description\": \"Custom launch description\",
+  \"mode\": \"DEFAULT\",
+  \"name\": \"Custom launch name\",
+  \"startTime\": \"2023-11-08T10:23:34.259Z\"
+}";type=application/json'
 ```
 
-Query parameters:
+**Query parameters:**
 
-**attributeKey** (String) – Launch attribute key. If this parameter is specified, "attributeValue" is required.
+**launchImportRq** is application/json part of the request where you can specify needed custom information about launch.
 
-**attributeValue** (String) – Launch attribute value. Can be specified without the "attributeKey" parameter.
+**attributes** – array of attributes
 
-**description** (String) – Launch description.
+**description** – custom launch description
 
-**launchName** (String) – Launch name. If this parameter is not specified, the file name will be used as the launch name.
+**startTime** – if launch start time needed, or will be used first time in imported report
 
-**skippedIsNotIssue** (Boolean) – When set to **"true"**, all skipped issues are processed without applying a defect type; when set to **"false"**, skipped issues are processed and marked with the defect type "To Investigate". If the parameter is not set, the default behavior is equivalent to "false".
-
-:::note
-These parameters are optional and can be used individually, in any combination, or all together.
-:::
-
-**Scenario 1**
-
-If you want to mark skipped items as "To Investigate", use the following request:
+If the array of attributes contains the next "skippedIsNotIssue" attribute marked as system, then all test items with SKIPPED status will be processed without applying a "To Investigate" defect type.
 
 ```yaml
-curl -X 'POST' 'http://localhost:8585/api/v1/testProject/launch/import'
+ "attributes": [
+    {
+      "key": "skippedIsNotIssue",
+      "system": true,
+      "value": "true"
+    }
+  ]
 ```
 
-**Scenario 2**
+When set to "false", test items with SKIPPED status will be processed and marked with the defect type "To Investigate". If the parameter is not set, the default behavior is equivalent to "false".
 
-If you don't want to mark skipped items as "To Investigate", use the following request:
+
+**Scenario 1** (Test items with SKIPPED status have "To Investigate" status):
 
 ```yaml
-curl -X 'POST' 'http://localhost:8585/api/v1/testProject/launch/import?skippedIsNotIssue=true'
+curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+-H 'Content-Type: multipart/form-data' \
+-H 'Authorization: Bearer {token}' \
+-F 'file=@Launch.zip;type=application/x-zip-compressed' \
+-F 'launchImportRq="{
+  \"description\": \"Launch description\",
+  \"mode\": \"DEFAULT\",
+  \"name\": \"Launch\"
+}";type=application/json'
 ```
 
-<media-view thumbnail={require('./img/ImportViaAPI.png')} src="https://youtu.be/SkUBTNBWiqs" alt="Import via API on our test automation results dashboard" type="video" />
+**Scenario 2** (Test items with SKIPPED status don't have "To Investigate" status)
+
+```yaml
+curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+-H 'Content-Type: multipart/form-data' \
+-H 'Authorization: Bearer {token}' \
+-F 'file=@Launch.zip;type=application/x-zip-compressed' \
+-F 'launchImportRq="{
+  \"attributes\": [
+    {
+      \"key\": \"skippedIsNotIssue\",
+      \"system\": true,
+      \"value\": \"true\"
+    }
+  ],
+  \"description\": \"Launch description\",
+  \"mode\": \"DEFAULT\",
+  \"name\": \"Launch\"
+}";type=application/json'
+```
+
+<media-view thumbnail={require('./img/ImportViaAPI.png')} src="https://youtu.be/gCBDlX6dlEE" alt="Import via API on our test automation results dashboard" type="video" />
 
 
