@@ -1,0 +1,74 @@
+[ERROR] 24/430 MDX files couldn't compile!
+---
+Error while compiling file ../docs/analysis/AutoAnalysisOfLaunches.mdx (Line=73 Column=96)
+Details: Unexpected character `=` (U+003D) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file ../docs/analysis/MLSuggestions.md (Line=47 Column=98)
+Details: Unexpected character `=` (U+003D) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file ../docs/analysis/PatternAnalysis.mdx (Line=32 Column=131)
+Details: Unexpected character `4` (U+0034) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file ../docs/dev-guides/APIDifferencesBetweenV4AndV5.md (Line=262 Column=33)
+Details: Unexpected character `,` (U+002C) in name, expected a name character such as letters, digits, `$`, or `_`; whitespace before attributes; or the end of the tag
+---
+Error while compiling file ../docs/dev-guides/InteractionsBetweenAPIAndAnalyzer.mdx (Line=71 Column=100)
+Details: Unexpected character `2` (U+0032) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file ../docs/installation-steps/DeployWithDockerOnLinuxMac.md (Line=44 Column=54)
+Details: Could not parse expression with acorn
+---
+Error while compiling file ../docs/issues-troubleshooting/IssuesWithJIRABugTrackingSystemHowToResolve.md (Line=9 Column=64)
+Details: Unexpected character `'` (U+0027) in attribute name, expected an attribute name character such as letters, digits, `$`, or `_`; `=` to initialize a value; whitespace before attributes; or the end of the tag
+---
+Error while compiling file ../docs/log-data-in-reportportal/ImportDataToReportPortal.mdx
+Details: These MDX global variables do not seem to be available in scope: projectName
+---
+Error while compiling file ../docs/releases/Version23.2.md
+Details: These MDX global variables do not seem to be available in scope: projectName
+---
+Error while compiling file ../docs/reportportal-configuration/HowToGetAnAccessTokenInReportPortal.mdx (Line=82 Column=1)
+Details: Expected a closing tag for `<access_token>` (83:23-83:37) before the end of `paragraph`
+---
+Error while compiling file ../docs/reportportal-glossary/index.mdx
+Details: These MDX global variables do not seem to be available in scope: framework language tool
+---
+Error while compiling file ../docs/work-with-reports/OperationsUnderLaunches.mdx
+Details: These MDX global variables do not seem to be available in scope: CUSTOMER MEMBER
+---
+Error while compiling file analysis/AutoAnalysisOfLaunches.mdx (Line=73 Column=96)
+Details: Unexpected character `=` (U+003D) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file analysis/MLSuggestions.md (Line=47 Column=98)
+Details: Unexpected character `=` (U+003D) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file analysis/PatternAnalysis.mdx (Line=32 Column=131)
+Details: Unexpected character `4` (U+0034) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file dev-guides/APIDifferencesBetweenV4AndV5.md (Line=262 Column=33)
+Details: Unexpected character `,` (U+002C) in name, expected a name character such as letters, digits, `$`, or `_`; whitespace before attributes; or the end of the tag
+---
+Error while compiling file dev-guides/InteractionsBetweenAPIAndAnalyzer.mdx (Line=71 Column=100)
+Details: Unexpected character `2` (U+0032) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+---
+Error while compiling file installation-steps/DeployWithDockerOnLinuxMac.md (Line=44 Column=54)
+Details: Could not parse expression with acorn
+---
+Error while compiling file issues-troubleshooting/IssuesWithJIRABugTrackingSystemHowToResolve.md (Line=9 Column=64)
+Details: Unexpected character `'` (U+0027) in attribute name, expected an attribute name character such as letters, digits, `$`, or `_`; `=` to initialize a value; whitespace before attributes; or the end of the tag
+---
+Error while compiling file log-data-in-reportportal/ImportDataToReportPortal.mdx
+Details: These MDX global variables do not seem to be available in scope: projectName
+---
+Error while compiling file releases/Version23.2.md
+Details: These MDX global variables do not seem to be available in scope: projectName
+---
+Error while compiling file reportportal-configuration/HowToGetAnAccessTokenInReportPortal.mdx (Line=82 Column=1)
+Details: Expected a closing tag for `<access_token>` (83:23-83:37) before the end of `paragraph`
+---
+Error while compiling file reportportal-glossary/index.mdx
+Details: These MDX global variables do not seem to be available in scope: framework language tool
+---
+Error while compiling file work-with-reports/OperationsUnderLaunches.mdx
+Details: These MDX global variables do not seem to be available in scope: CUSTOMER MEMBER
+---
