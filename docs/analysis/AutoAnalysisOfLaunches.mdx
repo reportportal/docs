@@ -33,7 +33,7 @@ There are several ways to use an analyzer in our test automation reporting dashb
 
 * Add info about Service Analyzer and service ElasticSearch in the docker-compose file;
 
-* Set {vm.max_map_count} kernel setting before ReportPortal deploying with [command>](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode);
+* Set `{vm.max_map_count}` kernel setting before ReportPortal deploying with [command>](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docker.html#docker-cli-run-prod-mode);
 
 * Give right permissions to ElasticSearch data folder using the following command:
 ```javascript
@@ -70,7 +70,7 @@ The following info is sent:
 * Unique ID;
 * Test case ID;
 
-For the better analysis, we merge small logs (which consist of 1-2 log lines and words number <= 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field "merged_small_logs" for all the big logs if there are ones.
+For the better analysis, we merge small logs (which consist of 1-2 log lines and words number less or equal 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field "merged_small_logs" for all the big logs if there are ones.
 
 The Analyzer preprocesses log messages from the request for test failure analysis: extracts error message, stacktrace, numbers, exceptions, urls, paths, parameters and other parts from text to search for the most similar items by these parts in the analytical base. These parts are saved in a separate fields for each log entry.
 

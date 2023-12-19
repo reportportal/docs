@@ -44,7 +44,7 @@ The ElasticSearch returns to the service Analyzer 10 logs with the highest score
 * whether it has the same unique id, from the same launch
 * the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
 
-The model gives a probability for each candidate, we filter out test items with the probability <= 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.
+The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.
 
 ML suggestions section contains at maximum 5 suggested items, they are shown together with the scores given by the model and we divide them into 3 groups:
 * the group "SAME", test items with the score = 100%

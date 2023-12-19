@@ -88,7 +88,7 @@ Configuration examples on the user profile page have been updated.
 
 - Launches import via API is possible with additional parameters: name, description, attributes.
 
-- Rename notIssue parameter for import launch : For the end-point POST/v1 /{projectName} /launch /import parameter notIssue is renamed to skippedIsNotIssue. Logic remains the same.
+- Rename notIssue parameter for import launch : For the end-point POST/v1 /&#123;projectName} /launch /import parameter notIssue is renamed to skippedIsNotIssue. Logic remains the same.
 
 ## 4. Enhancements Based on Community Feedback:
 

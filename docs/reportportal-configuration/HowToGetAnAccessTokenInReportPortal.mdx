@@ -79,8 +79,10 @@ Users can also revoke an API key at any time. Upon revocation, all related infor
 
 An API key functions similarly to a regular token. When making requests to the ReportPortal API, simply include it in the HTTP Authorization header as follows:
 
+```http
 HTTP Header:<br />
 Authorization: Bearer <access_token>
+```
 
 <media-view src={require('./img/AccessToken/APIKeyUsing.png')} alt="How to use API Key" />
 
