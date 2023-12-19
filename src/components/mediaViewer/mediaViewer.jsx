@@ -16,13 +16,15 @@
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
 
 import styles from './mediaViewer.module.css';
 
-const ReactImageVideoLightbox = require('react-image-video-lightbox').default;
+import 'yet-another-react-lightbox/styles.css';
 
-const TYPE_PHOTO = 'photo';
+const TYPE_PHOTO = 'image';
 const TYPE_VIDEO = 'video';
 
 const getSrc = (src) => {
@@ -51,22 +53,36 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
               type="button"
               className={styles[isVideo ? 'video-container' : 'media-container']}
               onClick={openViewer}
-              onKeyPress={openViewer}
+              // onKeyPress={openViewer}
             >
               <img className={styles.thumbnail} src={thumbnailSrc} alt={alt} />
             </button>
             {open && (
               <div className={styles['preview-container']}>
-                <ReactImageVideoLightbox
-                  data={[
-                    {
-                      url: contentSrc,
-                      type,
-                      alt,
+                <Lightbox
+                  slides={[{ type, src: contentSrc, alt }]}
+                  open={open}
+                  close={() => setOpen(false)}
+                  render={{
+                    slide: ({ slide, rect }) =>
+                      slide.type === TYPE_VIDEO ? (
+                        <iframe
+                          width={rect.width}
+                          height={rect.height}
+                          src={slide.src}
+                          title={slide.alt}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      ) : undefined,
+                    iconPrev() {
+                      return null;
                     },
-                  ]}
-                  startIndex={0}
-                  onCloseCallback={() => setOpen(false)}
+                    iconNext() {
+                      return null;
+                    },
+                  }}
                 />
               </div>
             )}
