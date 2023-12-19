@@ -33,8 +33,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           // sidebarPath: require.resolve('./sidebars.js'), // TODO
-          editUrl:
-            'https://github.com/reportportal/docs/blob/develop',
+          editUrl: 'https://github.com/reportportal/docs/blob/develop',
         },
         blog:  false,
         theme: {
@@ -51,10 +50,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-          {
-            name: 'keywords',
-            content: 'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting'
-          }
+        {
+          name: 'keywords',
+          content:
+            'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting',
+        },
       ],
       algolia: {
         appId: 'CRZVCU6DFV',
