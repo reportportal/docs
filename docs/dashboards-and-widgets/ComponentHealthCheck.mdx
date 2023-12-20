@@ -10,7 +10,7 @@ Shows the passing rate of the application components which are indicated by the 
 :::note
 For using this widget you need to report (or add manually) attributes to test items.
 :::
-<media-view thumbnail={require('./img/widget-types/ComponentHealthCheckView.png')} src="https://youtu.be/T98iy0mJk0s" alt="Component Health Check Video" type="video" />
+<MediaViewer thumbnail={require('./img/widget-types/ComponentHealthCheckView.png')} src="https://youtu.be/T98iy0mJk0s" alt="Component Health Check Video" type="video" />
 
 **Widget's parameters:**
 - Filter
@@ -19,7 +19,7 @@ For using this widget you need to report (or add manually) attributes to test it
 - Attribute key for the first level (mandatory)
 - Attribute key for the 2-10 levels (optional)
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckCreation.png')} alt="Component Health Check Creation" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckCreation.png')} alt="Component Health Check Creation" />
 
 **Widget view**
 
@@ -41,23 +41,23 @@ For using this widget you need to report (or add manually) attributes to test it
 > grouped by attribute values: backend, API, Unit, UI.
 > The same logic will be applied for the next levels.
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme1.png')} alt="All launches in ReportPortal" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme1.png')} alt="All launches in ReportPortal" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme2.png')} alt="Take launches from the filter" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme2.png')} alt="Take launches from the filter" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme3.png')} alt="Combine all test cases" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme3.png')} alt="Combine all test cases" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme4.png')} alt="Leave test cases with attributes key for 1 level" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme4.png')} alt="Leave test cases with attributes key for 1 level" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme5.png')} alt="Group by unique attribute with attributes key for 1 level" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme5.png')} alt="Group by unique attribute with attributes key for 1 level" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme6.png')} alt="Calculated a passing rate for each group" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme6.png')} alt="Calculated a passing rate for each group" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme7.png')} alt="Choose one group" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme7.png')} alt="Choose one group" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme8.png')} alt="Leave test cases with attributes key for 2 level" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme8.png')} alt="Leave test cases with attributes key for 2 level" />
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckScheme9.png')} alt="Group by unique attribute with attributes key for 2 level" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckScheme9.png')} alt="Group by unique attribute with attributes key for 2 level" />
 
 **Widget level**
 Each level shows all available attributes with corresponded to his level attribute key.
@@ -106,7 +106,7 @@ Let's say we set 'The min allowable passing rate for the component' to be 90%.
 - regular red: from  (90% - 1)/4 to  2*(90% - 1)/4
 - dark red: 0  - ((90% - 1)/4 -1)
 
-<media-view src={require('./img/widget-types/ComponentHealthCheckView.png')} alt="Data visualization in test automation: Component Health Check " />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckView.png')} alt="Data visualization in test automation: Component Health Check " />
 
 :::note
 The widget doesn't contain 'IN PROGRESS" launches.

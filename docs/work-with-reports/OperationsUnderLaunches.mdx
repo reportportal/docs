@@ -29,7 +29,7 @@ In order to edit a launch, perform the following steps:
 
 6. Make the required changes and click the "Save" button.
 
-<media-view thumbnail={require('./img/manage-launches/EditLaunch.png')} src="https://youtu.be/XRjtJ8Dq468" alt="Edit Launch in our test automation reporting dashboard" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/EditLaunch.png')} src="https://youtu.be/XRjtJ8Dq468" alt="Edit Launch in our test automation reporting dashboard" type="video" />
 
 ## Edit test item attributes and description
 
@@ -55,7 +55,7 @@ In order to edit a test item, perform the following steps:
 
 5. Make the required changes and click the "Save" button.
 
-<media-view thumbnail={require('./img/manage-launches/EditTestItem.png')} src="https://youtu.be/mGhwWwq_R3g" alt="Edit Item" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/EditTestItem.png')} src="https://youtu.be/mGhwWwq_R3g" alt="Edit Item" type="video" />
 
 ## Merge launches
 
@@ -67,7 +67,7 @@ ReportPortal provides two options for merge: Linear and Deep. The difference in 
 
 Basically, the merge models distinguished by the way of how the launches elements are collected in a resulting launch as shown on a picture:
 
-<media-view src={require('./img/manage-launches/MergeBasicModel.png')} alt="Merge Basic Model" />
+<MediaViewer src={require('./img/manage-launches/MergeBasicModel.png')} alt="Merge Basic Model" />
 
 **Linear merge**
 
@@ -88,7 +88,7 @@ The original launches are deleted from the system.
 
 The Linear and Deep Merge algorithm, as described above, is shown on a scheme:
 
-<media-view src={require('./img/manage-launches/MergeScheme.png')} alt="Merge Scheme" />
+<MediaViewer src={require('./img/manage-launches/MergeScheme.png')} alt="Merge Scheme" />
 
 For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 
 have the same names and the same types and the same path and have descendants, so only the earliest Suite_A (according to start time) is added to the new launch. All descendants of merged suites are combined under the Suite_A. Then the system searches for the same matches on the next level (Test level).
@@ -136,7 +136,7 @@ The following launches cannot be merged:
 - Launches with active "Analysis" process
 - Launches with active "Match issues in launch" process
 :::
-<media-view thumbnail={require('./img/manage-launches/MergeLaunches.png')} src="https://youtu.be/oOyuiYEZLnQ" alt="Merge Launches in our centralized test automation tool" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/MergeLaunches.png')} src="https://youtu.be/oOyuiYEZLnQ" alt="Merge Launches in our centralized test automation tool" type="video" />
 
 ## Compare launches
 
@@ -161,7 +161,7 @@ Investigate test items.
 :::note
 Launches can be compared on the 'Launches' page and not on the 'Debug' page.
 :::
-<media-view thumbnail={require('./img/manage-launches/CompareLaunches.png')} src="https://youtu.be/bfLVTKIHf7U" alt="Compare Launches" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/CompareLaunches.png')} src="https://youtu.be/bfLVTKIHf7U" alt="Compare Launches" type="video" />
 
 ## Move launches to Debug
 
@@ -209,7 +209,7 @@ In order to move some launches to the "Debug" section simultaneously, perform th
 To return the launches to the "Launches" section, navigate to the "Debug" section, select them 
 and select "Move to All Launches" from the 'Actions' list.
 
-<media-view thumbnail={require('./img/manage-launches/MoveLaunchesToDebug.png')} src="https://youtu.be/-DBDmyWEQ5A" alt="Move launches to Debug" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/MoveLaunchesToDebug.png')} src="https://youtu.be/-DBDmyWEQ5A" alt="Move launches to Debug" type="video" />
 
 ## Force finish launches
 
@@ -235,7 +235,7 @@ In order to finish a launch that is in progress now, perform the following steps
 
 5. The launch will be stopped and shown in the launches table with the "stopped" tag and the *"stopped"* description. All the statistics collected by this time will be displayed.
 
-<media-view thumbnail={require('./img/manage-launches/ForceFinish.png')} src="https://youtu.be/rRyfktuvhH0" alt="Force finish" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/ForceFinish.png')} src="https://youtu.be/rRyfktuvhH0" alt="Force finish" type="video" />
 
 In order to finish some launches simultaneously those are in progress now, perform the following steps:
 
@@ -267,7 +267,7 @@ In order to export a launch, perform the following steps:
 
 3. The launch report in the selected format will be opened.
 
-<media-view thumbnail={require('./img/manage-launches/ExportLaunches.png')} src="https://youtu.be/3AvmRyrh8f4" alt="Export Launch in our real time dashboard open source" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/ExportLaunches.png')} src="https://youtu.be/3AvmRyrh8f4" alt="Export Launch in our real time dashboard open source" type="video" />
 
 :::note
 The export operation works for a separate launch only. No multiple actions for the export of launches.
@@ -298,7 +298,7 @@ In order to delete a launch, perform the following steps:
 
 5.  The launch will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
 
-<media-view thumbnail={require('./img/manage-launches/DeleteLaunches.png')} src="https://youtu.be/_KQk6qgc1g0" alt="Delete launch in our test reporting tool" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/DeleteLaunches.png')} src="https://youtu.be/_KQk6qgc1g0" alt="Delete launch in our test reporting tool" type="video" />
 
 In order to delete more than one launch simultaneously, perform the following steps:
 
@@ -345,7 +345,7 @@ In order to delete a test item, perform the following steps:
 
 6. The test item will be deleted from ReportPortal with all related content (logs, screenshots).
 
-<media-view thumbnail={require('./img/manage-launches/DeleteTestItem.png')} src="https://youtu.be/w6wFP86bvJQ" alt="Delete Items" type="video" />
+<MediaViewer thumbnail={require('./img/manage-launches/DeleteTestItem.png')} src="https://youtu.be/w6wFP86bvJQ" alt="Delete Items" type="video" />
 
 In order to delete some test items simultaneously, perform the following steps:
 

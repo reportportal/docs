@@ -36,7 +36,7 @@ Find below the recommended hardware configuration to set up ReportPortal and hav
 
    Kubernetes:
 
-<media-view src={require('./img/OptimalPerformanceHardwareSetup1.png')} alt="Kubernetes server types for our centralized test automation tool" />
+<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup1.png')} alt="Kubernetes server types for our centralized test automation tool" />
 
 ---
 :::note
@@ -45,7 +45,7 @@ In Report Portal version 5.7.3, the log double-entry saving approach to DB and E
 :::
 Additional nodes for Elasticsearch:
 
-<media-view src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for Elasticsearch in ReportPortal Testops" />
+<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for Elasticsearch in ReportPortal Testops" />
 
 ---
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
@@ -275,7 +275,7 @@ Please note, that the max_connections paramether must be more than the sum of th
 
 As mentioned above, in some cases may be necessary to increase the limits of shards. The general rule is 2 active shards per 1 data stream(1 data stream equals 1 project in the ReportPortal on the default configuration). If the data stream reaches the default 50 GB storage limit, it will be rollovered and a new generation will be created (please see the diagram below). Please consider that the number of Elasticsearch shards on the default configuration is insufficient for ReportPortal installations with a large number of projects. As a result, after storing close to 3000 indices without any tuning the logs-saving behavior may be incorrect.
 
-<media-view src={require('./img/OptimalPerformanceHardwareSetup2.png')} alt="Elasticsearch Performance Tuning in our test automation dashboard" />
+<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup2.png')} alt="Elasticsearch Performance Tuning in our test automation dashboard" />
 
 To retrieve statistics from a cluster (_to check the value of shard_):
 

@@ -177,7 +177,7 @@ All settings and configurations of Analyzer and ElasticSearch are situated on a 
 
 2. Come on Project Settings, choose Auto-Analysis section;
 
-<media-view thumbnail={require('./img/AutoAnalysisSettings.png')} src="https://youtu.be/0AK2OHD79Ps" alt="Auto-analysis settings for AI-based defects triage" type="video" />
+<MediaViewer thumbnail={require('./img/AutoAnalysisSettings.png')} src="https://youtu.be/0AK2OHD79Ps" alt="Auto-analysis settings for AI-based defects triage" type="video" />
 
 In this section user can perform the following actions:
 
@@ -242,7 +242,7 @@ You can **remove the Index from ElasticSearch** and all logs with there defect t
 Your investigations in ReportPortal will not be changed. The operation concerns only ElasticSearch base.
 :::
 
-<media-view thumbnail={require('./img/RemoveIndex.png')} src="https://youtu.be/4Xhwu7NSeQ4" alt="Remove Index" type="video" />
+<MediaViewer thumbnail={require('./img/RemoveIndex.png')} src="https://youtu.be/4Xhwu7NSeQ4" alt="Remove Index" type="video" />
 
 Another option, you can **generate the Index in ElasticSearch**. In the case of generation, all data will be removed from ElasticSearch and the new one will be generated based on all previous investigations on the project following current analysis settings. 
 
@@ -257,7 +257,7 @@ The new base will be generated following logs and settings that are existing on 
 :::
 * you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate a new index, the old index will be removed, and a new one will be generated. Logs in the new index will contain 3 lines;  
 
-<media-view thumbnail={require('./img/GenerateIndex.png')} src="https://youtu.be/HYvtZmIzfiA" alt="Generate Index" type="video" />
+<MediaViewer thumbnail={require('./img/GenerateIndex.png')} src="https://youtu.be/HYvtZmIzfiA" alt="Generate Index" type="video" />
 
 We strongly do not recommend use auto-analysis until the new index will be generated.
 
@@ -308,22 +308,22 @@ For option **Only current launch** you can not choose *Items analyzed automatica
 
 Any launches with an active analyzing process will be marked with the "Analysis" label. 
 
-<media-view thumbnail={require('./img/AutoAnalysisLaunchedManually.png')} src="https://youtu.be/OmT2exhOdC4" alt="Auto-Analysis Launched Manually" type="video" />
+<MediaViewer thumbnail={require('./img/AutoAnalysisLaunchedManually.png')} src="https://youtu.be/OmT2exhOdC4" alt="Auto-Analysis Launched Manually" type="video" />
 
 ## Label AA
 
 When the test item is analyzed by the ReportPortal, a label "AA" is set on the test item on a Step Level. You can filter results with a parameter “Analysed by RP (AA)”
 
-<media-view src={require('./img/LabelAA.png')} alt="Label AA" />
+<MediaViewer src={require('./img/LabelAA.png')} alt="Label AA" />
 
 ## Ignore in Auto-Analysis
 
 If you don't want to save some test items in ElasticSearch, you can "Ignore in Auto-Analysis". For that you can choose this action in “Make decision” modal:
 
-<media-view src={require('./img/IgnoreInAutoAnalysis1.png')} alt="Ignore in Auto-Analysis" />
+<MediaViewer src={require('./img/IgnoreInAutoAnalysis1.png')} alt="Ignore in Auto-Analysis" />
 
 Or from the action list for several test items:
 
-<media-view src={require('./img/IgnoreInAutoAnalysis2.png')} alt="Auto-Analysis Ignore Action List" />
+<MediaViewer src={require('./img/IgnoreInAutoAnalysis2.png')} alt="Auto-Analysis Ignore Action List" />
 
 When you choose “Ignore in AA”, logs of the chosen item are removed from the ElasticSearch. 

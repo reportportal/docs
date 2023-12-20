@@ -35,17 +35,17 @@ Files that were copied earlier stay in the RP file storage
 :::
 When all of the valid log files are downloaded and processed the 'OK' button is enabled. The 'OK' button closes the Import launches pop-up window. The Zip archive is then deleted after the Import is finished or canceled.
 
-<media-view thumbnail={require('./img/Import.png')} src="https://youtu.be/238DO03guaA" alt="Import data to our test automation reporting platform" type="video" />
+<MediaViewer thumbnail={require('./img/Import.png')} src="https://youtu.be/238DO03guaA" alt="Import data to our test automation reporting platform" type="video" />
 
 You can only interrupt the import in UI when files are being downloaded into the RP file storage. In this case, you should hit the 'Cancel' button (or X button in the pop-up window) and confirm the cancellation of import and then hit the 'Cancel' button again.
 
-<media-view thumbnail={require('./img/ImportBreak.png')} src="https://youtu.be/Qf_vY0J7xGA" alt="Import Break" type="video" />
+<MediaViewer thumbnail={require('./img/ImportBreak.png')} src="https://youtu.be/Qf_vY0J7xGA" alt="Import Break" type="video" />
 
 ## Import via API
 
 The details about import via API you can find on the ReportPortal menu at the bottom: API -> launch controller -> Import junit xml report
 
-<media-view src={require('./img/ImportJunitXMLReport.png')} alt="Import junit xml report in our qa automation dashboard" />
+<MediaViewer src={require('./img/ImportJunitXMLReport.png')} alt="Import junit xml report in our qa automation dashboard" />
 
 You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
 
@@ -93,6 +93,6 @@ If you don't want to mark skipped items as "To Investigate", use the following r
 curl -X 'POST' 'http://localhost:8585/api/v1/testProject/launch/import?skippedIsNotIssue=true'
 ```
 
-<media-view thumbnail={require('./img/ImportViaAPI.png')} src="https://youtu.be/SkUBTNBWiqs" alt="Import via API on our test automation results dashboard" type="video" />
+<MediaViewer thumbnail={require('./img/ImportViaAPI.png')} src="https://youtu.be/SkUBTNBWiqs" alt="Import via API on our test automation results dashboard" type="video" />
 
 

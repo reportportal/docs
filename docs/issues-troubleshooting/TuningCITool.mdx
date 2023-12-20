@@ -15,28 +15,28 @@ To do so, follow the steps below:
 
 1. Open the Job configuration in Jenkins.  
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool1.png')} alt="Job configuration in Jenkins" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool1.png')} alt="Job configuration in Jenkins" />
 
 2. Select the "This build is parameterized" check-box.
 
 3. Click the "Add Parameter" and select "Text Parameter".  
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool2.png')} alt="Text Parameter" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool2.png')} alt="Text Parameter" />
 
 4. Define any name for the parameter and set the default value (note that attributes should have semicolon-separated values, with no spaces).
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool3.png')} alt="Setting the default value" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool3.png')} alt="Setting the default value" />
 
 5. Update the execution command at the "Build" section: add ReportPortal parameters using –D for a system variable parameters. For attributes it is "rp.tags":
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool4.png')} alt="Updating the execution command" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool4.png')} alt="Updating the execution command" />
 
 6. Click the "Build with Parameters" button.
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool5.png')} alt="Build with Parameters button" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool5.png')} alt="Build with Parameters button" />
 
 7. In the opened dialog, specify the needed parameters, using semicolons to separate values.  
 
-<media-view src={require('./img/tuning-ci-tool/TuningCiTool6.png')} alt="Specifying the needed parameters" />
+<MediaViewer src={require('./img/tuning-ci-tool/TuningCiTool6.png')} alt="Specifying the needed parameters" />
 
 8. Then Click the "Build" button.

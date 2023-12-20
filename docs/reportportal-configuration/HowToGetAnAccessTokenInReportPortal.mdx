@@ -16,7 +16,7 @@ grant_type: password
 username: <username>
 password: <password> 
 ```
-<media-view src={require('./img/AccessToken/AccessToken1.png')} alt="Authorization to ReportPortal Testops with user’s login and password" />
+<MediaViewer src={require('./img/AccessToken/AccessToken1.png')} alt="Authorization to ReportPortal Testops with user’s login and password" />
 
 Or you can use the following curl request:
 
@@ -61,7 +61,7 @@ It will continue to work even if you generate new API Keys.
 
 Thus, you can use several API keys at the same time. And revoke unused, expired or publicly exposed keys.
 
-<media-view src={require('./img/AccessToken/LegacyAPIKey.png')} alt="Authorization with user's API Key (for agents)" />
+<MediaViewer src={require('./img/AccessToken/LegacyAPIKey.png')} alt="Authorization with user's API Key (for agents)" />
 
 To generate a new API key in the ReportPortal app, click on the "Generate API Key" button.
 
@@ -71,7 +71,7 @@ The system will automatically prefix the generated API key with its assigned nam
 
 It's crucial to understand that the API key will be visible only at the point of creation. We strongly recommend copying and securely storing it for future use, as it will be impossible to retrieve later. This practice aligns with stringent security measures and standards.
 
-<media-view src={require('./img/AccessToken/NewAPIKeys.png')} alt="API Keys" />
+<MediaViewer src={require('./img/AccessToken/NewAPIKeys.png')} alt="API Keys" />
 
 You have the ability to create multiple API keys for various purposes, such as for automation or for integration with third-party services. However, it's important to note that all API keys generated from the user's Profile page are functionally equivalent from the permissions standpoint.
 
@@ -84,7 +84,7 @@ HTTP Header:<br />
 Authorization: Bearer <access_token>
 ```
 
-<media-view src={require('./img/AccessToken/APIKeyUsing.png')} alt="How to use API Key" />
+<MediaViewer src={require('./img/AccessToken/APIKeyUsing.png')} alt="How to use API Key" />
 
 
 :::note
