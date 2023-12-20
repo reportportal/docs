@@ -1,8 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer');
+
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+
 require('dotenv').config();
 
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
@@ -35,7 +38,7 @@ const config = {
           // sidebarPath: require.resolve('./sidebars.js'), // TODO
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
         },
-        blog:  false,
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -112,7 +115,7 @@ const config = {
               {
                 label: 'Developers Guide',
                 to: '/category/developers-guides',
-              }
+              },
             ],
           },
           {
@@ -129,7 +132,7 @@ const config = {
               {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
-              }
+              },
             ],
           },
           {
@@ -151,7 +154,7 @@ const config = {
               {
                 label: 'Terms & Conditions',
                 href: 'https://reportportal.io/legal/terms',
-              }
+              },
             ],
           },
         ],
@@ -160,6 +163,25 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [
+          'bash',
+          'diff',
+          'json',
+          'java',
+          'python',
+          'yaml',
+          'http',
+          'javascript',
+          'typescript',
+          'go',
+          'docker',
+          'csharp',
+          'git',
+          'ini',
+          'sql',
+          'plsql',
+          'jsx',
+        ],
       },
     }),
   plugins: ['./plugins/plugin-cookie-pro'],
