@@ -67,8 +67,8 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
                     slide: ({ slide, rect }) =>
                       slide.type === TYPE_VIDEO ? (
                         <iframe
-                          width={rect.width}
-                          height={rect.height}
+                          width={Math.min(rect.width, 640)}
+                          height={Math.min(rect.height, 360)}
                           src={slide.src}
                           title={slide.alt}
                           frameBorder="0"
