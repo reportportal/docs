@@ -49,7 +49,7 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
               className={styles['video-iframe']}
               src={contentSrc}
               title={alt}
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; web-share"
               allowFullScreen
             />
           );
