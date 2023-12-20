@@ -41,20 +41,22 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
       {() => {
         let contentSrc = getSrc(src);
         const thumbnailSrc = thumbnail ? getSrc(thumbnail) : contentSrc;
-        const isVideo = type === TYPE_VIDEO;
 
-        if (isVideo && contentSrc.includes('youtu.be/')) {
+        if (type === TYPE_VIDEO && contentSrc.includes('youtu.be/')) {
           contentSrc = contentSrc.replace('.be/', 'be.com/embed/');
+          return (
+            <iframe
+              className={styles['video-iframe']}
+              src={contentSrc}
+              title={alt}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          );
         }
-
         return (
           <>
-            <button
-              type="button"
-              className={styles[isVideo ? 'video-container' : 'media-container']}
-              onClick={openViewer}
-              // onKeyPress={openViewer}
-            >
+            <button type="button" className={styles['media-container']} onClick={openViewer}>
               <img className={styles.thumbnail} src={thumbnailSrc} alt={alt} />
             </button>
             {open && (
@@ -64,18 +66,6 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
                   open={open}
                   close={() => setOpen(false)}
                   render={{
-                    slide: ({ slide, rect }) =>
-                      slide.type === TYPE_VIDEO ? (
-                        <iframe
-                          width={Math.min(rect.width, 640)}
-                          height={Math.min(rect.height, 360)}
-                          src={slide.src}
-                          title={slide.alt}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      ) : undefined,
                     iconPrev() {
                       return null;
                     },
