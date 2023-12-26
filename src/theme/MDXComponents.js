@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import MediaViewer from '@site/src/components/mediaViewer';
 import MDXComponents from '@theme-original/MDXComponents';
+import MediaViewer from '@site/src/components/mediaViewer';
 
 export default {
   ...MDXComponents,
-  'media-view': MediaViewer,
+  MediaViewer,
 };

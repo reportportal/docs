@@ -21,4 +21,4 @@ It is the only place where it is possible to delete the filter from our test rep
 
 To do this, click the 'delete' icon of your filter and confirm the action. The filter will be deleted but not launches in it.
 
-<media-view thumbnail={require('./img/FiltersPage.png')} src="https://youtu.be/ZoVyP5CFML8" alt="Filters page in our centralized test reporting tool" type="video" />
+<MediaViewer thumbnail={require('./img/FiltersPage.png')} src="https://youtu.be/ZoVyP5CFML8" alt="Filters page in our centralized test reporting tool" type="video" />

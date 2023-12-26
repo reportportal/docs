@@ -7,7 +7,7 @@ sidebar_label: FAQ
 
 On this page, we have put together a list of the most frequently asked questions. Here, you can find prompt responses.
 
-**1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls? **
+**1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?**
 
 All test results and testing data reside in-house, within your instance of ReportPortal. However, there are two types of external calls that ReportPortal makes. The first checks our status page for the latest version and informs users of it on the login page. The second sends anonymized data to [Google Analytics](/terms-and-conditions/GoogleAnalyticsUsageByReportPortal), helping us refine the user experience and better understand application usage. This can be toggled off if desired.
 

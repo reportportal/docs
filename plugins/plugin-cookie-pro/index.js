@@ -1,4 +1,4 @@
-module.exports = function pluginCookiePro() {
+export default function pluginCookiePro() {
   return {
     name: 'plugin-cookie-pro',
     injectHtmlTags() {
@@ -30,5 +30,5 @@ module.exports = function pluginCookiePro() {
     getClientModules() {
       return ['./index.css'];
     },
-  }
+  };
 }

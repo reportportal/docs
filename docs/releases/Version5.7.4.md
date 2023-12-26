@@ -21,7 +21,7 @@ Changes in MinIO:
 Thus, we have replaced MinIO Client with JCloud in the latest ReportPortal version.
 Starting from ReportPortal 5.7.4 you can either use AWS S3 directly or continue with your existing MinIO as object storage.
 
-<media-view src={require('./img/5.7.4.png')} alt="Versions 5.7.3 vs 5.7.4" />
+<MediaViewer src={require('./img/5.7.4.png')} alt="Versions 5.7.3 vs 5.7.4" />
 
 
 2. **IMPORTANT:**
