@@ -56,17 +56,13 @@ Use the following **login\pass** to access:
 
 1. Expose Docker Volumes to the file system
 
-> OPTIONAL: Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
-
-Give the right permissions to the ElasticSearch data folder using the following commands:
+Give the right permissions to the OpenSearch data folder using the following commands:
 
 ```bash
-mkdir -p data/elasticsearch
-chmod 775 data/elasticsearch
-chgrp 1000 data/elasticsearch
+mkdir -p data/opensearch
+chmod 775 data/opensearch
+chgrp 1000 data/opensearch
 ```
-
-> For more details about ElasticSearch visit ElasticSearch [guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#_notes_for_production_use_and_defaults)
 
 2. PostgreSQL Performance Tuning
 
