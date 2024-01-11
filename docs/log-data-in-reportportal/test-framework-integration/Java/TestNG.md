@@ -28,4 +28,4 @@ TestNG agent can handle next events:
 
 [Installation guide](https://github.com/reportportal/agent-java-testNG#readme)
 
-[Examples](https://github.com/reportportal/example-java-TestNG)
+[Examples](https://github.com/reportportal/examples-java/tree/master/example-testng-fork-execution)
