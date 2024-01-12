@@ -32,7 +32,7 @@ Check:
 ```bash
 data
 |-- certs
-|-- elasticsearch
+|-- opensearch
 |-- postgres
 |-- traefik
 ```
