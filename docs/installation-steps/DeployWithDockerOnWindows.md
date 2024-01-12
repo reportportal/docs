@@ -6,6 +6,8 @@ description: A portable way to manage your real time test results. Using Docker 
 
 # Deploy with Docker on Windows
 
+***This guide is for version RP 23.2 and earlier.***
+
 In case you went with Docker on Windows, please make sure you changed the 'volumes' value for postgres container from "For unix host" to the "For windows host":
 
 ```Shell
@@ -65,5 +67,5 @@ The ReportPortal consists of the following services:
 - Gateway Service. Main entry point to application. Port used by gateway should be opened and accessible from outside network.
 - API Service. Main application API.
 - UI Service. All statics for user interface.
-- Analyzer Service. Collects and processes the information, then sends it to ElasticSearch
+- Analyzer Service. Collects and processes the information, then sends it to OpenSearch
 - Index Service. Responsible for redirections, collection of services information, handling errors
