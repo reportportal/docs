@@ -187,7 +187,7 @@ In this section user can perform the following actions:
 
 4.    Remove/Generate ElasticSearch index.
 
-### Switch ON/OFF automatic analysis;
+### Switch ON/OFF automatic analysis
 
 To activate the "Auto-Analysis" functionality in a project, perform the following steps:
 
@@ -197,19 +197,41 @@ To activate the "Auto-Analysis" functionality in a project, perform the followin
 
 3. Click the "Submit" button. Now "Auto-Analysis" will start as soon as any launch finishes.
 
-### Base for analysis (All launches/ Launches with the same name);
+### Base for analysis
 
-You can choose which results from previous runs should be considered in Auto –Analysis for defining the failure reason.
+You can choose which results from previous runs should be considered in Auto-Analysis for defining the failure reason.
 
-There two options:
+There are five options:
 
-* All launches;
+* All previous launches
+* Current and all previous launches with the same name
+* All previous launches with the same name
+* Only previous launch with the same name
+* Only current launch
 
-* Launches with the same name;
+If you choose **“All previous launches”** option, test results in the launch will have analyzed on the base of all runs before the current launch regardless of the launch name.
 
-If you choose **“All launches”**, test results in the launch will have analyzed on the base of all data in Elastic search of the project.
+If you choose **“Current and all previous launches with the same name”** option, test results in the launch will have analyzed on the base of current and all previous launches that have the same Launch name.
 
-If you choose **“Launches with the same name”**, test results in the launch will have analyzed on the base of all data in Elastic search that have the same Launch name.
+If you choose **“All previous launches with the same name”** option, test results in the launch will have analyzed on the base of all launches before current launch that have the same Launch name.
+
+If you choose **“Only previous launch with the same name”** option, test results in the launch will have analyzed on the base of last run before current launch with the same name.
+
+If you choose **“Only current launch”** option, test results in the launch will have analyzed on the base of current launch.
+
+Imagine that the launches in the image below are part of your ReportPortal project, and currently, Smoke Launch 3 is being analyzed.
+
+<MediaViewer src={require('./img/BaseForAnalysis.jpg')} alt="Launches on the project" />
+
+So, launches that will have analyzed if you choose **“All previous launches”** option: Smoke Launch 1, Smoke Launch 2, Regression Launch 1, Regression Launch 2, Regression Launch 3.
+
+Launches that will have analyzed if you choose **“Current and all previous launches with the same name”** option: Smoke Launch 3, Smoke Launch 1, Smoke Launch 2.
+
+Launches that will have analyzed if you choose **“All previous launches with the same name”** option: Smoke Launch 1, Smoke Launch 2.
+
+Launches that will have analyzed if you choose **“Only previous launch with the same name”** option: Smoke Launch 2.
+
+Launches that will have analyzed if you choose **“Only current launch”** option: Smoke Launch 3.
 
 You can choose those configurations via Project configuration or from the list of actions on All launches view.
 
