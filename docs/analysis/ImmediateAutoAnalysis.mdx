@@ -1,0 +1,38 @@
+---
+sidebar_position: 2
+sidebar_label: Immediate Auto-Analysis
+---
+
+# Immediate Auto-Analysis
+
+In the realm of software development, quick issue detection is a critical aspect that directly impacts the quality of your products. Understanding modern trends, ReportPortal is ready to introduce a new feature – Immediate Auto-Analysis (Immediate AA). Starting from version 24.1, Auto-Analysis can be started via API after certain test cases finish before whole Launch is done thereby accelerating the test failure triage.
+
+With Immediate AA, you no longer need to wait for the Launch finish before starting the analysis of failed tests. For instance, in your Launch there are 2000 tests, you can now see that 16 tests have already failed, and Immediate AA promptly marked these issues for you on the fly.
+
+To initiate Immediate AA, you need to specify the following parameters in the **attributes** section **for each step on its start or finish** when reporting:
+
+<MediaViewer src={require('./img/ImmediateAA.png')} alt="Parameters to initiate Immediate AA in our test automation dashboard" />
+
+If the value for **“immediateAutoAnalysis”** is set to **“false”**, Immediate AA will not work.
+
+If the “immediateAutoAnalysis” attribute is not specified, Immediate AA will not work either.
+
+:::important
+The “immediateAutoAnalysis” attribute can only be applied to a step level. It is essential to send the log, as the Analyzer operates based on the log.
+:::
+
+Immediate AA will work in any case if this attribute is present, regardless Auto-Analysis is enabled or disabled in Project Settings. In case when some items have been already analyzed by Immediate AA, Auto-Analysis and Manual Analysis on Launch finish will skip previously analyzed items.
+
+Immediate AA, like Auto-Analysis on Launch finish, is based on the following options:
+
+* All previous launches
+* Current and all previous launches with the same name
+* All previous launches with the same name
+* Only previous launch with the same name
+* Only current launch
+
+You can select the required option in the Project settings for Auto-Analysis.
+
+It is important to highlight that Immediate AA works only for defect types from “To Investigate” group. If you reported a Launch with failed step, and this step has another defect type (“Product Bug”, etc.), then step will not be analyzed by Immediate AA.
+
+This way, Immediate AA allows to detect issues early and enhances testing performance.
