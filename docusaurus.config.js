@@ -32,11 +32,13 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           routeBasePath: '/',
-          // sidebarPath: require.resolve('./sidebars.js'), // TODO
+          sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          docRootComponent: '@theme/DocRoot',
+          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
         },
         blog: false,
         theme: {
@@ -45,7 +47,7 @@ const config = {
         googleTagManager: {
           containerId: 'GTM-MK7ZHTL',
         },
-      }),
+      },
     ],
   ],
 
@@ -78,6 +80,16 @@ const config = {
           href: '/',
         },
         items: [
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            label: 'API',
+            to: '/category/api',
+          },
           {
             href: 'https://reportportal.io/',
             label: 'ReportPortal.io',
@@ -184,7 +196,29 @@ const config = {
         ],
       },
     }),
-  plugins: ['./plugins/plugin-cookie-pro'],
+
+  themes: ['docusaurus-theme-openapi-docs'], // exports ApiItem and ApiDemoPanel
+
+  plugins: [
+    './plugins/plugin-cookie-pro',
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
+        config: {
+          reportportal: {
+            // "reportportal" is considered the <id> that you will reference in the CLI
+            specPath: 'examples/petstore.yaml', // path or URL to the OpenAPI spec
+            outputDir: 'docs/api', // output directory for generated *.mdx and sidebar.js files
+            sidebarOptions: {
+              groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
+            },
+          },
+        },
+      },
+    ],
+  ],
 };
 
 export default config;

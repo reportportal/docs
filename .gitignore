@@ -3,6 +3,8 @@
 
 # Production
 /build
+/docs/api/*
+!/docs/api/_category_.yml
 
 # Generated files
 .docusaurus
