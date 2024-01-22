@@ -32,7 +32,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      {
+      ({
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -47,7 +47,7 @@ const config = {
         googleTagManager: {
           containerId: 'GTM-MK7ZHTL',
         },
-      },
+      }),
     ],
   ],
 
@@ -61,16 +61,6 @@ const config = {
             'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting',
         },
       ],
-      algolia: {
-        appId: 'CRZVCU6DFV',
-        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
-        indexName: 'reportportal',
-        replaceSearchResultPathname: {
-          from: '/docs/',
-          to: baseUrl, // To suggest URLs correctly for local and dev deployment
-        },
-        searchPagePath: 'search',
-      },
       navbar: {
         hideOnScroll: true,
         logo: {
@@ -87,8 +77,19 @@ const config = {
             label: 'Docs',
           },
           {
-            label: 'API',
-            to: '/category/api',
+            type: 'dropdown',
+            label: 'APIs',
+            position: 'left',
+            items: [
+              {
+                label: 'Service API',
+                to: '/category/api/service-api',
+              },
+              {
+                label: 'Service UAT',
+                to: '/category/api/service-uat',
+              },
+            ],
           },
           {
             href: 'https://reportportal.io/',
@@ -195,6 +196,16 @@ const config = {
           'jsx',
         ],
       },
+      algolia: {
+        appId: 'CRZVCU6DFV',
+        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
+        indexName: 'reportportal',
+        replaceSearchResultPathname: {
+          from: '/docs/',
+          to: baseUrl, // To suggest URLs correctly for local and dev deployment
+        },
+        searchPagePath: 'search',
+      },
     }),
 
   themes: ['docusaurus-theme-openapi-docs'], // exports ApiItem and ApiDemoPanel
@@ -207,12 +218,19 @@ const config = {
         id: 'openapi',
         docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
         config: {
-          reportportal: {
+          serviceApi: {
             // "reportportal" is considered the <id> that you will reference in the CLI
-            specPath: 'examples/petstore.yaml', // path or URL to the OpenAPI spec
-            outputDir: 'docs/api', // output directory for generated *.mdx and sidebar.js files
+            specPath: 'openapi/service-api.yaml', // path or URL to the OpenAPI spec
+            outputDir: 'docs/api/service-api', // output directory for generated *.mdx and sidebar.js files
             sidebarOptions: {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
+            },
+          },
+          serviceUat: {
+            specPath: 'openapi/service-uat.yaml',
+            outputDir: 'docs/api/service-uat',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
             },
           },
         },
