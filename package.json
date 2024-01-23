@@ -16,7 +16,10 @@
     "gen-api-docs": "docusaurus gen-api-docs",
     "clean-api-docs": "docusaurus clean-api-docs",
     "gen-api-docs:version": "docusaurus gen-api-docs:version",
-    "clean-api-docs:version": "docusaurus clean-api-docs:version"
+    "clean-api-docs:version": "docusaurus clean-api-docs:version",
+    "gen-all": "docusaurus gen-api-docs all && docusaurus gen-api-docs:version serviceApi:all && docusaurus gen-api-docs:version serviceUat:all",
+    "clean-all": "docusaurus clean-api-docs all && docusaurus clean-api-docs:version serviceApi:all && docusaurus clean-api-docs:version serviceUat:all",
+    "re-gen": "yarn clean-all && yarn gen-all"
   },
   "repository": {
     "type": "git",

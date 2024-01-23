@@ -8,9 +8,10 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
   title: Report Portal
-  version: 5.10.1
+  version: 5.10.0
 servers:
   - url: https://demo.reportportal.io/uat
+  - url: http://127.0.0.1/uat
 tags:
   - description: Auth Configuration Endpoint
     name: auth-configuration-endpoint

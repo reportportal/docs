@@ -219,18 +219,42 @@ const config = {
         docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
         config: {
           serviceApi: {
-            // "reportportal" is considered the <id> that you will reference in the CLI
-            specPath: 'openapi/service-api.yaml', // path or URL to the OpenAPI spec
+            // "serviceApi" is considered the <id> that you will reference in the CLI
+            specPath: 'apis/service-api.yaml', // path or URL to the OpenAPI spec
             outputDir: 'docs/api/service-api', // output directory for generated *.mdx and sidebar.js files
             sidebarOptions: {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
+              categoryLinkSource: 'tag',
+            },
+            version: '5.10.1',
+            label: 'v5.10.1',
+            baseUrl: '/docs/category/api/service-api',
+            versions: {
+              // '5.10.1': {
+              //   specPath: 'apis/versions/service-api/5.10.1.yaml',
+              //   outputDir: 'docs/api/service-api/5.10.1/',
+              //   label: 'v5.10.1',
+              //   baseUrl: '/docs/category/service-api/5.10.1',
+              // },
             },
           },
           serviceUat: {
-            specPath: 'openapi/service-uat.yaml',
+            specPath: 'apis/service-uat.yaml',
             outputDir: 'docs/api/service-uat',
             sidebarOptions: {
               groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            version: '5.10.0',
+            label: 'v5.10.0',
+            baseUrl: '/docs/category/api/service-uat',
+            versions: {
+              // '5.10.0': {
+              //   specPath: 'apis/versions/service-uat/5.10.1.yaml',
+              //   outputDir: 'docs/api/service-uat/5.10.1',
+              //   label: 'v5.10.0',
+              //   baseUrl: '/docs/category/api/service-uat/5.10.1',
+              // },
             },
           },
         },

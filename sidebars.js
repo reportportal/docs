@@ -11,6 +11,14 @@
 
 // @ts-check
 
+const {
+  versionSelector,
+  versionCrumb,
+} = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
+
+// const serviceApiVersions = require('./docs/api/service-api/versions.json');
+const serviceUatVersions = require('./docs/api/service-uat/versions.json');
+
 const apiSidebar = require('./docs/api/service-api/sidebar.ts');
 const uatSidebar = require('./docs/api/service-uat/sidebar.ts');
 
@@ -24,13 +32,24 @@ const sidebars = {
     },
   ],
   serviceApi: [
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: versionSelector(serviceApiVersions),
+    //   className: 'version-button',
+    // },
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: versionCrumb(`v5.10.1`),
+    // },
     {
       type: 'category',
-      label: 'ReportPortal Service API',
+      label: 'Service API',
       link: {
         type: 'generated-index',
         title: 'ReportPortal Service API',
-        description: 'This is a generated index of the ReportPortal Core API.',
+        description: 'This is a generated index of the ReportPortal Service API v5.10.1.',
         slug: '/category/api/service-api',
       },
       items: apiSidebar,
@@ -38,8 +57,19 @@ const sidebars = {
   ],
   serviceUat: [
     {
+      type: 'html',
+      defaultStyle: true,
+      value: versionSelector(serviceUatVersions),
+      className: 'version-button',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: versionCrumb(`v5.10.0`),
+    },
+    {
       type: 'category',
-      label: 'ReportPortal Service UAT',
+      label: 'Service UAT',
       link: {
         type: 'generated-index',
         title: 'ReportPortal Service UAT',
