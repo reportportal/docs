@@ -22,6 +22,7 @@
 
 const apiSidebar = require('./docs/api/service-api/sidebar.ts');
 const uatSidebar = require('./docs/api/service-uat/sidebar.ts');
+const designSidebar = require('./docs/api/api-design/sidebar.ts');
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -50,7 +51,7 @@ const sidebars = {
       label: 'Service API',
       link: {
         type: 'generated-index',
-        title: 'ReportPortal Service API',
+        title: 'Service API',
         description: 'This is a generated index of the ReportPortal Service API v5.10.1.',
         slug: '/category/api/service-api',
       },
@@ -75,11 +76,24 @@ const sidebars = {
       label: 'Service UAT',
       link: {
         type: 'generated-index',
-        title: 'ReportPortal Service UAT',
+        title: 'Service UAT',
         description: 'This is a generated index of the ReportPortal Authtorization API.',
         slug: '/category/api/service-uat',
       },
       items: uatSidebar,
+    },
+  ],
+  apiDesign: [
+    {
+      type: 'category',
+      label: 'API Documentation',
+      link: {
+        type: 'generated-index',
+        title: 'ReportPortal API',
+        description: 'This is a generated index of the ReportPortal API Documentation.',
+        slug: '/category/api/api-design',
+      },
+      items: designSidebar,
     },
   ],
 };

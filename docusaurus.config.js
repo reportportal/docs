@@ -89,6 +89,10 @@ const config = {
                 label: 'Service UAT',
                 to: '/category/api/service-uat',
               },
+              {
+                label: 'API Design',
+                to: '/docs/api/api-design/reportportal-api',
+              },
             ],
           },
           {
@@ -218,6 +222,15 @@ const config = {
         id: 'openapi',
         docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
         config: {
+          designApi: {
+            specPath:
+              'https://raw.githubusercontent.com/reportportal/reportportal-common-api/main/api/openapi/reportportal.yaml',
+            outputDir: 'docs/api/api-design',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
           serviceApi: {
             // "serviceApi" is considered the <id> that you will reference in the CLI
             specPath: 'apis/service-api.yaml', // path or URL to the OpenAPI spec
