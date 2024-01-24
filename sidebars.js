@@ -11,13 +11,14 @@
 
 // @ts-check
 
-const {
-  versionSelector,
-  versionCrumb,
-} = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
+// Uncomment this to use the version selector and crumb
+// const {
+//   versionSelector,
+//   versionCrumb,
+// } = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
 
 // const serviceApiVersions = require('./docs/api/service-api/versions.json');
-const serviceUatVersions = require('./docs/api/service-uat/versions.json');
+// const serviceUatVersions = require('./docs/api/service-uat/versions.json');
 
 const apiSidebar = require('./docs/api/service-api/sidebar.ts');
 const uatSidebar = require('./docs/api/service-uat/sidebar.ts');
@@ -32,6 +33,7 @@ const sidebars = {
     },
   ],
   serviceApi: [
+    // Uncomment this to use the version selector and crumb
     // {
     //   type: 'html',
     //   defaultStyle: true,
@@ -56,17 +58,18 @@ const sidebars = {
     },
   ],
   serviceUat: [
-    {
-      type: 'html',
-      defaultStyle: true,
-      value: versionSelector(serviceUatVersions),
-      className: 'version-button',
-    },
-    {
-      type: 'html',
-      defaultStyle: true,
-      value: versionCrumb(`v5.10.0`),
-    },
+    // Uncomment this to use the version selector and crumb
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: versionSelector(serviceUatVersions),
+    //   className: 'version-button',
+    // },
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: versionCrumb(`v5.10.0`),
+    // },
     {
       type: 'category',
       label: 'Service UAT',
