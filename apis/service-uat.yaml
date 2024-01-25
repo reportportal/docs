@@ -11,7 +11,19 @@ info:
   version: 5.10.0
 servers:
   - url: https://demo.reportportal.io/uat
-  - url: http://127.0.0.1/uat
+    description: Demo UAT server
+  - url: '{protocol}://{authority}/uat'
+    description: Personal UAT server
+    variables:
+      protocol:
+        default: http
+        description: Protocol
+        enum:
+          - http
+          - https
+      authority:
+        description: Host name and port (if needed) of Report Portal server
+        default: localhost
 security:
   - bearerAuth: []
 tags:

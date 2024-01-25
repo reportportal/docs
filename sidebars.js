@@ -12,13 +12,13 @@
 // @ts-check
 
 // Uncomment this to use the version selector and crumb
-// const {
-//   versionSelector,
-//   versionCrumb,
-// } = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
+const {
+  versionSelector,
+  versionCrumb,
+} = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
 
-// const serviceApiVersions = require('./docs/api/service-api/versions.json');
-// const serviceUatVersions = require('./docs/api/service-uat/versions.json');
+const serviceApiVersions = require('./docs/api/service-api/versions.json');
+const serviceUatVersions = require('./docs/api/service-uat/versions.json');
 
 const apiSidebar = require('./docs/api/service-api/sidebar.ts');
 const uatSidebar = require('./docs/api/service-uat/sidebar.ts');
@@ -33,19 +33,32 @@ const sidebars = {
       dirName: '.',
     },
   ],
+  apiDesign: [
+    {
+      type: 'category',
+      label: 'API Documentation',
+      link: {
+        type: 'generated-index',
+        title: 'ReportPortal API',
+        description: 'This is a generated index of the ReportPortal API Documentation.',
+        slug: '/category/api/api-design',
+      },
+      items: designSidebar,
+    },
+  ],
   serviceApi: [
     // Uncomment this to use the version selector and crumb
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: versionSelector(serviceApiVersions),
-    //   className: 'version-button',
-    // },
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: versionCrumb(`v5.10.1`),
-    // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: versionSelector(serviceApiVersions),
+      className: 'version-button',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: versionCrumb(`v5.10.1`),
+    },
     {
       type: 'category',
       label: 'Service API',
@@ -60,17 +73,17 @@ const sidebars = {
   ],
   serviceUat: [
     // Uncomment this to use the version selector and crumb
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: versionSelector(serviceUatVersions),
-    //   className: 'version-button',
-    // },
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: versionCrumb(`v5.10.0`),
-    // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: versionSelector(serviceUatVersions),
+      className: 'version-button',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: versionCrumb(`v5.10.0`),
+    },
     {
       type: 'category',
       label: 'Service UAT',
@@ -81,19 +94,6 @@ const sidebars = {
         slug: '/category/api/service-uat',
       },
       items: uatSidebar,
-    },
-  ],
-  apiDesign: [
-    {
-      type: 'category',
-      label: 'API Documentation',
-      link: {
-        type: 'generated-index',
-        title: 'ReportPortal API',
-        description: 'This is a generated index of the ReportPortal API Documentation.',
-        slug: '/category/api/api-design',
-      },
-      items: designSidebar,
     },
   ],
 };
