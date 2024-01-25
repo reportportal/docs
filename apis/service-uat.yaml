@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.3
 info:
   contact:
     email: support@reportportal.io
@@ -12,6 +12,8 @@ info:
 servers:
   - url: https://demo.reportportal.io/uat
   - url: http://127.0.0.1/uat
+security:
+  - bearerAuth: []
 tags:
   - description: Auth Configuration Endpoint
     name: auth-configuration-endpoint
@@ -366,3 +368,7 @@ components:
           type: object
           additionalProperties:
             type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

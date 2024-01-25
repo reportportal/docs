@@ -239,7 +239,6 @@ const config = {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
               categoryLinkSource: 'tag',
             },
-            hideSendButton: true,
             version: '5.10.1',
             label: 'v5.10.1',
             baseUrl: '/docs/category/api/service-api',
@@ -259,7 +258,6 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
-            hideSendButton: true,
             version: '5.10.0',
             label: 'v5.10.0',
             baseUrl: '/docs/category/api/service-uat',

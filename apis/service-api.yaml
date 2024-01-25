@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.3
 info:
   title: Report Portal
   description: Report Portal API documentation
@@ -12,6 +12,8 @@ info:
 servers:
   - url: https://demo.reportportal.io/api
   - url: http://127.0.0.1/api
+security:
+  - bearerAuth: []
 tags:
   - name: activity-controller
     description: Activity Controller
@@ -10814,4 +10816,7 @@ components:
       properties:
         is:
           type: boolean
-x-original-swagger-version: '2.0'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
