@@ -51,4 +51,4 @@ ML suggestions section contains at maximum 5 suggested items, they are shown tog
 * the group "HIGH", test items with the score in the range [70% - 99.9%]
 * the group "LOW", test items with the score in the range [40% - 69.9%]
 
-<MediaViewer thumbnail={require('./img/MLSuggestions.png')} src="https://youtu.be/Ooggk-k5fTQ" alt="ML Suggestions" type="video" />
+<MediaViewer src="https://youtu.be/Ooggk-k5fTQ" alt="ML Suggestions" type="video" />
