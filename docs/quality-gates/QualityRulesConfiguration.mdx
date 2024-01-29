@@ -27,7 +27,7 @@ Analyzed Launch: Launch Name of a launch that should be analyzed
 Attributes: key: value AND key:value AND key:value (example = build: 5.0 AND device: MacOS AND test plan: Regression) 
 ```
 
-<MediaViewer thumbnail={require('./img/QualityGatesCreation.png')} src="https://youtu.be/dXp3Lf9bI30" alt="Quality Gate Creation in our real time dashboard open source" type="video" />
+<MediaViewer src="https://youtu.be/dXp3Lf9bI30" alt="Quality Gate Creation in our real time dashboard open source" type="video" />
 
 ## Quality Gate ordering
 
@@ -47,7 +47,7 @@ There are four types of Quality Gate rules:
 
 >**Case:** Regression suite has 224 tests. You want to track that all tests should be run every time.
 
-<MediaViewer thumbnail={require('./img/AmountOfTestsALL.png')} src="https://youtu.be/TC0J8BV_XBY" alt="Rule: Amount of All Tests in the launch" type="video" />
+<MediaViewer src="https://youtu.be/TC0J8BV_XBY" alt="Rule: Amount of All Tests in the launch" type="video" />
 
 The purpose of the rule is to block a run that contains not all tests so that you can define the minimum number of tests that should be in the run.
 
@@ -71,7 +71,7 @@ You can add only 1 "All tests amount" rule to 1 Quality Gate.
 
 >**Case:** Regression suite contains 24 tests with critical priority. You want to track if these tests are executed every time.
 
-<MediaViewer thumbnail={require('./img/AmountAttribute.png')} src="https://youtu.be/EwsG7RcmcDs" alt="Rule: Amount of Tests with attributes in the launch" type="video" />
+<MediaViewer src="https://youtu.be/EwsG7RcmcDs" alt="Rule: Amount of Tests with attributes in the launch" type="video" />
 
 You can also track the number of tests that belong to a feature, component, priority or others in a launch.
 For that, tests in the analyzed launch should have attributes (f.i. feature: Payment, or component: Payment, or priority: critical, or any others).
@@ -99,7 +99,7 @@ You can add several "Tests with attribute amount" rules to the Quality Gate. But
 >
 >**Case 2:** You want to track that all critical tests in regression suite are always passed.
 
-<MediaViewer thumbnail={require('./img/FailureRateAll.png')} src="https://youtu.be/bSO21gtT82E" alt="Failure Rate" type="video" />
+<MediaViewer src="https://youtu.be/bSO21gtT82E" alt="Failure Rate" type="video" />
 
 The purpose of the rule is to block a run that has a not allowable passing rate so that you can define the minimum failure rate for the run.
 
@@ -172,7 +172,7 @@ How a notpassed rate is calculated<br />
 >
 >**Case 2:** Regression suite contains 500 tests with critical priority. You want to track that the run should not have critical issues or Product bugs (or any other) in these 500 tests.
 
-<MediaViewer thumbnail={require('./img/Issues.png')} src="https://youtu.be/ajIvWB83bGg" alt="Rule: Issues in the run" type="video" />
+<MediaViewer src="https://youtu.be/ajIvWB83bGg" alt="Rule: Issues in the run" type="video" />
 
 Amount of issues also has 2 options "All tests" and "Tests with the attribute". The purpose of the rule is to limit the number of unwanted defects in the run. With the option "All tests", you can restrict issues for all tests in the launch.
 
@@ -235,7 +235,7 @@ For this Project Manager or Admin can edit Quality Gate:
 
 >**Case 2:** Regression suite contains 500 tests with critical priority. In the last released version 1 test with critical priority failed. You want to track that critical tests in the regression run on the version in development should not have new failures.
 
-<MediaViewer thumbnail={require('./img/NewFailure.png')} src="https://youtu.be/W05N7DQkalg" alt="Rule: New Failure" type="video" />
+<MediaViewer src="https://youtu.be/W05N7DQkalg" alt="Rule: New Failure" type="video" />
 
 The purpose of the rule is to block a run that has new failures compared to a chosen baseline.
 
@@ -362,7 +362,7 @@ You will be redirected to the ```Unique errors``` tab with a list of all new err
 
 <MediaViewer src={require('./img/NewErrors/NewErrors10.png')} alt="All Unique Errors" />
 
-<MediaViewer thumbnail={require('./img/NewErrors/NewErrors6.png')} src="https://youtu.be/sfEk9DuuEVQ" alt="Defining New Errors in the run in our test automation dashboard" type="video" />
+<MediaViewer src="https://youtu.be/sfEk9DuuEVQ" alt="Defining New Errors in the run in our test automation dashboard" type="video" />
 
 By default, ***a previous launch execution*** is used as a Baseline Launch for the Quality Gate. Besides, you can as well define any other launch by specifying its name and sequence number or select ```Latest``` for the prior run of the specified launch to be used as a baseline.
 
