@@ -258,6 +258,7 @@ const config = {
             version: '5.10',
             label: 'v5.10',
             baseUrl: '/docs/category/api/service-uat',
+            versions: {},
           },
         },
       },
