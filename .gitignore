@@ -6,7 +6,8 @@
 /docs/api/*
 !/docs/api/_category_.yml
 !/docs/api/intro.mdx
-!/docs/api/sidebars
+!/docs/api/sidebars.ts
+!/docs/api/versioned_sidebars
 
 # Generated files
 .docusaurus

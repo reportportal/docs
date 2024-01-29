@@ -9,12 +9,8 @@
  Create as many sidebars as you want.
  */
 
+import apis from './docs/api/sidebars.ts';
 // @ts-check
-
-const designSidebar = require('./docs/api/api-design/sidebar.ts');
-const apiSidebars = require('./docs/api/sidebars/api-sidebars.ts');
-const uatSidebars = require('./docs/api/sidebars/uat-sidebars.ts');
-
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
@@ -24,25 +20,8 @@ const sidebars = {
       dirName: '.',
     },
   ],
-  apiDesign: [
-    {
-      type: 'category',
-      label: 'API Documentation',
-      link: {
-        type: 'generated-index',
-        title: 'ReportPortal API',
-        description: 'This is a generated index of the ReportPortal API Documentation.',
-        slug: '/category/api/api-design',
-      },
-      items: designSidebar,
-    },
-  ],
+  // Inject sidebar config for API docs
+  ...apis,
 };
 
-const joinedSidebars = {
-  ...sidebars,
-  ...apiSidebars,
-  ...uatSidebars,
-};
-
-module.exports = joinedSidebars;
+export default sidebars;

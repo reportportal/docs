@@ -1,12 +1,8 @@
-const {
-  versionSelector,
-  versionCrumb,
-} = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+import { versionSelector, versionCrumb } from 'docusaurus-plugin-openapi-docs/lib/sidebars/utils';
+import serviceUatVersions from '../service-uat/versions.json';
 
-const serviceUatVersions = require('../service-uat/versions.json');
-
-/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
-const uatSidebars = {
+const uatSidebars: SidebarsConfig = {
   // This is the sidebar for current version of the Service UAT
   serviceUat: [
     {
@@ -22,10 +18,10 @@ const uatSidebars = {
     },
     {
       type: 'category',
-      label: 'Service UAT',
+      label: 'Service Authorization',
       link: {
         type: 'generated-index',
-        title: 'Service UAT',
+        title: 'Service Authorization',
         description: 'This is a generated index of the ReportPortal Authtorization API.',
         slug: '/category/api/service-uat',
       },
@@ -33,6 +29,7 @@ const uatSidebars = {
     },
   ],
   // This is the sidebar for versioned Service UAT
+  // TODO: Uncomment this when we have a versioned Service UAT
   // 'service-uat-5.10': [
   //   {
   //     type: 'html',
@@ -47,10 +44,10 @@ const uatSidebars = {
   //   },
   //   {
   //     type: 'category',
-  //     label: 'Service UAT',
+  //     label: 'Service Authorization',
   //     link: {
   //       type: 'generated-index',
-  //       title: 'Service UAT',
+  //       title: 'Service Authorization',
   //       description: 'This is a generated index of the ReportPortal Authtorization API.',
   //       slug: '/category/api/service-uat/versioned/5.10'
   //     },
