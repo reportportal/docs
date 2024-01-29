@@ -82,6 +82,10 @@ const config = {
             position: 'left',
             items: [
               {
+                label: 'Overview',
+                to: '/docs/api/intro',
+              },
+              {
                 label: 'Service API',
                 to: '/category/api/service-api',
               },
@@ -239,17 +243,10 @@ const config = {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
               categoryLinkSource: 'tag',
             },
-            version: '5.10.1',
-            label: 'v5.10.1',
+            version: '5.10',
+            label: 'v5.10',
             baseUrl: '/docs/category/api/service-api',
-            versions: {
-              // '5.10.1': {
-              //   specPath: 'apis/versions/service-api/5.10.1.yaml',
-              //   outputDir: 'docs/api/service-api/5.10.1/',
-              //   label: 'v5.10.1',
-              //   baseUrl: '/docs/category/service-api/5.10.1',
-              // },
-            },
+            versions: {},
           },
           serviceUat: {
             specPath: 'apis/service-uat.yaml',
@@ -258,16 +255,16 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
-            version: '5.10.0',
-            label: 'v5.10.0',
+            version: '5.10',
+            label: 'v5.10',
             baseUrl: '/docs/category/api/service-uat',
             versions: {
-              // '5.10.0': {
-              //   specPath: 'apis/versions/service-uat/5.10.1.yaml',
-              //   outputDir: 'docs/api/service-uat/5.10.1',
-              //   label: 'v5.10.0',
-              //   baseUrl: '/docs/category/api/service-uat/5.10.1',
-              // },
+              '5.10.0': {
+                specPath: 'apis/service-uat.yaml',
+                outputDir: 'docs/api/service-uat/versioned/5.10',
+                label: 'v5.10.0',
+                baseUrl: '/docs/category/api/service-uat/versioned/5.10',
+              },
             },
           },
         },

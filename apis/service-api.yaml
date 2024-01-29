@@ -10,20 +10,18 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0
   version: 5.10.1
 servers:
-  - url: https://demo.reportportal.io/api
-    description: Demo server
   - url: '{protocol}://{authority}/api'
-    description: Personal server
+    description: ReportPortal server
     variables:
       protocol:
-        default: http
+        default: https
         description: Protocol
         enum:
           - http
           - https
       authority:
         description: Host name and port (if needed) of Report Portal server
-        default: localhost
+        default: demo.reportportal.io
 security:
   - bearerAuth: []
 tags:
