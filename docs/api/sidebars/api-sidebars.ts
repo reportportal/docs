@@ -3,9 +3,7 @@ const {
   versionCrumb,
 } = require('docusaurus-plugin-openapi-docs/lib/sidebars/utils');
 
-const serviceApiVersions = require('./docs/api/service-api/versions.json');
-
-const apiSidebar = require('./docs/api/service-api/sidebar.ts');
+const serviceApiVersions = require('../service-api/versions.json');
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 
@@ -21,7 +19,7 @@ const apiSidebars = {
     {
       type: 'html',
       defaultStyle: true,
-      value: versionCrumb(`v5.10.1`),
+      value: versionCrumb(`v5.10`),
     },
     {
       type: 'category',
@@ -29,10 +27,10 @@ const apiSidebars = {
       link: {
         type: 'generated-index',
         title: 'Service API',
-        description: 'This is a generated index of the ReportPortal Service API v5.10.1.',
+        description: 'This is a generated index of the ReportPortal Service API v5.10',
         slug: '/category/api/service-api',
       },
-      items: apiSidebar,
+      items: require('../service-api/sidebar.ts'),
     },
   ],
 };

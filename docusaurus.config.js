@@ -258,14 +258,6 @@ const config = {
             version: '5.10',
             label: 'v5.10',
             baseUrl: '/docs/category/api/service-uat',
-            versions: {
-              '5.10.0': {
-                specPath: 'apis/service-uat.yaml',
-                outputDir: 'docs/api/service-uat/versioned/5.10',
-                label: 'v5.10.0',
-                baseUrl: '/docs/category/api/service-uat/versioned/5.10',
-              },
-            },
           },
         },
       },
