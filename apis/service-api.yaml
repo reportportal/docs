@@ -9,6 +9,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
   version: 5.10.1
+# Manual added section
 servers:
   - url: '{protocol}://{authority}/api'
     description: ReportPortal server
@@ -22,6 +23,7 @@ servers:
       authority:
         description: Host name and port (if needed) of Report Portal server
         default: demo.reportportal.io
+# Manual added section
 security:
   - bearerAuth: []
 tags:
@@ -10826,6 +10828,7 @@ components:
       properties:
         is:
           type: boolean
+  # Manual added section
   securitySchemes:
     bearerAuth:
       type: http

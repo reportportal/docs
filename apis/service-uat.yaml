@@ -9,6 +9,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0
   title: Report Portal
   version: 5.10.0
+# Manual added section
 servers:
   - url: '{protocol}://{authority}/uat'
     description: ReportPortal UAT server
@@ -22,6 +23,7 @@ servers:
       authority:
         description: Host name and port (if needed) of Report Portal server
         default: demo.reportportal.io
+# Manual added section
 security:
   - bearerAuth: []
 tags:
@@ -378,6 +380,7 @@ components:
           type: object
           additionalProperties:
             type: object
+  # Manual added section
   securitySchemes:
     bearerAuth:
       type: http

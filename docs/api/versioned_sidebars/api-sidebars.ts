@@ -34,7 +34,7 @@ const apiSidebars: SidebarsConfig = {
   //   {
   //     type: 'html',
   //     defaultStyle: true,
-  //     value: versionSelector(serviceUatVersions),
+  //     value: versionSelector(serviceApiVersions),
   //     className: 'version-button'
   //   },
   //   {
