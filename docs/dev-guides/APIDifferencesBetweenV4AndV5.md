@@ -236,7 +236,7 @@ POST `/v2/{projectName}/log` - Create log.
 ## Differences in reporting
 
 ### Launch rerun
-[Rerun developers guide](./RerunDevelopersGuide)
+[Rerun developers guide](/dev-guides/RerunDevelopersGuide)
 
 ### Nested steps
 [Nested steps wiki](https://github.com/reportportal/client-java/wiki/Nested-steps)
