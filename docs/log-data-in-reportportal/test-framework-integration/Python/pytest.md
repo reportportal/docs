@@ -11,7 +11,7 @@ Pytest is a popular testing framework for Python applications. One of its advant
 
 ## Installation
 
-To install pytest plugin execute next command in a terminal:
+To install the pytest plugin, run the following command in the terminal:
 
 ```python
     pip install pytest-reportportal
@@ -21,8 +21,7 @@ Look through the CONTRIBUTING.rst for contribution guidelines.
 
 ## Configuration
 
-Prepare the config file `pytest.ini` in root directory of tests or specify
-any one using pytest command line option:
+Create the configuration file `pytest.ini` in the root directory of tests, or alternatively, specify one using a pytest command line option:
 
 ```python
     py.test -c config.cfg
@@ -84,8 +83,7 @@ If you like to override the above parameters from command line, or from CI envir
 
 ## Examples
 
-For logging of the test item flow to ReportPortal, please, use the python
-logging handler provided by plugin like bellow:
+To log the test item flow to ReportPortal, use the Python logging handler provided by the plugin, as shown below:
 
 in conftest.py:
 
@@ -159,7 +157,7 @@ If you don't want to attach specific markers, list them in `rp_ignore_attributes
 
 ## Launching
 
-To run test with ReportPortal you must provide '--reportportal' flag:
+To execute a test with ReportPortal, you need to include the '--reportportal' flag:
 
 ```python
     py.test ./tests --reportportal
