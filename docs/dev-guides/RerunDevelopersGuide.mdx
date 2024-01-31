@@ -4,21 +4,21 @@
 
 Let's imagine we have some set of tests:
 
-<media-view src={require('./img/rerun/Tests.png')} alt="Tests example" />
+<MediaViewer src={require('./img/rerun/Tests.png')} alt="Tests example" />
 
 After run we can see few failed items:
 
-<media-view src={require('./img/rerun/LaunchFailed1.png')} alt="Launch failed" />
+<MediaViewer src={require('./img/rerun/LaunchFailed1.png')} alt="Launch failed" />
 
-<media-view src={require('./img/rerun/LaunchFailed2.png')} alt="Failed test items" />
+<MediaViewer src={require('./img/rerun/LaunchFailed2.png')} alt="Failed test items" />
 
 We are fixing issues and want to launch tests again. But running all the tests can take a lot of time. So it would be better to run only failed tests from previous launch.
 
 Now we have the following:
 
-<media-view src={require('./img/rerun/LaunchFailed2.png')} alt="Launch test results" />
+<MediaViewer src={require('./img/rerun/LaunchFailed2.png')} alt="Launch test results" />
 
-<media-view src={require('./img/rerun/LaunchFailedRp2.png')} alt="Test results Launch failed" />
+<MediaViewer src={require('./img/rerun/LaunchFailedRp2.png')} alt="Test results Launch failed" />
 
 So what do we have here? Two launches with the same tests that was just be started again, but they are have difference in passed and failed items. And it is hard to find which test was fixed and which was not.
 
@@ -26,11 +26,11 @@ The main idea of reruns is to restart the same launch and trace changes between 
 
 Let's try to report the same launches using rerun.
 
-<media-view src={require('./img/rerun/RpRerun1.png')} alt="Report the same launches using rerun" />
+<MediaViewer src={require('./img/rerun/RpRerun1.png')} alt="Report the same launches using rerun" />
 
 We have only one launch with last run data
 
-<media-view src={require('./img/rerun/RpRerunStepView.png')} alt="Rerun Step View" />
+<MediaViewer src={require('./img/rerun/RpRerunStepView.png')} alt="Rerun Step View" />
 
 On the step view we can see that items with names `getActivitiesForProject`, `getActivityPositive` and `getTestITemActivitiesPositive` have retries. Items `getActivityPositive` and `getTestITemActivitiesPositive` was fixed and `getActivitiesForProject` is still failing.
 
@@ -40,7 +40,7 @@ On the step view we can see that items with names `getActivitiesForProject`, `ge
 
 #### Using API
 
-To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide#start-launch) adding `"rerun"=true` parameter in the request body.
+To start launch rerun you should call [default start launch endpoint](/dev-guides/ReportingDevelopersGuide#start-launch) adding `"rerun"=true` parameter in the request body.
 
 ```json 
 {
@@ -89,7 +89,7 @@ If system cannot find launch with the same name - system throws error with `404`
 
 #### Using API
 
-To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide#start-launch) adding `"rerun"=true` and `"rerunOf"=launch_uuid` parameters in the request body. Where `launch_uuid` is UUID of launch that have to be reruned.
+To start launch rerun you should call [default start launch endpoint](/dev-guides/ReportingDevelopersGuide#start-launch) adding `"rerun"=true` and `"rerunOf"=launch_uuid` parameters in the request body. Where `launch_uuid` is UUID of launch that have to be reruned.
 
 ```json
 {

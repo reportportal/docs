@@ -39,7 +39,7 @@ Steps to import:
 - Click on "Code style"
 - In "Scheme" section click on settings wheel → Import Scheme → IntelliJ IDEA code style XML
 
-<media-view src={require('./img/backend/IdeaFormatter.png')} alt="Idea Formatter" />
+<MediaViewer src={require('./img/backend/IdeaFormatter.png')} alt="Idea Formatter" />
 
 ### Code style
 This document is aimed to improve some points in existing code base and implementation/design approaches synchronization inside team. It's a blueprint for now, but will be improved.
@@ -270,9 +270,9 @@ This file will be updated in next sections, but we can already start developing 
 
 To start up Service Authorization you should fill marked values in the `application.yaml` file:
 
-<media-view src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Authorization" />
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Authorization" />
 
-<media-view src={require('./img/backend/AuthBinaryConfig.png')} alt="Values you should fill" />
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Values you should fill" />
 
 (Optional) change `context-path` value from `/` to `/uat` if you are planning to deploy Service UI locally (will be described later)
 
@@ -352,11 +352,11 @@ As the result our `docker-compose.yml` should be like [this](pathname:///files/D
 
 To start up Service API you should fill marked values in the `application.yaml` file:
 
-<media-view src={require('./img/backend/AuthDbConfig.png')} alt="Start Service API" />
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service API" />
 
-<media-view src={require('./img/backend/AuthBinaryConfig.png')} alt="Authorization binary Configuration" />
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Authorization binary Configuration" />
 
-<media-view src={require('./img/backend/RabbitmqConfig.png')} alt="Rabbitmq Configuration" />
+<MediaViewer src={require('./img/backend/RabbitmqConfig.png')} alt="Rabbitmq Configuration" />
 
 (Optional) change `context-path` value from `/` to `/api` if you are planning to deploy Service UI locally (will be described later)
 
@@ -364,11 +364,11 @@ To start up Service API you should fill marked values in the `application.yaml` 
 
 To start up Service Jobs you should fill marked values in the `application.yaml` file:
 
-<media-view src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Jobs" />
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Jobs" />
 
-<media-view src={require('./img/backend/AuthBinaryConfig.png')} alt="Values for binary" />
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Values for binary" />
 
-<media-view src={require('./img/backend/RabbitmqConfig.png')} alt="Values for Rabbitmq" />
+<MediaViewer src={require('./img/backend/RabbitmqConfig.png')} alt="Values for Rabbitmq" />
 
 ### Service UI
 
@@ -448,12 +448,12 @@ To do this you should follow these steps:
 - create PR to the `develop` branch
 Now you have your branch on the GitHub page and can see the `commit hash`:
 
-<media-view src={require('./img/backend/CommitHash.png')} alt="Commit hash" />
+<MediaViewer src={require('./img/backend/CommitHash.png')} alt="Commit hash" />
 
 - go to the service where your changes should be applied (Service API in our example)
 - copy `commit hash` and replace already existing in the `build.gradle` of the required service (Service API in our example):
 
-<media-view src={require('./img/backend/BuildGradleUpdated.png')} alt="Build gradle updated" />
+<MediaViewer src={require('./img/backend/BuildGradleUpdated.png')} alt="Build gradle updated" />
 
 - after re-building project using `gradle` dependency will be resolved and downloaded using [Jitpack](https://jitpack.io) tool
 - create branch according to the name policy

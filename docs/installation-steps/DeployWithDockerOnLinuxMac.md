@@ -40,8 +40,8 @@ Where:
 
 Useful commands:
 - **docker-compose logs** shows logs from all containers
-- **docker logs &lt;container_name&gt;** shows logs from selected container
-- **docker ps -a | grep "reportportal_" | awk '{print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
+- **docker logs &lt;;container_name&gt;** shows logs from selected container
+- **docker ps -a | grep "reportportal_" | awk '&#123;print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
 - **docker-compose down**
 
 3. Open your web browser with an IP address of the deployed environment at port **8080**
@@ -56,7 +56,7 @@ Use the following **login\pass** to access:
 
 1. Expose Docker Volumes to the file system
 
-> OPTIONAL: Set {vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
+> OPTIONAL: Set &#123;vm.max_map_count} kernel setting before ReportPortal deploying with the following [Commands](https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docker.html#docker-cli-run-prod-mode)
 
 Give the right permissions to the ElasticSearch data folder using the following commands:
 
@@ -86,6 +86,6 @@ Depending on your hardware configuration and the parameters of your system, you 
  -c max_parallel_workers_per_gather=
 ``` 
 
-Please choose to set the values of these variables that are right for your system. You can also change the PostgreSQL host by passing a new value to the `POSTGRES_SERVER` environment [variable](./AdditionalConfigurationParameters).
+Please choose to set the values of these variables that are right for your system. You can also change the PostgreSQL host by passing a new value to the `POSTGRES_SERVER` environment [variable](/installation-steps/AdditionalConfigurationParameters).
 
-More info can be found at the following [link](./OptimalPerformanceHardwareSetup#5-postgresql-performance-tuning)
+More info can be found at the following [link](/installation-steps/OptimalPerformanceHardwareSetup#5-postgresql-performance-tuning)

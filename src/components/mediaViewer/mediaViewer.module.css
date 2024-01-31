@@ -16,35 +16,18 @@
 
 .media-container {
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.video-container {
+.video-iframe {
   display: inline-block;
   position: relative;
   cursor: pointer;
-}
-
-.video-container:before {
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: all .1s linear;
+  border: none;
+  overflow: hidden;
   width: 100%;
-}
-
-.video-container:after {
-  background: #fff url(/img/video.svg) no-repeat 17px;
-  border-radius: 50%;
-  box-shadow: 0 2px 80px 0 hsl(0deg 0% 56% / 50%);
-  content: "";
-  height: 104px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 104px;
+  height: 512px;
+  margin-bottom: 20px;
 }
 
 .preview-container {

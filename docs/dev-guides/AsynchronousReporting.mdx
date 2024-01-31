@@ -41,7 +41,7 @@ After that, a `controller` returns HTTP response to the `client` that contains U
 After a successful processing, the entity will be stored in a database and obtain a physical id. 
 In case of an exception, it is logged and the entity is not saved.
 
-<media-view src={require('./img/async/SimpleScheme.png')} alt="Simple Scheme" />
+<MediaViewer src={require('./img/async/SimpleScheme.png')} alt="Simple Scheme" />
 
 ### Enable asynchronous reporting in agents
 
@@ -63,19 +63,19 @@ rp.reporting.async=true
 
 Async controllers have `/api/v2` prefix.
 Requests and responses have no differences with sync ones but there are some specific distinctions in the behavior that is described in 
-[reporting guide](./ReportingDevelopersGuide).
+[reporting guide](/dev-guides/ReportingDevelopersGuide).
 
-* [Start launch](./ReportingDevelopersGuide#start-launch)
-* [Start root(suite) item](./ReportingDevelopersGuide#start-rootsuite-item)
-* [Start child(container) item](./ReportingDevelopersGuide#start-childcontainer-item)
-* [Start child(step) item](./ReportingDevelopersGuide#start-childstep-item)
-* [Finish child item](./ReportingDevelopersGuide#finish-child-item)
-* [Finish parent(container) item](./ReportingDevelopersGuide#finish-parentcontainer-item)
-* [Save single log without attachment](./ReportingDevelopersGuide#save-single-log-without-attachment)
-* [Batch save logs](./ReportingDevelopersGuide#batch-save-logs)
-* [Save launch log](./ReportingDevelopersGuide#save-launch-log)
-* [Finish root(suite) item](./ReportingDevelopersGuide#finish-rootsuite-item)
-* [Finish launch](./ReportingDevelopersGuide#finish-launch)
+* [Start launch](/dev-guides/ReportingDevelopersGuide#start-launch)
+* [Start root(suite) item](/dev-guides/ReportingDevelopersGuide#start-rootsuite-item)
+* [Start child(container) item](/dev-guides/ReportingDevelopersGuide#start-childcontainer-item)
+* [Start child(step) item](/dev-guides/ReportingDevelopersGuide#start-childstep-item)
+* [Finish child item](/dev-guides/ReportingDevelopersGuide#finish-child-item)
+* [Finish parent(container) item](/dev-guides/ReportingDevelopersGuide#finish-parentcontainer-item)
+* [Save single log without attachment](/dev-guides/ReportingDevelopersGuide#save-single-log-without-attachment)
+* [Batch save logs](/dev-guides/ReportingDevelopersGuide#batch-save-logs)
+* [Save launch log](/dev-guides/ReportingDevelopersGuide#save-launch-log)
+* [Finish root(suite) item](/dev-guides/ReportingDevelopersGuide#finish-rootsuite-item)
+* [Finish launch](/dev-guides/ReportingDevelopersGuide#finish-launch)
 
 ### Detailed scheme of interactions between RabbitMq and API
 
@@ -113,21 +113,21 @@ exchange. The amount of the queues in the exchanges depends on `rp.amqp.queues` 
 In case message from `reporting.retry` was consumed with exception more than 10 times, the message will be stored in reporting.dlq which is 
 [dead letter queue](https://www.rabbitmq.com/dlx.html).
 
-<media-view src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
+<MediaViewer src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
 
 #### Scheme
 
 All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue. 
 It is achieved using the following algorithm that maps launch uuid to a queue key:
 
-<media-view src={require('./img/async/UuidQueusMapping.png')} alt="Uuid Queus Mapping" />
+<MediaViewer src={require('./img/async/UuidQueusMapping.png')} alt="Uuid Queus Mapping" />
 
 Messages in the queue don't have a strict order but they are stored mostly in the same order as they arrive from `client`. 
 This ensures a minimal amount of exceptions (causing the sending of such messages to the retry queue) caused by cases when a child is handled before its own parent. 
 
 Consuming scheme:
 
-<media-view src={require('./img/async/Consuming.png')} alt="Consuming" />
+<MediaViewer src={require('./img/async/Consuming.png')} alt="Consuming" />
 
 `(!)` Possible exceptions that may be thrown and lead to sending the message to the retry queue:
 * On start launch/test item:
@@ -146,7 +146,7 @@ Consuming scheme:
 
 If the order is not broken, launch finish request will be handled when there are no more child item requests in the queue.
 
-<media-view src={require('./img/async/FinishLaunch.png')} alt="Finish Launch" />
+<MediaViewer src={require('./img/async/FinishLaunch.png')} alt="Finish Launch" />
 
 `(!)` It is a main difference in reporting mechanism between ReportPortal version 4 and 5.
 In case the launch finish request is not last in the queue it will be finished anyway. 

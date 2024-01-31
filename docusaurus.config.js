@@ -1,8 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import { themes } from 'prism-react-renderer';
+
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+
 require('dotenv').config();
 
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
@@ -33,10 +36,9 @@ const config = {
         docs: {
           routeBasePath: '/',
           // sidebarPath: require.resolve('./sidebars.js'), // TODO
-          editUrl:
-            'https://github.com/reportportal/docs/blob/develop',
+          editUrl: 'https://github.com/reportportal/docs/blob/develop',
         },
-        blog:  false,
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -51,10 +53,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-          {
-            name: 'keywords',
-            content: 'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting'
-          }
+        {
+          name: 'keywords',
+          content:
+            'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting',
+        },
       ],
       algolia: {
         appId: 'CRZVCU6DFV',
@@ -112,7 +115,7 @@ const config = {
               {
                 label: 'Developers Guide',
                 to: '/category/developers-guides',
-              }
+              },
             ],
           },
           {
@@ -129,7 +132,7 @@ const config = {
               {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
-              }
+              },
             ],
           },
           {
@@ -151,7 +154,7 @@ const config = {
               {
                 label: 'Terms & Conditions',
                 href: 'https://reportportal.io/legal/terms',
-              }
+              },
             ],
           },
         ],
@@ -160,9 +163,28 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [
+          'bash',
+          'diff',
+          'json',
+          'java',
+          'python',
+          'yaml',
+          'http',
+          'javascript',
+          'typescript',
+          'go',
+          'docker',
+          'csharp',
+          'git',
+          'ini',
+          'sql',
+          'plsql',
+          'jsx',
+        ],
       },
     }),
   plugins: ['./plugins/plugin-cookie-pro'],
 };
 
-module.exports = config;
+export default config;
