@@ -83,7 +83,7 @@ const config = {
             items: [
               {
                 label: 'Overview',
-                to: '/docs/api/intro',
+                to: '/api/intro',
               },
               {
                 label: 'Service API',
@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'API Design',
-                to: '/docs/api/api-design/reportportal-api',
+                to: '/api/api-design/reportportal-api',
               },
             ],
           },
@@ -245,7 +245,7 @@ const config = {
             },
             version: '5.10',
             label: 'v5.10',
-            baseUrl: '/docs/category/api/service-api',
+            baseUrl: '/category/api/service-api',
             versions: {},
           },
           serviceUat: {
@@ -257,7 +257,7 @@ const config = {
             },
             version: '5.10',
             label: 'v5.10',
-            baseUrl: '/docs/category/api/service-uat',
+            baseUrl: '/category/api/service-uat',
             versions: {},
           },
         },
