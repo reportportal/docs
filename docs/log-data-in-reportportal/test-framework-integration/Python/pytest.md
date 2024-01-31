@@ -13,7 +13,7 @@ Pytest is a popular testing framework for Python applications. One of its advant
 
 To install pytest plugin execute next command in a terminal:
 
-```
+```python
     pip install pytest-reportportal
 ```
 
@@ -24,7 +24,7 @@ Look through the CONTRIBUTING.rst for contribution guidelines.
 Prepare the config file `pytest.ini` in root directory of tests or specify
 any one using pytest command line option:
 
-```
+```python
     py.test -c config.cfg
 ```
 
@@ -36,7 +36,7 @@ The `pytest.ini` file should have next mandatory fields:
 
 Example of `pytest.ini`:
 
-```
+```python
     [pytest]
     rp_api_key = fb586627-32be-47dd-93c1-678873458a5f
     rp_endpoint = http://192.168.1.10:8080
@@ -89,7 +89,7 @@ logging handler provided by plugin like bellow:
 
 in conftest.py:
 
-```
+```python
     import logging
     import sys
 
@@ -135,7 +135,7 @@ in tests:
 
 Plugin can report doc-strings of tests as `descriptions`:
 
-```
+```python
     def test_one():
         """
         Description of the test case which will be sent to ReportPortal
@@ -146,7 +146,7 @@ Plugin can report doc-strings of tests as `descriptions`:
 Pytest markers will be attached as `attributes` to ReportPortal items.
 In the following example attributes 'linux' and 'win32' will be used:
 
-```
+```python
     import pytest
 
     @pytest.mark.win32
@@ -161,7 +161,7 @@ If you don't want to attach specific markers, list them in `rp_ignore_attributes
 
 To run test with ReportPortal you must provide '--reportportal' flag:
 
-```
+```python
     py.test ./tests --reportportal
 ```
 
@@ -177,7 +177,7 @@ The following mark fields are used to get information about test issue:
 
 Example:
 
-```
+```python
     @pytest.mark.issue(issue_id="111111", reason="Some bug", issue_type="PB")
     def test():
         assert False
@@ -203,6 +203,6 @@ Also, there are examples of usage:
 If you would like to temporary disable integrations with ReportPortal just
 deactivate `pytest_reportportal` plugin with command like:
 
-```
+```python
     py.test -p no:pytest_reportportal ./tests
 ```
