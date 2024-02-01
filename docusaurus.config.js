@@ -17,7 +17,9 @@ const config = {
   url: 'https://reportportal.io',
   baseUrl,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
 
   organizationName: 'reportportal',
