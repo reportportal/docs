@@ -43,6 +43,9 @@ jobs:
         run: |
           touch .env
           echo DOCS_BASE_URL=${{ env.DOCS_BASE_URL }} >> .env
+      
+      - name: Build the OpenAPI documentation
+        run: npm run gen-all
 
       - name: Build the source code
         run: npm run build

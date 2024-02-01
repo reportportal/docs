@@ -39,5 +39,8 @@ jobs:
       - name: Run lint
         run: npm run lint
 
+      - name: Build the OpenAPI documentation
+        run: npm run gen-all
+
       - name: Build the source code
         run: npm run build

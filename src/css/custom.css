@@ -76,3 +76,7 @@ h1 {
 .navbar__logo {
   height: 38px;
 }
+
+.hidden {
+  display: none !important;
+}

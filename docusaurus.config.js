@@ -35,8 +35,10 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          // sidebarPath: require.resolve('./sidebars.js'), // TODO
+          sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          docRootComponent: '@theme/DocRoot',
+          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
         },
         blog: false,
         theme: {
@@ -59,16 +61,6 @@ const config = {
             'test automation dashboard, ReportPortal manual, ReportPortal guide, ReportPortal documentation, test results dashboard, Centralized test reporting, real time test results, Automated defect triaging, Testops, Test management system, Test automation reporting',
         },
       ],
-      algolia: {
-        appId: 'CRZVCU6DFV',
-        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
-        indexName: 'reportportal',
-        replaceSearchResultPathname: {
-          from: '/docs/',
-          to: baseUrl, // To suggest URLs correctly for local and dev deployment
-        },
-        searchPagePath: 'search',
-      },
       navbar: {
         hideOnScroll: true,
         logo: {
@@ -78,6 +70,35 @@ const config = {
           href: '/',
         },
         items: [
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            type: 'dropdown',
+            label: 'APIs',
+            position: 'left',
+            items: [
+              {
+                label: 'Overview',
+                to: '/api/intro',
+              },
+              {
+                label: 'Service API',
+                to: '/category/api/service-api',
+              },
+              {
+                label: 'Service UAT',
+                to: '/category/api/service-uat',
+              },
+              {
+                label: 'API Design',
+                to: '/api/api-design/reportportal-api',
+              },
+            ],
+          },
           {
             href: 'https://reportportal.io/',
             label: 'ReportPortal.io',
@@ -183,8 +204,66 @@ const config = {
           'jsx',
         ],
       },
+      algolia: {
+        appId: 'CRZVCU6DFV',
+        apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
+        indexName: 'reportportal',
+        replaceSearchResultPathname: {
+          from: '/docs/',
+          to: baseUrl, // To suggest URLs correctly for local and dev deployment
+        },
+        searchPagePath: 'search',
+      },
     }),
-  plugins: ['./plugins/plugin-cookie-pro'],
+
+  themes: ['docusaurus-theme-openapi-docs'], // exports ApiItem and ApiDemoPanel
+
+  plugins: [
+    './plugins/plugin-cookie-pro',
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
+        config: {
+          designApi: {
+            specPath:
+              'https://raw.githubusercontent.com/reportportal/reportportal-common-api/main/api/openapi/reportportal.yaml',
+            outputDir: 'docs/api/api-design',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+          serviceApi: {
+            // "serviceApi" is considered the <id> that you will reference in the CLI
+            specPath: 'apis/service-api.yaml', // path or URL to the OpenAPI spec
+            outputDir: 'docs/api/service-api', // output directory for generated *.mdx and sidebar.js files
+            sidebarOptions: {
+              groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
+              categoryLinkSource: 'tag',
+            },
+            version: '5.10',
+            label: 'v5.10',
+            baseUrl: '/category/api/service-api',
+            versions: {},
+          },
+          serviceUat: {
+            specPath: 'apis/service-uat.yaml',
+            outputDir: 'docs/api/service-uat',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            version: '5.10',
+            label: 'v5.10',
+            baseUrl: '/category/api/service-uat',
+            versions: {},
+          },
+        },
+      },
+    ],
+  ],
 };
 
 export default config;
