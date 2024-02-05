@@ -4,7 +4,7 @@
   "description": "ReportPortal Documentation",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "npm run re-gen && docusaurus start",
     "build": "docusaurus build",
     "lint": "eslint src/**/*.{js,jsx}",
     "format": "npm run lint -- --fix",

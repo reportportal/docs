@@ -16,8 +16,9 @@ npm install
 npm run start
 ```
 
-3. For production ready build use the next command:
+3. For production ready build use the next commands:
 ```bash
+npm run gen-all
 npm run build
 ```
 
