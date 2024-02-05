@@ -44,7 +44,7 @@ Please note that Features 3 and 4 are configurable, giving you the flexibility t
 
 You can now generate as many API Keys as you need. You also have the ability to keep track of the creation date of API Keys and revoke any that are unused. Old tokens will still continue to function. Additionally, easy identification of the purpose of API Keys is facilitated through the use of prefixes.  
 
-More details can be found via the [link](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal/#2-authorization-with-users-api-key-for-agents).
+More details can be found via the [link](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal#2-authorization-with-users-api-key-for-agents).
 
 - **Gitlab CI integration Workaround:**  
 
