@@ -1,10 +1,12 @@
 ---
 sidebar_position: 3
-sidebar_label: Deploy with Docker on Linux/Mac
+sidebar_label: Deploy with Docker
 description: Make your test automation reporting more portable. Reduce the risk of configuration issues with your test reporting tool using Docker.
 ---
 
-# Deploy with Docker on Linux/Mac
+# Deploy with Docker
+
+***This is the installation guide for Linux, Mac, and Windows.***
 
 ReportPortal can be easily deployed using Docker Compose.
 
