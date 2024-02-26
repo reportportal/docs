@@ -20,6 +20,7 @@ const config = {
   onBrokenAnchors: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',
+  trailingSlash: false,
   favicon: 'img/favicon.ico',
 
   organizationName: 'reportportal',
