@@ -23,6 +23,21 @@ The Azure DevOps pipeline for integrating ReportPortal consists of the following
 
 ## Configuring Azure DevOps pipeline
 
+### Azure Pipeline Configuration File
+
+To configure Azure pipeline, you need a YAML file that defines your build steps. You can name this file as you want, such as `azure-pipelines.yml` or `ci.yml`. This file should be located at the root of your repository or in a `.azure-pipelines` directory.
+
+To get Azure DevOps to recognize and run your pipeline, you need to point it towards your YAML file:
+
+1. In your Azure DevOps project, go to **Pipelines > Pipelines**.
+2. Select **New Pipeline**.
+3. Choose your repository and branch where your YAML file is located.
+4. In the **Configure** tab, choose **YAML**.
+5. Select your YAML file and click **Save and Run**.
+
+Since the YAML file contains your CI configuration, it is essential to understand its syntax for successful setup. More on YAML syntax and pipelines configuration can be found in the [Azure Pipelines documentation](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops#define-your-build-pipeline).
+
+
 ### Environment Variables
 
 Set the following environment variables in your Azure DevOps Pipeline:
@@ -43,8 +58,12 @@ Use the following scripts to run tests with npm. The test execution logs are cap
 
 ```yaml
 - script: |
+    set -e
     npm install
-    npm run test | tee ./console.log
+    npm run test | tee ./console.log || {
+        echo "Error in tests" 
+        exit 1 
+    }
     LAUNCH_ID=$(sed -nE 's/.*ReportPortal Launch Link: .*\/([0-9]+).*/\1/p' console.log)
     echo $LAUNCH_ID
     echo "##vso[task.setvariable variable=RP_LAUNCH_ID;]$LAUNCH_ID"
