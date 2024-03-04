@@ -1,0 +1,134 @@
+---
+sidebar_position: 7
+sidebar_label: Deploy via Google Cloud Marketplace
+---
+
+# Deploy via Google Cloud Marketplace
+
+Starting from December 2023, the ReportPortal application is available in the Google Cloud Marketplace. Now, users can literally deploy our test reporting tool in just a few clicks.
+
+Any engineer, even those not well-versed in DevOps, can go to the Google Cloud Marketplace, select the required resource size, and install a ReportPortal instance. This not only streamlines the procurement process, but also eliminates the need to wait for a contract to be finalized before beginning to work with ReportPortal.
+
+Next, you will find a step-by-step guide on deploying ReportPortal via the Google Cloud Marketplace.
+
+:::note
+A Cloud Billing account needs to be created beforehand.
+:::
+
+**Step 1**
+
+[Open ReportPortal](https://console.cloud.google.com/marketplace/product/epam-mp-rp/reportportal?project=epam-mp-rp&pli=1) in Google Cloud Marketplace
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step1.png')} alt="Open ReportPortal in Google Cloud Marketplace" />
+
+**Step 2**
+
+Click ‘Get started’ button
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step2.png')} alt="Get started with ReportPortal" />
+
+**Step 3**
+
+Select a project and accept terms and agreements 
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step3.png')} alt="Accept terms and agreements" />
+
+**Step 4** (optional)
+
+Enable billing and set the billing account
+
+:::note
+You will see this screen if you have not enabled billing or set up the billing account before.
+:::
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step4-1.png')} alt="Enable billing" />
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step4-2.png')} alt="Set billing account" />
+
+After that, accept terms and agreements again.
+
+**Step 5**
+
+Click ‘Deploy’ button 
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step5.png')} alt="Deploy ReportPortal" />
+
+**Step 6** (optional)
+
+Enable API
+
+:::note
+You will see this screen if you have not enabled API before.
+:::
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step6.png')} alt="Enable API" />
+
+**Step 7**
+
+Fill necessary fields and create cluster 
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step7.png')} alt="Create cluster" />
+
+By default, a cluster with three nodes is created, but once the application is installed, the number of nodes reduces to 1.
+
+Subsequently, depending on the project's needs, the number of nodes can be increased to 5.
+
+**Step 8**
+
+Start deploying
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step8-1.png')} alt="Start deploying of our test automation reporting dashboard" />
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step8-2.png')} alt="Process of deploying" />
+
+**Step 9**
+
+Log in to ReportPortal
+
+After the deployment is completed, we will land on the page with application information from which we can follow the link to log in.
+
+1. Click the ‘Service URL’ link.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step9-1.png')} alt="‘Service URL’ link" />
+
+But after clicking the 'Service URL' link, the user receives a browser warning that the connection is not private. In reality, there is no risk because you are accessing your server, launched via an IP address.
+
+So why does a warning pop up? During deployment, Google Marketplace creates a Self-signed temporary certificate, which is used for data encryption. However, during the deployment process, ReportPortal is not tied to any domain, and this certificate is also not tied to any domain. Therefore, when following the link, the user receives a browser warning because the browser considers this certificate invalid as it cannot verify it.
+
+2. For the Chrome browser, click on 'Advanced' -> then click on 'Proceed to XXXXX (unsafe)' link. 
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step9-2.png')} alt="Advanced tab in the Chrome browser" />
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step9-3.png')} alt="Proceed to unsafe link" />
+
+3. On the opened Sign In page, enter 'superadmin' as the login.
+
+4. Enter initial password (this is generated automatically and can be found on the page where you click the ‘Service URL’ link). 
+
+<MediaViewer src={require('./img/google-cloud-marketplace/Step9-4.png')} alt="Log in to our test automation results dashboard" />
+
+:::note
+It may take Google Kubernetes Engine a few minutes before the application becomes accessible via the link.
+:::
+
+Let's get your ReportPortal instance up!
+
+## Clean Up
+
+After you have installed ReportPortal, further interactions with the application are conducted in the Google Kubernetes Engine service.
+
+If you need to delete the application, this can be accomplished either from the Applications page.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/CleanUp1.png')} alt="Global Jira Integration Creation" />
+
+Upon deleting the application, all associated resources, such as Workloads, Secrets & ConfigMaps, and Ingress will be deleted, except for the application‘s persistent volumes.
+
+:::note
+The deletion process can take a few minutes. Workloads, and Secrets&ConfigMaps tied to the cluster will remain.
+:::
+
+If you wish to eliminate all costs, you will also need to delete the cluster, as certain resources reserved for our needs will continue to be billed.
+
+Multiple applications can run within a cluster. However, if the cluster is no longer needed, it should also be deleted as illustrated in the image below.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/CleanUp2.png')} alt="Global Jira Integration Creation" />
