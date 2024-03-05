@@ -12,8 +12,8 @@
 <script src="https://cookie-cdn.cookiepro.com/consent/77055ecd-ec2c-461a-bf1c-3e84d715e668/OtAutoBlock.js" defer="defer"></script>
 <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" defer="defer" charset="UTF-8" data-domain-script="77055ecd-ec2c-461a-bf1c-3e84d715e668"></script>
 <script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.e288c768.css">
-<script src="/docs/assets/js/runtime~main.4854a51e.js" defer="defer"></script>
-<script src="/docs/assets/js/main.edb1fc19.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.38f6f6b3.js" defer="defer"></script>
+<script src="/docs/assets/js/main.6b35c0be.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -23,7 +23,7 @@
 <p><strong>1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?</strong></p>
 <p>All test results and testing data reside in-house, within your instance of ReportPortal. However, there are two types of external calls that ReportPortal makes. The first checks our status page for the latest version and informs users of it on the login page. The second sends anonymized data to <a href="/docs/terms-and-conditions/GoogleAnalyticsUsageByReportPortal">Google Analytics</a>, helping us refine the user experience and better understand application usage. This can be toggled off if desired.</p>
 <p><strong>2. Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?</strong></p>
-<p>ReportPortal utilizes PostgreSQL for its database, MinIO and the local system for file storage, and Elasticsearch for log indexing and ML processes.</p>
+<p>ReportPortal utilizes PostgreSQL for its database, MinIO and the local system for file storage, and OpenSearch for log indexing and ML processes.</p>
 <p>Retention policies can be set and adjusted within the application on a per-project basis.</p>
 <p><strong>3. How is data encrypted in transit and at rest?</strong></p>
 <p>We use encryption in transit via SSL for our SaaS instances. For on-prem installation it depends on your LoadBalancer.</p>
