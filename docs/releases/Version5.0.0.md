@@ -16,8 +16,8 @@ In this version we have:
 * Improved performance x3
 
 ## Installation details
-- [with Docker](/installation-steps/DeployWithDockerOnLinuxMac)
-- [with Kubernetes Helm chart](/installation-steps/DeployWithKubernetes) #362
+- [with Docker](/installation-steps/DeployWithDocker)
+- [with Kubernetes Helm chart](/installation-steps/deploy-with-kubernetes/) #362
 - Manual set up [without Docker](/installation-steps/DeployWithoutDocker)
 - [**v4 -> v5 data migration instruction**](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.5)
 ## Plugins

@@ -16,6 +16,6 @@ Type can be 'image' or 'video'.
 ### Examples:
 
 ```md
-<media-view thumbnail={require('./img/widget-types/ComponentHealthCheckView.png')} src="https://youtu.be/T98iy0mJk0s" alt="ComponentHealthCheckVideo" type="video" />
-<media-view src={require('./img/widget-types/ComponentHealthCheckCreation.png')} alt="ComponentHealthCheckCreation" />
+<MediaViewer src="https://youtu.be/T98iy0mJk0s" alt="ComponentHealthCheckVideo" type="video" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckCreation.png')} alt="ComponentHealthCheckCreation" />
 ```

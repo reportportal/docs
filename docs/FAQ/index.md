@@ -13,7 +13,7 @@ All test results and testing data reside in-house, within your instance of Repor
 
 **2. Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?**
 
-ReportPortal utilizes PostgreSQL for its database, MinIO and the local system for file storage, and Elasticsearch for log indexing and ML processes.
+ReportPortal utilizes PostgreSQL for its database, MinIO and the local system for file storage, and OpenSearch for log indexing and ML processes.
 
 Retention policies can be set and adjusted within the application on a per-project basis.
 

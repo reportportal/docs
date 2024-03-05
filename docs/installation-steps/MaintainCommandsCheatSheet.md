@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
 sidebar_label: Maintain commands Cheat sheet
 ---
 
