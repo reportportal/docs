@@ -1,3 +1,8 @@
+---
+sidebar_position: 14
+sidebar_label: Deploy on Ubuntu OS
+---
+
 # Deploy on Ubuntu OS
 
 ***Provided by @Tset Noitamotuahe. The article might be outdated.

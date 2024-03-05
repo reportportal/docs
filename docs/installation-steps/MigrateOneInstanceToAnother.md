@@ -1,3 +1,8 @@
+---
+sidebar_position: 10
+sidebar_label: Migrate one instance to another
+---
+
 # Migrate one instance to another
 
 When migrating the ReportPortal to AWS, you'll need to consider the types of storage required to save the data. Here are some storage components that need to be migrated:
