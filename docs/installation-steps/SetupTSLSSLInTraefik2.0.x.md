@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 sidebar_label: Setup TLS(SSL) in Traefik 2.0.x
 ---
 
@@ -32,7 +32,7 @@ Check:
 ```bash
 data
 |-- certs
-|-- elasticsearch
+|-- opensearch
 |-- postgres
 |-- traefik
 ```

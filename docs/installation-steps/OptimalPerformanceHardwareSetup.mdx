@@ -41,11 +41,14 @@ Find below the recommended hardware configuration to set up ReportPortal and hav
 ---
 :::note
 
-In Report Portal version 5.7.3, the log double-entry saving approach to DB and Elasticsearch (to data streams) has been implemented. This saving approach reduces the DB footprint almost x10 times, improves the speed of reporting logs, minimizes computation power to clean up data, and brings full-text search capabilities. Our general recommendation is to roll out Elasticsearch on the separate cluster nodes if you have a Kubernetes deployment (consider creating the node group for Elasticsearch). But if you have or expect a large amount of the logs reporting, separate cluster nodes for Elasticsearch are required. The proposed shapes for Elasticsearch nodes have been verified during performance testing and perform stable without degradation on all server configurations (from Small server type to Large). However, if you report many logs, you can tune the node's Disk size or scale up the shapes according to your needs. In addition, please pay attention to the number of Elasticsearch active shards (primary and total). In case you have a large count of projects, additional tuning for Elasticsearch might be needed(due to limitations that Elasticsearch has on the number of active shards). Please see Part 7 below for the tips.
-:::
-Additional nodes for Elasticsearch:
+In ReportPortal version 5.7.3, the log double-entry saving approach to DB and Elasticsearch (to data streams) has been implemented. This saving approach reduces the DB footprint almost x10 times, improves the speed of reporting logs, minimizes computation power to clean up data, and brings full-text search capabilities.
 
-<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for Elasticsearch in ReportPortal Testops" />
+Starting from ReportPortal version 24.1, we have migrated to OpenSearch for enhanced functionality and compatibility, replacing ElasticSearch. We recommend transitioning to OpenSearch to ensure your system stays up-to-date and benefits from the latest improvements and optimizations. Our general recommendation is to roll out OpenSearch on the separate cluster nodes if you have a Kubernetes deployment (consider creating the node group for OpenSearch). But if you have or expect a large amount of the logs reporting, separate cluster nodes for OpenSearch are required. The proposed shapes for OpenSearch nodes have been verified during performance testing and perform stable without degradation on all server configurations (from Small server type to Large). However, if you report many logs, you can tune the node's Disk size or scale up the shapes according to your needs. In addition, please pay attention to the number of OpenSearch active shards (primary and total). In case you have a large count of projects, additional tuning for OpenSearch might be needed(due to limitations that OpenSearch has on the number of active shards). Please see Part 7 below for the tips.
+
+:::
+Additional nodes for OpenSearch:
+
+<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for OpenSearch in ReportPortal Testops" />
 
 ---
 <br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
@@ -56,9 +59,8 @@ Additional nodes for Elasticsearch:
 
 The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
 :::
-<br/>
 
-## 3. Which scale I need? Configuration testing results and saturation points<br/>
+## 3. Which scale I need? Configuration testing results and saturation points
 
 **What does Saturation and vUser means? How to transform it into test cases?**
 
@@ -125,16 +127,12 @@ The purpose of the configuration performance testing is to determine saturation 
 | c5.4xlarge        | 2940                      | 305              | up to 8000    | \-Xmx3g          |
 | с5.9xlarge        | 5227                      | 440              | up to 10000   | \-Xmx4g          |
 
-<br/>
+## 4. The database separately from other services
 
-<br/>
+Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS PostgreSQL Database or a separate VM only for the PostgreSQL database.
 
-## 4. The database separately from other services<br/>
-
-   Consider deploying the database separately from other RP services. It allows increasing throughput of the server and performance of the ReportPortal overall. This can be, for example, AWS RDS PostgreSQL Database or a separate VM only for the PostgreSQL database.
-
-   The separate database instance should be the same by CPU's and RAM, but started from middle+ server type, the database instance may need to have doubled CPU's and RAM size in comparison with the application instance.
-   This is explained by the fact that with an increase in the size of the database and the number of concurrent users, the load is distributed more on the database server: increased volume of resources(CPU, memory, IOPS number, etc.) required to performing each DB query since it handles / can handle more data volume and/or can handle of a greater number of concurrent users.
+The separate database instance should be the same by CPU's and RAM, but started from middle+ server type, the database instance may need to have doubled CPU's and RAM size in comparison with the application instance.
+This is explained by the fact that with an increase in the size of the database and the number of concurrent users, the load is distributed more on the database server: increased volume of resources(CPU, memory, IOPS number, etc.) required to performing each DB query since it handles / can handle more data volume and/or can handle of a greater number of concurrent users.
 
 Example for the middle+ server:
 
@@ -142,7 +140,6 @@ Example for the middle+ server:
 | ------------- | ----- | ------------ | -------------- | --------- |
 | Application instance | 16 | 32 | 200 | c5.4xlarge |
 | Database instance | 16 | 32 | 1000 | c5.4xlarge |
-<br/>
 
 ## 5. PostgreSQL Performance Tuning
 
@@ -271,11 +268,11 @@ max_connections=500
 
 Please note, that the max_connections paramether must be more than the sum of the RP_DATASOURCE_MAXIMUMPOOLSIZE for the API and the UAT services + several connections for connecting to the database from outside.
 
-## 7. Elasticsearch Performance Tuning
+## 7. OpenSearch Performance Tuning
 
-As mentioned above, in some cases may be necessary to increase the limits of shards. The general rule is 2 active shards per 1 data stream(1 data stream equals 1 project in the ReportPortal on the default configuration). If the data stream reaches the default 50 GB storage limit, it will be rollovered and a new generation will be created (please see the diagram below). Please consider that the number of Elasticsearch shards on the default configuration is insufficient for ReportPortal installations with a large number of projects. As a result, after storing close to 3000 indices without any tuning the logs-saving behavior may be incorrect.
+As mentioned above, in some cases may be necessary to increase the limits of shards. The general rule is 2 active shards per 1 data stream(1 data stream equals 1 project in the ReportPortal on the default configuration). If the data stream reaches the default 50 GB storage limit, it will be rollovered and a new generation will be created (please see the diagram below). Please consider that the number of OpenSearch shards on the default configuration is insufficient for ReportPortal installations with a large number of projects. As a result, after storing close to 3000 indices without any tuning the logs-saving behavior may be incorrect.
 
-<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup2.png')} alt="Elasticsearch Performance Tuning in our test automation dashboard" />
+<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup2.png')} alt="OpenSearch Performance Tuning in our test automation dashboard" />
 
 To retrieve statistics from a cluster (_to check the value of shard_):
 
@@ -288,7 +285,7 @@ GET /_cluster/stats
         "successful": 3,
         "failed": 0
     },
-    "cluster_name": "elasticsearch",
+    "cluster_name": "opensearch-cluster",
     "cluster_uuid": "Oq5UUZUg3RGE0Pa_Trfds",
     "timestamp": 172365897412,
     "status": "green",
@@ -324,8 +321,8 @@ PUT /_cluster/settings
 ```
 Keep in mind, that the more shards you allow per node the more resources each node will need and the worse the performance can get.
 
-We also recommend to check the next guides in the official Elasticsearch documentation:
+We also recommend to check the next guides in the official OpenSearch documentation:
 
-[Data streams](https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html)
+[Data streams](https://opensearch.org/docs/latest/dashboards/im-dashboards/datastream/)
 
-[Size your shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html)
+[Size your shards](https://opensearch.org/blog/optimize-opensearch-index-shard-size/)

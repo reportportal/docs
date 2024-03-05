@@ -1,4 +1,11 @@
+---
+sidebar_position: 13
+sidebar_label: Deploy with AWS ECS Fargate
+---
+
 # Deploy with AWS ECS Fargate
+
+***This guide is for version RP 23.1 and earlier.***
 
 ***Provided by contributor, not verified by RP team, please use with caution.***
 

@@ -1,3 +1,8 @@
+---
+sidebar_position: 11
+sidebar_label: ReportPortal 23.1 File storage options
+---
+
 # ReportPortal 23.1 File storage options
 
 In ReportPortal 23.1 we can use multiple ways to store log attachments, user pictures and plugins.
