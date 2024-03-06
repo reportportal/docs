@@ -72,7 +72,9 @@ The following parameters are optional:
 - `rp_hierarchy_dirs = True` - Enables hierarchy for tests directories, default `False`. Doesn't support 'xdist' plugin.
 - `rp_hierarchy_dir_path_separator` - Path separator to display directories in test hierarchy. In case of empty value current system path separator will be used (os.path.sep).
 - `rp_hierarchy_code` - Enables hierarchy for inner classes and parametrized tests, default `False`. Doesn't support 'xdist' plugin.
-- `rp_bts_issue_url = https://bugzilla.some.com/show_bug.cgi?id={issue_id}` - issue URL (issue_id will be filled by parameter from pytest mark).
+- `rp_bts_issue_url = https://bugzilla.some.com/show_bug.cgi?id={issue_id}` - issue URL (issue_id will be filled by parameter from `@pytest.mark.issue` decorator). Fill this parameter if you want to automatically link failed test with an external issue or put a comment into ReportPortal defect.
+- `rp_bts_project = PROJECT` - Bug Tracking System Project name to use along with `@pytest.mark.issue` decorator. Fill this parameter if you want to automatically link failed test with an external issue. Should be the same as in corresponding integration.
+- `rp_bts_url = https://bugzilla.some.com/` - Bug Tracking System base URL to use along with `@pytest.mark.issue` decorator. Fill this parameter if you want to automatically link failed test with an external issue. Should be the same as in corresponding integration.
 - `rp_issue_id_marks = True` - Enables adding marks for issue ids (e.g. "issue:123456").
 - `rp_verify_ssl = True` - Verify SSL when connecting to the server.
 - `rp_mode = DEFAULT` - DEBUG or DEFAULT launch mode. DEBUG launches are displayed in a separate tab and not visible to anyone except owner.
