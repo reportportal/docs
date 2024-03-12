@@ -7,16 +7,14 @@ sidebar_label: Version 24.1
 
 ## 1. What's Changed:
 
-- **New feature – Immediate Auto-Analysis:**<br/>
-  This feature employs Auto-Analysis based on specific test cases immediately after their completion for proactive issue investigation.<br/>
-  Learn more about [Immediate Auto-Analysis](/analysis/ImmediateAutoAnalysis).
+- **New feature – [Immediate Auto-Analysis](/analysis/ImmediateAutoAnalysis):**  <br/>
+  This feature employs Auto-Analysis based on specific test cases immediately after their completion for proactive issue investigation.
 
-- **New feature – Immediate Pattern-Analysis:**  <br/>
-  No more need to wait for the launch finish.<br/>
-[Initiate Pattern Analysis immediately](/analysis/ImmediatePatternAnalysis) after completion of specific test cases.
+- **New feature – [Immediate Pattern-Analysis](/analysis/ImmediatePatternAnalysis):**  <br/>
+  No more need to wait for the launch finish. Initiate Pattern Analysis immediately after completion of specific test cases.
 
-- **New Integration – Gitlab Plugin:**<br/>
-  [New BTS plugin](/plugins/GitLabBTS) expanding ReportPortal BTS integration options for streamlined bugs reporting, issues.
+- **New Integration – [Gitlab Plugin](/plugins/GitLabBTS):**<br/>
+  New BTS plugin expanding ReportPortal BTS integration options for streamlined bugs reporting, issues.
 
 - **New feature – Retention Policy for Monitoring events**<br/>
   Set a custom retention period for monitoring events via environmental variables to tailor data management to your organizational needs.
@@ -30,8 +28,8 @@ sidebar_label: Version 24.1
 
 ## 2. Small Updates:
 
-- Change in Base for AA:<br/>
-  [New options](/analysis/AutoAnalysisOfLaunches#base-for-analysis) for Base for Auto Analysis have been introduced.
+- Change in [Base for AA](/analysis/AutoAnalysisOfLaunches#base-for-analysis):<br/>
+  New options for Base for Auto Analysis have been introduced.
 
 - Enhanced Monitoring:<br/>
   Improved Filtering on Monitoring page and expanded list of events being tracked
