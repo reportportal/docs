@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
-sidebar_label: Version v.23.2
+sidebar_position: 2
+sidebar_label: Version 23.2
 ---
 
-# Version v.23.2
+# Version 23.2
 
 ## 1. What's Changed:
 
