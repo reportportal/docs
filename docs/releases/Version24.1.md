@@ -31,7 +31,7 @@ sidebar_label: Version 24.1
 ## 2. Small Updates:
 
 - Change in Base for AA:<br/>
-  [New options](/analysis/AutoAnalysisOfLaunches/#base-for-analysis) for Base for Auto Analysis have been introduced.
+  [New options](/analysis/AutoAnalysisOfLaunches#base-for-analysis) for Base for Auto Analysis have been introduced.
 
 - Enhanced Monitoring:<br/>
   Improved Filtering on Monitoring page and expanded list of events being tracked
