@@ -183,10 +183,10 @@ def lambda_handler(event, context):
         }
 ```
 
-Now add this lambda to the Index TargetGroup created earlier.
+Now, add this lambda to the Index TargetGroup created earlier.
 
 #### DNS
-Add relevent DNS records in the Route53 hostedzone.
+Add relevant DNS records in the Route53 hostedzone.
 
 ### Validation
-Access the application with default credentials once the DNS record addition is propogated & validate if all sections are loading without errors.
+Access the application with default credentials once the DNS record addition is propagated & validate if all sections are loading without errors.
