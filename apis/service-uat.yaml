@@ -1,337 +1,515 @@
-openapi: 3.0.3
+openapi: 3.0.1
 info:
-  contact:
-    email: support@reportportal.io
-    name: Support
-  description: Report Portal UAT documentation
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
   title: Report Portal
-  version: 5.10.0
-# Manual added section
+  description: Report Portal UAT documentation
+  contact:
+    name: Support
+    email: support@reportportal.io
+  license:
+    name: Apache 2.0SupportEPMC-TSTReportPortal@epam.com
+    url: http://www.apache.org/licenses/LICENSE-2.0
+  version: 5.11.0
 servers:
-  - url: '{protocol}://{authority}/uat'
-    description: ReportPortal UAT server
-    variables:
-      protocol:
-        default: https
-        description: Protocol
-        enum:
-          - http
-          - https
-      authority:
-        description: Host name and port (if needed) of Report Portal server
-        default: demo.reportportal.io
-# Manual added section
-security:
-  - bearerAuth: []
+- url: //demo.reportportal.io/uat
 tags:
-  - description: Auth Configuration Endpoint
-    name: auth-configuration-endpoint
-  - description: Github Endpoint
-    name: github-endpoint
-  - description: O Auth Configuration Endpoint
-    name: o-auth-configuration-endpoint
-  - description: Sso Endpoint
-    name: sso-endpoint
+- name: auth-configuration-endpoint
+  description: Auth Configuration Endpoint
+- name: github-endpoint
+  description: Github Endpoint
+- name: o-auth-configuration-endpoint
+  description: O Auth Configuration Endpoint
+- name: sso-endpoint
+  description: Sso Endpoint
 paths:
   /settings/auth/{authType}:
     get:
-      operationId: getSettings
+      tags:
+      - auth-configuration-endpoint
+      summary: Retrieves auth settings
+      operationId: getSettingsUsingGET
       parameters:
-        - in: path
-          name: authType
-          required: true
-          schema:
-            type: string
-            enum:
-              - ad
-              - ldap
-              - saml
+      - name: authType
+        in: path
+        description: authType
+        required: true
+        schema:
+          type: string
+          enum:
+          - ad
+          - ldap
+          - saml
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/AbstractAuthResource'
-          description: OK
-      summary: Retrieves auth settings
-      tags:
-        - auth-configuration-endpoint
+      deprecated: false
     post:
-      operationId: createAuthIntegration
+      tags:
+      - auth-configuration-endpoint
+      summary: Create new auth integration
+      operationId: createAuthIntegrationUsingPOST
       parameters:
-        - in: path
-          name: authType
-          required: true
-          schema:
-            type: string
-            enum:
-              - ad
-              - ldap
-              - saml
+      - name: authType
+        in: path
+        description: authType
+        required: true
+        schema:
+          type: string
+          enum:
+          - ad
+          - ldap
+          - saml
       requestBody:
+        description: request
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateAuthRQ'
         required: true
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/AbstractAuthResource'
-          description: OK
-      summary: Create new auth integration
-      tags:
-        - auth-configuration-endpoint
+      deprecated: false
+      x-codegen-request-body-name: request
   /settings/auth/{authType}/{integrationId}:
     put:
-      operationId: updateAuthIntegration
+      tags:
+      - auth-configuration-endpoint
+      summary: Update auth integration
+      operationId: updateAuthIntegrationUsingPUT
       parameters:
-        - in: path
-          name: authType
-          required: true
-          schema:
-            type: string
-            enum:
-              - ad
-              - ldap
-              - saml
-        - in: path
-          name: integrationId
-          required: true
-          schema:
-            type: integer
-            format: int64
+      - name: authType
+        in: path
+        description: authType
+        required: true
+        schema:
+          type: string
+          enum:
+          - ad
+          - ldap
+          - saml
+      - name: integrationId
+        in: path
+        description: integrationId
+        required: true
+        schema:
+          type: integer
+          format: int64
       requestBody:
+        description: request
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateAuthRQ'
         required: true
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/AbstractAuthResource'
-          description: OK
-      summary: Update auth integration
-      tags:
-        - auth-configuration-endpoint
+      deprecated: false
+      x-codegen-request-body-name: request
   /settings/auth/{integrationId}:
     delete:
-      operationId: deleteSettings
+      tags:
+      - auth-configuration-endpoint
+      summary: Retrieves auth settings
+      operationId: deleteSettingsUsingDELETE
       parameters:
-        - in: path
-          name: integrationId
-          required: true
-          schema:
-            type: integer
-            format: int64
+      - name: integrationId
+        in: path
+        description: integrationId
+        required: true
+        schema:
+          type: integer
+          format: int64
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/OperationCompletionRS'
-          description: OK
-      summary: Retrieves auth settings
-      tags:
-        - auth-configuration-endpoint
+      deprecated: false
   /settings/oauth:
     get:
-      operationId: getOAuthSettings
+      tags:
+      - o-auth-configuration-endpoint
+      summary: Returns OAuth Server Settings
+      operationId: getOAuthSettingsUsingGET_1
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 type: object
                 additionalProperties:
                   $ref: '#/components/schemas/OAuthRegistrationResource'
-          description: OK
-      summary: Returns OAuth Server Settings
-      tags:
-        - o-auth-configuration-endpoint
+      deprecated: false
   /settings/oauth/{authId}:
-    delete:
-      operationId: deleteOAuthSetting
+    get:
+      tags:
+      - o-auth-configuration-endpoint
+      summary: Returns OAuth Server Settings
+      operationId: getOAuthSettingsUsingGET
       parameters:
-        - in: path
-          name: authId
-          required: true
-          schema:
-            type: string
+      - name: authId
+        in: path
+        description: authId
+        required: true
+        schema:
+          type: string
       responses:
-        '200':
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OAuthRegistrationResource'
+      deprecated: false
+    put:
+      tags:
+      - o-auth-configuration-endpoint
+      summary: Creates/Updates OAuth Integration Settings
+      operationId: updateOAuthSettingsUsingPUT
+      parameters:
+      - name: authId
+        in: path
+        description: authId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: clientRegistrationResource
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OAuthRegistrationResource'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OAuthRegistrationResource'
+      deprecated: false
+      x-codegen-request-body-name: clientRegistrationResource
+    post:
+      tags:
+      - o-auth-configuration-endpoint
+      summary: Creates/Updates OAuth Integration Settings
+      operationId: updateOAuthSettingsUsingPOST
+      parameters:
+      - name: authId
+        in: path
+        description: authId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: clientRegistrationResource
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OAuthRegistrationResource'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OAuthRegistrationResource'
+      deprecated: false
+      x-codegen-request-body-name: clientRegistrationResource
+    delete:
+      tags:
+      - o-auth-configuration-endpoint
+      summary: Deletes OAuth Integration Settings
+      operationId: deleteOAuthSettingUsingDELETE
+      parameters:
+      - name: authId
+        in: path
+        description: authId
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/OperationCompletionRS'
-          description: OK
-      summary: Deletes OAuth Integration Settings
-      tags:
-        - o-auth-configuration-endpoint
-    get:
-      operationId: getOAuthSettings_1
-      parameters:
-        - in: path
-          name: authId
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/OAuthRegistrationResource'
-          description: OK
-      summary: Returns OAuth Server Settings
-      tags:
-        - o-auth-configuration-endpoint
-    post:
-      operationId: updateOAuthSettings
-      parameters:
-        - in: path
-          name: authId
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OAuthRegistrationResource'
-        required: true
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/OAuthRegistrationResource'
-          description: OK
-      summary: Creates/Updates OAuth Integration Settings
-      tags:
-        - o-auth-configuration-endpoint
-    put:
-      operationId: updateOAuthSettings_1
-      parameters:
-        - in: path
-          name: authId
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OAuthRegistrationResource'
-        required: true
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/OAuthRegistrationResource'
-          description: OK
-      summary: Creates/Updates OAuth Integration Settings
-      tags:
-        - o-auth-configuration-endpoint
+      deprecated: false
   /sso/me:
     get:
-      operationId: user
+      tags:
+      - sso-endpoint
+      summary: user
+      operationId: userUsingGET
+      parameters:
+      - name: authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: credentials
+        in: query
+        schema:
+          type: object
+      - name: details
+        in: query
+        schema:
+          type: object
+      - name: principal
+        in: query
+        schema:
+          type: object
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 type: object
-                additionalProperties:
-                  type: object
-          description: OK
-      summary: Get user details
-      tags:
-        - sso-endpoint
+      deprecated: false
     post:
-      operationId: user_1
+      tags:
+      - sso-endpoint
+      summary: user
+      operationId: userUsingPOST
+      parameters:
+      - name: authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: credentials
+        in: query
+        schema:
+          type: object
+      - name: details
+        in: query
+        schema:
+          type: object
+      - name: principal
+        in: query
+        schema:
+          type: object
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 type: object
-                additionalProperties:
-                  type: object
-          description: OK
-      summary: Get user details
-      tags:
-        - sso-endpoint
+      deprecated: false
   /sso/me/github/synchronize:
     post:
-      operationId: synchronize
+      tags:
+      - github-endpoint
+      summary: Synchronizes logged-in GitHub user
+      operationId: synchronizeUsingPOST
+      parameters:
+      - name: OAuth2Request.approved
+        in: query
+        schema:
+          type: boolean
+      - name: "OAuth2Request.authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: OAuth2Request.grantType
+        in: query
+        schema:
+          type: string
+      - name: OAuth2Request.redirectUri
+        in: query
+        schema:
+          type: string
+      - name: OAuth2Request.refresh
+        in: query
+        schema:
+          type: boolean
+      - name: OAuth2Request.refreshTokenRequest.grantType
+        in: query
+        schema:
+          type: string
+      - name: OAuth2Request.resourceIds
+        in: query
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: OAuth2Request.responseTypes
+        in: query
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: clientOnly
+        in: query
+        schema:
+          type: boolean
+      - name: credentials
+        in: query
+        schema:
+          type: object
+      - name: details
+        in: query
+        schema:
+          type: object
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: principal
+        in: query
+        schema:
+          type: object
+      - name: userAuthentication.authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "userAuthentication.authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: userAuthentication.credentials
+        in: query
+        schema:
+          type: object
+      - name: userAuthentication.details
+        in: query
+        schema:
+          type: object
+      - name: userAuthentication.principal
+        in: query
+        schema:
+          type: object
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 $ref: '#/components/schemas/OperationCompletionRS'
-          description: OK
-      summary: Synchronizes logged-in GitHub user
-      tags:
-        - github-endpoint
+      deprecated: false
   /sso/user:
     get:
-      operationId: user_2
+      tags:
+      - sso-endpoint
+      summary: user
+      operationId: userUsingGET_1
+      parameters:
+      - name: authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: credentials
+        in: query
+        schema:
+          type: object
+      - name: details
+        in: query
+        schema:
+          type: object
+      - name: principal
+        in: query
+        schema:
+          type: object
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 type: object
-                additionalProperties:
-                  type: object
-          description: OK
-      summary: Get user details
-      tags:
-        - sso-endpoint
+      deprecated: false
     post:
-      operationId: user_3
+      tags:
+      - sso-endpoint
+      summary: user
+      operationId: userUsingPOST_1
+      parameters:
+      - name: authenticated
+        in: query
+        schema:
+          type: boolean
+      - name: "authorities[0].authority"
+        in: query
+        schema:
+          type: string
+      - name: credentials
+        in: query
+        schema:
+          type: object
+      - name: details
+        in: query
+        schema:
+          type: object
+      - name: principal
+        in: query
+        schema:
+          type: object
       responses:
-        '200':
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
                 type: object
-                additionalProperties:
-                  type: object
-          description: OK
-      summary: Get user details
-      tags:
-        - sso-endpoint
+      deprecated: false
 components:
   schemas:
     AbstractAuthResource:
+      title: AbstractAuthResource
       type: object
       properties:
         type:
           type: string
     OAuthRegistrationResource:
-      required:
-        - clientId
-        - clientSecret
+      title: OAuthRegistrationResource
       type: object
       properties:
         authGrantType:
           type: string
         authorizationUri:
-          pattern: ^(http://|https://)?(www\.)?([a-zA-Z0-9-]+)(\.[a-zA-Z0-9-]+)*(:[0-9]+)?(/[a-z_-]+)*$
           type: string
-          example: string
         clientAuthMethod:
           type: string
         clientId:
@@ -351,37 +529,28 @@ components:
           additionalProperties:
             type: string
         scopes:
-          uniqueItems: true
           type: array
           items:
             type: string
         tokenUri:
-          pattern: ^(http://|https://)?(www\.)?([a-zA-Z0-9-]+)(\.[a-zA-Z0-9-]+)*(:[0-9]+)?(/[a-z_-]+)*$
           type: string
-          example: string
         userInfoEndpointNameAttribute:
           type: string
         userInfoEndpointUri:
           type: string
     OperationCompletionRS:
+      title: OperationCompletionRS
       type: object
       properties:
         message:
           type: string
     UpdateAuthRQ:
-      required:
-        - enabled
-        - integrationParameters
+      title: UpdateAuthRQ
       type: object
       properties:
         enabled:
           type: boolean
         integrationParameters:
           type: object
-          additionalProperties:
-            type: object
-  # Manual added section
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
+          properties: {}
+x-original-swagger-version: "2.0"

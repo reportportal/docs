@@ -245,10 +245,17 @@ const config = {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
               categoryLinkSource: 'tag',
             },
-            version: '5.10',
-            label: 'v5.10',
-            baseUrl: '/category/api/service-api',
-            versions: {},
+            version: '5.11',
+            label: 'v5.11',
+            baseUrl: `${baseUrl}category/api/service-api`, // base URL for the API docs,
+            versions: {
+              '5.10': {
+                specPath: 'apis/5.10/service-api.yaml',
+                outputDir: 'docs/api/service-api/5.10',
+                label: 'v5.10',
+                baseUrl: `${baseUrl}category/api/service-api-5.10`,
+              },
+            },
           },
           serviceUat: {
             specPath: 'apis/service-uat.yaml',
@@ -257,10 +264,17 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
-            version: '5.10',
-            label: 'v5.10',
-            baseUrl: '/category/api/service-uat',
-            versions: {},
+            version: '5.11',
+            label: 'v5.11',
+            baseUrl: `${baseUrl}category/api/service-uat`,
+            versions: {
+              '5.10': {
+                specPath: 'apis/5.10/service-uat.yaml',
+                outputDir: 'docs/api/service-uat/5.10',
+                label: 'v5.10',
+                baseUrl: `${baseUrl}category/api/service-uat-5.10`,
+              },
+            },
           },
         },
       },
