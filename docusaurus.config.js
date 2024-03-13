@@ -247,13 +247,13 @@ const config = {
             },
             version: '5.11',
             label: 'v5.11',
-            baseUrl: '/docs/category/api/service-api', // base URL for the API docs,
+            baseUrl: `${baseUrl}category/api/service-api`, // base URL for the API docs,
             versions: {
               '5.10': {
                 specPath: 'apis/5.10/service-api.yaml',
                 outputDir: 'docs/api/service-api/5.10',
                 label: 'v5.10',
-                baseUrl: '/docs/category/api/service-api-5.10',
+                baseUrl: `${baseUrl}category/api/service-api-5.10`,
               },
             },
           },
@@ -266,13 +266,13 @@ const config = {
             },
             version: '5.11',
             label: 'v5.11',
-            baseUrl: '/docs/category/api/service-uat',
+            baseUrl: `${baseUrl}category/api/service-uat`,
             versions: {
               '5.10': {
                 specPath: 'apis/5.10/service-uat.yaml',
                 outputDir: 'docs/api/service-uat/5.10',
                 label: 'v5.10',
-                baseUrl: '/docs/category/api/service-uat-5.10',
+                baseUrl: `${baseUrl}category/api/service-uat-5.10`,
               },
             },
           },
