@@ -8,6 +8,10 @@ SAML plugin is available in ReportPortal on the Plugins page.
 
 ***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
 
+:::important
+Before starting, please, read about the [SAML provider](/reportportal-configuration/authorization/SAMLProvider/).
+:::
+
 <MediaViewer src="https://youtu.be/ljXvCVWG4mQ" alt="Okta SAML authorization in our open source test reporting tool" type="video" />
 
 To set up access with SAML:
@@ -39,11 +43,20 @@ All users of SAML will have access to the ReportPortal instance.
 Just click on the button 'Login with SAML' and choose a needed integration from the drop-down
 
 
-On Octa side you should to specify SSO url. The format for url is the next:
+On Okta side you should to specify SSO URL and audience URI.
+
+The format for SSO URL is:
 
 ```java
-https://your domain adress/uat/saml/sp/SSO/alias/report-portal-sp
+http (https)://<address of your RP instance>/uat/saml/sp/SSO/alias/report-portal-sp
 ```
+The audience URI is:
+
+```java
+report.portal.sp.id
+```
+
+<MediaViewer src={require('./img/OktaSide.png')} alt="Basic SAML Configuration" />
 
 “RP callback URL” field is an optional field to provide a redirect base path right in SAML integration settings. Fill in the field in format “RP host/uat”. The format for url is the next:
 
