@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Report Portal
+  title: ReportPortal
   description: Report Portal API documentation
   contact:
     name: Support
