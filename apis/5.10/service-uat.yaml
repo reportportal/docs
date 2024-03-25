@@ -1,5 +1,6 @@
 openapi: 3.0.3
 info:
+  title: ReportPortal
   contact:
     email: support@reportportal.io
     name: Support
@@ -7,7 +8,6 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
-  title: Report Portal
   version: 5.10.0
 # Manual added section
 servers:
