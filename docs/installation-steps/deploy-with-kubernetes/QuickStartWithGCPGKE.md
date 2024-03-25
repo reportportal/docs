@@ -11,12 +11,13 @@ tools:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) 1.28 or later
 - [Helm](https://helm.sh/docs/intro/install/) 3.11 or later
-- [google-cloud-cli](https://cloud.google.com/sdk/docs/install-sdk) and
-  [gke-gcloud-auth-plugin](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#install_plugin)
+- [google-cloud-cli](https://cloud.google.com/sdk/docs/install-sdk)
+- [gke-gcloud-auth-plugin](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#install_plugin)
 
 :::note
 For some operation systems we recommend install `google-cloud-sdk` package instead of `google-cloud-cli`.
 :::
+
 ## Initialize the gcloud CLI
 
 [Perform initial setup tasks](https://cloud.google.com/sdk/docs/initializing) and set up your default project:
@@ -25,23 +26,37 @@ For some operation systems we recommend install `google-cloud-sdk` package inste
 gcloud init
 ```
 
+## Set up Environment Variables
+
+Set up environment variables:
+
+```bash
+export LOCATION=us-central1
+export PROJECT_ID={your_project_id}
+export CLUSTER_NAME={reportportal_cluster_name}
+export REPO_NAME={reportportal_helm_repo_name}
+export RELEASE_NAME={reportportal_release_name}
+export VERSION={current_chart_version}
+export SUPERADMIN_PASSWORD={your_superadmin_password}
+```
+
+:::note
+Here and below we use `us-central1` region as a location for GKE cluster.<br/>
+However, you can use any other region.
+:::
+
 ## Set up gcloud credential helper
 
 If you have Docker, you can use the Docker credential helper to authenticate to Artifact Registry.
 
-:::note
-Here and below we use `us-central1` region as a location for GKE cluster.
-However, you can use any other region.
-:::
 Just perform the following commands:
 
 ```bash
 gcloud auth login
-gcloud auth configure-docker us-central1-docker.pkg.dev
+gcloud auth configure-docker ${LOCATION}-docker.pkg.dev
 ```
 
-You can find more information about gcloud credential helper
-[here](https://cloud.google.com/artifact-registry/docs/docker/authentication#gcloud-helper).
+Find more information about [gcloud credential helper](https://cloud.google.com/artifact-registry/docs/docker/authentication#gcloud-helper).
 
 ## Adjust Google Cloud IAM
 
@@ -50,7 +65,7 @@ a service account in GKE and providing permissions for some services to access K
 
 For adjusting access, you can do it using both Identity and Access Management (IAM)
 and Kubernetes RBAC.
-Read about it [here](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction).
+[Read](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction) about it.
 
 You can use [Predefined GKE Roles](https://cloud.google.com/kubernetes-engine/docs/how-to/iam#predefined) and update
 your account role. To set a service account on nodes, you must also have the Service Account User role (roles/iam.serviceAccountUser).
@@ -64,6 +79,7 @@ We recommend to create a separate [IAM Service Account](https://cloud.google.com
 :::important
 All GKE clusters are created as public clusters by default.
 :::
+
 You can create [two types](https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes)
 of GKE clusters:
 
@@ -71,24 +87,21 @@ of GKE clusters:
 - [Standard](https://cloud.google.com/kubernetes-engine/docs/concepts/choose-cluster-mode#why-standard)
 
 :::note
-We recommend to use Autopilot mode. It is a managed Kubernetes environment that reduces the operational cost.
+We recommend to use Autopilot mode.<br/>
+It is a managed Kubernetes environment that reduces the operational cost.
 :::
+
 ### Create a cluster in Autopilot mode
 
 It's pretty simple to create a cluster in Autopilot mode:
 
 ```bash
-gcloud container clusters create-auto reportportal-cluster \
-    --location=us-central1
+gcloud container clusters create-auto ${CLUSTER_NAME} \
+  --location=${LOCATION}
 ```
 
-For more information about creating a cluster in Autopilot mode you can find
-[here](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-an-autopilot-cluster).
+More information about [creating a cluster in Autopilot mode](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-an-autopilot-cluster).
 
-:::note
-Here and below we use `us-central1` region as a location for GKE cluster.
-However, you can use any other region.
-:::
 ### Create a cluster in Standard mode
 
 For a standard cluster you need to specify a machine type and a number of nodes.
@@ -97,19 +110,21 @@ ReportPortal requires at least 3 nodes with 2 vCPU and 4 GB memory for each.
 We recommend using `e2-standard-2` machine type with 2 vCPU and 8 GB memory:
 
 ```bash
-gcloud container clusters create reportportal-cluster \
-    --zone=us-central1-a \
-    --machine-type=e2-standard-2 --num-nodes=3
+export MACHINE_TYPE=e2-standard-2
+
+gcloud container clusters create ${CLUSTER_NAME} \
+  --zone=${LOCATION} \
+  --machine-type=${MACHINE_TYPE} \
+  --num-nodes=3
 ```
 
-More information about creating a cluster in Standard mode you can find
-[here](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#gcloud).
+More information about [creating a cluster in Standard mode](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#gcloud).
 
 ### Get cluster credentials for kubectl
 
 ```bash
-gcloud container clusters get-credentials reportportal-cluster \
-    --location=us-central1
+gcloud container clusters get-credentials ${CLUSTER_NAME} \
+  --location=${LOCATION}
 ```
 
 ### Verify the cluster mode
@@ -117,8 +132,8 @@ gcloud container clusters get-credentials reportportal-cluster \
 You can verify the cluster:
 
 ```bash
-gcloud container clusters describe reportportal-cluster \
-    --location=us-central1
+gcloud container clusters describe ${CLUSTER_NAME} \
+  --location=${LOCATION}
 ```
 
 ## Prepare Helm package for installation
@@ -131,25 +146,23 @@ develop branch.
 Create a repository in Artifact Registry for ReportPortal Helm charts:
 
 ```bash
-gcloud artifacts repositories create reportportal-helm-repo --repository-format=docker \
---location=us-central1 --description="ReportPortal Helm repository"
+gcloud artifacts repositories create ${REPO_NAME} --repository-format=docker \
+  --location=${LOCATION} --description="ReportPortal Helm repository"
 ```
 
-:::note
-More information about Store Helm charts in the Artifact Registry you can find
-[here](https://cloud.google.com/artifact-registry/docs/helm/store-helm-charts).
-:::
+More information about [Store Helm charts in the Artifact Registry](https://cloud.google.com/artifact-registry/docs/helm/store-helm-charts).
+
 Verify that the repository was created:
 
 ```bash
 gcloud artifacts repositories list
 ```
 
-Authenticate with the repository:
+### Authenticate with the repository
 
 ```bash
 gcloud auth print-access-token | helm registry login -u oauth2accesstoken \
---password-stdin https://us-central1-docker.pkg.dev
+  --password-stdin https://${LOCATION}-docker.pkg.dev
 ```
 
 ### Build and push Helm chart
@@ -164,12 +177,15 @@ Build and push the Helm chart to Artifact Registry using actual helm chart versi
 and your project id:
 
 ```bash
-cd kubernetes
+cd kubernetes/reportportal
+helm dependency update
 helm package .
-helm push reportportal-${VERSION}.tgz oci://us-central1-docker.pkg.dev/${PROJECT_ID}/reportportal-helm-repo
+helm push reportportal-${VERSION}.tgz oci://${LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}
 ```
 
-## Install ReportPortal on GKE Autopilot Cluster via Helm chart
+## Install ReportPortal from Artifact Registry
+
+### Install Helm chart on GKE Autopilot Cluster
 
 By default, ReportPortal Helm chart install with infrastructure dependencies in GKE Autopilot Cluster:
 
@@ -181,72 +197,105 @@ By default, ReportPortal Helm chart install with infrastructure dependencies in 
 You can disable an installation of some components via Helm chart values, but you have to provide
 new credentials for your standalone components.
 
-More information about it you can find here:
-[Install the chart with dependencies](https://github.com/reportportal/kubernetes#install-the-chart-with-dependencies).
-
-### Install ReportPortal from Artifact Registry
+More information about it you can find here: [Install the chart with dependencies](https://github.com/reportportal/kubernetes#install-the-chart-with-dependencies).
 
 For installing ReportPortal on GKE Autopilot Cluster, you need to set the:
 
-- ingress controller as a `gke`
+- ingress controller as a `gce`
 - superadmin password
 - resources requests for api, uat, and analyzer services
 
 ```bash
 helm install \
-    --set ingress.class="gke" \
-    --set uat.superadminInitPasswd.password=${SUPERADMIN_PASSWORD} \
-    --set uat.resources.requests.memory="1Gi" \
-    --set serviceapi.resources.requests.cpu="1000m" \
-    --set serviceapi.resources.requests.memory="2Gi" \
-    --set serviceanalyzer.resources.requests.memory="1Gi" \
-    reportportal \
-    oci://us-central1-docker.pkg.dev/${PROJECT_ID}/reportportal-helm-repo/reportportal \
-    --version ${VERSION}
+  --set ingress.class="gce" \
+  --set uat.superadminInitPasswd.password=${SUPERADMIN_PASSWORD} \
+  --set uat.resources.requests.memory="1Gi" \
+  --set serviceapi.resources.requests.cpu="1000m" \
+  --set serviceapi.resources.requests.memory="2Gi" \
+  --set serviceanalyzer.resources.requests.memory="1Gi" \
+  ${RELEASE_NAME} \
+  oci://${LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/reportportal \
+  --version ${VERSION}
 ```
 
-## Install Helm chart on GKE Standard Cluster
+### Install Helm chart on GKE Standard Cluster
 
 For installing ReportPortal on GKE Standard Cluster you need to set:
 
-- ingress controller as a `gke`
+- ingress controller as a `gce`
 - superadmin password
 
 ```bash
 helm install \
-    --set ingress.class="gke" \
-    --set uat.superadminInitPasswd.password=${SUPERADMIN_PASSWORD} \
-    reportportal \
-    oci://us-central1-docker.pkg.dev/${PROJECT_ID}/reportportal-helm-repo/reportportal \
-    --version ${VERSION}
+  --set ingress.class="gce" \
+  --set uat.superadminInitPasswd.password=${SUPERADMIN_PASSWORD} \
+  ${RELEASE_NAME} \
+  oci://${LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/reportportal \
+  --version ${VERSION}
 ```
 
-### Ingress configuration
+## Ingress configuration
 
-You can add custom gke ingress annotations via `ingress.annotations.gke` parameter:
+You can add custom gce ingress annotations via `ingress.annotations.gce` parameter:
 
 ```bash
---set-json='ingress.annotations.gke={"key1":"value1","key2":"value2"}'
+helm install \
+...
+  --set-json='ingress.annotations.gce={"key1":"value1","key2":"value2"}'
+...
 ```
 
-If you have some domain name, set `ingress.usedomainname` variable to `true` and
-set this FQDN to `ingress.hosts`:
+If you have some domain name, set this FQDN to `ingress.hosts`:
 
 ```bash
---set ingress.usedomainname=true \
---set ingress.hosts[0].reportportal.k8.com
+helm install \
+...
+  --set ingress.hosts[0].reportportal.k8.com
+...
 ```
+
+## Certificate Management
+
+### Google-managed SSL certificates
+
+:::note
+This is recommended approach for using SSL certificates in GKE.
+:::
+
+You can use Google-managed SSL certificates for your domain name:
+
+```bash
+helm install \
+...
+  --set ingress.tls.certificate.gcpManaged=true
+  --set ingress.hosts\[0\]="example.com"
+...
+
+```
+
+### Cert-Manager
+
+You can use [Cert-Manager](https://github.com/reportportal/kubernetes/blob/master/docs/cert-manager-config.md) to manage certificates for your domain name.
 
 ## Clean up
 
 To delete the cluster:
 
 ```bash
-gcloud artifacts repositories delete reportportal-cluster --location=us-central1
+gcloud container clusters delete ${CLUSTER_NAME} --location=${LOCATION}
 ```
 
 To delete the artifacts repository:
 
 ```bash
-gcloud artifacts repositories delete reportportal-helm-repo --location=us-central1
+gcloud artifacts repositories delete ${CLUSTER_NAME} --location=${LOCATION}
+```
+
+### Disable HTTP Load Balancing
+
+If you want to disable HTTP Load Balancing, you can do it after the certificate
+is attached to the Ingress resource:
+
+```bash
+kubectl annotate ingress ${APP_NAME}-gateway-ingress kubernetes.io/ingress.allow-http: "false"
 ```
