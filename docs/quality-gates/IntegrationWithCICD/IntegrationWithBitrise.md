@@ -1,5 +1,5 @@
 ---
-sidebar_label: Integration with GitLab CI
+sidebar_label: Integration with Bitrise CI/CD
 ---
 
 
