@@ -10,17 +10,17 @@ The OpenAPI documentation is generated using
 ## Running locally
 
 1. Install the dependencies
-```bash
+```console
 npm install
 ```
 
 2. Run application in development mode
-```bash
+```console
 npm run start
 ```
 
 3. For production ready build use the next commands:
-```bash
+```console
 npm run gen-all
 npm run build
 ```
