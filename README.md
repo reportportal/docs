@@ -2,7 +2,7 @@
 
 The documentation built with [Docusaurus](https://docusaurus.io).
 
-The search is implemented using [DocSearch](https://docsearch.algolia.com).
+The search is implemented using [Algolia DocSearch](https://docsearch.algolia.com).
 
 The OpenAPI documentation is generated using
 [PaloAltoNetworks docusaurus-openapi-docs plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs).
