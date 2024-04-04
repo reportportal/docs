@@ -19,11 +19,11 @@ To scale your ReportPortal services in Kubernetes, you need to adjust the `repli
 
 1. **Update Replica Count**:
    Change `replicaCount` from `1` to `2` for additional replication.<br />
-   [values.yaml replicaCount](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L71)
+   [values.yaml replicaCount](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L73)
 
 2. **Edit Total Number of Queues**:
    Modify `queues.totalNumber` from `10` to `20` to increase the total available queues.<br />
-   [values.yaml queues.totalNumber](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L120)
+   [values.yaml queues.totalNumber](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L139)
 
    Use the following formula for calculation:<br />
    `perPodNumber = totalNumber / serviceapi.replicaCount`
