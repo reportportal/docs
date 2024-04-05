@@ -251,7 +251,7 @@ const config = {
             versions: {
               '5.10': {
                 specPath: 'apis/5.10/service-api.yaml',
-                outputDir: 'docs/api/service-api/5.10',
+                outputDir: 'docs/api/service-api/versions/5.10',
                 label: 'v5.10',
                 baseUrl: `${baseUrl}category/api/service-api-5.10`,
               },
@@ -270,7 +270,7 @@ const config = {
             versions: {
               '5.10': {
                 specPath: 'apis/5.10/service-uat.yaml',
-                outputDir: 'docs/api/service-uat/5.10',
+                outputDir: 'docs/api/service-uat/versions/5.10',
                 label: 'v5.10',
                 baseUrl: `${baseUrl}category/api/service-uat-5.10`,
               },
