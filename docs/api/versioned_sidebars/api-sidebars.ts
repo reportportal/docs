@@ -50,7 +50,7 @@ const apiSidebars: SidebarsConfig = {
         description: 'This is a generated index of the ReportPortal Authtorization API.',
         slug: '/category/api/service-api-5.10'
       },
-      items: require('../service-api/5.10/sidebar.ts')
+      items: require('../service-api/versions/5.10/sidebar.ts')
     }
   ],
 };
