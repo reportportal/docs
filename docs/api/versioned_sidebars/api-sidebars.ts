@@ -47,7 +47,7 @@ const apiSidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         title: 'Service API',
-        description: 'This is a generated index of the ReportPortal Authtorization API.',
+        description: 'This is a generated index of the ReportPortal Service API.',
         slug: '/category/api/service-api-5.10'
       },
       items: require('../service-api/versions/5.10/sidebar.ts')
