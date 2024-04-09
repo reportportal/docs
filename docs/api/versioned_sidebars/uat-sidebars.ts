@@ -50,7 +50,7 @@ const uatSidebars: SidebarsConfig = {
         description: 'This is a generated index of the ReportPortal Authtorization API.',
         slug: '/category/api/service-uat-5.10'
       },
-      items: require('../service-uat/5.10/sidebar.ts')
+      items: require('../service-uat/versions/5.10/sidebar.ts')
     }
   ],
 }

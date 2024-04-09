@@ -2,7 +2,7 @@
 
 The documentation built with [Docusaurus](https://docusaurus.io).
 
-The search is implemented using [DocSearch](https://docsearch.algolia.com).
+The search is implemented using [Algolia DocSearch](https://docsearch.algolia.com).
 
 The OpenAPI documentation is generated using
 [PaloAltoNetworks docusaurus-openapi-docs plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs).
@@ -10,17 +10,17 @@ The OpenAPI documentation is generated using
 ## Running locally
 
 1. Install the dependencies
-```bash
+```console
 npm install
 ```
 
 2. Run application in development mode
-```bash
+```console
 npm run start
 ```
 
 3. For production ready build use the next commands:
-```bash
+```console
 npm run gen-all
 npm run build
 ```
