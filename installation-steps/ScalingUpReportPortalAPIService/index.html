@@ -12,8 +12,8 @@
 <script src="https://cookie-cdn.cookiepro.com/consent/77055ecd-ec2c-461a-bf1c-3e84d715e668/OtAutoBlock.js" defer="defer"></script>
 <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" defer="defer" charset="UTF-8" data-domain-script="77055ecd-ec2c-461a-bf1c-3e84d715e668"></script>
 <script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.e288c768.css">
-<script src="/docs/assets/js/runtime~main.8ea6b0c3.js" defer="defer"></script>
-<script src="/docs/assets/js/main.2fdf0202.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.b4804a2a.js" defer="defer"></script>
+<script src="/docs/assets/js/main.774439f5.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -29,12 +29,12 @@
 <li>
 <p><strong>Update Replica Count</strong>:
 Change <code>replicaCount</code> from <code>1</code> to <code>2</code> for additional replication.<br>
-<a href="https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L71" target="_blank" rel="noopener noreferrer">values.yaml replicaCount</a></p>
+<a href="https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L73" target="_blank" rel="noopener noreferrer">values.yaml replicaCount</a></p>
 </li>
 <li>
 <p><strong>Edit Total Number of Queues</strong>:
 Modify <code>queues.totalNumber</code> from <code>10</code> to <code>20</code> to increase the total available queues.<br>
-<a href="https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L120" target="_blank" rel="noopener noreferrer">values.yaml queues.totalNumber</a></p>
+<a href="https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L139" target="_blank" rel="noopener noreferrer">values.yaml queues.totalNumber</a></p>
 <p>Use the following formula for calculation:<br>
 <code>perPodNumber = totalNumber / serviceapi.replicaCount</code></p>
 </li>
