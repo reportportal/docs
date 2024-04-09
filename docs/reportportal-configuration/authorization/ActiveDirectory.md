@@ -4,17 +4,23 @@ sidebar_label: Active Directory
 
 # Active Directory
 
-Active Directory plugin is available in ReportPortal on the Plugins page.
+The Active Directory plugin is available in ReportPortal on the Plugins page, enhancing the efficiency of our test report dashboard.
 
-To set up access with Active Directory:
+To set up access with Active Directory, follow these steps:
 
-1. Log in to the ReportPortal as an ADMIN user
-2. Then open the list on the right of the user's image.
-3. Click the 'Administrative' link
-4. Click the 'Plugins' from the left-hand sidebar
-5. Click on the'Activate Directory' tab.
-6. Click on Add new integration
-7. The next fields should be present:
+1. Log in to ReportPortal as an ADMIN user.
+
+2. Click on the dropdown menu located to the right of the user's image.
+
+3. Select the 'Administrative' link.
+
+4. From the left-hand sidebar, click on 'Plugins'.
+
+5. Navigate to the 'Active Directory' tab.
+
+6. Click on 'Add new integration'.
+
+At this point, several fields should be displayed.
 
 ```javascript 
 'Domain*': text
@@ -26,14 +32,11 @@ To set up access with Active Directory:
 'UserSearchFilter' (the same as for LDAP): text 
   ```
 
-Mandatory fields are marked with red.
-Click the 'Submit' button.
-All users of Active Directory will have access to the ReportPortal instance.  
-For entrance to ReportPortal, the user should use their domain credentials (Login and password).
+Fields marked in red are mandatory. Once filled, click the 'Submit' button. Completing this process grants all Active Directory users access to the ReportPortal instance.
 
+To access ReportPortal, users should utilize their domain credentials (Login and password).
 
-
-Please find the example with configurations for Microsoft Active Directory that worked successfully provided by our user:
+Refer to the example provided below featuring configurations for Microsoft Active Directory that have been successfully utilized by our users:
 
 **Table with properties and values for LDAP Microsoft Active Directory**
 
