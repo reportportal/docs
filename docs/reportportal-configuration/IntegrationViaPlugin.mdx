@@ -5,7 +5,7 @@ sidebar_label: Integration via plugin
 
 # Integration via plugin
 
-Users can reinforce ReportPortal with adding additional integrations with:
+Users can enhance ReportPortal by adding additional integrations with:
 * [Atlassian Jira Server](/plugins/AtlassianJiraServer)
 * [Atlassian Jira Cloud](/plugins/AtlassianJiraCloud)
 * [Rally](/plugins/Rally)
@@ -20,26 +20,28 @@ Users can reinforce ReportPortal with adding additional integrations with:
 
 <MediaViewer src={require('./img/Integrations.png')} alt="Integrations with our test automation results dashboard" />
 
+If you're keen on incorporating ReportPortal with other external systems, and can't find the necessary tab in the Project Settings, please refer to the Plugins section in our documentation for guidance. Our test reporting tool integrates seamlessly, allowing for a streamlined connection with external systems.
 
-If you want to integrate ReportPortal with these external systems, and you can not find a needed tab on the Project Settings, please check the section in documentation [Plugins](/category/plugins).
+The integrations can be added at a global level, applicable for all projects on an instance, in the Administrate section. Alternatively, they can be specific to a project and can be configured in the Project Settings.
 
-Integration configurations can be added on the global level (for all projects on the instance) in the Administrate section or the project level (only for one project) on Project Settings.
+For those who require a different configuration to other projects, or want to integrate only their specific project with an external system, the following steps could be followed:
 
-If you have another configuration than other projects have or you want to integrate only your project with an external system, you should perform the next actions:
+1. Log into ReportPortal as a PROJECT MANAGER or ADMINISTRATOR
 
-1. Log in to ReportPortal as `PROJECT MANAGER` or `ADMINISTRATOR`
-2. Go to Project settings > Integrations
-3. Click on one of the integration panels
-4. And click the button "Unlink and setup manually"
+2. Navigate to Project settings > Integrations
 
-By this action, you unlink the current project from the global settings and configure your integration.
+3. Click on one of the shown integration panels
+
+4. Click on the button titled "Unlink and setup manually"
+
+Performing these steps will unlink your current project from the global settings and initiate your own configuration.
 
 <MediaViewer src={require('./img/UnlinkGlobalIntegration.png')} alt="Unlink Global Jira Integration" />
 
 :::note
 If you unlink project setting and ADMIN changes global settings for the whole instance, your project will use your project settings.
 :::
-To return global settings, you need to click a button "Reset to global settings".
-In this case, your settings will be deleted, and integration will use global settings.
 
-You can always reset to the global settings.
+To revert to the global settings, click the button titled "Reset to global settings". This action will erase your settings, and the integration will revert to using the global settings.
+
+Remember, you can always reset to the global settings.
