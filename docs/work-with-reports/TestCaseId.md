@@ -26,7 +26,7 @@ You can find a test case ID in the 'Edit' modal.
 
 ## How you can report items with Test case ID?
 
-You can report test case id via agents. All details you can find in the dev guide https://github.com/reportportal/client-java/wiki/Test-case-ID
+You can [report test case id via agents](https://github.com/reportportal/client-java/wiki/Test-case-ID). 
 
 If the test execution has test parameters, a test case ID will be generated on the base of:
 

@@ -11,12 +11,8 @@ In this tutorial, we will walk you through the process of integrating ReportPort
 To run your tests in any kind of CI, you first need a way to execute them in the
 console. For example, for Java this might be calling a build tool like Gradle or Maven
 with: `./gradlew test` or `./mvnw test` respectively. For Python, it might be
-`pytest` command. Your tests should be already integrated with a ReportPortal agent. To
-find out how to do that, check out our documentation on [corresponding
-page](/log-data-in-reportportal/test-framework-integration/).
-You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
-credentials while the workflow is running, see official [GitHub Docs
-](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) for more details.
+`pytest` command. Your tests should be already [integrated with a ReportPortal agent](/log-data-in-reportportal/test-framework-integration/). You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
+credentials while the workflow is running, see official [GitHub Docs](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) for more details.
 
 ## Using GitHub Actions workflow file
 
