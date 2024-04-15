@@ -7,48 +7,36 @@ sidebar_label: Version 23.2
 
 ## 1. What's Changed:
 
-- **New feature - Monitoring:**
+- **New feature - [Monitoring](/admin-panel/EventMonitoring):**
 
-A new Event Monitoring interface has been introduced, providing administrators with a convenient means to review all activities at the Project level through the Search & Filter functionality within the Admin panel. Events at the instance level are not visible on the UI, but they are securely stored in the database. This data can be easily transmitted to SIEM systems for future monitoring and analysis.  
+A new Event Monitoring interface has been introduced, providing administrators with a convenient means to review all activities at the Project level through the Search & Filter functionality within the Admin panel. Events at the instance level are not visible on the UI, but they are securely stored in the database. This data can be easily transmitted to SIEM systems for future monitoring and analysis.
 
-More details can be found via the [link](/admin-panel/EventMonitoring).
-
-- **Project Activity Panel Adjustments:**
+- **[Project Activity Panel](/dashboards-and-widgets/ProjectActivityPanel) Adjustments:**
 
 The list of project activities displayed in the Project Activity Panel has been expanded.
-
-More details can be found via the [link](/dashboards-and-widgets/ProjectActivityPanel).
 
 :::important
 
 Please take into account that starting from this point forward, all events will have a new format for their storing in the database. Consequently, all events which have been stored prior to version 23.2 will be deleted.
 :::
 
-- **New feature – Delete Account:**
+- **New feature – [Delete Account](/user-account/DeleteAccount):**
 
 Now instance administrators can empower users to delete their accounts and obfuscate associated personal data. 
 
-More details can be found via the [link](/user-account/DeleteAccount).
-
-- **New feature – Personal Data Retention policy:**
+- **New feature – Personal [Data Retention policy](/user-account/DataRetentionProcedure):**
 
 ReportPortal now offers the option to set a retention period for collected personal data during instance configuration.
-
-More details can be found via the [link](/user-account/DataRetentionProcedure).
 
 :::note
 Please note that Features 3 and 4 are configurable, giving you the flexibility to decide whether you want to use these features or not. If you choose to utilize them, you can configure them using environmental variables. Further details can be found in the respective documentation.
 :::
 
-- **New feature – API Key:**
+- **New feature – [API Key](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal#2-authorization-with-users-api-key-for-agents):**
 
 You can now generate as many API Keys as you need. You also have the ability to keep track of the creation date of API Keys and revoke any that are unused. Old tokens will still continue to function. Additionally, easy identification of the purpose of API Keys is facilitated through the use of prefixes.  
 
-More details can be found via the [link](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal#2-authorization-with-users-api-key-for-agents).
-
-- **Gitlab CI integration Workaround:**  
-
-More details can be found via the [link](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI).
+- **[Gitlab CI integration](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI) Workaround:**  
 
 ## 2. Small updates:
 
@@ -109,6 +97,4 @@ Configuration examples on the user profile page have been updated.
 |Auto Analyzer|reportportal/service-auto-analyzer|5.10.0|
 |Metrics Gatherer|reportportal/service-metrics-gatherer|5.10.0|
 
-## 6. Link to Migration guide:
-
-[Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.23.2)
+## 6. [Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.23.2)

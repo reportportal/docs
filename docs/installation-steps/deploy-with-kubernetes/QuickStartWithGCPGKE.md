@@ -63,9 +63,8 @@ Find more information about [gcloud credential helper](https://cloud.google.com/
 Installation of ReportPortal requires setting up access to your GKE cluster for creating
 a service account in GKE and providing permissions for some services to access Kubernetes API.
 
-For adjusting access, you can do it using both Identity and Access Management (IAM)
-and Kubernetes RBAC.
-[Read](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction) about it.
+For adjusting access, you can do it using both [Identity and Access Management (IAM)
+and Kubernetes RBAC](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction).
 
 You can use [Predefined GKE Roles](https://cloud.google.com/kubernetes-engine/docs/how-to/iam#predefined) and update
 your account role. To set a service account on nodes, you must also have the Service Account User role (roles/iam.serviceAccountUser).

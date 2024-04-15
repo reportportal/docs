@@ -5,10 +5,11 @@ sidebar_label: Version 5.1.0
 
 # Version 5.1.0
 
->**Important**: We are constantly improving ReportPortal. And in version 5.1 we have changed a way we encrypt your personal data. Please be aware, that for successful interaction with version 5.1 you need to change a password at the first login.
-> **Please read instructions below**.
->
-> Thank you for being with us, ReportPortal team
+:::important
+We are constantly improving ReportPortal. And in version 5.1 we have changed a way we encrypt your personal data. Please be aware, that for successful interaction with version 5.1 you need to change a password at the first login.
+
+Please read instructions below.
+:::
 
 ## Brand new features
 - [#893](https://github.com/reportportal/reportportal/issues/893) Improved ML in Аuto-Autoanalysis 2.0
@@ -50,4 +51,4 @@ sidebar_label: Version 5.1.0
 LDAP returns Code 500 when the integration configuration is not correct
 
 ## How to migrate to the latest version 5.1
-Details can be found [here](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.5.1)
+[Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.5.1)

@@ -659,6 +659,4 @@ Where body is:
 }
 ```
 
-## Example
-
-Example using bash yo can find [here](https://github.com/ihar-kahadouski/dev-guide/tree/master/bash-example)
+## [Example](https://github.com/ihar-kahadouski/dev-guide/tree/master/bash-example)

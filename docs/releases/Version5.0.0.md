@@ -21,9 +21,7 @@ In this version we have:
 - Manual set up [without Docker](/installation-steps/DeployWithoutDocker)
 - [**v4 -> v5 data migration instruction**](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.5)
 ## Plugins
-Jira, Rally, SauceLabs integration now will work through the plugin functionality. You need to download latest JAR package from our Bintray repository, and drag-n-drop it ReportPortal in Administrative section -> Plugins.
-
-Read more [here](/plugins/ManagePlugins#upload-plugin).
+Jira, Rally, SauceLabs integration now will work through the plugin functionality. You need to download [latest JAR package](/plugins/ManagePlugins#upload-plugin) from our Bintray repository, and drag-n-drop it ReportPortal in Administrative section -> Plugins.
 
 Available plugins to download:
 - [Jira](/plugins/AtlassianJiraServer)
