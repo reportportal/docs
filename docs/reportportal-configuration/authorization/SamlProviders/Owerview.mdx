@@ -1,10 +1,9 @@
 ---
-sidebar_label: SAML Provider
+sidebar_label: Owerview
+sidebar_position: 1
 ---
 
-# SAML provider
-
-***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
+# SAML Owerview
 
 This plugin allows you to configure a connection with a SAML provider.
 
@@ -12,7 +11,33 @@ Integration with SAML will allow you to login into ReportPortal using SSO instea
 
 The plugin provides a mechanism to exchange information between ReportPortal and SAML provider, such as the possibility to login to ReportPortal with SAML credentials.
 
+## User JIT provisioning
+
+:::note
+If you have a pre-created Internal user, you can't log in by SAML using their
+credentials (Email or Name).
+:::
+
+Just-in-time (JIT) provisioning is a feature that creates a user account in
+ReportPortal when a user logs in for the first time. This feature is available
+for SAML integrations.
+
+However, you can't provision user from SAML Provider to ReportPortal if you
+already have a pre-created internal user in ReportPortal with the same email
+and different login. The login must be the email name without the domain part.
+For instance, if the email is `john_weak@babayaga.com` the login should be
+`john_weak`.
+In oposite case, the user will not be able to login to ReportPortal.
+You can fix it by changing the login name or email or delete the user from
+the ReportPortal.
+
 ## SAML provider requirements
+
+:::tip
+There are detailed manuals for configuration of
+[Azure SAML](AzureSaml.mdx)
+and [Okta SAML](OktaSaml.mdx).
+:::
 
 - SAML 2.0 version
 - HTTP-POST Binding
@@ -23,11 +48,6 @@ The plugin provides a mechanism to exchange information between ReportPortal and
     - first name
     - last name
     - full name (instead first and last name)
-
-:::tip
-There are detailed manuals for configuration of [Azure SAML](/reportportal-configuration/authorization/SAMLProvider/) and [Okta SAML](/reportportal-configuration/authorization/SAMLProvider/OktaSAML).
-:::
-
 
 ## Add integration
 
@@ -110,7 +130,7 @@ urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
  </saml:Attribute>
 ```
 
-***ReportPortal Callback URL (Optional)*** - This field provides a redirect base path.
+***ReportPortal Callback URL*** - This field provides a redirect base path.
 
 Once you have submitted an integration with “RP callback URL”, the URL will be applied to all SAML integrations.
 
