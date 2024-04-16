@@ -5,7 +5,7 @@ sidebar_label: Okta SAML
 # Okta SAML
 
 :::important
-Before starting, please, read about the [SAML provider](Owerview.mdx).
+Before starting, please, read about the [SAML provider](Overview.mdx).
 :::
 
 This guide will help you to configure the connection between ReportPortal and Okta.
@@ -70,10 +70,10 @@ report.portal.sp.id
 ```
 
 You can change this identifier when you deploy ReportPortal. More information
-about the identifier you can find in the [SAML Owerview](Owerview.mdx#identifier).
+about the identifier you can find in the [SAML Overview](Overview.mdx#identifier).
 
 In the `Name ID format` field, select `EmailAddress`. You can use UNSPECIFIED format as well.
-More information about the Name ID format you can find in the [SAML Owerview](Owerview.mdx#reportportal-configuration).
+More information about the Name ID format you can find in the [SAML Overview](Overview.mdx#reportportal-configuration).
 
 #### Fill in the Attribute Statements
 
@@ -114,7 +114,7 @@ configure the ReportPortal SAML plugin.
 :::note
 You can't provision user from Okta to ReportPortal if you already have
 a pre-created internal user in ReportPortal with the same email and different
-login. Read more about [JIT provisioning](Owerview.mdx#user-jit-provisioning)
+login. Read more about [JIT provisioning](Overview.mdx#user-jit-provisioning)
 :::
 
 You can add a user by clicking on the `Assignments` tab and then clicking on
@@ -147,7 +147,7 @@ In the `Identity provider name ID` field, enter the
 `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` if you choosen the
 `EmailAddress` format for the `Name ID format` in the Okta configuration.
 If you choosen the `UNSPECIFIED` format, keep this field empty. More information
-about the Name ID format you can find in the [SAML Owerview](Owerview.mdx#reportportal-configuration).
+about the Name ID format you can find in the [SAML Overview](Overview.mdx#reportportal-configuration).
 
 #### Provider name
 
