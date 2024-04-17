@@ -88,5 +88,4 @@ Some of the environmental variables names are still ElasticSearch specific, but 
 |Auto Analyzer|reportportal/service-auto-analyzer|5.11.0|
 |Metrics Gatherer|reportportal/service-metrics-gatherer|5.11.0|
 
-## 7. Link to Migration Guide:
-https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v24.1
+## 7. [Migration Guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.24.1)

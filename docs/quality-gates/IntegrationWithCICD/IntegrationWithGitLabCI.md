@@ -11,10 +11,7 @@ In this tutorial we will walk you through the process of integrating ReportPorta
 To run your tests in any kind of CI, you first need a way to execute them in the
 console. E.G. for Java this might be calling a build tool like Gradle or Maven
 with: `./gradlew test` or `./mvnw test` respectively. For Python it might be
-`pytest` command. Your tests should be already integrated with a ReportPortal agent. To
-find out how to do that, check out our documentation on [corresponding
-page](/log-data-in-reportportal/test-framework-integration/).
-You also need a working ReportPortal instance and access to your secret storage, E.G.
+`pytest` command. Your tests should be already [integrated with a ReportPortal agent](/log-data-in-reportportal/test-framework-integration/). You also need a working ReportPortal instance and access to your secret storage, E.G.
 [HashiCorp Vault](https://www.vaultproject.io/), to securely get your
 credentials while the pipeline is running.
 
