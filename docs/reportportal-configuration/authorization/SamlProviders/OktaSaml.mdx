@@ -1,0 +1,202 @@
+---
+sidebar_label: Okta SAML
+---
+
+# Okta SAML
+
+:::important
+Before starting, please read about the [SAML provider](Overview.mdx).
+:::
+
+This guide will help you to configure the connection between ReportPortal and Okta.
+
+There is no comprehensive guide for Okta configuration, but you can use it as
+a reference for the general steps. To get more information about Okta configuration,
+read the [official documentation](https://developer.okta.com/docs/guides/saml-application-setup/overview/).
+
+SAML plugin is available in ReportPortal on the Plugins page.
+
+## Requirements
+
+1. Okta account
+2. ReportPortal instance
+3. Access to the ReportPortal instance and Okta account
+4. Available connection between Okta and ReportPortal.
+
+## Configuration Okta
+
+### Step 1: Create a new App Integration
+
+#### Go to the Okta dashboard
+
+<MediaViewer src={require('./img/okta-saml/okta-step-1.0.jpg')} alt="Create a new App Integreation" />
+
+Click on the `Applications` in the sidebar menu and click on the
+`Create App Integration` button.
+
+#### Choose integration type
+
+<MediaViewer src={require('./img/okta-saml/okta-step-1.1.jpg')} alt="Pick SAML 2.0" />
+
+Pick `SAML 2.0` and click `Next`.
+
+#### Fill the general settings
+
+<MediaViewer src={require('./img/okta-saml/okta-step-1.2.jpg')} alt="Fill in the App Integration form" />
+
+In the `App name` field, enter the application's name. Click `Next`.
+
+### Step 2: Configure SAML
+
+#### Fill in the SAML settings 
+
+<MediaViewer src={require('./img/okta-saml/okta-step-2.0.jpg')} alt="Fill in the SAML settings" />
+
+In the `Single sign-on URL` field, enter the following URL:
+
+```url
+https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
+```
+In my case, I deployed ReportPortal on the local machine, so I used the following URL:
+
+```url
+http://192.168.49.2/uat/saml/sp/SSO/alias/report-portal-sp
+```
+
+In the `Audience URI (SP Entity ID)` field, enter the following identifier:
+
+```
+report.portal.sp.id
+```
+
+You can change this identifier when you deploy ReportPortal. More information
+about the identifier you can find in the [SAML Overview](Overview.mdx#identifier).
+
+In the `Name ID format` field, select `EmailAddress`. You can use the UNSPECIFIED format as well.
+More information about the Name ID format you can find in the [SAML Overview](Overview.mdx#reportportal-configuration).
+
+#### Fill in the Attribute Statements
+
+<MediaViewer src={require('./img/okta-saml/okta-step-2.1.jpg')} alt="Fill in the Attribute Statements" />
+
+Add the following attributes:
+
+- `user.email` with the value `email`
+- `user.firstName` with the value `firstName`
+- `user.lastName` with the value `lastName`
+
+Click `Next`.
+
+#### Provide feedback
+
+<MediaViewer src={require('./img/okta-saml/okta-step-2.2.jpg')} alt="Provide feedback" />
+
+In my case, I picked the `I'm an Okta customer adding an internal app` option
+and picked in the `App type` field that 'This is an internal app that we have created'.
+
+Click `Finish`.
+
+
+#### Copy metadata URL
+
+<MediaViewer src={require('./img/okta-saml/okta-step-2.3.jpg')} alt="Copy metadata URL" />
+
+After the App Integration is created, you will see the `Settings` tab with the
+`Sign on methods` section.
+
+Copy the ' Metadata URL ' in the `SAML 2.0` section. You will need it to
+configure the ReportPortal SAML plugin.
+
+### Step 3: Assign users
+
+<MediaViewer src={require('./img/okta-saml/okta-step-3.0.jpg')} alt="Assign users to the Okta application" />
+
+:::note
+You can't provision a user from Okta to ReportPortal if you already have
+a pre-created internal user in ReportPortal with the same email and a different
+login. Read more about [JIT provisioning](Overview.mdx#user-jit-provisioning)
+:::
+
+You can add a user by clicking on the `Assignments` tab and then clicking on
+the `Assign` button.
+
+In my case, a user with the email `baba_yaga@continental.com` doesn't exist in
+the deployed ReportPortal instance.
+
+## ReportPortal configuration
+
+### Step 1: Open the SAML plugin
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.0.png')} alt="Open the SAML plugin" />
+
+Log-in to the ReportPortal by Admin account and go to the `Administration` -> `Plugins` -> `SAML`.
+
+### Step 2: Add a new integration
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.1.png')} alt="Add a new integration" />
+
+Click on the `Add integration` button.
+
+### Step 3: Fill in the form
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.2.png')} alt="Fill in the form" />
+
+#### Identity provider name ID
+
+In the `Identity provider name ID` field, enter the
+`urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` if you chose the
+`EmailAddress` format for the `Name ID format` in the Okta configuration.
+If you choose the `UNSPECIFIED` format, keep this field empty.
+
+You can find more information about the Name ID format in thes
+[SAML Overview](Overview.mdx#reportportal-configuration).
+
+#### Provider name
+
+In the `Provider name` field, enter any name you want. In my case, I used `Okta`.
+
+
+#### Metadata URL
+
+In the `Metadata URL` field, paste the copied Okta metadata URL.
+
+#### Attribute mapping
+
+You need to map the attributes from the Okta configuration to the ReportPortal.
+
+1. Enter the `email` attribute name in the' Email' field.
+2. In the `First name` field, enter the `firstName` attribute name.
+3. In the `Last name` field, enter the `lastName` attribute name.
+
+#### RP callback URL
+
+In the `RP callback URL` field, enter the URL:
+
+```url
+https://<host>/uat
+```
+
+In my case, I used the following URL: `http://192.168.49.2/uat`.
+
+#### Create the integration
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.3.png')} alt="Create the integration" />
+
+After you fill in the form and clicked on the `Create` button, you will see the
+new integration in the list.
+
+### Step 4: Test the integration
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.4.png')} alt="Test the integration" />
+
+Log-out from the ReportPortal and go to login page. You will see the
+`Login with SAML` button.
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.5.png')} alt="Login with SAML" />
+
+Click on the butto, and you will be redirected to the Okta login page.
+
+<MediaViewer src={require('./img/okta-saml/okta-step-4.6.png')} alt="User JIT provisioning" />
+
+After successful login, SAML plugin will create the user to the ReportPortal
+and you can see the user in the `Users` section on the `Administration` page.
