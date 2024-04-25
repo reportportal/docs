@@ -7,14 +7,15 @@ const apiSidebars: SidebarsConfig = {
   serviceApi: [
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionSelector(serviceApiVersions),
       className: 'version-button',
     },
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionCrumb(`v5.11`),
+      className: 'version-crumb',
     },
     {
       type: 'category',
@@ -32,14 +33,15 @@ const apiSidebars: SidebarsConfig = {
   'service-api-5.10': [
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionSelector(serviceApiVersions),
-      className: 'version-button'
+      className: 'version-button',
     },
     {
       type: 'html',
-      defaultStyle: true,
-      value: versionCrumb(`v5.10`)
+      defaultStyle: false,
+      value: versionCrumb(`v5.10`),
+      className: 'version-crumb',
     },
     {
       type: 'category',

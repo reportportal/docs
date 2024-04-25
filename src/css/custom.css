@@ -80,3 +80,21 @@ h1 {
 .hidden {
   display: none !important;
 }
+
+/* Styles for version dropdown and version crumb */
+
+.version-button, .version-crumb {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.version-crumb {
+  float: right;
+  margin-right: 8px;
+}
+
+.version-button .dropdown--right .dropdown__menu {
+  left: 0px;
+}
