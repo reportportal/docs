@@ -107,4 +107,4 @@ ingress:
 <...>
 ```
 
-Follow the official guide [Deploy ReportPortal with Kubernetes](https://reportportal.io/docs/installation-steps/deploy-with-kubernetes) to complete the deployment.
+Follow the official guide [Deploy ReportPortal with Kubernetes](/installation-steps/deploy-with-kubernetes) to complete the deployment.
