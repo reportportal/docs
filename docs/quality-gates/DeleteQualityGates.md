@@ -11,4 +11,4 @@ If you want to delete Quality Gate:
 * Open ```Project Settings> Quality Gates```
 * Click on ```the trash``` on the Quality Gate rule
 * The system removes Quality Gate from the DB
-* All Quality Gate report for this rule also will be deleted form the system
+* All Quality Gate report for this rule also will be deleted from the system
