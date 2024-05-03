@@ -65,7 +65,7 @@ ReportPortal has a lot of widgets to visualize test results and understand the s
 
 **14. Can ReportPortal aggregate performance test results?**
 
-We do not support direct integration with performance testing frameworks, but as a workaround you can import performance test results in JUnit format into ReportPortal. Further information on this topic can be found [here](https://github.com/reportportal/reportportal/issues/1820).
+We do not support direct integration with performance testing frameworks, but as a workaround you can [import performance test results](https://github.com/reportportal/reportportal/issues/1820) in JUnit format into ReportPortal.
 
 **15. Does ReportPortal have integration with Jira?**
 

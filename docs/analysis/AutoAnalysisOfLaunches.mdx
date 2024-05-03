@@ -21,6 +21,8 @@ An auto-analyzer is presented by a combination of several services: OpenSearch, 
 * Analyzer train instance is responsible for training models for Auto-analysis and ML suggestions functionality.
 * Metrics gatherer calculates metrics about the analyzer usage and requests deletion of custom models if metrics goes down.
 
+*You have the option to disable the Analyzer by removing the Analyzer, Analyzer train, and Metrics gatherer services from the installation.*
+
 There are several ways to use an analyzer in our test automation reporting dashboard:
 
 * Use  the ReportPortal Analyzer: **manual** (analysis is switched on only for chosen launch manually) or **auto** (analysis is switched on after the launch finishing automatically);
@@ -29,13 +31,13 @@ There are several ways to use an analyzer in our test automation reporting dashb
 
 * Do not use any Analyzers at all and do an analytical routine by yourself;
 
-## ReportPortal Analyzer. How to install
-
-Add info about OpenSearch, Analyzer service (two instances – Analyzer and Analyzer train), Metrics gatherer in the docker-compose file as mentioned [here](https://github.com/reportportal/reportportal/blob/release/24.1/docker-compose.yml).
+:::important
+The Auto Analyzer service is a part of the ReportPortal bundle.
+:::
 
 ## ReportPortal Analyzer. How the Auto-Analysis is working
 
-ReportPortal's auto-analyzer allows users to reduce the time spent on test execution investigation by analyzing test failures in automatic mode. For that reason, you can deploy the  ReportPortal with a service Analyzer by adding info about this service in a docker-compose file. The default analysis component is running along with OpenSearch which is used for test logs indexing.
+ReportPortal's Auto Analyzer allows users to reduce the time spent on test execution investigation by analyzing test failures in automatic mode. The default analysis component is running along with OpenSearch which is used for test logs indexing.
 For effective using Auto–Analysis you should come through several stages.
 
 ### Create an analytical base in the OpenSearch

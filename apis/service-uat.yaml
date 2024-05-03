@@ -10,7 +10,18 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0
   version: 5.11.0
 servers:
-- url: //demo.reportportal.io/uat
+  - url: '{protocol}://{authority}/uat'
+    description: ReportPortal UAT server
+    variables:
+      protocol:
+        default: https
+        description: Protocol
+        enum:
+          - http
+          - https
+      authority:
+        description: Host name and port (if needed) of Report Portal server
+        default: demo.reportportal.io
 tags:
 - name: auth-configuration-endpoint
   description: Auth Configuration Endpoint

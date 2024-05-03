@@ -7,14 +7,15 @@ const uatSidebars: SidebarsConfig = {
   serviceUat: [
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionSelector(serviceUatVersions),
       className: 'version-button',
     },
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionCrumb(`v5.11`),
+      className: 'version-crumb',
     },
     {
       type: 'category',
@@ -32,14 +33,15 @@ const uatSidebars: SidebarsConfig = {
   'service-uat-5.10': [
     {
       type: 'html',
-      defaultStyle: true,
+      defaultStyle: false,
       value: versionSelector(serviceUatVersions),
-      className: 'version-button'
+      className: 'version-button',
     },
     {
       type: 'html',
-      defaultStyle: true,
-      value: versionCrumb(`v5.10`)
+      defaultStyle: false,
+      value: versionCrumb(`v5.10`),
+      className: 'version-crumb',
     },
     {
       type: 'category',

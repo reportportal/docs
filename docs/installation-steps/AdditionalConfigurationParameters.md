@@ -18,4 +18,4 @@ sidebar_label: Additional configuration parameters
 | RABBITMQ_DEFAULT_USER | rabbitmq | API,ANALYZER | PostgreSQL database name |
 | RABBITMQ_DEFAULT_PASS | rabbitmq | API,ANALYZER | PostgreSQL database name |
 
-Example of docker compose with filled out configuration parameters [can be found here](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml).
+[Example of docker compose](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml) with filled out configuration parameters.
