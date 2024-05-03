@@ -5,14 +5,12 @@ sidebar_label: Okta SAML
 # Okta SAML
 
 :::important
-Before starting, please read about the [SAML provider](Overview.mdx).
+Before starting, please read about the [SAML provider](/reportportal-configuration/authorization/SamlProviders/Overview).
 :::
 
 This guide will help you to configure the connection between ReportPortal and Okta.
 
-There is no comprehensive guide for Okta configuration, but you can use it as
-a reference for the general steps. To get more information about Okta configuration,
-read the [official documentation](https://developer.okta.com/docs/guides/saml-application-setup/overview/).
+You can use it as high-level steps for reference. To get more information about Okta configuration, read the [official documentation](https://developer.okta.com/docs/guides/saml-application-setup/overview/).
 
 SAML plugin is available in ReportPortal on the Plugins page.
 
@@ -21,7 +19,7 @@ SAML plugin is available in ReportPortal on the Plugins page.
 1. Okta account
 2. ReportPortal instance
 3. Access to the ReportPortal instance and Okta account
-4. Available connection between Okta and ReportPortal.
+4. Available connection between Okta and ReportPortal
 
 ## Configuration Okta
 
@@ -57,7 +55,7 @@ In the `Single sign-on URL` field, enter the following URL:
 ```url
 https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
 ```
-In my case, I deployed ReportPortal on the local machine, so I used the following URL:
+In the example below, ReportPortal was deployed on the local machine using the following URL:
 
 ```url
 http://192.168.49.2/uat/saml/sp/SSO/alias/report-portal-sp
@@ -70,10 +68,10 @@ report.portal.sp.id
 ```
 
 You can change this identifier when you deploy ReportPortal. More information
-about the identifier you can find in the [SAML Overview](Overview.mdx#identifier).
+about the identifier you can find in the [SAML Overview](/reportportal-configuration/authorization/SamlProviders/Overview#identifier).
 
 In the `Name ID format` field, select `EmailAddress`. You can use the UNSPECIFIED format as well.
-More information about the Name ID format you can find in the [SAML Overview](Overview.mdx#reportportal-configuration).
+More information about the Name ID format you can find in the [SAML Overview](/reportportal-configuration/authorization/SamlProviders/Overview#reportportal-configuration).
 
 #### Fill in the Attribute Statements
 
@@ -91,8 +89,7 @@ Click `Next`.
 
 <MediaViewer src={require('./img/okta-saml/okta-step-2.2.jpg')} alt="Provide feedback" />
 
-In my case, I picked the `I'm an Okta customer adding an internal app` option
-and picked in the `App type` field that 'This is an internal app that we have created'.
+In this case, the 'I'm an Okta customer adding an internal app' option was selected, along with the 'This is an internal app that we have created' option in the `App type` field.
 
 Click `Finish`.
 
@@ -114,14 +111,13 @@ configure the ReportPortal SAML plugin.
 :::note
 You can't provision a user from Okta to ReportPortal if you already have
 a pre-created internal user in ReportPortal with the same email and a different
-login. Read more about [JIT provisioning](Overview.mdx#user-jit-provisioning)
+login. Read more about [JIT provisioning](/reportportal-configuration/authorization/SamlProviders/Overview#user-jit-provisioning)
 :::
 
 You can add a user by clicking on the `Assignments` tab and then clicking on
 the `Assign` button.
 
-In my case, a user with the email `baba_yaga@continental.com` doesn't exist in
-the deployed ReportPortal instance.
+In the case above, a user with the email baba_yaga@continental.com doesn't exist in the deployed ReportPortal instance.
 
 ## ReportPortal configuration
 
@@ -129,7 +125,7 @@ the deployed ReportPortal instance.
 
 <MediaViewer src={require('./img/okta-saml/okta-step-4.0.png')} alt="Open the SAML plugin" />
 
-Log-in to the ReportPortal by Admin account and go to the `Administration` -> `Plugins` -> `SAML`.
+Log-in to the ReportPortal by Admin account and go to the `Administrate` -> `Plugins` -> `SAML`.
 
 ### Step 2: Add a new integration
 
@@ -148,13 +144,12 @@ In the `Identity provider name ID` field, enter the
 `EmailAddress` format for the `Name ID format` in the Okta configuration.
 If you choose the `UNSPECIFIED` format, keep this field empty.
 
-You can find more information about the Name ID format in thes
-[SAML Overview](Overview.mdx#reportportal-configuration).
+You can find more information about the Name ID format in the
+[SAML Overview](/reportportal-configuration/authorization/SamlProviders/Overview#reportportal-configuration)
 
 #### Provider name
 
-In the `Provider name` field, enter any name you want. In my case, I used `Okta`.
-
+In the `Provider name` field, enter any name you want, for example `Okta`.
 
 #### Metadata URL
 
@@ -164,7 +159,7 @@ In the `Metadata URL` field, paste the copied Okta metadata URL.
 
 You need to map the attributes from the Okta configuration to the ReportPortal.
 
-1. Enter the `email` attribute name in the' Email' field.
+1. Enter the `email` attribute name in the 'Email' field.
 2. In the `First name` field, enter the `firstName` attribute name.
 3. In the `Last name` field, enter the `lastName` attribute name.
 
@@ -176,7 +171,7 @@ In the `RP callback URL` field, enter the URL:
 https://<host>/uat
 ```
 
-In my case, I used the following URL: `http://192.168.49.2/uat`.
+In the case below, the following URL was used: `http://192.168.49.2/uat`.
 
 #### Create the integration
 
@@ -194,9 +189,9 @@ Log-out from the ReportPortal and go to login page. You will see the
 
 <MediaViewer src={require('./img/okta-saml/okta-step-4.5.png')} alt="Login with SAML" />
 
-Click on the butto, and you will be redirected to the Okta login page.
+Click on the button, and you will be redirected to the Okta login page.
 
 <MediaViewer src={require('./img/okta-saml/okta-step-4.6.png')} alt="User JIT provisioning" />
 
 After successful login, SAML plugin will create the user to the ReportPortal
-and you can see the user in the `Users` section on the `Administration` page.
+and you can see the user in the `Users` section on the `Administrate` page.
