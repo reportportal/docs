@@ -11,9 +11,9 @@
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml">
 <script src="https://cookie-cdn.cookiepro.com/consent/77055ecd-ec2c-461a-bf1c-3e84d715e668/OtAutoBlock.js" defer="defer"></script>
 <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" defer="defer" charset="UTF-8" data-domain-script="77055ecd-ec2c-461a-bf1c-3e84d715e668"></script>
-<script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.e288c768.css">
-<script src="/docs/assets/js/runtime~main.b4804a2a.js" defer="defer"></script>
-<script src="/docs/assets/js/main.774439f5.js" defer="defer"></script>
+<script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.77dde193.css">
+<script src="/docs/assets/js/runtime~main.6a89c3be.js" defer="defer"></script>
+<script src="/docs/assets/js/main.bd624f82.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -54,7 +54,7 @@ Second, let&#x27;s check how to send assessment results to CI/CD.</p>
 <li>For &quot;Amount of issues&quot; rule: if a number of To Investigate issues in the analyzed launch is more than allowable To Investigate level</li>
 <li>For &quot;New Failure&quot;: if a baseline is not found in the system</li>
 </ul>
-<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section ### How to recalculate Qulaity Gates.</p>
+<p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section <a href="/docs/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates">How to recalculate Quality Gates</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="timeout">Timeout<a href="#timeout" class="hash-link" aria-label="Direct link to Timeout" title="Direct link to Timeout">​</a></h3>
 <p>Specially for integration with CI\CD, Quality Gates has parameter <code>Timeout</code>. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from <code>Timeout</code>. Default <code>Timeout</code> equals to 2 hours. It means, that after 2 hours after launch finish, the system force recaluculats Quality Gate Status and defined status.</p>
 <table><thead><tr><th style="text-align:center">Jenkins Job Status</th><th style="text-align:center">Quality Gate Status</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:center">SUCCESS</td><td style="text-align:center">PASSED</td><td style="text-align:left">All Rulles Passed</td></tr><tr><td style="text-align:center">FAILED</td><td style="text-align:center">FAILED</td><td style="text-align:left">At least one rule does not pass</td></tr></tbody></table>

@@ -11,9 +11,9 @@
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml">
 <script src="https://cookie-cdn.cookiepro.com/consent/77055ecd-ec2c-461a-bf1c-3e84d715e668/OtAutoBlock.js" defer="defer"></script>
 <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" defer="defer" charset="UTF-8" data-domain-script="77055ecd-ec2c-461a-bf1c-3e84d715e668"></script>
-<script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.e288c768.css">
-<script src="/docs/assets/js/runtime~main.b4804a2a.js" defer="defer"></script>
-<script src="/docs/assets/js/main.774439f5.js" defer="defer"></script>
+<script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.77dde193.css">
+<script src="/docs/assets/js/runtime~main.6a89c3be.js" defer="defer"></script>
+<script src="/docs/assets/js/main.bd624f82.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -24,12 +24,8 @@
 <p>To run your tests in any kind of CI, you first need a way to execute them in the
 console. For example, for Java this might be calling a build tool like Gradle or Maven
 with: <code>./gradlew test</code> or <code>./mvnw test</code> respectively. For Python, it might be
-<code>pytest</code> command. Your tests should be already integrated with a ReportPortal agent. To
-find out how to do that, check out our documentation on <a href="/docs/log-data-in-reportportal/test-framework-integration/">corresponding
-page</a>.
-You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
-credentials while the workflow is running, see official <a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener noreferrer">GitHub Docs
-</a> for more details.</p>
+<code>pytest</code> command. Your tests should be already <a href="/docs/log-data-in-reportportal/test-framework-integration/">integrated with a ReportPortal agent</a>. You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
+credentials while the workflow is running, see official <a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener noreferrer">GitHub Docs</a> for more details.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="using-github-actions-workflow-file">Using GitHub Actions workflow file<a href="#using-github-actions-workflow-file" class="hash-link" aria-label="Direct link to Using GitHub Actions workflow file" title="Direct link to Using GitHub Actions workflow file">​</a></h2>
 <p>We are going to use the <code>.github/workflows/ci.yml</code> file to store and modify our CI workflow,
 this file should be hosted in the same Git repository which contains your
