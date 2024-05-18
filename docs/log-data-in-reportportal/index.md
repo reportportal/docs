@@ -1,5 +1,6 @@
 ---
 title: Log data in ReportPortal
+description: Discover how to efficiently import data, integrate test frameworks, and run your tests with our test reporting tool.
 ---
 
 # Log data in ReportPortal

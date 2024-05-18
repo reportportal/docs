@@ -1,7 +1,6 @@
 {
   "label": "Terms & conditions",
   "position": "22",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }
+

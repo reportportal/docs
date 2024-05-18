@@ -1,7 +1,5 @@
 {
   "label": "Work with reports",
   "position": "10",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }
