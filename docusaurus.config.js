@@ -289,75 +289,75 @@ const config = {
             {
                 redirects: [
                   {
-                    to: '/docs/installation-steps',
+                    to: '/docs/installation-steps/',
                     from: '/docs/category/installation-steps',
                   },
                   {
-                    to: '/docs/features',
+                    to: '/docs/features/',
                     from: '/docs/category/features',
                   },
                   {
-                    to: '/docs/releases',
+                    to: '/docs/releases/',
                     from: '/docs/category/releases',
                   },
                   {
-                  to: '/docs/reportportal-configuration',
+                  to: '/docs/reportportal-configuration/',
                   from: '/docs/category/reportportal-configuration',
                   },
                   {
-                  to: '/docs/user-account',
+                  to: '/docs/user-account/',
                   from: '/docs/category/user-account',
                   },
                   {
-                  to: '/docs/log-data-in-reportportal',
+                  to: '/docs/log-data-in-reportportal/',
                   from: '/docs/category/log-data-in-reportportal',
                   },
                   {
-                  to: '/docs/dev-guides',
+                  to: '/docs/dev-guides/',
                   from: '/docs/category/developers-guides',
                   },
                   {
-                  to: '/docs/work-with-reports',
+                  to: '/docs/work-with-reports/',
                   from: '/docs/category/work-with-reports',
                   },
                   {
-                  to: '/docs/analysis',
+                  to: '/docs/analysis/',
                   from: '/docs/category/analysis',
                   },
                   {
-                  to: '/docs/saved-searches-filters',
+                  to: '/docs/saved-searches-filters/',
                   from: '/docs/category/saved-searches-filters',
                   },
                   {
-                  to: '/docs/dashboards-and-widgets',
+                  to: '/docs/dashboards-and-widgets/',
                   from: '/docs/category/dashboards-and-widgets',
                   },
                   {
-                  to: '/docs/admin-panel',
+                  to: '/docs/admin-panel/',
                   from: '/docs/category/admin-panel',
                   },
                   {
-                  to: '/docs/plugins',
+                  to: '/docs/plugins/',
                   from: '/docs/category/plugins',
                   },
                   {
-                  to: '/docs/external-integrations',
+                  to: '/docs/external-integrations/',
                   from: '/docs/category/external-integrations',
                   },
                   {
-                  to: '/docs/quality-gates',
+                  to: '/docs/quality-gates/',
                   from: '/docs/category/quality-gates',
                   },
                   {
-                  to: '/docs/issues-troubleshooting',
+                  to: '/docs/issues-troubleshooting/',
                   from: '/docs/category/issues-troubleshooting',
                   },
                   {
-                  to: '/docs/case-studies',
+                  to: '/docs/case-studies/',
                   from: '/docs/category/case-studies',
                   },
                   {
-                  to: '/docs/terms-and-conditions',
+                  to: '/docs/terms-and-conditions/',
                   from: '/docs/category/terms--conditions',
                   },
                 ],
