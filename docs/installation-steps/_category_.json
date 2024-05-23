@@ -1,7 +1,6 @@
 {
   "label": "Installation Steps",
   "position": "4",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }
+

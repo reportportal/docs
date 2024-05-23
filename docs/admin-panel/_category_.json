@@ -1,7 +1,5 @@
 {
   "label": "Admin Panel",
   "position": "14",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }

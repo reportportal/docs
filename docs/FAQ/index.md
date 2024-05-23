@@ -37,7 +37,7 @@ For sure, you can explore ReportPortal [without installation](/reportportal-tuto
 
 **7. How can I begin using ReportPortal?**
 
-The initial steps involve installing and configuring the tool. [Installation steps](/category/installation-steps) you can find in our documentation.
+The initial steps involve installing and configuring the tool. [Installation steps](/installation-steps) you can find in our documentation.
 
 **8. Does the tool integrate with my existing test automation framework?**
 
@@ -49,7 +49,7 @@ ReportPortal is licensed under Apache v2.0, which means it’s free to use, come
 
 **10. Does ReportPortal have any paid features?**
 
-At that moment, we offer the only premium feature – [Quality Gates](/category/quality-gates). It is a set of predefined criteria that must be satisfied for a run to be deemed successful.
+At that moment, we offer the only premium feature – [Quality Gates](/quality-gates). It is a set of predefined criteria that must be satisfied for a run to be deemed successful.
 
 **11. Does ReportPortal use AI?**
 

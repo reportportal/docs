@@ -1,7 +1,5 @@
 {
   "label": "Dashboards and widgets",
   "position": "13",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }
