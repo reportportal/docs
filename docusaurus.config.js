@@ -360,6 +360,42 @@ const config = {
             to: '/terms-and-conditions',
             from: '/category/terms--conditions',
             },
+            {
+            to: '/installation-steps/deploy-with-kubernetes',
+            from: '/installation-steps/DeployWithKubernetes',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/installation-steps/DeployWithDockerOnLinuxMac',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/Deploy-with-Docker',
+            },
+            {
+            to: '/category/saml-providers',
+            from: '/reportportal-configuration/authorization/SAMLProvider',
+            },
+            {
+            to: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
+            from: '/reportportal-configuration/authorization/SAMLProvider/OktaSAML',
+            },
+            {
+            to: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
+            from: '/Setup-TLS(SSL)-in',
+            },
+            {
+            to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+            from: '/reportportal-configuration/authorization/SAMLProvider/AzureSAML',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/installation-steps/DeployWithDockerOnWindows',
+            },
+            {
+            to: '/installation-steps',
+            from: '/Installation-steps',
+            },
           ],
           },
     ],
