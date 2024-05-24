@@ -1,7 +1,5 @@
 {
   "label": "Developers guides",
   "position": "9",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }

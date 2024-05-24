@@ -134,15 +134,15 @@ const config = {
               },
               {
                 label: 'Installation steps',
-                to: '/category/installation-steps',
+                to: '/installation-steps',
               },
               {
                 label: 'RP Configuration',
-                to: '/category/reportportal-configuration',
+                to: '/reportportal-configuration',
               },
               {
                 label: 'Developers Guide',
-                to: '/category/developers-guides',
+                to: '/developers-guides',
               },
             ],
           },
@@ -283,6 +283,121 @@ const config = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/installation-steps',
+              from: '/category/installation-steps',
+            },
+            {
+              to: '/features',
+              from: '/category/features',
+            },
+            {
+              to: '/releases',
+              from: '/category/releases',
+            },
+            {
+            to: '/reportportal-configuration',
+            from: '/category/reportportal-configuration',
+            },
+            {
+            to: '/user-account',
+            from: '/category/user-account',
+            },
+            {
+            to: '/log-data-in-reportportal',
+            from: '/category/log-data-in-reportportal',
+            },
+            {
+            to: '/developers-guides',
+            from: '/category/developers-guides',
+            },
+            {
+            to: '/work-with-reports',
+            from: '/category/work-with-reports',
+            },
+            {
+            to: '/analysis',
+            from: '/category/analysis',
+            },
+            {
+            to: '/saved-searches-filters',
+            from: '/category/saved-searches-filters',
+            },
+            {
+            to: '/dashboards-and-widgets',
+            from: '/category/dashboards-and-widgets',
+            },
+            {
+            to: '/admin-panel',
+            from: '/category/admin-panel',
+            },
+            {
+            to: '/plugins',
+            from: '/category/plugins',
+            },
+            {
+            to: '/external-integrations',
+            from: '/category/external-integrations',
+            },
+            {
+            to: '/quality-gates',
+            from: '/category/quality-gates',
+            },
+            {
+            to: '/issues-troubleshooting',
+            from: '/category/issues-troubleshooting',
+            },
+            {
+            to: '/case-studies',
+            from: '/category/case-studies',
+            },
+            {
+            to: '/terms-and-conditions',
+            from: '/category/terms--conditions',
+            },
+            {
+            to: '/installation-steps/deploy-with-kubernetes',
+            from: '/installation-steps/DeployWithKubernetes',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/installation-steps/DeployWithDockerOnLinuxMac',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/Deploy-with-Docker',
+            },
+            {
+            to: '/category/saml-providers',
+            from: '/reportportal-configuration/authorization/SAMLProvider',
+            },
+            {
+            to: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
+            from: '/reportportal-configuration/authorization/SAMLProvider/OktaSAML',
+            },
+            {
+            to: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
+            from: '/Setup-TLS(SSL)-in',
+            },
+            {
+            to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+            from: '/reportportal-configuration/authorization/SAMLProvider/AzureSAML',
+            },
+            {
+            to: '/installation-steps/DeployWithDocker',
+            from: '/installation-steps/DeployWithDockerOnWindows',
+            },
+            {
+            to: '/installation-steps',
+            from: '/Installation-steps',
+            },
+          ],
+          },
     ],
   ],
 };

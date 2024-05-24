@@ -275,7 +275,7 @@ variable name in the logs.
 
 Enterprise users can utilize our Quality Gates plugin to get more
 control over application-under-test quality. To enable and configure Quality Gates plugin on
-ReportPortal, please, refer to [corresponding documentation](/category/quality-gates).
+ReportPortal, please, refer to [corresponding documentation](/quality-gates).
 
 ReportPortal the Quality Gates plugin doesn't have native integration with GitLab, so we
 need to use a custom approach here. One way is polling ReportPortal Launch info API for

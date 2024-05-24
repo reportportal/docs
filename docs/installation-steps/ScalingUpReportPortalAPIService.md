@@ -5,7 +5,7 @@ sidebar_label: Scaling Up the ReportPortal Service API
 
 # Scaling Up the ReportPortal Service API
 
-Due to the current implementation specifics [Asynchronous Reporting Scheme](/dev-guides/AsynchronousReporting#scheme), horizontal auto-scaling of the ReportPortal service API is not feasible. However, manual scaling is achievable. This limitation stems from the way RabbitMQ, in conjunction with the API, manages the number of queues on the RabbitMQ side.
+Due to the current implementation specifics [Asynchronous Reporting Scheme](/developers-guides/AsynchronousReporting#scheme), horizontal auto-scaling of the ReportPortal service API is not feasible. However, manual scaling is achievable. This limitation stems from the way RabbitMQ, in conjunction with the API, manages the number of queues on the RabbitMQ side.
 
 Given that ReportPortal can receive a substantial volume of concurrent streams from different project spaces, a mechanism has been implemented. This mechanism determines the number of queues based on the hash of the launch object and distributes them across different queues to increase the likelihood of processing.
 
