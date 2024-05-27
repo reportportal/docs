@@ -405,7 +405,7 @@ const config = {
             from: '/Test-case-ID>what-is-it-test-case-id',
             },
             {
-            to: '/issues-troubleshooting/',
+            to: '/issues-troubleshooting',
             from: '/How-to-resolve',
             },
             {
@@ -413,7 +413,7 @@ const config = {
             from: '/Import-data-to',
             },
             {
-            to: '/log-data-in-reportportal/',
+            to: '/log-data-in-reportportal',
             from: '/Log-Data-in',
             },
             {
@@ -421,11 +421,11 @@ const config = {
             from: '/Maintain-commands-Cheat',
             },
             {
-            to: '/installation-steps/deploy-with-kubernetes/',
+            to: '/installation-steps/deploy-with-kubernetes',
             from: '/Deploy-with-Kubernetes',
             },
             {
-            to: '/log-data-in-reportportal/test-framework-integration/',
+            to: '/log-data-in-reportportal/test-framework-integration',
             from: '/Test-Framework-Integration',
             },
             {
@@ -437,7 +437,7 @@ const config = {
             from: '/Azure-SAML-Integration',
             },
             {
-            to: '/dashboards-and-widgets/',
+            to: '/dashboards-and-widgets',
             from: '/Dashboards-and-Widgets',
             },
             {
@@ -481,7 +481,7 @@ const config = {
             from: '/Log-data-import',
             },
             {
-            to: '/plugins/',
+            to: '/plugins',
             from: '/Plugins',
             },
             {
@@ -525,7 +525,7 @@ const config = {
             from: '/Optimal-Performance-Hardware',
             },
             {
-            to: '/reportportal-configuration/',
+            to: '/reportportal-configuration',
             from: '/Report-Portal-Configuration',
             },
             {
