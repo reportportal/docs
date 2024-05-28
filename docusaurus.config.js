@@ -286,258 +286,218 @@ const config = {
     ],
     [
       '@docusaurus/plugin-client-redirects',
-        {
-          redirects: [
-            {
-              to: '/installation-steps',
-              from: '/category/installation-steps',
-            },
-            {
-              to: '/features',
-              from: '/category/features',
-            },
-            {
-              to: '/releases',
-              from: '/category/releases',
-            },
-            {
+      {
+        redirects: [
+          {
+            to: '/installation-steps',
+            from: '/category/installation-steps',
+          },
+          {
+            to: '/features',
+            from: '/category/features',
+          },
+          {
+            to: '/releases',
+            from: '/category/releases',
+          },
+          {
             to: '/reportportal-configuration',
             from: '/category/reportportal-configuration',
-            },
-            {
+          },
+          {
             to: '/user-account',
             from: '/category/user-account',
-            },
-            {
+          },
+          {
             to: '/log-data-in-reportportal',
             from: '/category/log-data-in-reportportal',
-            },
-            {
+          },
+          {
             to: '/developers-guides',
             from: '/category/developers-guides',
-            },
-            {
+          },
+          {
             to: '/work-with-reports',
             from: '/category/work-with-reports',
-            },
-            {
+          },
+          {
             to: '/analysis',
             from: '/category/analysis',
-            },
-            {
+          },
+          {
             to: '/saved-searches-filters',
             from: '/category/saved-searches-filters',
-            },
-            {
+          },
+          {
             to: '/dashboards-and-widgets',
             from: '/category/dashboards-and-widgets',
-            },
-            {
+          },
+          {
             to: '/admin-panel',
             from: '/category/admin-panel',
-            },
-            {
+          },
+          {
             to: '/plugins',
             from: '/category/plugins',
-            },
-            {
+          },
+          {
             to: '/external-integrations',
             from: '/category/external-integrations',
-            },
-            {
+          },
+          {
             to: '/quality-gates',
             from: '/category/quality-gates',
-            },
-            {
+          },
+          {
             to: '/issues-troubleshooting',
             from: '/category/issues-troubleshooting',
-            },
-            {
+          },
+          {
             to: '/case-studies',
             from: '/category/case-studies',
-            },
-            {
+          },
+          {
             to: '/terms-and-conditions',
             from: '/category/terms--conditions',
-            },
-            {
+          },
+          {
             to: '/installation-steps/deploy-with-kubernetes',
             from: '/installation-steps/DeployWithKubernetes',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithDocker',
             from: '/installation-steps/DeployWithDockerOnLinuxMac',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithDocker',
             from: '/Deploy-with-Docker',
-            },
-            {
+          },
+          {
             to: '/category/saml-providers',
             from: '/reportportal-configuration/authorization/SAMLProvider',
-            },
-            {
+          },
+          {
             to: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
             from: '/reportportal-configuration/authorization/SAMLProvider/OktaSAML',
-            },
-            {
+          },
+          {
             to: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
             from: '/Setup-TLS(SSL)-in',
-            },
-            {
+          },
+          {
             to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
             from: '/reportportal-configuration/authorization/SAMLProvider/AzureSAML',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithDocker',
             from: '/installation-steps/DeployWithDockerOnWindows',
-            },
-            {
-            to: '/installation-steps',
-            from: '/Installation-steps',
-            },
-            {
+          },
+          {
             to: '/issues-troubleshooting/ResolveAnalyzerKnownIssues',
             from: '/Resolve-Analyzer-Known',
-            },
-            {
-            to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
-            from: '/Test-case-ID>what-is-it-test-case-id',
-            },
-            {
+          },
+          {
             to: '/issues-troubleshooting',
             from: '/How-to-resolve',
-            },
-            {
+          },
+          {
             to: '/log-data-in-reportportal/ImportDataToReportPortal',
             from: '/Import-data-to',
-            },
-            {
+          },
+          {
             to: '/log-data-in-reportportal',
             from: '/Log-Data-in',
-            },
-            {
+          },
+          {
             to: '/installation-steps/MaintainCommandsCheatSheet',
             from: '/Maintain-commands-Cheat',
-            },
-            {
+          },
+          {
             to: '/installation-steps/deploy-with-kubernetes',
             from: '/Deploy-with-Kubernetes',
-            },
-            {
+          },
+          {
             to: '/log-data-in-reportportal/test-framework-integration',
             from: '/Test-Framework-Integration',
-            },
-            {
-            to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
-            from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
-            },
-            {
+          },
+          {
             to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
             from: '/Azure-SAML-Integration',
-            },
-            {
-            to: '/dashboards-and-widgets',
-            from: '/Dashboards-and-Widgets',
-            },
-            {
+          },
+          {
             to: '/category/saml-providers',
             from: '/SAML-integration',
-            },
-            {
+          },
+          {
             to: '/analysis/AutoAnalysisOfLaunches',
             from: '/Auto-Analysis-of-launches',
-            },
-            {
-            to: '/work-with-reports/FilteringLaunches#filtering-parameters',
-            from: '/Filtering-launches>filtering-parameters',
-            },
-            {
+          },
+          {
             to: '/issues-troubleshooting/IssuesWithLDAPSHowToResolve',
             from: '/Issues-with-LDAPS',
-            },
-            {
+          },
+          {
             to: '/plugins/SauceLabs',
             from: '/Sauce-Labs-integration',
-            },
-            {
+          },
+          {
             to: '/category/authorization',
             from: '/reportportal-configuration/authorization',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithoutDocker',
             from: '/Deploy-ReportPortal-without',
-            },
-            {
-            to: '/plugins/EmailServer',
-            from: '/Configuration-of-Report>email-server-configuration',
-            },
-            {
+          },
+          {
             to: '/reportportal-configuration/authorization/ActiveDirectory',
             from: '/Active-Directory-Auth',
-            },
-            {
+          },
+          {
             to: '/log-data-in-reportportal/ImportDataToReportPortal',
             from: '/Log-data-import',
-            },
-            {
-            to: '/plugins',
-            from: '/Plugins',
-            },
-            {
+          },
+          {
             to: '/work-with-reports/ViewLaunches',
             from: '/View-launches',
-            },
-            {
+          },
+          {
             to: '/dashboards-and-widgets/FlakyTestCasesTableTop50',
             from: '/dashboards-and-widgets/FlakyTestCasesTableTop20',
-            },
-            {
+          },
+          {
             to: '/plugins/AtlassianJiraServer',
             from: '/plugins/JiraServer',
-            },
-            {
+          },
+          {
             to: '/dashboards-and-widgets/ComponentHealthCheck',
             from: '/Component-health-check',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithoutDocker',
             from: '/Deploy-Without-Docker',
-            },
-            {
+          },
+          {
             to: '/installation-steps/DeployWithAWSECSFargate',
             from: '/Deploy-with-AWS',
-            },
-            {
-            to: '/installation-steps/DeployWithDocker',
-            from: '/Deploy-with-Docker>deploy-reportportal-with-docker-on-windows',
-            },
-            {
-            to: '/work-with-reports/ViewLaunches/#markdown-mode-on-logs-view',
+          },
+          {
+            to: '/work-with-reports/ViewLaunches#markdown-mode-on-logs-view',
             from: '/How-to-activate',
-            },
-            {
-            to: '/work-with-reports/OperationsUnderLaunches#merge-launches',
-            from: '/Operations-under-launches>merge-launches',
-            },
-            {
+          },
+          {
             to: '/installation-steps/OptimalPerformanceHardwareSetup',
             from: '/Optimal-Performance-Hardware',
-            },
-            {
+          },
+          {
             to: '/reportportal-configuration',
             from: '/Report-Portal-Configuration',
-            },
-            {
+          },
+          {
             to: '/dashboards-and-widgets/TableComponentHealthCheck',
             from: '/Table-Component-health',
-            },
-            {
-            to: '/work-with-reports/ViewLaunches/#retried-test-case-retry',
-            from: '/View-launches>retried-test-case-retry-',
-            },
-          ],
-          },
+          }
+        ],
+      },
     ],
   ],
 };
