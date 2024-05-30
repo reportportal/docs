@@ -495,7 +495,51 @@ const config = {
           {
             to: '/dashboards-and-widgets/TableComponentHealthCheck',
             from: '/Table-Component-health',
-          }
+          },
+          {
+            to: '/developers-guides',
+            from: '/category/dev-guides',
+          },
+          {
+            to: '/developers-guides/APIDifferencesBetweenV4AndV5',
+            from: '/dev-guides/APIDifferencesBetweenV4AndV5',
+          },
+          {
+            to: '/developers-guides/AsynchronousReporting',
+            from: '/dev-guides/AsynchronousReporting',
+          },
+          {
+            to: '/developers-guides/AttachmentsGuide',
+            from: '/dev-guides/AttachmentsGuide',
+          },
+          {
+            to: '/developers-guides/BackEndJavaContributionGuide',
+            from: '/dev-guides/BackEndJavaContributionGuide',
+          },
+          {
+            to: '/developers-guides/InteractionsBetweenAPIAndAnalyzer',
+            from: '/dev-guides/InteractionsBetweenAPIAndAnalyzer',
+          },
+          {
+            to: '/developers-guides/PluginDevelopersGuide',
+            from: '/dev-guides/PluginDevelopersGuide',
+          },
+          {
+            to: '/developers-guides/ReportPortalAPI',
+            from: '/dev-guides/ReportPortalAPI',
+          },
+          {
+            to: '/developers-guides/ReportingDevelopersGuide',
+            from: '/dev-guides/ReportingDevelopersGuide',
+          },
+          {
+            to: '/developers-guides/RerunDevelopersGuide',
+            from: '/dev-guides/RerunDevelopersGuide',
+          },
+          {
+            to: '/developers-guides/RetriesReporting',
+            from: '/dev-guides/RetriesReporting',
+            },
         ],
       },
     ],

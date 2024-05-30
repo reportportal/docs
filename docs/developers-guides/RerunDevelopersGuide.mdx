@@ -112,7 +112,9 @@ And response will contain found launch `id` for asynchronous endpoint or `id` an
 
 #### Using agent
 
-To start launch rerun set `rp.rerun=true` and `rp.rerun.of=launch_uuid` in `reportportal.properties` file. Where `launch_uuid` is UUID of launch that have to be reruned.
+To start a launch rerun using the agent, set `rp.rerun=true` and `rp.rerun.of=launch_uuid` in the `reportportal.properties` file. If you want to save rerun results in the original launch without creating a new one, also set `rp.launch.uuid=launch_uuid`. Here, `launch_uuid` is the UUID of the launch that you want to rerun.
+
+Here's an example of what your `reportportal.properties` file might look like:
 
 ```properties
 rp.endpoint=https://rp.com
@@ -122,8 +124,10 @@ rp.project=reporting-test
 rp.reporting.async=true
 rp.rerun=true
 rp.rerun.of=79446272-a439-45f9-8073-5ca7869f140b
+rp.launch.uuid=79446272-a439-45f9-8073-5ca7869f140b
 ```
-Where `79446272-a439-45f9-8073-5ca7869f140b` is UUID of desired launch.
+
+In this example, `79446272-a439-45f9-8073-5ca7869f140b` is the UUID of the launch you want to rerun.
 
 #### Handling
 
