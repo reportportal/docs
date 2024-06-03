@@ -144,14 +144,14 @@ The passing line has only two colors:
 
 And have values - from specified on widget wizard to 100%. Depending on this color scheme each group on the widget has its own color.
 
-Let's say we set 'The min allowable passing rate for the component' to be 90%.
+Let's say we set 'The min allowable passing rate for the component' to be 90%. The tests cases will be grouped in following color groups:
 
-passed green: groups which have passing rate 100%.<br />
-slightly green: groups which passing rate from 99 - specified on widget wizard.<br />
-light red: from 3* (90% - 1)/4 to (90% - 1)<br />
-strong red: from (90% - 1)/2 to 3* (90% - 1)/4<br />
-regular red: from (90% - 1)/4 to 2*(90% - 1)/4<br />
-dark red: 0 - ((90% - 1)/4 -1)
+green: tests with passing rate equals to 100%
+slightly green: greater than or equal to 90% (specified on widget wizard) and less than 100%
+light red: greater than or equal to 67,5% (calculated as (90%/4*3)) and less than 90%
+strong red: greater than or equal to 45% (calculated as (90%/4*2)) and less than 67,5%
+regular red: greater than or equal to 22,5% (calculated as (90%/4)) and less than 45%
+dark red: less than 22,5%
 
 <MediaViewer src={require('./img/widget-types/ComponentHealthCheckView.png')} alt="Data visualization in test automation: Component Health Check " />
 
