@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 12
 sidebar_label: ReportPortal 23.1 File storage options
 ---
 
