@@ -36,7 +36,9 @@ This will set up the NGINX Ingress controller with NodePort service type, using 
 
 ## Request/Import SSL certificate in AWS Certificate Manager
 
-> **Note:** Before requesting the certificate, you probably need to create a domain name in AWS. If you haven't done this before, follow this guide to create a Hosted Zone in Route 53: [Creating a public hosted zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html)
+:::note
+Before requesting the certificate, you probably need to create a domain name in AWS. If you haven't done this before, follow this guide to create a Hosted Zone in Route 53: [Creating a public hosted zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html)
+:::
 
 To request a certificate provided by ACM for a domain name:
 
