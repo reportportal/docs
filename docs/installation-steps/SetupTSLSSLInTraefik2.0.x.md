@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 sidebar_label: Setup TLS(SSL) in Traefik 2.0.x
 ---
 
