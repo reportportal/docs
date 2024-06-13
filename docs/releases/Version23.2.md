@@ -32,7 +32,7 @@ ReportPortal now offers the option to set a retention period for collected perso
 Please note that Features 3 and 4 are configurable, giving you the flexibility to decide whether you want to use these features or not. If you choose to utilize them, you can configure them using environmental variables. Further details can be found in the respective documentation.
 :::
 
-- **New feature – [API Key](/reportportal-configuration/HowToGetAnAccessTokenInReportPortal#2-authorization-with-users-api-key-for-agents):**
+- **New feature – [API Key](/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal#2-authorization-with-users-api-key-for-agents):**
 
 You can now generate as many API Keys as you need. You also have the ability to keep track of the creation date of API Keys and revoke any that are unused. Old tokens will still continue to function. Additionally, easy identification of the purpose of API Keys is facilitated through the use of prefixes.  
 

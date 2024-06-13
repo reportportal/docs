@@ -13,7 +13,7 @@ sidebar_label: Version 24.1
 - **New feature – [Immediate Pattern-Analysis](/analysis/ImmediatePatternAnalysis):**  <br/>
   No more need to wait for the launch finish. Initiate Pattern Analysis immediately after completion of specific test cases.
 
-- **New Integration – [Gitlab Plugin](/plugins/GitLabBTS):**<br/>
+- **New Integration – [Gitlab Plugin](/plugins/GitLab):**<br/>
   New BTS plugin expanding ReportPortal BTS integration options for streamlined bugs reporting, issues.
 
 - **New feature – Retention Policy for Monitoring events**<br/>

@@ -37,4 +37,4 @@ Here's a general outline of the steps you should follow for the migration:
 
 Please consider referring to the official documentation for PostgreSQL, MinIO, and OpenSearch to make sure that the backup and migration processes are carried out appropriately.
 
-It's important to note that migrating local ReportPortal to the cloud also involves [infrastructure considerations](/installation-steps/OptimalPerformanceHardwareSetup/), security configurations, and networking setup that need to be in place for a smooth migration.
+It's important to note that migrating local ReportPortal to the cloud also involves [infrastructure considerations](/installation-steps/HardwareRequirements), security configurations, and networking setup that need to be in place for a smooth migration.
