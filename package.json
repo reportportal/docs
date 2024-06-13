@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/reportportal/documentation#readme",
   "dependencies": {
-    "@docusaurus/core": "^3.3.2",
-    "@docusaurus/plugin-client-redirects": "^3.3.2",
-    "@docusaurus/preset-classic": "^3.3.2",
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/plugin-client-redirects": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0",
     "@mdx-js/react": "3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-plugin-openapi-docs": "3.0.0-beta.5",
@@ -47,7 +47,7 @@
     "yet-another-react-lightbox": "^3.15.6"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.3.2",
+    "@docusaurus/eslint-plugin": "^3.4.0",
     "@docusaurus/module-type-aliases": "^3.3.2",
     "@docusaurus/types": "^3.3.2",
     "docusaurus-mdx-checker": "^3.0.0",

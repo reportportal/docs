@@ -11,7 +11,7 @@ sidebar_label: Deploy with AWS ECS Fargate
 
 ReportPortal can be deployed using AWS ECS Fargate by interpreting the [docker-compose.yml](https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml)
 
-### Pre-requisites
+### Prerequisites
 Ensure following services are available in the chosen AWS region & you have permissions to create/modify the resources.
 
 1. Elastic File System

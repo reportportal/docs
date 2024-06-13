@@ -37,7 +37,7 @@ In addition to that, for the basic database monitoring is used PGHero tool - use
 Not recommended mixing the ReportPortal services and monitoring services on the same machine, especially in docker installation. 
 To avoid competition for resources with the services of the ReportPortal, deploy a separate virtual machine for monitoring (for our instances we using m5.large shape for the monitoring node) and install the following services: 
 
-1) InfluxDB database: https://docs.influxdata.com/influxdb/v2.0/install/?t=Docker;
+1) [InfluxDB database](https://docs.influxdata.com/influxdb/v2.0/install/?t=Docker);
 
 2) Grafana:
 Dashboard examples(Grafana IDs): 5955, 3056.

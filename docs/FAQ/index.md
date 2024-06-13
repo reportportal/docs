@@ -1,5 +1,5 @@
 ---
-sidebar_position: 21
+sidebar_position: 23
 sidebar_label: FAQ
 ---
 
@@ -29,11 +29,11 @@ ReportPortal is containerized and can be orchestrated using either docker-compos
 
 **5. Is there any training available to use ReportPortal effectively?**
 
-Check our [Tutorial](/reportportal-tutorial/) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigate [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
+Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigate [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
 
 **6. Is there a demo available?**
 
-For sure, you can explore ReportPortal [without installation](/reportportal-tutorial/#how-to-explore-reportportal-without-installation) visiting our Demo instance.
+For sure, you can explore ReportPortal [without installation](/tutorial/#how-to-explore-reportportal-without-installation) visiting our Demo instance.
 
 **7. How can I begin using ReportPortal?**
 
@@ -57,7 +57,7 @@ We provide ML-driven failure triage. Read [this article](https://reportportal.io
 
 **12. Do we need specific infrastructure prerequisites to avoid performance problems?**
 
-Look into [Optimal Performance Hardware setup](/installation-steps/OptimalPerformanceHardwareSetup).
+Look into [Hardware Requirements](/installation-steps/HardwareRequirements).
 
 **13. What types of reports can I generate with the ReportPortal?**
 
@@ -69,4 +69,4 @@ We do not support direct integration with performance testing frameworks, but as
 
 **15. Does ReportPortal have integration with Jira?**
 
-Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/AtlassianJiraServer), [Jira Cloud](/plugins/AtlassianJiraCloud), [Azure DevOps](/plugins/AzureDevOpsBTS), and [Rally](/plugins/Rally). 
+Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/AtlassianJiraServer), [Jira Cloud](/plugins/AtlassianJiraCloud), [Azure DevOps](/plugins/AzureDevOps), and [Rally](/plugins/Rally). 
