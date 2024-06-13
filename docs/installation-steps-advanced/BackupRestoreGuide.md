@@ -1,9 +1,9 @@
 ---
 sidebar_position: 7
-sidebar_label: ReportPortal Backup & Restore Guide
+sidebar_label: Backup & Restore Guide
 ---
 
-# ReportPortal Backup & Restore Guide
+# Backup & Restore Guide
 
 ## Introduction
 

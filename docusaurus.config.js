@@ -130,7 +130,7 @@ const config = {
               },
               {
                 label: 'ReportPortal Tutorial',
-                to: '/reportportal-tutorial/',
+                to: '/tutorial/',
               },
               {
                 label: 'Installation steps',
@@ -138,7 +138,7 @@ const config = {
               },
               {
                 label: 'RP Configuration',
-                to: '/reportportal-configuration',
+                to: '/configuration',
               },
               {
                 label: 'Developers Guide',
@@ -301,7 +301,7 @@ const config = {
             from: '/category/releases',
           },
           {
-            to: '/reportportal-configuration',
+            to: '/configuration',
             from: '/category/reportportal-configuration',
           },
           {
@@ -361,10 +361,6 @@ const config = {
             from: '/category/terms--conditions',
           },
           {
-            to: '/installation-steps/deploy-with-kubernetes',
-            from: '/installation-steps/DeployWithKubernetes',
-          },
-          {
             to: '/installation-steps/DeployWithDocker',
             from: '/installation-steps/DeployWithDockerOnLinuxMac',
           },
@@ -377,15 +373,15 @@ const config = {
             from: '/reportportal-configuration/authorization/SAMLProvider',
           },
           {
-            to: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
+            to: '/plugins/authorization/SamlProviders/OktaSaml',
             from: '/reportportal-configuration/authorization/SAMLProvider/OktaSAML',
           },
           {
-            to: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
+            to: '/installation-steps-advanced/SetupTSLSSLInTraefik2.0.x',
             from: '/Setup-TLS(SSL)-in',
           },
           {
-            to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+            to: '/plugins/authorization/SamlProviders/AzureSaml',
             from: '/reportportal-configuration/authorization/SAMLProvider/AzureSAML',
           },
           {
@@ -409,11 +405,11 @@ const config = {
             from: '/Log-Data-in',
           },
           {
-            to: '/installation-steps/MaintainCommandsCheatSheet',
+            to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
             from: '/Maintain-commands-Cheat',
           },
           {
-            to: '/installation-steps/deploy-with-kubernetes',
+            to: '/installation-steps/DeployWithKubernetes',
             from: '/Deploy-with-Kubernetes',
           },
           {
@@ -421,7 +417,7 @@ const config = {
             from: '/Test-Framework-Integration',
           },
           {
-            to: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+            to: '/plugins/authorization/SamlProviders/AzureSaml',
             from: '/Azure-SAML-Integration',
           },
           {
@@ -449,7 +445,7 @@ const config = {
             from: '/Deploy-ReportPortal-without',
           },
           {
-            to: '/reportportal-configuration/authorization/ActiveDirectory',
+            to: '/plugins/authorization/ActiveDirectory',
             from: '/Active-Directory-Auth',
           },
           {
@@ -477,7 +473,7 @@ const config = {
             from: '/Deploy-Without-Docker',
           },
           {
-            to: '/installation-steps/DeployWithAWSECSFargate',
+            to: '/installation-steps-advanced/DeployWithAWSECSFargate',
             from: '/Deploy-with-AWS',
           },
           {
@@ -485,11 +481,11 @@ const config = {
             from: '/How-to-activate',
           },
           {
-            to: '/installation-steps/OptimalPerformanceHardwareSetup',
+            to: '/installation-steps/HardwareRequirements',
             from: '/Optimal-Performance-Hardware',
           },
           {
-            to: '/reportportal-configuration',
+            to: '/configuration',
             from: '/Report-Portal-Configuration',
           },
           {
@@ -539,7 +535,111 @@ const config = {
           {
             to: '/developers-guides/RetriesReporting',
             from: '/dev-guides/RetriesReporting',
-            },
+          },
+          {
+            to: '/installation-steps/HardwareRequirements',
+            from: '/installation-steps/OptimalPerformanceHardwareSetup',
+          },
+          {
+            to: '/installation-steps-advanced/ComponentsOverview',
+            from: '/reportportal-configuration/ComponentsOverview',
+          },
+          {
+            to: '/installation-steps-advanced/BasicMonitoringConfiguration',
+            from: '/installation-steps/BasicMonitoringConfiguration',
+          },
+          {
+            to: '/installation-steps-advanced/JobsConfiguration',
+            from: '/reportportal-configuration/ReportPortalJobsConfiguration',
+          },
+          {
+            to: '/installation-steps-advanced/BackupRestoreGuide',
+            from: '/reportportal-configuration/ReportPortalBackupRestoreGuide',
+          },
+          {
+            to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
+            from: '/installation-steps/MaintainCommandsCheatSheet',
+          },
+          {
+            to: '/installation-steps-advanced/AdditionalConfigurationParameters',
+            from: '/installation-steps/AdditionalConfigurationParameters',
+          },
+          {
+            to: '/installation-steps-advanced/SetupTSLSSLInTraefik2.0.x',
+            from: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
+          },
+          {
+            to: '/installation-steps-advanced/MigrateOneInstanceToAnother',
+            from: '/installation-steps/MigrateOneInstanceToAnother',
+          },
+          {
+            to: '/installation-steps-advanced/FileStorageOptions',
+            from: '/installation-steps/ReportPortal23.1FileStorageOptions',
+          },
+          {
+            to: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
+            from: '/installation-steps/ScalingUpReportPortalAPIService',
+          },
+          {
+            to: '/installation-steps-advanced/DeployWithAWSECSFargate',
+            from: '/installation-steps/DeployWithAWSECSFargate',
+          },
+          {
+            to: '/installation-steps-advanced/AmazonALBNGINXIngressController',
+            from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
+          },
+          {
+            to: '/installation-steps-advanced/QuickStartWithGCPGKE',
+            from: '/installation-steps/deploy-with-kubernetes/QuickStartWithGCPGKE',
+          },
+          {
+            to: '/tutorial',
+            from: '/reportportal-tutorial',
+          },
+          {
+            to: '/configuration',
+            from: '/reportportal-configuration',
+          },
+          {
+            to: '/glossary',
+            from: '/reportportal-glossary',
+          },
+          {
+            to: '/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal',
+            from: '/reportportal-configuration/HowToGetAnAccessTokenInReportPortal',
+          },
+          {
+            to: '/plugins/AzureDevOps',
+            from: '/plugins/AzureDevOpsBTS',
+          },
+          {
+            to: '/plugins/GitLab',
+            from: '/plugins/GitLabBTS',
+          },
+          {
+            to: '/plugins/authorization/ActiveDirectory',
+            from: '/reportportal-configuration/authorization/ActiveDirectory',
+          },
+          {
+            to: '/plugins/authorization/GitHub',
+            from: '/reportportal-configuration/authorization/GitHub',
+          },
+          {
+            to: '/plugins/authorization/LDAP',
+            from: '/reportportal-configuration/authorization/LDAP',
+          },
+          {
+           to: '/plugins/authorization/SamlProviders/Overview',
+           from: '/reportportal-configuration/authorization/SamlProviders/Overview',
+          },
+          {
+           to: '/plugins/authorization/SamlProviders/AzureSaml',
+           from: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+          },
+          {
+          to: '/plugins/authorization/SamlProviders/OktaSaml',
+          from: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
+          },
         ],
       },
     ],
