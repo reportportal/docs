@@ -301,20 +301,8 @@ const config = {
             from: '/category/releases',
           },
           {
-            to: '/configuration',
-            from: '/category/reportportal-configuration',
-          },
-          {
             to: '/user-account',
             from: '/category/user-account',
-          },
-          {
-            to: '/log-data-in-reportportal',
-            from: '/category/log-data-in-reportportal',
-          },
-          {
-            to: '/developers-guides',
-            from: '/category/developers-guides',
           },
           {
             to: '/work-with-reports',
@@ -349,10 +337,6 @@ const config = {
             from: '/category/quality-gates',
           },
           {
-            to: '/issues-troubleshooting',
-            from: '/category/issues-troubleshooting',
-          },
-          {
             to: '/case-studies',
             from: '/category/case-studies',
           },
@@ -362,31 +346,23 @@ const config = {
           },
           {
             to: '/installation-steps/DeployWithDocker',
-            from: '/installation-steps/DeployWithDockerOnLinuxMac',
-          },
-          {
-            to: '/installation-steps/DeployWithDocker',
-            from: '/Deploy-with-Docker',
+            from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows'],
           },
           {
             to: '/category/saml-providers',
-            from: '/reportportal-configuration/authorization/SAMLProvider',
+            from: ['/reportportal-configuration/authorization/SAMLProvider', '/SAML-integration'],
           },
           {
             to: '/plugins/authorization/SamlProviders/OktaSaml',
-            from: '/reportportal-configuration/authorization/SAMLProvider/OktaSAML',
+            from: ['/reportportal-configuration/authorization/SAMLProvider/OktaSAML', '/reportportal-configuration/authorization/SamlProviders/OktaSaml'],
           },
           {
             to: '/installation-steps-advanced/SetupTSLSSLInTraefik2.0.x',
-            from: '/Setup-TLS(SSL)-in',
+            from: ['/Setup-TLS(SSL)-in', '/installation-steps/SetupTSLSSLInTraefik2.0.x'],
           },
           {
             to: '/plugins/authorization/SamlProviders/AzureSaml',
-            from: '/reportportal-configuration/authorization/SAMLProvider/AzureSAML',
-          },
-          {
-            to: '/installation-steps/DeployWithDocker',
-            from: '/installation-steps/DeployWithDockerOnWindows',
+            from: ['/reportportal-configuration/authorization/SAMLProvider/AzureSAML', '/Azure-SAML-Integration', '/reportportal-configuration/authorization/SamlProviders/AzureSaml'],
           },
           {
             to: '/issues-troubleshooting/ResolveAnalyzerKnownIssues',
@@ -394,35 +370,27 @@ const config = {
           },
           {
             to: '/issues-troubleshooting',
-            from: '/How-to-resolve',
+            from: ['/How-to-resolve', '/category/issues-troubleshooting'],
           },
           {
             to: '/log-data-in-reportportal/ImportDataToReportPortal',
-            from: '/Import-data-to',
+            from: ['/Import-data-to', '/Log-data-import'],
           },
           {
             to: '/log-data-in-reportportal',
-            from: '/Log-Data-in',
+            from: ['/Log-Data-in', '/category/log-data-in-reportportal'],
           },
           {
             to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
-            from: '/Maintain-commands-Cheat',
+            from: ['/Maintain-commands-Cheat', '/installation-steps/MaintainCommandsCheatSheet'],
           },
           {
             to: '/installation-steps/DeployWithKubernetes',
-            from: '/Deploy-with-Kubernetes',
+            from: ['/Deploy-with-Kubernetes', '/installation-steps/deploy-with-kubernetes'],
           },
           {
             to: '/log-data-in-reportportal/test-framework-integration',
             from: '/Test-Framework-Integration',
-          },
-          {
-            to: '/plugins/authorization/SamlProviders/AzureSaml',
-            from: '/Azure-SAML-Integration',
-          },
-          {
-            to: '/category/saml-providers',
-            from: '/SAML-integration',
           },
           {
             to: '/analysis/AutoAnalysisOfLaunches',
@@ -442,15 +410,11 @@ const config = {
           },
           {
             to: '/installation-steps/DeployWithoutDocker',
-            from: '/Deploy-ReportPortal-without',
+            from: ['/Deploy-ReportPortal-without', '/Deploy-Without-Docker'],
           },
           {
             to: '/plugins/authorization/ActiveDirectory',
-            from: '/Active-Directory-Auth',
-          },
-          {
-            to: '/log-data-in-reportportal/ImportDataToReportPortal',
-            from: '/Log-data-import',
+            from: ['/Active-Directory-Auth', '/reportportal-configuration/authorization/ActiveDirectory'],
           },
           {
             to: '/work-with-reports/ViewLaunches',
@@ -469,12 +433,8 @@ const config = {
             from: '/Component-health-check',
           },
           {
-            to: '/installation-steps/DeployWithoutDocker',
-            from: '/Deploy-Without-Docker',
-          },
-          {
             to: '/installation-steps-advanced/DeployWithAWSECSFargate',
-            from: '/Deploy-with-AWS',
+            from: ['/Deploy-with-AWS', '/installation-steps/DeployWithAWSECSFargate'],
           },
           {
             to: '/work-with-reports/ViewLaunches#markdown-mode-on-logs-view',
@@ -482,11 +442,11 @@ const config = {
           },
           {
             to: '/installation-steps/HardwareRequirements',
-            from: '/Optimal-Performance-Hardware',
+            from: ['/Optimal-Performance-Hardware', '/installation-steps/OptimalPerformanceHardwareSetup'],
           },
           {
             to: '/configuration',
-            from: '/Report-Portal-Configuration',
+            from: ['/Report-Portal-Configuration', '/reportportal-configuration', '/category/reportportal-configuration'],
           },
           {
             to: '/dashboards-and-widgets/TableComponentHealthCheck',
@@ -494,7 +454,7 @@ const config = {
           },
           {
             to: '/developers-guides',
-            from: '/category/dev-guides',
+            from: ['/category/dev-guides', '/category/developers-guides'],
           },
           {
             to: '/developers-guides/APIDifferencesBetweenV4AndV5',
@@ -537,10 +497,6 @@ const config = {
             from: '/dev-guides/RetriesReporting',
           },
           {
-            to: '/installation-steps/HardwareRequirements',
-            from: '/installation-steps/OptimalPerformanceHardwareSetup',
-          },
-          {
             to: '/installation-steps-advanced/ComponentsOverview',
             from: '/reportportal-configuration/ComponentsOverview',
           },
@@ -557,16 +513,8 @@ const config = {
             from: '/reportportal-configuration/ReportPortalBackupRestoreGuide',
           },
           {
-            to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
-            from: '/installation-steps/MaintainCommandsCheatSheet',
-          },
-          {
             to: '/installation-steps-advanced/AdditionalConfigurationParameters',
             from: '/installation-steps/AdditionalConfigurationParameters',
-          },
-          {
-            to: '/installation-steps-advanced/SetupTSLSSLInTraefik2.0.x',
-            from: '/installation-steps/SetupTSLSSLInTraefik2.0.x',
           },
           {
             to: '/installation-steps-advanced/MigrateOneInstanceToAnother',
@@ -581,10 +529,6 @@ const config = {
             from: '/installation-steps/ScalingUpReportPortalAPIService',
           },
           {
-            to: '/installation-steps-advanced/DeployWithAWSECSFargate',
-            from: '/installation-steps/DeployWithAWSECSFargate',
-          },
-          {
             to: '/installation-steps-advanced/AmazonALBNGINXIngressController',
             from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
           },
@@ -595,10 +539,6 @@ const config = {
           {
             to: '/tutorial',
             from: '/reportportal-tutorial',
-          },
-          {
-            to: '/configuration',
-            from: '/reportportal-configuration',
           },
           {
             to: '/glossary',
@@ -617,10 +557,6 @@ const config = {
             from: '/plugins/GitLabBTS',
           },
           {
-            to: '/plugins/authorization/ActiveDirectory',
-            from: '/reportportal-configuration/authorization/ActiveDirectory',
-          },
-          {
             to: '/plugins/authorization/GitHub',
             from: '/reportportal-configuration/authorization/GitHub',
           },
@@ -633,12 +569,12 @@ const config = {
            from: '/reportportal-configuration/authorization/SamlProviders/Overview',
           },
           {
-           to: '/plugins/authorization/SamlProviders/AzureSaml',
-           from: '/reportportal-configuration/authorization/SamlProviders/AzureSaml',
+            to: '/configuration/CreationOfProjectAndAddingUsers',
+            from: ['/reportportal-configuration/CreationOfProjectAndAddingUsers', '/reportportal-configuration/ProjectConfiguration'],
           },
           {
-          to: '/plugins/authorization/SamlProviders/OktaSaml',
-          from: '/reportportal-configuration/authorization/SamlProviders/OktaSaml',
+            to: '/configuration/IntegrationViaPlugin',
+            from: '/reportportal-configuration/IntegrationViaPlugin',
           },
         ],
       },
