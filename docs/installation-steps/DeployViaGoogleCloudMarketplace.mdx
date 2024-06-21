@@ -11,101 +11,133 @@ Any engineer, even those not well-versed in DevOps, can go to the Google Cloud M
 
 Next, you will find a step-by-step guide on deploying ReportPortal via the Google Cloud Marketplace.
 
-:::note
-A Cloud Billing account needs to be created beforehand.
+**Prerequisites**
+
+A [Cloud Billing account](https://cloud.google.com/billing/docs/how-to/create-billing-account) needs to be created beforehand.
+
+## Installation
+
+### Get started
+
+1. [Open ReportPortal](https://console.cloud.google.com/marketplace/product/epam-mp-rp/reportportal?project=epam-mp-rp&pli=1)
+in Google Cloud Marketplace.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace1.png')} alt="Open ReportPortal in Google Cloud Marketplace" />
+
+2. Click ‘Get started’ button.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace2.png')} alt="Get started with ReportPortal" />
+
+### Initial setup of billing and API (optional)
+
+:::important
+These steps are executed once, provided that this is not configured.
 :::
 
-**Step 1**
+1. Select a project and accept terms and agreements.
 
-[Open ReportPortal](https://console.cloud.google.com/marketplace/product/epam-mp-rp/reportportal?project=epam-mp-rp&pli=1) in Google Cloud Marketplace
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace3.png')} alt="Accept terms and agreements" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step1.png')} alt="Open ReportPortal in Google Cloud Marketplace" />
-
-**Step 2**
-
-Click ‘Get started’ button
-
-<MediaViewer src={require('./img/google-cloud-marketplace/Step2.png')} alt="Get started with ReportPortal" />
-
-**Step 3**
-
-Select a project and accept terms and agreements 
-
-<MediaViewer src={require('./img/google-cloud-marketplace/Step3.png')} alt="Accept terms and agreements" />
-
-**Step 4** (optional)
-
-Enable billing and set the billing account
+2. Enable billing and set the billing account.
 
 :::note
 You will see this screen if you have not enabled billing or set up the billing account before.
 :::
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step4-1.png')} alt="Enable billing" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace4.png')} alt="Enable billing" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step4-2.png')} alt="Set billing account" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace5.png')} alt="Set billing account" />
 
 After that, accept terms and agreements again.
 
-**Step 5**
+3. Click ‘Deploy’ button.
 
-Click ‘Deploy’ button 
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace6.png')} alt="Deploy ReportPortal" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step5.png')} alt="Deploy ReportPortal" />
-
-**Step 6** (optional)
-
-Enable API
+4. Enable API.
 
 :::note
 You will see this screen if you have not enabled API before.
 :::
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step6.png')} alt="Enable API" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace7.png')} alt="Enable API" />
 
-**Step 7**
+### Configure deployment
 
-Fill necessary fields and create cluster 
+Fill necessary fields and create cluster. By default, a cluster with three nodes is created, but once the application is installed,
+the number of nodes reduces to 1. Subsequently, depending on the project's needs, the number of nodes can be increased to 5.
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step7.png')} alt="Create cluster" />
+There is also an option to specify the domain name to which ReportPortal will be linked. You have the ability to enable support for
+an auto-generated certificate that will be linked to this domain. Subsequently, a certificate valid in all browsers will be issued.
 
-By default, a cluster with three nodes is created, but once the application is installed, the number of nodes reduces to 1.
+:::note
+While enabling the 'Enable GCP Managed Certificate' option, it is mandatory to specify the hostname.
+:::
 
-Subsequently, depending on the project's needs, the number of nodes can be increased to 5.
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace8.png')} alt="Create cluster" />
 
-**Step 8**
+### Deploy
 
-Start deploying
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace9.png')} alt="Start deploying of our test automation reporting dashboard" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step8-1.png')} alt="Start deploying of our test automation reporting dashboard" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace10.png')} alt="Process of deploying" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step8-2.png')} alt="Process of deploying" />
+### Post-installation with hostname
 
-**Step 9**
+After the deployment is completed, you will be directed to a page with application information.
 
-Log in to ReportPortal
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace11.png')} alt="Page with application information" />
 
-After the deployment is completed, we will land on the page with application information from which we can follow the link to log in.
+1. Next, if you have specified a hostname, you will need to navigate to your domain hosting control panel and create a record
+for your hostname with the provided `IP address`. For instance, here is how you can do it in AWS Route 53:
 
-1. Click the ‘Service URL’ link.
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace12.png')} alt="Domain hosting control panel" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step9-1.png')} alt="‘Service URL’ link" />
+2. [Ensure](https://console.cloud.google.com/net-services/loadbalancing/advanced/sslCertificates/list) that your auto-generated certificate has the status Active.<br />
 
-But after clicking the 'Service URL' link, the user receives a browser warning that the connection is not private. In reality, there is no risk because you are accessing your server, launched via an IP address.
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace13.png')} alt="Certificate with the status Active" />
+
+:::note
+The process of transferring the certificate from `Provisioning` to `Active` status can take up to 30 minutes.
+:::
+
+3. Follow your hostname in a browser.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace14.png')} alt="Hostname in the browser" />
+
+4. On the opened Sign In page, enter 'superadmin' as the login.
+
+5. Enter initial password.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/password1.png')} alt="Initial password to log in" />
+
+Let's get your ReportPortal instance up!
+
+### Post-installation without hostname
+
+After the deployment is completed, if you did not specify a hostname, you will be directed to a page with application information.
+
+1. Click the `IP address` link.
+
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace15.png')} alt="IP address link" />
+
+But after clicking the `IP address` link, the user receives a browser warning that the connection is not private. In reality, there is no risk because you are accessing your server, launched via an IP address.
 
 So why does a warning pop up? During deployment, Google Marketplace creates a Self-signed temporary certificate, which is used for data encryption. However, during the deployment process, ReportPortal is not tied to any domain, and this certificate is also not tied to any domain. Therefore, when following the link, the user receives a browser warning because the browser considers this certificate invalid as it cannot verify it.
 
 2. For the Chrome browser, click on 'Advanced' -> then click on 'Proceed to XXXXX (unsafe)' link. 
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step9-2.png')} alt="Advanced tab in the Chrome browser" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace16.png')} alt="Advanced tab in the Chrome browser" />
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step9-3.png')} alt="Proceed to unsafe link" />
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace17.png')} alt="Proceed to unsafe link" />
 
 3. On the opened Sign In page, enter 'superadmin' as the login.
 
-4. Enter initial password (this is generated automatically and can be found on the page where you click the ‘Service URL’ link). 
+4. Enter initial password.
 
-<MediaViewer src={require('./img/google-cloud-marketplace/Step9-4.png')} alt="Log in to our test automation results dashboard" />
+<MediaViewer src={require('./img/google-cloud-marketplace/password2.png')} alt="Initial password from the page with app information" />
+
+<MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace18.png')} alt="Log in to our test automation results dashboard" />
 
 :::note
 It may take Google Kubernetes Engine a few minutes before the application becomes accessible via the link.

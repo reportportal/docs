@@ -1,0 +1,154 @@
+---
+sidebar_position: 4
+sidebar_label: Launches/test items attributes
+---
+
+# Launches/test items attributes
+
+For more convenient and effective use of our test report dashboard, we recommend paying attention to attributes.
+
+Attributes are specific data points that can be included at all levels in ReportPortal:
+
+**Launch**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes1.png')} alt="Launch level attributes in our test report dashboard" />
+
+**Suite**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes2.png')} alt="Suite level attributes" />
+
+**Test**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes3.png')} alt="Test level attributes" />
+
+**Step**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes4.png')} alt="Step level attributes" />
+
+**The purposes of attributes are:**
+
+1. Attributes allow you to categorize, group, or classify tests, making them easier to manage in the future.
+2. Attributes are used for filtering.
+3. You can create a filter based on the attribute and then build widgets using this filter.
+
+## Parameters of attributes
+
+* Format – Key : Value
+* Key – any string value, optional field
+* Value – any string value, mandatory field
+* The maximum limit is 512 symbols each for both key and value.
+
+:::note
+The key and value are separated by a colon, but the colon cannot be part of the key or value.
+:::
+
+Multiple values can be associated with a single key. For example, if we have a `jira_id` key, the value can differ based on the Jira ticket.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="jira_id key" />
+
+## Adding attributes
+
+Attributes can be added in the following ways:
+
+1. Via test reporting.
+
+You can initiate (launch, suite, test, or step) with one set of attributes and finish with a different set.
+
+Importantly, the new attributes do not overwrite the old ones; instead, they are added.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes6.png')} alt="Adding attributes via test reporting" />
+
+2. Via UI (manually).
+
+To add or edit attributes, click on the `pencil` icon next to the desired launch/test item. Then click on the `Add new` link or click on the existing attribute to edit the key and value.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes7.png')} alt="pencil icon next to the desired launch/test item" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes8.png')} alt="Add new attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes9.png')} alt="Adding attributes via UI" />
+
+## Best practices for using attributes
+
+1. Avoid having too many attributes on a single item.
+
+When there are too many attributes, they can become unreadable.
+
+Use attributes that will assist you in grouping tests, debugging them, or constructing widgets.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes10.png')} alt="Attributes for grouping tests in our test reporting tool" />
+
+2. The attribute name should be informative.
+
+Avoid making the attribute name excessively long, even though the field allows up to 512 characters. The name should be understandable and clearly indicate what the attribute refers to.
+
+For instance, in the example below, the attribute `v5: beta5_24.1` could have been divided into two separate attributes: `version` and `environment`.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes11.png')} alt="Informative attribute name" />
+
+3. Examples of categorizing tests using attributes.
+
+Below you can find some examples of how attributes can describe launch/test item characteristics:
+
+* feature: Quality Gates
+* feature: login
+* feature: notifications
+* Epic: @F1_functionality
+* Story: @F11_functionality
+* Use case: @F11_use_case_111
+* browser: Chrome
+* configuration: Chrome desktop
+* team: Sirius
+* squad: 1
+* run.id: 12345
+* run.type: scheduled
+* entity.id: 56789
+* Region: Canada
+* test.type: UI
+* branch: develop
+* build: 3.24.16.17.5
+* priority: critical
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes12.png')} alt="Categorizing tests using attributes" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes13.png')} alt="Examples of categorizing tests using attributes" />
+
+## Use Case: using attributes for filtering
+
+Let's consider the following example. In the launch below, there are 31 Failed tests.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes14.png')} alt="31 failed tests" />
+
+It is difficult to identify the most problematic area, so we can use filtering by attribute, for example, by different controller types.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes15.png')} alt="Filtering by attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes16.png')} alt="Filtering by controller type attribute" />
+
+As a result of the investigation, we found that the least number of failures occurred with tests using controller type `contr_test_item` (1), and the most failures occurred with tests using controller type `contr_launch` (12).
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes17.png')} alt="Tests with contr_test_item attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes18.png')} alt="Tests with contr_launch attribute" />
+
+Thus, we understand that we need to focus on tests with controller type `contr_launch`.
+
+## Use Case: using attributes for creating widgets
+
+Widgets allow you to visually track metrics for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](/dashboards-and-widgets/CumulativeTrendChart).
+
+There are some launches with the `smoke` attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes19.png')} alt="Tests with smoke attribute" />
+
+You can create a filter based on this attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes20.png')} alt="Create a filter based on the attribute" />
+
+Afterwards, create a **Cumulative trend chart widget** using this filter.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes21.png')} alt="Cumulative trend chart widget" />
+
+On the screenshot below, we can observe a growth in statistics on the platforms from one build to the next.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes22.png')} alt="Growth in statistics on the platforms from one build to the next" />
+
+Therefore, properly using attributes in ReportPortal can greatly optimize test management and assist in providing clearer visualizations of trends through widgets.
+
+There are also [system attributes](/work-with-reports/SystemAttributes) that allow to extend the functionality of ReportPortal.

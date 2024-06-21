@@ -1,0 +1,26 @@
+---
+sidebar_position: 5
+sidebar_label: System attributes
+---
+
+# System attributes
+
+In the ReportPortal, there is an opportunity to influence specific processes and data processing rules. To this end, ReportPortal supports system attributes. These attributes can be applied to the selected test items and trigger ReportPortal to take certain actions. System attributes are not visible on the UI (for that, the attribute should be sent with `system: true`).
+
+## immediateAutoAnalysis
+
+If `immediateAutoAnalysis=true`, then each test item will be analyzed right after it is completed, without waiting for the whole launch to finish.
+
+<MediaViewer src={require('./img/system-attributes/SystemAttributes1.png')} alt="immediateAutoAnalysis attribute" />
+
+## immediatePatternAnalysis
+
+When `immediatePatternAnalysis=true`, then each test item will be analyzed right after it is completed, without waiting for the whole launch to finish.
+
+<MediaViewer src={require('./img/system-attributes/SystemAttributes2.png')} alt="immediatePatternAnalysis attribute" />
+
+## skippedIsNotIssue
+
+If `skippedIsNotIssue=true` during launch import, then all test items with the SKIPPED status will be processed without applying a `To Investigate` defect type.
+
+<MediaViewer src={require('./img/system-attributes/SystemAttributes3.png')} alt="skippedIsNotIssue attribute in our test automation reporting dashboard" />
