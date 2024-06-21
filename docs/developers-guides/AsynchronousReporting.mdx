@@ -68,16 +68,16 @@ Requests and responses have no differences with sync ones but there are some spe
 [reporting guide](ReportingDevelopersGuide.md).
 
 * [Start launch](ReportingDevelopersGuide.md#start-launch)
-* [Start root(suite) item](/docs/developers-guides/ReportingDevelopersGuide#start-rootsuite-item)
-* [Start child(container) item](/docs/developers-guides/ReportingDevelopersGuide#start-childcontainer-item)
-* [Start child(step) item](/docs/developers-guides/ReportingDevelopersGuide#start-childstep-item)
-* [Finish child item](/docs/developers-guides/ReportingDevelopersGuide#finish-child-item)
-* [Finish parent(container) item](/docs/developers-guides/ReportingDevelopersGuide#finish-parentcontainer-item)
-* [Save single log without attachment](/docs/developers-guides/ReportingDevelopersGuide#save-single-log-without-attachment)
-* [Batch save logs](/docs/developers-guides/ReportingDevelopersGuide#batch-save-logs)
-* [Save launch log](/docs/developers-guides/ReportingDevelopersGuide#save-launch-log)
-* [Finish root(suite) item](/docs/developers-guides/ReportingDevelopersGuide#finish-rootsuite-item)
-* [Finish launch](/docs/developers-guides/ReportingDevelopersGuide#finish-launch)
+* [Start root(suite) item](ReportingDevelopersGuide.md#start-rootsuite-item)
+* [Start child(container) item](ReportingDevelopersGuide.md#start-childcontainer-item)
+* [Start child(step) item](ReportingDevelopersGuide.md#start-childstep-item)
+* [Finish child item](ReportingDevelopersGuide.md#finish-child-item)
+* [Finish parent(container) item](ReportingDevelopersGuide.md#finish-parentcontainer-item)
+* [Save single log without attachment](ReportingDevelopersGuide.md#save-single-log-without-attachment)
+* [Batch save logs](ReportingDevelopersGuide.md#batch-save-logs)
+* [Save launch log](ReportingDevelopersGuide.md#save-launch-log)
+* [Finish root(suite) item](ReportingDevelopersGuide.md#finish-rootsuite-item)
+* [Finish launch](ReportingDevelopersGuide.md#finish-launch)
 
 ### Detailed scheme of interactions between RabbitMq and API
 
@@ -92,37 +92,28 @@ Requests and responses have no differences with sync ones but there are some spe
 | rp.amqp.user         | RP_AMQP_USER              | rabbitmq                               |
 | rp.amqp.pass         | RP_AMQP_PASS              | rabbitmq                               |
 | rp.amqp.addresses    | RP_AMQP_ADDRESSES         | amqp://rabbitmq:rabbitmq@rabbitmq:5672 |
-| rp.amqp.queues       | RP_AMQP_QUEUES            | 10                                     |
-| rp.amqp.queuesPerPod |                           | 10                                     |
+| reporting.queues.count  | REPORTING_QUEUES_COUNT | 10                                     |
+
 
 `rp.amqp.host` - Hostname of RabbitMq service.  
 `rp.amqp.port` - Port of RabbitMq service.  
 `rp.amqp.user` - Username to connect to RabbitMq service.  
 `rp.amqp.pass` - User password to connect to RabbitMq service.  
 `rp.amqp.addresses` - Full address to connect to RabbitMq service.  
-`rp.amqp.queues` - Number of queues to be processed by this service-api.  
-`rp.amqp.queuesPerPod` - Cluster configuration parameter. Number of queues to be processed by this service-api pod 
-(default effectively infinite).
-:::note
-should correlate with number QUEUE_AMOUNT & number of service-api pods being started in cluster.
-:::
+`reporting.queues.count` - Number of queues to be processed by this service-api.
+
 #### Exchanges and queues for reporting
 
-`API` produces two reporting exchanges - `reporting` and `reporting.retry`. Exchange `reporting` contains queues for storing messages 
-from the requests. Exchange `reporting.retry` contains queues for storing messages that were consumed exceptionally from the queues in `reporting` 
-exchange. The amount of the queues in the exchanges depends on `rp.amqp.queues` parameter. Exchange `reporting` has `N` queues with names 
-`reporting.0 ... reporting.N`. Exchange `reporting.retry` has `N+1` queues with the names `reporting.retry.0 ... reporting.retry.N` and `reporting.dlq`.
-In case message from `reporting.retry` was consumed with exception more than 10 times, the message will be stored in reporting.dlq which is 
-[dead letter queue](https://www.rabbitmq.com/dlx.html).
+The `API` creates two exchanges: `e.reporting` and `e.reporting.retry`. The `e.reporting` exchange is linked to queues that handle messages from requests, while the `e.reporting.retry` exchange is linked to retry queues and manages messages rejected from the main reporting queues.
+The number of queues in these exchanges depends on the `REPORTING_QUEUES_COUNT` env variable. The `e.reporting` exchange has `N` queues named `q.reporting.id.0` to `q.reporting.id.N`. The `e.reporting.retry` exchange has 2 queues named `q.retry.reporting` and `q.retry.reporting.ttl`.
+If a message from `e.reporting.retry` is consumed and throws an exception more than 10 times, it will be moved to a separate queue named `q.parkingLot.reporting`, where it will be stored for 7 days for manual error analysis.
 
 <MediaViewer src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
 
 #### Scheme
 
-All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue. 
-It is achieved using the following algorithm that maps launch uuid to a queue key:
-
-<MediaViewer src={require('./img/async/UuidQueusMapping.png')} alt="Uuid Queus Mapping" />
+All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue.
+This is achieved by using an exchange that maps messages to queues using the `Consistent Hashing` algorithm.
 
 Messages in the queue don't have a strict order but they are stored mostly in the same order as they arrive from `client`. 
 This ensures a minimal amount of exceptions (causing the sending of such messages to the retry queue) caused by cases when a child is handled before its own parent. 
@@ -131,16 +122,12 @@ Consuming scheme:
 
 <MediaViewer src={require('./img/async/Consuming.png')} alt="Consuming" />
 
-`(!)` Possible exceptions that may be thrown and lead to sending the message to the retry queue:
+`(!)` All not managed exceptions will be moved to the `q.parkingLot.reporting` for manual analysis.
+Possible exceptions that may be thrown and lead to moving the message to the retry queue:
 * On start launch/test item:
-    * User not found.
     * Entity not found. Parent entity not found.
-    * Bad request. Start time of the child item is earlier than the parent start time, trying to report a child child under a retry item, trying 
-    to report a non-nested step under a nested step parent, trying to rerun a launch that does not exist.
 * On finish launch/test item:
     * Entity not found. Entity that has to be finished not found in database or parent entity not found (for test items).
-    * Bad request. User tries to finish already finished entity. Finish time is earlier than start time.
-    * Access denied. User tries to finish not own entity of under not own project
 * On log creation:
     * Entity not found. Trying to create log for not existing launch/test item
 
@@ -151,8 +138,10 @@ If the order is not broken, launch finish request will be handled when there are
 <MediaViewer src={require('./img/async/FinishLaunch.png')} alt="Finish Launch" />
 
 `(!)` It is a main difference in reporting mechanism between ReportPortal version 4 and 5.
-In case the launch finish request is not last in the queue it will be finished anyway. 
-But all the next requests under the launch will be handled as soon as they get to the consumer and the launch statistics will be updated. 
-So it is possible to report items under already finished launch.
+If the launch finish request is not the last in the queue, the launch will be finished anyway.
+However, all subsequent requests related to that launch will be handled as they reach the consumer, and the launch statistics will be updated accordingly.
+This means it is possible to report items under an already finished launch.
+Events associated with the launch finish will be processed as soon as the launch finish is handled.
+Items processed after the launch finish will not be included in post-launch handling processes such as 'Auto Analysis' and 'Quality Gates.'
 
 
