@@ -63,7 +63,8 @@ ReportPortal contains the SAML Plugin by default.
 
 ### Identity provider configuration
 
-#### ReportPortal SSO initial URL
+#### ReportPortal Assertion Consumer Service URL (ACS URL)
+
 You have to provide a URL for a SAML provider to deliver SAML data to the
 identity federation.
 
@@ -95,6 +96,15 @@ in the ReportPortal SAML plugin like this:
 - user.email -> Email
 - user.firstName -> FirstName
 - user.lastName -> LastName
+```
+
+#### Service provider initial URL (SP-Initiated SSO)
+
+Some Identity Providers can request a URL for the initial login page. You can
+provide the URL to the ReportPortal login page.
+
+```url
+https://<host>/ui/#login
 ```
 
 ### ReportPortal configuration
