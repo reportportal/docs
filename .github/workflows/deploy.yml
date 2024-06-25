@@ -43,7 +43,37 @@ jobs:
         run: |
           touch .env
           echo DOCS_BASE_URL=${{ env.DOCS_BASE_URL }} >> .env
-      
+
+      - name: Fetch data
+        run: |
+          curl -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \ // todo check exist token
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/repos/reportportal/reportportal/releases
+
+      - name: Create multiple md files from releases data
+        run: |
+          echo "const fs = require('fs');
+          fs.mkdirSync('docs/releases', { recursive: true });
+          const data = fs.readFileSync('data.json', 'utf-8');
+          const jsonData = JSON.parse(data);
+          jsonData.forEach((item, index) => {
+            const filename = `docs/releases/${item.name}.md`;
+            const content = item.body;
+            content = content.replace('\r\n', '\n'); // todo check if it's needed
+            // todo fix for auto urls
+            // todo fix for images
+            // auto-generated urls doesn't supported
+            const header = `---
+              sidebar_position: ${index + 1}
+              sidebar_label: Version ${item.name}
+            ---\n`
+            const data = header + content;
+            fs.writeFileSync(filename, data);
+          });" > createFiles.js
+          node createFiles.js
+
       - name: Build the OpenAPI documentation
         run: npm run gen-all
 
