@@ -1,0 +1,112 @@
+---
+sidebar_position: 11
+sidebar_label: JUnit
+---
+
+# JUnit
+
+The JUnit plugin is essential for importing JUnit tests into ReportPortal.
+
+The JUnit plugin is pre-installed automatically. However, if for any reason you have removed it, you can upload it again.
+
+## Upload plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section.
+
+3. Click ‘Upload’ button at the top of the page.
+
+4. Add .jar file and click ‘Upload’ button.
+
+<MediaViewer src={require('./img/junit/JUnit1.png')} alt="Upload JUnit plugin" />
+
+## Launch import via UI with JUnit plugin
+
+:::important
+JUnit plugin should be enabled.
+:::
+
+1. Log in to ReportPortal.
+
+2. Go to the Launches page.
+
+3. Click ‘Import’ button.
+
+4. Select ‘JUnit’ in the ‘Report type’ dropdown on the ‘Import launch’ modal window.
+
+5. Click the drug-and-drop area to add .xml or .zip file under 32MB.
+
+6. Click ‘Import’ button and then ‘OK’ button on the ‘Import launch’ modal window.
+
+<MediaViewer src={require('./img/junit/JUnit2.png')} alt="Launch import via UI with JUnit plugin" />
+
+<MediaViewer src={require('./img/junit/JUnit3.png')} alt="Imported launch" />
+
+:::note
+Make sure to select JUnit file for the 'JUnit' Report type.<br />
+If you attempt to upload a file of any other agent for the 'JUnit' Report type, an error will occur.
+:::
+
+If files from the zip archive have formats other than XML, the system will skip them.
+
+If the XML file is not in the JUnit structure, the system will interrupt the process of copying and mark the file in red. The reason is then shown on the tooltip when hovering the file in the pop-up window.
+
+<MediaViewer src="https://youtu.be/X_lIooGAeto" alt="Upload and manage JUnit plugin in our test report dashboard" type="video" />
+
+## Launch import via API with JUnit plugin
+
+:::important
+JUnit plugin should be enabled.
+:::
+
+The endpoint ```POST /v1/plugin/{projectName}/JUnit/import``` allows importing a launch into the specified project using an XML or ZIP file.
+
+You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
+
+<MediaViewer src={require('./img/junit/JUnit4.png')} alt="Launch import via API with JUnit plugin" />
+
+There is the ability to read attributes and descriptions for Suite and Test level from XUnit reports while importing.
+
+**Description and attributes:**
+
+```
+<properties>
+<property name="description"> Lorem ipsum …</property>
+<property name="attribute" value="Lorem:ipsum"/>
+</properties>
+```
+
+<MediaViewer src={require('./img/junit/JUnit5.png')} alt="Attributes and descriptions for Suite and Test level in the XUnit report" />
+
+<MediaViewer src={require('./img/junit/JUnit6.png')} alt="Attributes and descriptions for the Suite level on UI for JUnit tests" />
+
+<MediaViewer src={require('./img/junit/JUnit7.png')} alt="Attributes and descriptions for the Test level on UI for JUnit tests" />
+
+<MediaViewer src="https://youtu.be/-jseHCta_1A" alt="Launch import via API with JUnit plugin in our qa automation dashboard" type="video" />
+
+## Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Import Launches tab.
+
+3. Find JUnit plugin and click on it.
+
+4. Click toggle OFF.
+
+<MediaViewer src={require('./img/junit/JUnit8.png')} alt="Disable JUnit plugin" />
+
+## Uninstall plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Import Launches tab.
+
+3. Find JUnit plugin and click on it.
+
+4. Click ‘Uninstall’ button and confirm your choice.
+
+<MediaViewer src={require('./img/junit/JUnit9.png')} alt="Uninstall JUnit plugin" />
+
+Following these steps, you can easily import JUnit test results into ReportPortal for further analysis and enhanced test automation reporting capabilities.
