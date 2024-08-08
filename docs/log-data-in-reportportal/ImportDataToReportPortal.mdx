@@ -5,58 +5,79 @@ sidebar_label: Import data to ReportPortal
 
 # Import data to ReportPortal
 
+## Import via UI
+
 Import functionality gives the opportunity to upload log files via UI.
-To start the import process, you should hit the 'Import' button on the Launch page (All Launches tab). In a new pop-up window **'Import Launch'** you can drop files or add them by adding a link.
+
+To start the import process, you should have at least one import plugin enabled: either JUnit or RobotFramework.
+
+To import launch via UI:
+
+1. Log in to ReportPortal.
+
+2. Go to the Launches page.
+
+3. Click ‘Import’ button.
+
+4. Select appropriate option in the ‘Report Type’ dropdown on the ‘Import launch’ modal window.
+
+5. Click the drag-and-drop area to add .xml or .zip file under 32MB.
+
+6. Click ‘Import’ button and then ‘OK’ button on the ‘Import launch’ modal window.
 
 ReportPortal checks file size and format first. Imported files should meet the following requirements:
+
 * File format is zip archive or XML file.
 * File size is up to 32Mb.
 * Timestamp format is 2022-11-17T10:15:43
 
-If the file format is incorrect, it is marked in red and the reason is shown in the tooltip on hovering over the file in the pop-up window. This is to prevent any incorrect files from being run through the import process.
+If the file format is incorrect, it is marked in red, and the reason is shown in the tooltip on hovering over the file in the pop-up window. This is to prevent any incorrect files from being run through the import process.
 
-If all the files added are correct you may hit the 'Import' or 'Cancel' buttons:
+If all the files added are correct you may click the 'Import' or 'Cancel' buttons:
+
 * The Cancel button closes the pop-up window without any operation under log files.
-* The Import button starts copying files into the RP file storage and disables the 'Import' button.
+* The Import button starts copying files into the RP file storage.
 
 The System will start copying files into the RP file storage if the files meet the following requirements:
-* The File format is a zip archive.
-* The File size is up to 32Mb.
-* The XML files must have the JUnit structure in the zip archive.
 
-The system copies valid XML files into RP file storage and marked them in green in the Import pop-up window.
+* The File format is a zip archive or XML file.
+* The File size is up to 32Mb.
+* The XML files must have the JUnit or RobotFramework structure in the zip archive and in XML files depend on Report Type you have chosen.
+
+The system copies valid XML files into RP file storage and marked them in green in the ‘Import launches’ pop-up window.
 
 If files from the zip archive have formats other than XML, the system will skip them.
 
-If the XML file is not in the JUnit structure, the system will interrupt the process of copying and mark the file in red. The reason is then shown on the tooltip when hovering the file in the pop-up window.
+If the XML file is not in the correct structure (depend on Report Type – JUnit or RobotFramework), the system will interrupt the process of copying and mark the file in red. The reason is then shown on the tooltip when hovering the file in the pop-up window.
 
 :::note
-Files that were copied earlier stay in the RP file storage
+Files that were copied earlier stay in the RP file storage.
 :::
-When all of the valid log files are downloaded and processed the 'OK' button is enabled. The 'OK' button closes the Import launches pop-up window. The Zip archive is then deleted after the Import is finished or canceled.
 
-<MediaViewer src="https://youtu.be/238DO03guaA" alt="Import data to our test automation reporting platform" type="video" />
+When all valid log files are downloaded and processed, the 'OK' button is enabled. The 'OK' button closes the ‘Import launches’ pop-up window.
 
-You can only interrupt the import in UI when files are being downloaded into the RP file storage. In this case, you should hit the 'Cancel' button (or X button in the pop-up window) and confirm the cancellation of import and then hit the 'Cancel' button again.
+<MediaViewer src="https://youtu.be/AQ4wZgKMNt4" alt="Import via UI on our test automation reporting dashboard" type="video" />
 
-<MediaViewer src="https://youtu.be/Qf_vY0J7xGA" alt="Import Break" type="video" />
+You can only interrupt the import in UI when files are being downloaded into the RP file storage. In this case, you should click the 'Cancel' button (or X button in the pop-up window) and confirm the cancellation of import and then click the 'Cancel' button again.
+
+<MediaViewer src="https://youtu.be/wv_zGn2SfuI" alt="Import via UI. Cancel button" type="video" />
 
 ## Import via API
 
-The details about import via API you can find on the ReportPortal menu at the bottom: API -> launch controller -> Import junit xml report
+The details about import via API you can find on the ReportPortal menu at the bottom: API -> Plugin Controller -> Send report to the specified plugin for importing
 
-<MediaViewer src={require('./img/ImportJunitXMLReport.png')} alt="Import junit xml report in our qa automation dashboard" />
+<MediaViewer src={require('./img/ImportViaAPI.png')} alt="Import via API in our qa automation dashboard" />
 
 You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
 
-The endpoint **POST /v1/&#123;projectName}/launch/import** allows importing a launch into the specified project using an XML or ZIP file in JUnit format.
+The endpoint ```POST /v1/plugin/{projectName}/{pluginName}/import``` allows importing a launch into the specified project using an XML or ZIP file.
 
 **Permissions:** Admin, PM, Member, Customer, Operator.
 
 Here's an example of a request to the endpoint:
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@"file_path.zip";type=application/x-zip-compressed' \
@@ -77,13 +98,23 @@ curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import'
 
 **Query parameters:**
 
+**pluginName** – mandatory field to specify import plugin
+
+**projectName** – mandatory field to specify project name
+
+**file** – mandatory area to upload file for import
+
 **launchImportRq** is application/json part of the request where you can specify needed custom information about launch.
 
 **attributes** – array of attributes
 
 **description** – custom launch description
 
+**name** – custom launch name
+
 **startTime** – if launch start time needed, or will be used first time in imported report
+
+<MediaViewer src={require('./img/parameters.png')} alt="Query parameters for API import" />
 
 If the array of attributes contains the next "skippedIsNotIssue" attribute marked as system, then all test items with SKIPPED status will be processed without applying a "To Investigate" defect type.
 
@@ -99,11 +130,10 @@ If the array of attributes contains the next "skippedIsNotIssue" attribute marke
 
 When set to "false", test items with SKIPPED status will be processed and marked with the defect type "To Investigate". If the parameter is not set, the default behavior is equivalent to "false".
 
-
 **Scenario 1** (Test items with SKIPPED status have "To Investigate" status):
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@Launch.zip;type=application/x-zip-compressed' \
@@ -117,7 +147,7 @@ curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import'
 **Scenario 2** (Test items with SKIPPED status don't have "To Investigate" status)
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@Launch.zip;type=application/x-zip-compressed' \
@@ -135,4 +165,4 @@ curl -L -X POST 'http://localhost:8080/api/v1/superadmin_personal/launch/import'
 }";type=application/json'
 ```
 
-<MediaViewer src="https://youtu.be/rjsftLtEcpc" alt="Import via API on our test automation results dashboard" type="video" />
+<MediaViewer src="https://youtu.be/nSnhm31-8iE" alt="Import via API on our test automation results dashboard" type="video" />

@@ -72,44 +72,120 @@ The "Integration" tab can allow the project to connect ReportPortal with externa
 
 For more information on this topic, please refer to [Integration with external systems](/configuration/IntegrationViaPlugin).
 
-### E-mail notifications
+### Notifications
 
-The "Notifications" tab provides the administrator with the ability to activate e-mail notifications on the project.
+The ‘Notifications’ tab provides the administrator with the ability to activate notifications on the project – through either Email or Slack.
 
-ReportPortal provides a way to add multiple rules with specific conditions. The Notification rule should be unique per project, have a unique parameter set, and specify recipients. For Example: In case, Launch names, attributes).
-
-Permissions: 
-Users with `ADMINISTRATOR` a role can configure "Notifications" in the Administrate section.
-Users with `PROJECT_MANAGER` roles can edit the settings on the project space only.
-
-To do that, perform the following steps:
-
-1. Login to the ReportPortal.
-2. Navigate to the Project -\> Project "Settings" page.
-3. Open the "Notifications" tab and click on a button "Create new notification rule" 
-4. Enter your email into the "From" field. This email will be used as a notification sender.
-5. Select recipients. To do that, start typing any symbols into the "Recipients" field.
-You can select an item from the auto-complete tool-tip using the
-keyboard (use the "Up" and "Down" arrows and "Enter" button). You can also enter a custom email into the "Recipients" field. To add a custom
-email, just enter the email address and press "Enter".
-6. The "Launch owner" is selected by default. Uncheck "Launch owner" to exclude
-him/her from the notification.
-7. Select the "In Case" setting. To do that, select one of the following options from the "In Case" drop-down.
-8. Select launches (optional). To do that, start typing any symbols into the "Launch names" field.
-You can select an item from the auto-complete tool-tip using the "Up" and "Down" arrows and clicking "Enter" on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications when each of them finishes.
-9. Then Select attributes (optional). To do that, start typing any symbols into the "Attribute key" and "Attribute value" fields. The system will suggest the results in the drop-down, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
-10. Switch ON Notifications
-11. The system will activate the "Email notification" option. After the launch is finished, the recipients will receive a notification via email.
-12. Add more rules, if needed. Each Notification rule should be unique.
-13. You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.  
-
+ReportPortal provides a way to add multiple rules with specific conditions. The notification rule should be unique per Notification group – Email or Slack, have a unique parameter set. For example: In case, Launch names, Attributes.
 
 :::note
-Users with a `MEMBER`/ `OPERATOR`/ `CUSTOMER` project role will not have the capability to edit the project settings, however, they do have the permissions to view them.
+Users with ADMINISTRATOR role can configure ‘Notifications’ in the Administrate section.<br />
+Users with PROJECT_MANAGER role can edit the settings on the project space only.<br />
+Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however, they do have the permission to view them.
 :::
+
+**Email notifications**
+
 :::tip
-For using this functionality be sure that the E-mail server is configured.
+For using this functionality be sure that the Email server is configured. For that, go to the Project Settings -> Integrations -> Email Server.
 :::
+
+To create Email notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Email Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Recipients** – optional field
+
+Start typing any symbols into the ‘Recipients’ field. You can select an item from the auto-complete tooltip using the keyboard (use the ‘Up’ and ‘Down’ arrows and ‘Enter’ button). You can also enter a custom email into the ‘Recipients’ field. To add a custom email, just enter the email address and press ‘Enter’.
+
+**Launch owner** – optional checkbox
+
+The ‘Launch owner’ checkbox is selected by default. Uncheck ‘Launch owner’ to exclude him/her from the notification.
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent upon the launch finish.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+Start typing any symbols into the ‘Launch names’ field. You can select an item from the auto-complete tooltip using the ‘Up’ and ‘Down’ arrows and clicking ‘Enter’ on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications when each of them finishes.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, user can provide key/value for attributes and select the necessary radio button:
+
+* All attributes should match
+* Any attribute should match
+
+Start typing any symbols into the ‘Attribute key’ and ‘Attribute value’ fields. The system will suggest the results in the dropdown, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
+
+You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/EmailNotification.png')} alt="Create Email Notification rule" />
+
+**Slack notifications**
+
+:::tip
+To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+:::
+
+To create Slack notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Slack Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Webhook URL** – mandatory field (it is configured on the Slack side)
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent upon the launch finish.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+Start typing any symbols into the ‘Launch names’ field. You can select an item from the auto-complete tooltip using the ‘Up’ and ‘Down’ arrows and clicking ‘Enter’ on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications when each of them finishes.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, user can provide key/value for attributes and select the necessary radio button:
+
+* All attributes should match
+* Any attribute should match
+
+Start typing any symbols into the ‘Attribute key’ and ‘Attribute value’ fields. The system will suggest the results in the dropdown, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
+
+You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/SlackNotification.png')} alt="Create Email Notification rule" />
+
 ### Custom defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
