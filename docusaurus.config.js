@@ -576,10 +576,6 @@ const config = {
             to: '/configuration/IntegrationViaPlugin',
             from: '/reportportal-configuration/IntegrationViaPlugin',
           },
-          {
-            to: '/configuration/ProjectConfiguration#notifications',
-            from: '/configuration/ProjectConfiguration#e-mail-notifications',
-          },
         ],
       },
     ],
