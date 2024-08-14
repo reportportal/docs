@@ -11,7 +11,7 @@ In the Auto-analysis and Machine Learning (ML) suggestions processes, several mo
 * ML suggestions XGBoost model, which offers the probability for a test item to resemble the test item from the history.
 * Error message language model on Tf-Idf vectors (Random Forest Classifier), which delivers a probability for the error message to be of a specific defect type or its subtype based on the words in the message. The probability from this model serves as a feature in the main boosting algorithm.
 
-In the beginning, you have global models at your disposal. These models, trained on six projects, have demonstrated average good accuracy. To develop a more powerful and personalized test failure analysis, you should retrain the models on the data from your project. he start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized test failure analysis, the models should be retrained on the data from the project.
+In the beginning, you have global models at your disposal. These models, trained on six projects, have demonstrated average good accuracy. To develop a more powerful and personalized test failure analysis, you should retrain the models on the data from your project. At the start of the project, you have global models available. They were trained on six projects and validated to provide good average accuracy. To have a more powerful and personalized test failure analysis, the models should be retrained on the data from the project.
 
 :::note
 If a global model performs better on your project data, the retrained model will not be saved, because we only keep custom models that outperform the global model on your data.
