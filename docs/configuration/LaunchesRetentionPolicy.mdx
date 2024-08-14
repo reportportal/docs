@@ -1,0 +1,119 @@
+# Launches retention policy
+
+Retention policies play a pivotal role in ensuring that companies maintain control over their data. In ReportPortal, on the General tab in Project Settings, the retention policy outlines the guidelines for how long regular launches and their descendants (logs, attachments) should be kept and when they should be deleted.
+
+You can also mark some launches as important, meaning they are generally not subject to deletion by the time-based retention policy. These launches can only be deleted manually or if [storage is overused](/configuration/LaunchesRetentionPolicy#important-launch-deletion-on-full-storage) (in this case new launches will displace old ones, even if they are marked as important).
+
+You can mark a launch as important either through the application's UI or during test reporting using special system attributes.
+
+## Mark launch as important on UI
+
+1. Go to the 'Launches' page.
+2. Open the burger menu for the launch.
+3. Click on the 'Mark as Important' option on the menu.
+4. Confirm your decision by clicking the 'Mark as Important' button on the 'Mark as Important' modal window.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy1.png')} alt="Mark launch as important on UI in our test automation dashboard" />
+
+:::note
+Administrator can mark any launch as important.<br />
+Project Manager can mark as important any launch within their own project.<br />
+Customers and Members can mark as important only their own launch.
+:::
+
+## Unmark important launches on UI
+
+1. Go to the 'Launches' page.
+2. Open the burger menu for the launch.
+3. Click on the 'Unmark as Important' option in the menu.
+4. Click on the 'Unmark' button on the 'Unmark as Important' modal window.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy2.png')} alt="Unmark important launch on UI" />
+
+:::note
+Administrator can unmark any launch as important.<br />
+Project Manager can unmark as important any launch within their own project.<br />
+Customers and Members can unmark as important only their own launch.
+:::
+
+<MediaViewer src="https://youtu.be/XMSEe3VAOBY" alt="Mark launch as important in our test report dashboard" type="video" />
+
+## Report launch as important
+
+You can also mark launch as important while reporting using following parameters:
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy3.png')} alt="Report launch as important" />
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy4.png')} alt="Launch which is reported as important" />
+
+In case launch is reported with system attributes **retentionPolicy : regular** and **retentionPolicy : important**, then attribute **retentionPolicy : important** is taken for defining the field value.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy5.png')} alt="Launch with retentionPolicy : regular and retentionPolicy : important attributes" />
+
+In case launch is reported without **retentionPolicy** system attribute or with random attribute like **retentionPolicy : qwerty**, then the behavior will be as for the launch with system attribute **retentionPolicy : regular**.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy6.png')} alt="Launch without retentionPolicy attribute" />
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy7.png')} alt="Launch with random retentionPolicy attribute" />
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy8.png')} alt="Launch with retentionPolicy : regular attribute" />
+
+<MediaViewer src="https://youtu.be/O1Ojy63M1Pw" alt="Report launch as important in our test reporting tool" type="video" />
+
+## Delete important launch on UI
+
+1. Go to the 'Launches' page.
+2. Select important launch.
+3. Click Actions -> Delete.
+4. Click 'Delete Important Launch' button on the 'Delete Launch' modal window.
+
+OR
+
+1. Go to the 'Launches' page.
+2. Open the burger menu for the important launch.
+3. Click on the 'Delete' option on the menu.
+4. Click 'Delete Important Launch' button on the 'Delete Launch' modal window.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy9.png')} alt="Delete important launch on UI" />
+
+:::note
+Administrator can delete important launches of all users.<br />
+Project Manager can delete the launches of users within their own project.<br />
+Customers and Members can delete only their own launches.
+:::
+
+## Bulk delete important launches
+
+1. Go to the 'Launches' page.
+2. Select at least two important launches.
+3. Click Actions -> Delete.
+4. Click 'Delete Important Launches' button on the 'Delete Launches' modal window.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy10.png')} alt="Bulk delete important launches" />
+
+:::note
+Administrator can perform bulk delete important launches of all users.<br />
+Project Manager can perform bulk delete the launches of users within their own project.<br />
+Customers and Members can perform bulk delete only their own launches.
+:::
+
+## Bulk delete important and regular launches
+
+1. Go to the 'Launches' page.
+2. Select at least one important launch and one regular launch.
+3. Click Actions -> Delete.
+4. Click ‘Delete with Important Launches' button on the 'Delete Launches' modal window.
+
+<MediaViewer src={require('./img/launches-retention-policy/LaunchesRetentionPolicy11.png')} alt="Bulk delete important and regular launches" />
+
+<MediaViewer src="https://youtu.be/Ha6G82dPKDg" alt="Delete important launches" type="video" />
+
+## Important launch deletion on full storage
+
+If all your storage is used and it consists of both regular and important launches, as soon as a new launch arrives, regular launches and all their related descendants will be deleted, starting from the oldest ones. The weight of deleted regular launches will be proportional to the weight of the new launches that are being reported.
+
+If there are no regular launches remaining and all your memory space is used by important launches, then important launches and their descendants will be deleted starting from the oldest until the storage no longer exceeds capacity. The weight of deleted important launches will be proportional to the weight of the new launches that are being reported.
+
+When it comes to attachments, in case of storage overusage by attachments of both regular and important launches, the same logic will apply. Attachments of regular launches are subject to deletion first. If there are no attachments from regular launches left, then attachments from important launches will be deleted, starting from the oldest, until the storage no longer exceeds capacity.
+
+Thus, storing and managing data within ReportPortal is now even more convenient. The updates to the launches retention policy introduce the option to mark launches as important, provide greater flexibility and ensure that crucial data is kept as long as needed.
