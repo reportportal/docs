@@ -12,7 +12,7 @@
 <script src="https://cookie-cdn.cookiepro.com/consent/77055ecd-ec2c-461a-bf1c-3e84d715e668/OtAutoBlock.js" defer="defer"></script>
 <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" defer="defer" charset="UTF-8" data-domain-script="77055ecd-ec2c-461a-bf1c-3e84d715e668"></script>
 <script>function OptanonWrapper(){}</script><link rel="stylesheet" href="/docs/assets/css/styles.476acce6.css">
-<script src="/docs/assets/js/runtime~main.afc7d84c.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.06caa313.js" defer="defer"></script>
 <script src="/docs/assets/js/main.7ca14132.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,7 +25,7 @@
 <li>ML suggestions XGBoost model, which offers the probability for a test item to resemble the test item from the history.</li>
 <li>Error message language model on Tf-Idf vectors (Random Forest Classifier), which delivers a probability for the error message to be of a specific defect type or its subtype based on the words in the message. The probability from this model serves as a feature in the main boosting algorithm.</li>
 </ul>
-<p>In the beginning, you have global models at your disposal. These models, trained on six projects, have demonstrated average good accuracy. To develop a more powerful and personalized test failure analysis, you should retrain the models on the data from your project. he start of the project, you have global models. They were trained on 6 projects and were validated to give a good accuracy on average. To have a more powerful and personalized test failure analysis, the models should be retrained on the data from the project.</p>
+<p>In the beginning, you have global models at your disposal. These models, trained on six projects, have demonstrated average good accuracy. To develop a more powerful and personalized test failure analysis, you should retrain the models on the data from your project. At the start of the project, you have global models available. They were trained on six projects and validated to provide good average accuracy. To have a more powerful and personalized test failure analysis, the models should be retrained on the data from the project.</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If a global model performs better on your project data, the retrained model will not be saved, because we only keep custom models that outperform the global model on your data.</p></div></div>
 <p>Triggering information and retrained models are stored in Minio (or a filesystem), as set up in the Analyzer service settings.</p>
 <p>Conditions for triggering retraining for <strong>Error Message Random Forest Classifier</strong>:</p>
