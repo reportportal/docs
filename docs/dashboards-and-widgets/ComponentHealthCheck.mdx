@@ -10,46 +10,23 @@ The widget shows the passing rate of the application components, indicated by th
 :::note
 For using this widget you need to report (or add manually) attributes to test items.
 :::
-<MediaViewer src="https://youtu.be/T98iy0mJk0s" alt="Component Health Check Video" type="video" />
 
-**Widget's parameters:**
+## Widget's parameters:
 
 - Filter
-- Parameters: All launches/ Latest launches
-- The min allowable passing rate for the component: Possible values from 50 - 100%. The default value is 100%.
-- Attribute key for the first level (mandatory)
-- Attribute key for the 2nd – 10th levels (optional)
+- Parameters: All Launches/Latest Launches
+- Checkbox 'Exclude Skipped Tests from Statistics'. Default state of checkbox: unselected.
+- Minimum allowable passing rate for the component: Possible value ranges from 50% to 100%. The default value is 100%.
+- Attribute Key for the First Level (mandatory)
+- Attribute Key for the 2nd to 10th Levels (optional)
 
 <MediaViewer src={require('./img/widget-types/ComponentHealthCheckCreation.png')} alt="Component Health Check Creation" />
 
-> **Use case:**
->
-> **Situation:**
-> As a Project Manager or Test Lead, I want to identify the most unstable areas in my product (application).
->
-> **Solution:**
-> Let’s build Component Health Check Widget based on a particular filter for the launches and the following attributes for test cases:
->
-> 1st level: key: function, possible values: order, team, configure, administrate<br />
-> 2nd level: key: type, possible values: backend, API, Unit, UI<br />
-> 3d level: key: market state, possible values: open, close<br />
-> 4th level: key: role, possible values: Project Manager, Member, Admin
->
-> On the first level of the widget, the user will only see the test cases with attribute key **‘function’**.
-> The test cases will be grouped by attribute value: order, team, configure, administrate.
-> By clicking on one of the groups (e.g., order), the user will see the second level of the widget.
-> It will contain only test cases that have attribute **function:order** and attribute key **‘type’**.
-> Test cases will be grouped by attribute value available for attribute key **‘type’** which are: backend, API, Unit, UI.
+When the **checkbox 'Exclude Skipped tests from statistics' is selected**, the passing rate is calculated based on the total number of test cases, excluding the skipped tests.
 
-1st LEVEL
+When the **checkbox 'Exclude Skipped tests from statistics' is not selected**, the passing rate is calculated based on the total number of test cases, including the skipped tests.
 
-<MediaViewer src={require('./img/widget-types/ComponentHealthCheckFirstLevel.png')} alt="First level of Component Health Check widget in our qa metrics dashboard" />
-
-2nd LEVEL
-
-<MediaViewer src={require('./img/widget-types/ComponentHealthCheckSecondLevel.png')} alt="Second level of Component Health Check widget in our test reporting tool" />
-
-**Widget view**
+## Widget view
 
 The Component Health Check widget is multi-level (up to 10 level) with the ability to drill down to the list of test cases included in the corresponding group at each attribute key level.
 
@@ -62,7 +39,7 @@ around unique attribute values (order, team, configure, administrate). The syste
 
 **For the second level**, the system again analyzes the 600 launches from the filter and searches
 for the test cases with 1st level attribute key plus value for chosen group (e.g., **function:order**)
-and also attribute key specified for the second widget level (e.g.,**. type**).
+and also attribute key specified for the second widget level (e.g., **type**).
 The found tests cases are grouped around unique attribute values (backend, API, Unit, UI).
 The system again calculates the passing rate for each group.
 
@@ -88,14 +65,15 @@ The same flow is applied to the other levels of the widget.
 
 **‘LATEST LAUNCH’ option**
 
-**For the first level**, the flow is almost the same as for the ‘ALL LANCHES’ option.
+**For the first level**, the flow is almost the same as for the ‘ALL LAUNCHES’ option.
 However, after the test cases are grouped around unique values for the attribute key, system only leaves the tests cases
 from latest launches executions for each selection.
+
 For example, if you have Launch A with executions #1 and #2 and Launch B with executions #1 and #2
 and they correspond to the applied filter, then building the widget based on “LATEST LAUNCHES’ parameter
 will take into account only the test cases from Launch A executions #2 and Launch B executions #2.
 
-**Widget section**
+## Widget section
 
 The widget is divided into two sections: Passed and Failed.
 
@@ -107,22 +85,35 @@ The widget is divided into two sections: Passed and Failed.
 
 Each group on the widget has:
 
-- **name**, which is equivalent to attribute value;
-- **passing rate**, calculated as (the number of passed test cases in the group)/(total number of test cases in the group);
-- **the number of test cases** in the group;
+- **name**, which is equivalent to attribute value
+- **passing rate**, calculated as (the number of passed test cases in the group)/(total number of test cases in the group)
+- **the number of test cases** in the group
 - **a color line**, which depends on the passing rate (see section Widget legend)
 
 Users can drill down to view the list of test cases included in the group, filtered by:
 
 - **test method:** Test
-- **status:** Passed, Failed, Skipped, Interrupted,
+- **status:** Passed, Failed, Skipped, Interrupted
 - **attributes** (key=Key for corresponding level, value=group name)
 
 :::note
 Each subsequent level should contain the attributes of previous levels.
 :::
 
-**Widget legend** consists of two lines: Passed and Failed
+When you click on the arrow on the component and the 'Exclude Skipped tests' toggle is OFF,
+the system redirects you to the test item view. Test items with statuses Passed, Failed, Interrupted, and Skipped are displayed.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckArrow.png')} alt="Component Health Check widget: Passed and Failed sections" />
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTests1.png')} alt="Component Health Check widget: Passed and Failed sections" />
+
+When you click on the arrow on the component and the 'Exclude Skipped tests' toggle is ON,
+the system redirects you to the test item view. Test items with statuses Passed, Failed, and Interrupted are displayed.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTests2.png')} alt="Component Health Check widget: Passed and Failed sections" />
+
+## Widget legend
+
+The widget legend has two lines - Passed and Failed.
 
 **Failed**
 
@@ -146,15 +137,42 @@ And have values - from specified on widget wizard to 100%. Depending on this col
 
 Let's say we set 'The min allowable passing rate for the component' to be 90%. The tests cases will be grouped in following color groups:
 
-green: tests with passing rate equals to 100%
-slightly green: greater than or equal to 90% (specified on widget wizard) and less than 100%
-light red: greater than or equal to 67,5% (calculated as (90%/4*3)) and less than 90%
-strong red: greater than or equal to 45% (calculated as (90%/4*2)) and less than 67,5%
-regular red: greater than or equal to 22,5% (calculated as (90%/4)) and less than 45%
+green: tests with passing rate equals to 100%<br />
+slightly green: greater than or equal to 90% (specified on widget wizard) and less than 100%<br />
+light red: greater than or equal to 67,5% (calculated as (`90%/4*3`)) and less than 90%<br />
+strong red: greater than or equal to 45% (calculated as (`90%/4*2`)) and less than 67,5%<br />
+regular red: greater than or equal to 22,5% (calculated as (`90%/4`)) and less than 45%<br />
 dark red: less than 22,5%
-
-<MediaViewer src={require('./img/widget-types/ComponentHealthCheckView.png')} alt="Data visualization in test automation: Component Health Check " />
 
 :::note
 The widget doesn't contain 'IN PROGRESS" launches.
 :::
+
+<MediaViewer src="https://youtu.be/feb-sfi476g" alt="Component Health Check Widget Video" type="video" />
+
+## Use case
+
+**Situation:**<br />
+As a Project Manager or Test Lead, I want to identify the most unstable areas in my product (application).
+
+**Solution:**<br />
+Let’s build Component Health Check Widget based on a particular filter for the launches and the following attributes for test cases:
+
+1st level: **key: function**, possible **values**: order, team, configure, administrate<br />
+2nd level: **key: type**, possible **values**: backend, API, Unit, UI<br />
+3d level: **key: market state**, possible **values**: open, close<br />
+4th level: **key: role**, possible **values**: Project Manager, Member, Admin
+
+On the first level of the widget, the user will only see the test cases with attribute key **‘function’**.<br />
+The test cases will be grouped by attribute **value**: order, team, configure, administrate.<br />
+By clicking on one of the groups (e.g., order), the user will see the second level of the widget.<br />
+It will contain only test cases that have attribute **function: order** and attribute key **‘type’**.<br />
+Test cases will be grouped by attribute value available for attribute key **‘type’** which are: backend, API, Unit, UI.
+
+1st LEVEL
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckFirstLevel.png')} alt="First level of Component Health Check widget in our qa metrics dashboard" />
+
+2nd LEVEL
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckSecondLevel.png')} alt="Second level of Component Health Check widget in our test reporting tool" />
