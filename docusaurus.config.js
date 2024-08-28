@@ -576,6 +576,10 @@ const config = {
             to: '/configuration/ProjectSettings',
             from: '/configuration/ProjectConfiguration',
           },
+          {
+            to: '/admin-panel/AllProjectsPage',
+            from: '/configuration/CreationOfProjectAndAddingUsers',
+          },
         ],
       },
     ],
