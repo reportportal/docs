@@ -40,7 +40,7 @@ Here are the links to User Guide sections divided by ReportPortal User roles.
 [Saved searches (Filters)](/saved-searches-filters)  
 [Dashboards and Widgets](/dashboards-and-widgets)  
 [User account](/user-account)  
-[See list of project members](/configuration/ProjectConfiguration#management-of-users-on-the-project)
+[See list of project members](/configuration/UserManagement)
 
 ## Customer
 [Work with reports](/work-with-reports)  

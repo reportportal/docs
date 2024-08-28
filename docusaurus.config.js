@@ -569,12 +569,12 @@ const config = {
            from: '/reportportal-configuration/authorization/SamlProviders/Overview',
           },
           {
-            to: '/configuration/CreationOfProjectAndAddingUsers',
-            from: ['/reportportal-configuration/CreationOfProjectAndAddingUsers', '/reportportal-configuration/ProjectConfiguration'],
-          },
-          {
             to: '/configuration/IntegrationViaPlugin',
             from: '/reportportal-configuration/IntegrationViaPlugin',
+          },
+          {
+            to: '/configuration/ProjectSettings',
+            from: '/configuration/ProjectConfiguration',
           },
         ],
       },
