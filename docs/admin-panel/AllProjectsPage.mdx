@@ -5,7 +5,7 @@ sidebar_label: All Projects page
 
 # All Projects page
 
-Users with the Administrator role have access to the ReportPortal "Administrate" section.
+Users with the `Administrator` role have access to the ReportPortal "Administrate" section.
 
 In "Administrate" section you can:
 
@@ -60,19 +60,38 @@ All Projects page allows:
 
 ## Create projects
 
-To create a project, please refer to [Creation of project and adding users](/configuration/CreationOfProjectAndAddingUsers)
+To create a project:
+
+1. Login into the ReportPortal instance as an `Administrator`.
+2. Open menu at the bottom.
+3. Click the 'Administrate' link.
+4. Select 'Projects' from the left-hand sidebar.
+5. Click the 'Add New Project' button in the right top corner.
+6. Then enter a name of the project.
+7. Click the 'Add' button.
+
+A confirmation message in the status bar should appear.
+
+:::note
+The name of the project should contain between 3-256 symbols.
+It can include Latin and numeric characters, as well as underscores and dashes.
+The name should be unique and cannot be changed after saving.
+:::
+An Admin can configure the project settings or leave them as the default.
+Project members with PROJECT_MANAGER roles are able to set up the project settings.
+To know how project settings could be updated, go to the [Project Settings](/configuration/ProjectSettings) section.
 
 ## Modify project settings
 
-To modify project settings please refer to [Project Configuration](/configuration/ProjectConfiguration)
+To modify project settings please refer to [Project Settings](/configuration/ProjectSettings)
 
 ## Invite user on "All Projects" page
 
 To invite a user to a project on "All Projects" page, perform the following steps:
 
-1. Login into the ReportPortal instance as an Administrator.
+1. Login into the ReportPortal instance as an `Administrator`.
 
-2. Navigate to the "Administrate" section -\> "All Projects" page
+2. Navigate to the "Administrate" section -> "All Projects" page
 
 3. Click on ellipsis button on the project preview.
 
@@ -109,7 +128,7 @@ but not exceeding 24 hours.
 
 ## Detailed project info
 
-1. Login into ReportPortal instance as Administrator.
+1. Login into ReportPortal instance as `Administrator`.
 
 2. Navigate to the "Administrate" section -\> "All Projects" page.
 
@@ -124,9 +143,9 @@ but not exceeding 24 hours.
 
 To delete a project, perform the following steps:
 
-1. Login into ReportPortal instance as Administrator.
+1. Login into ReportPortal instance as `Administrator`.
 
-2. Navigate to the "Administrate" section -\> "All Projects" page.
+2. Navigate to the "Administrate" section -> "All Projects" page.
 
 3. Click on ellipsis button on the project preview.
 
@@ -139,3 +158,22 @@ To delete a project, perform the following steps:
 :::note
 PERSONAL PROJECTS cannot be deleted from the system.
 :::
+## Use Case 1
+
+**Situation:** We have a small team. Everybody can see everything. We need one dashboard which shows information about the whole project.
+
+**Solution:** Create one project. Assign all users on the created project. View all types of test cases (UI, API, Unit and so on) on this project. Divide executions by custom filters. Create a dashboard with a widget based on filters.
+
+**Pros:** You have a dashboard that can combine all results needed for your team. You need to configure only one project.
+
+**Cons:** All team members can see all results, you can not configure permissions rules.
+
+## Use Case 2
+
+**Situation:** We have a big team with a difficult permission structure and nested streams. Only persons with granted permissions can see results of a certain stream.
+
+**Solution:** Create separate projects for different streams. Assign users to appropriate projects. Create a dashboard with a widget based on filters for each project.
+
+**Pros:** Security, only users with granted permission will have access to the data.
+
+**Cons:** You can not see a single dashboard for several dashboards.
