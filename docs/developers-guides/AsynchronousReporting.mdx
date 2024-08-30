@@ -104,9 +104,10 @@ Requests and responses have no differences with sync ones but there are some spe
 
 #### Exchanges and queues for reporting
 
-The `API` creates two exchanges: `e.reporting` and `e.reporting.retry`. The `e.reporting` exchange is linked to queues that handle messages from requests, while the `e.reporting.retry` exchange is linked to retry queues and manages messages rejected from the main reporting queues.
-The number of queues in these exchanges depends on the `REPORTING_QUEUES_COUNT` env variable. The `e.reporting` exchange has `N` queues named `q.reporting.id.0` to `q.reporting.id.N`. The `e.reporting.retry` exchange has 2 queues named `q.retry.reporting` and `q.retry.reporting.ttl`.
-If a message from `e.reporting.retry` is consumed and throws an exception more than 10 times, it will be moved to a separate queue named `q.parkingLot.reporting`, where it will be stored for 7 days for manual error analysis.
+The `API` creates two exchanges: `e.reporting` and `e.reporting.retry`. The `e.reporting` exchange is linked to queues that handle messages from requests, while the `e.reporting.retry` exchange is linked to retry queue and manages rejected from the main reporting queues.
+The number of queues in these exchanges depends on the `REPORTING_QUEUES_COUNT` env variable. The `e.reporting` exchange has `N` queues named `q.reporting.id.0` to `q.reporting.id.N`. The `e.reporting.retry` exchange has 1 queue named `q.retry.reporting.ttl`.
+If a message from `e.reporting.retry` is consumed and throws an exception more than 20 times, it will be moved to a separate queue named `q.parkingLot.reporting`, where it will be stored for 7 days for manual error analysis.
+The retry message will be stored in `q.retry.reporting.ttl` with progressive TTL. It means that ttl will be increase each time. The whole ttl of the retry message is about 2 hours.
 
 <MediaViewer src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
 
