@@ -5,11 +5,38 @@ sidebar_label: Scaling Up the ReportPortal Service API
 
 # Scaling Up the ReportPortal Service API
 
-Due to the current implementation specifics [Asynchronous Reporting Scheme](/developers-guides/AsynchronousReporting#scheme), horizontal auto-scaling of the ReportPortal service API is not feasible. However, manual scaling is achievable. This limitation stems from the way RabbitMQ, in conjunction with the API, manages the number of queues on the RabbitMQ side.
+ReportPortal supports dynamic scaling of its API service during runtime to efficiently manage varying loads. This guide provides instructions on how to scale the API service up or down, and discusses the implications on asynchronous reporting and queue management in RabbitMQ while scaling.
 
-Given that ReportPortal can receive a substantial volume of concurrent streams from different project spaces, a mechanism has been implemented. This mechanism determines the number of queues based on the hash of the launch object and distributes them across different queues to increase the likelihood of processing.
+## Scaling Up the API Service
 
-In simpler terms, this means that a launch that arrives later in time has the chance to be processed and recorded in the database from the queue, even while another launch from a different project with a large number of test cases has already entered the queue. Instead of a situation where the queue would only reach the last launch after processing the earlier, larger one, the API will handle different queues concurrently. This approach allows the later launch to be processed without undue delay.
+### Steps to Scale Up
+1. **Launch Additional Instances**: Increase the capacity by starting more instances of the API service.
+2. **Load Balancing**: The load balancer will automatically distribute incoming requests among all active API service instances.
+
+## Scaling Down the API Service
+
+### Steps to Scale Down
+1. **Shutdown Instances**: Decrease the scale by shutting down any of the API service instances.
+2. **Message Redistribution**: Messages in the queues of the shutdown instance will automatically shift to the queues of the remaining active APIs.
+3. **Queue Cleanup**: Inactive queues (those not receiving any new messages) will be removed after a few minutes.
+
+## Impact on Asynchronous Reporting and Queue Management
+
+### Considerations for Scaling Up
+- **Message Rebalancing**: During periods of heavy asynchronous reporting, scaling up may cause messages to be rebalanced across different queues, despite using "Consistent Hashing Algorithm" for distribution. It may lead to an increased number of retries. It might take approx. 2 hours to restore order using retry logic with progressively increasing TTL for each message.
+- **Avoid During Heavy Reporting**: Given the potential complexities in message handling when scaling up, it is advisable to refrain from doing so during extensive reporting activities to prevent hard-to-resolve situations and missed reporting items.
+
+### Considerations for Scaling Down
+- **Continuity in Message Processing**: Shutting down an API instance leads to its queues redistributing their messages to the remaining queues, ensuring no disruption in processing.
+
+### Notable Effects
+Scaling operations primarily affect asynchronous report processing and management within RabbitMQ queues:
+
+- **Order Processing Assurance**: To maintain correct order processing of reports for a specific Launch, all requests are directed to one particular queue and handled by only one consumer.
+
+### About RabbitMQ Queues
+- **Scaling Limitations**: Currently, it is not possible to scale queues in RabbitMQ with spreading requests across multiple queues and consumers.
+
 
 ## Scaling up configuration for ReportPortal API Service
 
@@ -22,11 +49,8 @@ To scale your ReportPortal services in Kubernetes, you need to adjust the `repli
    [values.yaml replicaCount](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L73)
 
 2. **Edit Total Number of Queues**:
-   Modify `queues.totalNumber` from `10` to `20` to increase the total available queues.<br />
-   [values.yaml queues.totalNumber](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L139)
-
-   Use the following formula for calculation:<br />
-   `perPodNumber = totalNumber / serviceapi.replicaCount`
+   Modify `queues` from `10` to `20` to increase the total available queues.<br />
+   [values.yaml queues](https://github.com/reportportal/kubernetes/blob/master/reportportal/values.yaml#L159)
 
 ### Docker
 
@@ -42,8 +66,7 @@ To scale your ReportPortal services using Docker, update the environment variabl
      api:
        <...>
        environment:
-         RP_AMQP_QUEUES: 20
-         RP_AMQP_QUEUESPERPOD: 10
+         REPORTING_QUEUES_COUNT: 10
    <...>
    ```
 
@@ -58,15 +81,13 @@ To scale your ReportPortal services using Docker, update the environment variabl
      api:
        <...>
        environment:
-         RP_AMQP_QUEUES: 20
-         RP_AMQP_QUEUESPERPOD: 10
+         REPORTING_QUEUES_COUNT: 10
       <...>
 
     api_replica_1:
        <...>
        environment:
-         RP_AMQP_QUEUES: 20
-         RP_AMQP_QUEUESPERPOD: 10
+         REPORTING_QUEUES_COUNT: 10
     <...>
    ```
     
