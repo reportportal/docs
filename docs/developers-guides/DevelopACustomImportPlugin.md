@@ -1,6 +1,5 @@
-# Development of a custom Import Plugin for ReportPortal
+# Develop a custom import plugin
 
-## Overview
 This documentation guides on creating a custom import plugin for ReportPortal, using the PF4J plugin framework.
 
 ## Prerequisites
@@ -27,7 +26,7 @@ Update the naming from 'template' to something specific to your plugin need. Mod
 Create your main class (or use from the template) annotated with `@Extension` that implements `ReportPortalExtensionPoint` ([TemplatePluginExtension](https://github.com/reportportal/plugin-template/blob/main/plugin/src/main/java/com/epam/reportportal/extension/template/TemplatePluginExtension.java)).
 This class should contain all logic for integrating the new plugin with the ReportPortal system. Implement the necessary methods as shown in the earlier example snippet.
 
-For correct representation on the UI, there should be added specific parameters to the plugin
+For correct representation on the UI, there should be added specific parameters to the plugin:
 
 ```java
   @Override
@@ -83,5 +82,4 @@ The same approach used for other requests as well.
 - **StartChildItemRqEvent**: For starting a child item, requiring a parent UUID.
 - **SaveLogRqEvent**: For saving logs which may include file attachments.
 
-## Conclusion
-Creating a custom import plugin for ReportPortal involves enhancing the platform's capabilities through specific logic encapsulated in an extension point and managing particular command for importing data. Following these steps and using the provided resources will equip you to develop a plugin tailored to your reporting needs and integrated seamlessly with ReportPortal.
+By following these steps and using the available resources, you can build an import plugin that is customized to your reporting requirements and integrates smoothly with ReportPortal.
