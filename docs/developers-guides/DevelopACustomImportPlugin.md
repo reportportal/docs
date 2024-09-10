@@ -17,7 +17,7 @@ Before starting the development of a new import plugin, ensure you review these 
 ## Step-by-Step Plugin Development Guide
 
 ### Step 1: Clone the Plugin Template
-Begin by cloning the [plugin template repository](https://github.com/reportportal/plugin-template) to get the required boilerplate code.
+Begin by using the [plugin template](https://github.com/new?template_name=plugin-template&template_owner=reportportal) to create a new repository and get the required boilerplate code.
 
 ### Step 2: Rename and Configure the Template
 Update the naming from 'template' to something specific to your plugin need. Modify the `gradle.properties` to set your `pluginId`, which should be a key word without special symbols. Update the manifest appropriately [here](https://github.com/reportportal/plugin-template/blob/698a17a862eb4a8d52274242a9f8e4ec9e6ab799/plugin/build.gradle#L101).
