@@ -82,6 +82,7 @@ Build plugin executable jar using standard gradle commands after implementation 
 ```
 gradle clean build
 ```
+More information about the assembling of plugins can be found in [PluginDevelopersGuide](PluginDevelopersGuide.mdx#assemble-plugin)
 
 ### Step 6: Verify the plugin UI
 
