@@ -76,7 +76,14 @@ When working with a loaded file, it's necessary to trigger events in ReportPorta
 
 The same approach used for other requests as well.
 
-### Step 5: Verify the plugin UI
+### Step 5: Build plugin jar
+
+Build plugin executable jar using standard gradle commands after implementation of the plugin is finished. 
+```
+gradle clean build
+```
+
+### Step 6: Verify the plugin UI
 
 Provide the info, mentioned in [step 3](#step-3-implement-the-plugin-entrypoint). This will help the ReportPortal UI understand the plugin's capabilities and limitations.
 Once the step is completed, the plugin will be available for selection in the ReportPortal UI Launch import modal. No further actions required from the plugin UI to make the import process work. 
