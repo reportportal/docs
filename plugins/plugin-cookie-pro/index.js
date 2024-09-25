@@ -3,7 +3,7 @@ export default function pluginCookiePro() {
     name: 'plugin-cookie-pro',
     injectHtmlTags() {
       return {
-        headTags: [
+        postBodyTags: [
           {
             tagName: 'script',
             attributes: {
