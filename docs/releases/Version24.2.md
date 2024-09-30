@@ -12,7 +12,7 @@ Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_contai
 
 :::important 2
 Due to the transition to a new plugin mechanism when updating ReportPortal to version 24.2, all the plugins need to be reinstalled manually. 
-Check out the updated plugins UI development guides.
+Check out the updated plugins [UI development guides](/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide).
 :::
 
 ## 1. What's Changed:
@@ -20,8 +20,9 @@ Check out the updated plugins UI development guides.
 1. **New features** - **[Extended launches retention policy](/configuration/LaunchesRetentionPolicy)**: <br/>
    We've introduced an extended launches retention policy to allow important launches to be preserved beyond the existing retention periods. Previously, all launches were automatically deleted after a set time to save storage. With this update, you can now mark specific launches as important, ensuring they are never deleted, as long as there is sufficient storage available. This feature is useful for retaining critical data for compliance, auditing, or historical analysis.
 
-2. **New integrations** (Notifications) - **[Slack plugin](/plugins/Slack)** and redesigned Notifications page: <br/>
-   Teams using Slack can now set up Slack integration to receive ReportPortal notifications on launch event right in their Slack channel.
+2. **New integrations** (Notifications) - **[Slack plugin](/plugins/Slack) and redesigned Notifications page**: <br/>
+   Teams using Slack can now set up Slack integration to receive ReportPortal notifications on launch event right in their Slack channel.<br/>
+   More details can be found in [Slack user guide](/plugins/Slack) and [blog post](https://reportportal.io/blog/report-test-results-in-real-time-to-slack).
 
 3. **New integrations** (Bug Tracking Systems) - **[Monday plugin](/plugins/Monday)**: <br/>
    Teams working with Monday as their BTS can now set up an integration to post and link issues from ReportPortal directly to Monday.  
@@ -30,7 +31,7 @@ Check out the updated plugins UI development guides.
    To provide more flexibility for launch import, the feature has been moved from the core application to a plugin. Users can now choose between the Robot and JUnit import plugins developed by the ReportPortal team, or create their own plugins to import results from other test frameworks.<br/>
    More details about [JUnit import plugin](/plugins/JUnit).<br/>
    More details about [Robot Framework import plugin](/plugins/RobotFramework).<br/>
-   Guide on how to create import plugin.
+   [Guide on how to create import plugin](/developers-guides/PluginDevelopersGuide/DevelopACustomImportPlugin).
 
 5. **Microseconds added to timestamps** for better test items sequence tracking:<br/>
    Microseconds have been added to timestamps to enable a more accurate sequence of logs, as some logs previously had identical timestamps at the millisecond level.
@@ -44,18 +45,31 @@ Check out the updated plugins UI development guides.
 
 ## 2. Technical improvements:
 
-1. **Asynchronous Reporting**:<br/>
-   ReportPortal now features 2x faster reporting under full load, thanks to a new asynchronous reporting approach. A key update includes switching from a Direct exchange to a Consistent-hashing exchange. The retry mechanism was also revamped to focus on handling messages related to the reporting order.  
-   Learn more.
+1. **Analyzer**:
+
+Added:
+- Message-through logging with Correlation ID, to ease debugging and understanding of logs.
+
+Updated:
+- Refactoring: data-preparation logic joined and put into common place.
+- Refactoring: model train logic standardised and prepared for future join.
+- Lots of type annotations added.
+
+Fixed
+- Re-train logic. Custom re-trained models for big enough projects do not affect negatively auto-analysis now.
+
+2. **Asynchronous Reporting**:<br/>
+   ReportPortal now features 2x faster reporting under full load, thanks to a new asynchronous reporting approach. A key update includes switching from a Direct exchange to a Consistent-hashing exchange. The retry mechanism was also revamped to focus on handling messages related to the reporting order.<br/>
+   Read our latest [blog post](https://reportportal.io/blog/boost-asynchronous-test-reporting-speed-by-2x).
 
 :::important
 To ensure that asynchronous reporting works correctly, please make sure the correct feature flag is enabled in RabbitMQ.<br/>
 Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_containers_deaths_v2. If it's disabled, enable it.
 :::
 
-2. Updated React to version 18.
-3. Updated PostgreSQL to version 16.
-4. Updated Java to version 21 (Service-uat).
+3. Updated React to version 18.
+4. Updated PostgreSQL to version 16.
+5. Updated Java to version 21 (Service-uat).
 
 ## 3. Bugs fixed:
 
@@ -131,6 +145,4 @@ We are going to review it in the upcoming updates to make sure that all cases ar
 |Auto Analyzer|reportportal/service-auto-analyzer|5.12.0-r1|
 |Metrics Gatherer|reportportal/service-metrics-gatherer|5.12.0-r1|
 
-## 7. Migration Guide.
-
-
+## 7. [Migration Guide](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.24.2)

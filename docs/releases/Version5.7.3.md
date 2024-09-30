@@ -19,7 +19,7 @@ sidebar_label: Version 5.7.3
 
 ## Bugfixing:
 We have refactored logs double-entry saving to Elasticsearch by changing index type: now logs are saved in indexes per project instead of indexes per launch. It helps us to save the performance of Elasticsearch considering other operations and the data which we have processed via Elastic.
-More details can be found via the [link](https://reportportal.io/blog/performance-improvements-in-5.7.3?utm_source=trigger&utm_medium=release_note&utm_campaign=perf_improve&utm_content=dec).
+More details can be found via the [link](https://reportportal.io/blog/performance-improvements-in-5.7.3).
 
 ## Technical updates:
 
