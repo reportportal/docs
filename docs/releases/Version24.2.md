@@ -5,7 +5,7 @@ sidebar_label: Version 24.2
 
 # Version 24.2
 
-:::important
+:::important 1
 To ensure that asynchronous reporting works correctly, please make sure the correct feature flag is enabled in RabbitMQ.
 Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_containers_deaths_v2. If it's disabled, enable it.
 :::
