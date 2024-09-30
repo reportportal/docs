@@ -90,7 +90,7 @@ Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_contai
 - ‘'In progress' QG status doesn't change for merged launches, when 'New errors' rule is applied and no unique errors identified' is fixed
 - 'QG page is broken after editing Quality Gate, if it contains New failures/New error rules' is fixed
 
-4. TypeError occuring when switching between "New errors" and "Known errors" options on "Unique errors" page is solved
+4. TypeError occurring when switching between "New errors" and "Known errors" options on "Unique errors" page is solved
 5. "Unique bugs table" widget is fixed
 6. Bug with Retry reported as a separate step is fixed
 
