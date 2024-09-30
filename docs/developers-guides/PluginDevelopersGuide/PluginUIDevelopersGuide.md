@@ -6,7 +6,7 @@ sidebar_label: Plugin UI development guide
 
 The described approach cover the UI part of the plugin engine starting from ReportPortal version 24.1.
 
-To learn how deal with ReportPortal plugins from the Backend side, follow the [separate guide]('./PluginAPIDevelopersGuide.mdx'). 
+To learn how deal with ReportPortal plugins from the Backend side, follow the [separate guide](./PluginAPIDevelopersGuide.mdx). 
 
 ## The concept
 
@@ -51,13 +51,3 @@ The list with supported extension points by core UI:
 | launchItemComponent   | Adds a component to the every launch entity on launches page (component will be displayed under the launch name).                                                                                                                                                                                                                                                                                                                                                        |
 
 projectPage (if `icon` property exists, the link will be automatically added to the sidebar). Right now only SVG icons supported.
-
-### From Plugin UI side
-
-Webpack Module Federation
-
-## How to create own plugin UI
-
-### Prerequisites
-
-### Descriptors file (metadata.json)
