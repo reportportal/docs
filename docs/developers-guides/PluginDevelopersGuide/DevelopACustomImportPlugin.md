@@ -82,7 +82,7 @@ Build plugin executable jar using standard gradle commands after implementation 
 ```
 gradle clean build
 ```
-More information about the assembling of plugins can be found in [PluginDevelopersGuide](PluginDevelopersGuide.mdx#assemble-plugin)
+More information about the assembling of plugins can be found in [PluginDevelopersGuide](./PluginAPIDevelopersGuide.mdx#assemble-plugin)
 
 ### Step 6: Verify the plugin UI
 
@@ -93,7 +93,7 @@ Once the step is completed, the plugin will be available for selection in the Re
 
 The plugin template also provides a way to add custom extensions to the ReportPortal UI via plugin.
 This setup isn't required for import process work, but can be used to provide additional pages/sections in the ReportPortal UI via React components.
-For more information, see the [Plugin Developers Guide](./PluginDevelopersGuide.mdx). <!-- TODO: Update the link to the section with UI -->
+For more information, see the [Plugin Developers Guide](./PluginUIDevelopersGuide.md).
 
 ## Events to Manage
 - **StartLaunchRqEvent**: To start a new launch.
