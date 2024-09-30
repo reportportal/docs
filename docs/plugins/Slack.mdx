@@ -1,0 +1,172 @@
+---
+sidebar_position: 11
+sidebar_label: Slack
+---
+
+# Slack
+
+Be informed about launch finish in real time in your Slack channel.
+
+To download the Slack plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
+
+## Configuration on Slack side
+
+Create Slack workspace and channel
+
+1. Log in to your Slack account.
+
+2. Create Slack workspace and a channel in the workspace as shown on the screenshots below.
+
+<MediaViewer src={require('./img/slack/Slack1.png')} alt="Configuration on Slack side: add company name" />
+
+<MediaViewer src={require('./img/slack/Slack2.png')} alt="Configuration on Slack side: add user name" />
+
+<MediaViewer src={require('./img/slack/Slack3.png')} alt="Configuration on Slack side: add coworkers" />
+
+<MediaViewer src={require('./img/slack/Slack4.png')} alt="Configuration on Slack side: add channel name" />
+
+<MediaViewer src={require('./img/slack/Slack5.png')} alt="Welcome to the channel" />
+
+### Create an application in Slack
+
+1. Go to https://api.slack.com/ to create an application in Slack.
+
+2. Click 'Your apps'.
+
+3. Click 'Create an App'.
+
+<MediaViewer src={require('./img/slack/Slack6.png')} alt="Create an App in Slack" />
+
+4. Select 'From scratch'.
+
+<MediaViewer src={require('./img/slack/Slack7.png')} alt="Select 'From scratch' option" />
+
+5. Input the app name and select the created workspace → click 'Create App'.
+
+<MediaViewer src={require('./img/slack/Slack8.png')} alt="Input the app name" />
+
+6. Choose 'Incoming webhooks' in the left menu and verify that the webhooks are activated (toggle above).
+
+<MediaViewer src={require('./img/slack/Slack9.png')} alt="Choose Incoming webhooks" />
+
+7. Go to the bottom of the page and click 'Add new Webhook to Workspace'.
+
+<MediaViewer src={require('./img/slack/Slack10.png')} alt="Add new Webhook to Workspace" />
+
+8. You will be redirected to the page where you need to choose from available channels in your workspace where you want to post notifications.
+
+<MediaViewer src={require('./img/slack/Slack11.png')} alt="Available channels in Slack" />
+
+9. Select a channel and click 'Allow' button.
+
+<MediaViewer src={require('./img/slack/Slack12.png')} alt="Select a channel" />
+
+10. Your webhook is created and can be used to create notification rules in RP.
+
+<MediaViewer src={require('./img/slack/Slack13.png')} alt="Webhook on Slack side for using in our test report dashboard" />
+
+<MediaViewer src="https://youtu.be/gyBmUCLZ5hk" alt="Slack plugin. Configuration on Slack side" type="video" />
+
+## Configuration on ReportPortal side
+
+### Upload plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section.
+
+3. Click ‘Upload’ button at the top of the page.
+
+4. Add Slack plugin [.jar file](https://github.com/reportportal/plugin-slack/packages) and click ‘Upload’ button.
+
+<MediaViewer src={require('./img/slack/Slack14.png')} alt="Upload Slack plugin" />
+
+### Create notification rule
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Slack Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Webhook URL** – mandatory field (it is configured on the [Slack side](/plugins/Slack#create-an-application-in-slack))
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi select.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/slack/Slack15.png')} alt="Create Slack notification rule in our test automation reporting dashboard" />
+
+<MediaViewer src="https://youtu.be/Hoq9GN4C1Ps" alt="Slack plugin. Configuration on our test automation dashboard" type="video" />
+
+### How to receive notifications in Slack
+
+When you have the plugin installed and Slack notification rules configured, you can start receiving notifications to the channel configured. For this you need to report a launch which matches the notification rule and after the launch is finished you will receive a corresponding message in the Slack channel with some details on the Launch results. Below you can find examples of how Passed and Failed launch notifications can look:
+
+**Passed Launch**
+
+<MediaViewer src={require('./img/slack/Slack16.png')} alt="Passed launch" />
+
+<MediaViewer src={require('./img/slack/Slack17.png')} alt="Notification about Passed launch in Slack" />
+
+**Failed Launch**
+
+<MediaViewer src={require('./img/slack/Slack18.png')} alt="Failed launch" />
+
+<MediaViewer src={require('./img/slack/Slack19.png')} alt="Notification about Failed launch in Slack" />
+
+### Disable Slack notifications
+
+1. Go to the Project settings -> Notifications.
+
+2. Turn OFF for Slack.
+
+<MediaViewer src={require('./img/slack/Slack20.png')} alt="Disable Slack notifications in ReportPortal" />
+
+### Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Slack plugin and click on it.
+
+4. Turn OFF.
+
+<MediaViewer src={require('./img/slack/Slack21.png')} alt="Disable Slack plugin in ReportPortal" />
+
+### Uninstall plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Slack plugin and click on it.
+
+4. Click ‘Uninstall’ button and confirm your choice.
+
+<MediaViewer src={require('./img/slack/Slack22.png')} alt="Uninstall Slack plugin" />
+
+Thanks to Slack plugin, you can ensure that everyone stays informed about project milestones. This real-time update mechanism helps to reduce the lag in communication, allowing teams to respond promptly to any issues.

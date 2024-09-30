@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 24.1
 ---
 
@@ -74,7 +74,7 @@ Some of the environmental variables names are still ElasticSearch specific, but 
 - [#1841,](https://github.com/reportportal/service-api/pull/1841) [#1999](https://github.com/reportportal/reportportal/issues/1999) PR was rejected as it contained breaking changes. Instead new converter for openmetrics was added to configuration.
 
 ## 5. CVE addressed:
-[CVE-2023-44487](https://github.com/advisories/GHSA-qppj-fm5r-hxr3), [CVE-2023-3978](https://github.com/advisories/GHSA-2wrh-6pvc-2jm9), [CVE-2023-1436](https://github.com/advisories/GHSA-q6g2-g7f3-rr83), [CVE-2022-1471](https://github.com/advisories/GHSA-mjmj-j48q-9wg2), [CVE-2022-42003](https://github.com/advisories/GHSA-jjjh-jjxp-wpff), [CVE-2020-36518](https://github.com/advisories/GHSA-57j2-w4cx-62h2), [CVE-2022-45688](https://github.com/advisories/GHSA-3vqj-43w4-2q58), [CVE-2023-5072](https://github.com/advisories/GHSA-4jq9-2xhw-jpx7), [CVE-2022-22965](https://github.com/advisories/GHSA-36p3-wjmg-h94x), [CVE-2023-20863](https://github.com/advisories/GHSA-wxqc-pxw9-g2p8), [CVE-2022-2297](https://github.com/advisories/GHSA-5rjr-j9m9-qpm9), [CVE-2022-1471](https://github.com/advisories/GHSA-mjmj-j48q-9wg2)
+[CVE-2023-44487](https://github.com/advisories/GHSA-qppj-fm5r-hxr3), [CVE-2023-3978](https://github.com/advisories/GHSA-2wrh-6pvc-2jm9), [CVE-2023-1436](https://github.com/advisories/GHSA-q6g2-g7f3-rr83), [CVE-2022-1471](https://github.com/advisories/GHSA-mjmj-j48q-9wg2), [CVE-2022-42003](https://github.com/advisories/GHSA-jjjh-jjxp-wpff), [CVE-2020-36518](https://github.com/advisories/GHSA-57j2-w4cx-62h2), [CVE-2022-45688](https://github.com/advisories/GHSA-3vqj-43w4-2q58), [CVE-2023-5072](https://github.com/advisories/GHSA-4jq9-2xhw-jpx7), [CVE-2022-22965](https://github.com/advisories/GHSA-36p3-wjmg-h94x), [CVE-2023-20863](https://github.com/advisories/GHSA-wxqc-pxw9-g2p8), [CVE-2022-1471](https://github.com/advisories/GHSA-mjmj-j48q-9wg2)
 
 ## 6. Released versions
 |Service Name|Repository|Tag|
