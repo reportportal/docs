@@ -1,16 +1,16 @@
 ---
 sidebar_position: 3
-sidebar_label: Project configuration
+sidebar_label: Project settings
 ---
 
-# Project configuration
+# Project settings
 
 To see the list of available projects and open a project, click the drop-down list in the top of the left menu.
 
 ReportPortal supports customization of the default settings.
 
 **Permission:** 
-Users with the Administrator role can edit project settings on the project "Settings" page in Administrate section and on the Project space.
+Users with the `Administrator` role can edit project settings on the project "Settings" page in Administrate section and on the Project space.
 Users with the `PROJECT_MANAGER` role can edit the settings on the project space only.
 `MEMBER`/ `OPERATOR`/ `CUSTOMER` can only view applied project settings.
 
@@ -242,79 +242,3 @@ The generated data could demonstrate how the launches, filter, and dashboard wil
 modified or removed without any effect of your real objects.
 
 <MediaViewer src="https://youtu.be/bXHY0_sXAF8" alt="Generate Demo Data with test report&analytics dashboard" type="video" />
-
-## Management of users on the project
-
-On the "Project Members" page users with the appropriate roles can invite new members.
-
-Permissions: 
-
-User with `ADMINISTRATOR` role and users with project role `PROJECT_MANAGER`.
-
-### Invite user on a project
-
-To invite a user on the "Project Members" page, perform the following steps:
-
-1. Login into ReportPortal instance as with the PROJECT_MANAGER project role.
-2. Navigate to the "Project Members" page on the left menu.
-3. Click the "Invite User" tab.
-4. Enter the email address of the user in case he/she is not present in the ReportPortal database or enter his/her login name.
-5. In case the user is already available in the ReportPortal, his/her name will appear in the suggestion list.
-If not, the Admin should enter the correct email address.
-6. Select an appropriate role.
-7. Then click 'Invite'.
-8. In case the user is already available in ReportPortal s/he will be assigned to the project
-If not, the letter with an invitation link will be sent to the user email address.
-9. The user will receive an email with the link to the registration.
-When the user clicks the link, he/she will see a registration form.
-10. The user needs to fill in the registration form and click the "Register"
-button to complete the registration. 
-11. The user will be assigned to the project that the invitation was sent from, and to "Personal Project" with the PROJECT
- MANAGER project role. 
-
-<MediaViewer src="https://youtu.be/VOk80XZHpWc" alt="Invite User From Project Members Page" type="video" />
-
-### Project role
-
-Every user is given a specific Project role within a specific project.
-
-Depends on the role, the user is able or not able to perform some actions. For more details, please see the "Permissions map".
-
-There are 4 possible Project roles in ReportPortal:
-
-- `PROJECT MANAGER`
-- `MEMBER`
-- `OPERATOR`
-- `CUSTOMER`
-
-:::note
-The `ADMINISTRATOR` has all privileges on the project.
-:::
-
-### Edit project role
-
-To edit the project role, perform the following steps:
-
-1. Login into the ReportPortal as a user with `PROJECT_MANAGER` project role.
-2. Navigate to the "Project Members" page on the left menu.
-3. Select a new value from the "Project Role" drop-down for the user. - The new project role will be automatically saved.
-
-<MediaViewer src="https://youtu.be/DF38BbE5vws" alt="Edit Project Role From Project Members Page" type="video" />
-
-### Unassign user from the project
-
-Depending on the project needs the assignment could be removed. 
-To unassign the assignment for the user on the project, perform the following steps:
-
-1. Login into the ReportPortal as a user with `PROJECT_MANAGER` project role.
-2. Navigate to the "Project Members" page on the left menu.
-3. Find the required member.
-4. Click the 'Unassign' button for the user.
-5. Confirm the action in the popup.
-6. The user will be unassigned from the current project but will stay in the system.
-
- 
-:::note
-Invite user, Assign/Unassign internal user to/from the project, change user's role on a project action can be done for a user 
-with a similar and lower role only.
-:::
