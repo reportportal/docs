@@ -5,84 +5,132 @@ sidebar_label: Unique Error Analysis
 
 # Unique Error Analysis
 
-You can look at the test failure analysis from different points of view: qualitative (passing rate – How many tests have failed?) and quantitative (Why have they failed?). For example, if 1000 test cases are failed, then
+You can analyze test failures from two perspectives: quantitative (How many tests have failed?) and qualitative (Why did they fail?). For example, if 1,000 test cases fail, then:
 
-1. they could fail for the same reason
+1. They could all fail for the same reason.
 
-2. they could fail for various reasons
+2. They could fail for various reasons.
 
-While failed tests allow you to understand what is broken, “Unique Error analysis” functionality implemented in version 5.7 will show you why it broke. The main advantage of this solution is that a list of all unique errors of the launch is presented in one place. Moreover, the system automatically groups tests by the same errors: when you expand some error, you see a list of steps where it occurred.
+While failed tests allow you to understand what is broken, Unique Error analysis functionality implemented in version 5.7 will show you why it broke. Moreover, the system automatically groups tests by the same errors: when you expand some error, you see a list of tests where it occurred.
 
-<MediaViewer src="https://youtu.be/mOssRH7ZxUM" alt="Video of Unique Error functionality" type="video" />
-
-**“Unique error auto-analysis”** is set ON by default.
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError1.png')} alt="Unique error auto-analysis ON" />
-
-## “Include/exclude numbers” settings
-
-There are 2 settings: “include/exclude numbers” – it depends if you decide that numbers in error logs have significant value for analysis or not.
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError2.png')} alt="Include/exclude numbers" />
-
-Now, Unique error auto-analysis will be started after a launch has been finished. 
- 
-To see the list of “Unique errors” for the launch, open any item level in the launch and click **“Unique errors”** tab. 
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError3.png')} alt="AI-based defects triage: Unique Errors" />
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError4.png')} alt="Unique errors Test level" />
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError5.png')} alt="Unique errors Step level" />
-
-Finally, you can see the list of “Unique errors”.
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError6.png')} alt="Unique errors Log level" />
-
-There you can see a list with groups of error logs. You can expand a group to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The groups are formed based on unique error logs, some small error logs can be merged and displayed as one error.
-
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition1.png')} alt="List with groups of error logs" />
-
-## How to run “Unique error analysis” manually
-
-:::tip
-You can also run “Unique error analysis” manually from any item level in case auto analysis is set OFF. Please, follow the steps below: 
+:::important
+The main advantage of this solution is that a list of all unique errors of the launch is presented in one place.
 :::
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError7.png')} alt="Run “Unique error analysis” manually" />
 
-You can also run “Unique Error analysis” from the menu next to a particular launch.
+Thanks to the Unique Error analysis functionality, ReportPortal got the following benefits:
 
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError8.png')} alt="run “Unique error analysis” for particular launch" />
+1. A list of unique errors for the launch, with grouping.
+2. Easier test results analysis.
+3. Machine learning (ML) suggestions for groups of tests.
+4. The [‘New Errors’](/quality-gates/QualityRulesConfiguration/#new-errors-in-the-run) Quality Gates rule.
 
-## Examples with “Include/exclude numbers” settings
+## How to run Unique Error analysis
+
+You can run Unique Error analysis automatically or manually.
+
+To run Unique Error analysis **automatically**:
+
+1. Go to the Project Settings.
+2. Open Analyzer tab.
+3. Open ‘Unique Errors’ settings.
+4. Check the "Auto-Unique Error" checkbox.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError1.png')} alt="Automatic Unique Error analysis is ON" />
+
+5. Run a launch.
+6. After launch finish, open any item level in the launch.
+7. Click ‘Unique errors’ tab.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError2.png')} alt="Unique Error analysis on Suite level" />
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError3.png')} alt="Unique Error analysis on Test level" />
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError4.png')} alt="Unique Error analysis on Step level" />
+
+:::note
+Automatic Unique Error analysis is activated by default.
+:::
+
+In case automatic Unique Error analysis is turned off, there are two ways to run Unique Error analysis **manually**:
+
+1. Run Unique error analysis manually from any item level.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError5.png')} alt="Run Unique error analysis manually from item level" />
+
+2. Run Unique Error analysis from the menu next to a particular launch.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError6.png')} alt="Run Unique Error analysis for the launch manually" />
+
+After Unique Error analysis is finished, open any item level in the launch and click the ‘Unique errors’ tab.
+
+## How to see Unique Errors
+
+Finally, you can see the list of Unique Errors.
+
+There you can see a list of unique logs with number of failed tests related to them. The number of matches found per Unique Errors is displayed in the column ‘MATCHED TESTS’. By default, Unique Errors are displayed from the one with the highest number of failed tests. By clicking on the column name, the sorting is updated each time.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError7.png')} alt="MATCHED TESTS column" />
+
+You can expand unique error to check what tests belong to the same one and it could give you a hint during error analysis and defects assigning. The groups are formed based on unique error logs, some small error logs can be merged and displayed as one error.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError8.png')} alt="Expanding unique error" />
+
+## How to get ML suggestions for the group of tests
+
+In addition, there is a possibility to get ML suggestions for the group of tests. It speeds up the process of analyzing failed tests and assigning defect types by several times.
+
+For that,
+
+1. Open any item level in the launch.
+2. Click ‘Unique Errors’ tab.
+3. Expand a cluster with unique error.
+4. Select some failed tests.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError9.png')} alt="Some failed tests" />
+
+5. Open ‘Make decision’ modal.
+6. Check Analyzer suggestions.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError10.png')} alt="Analyzer suggestions" />
+
+<MediaViewer src="https://youtu.be/fVdpuDWI3vU" alt="Video of Unique Error Analysis in our test results reporting service" type="video" />
+
+## 'Include/exclude numbers' settings
+
+There are 2 settings to decide whether numbers in error logs have significant value for analysis or not:
+
+1. Include numbers to analyzed logs.
+
+2. Exclude numbers from analyzed logs.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError11.png')} alt="Include/exclude numbers to analyzed logs" />
 
 Let’s consider some examples with the same Unique Errors but with different include/exclude numbers settings.
- 
-We have 2 errors with identical text, but the difference is numeric value in the first error. 
- 
-1. An example with **“Include numbers to analyzed logs”** setting. Error with numeric value is displayed:
 
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError9.png')} alt="Include numbers to analyzed logs setting" />
+We have 2 errors with identical text, but the difference is numeric value in the first error.
 
-2. An example with **“Exclude numbers from analyzed logs”** setting. As you can see, error with numeric value is not displayed:
+1. An example with 'Include numbers to analyzed logs' setting. Error with numeric value is displayed:
 
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError10.png')} alt="Exclude numbers from analyzed logs setting" />
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError12.png')} alt="Example with 'Include numbers to analyzed logs' setting" />
 
-## How to get ML suggestions for the group of steps
+2. An example with 'Exclude numbers from analyzed logs' setting. As you can see, error with numeric value is not displayed:
 
-In addition, there is a possibility to get **ML suggestions** for the group of steps. It speeds up the process of analyzing failed tests and assigning defect types by several times.
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError13.png')} alt="Example with 'Exclude numbers from analyzed logs' setting" />
 
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition2.png')} alt="Select steps" />
+## How to extend Unique Error analysis
 
-<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueErrorAddition3.png')} alt="Get ML suggestions for the group of steps" />
+Unique Error analysis functionality can be extended by the [ReportPortal premium feature](https://reportportal.io/pricing/saas) – [Quality Gates](/quality-gates/).
 
-Also, the new Quality Gates rule – [“New Errors”](/quality-gates/QualityRulesConfiguration#new-errors-in-the-run) – was implemented based on the “Unique Error analysis” functionality. This rule helps to identify if there are new unique errors in the current launch by comparing it to another specified launch.
+If you have Quality Gate plugin installed, you can create Quality Gate for the launch with the 'New Errors' rule. This rule helps identify any new unique errors in the current launch by comparing them to another specified launch.
 
-To summarize, ReportPortal got the following benefits thanks to the “Unique Error analysis” functionality:
+If there is Quality Gate for the launch with the 'New Errors' rule, the 'ALL UNIQUE ERRORS' dropdown is visible and enabled. The available options are: All, New Errors and Known Errors.
 
-1. a list of unique errors for the launch with grouping,
-2. facilitating tests results analysis,
-3. ML suggestions for a group of steps,
-4. new Quality Gates rule.
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError14.png')} alt="Enabled ALL UNIQUE ERRORS dropdown" />
 
-This way you can easily sort out the failures based on the unique errors found.
+If there is no Quality Gate for the launch with the 'New Errors' rule, the 'ALL UNIQUE ERRORS' dropdown is visible but disabled. A tooltip appears on hover for the disabled state: 'No Quality Gate with 'New Error' rule for the launch.'
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError15.png')} alt="Disabled ALL UNIQUE ERRORS dropdown" />
+
+If Quality Gate plugin is not installed or disabled, the 'ALL UNIQUE ERRORS' dropdown is invisible.
+
+<MediaViewer src={require('./img/UniqueErrorAnalysis/UniqueError16.png')} alt="Invisible ALL UNIQUE ERRORS dropdown" />

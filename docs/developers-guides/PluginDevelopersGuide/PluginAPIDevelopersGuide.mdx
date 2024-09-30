@@ -1,4 +1,8 @@
-# Plugin developers guide
+---
+sidebar_label: Plugin API development guide
+---
+
+# Plugin API development guide
 
 ## Introduction
 
@@ -14,11 +18,11 @@ To solve these problems and support dynamic integrations ReportPortal implements
 of [PF4J](https://github.com/pf4j/pf4j).
 
 :::note
-Documentation for the UI plugins can be found [here](https://github.com/reportportal/service-ui/blob/develop/docs/13-plugins.md)
+Documentation for the UI plugins can be found [here](./PluginUIDevelopersGuide.md)
 :::
 ## How does it work
 
-<MediaViewer src={require('./img/plugin/InstallPlugin.png')} alt="Install Plugin" />
+<MediaViewer src={require('../img/plugin/InstallPlugin.png')} alt="Install Plugin" />
 
 ## Creating your first plugin
 
@@ -162,7 +166,7 @@ public class ExampleExtension implements ReportPortalExtensionPoint {
 	public ExampleExtension(Map<String, Object> initParams) {
 	}
   ...
-}      
+}
 ```
 
 <br/>
@@ -476,7 +480,7 @@ public class ExampleExtension implements ReportPortalExtensionPoint, DisposableB
 ## Lazy initialization
 
 All plugin components that relies on `@Autowired` dependencies should be loaded lazily using `MemoizingSupplier` or another lazy-load mechanism.
-This is the restriction of plugin installation flow: 
+This is the restriction of plugin installation flow:
 :::note
 
 We create extension object using constructor and only then we autowire dependencies. If we don't use lazy initialization - all objects created in the constructor will be created with `NULL` objects that were marked as `@Autowired`

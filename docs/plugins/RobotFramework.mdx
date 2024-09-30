@@ -1,0 +1,113 @@
+---
+sidebar_position: 13
+sidebar_label: RobotFramework
+---
+
+# RobotFramework
+
+The RobotFramework plugin is essential for integrating RobotFramework test results into ReportPortal.
+
+To install the RobotFramework plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
+
+## Upload plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section.
+
+3. Click ‘Upload’ button at the top of the page.
+
+4. Add [.jar file](https://github.com/reportportal/plugin-import-robot/packages) and click ‘Upload’ button.
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework1.png')} alt="Upload RobotFramework plugin to our test automation reporting tool" />
+
+## Launch import via UI with RobotFramework plugin
+
+:::important
+RobotFramework plugin should be enabled.
+:::
+
+1. Log in to ReportPortal.
+
+2. Go to the Launches page.
+
+3. Click ‘Import’ button.
+
+4. Select ‘RobotFramework’ in the ‘Report Type’ dropdown on the ‘Import launch’ modal window.
+
+5. Click the drug-and-drop area to add .xml or .zip file under 32MB.
+
+6. Click ‘Import’ button and then ‘OK’ button on the ‘Import launch’ modal window.
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework2.png')} alt="Launch import via UI with RobotFramework plugin" />
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework3.png')} alt="Imported launch" />
+
+:::note
+Make sure to select RobotFramework file for the 'RobotFramework' Report type.<br />
+If you attempt to upload a file of any other agent for the 'RobotFramework' Report type, an error will occur.
+:::
+
+If files from the zip archive have formats other than XML, the system will skip them.
+
+If the XML file is not in the RobotFramework structure, the system will interrupt the process of copying and mark the file in red. The reason is then shown on the tooltip when hovering the file in the pop-up window.
+
+<MediaViewer src="https://youtu.be/XKFmA0o-BYg" alt="Upload and manage RobotFramework plugin" type="video" />
+
+## Launch import via API with RobotFramework plugin
+
+:::important
+RobotFramework plugin should be enabled.
+:::
+
+The endpoint ```POST /v1/plugin/{projectName}/RobotFramework/import``` allows importing a launch into the specified project using XML file or ZIP archive with the report file.
+
+You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework4.png')} alt="Launch import via API with RobotFramework plugin" />
+
+There is the ability to add description for the Suite level and attributes and descriptions for the Test level while importing RobotFramework XML report.
+
+**Description:**
+
+```<doc>Example of setting test tags in runtime</doc>```
+
+**Attributes:**
+
+```<tag>dynamic_tag</tag>```
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework5.png')} alt="Description for the Suite level and attributes and descriptions for the Test level in XML report" />
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework6.png')} alt="Description for the Suite level on UI for RobotFramework tests" />
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework7.png')} alt="Attributes for the Test level on UI for RobotFramework tests" />
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework8.png')} alt="Description for the Test level on UI for RobotFramework tests" />
+
+<MediaViewer src="https://youtu.be/lxcWl6u6yUo" alt="Launch import via API with RobotFramework plugin in our test results dashboard" type="video" />
+
+## Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Import Launches tab.
+
+3. Find RobotFramework plugin and click on it.
+
+4. Click toggle OFF.
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework9.png')} alt="Disable RobotFramework plugin" />
+
+## Uninstall plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Import Launches tab.
+
+3. Find RobotFramework plugin and click on it.
+
+4. Click ‘Uninstall’ button and confirm your choice.
+
+<MediaViewer src={require('./img/robot-framework/RobotFramework10.png')} alt="Uninstall RobotFramework plugin" />
+
+Therefore, by following these step-by-step guidelines, you can import RobotFramework test results into ReportPortal for effective test failure analysis.
