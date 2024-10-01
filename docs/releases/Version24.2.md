@@ -47,18 +47,15 @@ Check out the updated plugins [UI development guides](/developers-guides/PluginD
 
 ## 2. Technical improvements:
 
-1. **Analyzer**:
-
-Added:
-- Message-through logging with Correlation ID, to ease debugging and understanding of logs.
-
-Updated:
-- Refactoring: data-preparation logic joined and put into common place.
-- Refactoring: model train logic standardised and prepared for future join.
-- Lots of type annotations added.
-
-Fixed
-- Re-train logic. Custom re-trained models for big enough projects do not affect negatively auto-analysis now.
+1. **Analyzer**:<br/>
+ **Added:**<br/>
+   Message-through logging with Correlation ID, to ease debugging and understanding of logs.<br/>
+   **Updated:**<br/>
+   Refactoring: data-preparation logic joined and put into common place.<br/>
+   Refactoring: model train logic standardised and prepared for future join.<br/>
+   Lots of type annotations added.<br/>
+   **Fixed**<br/>
+   Re-train logic. Custom re-trained models for big enough projects do not affect negatively auto-analysis now.
 
 2. **Asynchronous Reporting**:<br/>
    ReportPortal now features 2x faster reporting under full load, thanks to a new asynchronous reporting approach. A key update includes switching from a Direct exchange to a Consistent-hashing exchange. The retry mechanism was also revamped to focus on handling messages related to the reporting order.<br/>
