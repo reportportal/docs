@@ -5,12 +5,14 @@ sidebar_label: Version 24.2
 
 # Version 24.2
 
-:::important 1
+<MediaViewer src={require('./img/24.2.png')} alt="Version 24.2 of our test automation metrics dashboard" />
+
+:::important
 To ensure that asynchronous reporting works correctly, please make sure the correct feature flag is enabled in RabbitMQ.
 Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_containers_deaths_v2. If it's disabled, enable it.
 :::
 
-:::important 2
+:::important
 Due to the transition to a new plugin mechanism when updating ReportPortal to version 24.2, all the plugins need to be reinstalled manually. 
 Check out the updated plugins [UI development guides](/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide).
 :::
@@ -40,7 +42,7 @@ Check out the updated plugins [UI development guides](/developers-guides/PluginD
 - PBKDF2 encryption has been added to the list of possible encryptions for LDAP.<br/>
 - LDAP integration can now be created either with Full name attribute mode or with separate fields for First name and Last name.
 
-8. **Improved logic of launch rerun**:<br/>
+7. **Improved logic of launch rerun**:<br/>
    User can report rerun of the specified launch with no attributes and the attributes for the initial launch will remain. If user reports rerun of the specified launch with attributes, only new attributes will be added to the launch.
 
 ## 2. Technical improvements:
@@ -68,33 +70,33 @@ Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_contai
 :::
 
 3. Updated React to version 18.
-4. Updated PostgreSQL to version 16.
+4. PostgreSQL 16 support.
 5. Updated Java to version 21 (Service-uat).
 
 ## 3. Bugs fixed:
 
 1. **Saucelabs**:
 
-- Issue with Mobile tests videos (run on real devices in SauceLabs) is solved
-- Error when opening "Sauce Labs" tab from log view is fixed
+- Issue with Mobile tests videos (run on real devices in SauceLabs) is solved.
+- Error when opening "Sauce Labs" tab from log view is fixed.
 
 2. **Jira Cloud**:
 
-- Functionality to add Assignee for issue by typing its name or email (in case of full match) has been added
-- Bug with posting issue with "Parent" field is fixed
-- Bug with saving multi-select field as empty is fixed
-- Bug with creating Integration without predefine Issue Type is fixed
-- Possibility to add "None" value for fields with predefined values has been added
+- Functionality to add Assignee for issue by typing its name or email (in case of full match) has been added.
+- Bug with posting issue with "Parent" field is fixed.
+- Bug with saving multi-select field as empty is fixed.
+- Bug with creating Integration without predefine Issue Type is fixed.
+- Possibility to add "None" value for fields with predefined values has been added.
 
 3. **Quality Gates**:
-- ‘'In progress' QG status doesn't change for merged launches, when 'New errors' rule is applied and no unique errors identified' is fixed
-- 'QG page is broken after editing Quality Gate, if it contains New failures/New error rules' is fixed
+- ‘'In progress' QG status doesn't change for merged launches, when 'New errors' rule is applied and no unique errors identified' is fixed.
+- 'QG page is broken after editing Quality Gate, if it contains New failures/New error rules' is fixed.
 
-4. TypeError occurring when switching between "New errors" and "Known errors" options on "Unique errors" page is solved
-5. "Unique bugs table" widget is fixed
-6. Bug with Retry reported as a separate step is fixed
+4. TypeError occurring when switching between "New errors" and "Known errors" options on "Unique errors" page is solved.
+5. "Unique bugs table" widget is fixed.
+6. Bug with Retry reported as a separate step is fixed.
 
-7. Issue with Resize widget functionality is solved
+7. Issue with Resize widget functionality is solved.
 
 :::important
 We made some changes in how we handle Unique Errors. Thus behaviour on some stack traces might change.<br/>
@@ -103,14 +105,14 @@ We are going to review it in the upcoming updates to make sure that all cases ar
 
 ## 4. Enhancements Based on Community Feedback:
 
-- [#1914](https://github.com/reportportal/reportportal/issues/1914) Ability to exclude Skipped tests from statistics was added for Component health check widget (table view) and Component health check widget (table view)
+- [#1914](https://github.com/reportportal/reportportal/issues/1914) Ability to exclude Skipped tests from statistics was added for Component health check widget (table view) and Component health check widget (table view).
 - [#2168](https://github.com/reportportal/reportportal/issues/2168) The limit for the dashboards per project has been increased to 3000 dashboards.
 - [#2219](https://github.com/reportportal/reportportal/issues/2219) On the Unique Errors page, error clusters have been introduced and sorted by size, allowing users to address the most impactful errors first.
 - [#2249](https://github.com/reportportal/reportportal/issues/2249) Email configuration has been improved taking into account possible ReportPortal deployment to a specified path ensuring that the links in notifications and other emails are correct.
 - [#2309](https://github.com/reportportal/reportportal/issues/2309), [#2245](https://github.com/reportportal/reportportal/issues/2245) Logics of importing empty suites has been adjusted: Launches with empty suites can now be imported successfully. Empty suite has status 'Passed’.
-- [#1951](https://github.com/reportportal/reportportal/issues/1951) The issue with the launch description not being updated upon launch finish (when launch reporting started with no description and finished with any description) is fixed:
-- [#2230](https://github.com/reportportal/reportportal/issues/2230) Issue with parent nested step turning in failed status if child nested step processed after it's finished and has status 'skipped' is solved
-- [#2120](https://github.com/reportportal/reportportal/issues/2120) Issue with broken links on filtered Launches page is solved
+- [#1951](https://github.com/reportportal/reportportal/issues/1951) The issue with the launch description not being updated upon launch finish (when launch reporting started with no description and finished with any description) is fixed.
+- [#2230](https://github.com/reportportal/reportportal/issues/2230) Issue with parent nested step turning in failed status if child nested step processed after it's finished and has status 'skipped' is solved.
+- [#2120](https://github.com/reportportal/reportportal/issues/2120) Issue with broken links on filtered Launches page is solved.
 
 ## 5. CVE addressed:
 
