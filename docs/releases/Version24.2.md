@@ -42,7 +42,7 @@ Check out the updated plugins [UI development guides](/developers-guides/PluginD
 - PBKDF2 encryption has been added to the list of possible encryptions for LDAP.<br/>
 - LDAP integration can now be created either with Full name attribute mode or with separate fields for First name and Last name.
 
-7. **Improved logic of launch rerun**:<br/>
+7. **Improved logic of [launch rerun](/developers-guides/RerunDevelopersGuide)**:<br/>
    User can report rerun of the specified launch with no attributes and the attributes for the initial launch will remain. If user reports rerun of the specified launch with attributes, only new attributes will be added to the launch.
 
 ## 2. Technical improvements:
@@ -110,7 +110,7 @@ We are going to review it in the upcoming updates to make sure that all cases ar
 - [#1951](https://github.com/reportportal/reportportal/issues/1951) The issue with the launch description not being updated upon launch finish (when launch reporting started with no description and finished with any description) is fixed.
 - [#2230](https://github.com/reportportal/reportportal/issues/2230) Issue with parent nested step turning in failed status if child nested step processed after it's finished and has status 'skipped' is solved.
 - [#2120](https://github.com/reportportal/reportportal/issues/2120) Issue with broken links on filtered Launches page is solved.
-
+- [#1020](https://github.com/reportportal/reportportal/issues/1020), [#36](https://github.com/reportportal/agent-js-jasmine/issues/36) Issue with logs sequence is solved.
 ## 5. CVE addressed:
 
 **Service auto-analyser:**<br/>
