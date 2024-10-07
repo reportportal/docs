@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.7831a8f5.css">
-<script src="/docs/assets/js/runtime~main.e540f8a5.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.d7aa7adf.js" defer="defer"></script>
 <script src="/docs/assets/js/main.b2539874.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,7 +22,7 @@
 <li>MinIO distributed object storage</li>
 <li>File system</li>
 </ul>
-<p>Currently we have 2 file storage systems: <strong>multi-bucket</strong> and <strong>single-bucket</strong>.</p>
+<p>Currently, we have 2 file storage systems: <strong>multi-bucket</strong> and <strong>single-bucket</strong>.</p>
 <p>In the multi-bucket system structure of buckets looks like this:</p>
 <ul>
 <li><em>bucketPrefix</em> + ‘keystore’ (bucket for storing integration secrets)</li>
@@ -46,6 +46,9 @@
 <li>DATASTORE_SECRETKEY for AWS S3 SecretKey</li>
 <li>DATASTORE_REGION for AWS region</li>
 </ul>
+<blockquote>
+<p>For us-east-1 value should be <strong>us-standard</strong>. More information <a href="https://jclouds.apache.org/reference/javadoc/2.3.x/org/jclouds/aws/domain/Region.html" target="_blank" rel="noopener noreferrer">here</a></p>
+</blockquote>
 <p>To set up the <strong>multi-bucket</strong> system, use the following environment variables:</p>
 <ul>
 <li>DATASTORE_BUCKETPREFIX for prefix of bucket name (‘prj-‘ by default)</li>
@@ -76,7 +79,7 @@
 <li>RP_FEATURE_FLAGS : singleBucket</li>
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="file-system">File system<a class="hash-link" aria-label="Direct link to File system" title="Direct link to File system" href="/docs/installation-steps-advanced/FileStorageOptions#file-system">​</a></h2>
-<p>The file system option is used when you want to store this data in a mounted folder in the service-api or/and service-uat.</p>
+<p>The file system option is used when storing this data in a mounted folder in the service-api or/and service-uat.</p>
 <p>To use this option, set up environment variables like this:</p>
 <ul>
 <li>DATASTORE_TYPE: filesystem</li>

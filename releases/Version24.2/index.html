@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.7831a8f5.css">
-<script src="/docs/assets/js/runtime~main.e540f8a5.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.d7aa7adf.js" defer="defer"></script>
 <script src="/docs/assets/js/main.b2539874.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,6 +21,7 @@
 Open RabbitMQ Management, go to the Admin tab -&gt; Feature Flags -&gt; message_containers_deaths_v2. If it&#x27;s disabled, enable it.</p></div></div>
 <div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>important</div><div class="admonitionContent_BuS1"><p>Due to the transition to a new plugin mechanism when updating ReportPortal to version 24.2, all the plugins need to be reinstalled manually.
 Check out the updated plugins <a href="/docs/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide">UI development guides</a>.</p></div></div>
+<div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>important</div><div class="admonitionContent_BuS1"><p>Double entry removed. Review changes by comparing GitHub releases in <a href="https://github.com/reportportal/reportportal/compare/v24.1...v24.2" target="_blank" rel="noopener noreferrer">Docker</a> or <a href="https://github.com/reportportal/kubernetes/compare/reportportal-24.1.0...reportportal-24.2.0" target="_blank" rel="noopener noreferrer">Kubernetes</a>.</p></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-whats-changed">1. What&#x27;s Changed:<a class="hash-link" aria-label="Direct link to 1. What&#x27;s Changed:" title="Direct link to 1. What&#x27;s Changed:" href="/docs/releases/Version24.2#1-whats-changed">​</a></h2>
 <ol>
 <li>
@@ -56,7 +57,7 @@ Microseconds have been added to timestamps to enable a more accurate sequence of
 <li>LDAP integration can now be created either with Full name attribute mode or with separate fields for First name and Last name.</li>
 </ul>
 <ol start="7">
-<li><strong>Improved logic of launch rerun</strong>:<br>
+<li><strong>Improved logic of <a href="/docs/developers-guides/RerunDevelopersGuide">launch rerun</a></strong>:<br>
 User can report rerun of the specified launch with no attributes and the attributes for the initial launch will remain. If user reports rerun of the specified launch with attributes, only new attributes will be added to the launch.</li>
 </ol>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-technical-improvements">2. Technical improvements:<a class="hash-link" aria-label="Direct link to 2. Technical improvements:" title="Direct link to 2. Technical improvements:" href="/docs/releases/Version24.2#2-technical-improvements">​</a></h2>
@@ -136,6 +137,7 @@ We are going to review it in the upcoming updates to make sure that all cases ar
 <li><a href="https://github.com/reportportal/reportportal/issues/1951" target="_blank" rel="noopener noreferrer">#1951</a> The issue with the launch description not being updated upon launch finish (when launch reporting started with no description and finished with any description) is fixed.</li>
 <li><a href="https://github.com/reportportal/reportportal/issues/2230" target="_blank" rel="noopener noreferrer">#2230</a> Issue with parent nested step turning in failed status if child nested step processed after it&#x27;s finished and has status &#x27;skipped&#x27; is solved.</li>
 <li><a href="https://github.com/reportportal/reportportal/issues/2120" target="_blank" rel="noopener noreferrer">#2120</a> Issue with broken links on filtered Launches page is solved.</li>
+<li><a href="https://github.com/reportportal/reportportal/issues/1020" target="_blank" rel="noopener noreferrer">#1020</a>, <a href="https://github.com/reportportal/agent-js-jasmine/issues/36" target="_blank" rel="noopener noreferrer">#36</a> Issue with logs sequence is solved.</li>
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-cve-addressed">5. CVE addressed:<a class="hash-link" aria-label="Direct link to 5. CVE addressed:" title="Direct link to 5. CVE addressed:" href="/docs/releases/Version24.2#5-cve-addressed">​</a></h2>
 <p><strong>Service auto-analyser:</strong><br>
