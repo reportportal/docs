@@ -22,8 +22,6 @@ Double entry removed. Review changes by comparing GitHub releases in [Docker](
 https://github.com/reportportal/reportportal/compare/v24.1...v24.2) or [Kubernetes](https://github.com/reportportal/kubernetes/compare/reportportal-24.1.0...reportportal-24.2.0).
 :::
 
-
-
 ## 1. What's Changed:
 
 1. **New features** - **[Extended launches retention policy](/configuration/LaunchesRetentionPolicy)**: <br/>
