@@ -180,15 +180,17 @@ Previously, some logs shared identical timestamps at the millisecond level, whic
 
 With this update, you have the flexibility to view timestamps in two formats:
 
-1. milliseconds
+1. Date & time
 
 <MediaViewer src={require('./img/view-launches/Milliseconds.png')} alt="Date & time" />
 
-2. milliseconds with microseconds
+2. Time with microseconds
 
 <MediaViewer src={require('./img/view-launches/Microseconds.png')} alt="Time with number of microseconds" />
 
 You can easily switch between these options with a simple click.
+
+The choice will be saved to `localStorage` to persist between sessions in a particular browser.
 
 ### Stack trace
 
