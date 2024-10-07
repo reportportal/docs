@@ -51,3 +51,13 @@ The list with supported extension points by core UI:
 | launchItemComponent   | Adds a component to the every launch entity on launches page (component will be displayed under the launch name).                                                                                                                                                                                                                                                                                                                                                        |
 
 projectPage (if `icon` property exists, the link will be automatically added to the sidebar). Right now only SVG icons supported.
+
+### From Plugin UI side
+
+Webpack Module Federation
+
+## How to create own plugin UI
+
+### Prerequisites
+
+### Descriptors file (metadata.json)
