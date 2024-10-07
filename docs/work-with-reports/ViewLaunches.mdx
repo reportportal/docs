@@ -173,6 +173,25 @@ Also, you can use the logs sorting by time, and filtering logs to find a certain
 
 <MediaViewer src="https://youtu.be/_g0GW16sXGU" alt="Log Messages in our automated testing tool" type="video" />
 
+### Timestamps
+
+In ReportPortal version 24.2, microseconds have been added to timestamps to provide a more precise log sequence.
+Previously, some logs shared identical timestamps at the millisecond level, which led to issues with log ordering.
+
+With this update, you have the flexibility to view timestamps in two formats:
+
+1. Date & time
+
+<MediaViewer src={require('./img/view-launches/Milliseconds.png')} alt="Date & time" />
+
+2. Time with microseconds
+
+<MediaViewer src={require('./img/view-launches/Microseconds.png')} alt="Time with number of microseconds" />
+
+You can easily switch between these options with a simple click.
+
+The choice will be saved to `localStorage` to persist between sessions in a particular browser.
+
 ### Stack trace
 
 On the Log view for the fast redirection to the last 5 error log messages, please click on the tab Stack trace, in this section you can find *5 last error logs". 
