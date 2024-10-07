@@ -11,7 +11,7 @@ In ReportPortal 23.1 we can use multiple ways to store log attachments, user pic
 - MinIO distributed object storage
 - File system
 
-Currently we have 2 file storage systems: **multi-bucket** and **single-bucket**.
+Currently, we have 2 file storage systems: **multi-bucket** and **single-bucket**.
 
 In the multi-bucket system structure of buckets looks like this:
 
@@ -37,6 +37,8 @@ To set up AWS S3 in API, UAT & Jobs services use the following variables:
 - DATASTORE_ACCESSKEY for AWS S3 AccessKey
 - DATASTORE_SECRETKEY for AWS S3 SecretKey
 - DATASTORE_REGION for AWS region
+
+> For us-east-1 value should be **us-standard**. More information [here](https://jclouds.apache.org/reference/javadoc/2.3.x/org/jclouds/aws/domain/Region.html)
 
 To set up the **multi-bucket** system, use the following environment variables:
 
@@ -71,7 +73,7 @@ To set the **single-bucket** system, use the following environment variables:
 
 ## File system
 
-The file system option is used when you want to store this data in a mounted folder in the service-api or/and service-uat.
+The file system option is used when storing this data in a mounted folder in the service-api or/and service-uat.
 
 To use this option, set up environment variables like this:
 
