@@ -1,4 +1,4 @@
-# Upgrading PostgreSQL for ReportPortal
+# Upgrading PostgreSQL for ReportPortal v24.2 and later
 
 :::important
 This guide is intended for users planning to upgrade from Postgres 12 to a newer version, starting with ReportPortal version 24.2.
