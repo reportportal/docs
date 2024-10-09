@@ -5,48 +5,88 @@ sidebar_label: Pattern Analysis
 
 # Pattern Analysis
 
-Pattern analysis is a feature that helps you to speed up test failure analysis by finding common patterns in error logs.
+Pattern Analysis is a feature that helps you to speed up test failure analysis by finding common patterns in error logs.
 
-## Types of Pattern Analysis
+## How to run Pattern Analysis
 
-**String** – any problem phrase.
+You can run Pattern Analysis automatically or manually.
 
-<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysisString1.png')} alt="Pattern Analysis String rule" />
+To run Pattern Analysis **automatically**:
 
-<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysisString2.png')} alt="Pattern Analysis String in the logs for automated defect triaging" />
+1. Go to the Project Settings.
 
-**Regex** – regular expression.
+2. Open Pattern-Analysis tab.
 
-<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysisRegex1.png')} alt="Pattern Analysis Regex rule" />
+3. Check the "Auto Pattern-Analysis" checkbox.
 
-<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysisRegex2.png')} alt="Pattern Analysis Regex in the logs for automated bug triage process" />
+4. Create rule.
+
+5. Run a launch.
+
+6. After launch finish, automatic Pattern Analysis will occur.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis1.png')} alt="Run Pattern Analysis automatically" />
+
+:::note
+Automatic Pattern Analysis is activated by default.
+:::
+
+In case automatic Pattern Analysis is turned off, you can run **manually** from the menu next to a particular launch:
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis2.png')} alt="Run Pattern Analysis manually" />
+
+## How to create rules for Pattern Analysis
+
+To create rule:
+
+1. Go to the Project Settings.
+2. Open Pattern Analysis tab.
+3. Click ‘Create Pattern’ button.
+4. Fill in the form.
+5. Create ‘Create’ button.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis3.png')} alt="Create Pattern button" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis4.png')} alt="Creating Pattern Analysis rule" />
+
+## Types of Pattern Analysis rules
+
+There are two types of Pattern Analysis rules:
+
+1. String – any problem phrase.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis5.png')} alt="String Pattern Analysis rule" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis6.png')} alt="Example of String Pattern Analysis rule" />
+
+2. Regex – regular expression.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis7.png')} alt="Regex Pattern Analysis rule" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis8.png')} alt="Example of Regex Pattern Analysis rule" />
 
 :::note
 It would be better to use STRING rule instead of REGEX rule in all possible cases to speed up the Pattern Analysis processing in the database. As a result, you can get your analysis completed faster using the STRING patterns rather than REGEX and reduce the database workload.
 :::
 
-## Use case 1:
+## Use case 1
 
-**Problem:** A user knows the several common problems why test cases fail. During tests run a lot of test have failed. A user need to check logs a of tests to know by what reason test cases have failed.
+**Problem:**<br/>
+A user is aware of several common reasons why test cases fail. During a test run, many tests have failed, and the user needs to check the logs to identify the reasons behind the failures.
 
-**Solution:** Create a pattern rules for all common reasons which contains a problem phrase (for example: *"Expected status code `<404>` but > was `<500>`"* or "*Null response"*) or with Regex query (for example: java:[0-9]*). Switch On a pattern analysis.
-Launch a test run.
-So that the ReportPortal systems finds all failed items which have known patterns in error logs and marks them with a label with pattern name.
-Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
-Add The most popular pattern widget (TOP-20) and track the TOP-20 the most popular reason of test failing in the build.
+**Solution:**<br/>
+Create pattern rules for all common failure reasons, which include specific problem phrases (e.g., `Expected status code <404> but was <500>` or `Null response`) or use Regex queries (e.g., `java:[0-9]*`). Enable pattern analysis and launch a test run. This way, the ReportPortal system can identify all failed items that match known patterns in the error logs and label them with the corresponding pattern name. To find all items that failed for the same reason, apply a filter by ‘Pattern Name’ in the Step view. Additionally, add a ‘Most Popular Pattern’ widget to track the top 20 most frequent reasons for test failures in the build.
 
-<MediaViewer src="https://youtu.be/K3Wk_S4Cuko" alt="Pattern Analysis launched Automatically" type="video" />
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis9.png')} alt="Pattern Name filter" />
 
-## Use case 2:
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis10.png')} alt="Select pattern name" />
 
-**Problem:** Test run has finished. A user found that more than 3 items have failed by the same reason. And he want to find all such items.
+## Use case 2
 
-**Solution:** Create a new pattern rule on Project Settings. Launch a pattern analysis manually for one launch.
-name.
-Find all items failed by the same reason by choosing a filter by Pattern Name on the Step view.
+**Problem:**<br/>
+The test run has finished, and the user notices that more than three items have failed for the same reason. The user wants to find all such items.
 
-<MediaViewer src="https://youtu.be/_BhG0Tu4H_I" alt="Pattern Analysis launched Manually" type="video" />
+**Solution:**<br/>
+Create a new pattern rule in the Project Settings. Manually launch a pattern analysis for a specific test run. Use the ‘Pattern Name’ filter in the Step view to find all items that failed for the same reason.
 
-
-
-
+<MediaViewer src="https://youtu.be/W7qMwhLpIFI" alt="Pattern Analysis launched Manually" type="video" />
