@@ -525,7 +525,7 @@ const config = {
             from: '/installation-steps/ReportPortal23.1FileStorageOptions',
           },
           {
-            to: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
+            to: '/installation-steps-advanced/ScalingReportPortalServices',
             from: '/installation-steps/ScalingUpReportPortalAPIService',
           },
           {
