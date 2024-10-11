@@ -13,7 +13,7 @@ To effectively scale ReportPortal, you need to follow these steps:
 
 1. **Additional resources**: Increase capacity by deploying more instances or by enhancing the resources (CPU and memory) of existing ones.
 2. **Load Balancing**: The Traefik (for Docker) and Ingress Controller (for Kubernetes) are already set up to automatically distribute incoming requests among all active services.
-3. **AMQP settings:** Performance improvements can be achieved by increasing the queue count and adjusting the prefetch count per consumer. These adjustments allow for more efficient processing and resolution of messages within the queues. For more detailed information, refer to the article [Asynchronous Reporting](https://reportportal.io/docs/developers-guides/AsynchronousReporting/#exchanges-and-queues-for-reporting).
+3. **AMQP settings:** Performance improvements can be achieved by increasing the queue count and adjusting the prefetch count per consumer. These adjustments allow for more efficient processing and resolution of messages within the queues. For more detailed information, refer to the article [Asynchronous Reporting](/developers-guides/AsynchronousReporting/#exchanges-and-queues-for-reporting).
 
 ## Kubernetes Configuration
 
