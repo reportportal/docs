@@ -50,6 +50,10 @@ https://github.com/reportportal/reportportal/compare/v24.1...v24.2) or [Kubernet
 7. **Improved logic of [launch rerun](/developers-guides/RerunDevelopersGuide)**:<br/>
    User can report rerun of the specified launch with no attributes and the attributes for the initial launch will remain. If user reports rerun of the specified launch with attributes, only new attributes will be added to the launch.
 
+8. **New language introduced:**<br/>
+   Users can now utilize the interface in Spanish, and we encourage everyone to contribute to further translations or improve the existing ones.
+   A special thank you to [@mg-diego](https://github.com/mg-diego) for his valuable contribution to the Spanish translation!
+
 ## 2. Technical improvements:
 
 1. **Analyzer**:<br/>
