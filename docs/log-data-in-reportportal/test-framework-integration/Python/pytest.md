@@ -60,6 +60,7 @@ The following parameters are optional:
 - `rp_launch_uuid_print_output = stderr` - Launch UUID print output. Default `stdout`. Possible values: [stderr, stdout].
 - `rp_parent_item_id = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` - id of the existing test item for session to use as parent item for the tests (the session will not handle the lifecycle of the given test item).
 - `rp_tests_attributes = 'PyTest' 'Smoke'` - list of attributes that will be added for each item in the launch.
+- `rp_report_fixtures = False` - Enable reporting fixtures as test items. Possible values: [True, False].
 - `rp_connect_timeout = 15` - Connection timeout to ReportPortal server. Default value is "10.0".
 - `rp_read_timeout = 15` - Response read timeout for ReportPortal connection. Default value is "10.0".
 - `rp_log_batch_size = 20` - size of batch log request.
