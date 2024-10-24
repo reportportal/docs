@@ -580,6 +580,10 @@ const config = {
             to: '/admin-panel/AllProjectsPage',
             from: '/configuration/CreationOfProjectAndAddingUsers',
           },
+          {
+            to: '/installation-steps-advanced/ScalingReportPortalServices',
+            from: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
+          },
         ],
       },
     ],
