@@ -34,13 +34,59 @@ Attributes are specific data points that can be included at all levels in Report
 * Value – any string value, mandatory field
 * The maximum limit is 512 symbols each for both key and value.
 
-:::note
-The key and value are separated by a colon, but the colon cannot be part of the key or value.
-:::
-
 Multiple values can be associated with a single key. For example, if we have a `jira_id` key, the value can differ based on the Jira ticket.
 
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="jira_id key" />
+
+:::important
+The only valid use of the semicolon is to split the key and value.<br />
+When a semicolon is present in the key or in the value, it breaks the string into two parts.
+:::
+
+### Semicolon scenarios
+
+**1.** Key and value reported, semicolon used in key only.
+
+**Example:**<br />
+```{"key": "la:bel", "value": "smoke"}```
+
+**Behavior on UI:**<br />
+Key: la<br />
+Value: bel
+
+The original value "smoke" is not transmitted at all.
+
+**2.** Key and value reported, semicolon used in both key and value.
+
+**Example:**<br />
+```{"key": "la:bel", "value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Key: la<br />
+Value: bel
+
+The original value "smoke" is not transmitted at all.
+
+**3.** Key and value reported, semicolon used in value only.
+
+**Example:**<br />
+```{"key": "label", "value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Key: label<br />
+Value: smo
+
+The value is truncated at the semicolon, and only the part before the semicolon is transmitted.
+
+**4.** Value reported, semicolon used in value only.
+
+**Example:**<br />
+```{"value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Value: smo
+
+The value is truncated at the semicolon, and only the part before the semicolon is transmitted.
 
 ## Adding attributes
 
