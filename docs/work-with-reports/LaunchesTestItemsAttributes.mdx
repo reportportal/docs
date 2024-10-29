@@ -39,13 +39,13 @@ Multiple values can be associated with a single key. For example, if we have a `
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="jira_id key" />
 
 :::important
-The only valid use of the semicolon is to split the key and value.<br />
-When a semicolon is present in the key or in the value, it breaks the string into two parts.
+The only valid use of the colon is to split the key and value.<br />
+When a colon is present in the key or in the value, it breaks the string into two parts.
 :::
 
-### Semicolon scenarios
+### Colon scenarios
 
-**1.** Key and value reported, semicolon used in key only.
+**1.** Key and value reported, colon used in key only.
 
 **Example:**<br />
 ```{"key": "la:bel", "value": "smoke"}```
@@ -56,7 +56,7 @@ Value: bel
 
 The original value "smoke" is not transmitted at all.
 
-**2.** Key and value reported, semicolon used in both key and value.
+**2.** Key and value reported, colon used in both key and value.
 
 **Example:**<br />
 ```{"key": "la:bel", "value": "smo:ke"}```
@@ -67,7 +67,7 @@ Value: bel
 
 The original value "smoke" is not transmitted at all.
 
-**3.** Key and value reported, semicolon used in value only.
+**3.** Key and value reported, colon used in value only.
 
 **Example:**<br />
 ```{"key": "label", "value": "smo:ke"}```
@@ -76,9 +76,9 @@ The original value "smoke" is not transmitted at all.
 Key: label<br />
 Value: smo
 
-The value is truncated at the semicolon, and only the part before the semicolon is transmitted.
+The value is truncated at the colon, and only the part before the colon is transmitted.
 
-**4.** Value reported, semicolon used in value only.
+**4.** Value reported, colon used in value only.
 
 **Example:**<br />
 ```{"value": "smo:ke"}```
@@ -86,7 +86,7 @@ The value is truncated at the semicolon, and only the part before the semicolon 
 **Behavior on UI:**<br />
 Value: smo
 
-The value is truncated at the semicolon, and only the part before the semicolon is transmitted.
+The value is truncated at the colon, and only the part before the colon is transmitted.
 
 ## Adding attributes
 
