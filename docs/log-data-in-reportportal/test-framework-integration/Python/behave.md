@@ -5,7 +5,7 @@ sidebar_label: behave
 
 # ReportPortal behave Integration
 
-There is [Behave](https://behave.readthedocs.io/en/stable/) extension for reporting test results of Behave to the ReportalPortal.
+There is [behave](https://behave.readthedocs.io/en/stable/) extension for reporting test results of behave to the ReportalPortal.
 
 Behave is a popular Python-based testing framework. It can be used for testing different types of applications: web applications, APIs, desktop. Behave has a syntax which is easy to understand even for non-technical users.
 
