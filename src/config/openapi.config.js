@@ -1,4 +1,4 @@
-module.exports = (baseUrl) => ({
+const openapiConfig = (baseUrl) => ({
   config: {
     designApi: {
       specPath:
@@ -62,3 +62,5 @@ module.exports = (baseUrl) => ({
     },
   },
 });
+
+export default openapiConfig;
