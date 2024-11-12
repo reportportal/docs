@@ -13,7 +13,7 @@ One of ReportPortal's most compelling features is its real-time dashboards and w
 
 **Versatile Tracking**
 
-ReportPortal's widgets are designed to track essential metrics and trends in your test results. Whether you are interested in code coverage, performance metrics, or failure trends, there's a widget to help you monitor it. The real-time aspect ensures that any shifts in these metrics are immediately visible, allowing your team to adapt and respond more quickly than ever before.
+ReportPortal's widgets are designed to track essential metrics and trends in your test results. Whether you are interested in failure trends, test execution time, passing rate, there's a widget to help you monitor it. The real-time aspect ensures that any shifts in these metrics are immediately visible, allowing your team to adapt and respond more quickly than ever before.
 
 **Eye-Opening Insights**
 
