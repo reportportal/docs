@@ -14,7 +14,7 @@ const apiSidebars: SidebarsConfig = {
     {
       type: 'html',
       defaultStyle: false,
-      value: versionCrumb(`v5.11`),
+      value: versionCrumb(`v5.12`),
       className: 'version-crumb',
     },
     {
@@ -30,6 +30,31 @@ const apiSidebars: SidebarsConfig = {
     },
   ],
   // This is the sidebar for versioned Service API
+  'service-api-5.11': [
+    {
+      type: 'html',
+      defaultStyle: false,
+      value: versionSelector(serviceApiVersions),
+      className: 'version-button',
+    },
+    {
+      type: 'html',
+      defaultStyle: false,
+      value: versionCrumb(`v5.11`),
+      className: 'version-crumb',
+    },
+    {
+      type: 'category',
+      label: 'Service API',
+      link: {
+        type: 'generated-index',
+        title: 'Service API',
+        description: 'This is a generated index of the ReportPortal Service API.',
+        slug: '/category/api/service-api-5.11'
+      },
+      items: require('../service-api/versions/5.11/sidebar.ts')
+    }
+  ],
   'service-api-5.10': [
     {
       type: 'html',
