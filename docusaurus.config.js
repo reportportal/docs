@@ -541,7 +541,7 @@ const config = {
             from: '/category/authorization',
           },
           {
-             to: '/plugins/authorization/SamlProviders/',
+             to: '/plugins/authorization/SamlProviders',
              from: '/category/saml-providers',
           },
         ],
