@@ -4,7 +4,24 @@ sidebar_label: User role guides
 ---
 
 # User role guides
-Here are the links to User Guide sections divided by ReportPortal User roles.
+
+All accounts in ReportPortal are divided into two types according to **instance-level classification**:
+
+- Administrator
+- Regular user
+
+In addition, each account in ReportPortal has a specific role on a project according to **project-level classification**:
+
+- Project Manager
+- Member
+- Operator
+- Customer
+
+An account with the "Administrator" type has permission to configure the entire instance and access all projects.
+
+You can check the permissions for each other role on the Project Members page.
+
+<MediaViewer src={require('./img/PermissionMap.png')} alt="Permission map in our test automation metrics dashboard" />
 
 ## Administrator
 [Installation steps](/installation-steps)  

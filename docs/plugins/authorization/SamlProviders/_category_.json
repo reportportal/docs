@@ -1,6 +1,4 @@
 {
   "label": "SAML Providers",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": {"type": "doc", "id": "index"}
 }

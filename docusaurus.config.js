@@ -536,6 +536,14 @@ const config = {
             to: '/installation-steps-advanced/ScalingReportPortalServices',
             from: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
           },
+          {
+            to: '/plugins/authorization',
+            from: '/category/authorization',
+          },
+          {
+             to: '/plugins/authorization/SamlProviders/',
+             from: '/category/saml-providers',
+          },
         ],
       },
     ],
