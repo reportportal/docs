@@ -9,10 +9,10 @@ To install the Jira Server plugin, see [Upload plugin](/plugins/ManagePlugins#up
 
 Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
-**Permission:**
-
-The *Administrator* can upload a plugin and create global integrations on the Plugin tab in the Administrate section. Also, the Administrator can unlink project configurations from global.
-The *Project Manager* can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+:::important
+The Administrator can upload Jira Server plugin and create global integrations on the Plugins tab in the Administrate section.<br />
+The Project Manager can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+:::
 
 ## Global JIRA Server integration
 
@@ -20,147 +20,155 @@ The *Project Manager* can work only on the project level. He can unlink and re-w
 
 If all projects on your instance are using the same Jira projects, you will be able to configure **global integrations** which will be applied on all projects.
 
-1. Log in as ADMIN
+1. Log in as ADMIN.
 
-2. Go to Administrative > Plugins
+2. Go to Administrate > Plugins.
 
-3. Click on JIRA Server plugin panel
+3. Click on JIRA Server plugin panel.
 
-4. Click on "Add integration" button
+4. Click on "Add integration" button.
 
-5. Fill and confirm the authorization form
+<MediaViewer src={require('./img/jira/JiraServer1.png')} alt="Add global Jira Server integration in our test results reporting service" />
+
+5. Fill in required parameters for integration.
+
+<MediaViewer src={require('./img/jira/JiraServer2.png')} alt="Authorization form for global Jira Server integration" />
 
 ```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
-'Project key in BTS': <project key in bug tracking system>            
+'Project key in BTS': <project key in bug tracking system which will hold Jira tickets created by ReportPortal>
 'Authorization Type': Basic (predefined)                  
 'BTS Username': <JIRA user name>                  
-'BTS Password': <JIRA user password>
+'BTS Password or API Token': <JIRA user password  or API Token>
 ```
+
+Depending on how Jira Server is configured, it's either allowed to integrate with it using password or API Token. While Jira Server does not natively support API tokens like Jira Cloud, there are third-party plugins that can add this functionality, for example **API Token Authentication for Jira**, which allows users to generate API tokens for Jira Server.
 
 After you have created a connection with the JIRA project, you can choose predefined JIRA ticket fields. These fields will be shown to you all the time when you post the issue in Jira.
 
 This feature gives you the ability to choose which type you will post a ticket.
 
-To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions:
+To select a needed issue type and predefined fields for the chosen issue, you should perform the following actions:
 
-1. Click on "Configure" button
+1. In the Configuration section, choose issue type from the drop-down.
 
-2. Choose issue type from the drop-down
+2. Check the required fields and fill them in if necessary (if you want them to be prepopulated).
 
-3. Check the needed fields and fill them in if necessary
+3. Click on "Submit" button.
 
-4. Click on "Submit" button
-
+<MediaViewer src={require('./img/jira/JiraServer3.png')} alt="Selecting a needed issue type and predefined fields" />
 
 Now team members on all your projects will be able to submit issues in Jira. Options for Post Issue / Link issue are activated.
 
-<MediaViewer src="https://youtu.be/tCRh30KDpKc" alt="Global Jira Integration Creation" type="video" />
-
 You can add more integrations by clicking on "Add integration" button.
 
-User can add several integrations, but with a different name to the **one JIRA project**.
+Users can add several integrations, but with a different name to the **one JIRA project**.
 
 >**Use case:**
 >
 > **Situation:** User wants to post to JIRA Server issues with type **Defect** and **Task** to the project NNN-MMM in Jira. Is it possible?
 > Yes!
 >
-> **Solution:** Add two integrations to the project NNN-MMM in Jira with names f.e. "Project -1" and "Project -2".
+> **Solution:** Add two integrations to the project NNN-MMM in Jira with names e.g. "Project -1" and "Project -2".
 > Add to the "Project -1" issue type **Defect** and for "Project -2" - issue type **Task**.
 > While posing issue procedure, choose integration with needed type.
->
-<MediaViewer src="https://youtu.be/med4tuL4plU" alt="Global Integration Jira and Post Issue in our test reporting tool" type="video" />
 
 ### Update global Jira Server integration
 
-If you need to edit Jira Server integration authorization parameters, please perform actions:
+If you need to edit Jira Server integration parameters, please perform actions:
 
-1. Log in as ADMIN
+1. Log in as ADMIN.
 
-2. Go to Administrative > Plugins
+2. Go to Administrate > Plugins.
 
-3. Click on JIRA Server plugin panel
+3. Click on Jira Server plugin panel.
 
-4. Click on a tab with existing integration
+4. Click on the tab with existing integration.
 
-5. Click on "Edit authorization" link
+5. Click on "Edit" icon.
 
-6. Change "Integration name"
+<MediaViewer src={require('./img/jira/JiraServer4.png')} alt="Update global Jira Server integration" />
 
-7. Type your Jira Server credentials
+6. Change "Integration name".
 
-8. Submit the form
+7. Type your BTS password or API Token.
 
-:::note
+8. Click on "Save" button.
 
-You can edit the "Integration name" only. If you need other changes, please submit new integration.
-:::
+<MediaViewer src={require('./img/jira/JiraServer5.png')} alt="Change Integration name" />
 
 If you need to edit fields which should be posted in Jira Server, please perform actions:
 
-1. Log in as ADMIN
+1. Log in as ADMIN.
 
-2. Go to Administrative > Plugins
+2. Go to Administrate > Plugins.
 
-3. Click on JIRA Server plugin panel
+3. Click on Jira Server plugin panel.
 
-4. Click on a tab with existing integration
+4. Click on the tab with existing integration.
 
-5. Click on "Configure" button
+5. Click on "Edit" button in Configuration section.
 
-6. Choose issue type from the drop-down
+<MediaViewer src={require('./img/jira/JiraServer6.png')} alt="Edit fields which should be posted in Jira Server" />
 
-7. Check the needed fields and fill them in if necessary
+6. Choose issue type from the drop-down.
 
-8. Click on "Submit" button
+7. Check the needed fields and fill them in if necessary.
 
-<MediaViewer src="https://youtu.be/yvYwxs4zTYA" alt="Edit Global Jira Integration" type="video" />
+8. Click on "Submit" button.
 
 ### Remove global Jira Server integration
 
 If you need to remove Jira Server integration, please perform actions:
 
-1. Log in as ADMIN
+1. Log in as ADMIN.
 
-2. Go to Administrative > Plugins
+2. Go to Administrate > Plugins.
 
-3. Click on JIRA Server plugin panel
+3. Click on Jira Server plugin panel.
 
-4. Click on a tab with existing integration
+4. Click on the tab with existing integration.
 
-5. Click on "Remove integration"
+5. Click on "Remove" icon.
 
-6. Submit the action
+6. Click "Delete" button.
 
-<MediaViewer src="https://youtu.be/mEWP4txdJFA" alt="Remove Global Jira Integration" type="video" />
+<MediaViewer src={require('./img/jira/JiraServer7.png')} alt="Delete global Jira Server integration" />
+
+<MediaViewer src="https://youtu.be/gCw1gCR8WK0" alt="Global Jira Server Integration" type="video" />
 
 ## Project JIRA Server integration
 
 ### Add new project Jira Server integration
 
-If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to the our centralized test automation tool, it won't be applied to the unlinked project.
+If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to our centralized test automation tool, it won't be applied to the unlinked project.
 
 For that,
 
-1. Log in as an ADMIN or Project Manager
+1. Log in as an ADMIN or Project Manager.
 
-2. Go to Project Settings > Integrations
+2. Go to Project Settings > Integrations.
 
-3. Click on the JIRA Server integration panel
+3. Click on the Jira Server integration panel.
 
-4. Click on "Unlink and setup manually" button
+4. Click on "Add Project integration" button.
 
-5. Fill and confirm the authorization form
+<MediaViewer src={require('./img/jira/JiraServer8.png')} alt="Add project Jira Server integration in our test results dashboard" />
+
+5. Fill in the necessary fields.
+
+6. Click "Create" button.
+
+<MediaViewer src={require('./img/jira/JiraServer9.png')} alt="Authorization form for project Jira Server integration" />
 
 ```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
 'Link to BTS': <valid URL of bug tracking system>
-'Project key in BTS': <project key in bug tracking system>            
-'Authorization Type': Basic (predefined)                  
-'BTS Username': <JIRA user name>                  
-'BTS Password': <JIRA user password>
+'Project key in BTS': <project key in bug tracking system which will hold Jira tickets created by ReportPortal>
+'Authorization Type': Basic (predefined)
+'BTS Username': <JIRA user name>
+'BTS Password or API Token': <JIRA user password  or API Token>
 ```
 
 After you have created a connection with the JIRA project, you can choose predefined JIRA ticket fields. These fields will be shown to you all the time when you post the issue in Jira.
@@ -169,36 +177,35 @@ This feature gives you the ability to choose which type you will post a ticket.
 
 To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions:
 
-1. Click on "Configure" button
+1. In the Configuration section, choose issue type from the drop-down.
 
-2. Choose issue type from the drop-down
+2. Check the needed fields and fill them in if necessary.
 
-3. Check the needed fields and fill them in if necessary
+3. Click on "Submit" button.
 
-4. Click on "Submit" button
+<MediaViewer src={require('./img/jira/JiraServer10.png')} alt="Selecting a needed issue type and predefined fields" />
 
-
-Now team members on **this project** will be able to submit issues in Jira. Options for Post Issue / Link issue are activated.
+Now team members on **this project** will be able to submit issues in Jira. Options for Post issue / Link issue are activated.
 
 You can add more integrations by clicking on "Add integration" button.
 
-<MediaViewer src="https://youtu.be/tCRh30KDpKc" alt="Project Jira Integration" type="video" />
-
-### Reset to project Jira Server Integrations
+### Reset to global Jira Server Integrations
 
 If you want to delete project integrations with Jira Server and link your project with global configurations, please perform actions described below:
 
-1. Log in as an ADMIN or Project Manager
+1. Log in as an ADMIN or Project Manager.
 
-2. Go to Project Settings > Integrations
+2. Go to Project Settings > Integrations.
 
-3. Click on the JIRA Server integration panel
+3. Click on the JIRA Server integration panel.
 
-4. Click on "Reset to global settings" button
+4. Click on "Reset to Global Integrations" button.
 
-5. Confirm the action
+5. Confirm the action.
 
-<MediaViewer src="https://youtu.be/KIrEVY-DKiA" alt="Reset to Global Jira Integration" type="video" />
+<MediaViewer src={require('./img/jira/JiraServer11.png')} alt="Reset to Global Integrations" />
+
+<MediaViewer src="https://youtu.be/t3XwploIgbc" alt="Project Jira Integration" type="video" />
 
 ## Some tricks when you create a new connection:
 
@@ -211,17 +218,9 @@ https://jiraeu.company.com
 
 2. Verify the project key in JIRA Server is correct. Please fill in the Project key field with project key-value, e.g. project ABC-DEF has key ABCDEF.
 
-3. Verify the username and password data. Make sure, that the login name and not the email are in the username field. In case all the data above is correct, but the error appears again, check whether the user's credentials to JIRA Server are not expired. As far as JIRA Server sends the request in HTML format, we are not able to display the real reason for the error. To check and/or resolve the issue, please do the next steps:
+3. Verify the username and password data. Make sure that the login name and not the email are in the username field. In case all the data above is correct, but the error appears again, check whether the user's credentials to JIRA Server are not expired. To do this, log in to the JIRA Server using the same credentials that you are trying to use for the integration with ReportPortal. If the user is valid, you should be able to log in through the UI without any issues.
 
-    *    Open JIRA Server page
-    *    Log in to JIRA Server with domain credentials using basic authorization (i.e., fill in user's login name and password into the fields)
-    *    Submit the login form Screen with CAPTCHA should appear
-    *    Enter the symbols
-    *    Submit the credentials again
-    *    Now try to establish the connection to JIRA Server on the ReportPortal project.
-
-4. SSL instance of JIRA (even cloud version) can be accessed by JIRA API token, used instead of a password.
-   After you have connected Jira and our test automation results dashboard, you can choose an issue type that you will be able to add to Jira during the “Post Issue” operation.  Also, the user can add predefined fields that the user can fill.
+4. In some cases, Jira API token is required instead of the user’s password. This depends on the Jira configuration, as the use of a password is often not permitted for third-party system integrations. In such cases, API token should work.
 
 ## Post issue to Jira Server
 
@@ -229,65 +228,66 @@ Posting an issue to Jira Server means to create a new issue in Jira from ReportP
 
 If you want to post a new issue to Jira, you need to have a project or global integration with Jira Server.
 
-<MediaViewer src={require('./img/jira/PostIssue.png')} alt="Post issue in Jira Server" />
+1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
 
-Post issue via Step view
+2. Go to a Test view.
 
-1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
+3. Click on the pencil icon near a needed item to open "Make decision" modal.
 
-2. Go to a Step view
+<MediaViewer src={require('./img/jira/JiraServer12.png')} alt="Open Make decision modal" />
 
-3. Choose a needed item
+4. Select "Post issue" option and then "Apply & Continue".
 
-4. Click on "Actions" button
+<MediaViewer src={require('./img/jira/JiraServer13.png')} alt="Selecting Post issue option" />
 
-5. Choose "Post issue" option
+5. Fill in the "Post issue" form with valid data.
 
-6. Fill in the "Post issue" form with valid data
+6. Click "Post issue" button.
 
-```javascript
-`BTS`: if you have configured BTS integrations, you will be able to choose between them
-`Integration name`: from the drop-down, you can choose any of integrations for chosen earlier BTS
-`Predefined fields`: fields which you choose on Project Settings/ or Plugins
-`Included data`: which data should be posted to BTS (attachments, logs, comments)
-`BTS username`: reporter login in Jira Server
-`BTS password`: reporter password in Jira Server
-```
+<MediaViewer src={require('./img/jira/JiraServer14.png')} alt="Post issue form" />
 
-7. Submit the form
+A new issue will be posted in Jira with information from ReportPortal.
 
-8. A new issue will be posted in BTS with information from ReportPortal
+As a result, a ticket of the selected issue type was created in the Jira project specified in the integration, including logs, screenshots, a link to ReportPortal, and other details.
 
-9. A label with issue ID will be added to the test item
+<MediaViewer src={require('./img/jira/JiraServer15.png')} alt="Created Jira ticket" />
 
+A label with Jira Issue ID will be added to the test item. Details of the created Jira ticket (summary and status) are also visible.
+
+<MediaViewer src={require('./img/jira/JiraServer16.png')} alt="A label with Jira Issue ID in our test automation metrics dashboard" />
 
 ## Link an issue with an issue in Jira Server
 
-Linking an issue with an issue in Jira Server means adding a clickable link to an existing issue in Jira from ReportPortal that will show a status of this issue.
+You can also link ReportPortal item to already existing issue in Jira.
 
-<MediaViewer src={require('./img/jira/LinkIssue.png')} alt="Link issue in Jira Server" />
+1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
 
-Link issue via Step view
+2. Go to a Test view.
 
-1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
+3. Click on the pencil icon near a needed item to open "Make decision" modal.
 
-2. Go to a Step view
+4. Select "Link issue" option and then "Apply & Continue".
 
-3. Choose a needed item
+5. Fill in the "Link issue" form with valid data.
 
-4. Click on "Actions" button
+6. Click "Link issue" button.
 
-5. Choose "Link issue" option
+<MediaViewer src={require('./img/jira/JiraServer17.png')} alt="Link issue form" />
 
-6. Fill in the "Link issue" form with valid data
+A label with issue ID will be added to the test item.
 
-```javascript
-`BTS`: if you have configured BTS integrations, you will be able to choose between them
-`Integration name`: from the drop-down, you can choose any of integrations for chosen earlier BTS
-`Link to issue`: a full link to the item in BTS
-`Issue ID`: information which will be displayed on the label in ReportPortal
-```
+<MediaViewer src={require('./img/jira/JiraServer18.png')} alt="A label with linked issue ID" />
 
-7. Submit the form
+## Unlink an issue in Jira Server
 
-8. A label with issue ID will be added to the test item
+You can also unlink an issue.
+
+1. Click on the "remove" icon near issue ID.
+
+<MediaViewer src={require('./img/jira/JiraServer19.png')} alt="Remove icon near linked Jira issue ID" />
+
+2. Click on "Unlink Issue" button.
+
+<MediaViewer src={require('./img/jira/JiraServer20.png')} alt="Unlink Issue button" />
+
+The link to the issue in Jira Server is removed.
