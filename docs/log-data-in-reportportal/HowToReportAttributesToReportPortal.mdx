@@ -1,0 +1,139 @@
+# How to report attributes to ReportPortal
+
+Attributes are essential for categorizing, filtering, and analyzing test data. This article will guide you through the process of reporting attributes to our test results reporting service.
+
+Be sure to check out our dedicated article for [best practices on using attributes](/work-with-reports/LaunchesTestItemsAttributes) effectively.
+
+## Parameters of attributes
+
+* Format – Key : Value
+* Key – any string value, optional field
+* Value – any string value, mandatory field
+* The maximum limit is 512 symbols each for both key and value
+
+Multiple values can be associated with a single key. For example, if we have a `jira_id` key, the value can differ based on the Jira ticket.
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes1.png')} alt="jira_id key" />
+
+:::important
+The only valid use of the colon is to split the key and value.<br />
+When a colon is present in the key or in the value, it breaks the string into two parts.
+:::
+
+### Colon scenarios
+
+**1.** Key and value reported, colon used in key only.
+
+**Example:**<br />
+```{"key": "la:bel", "value": "smoke"}```
+
+**Behavior on UI:**<br />
+Key: la<br />
+Value: bel
+
+The original value "smoke" is not transmitted at all.
+
+**2.** Key and value reported, colon used in both key and value.
+
+**Example:**<br />
+```{"key": "la:bel", "value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Key: la<br />
+Value: bel
+
+The original value "smoke" is not transmitted at all.
+
+**3.** Key and value reported, colon used in value only.
+
+**Example:**<br />
+```{"key": "label", "value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Key: label<br />
+Value: smo
+
+The value is truncated at the colon, and only the part before the colon is transmitted.
+
+**4.** Value reported, colon used in value only.
+
+**Example:**<br />
+```{"value": "smo:ke"}```
+
+**Behavior on UI:**<br />
+Value: smo
+
+The value is truncated at the colon, and only the part before the colon is transmitted.
+
+## Adding attributes via test framework integration
+
+### JavaScript
+
+Here is an example of adding attributes for a Playwright agent.
+
+You can add attributes for the Launch in ReportPortal [agent config](https://github.com/reportportal/examples-js/blob/main/example-playwright/playwright.config.ts#L8):
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes2.png')} alt="Add attributes for the Launch in Playwright" />
+
+You can add attributes for the test item in your [test file](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/rp-features/attributes-and-description.spec.ts#L33):
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes3.png')} alt="Add attributes for the test item in Playwright" />
+
+### .NET
+
+Attributes in .NET agents can be added declaratively or at runtime. To add launch attributes via standard [ReportPortal.json config file](https://github.com/reportportal/example-net-nunit/blob/68f596712e153fd67e45cbd479a9aa40a7d5423a/src/Example/ReportPortal.config.json#L15):
+
+```json
+{
+  "launch": {
+    "attributes": ["platform:unix", "arch:x64" ]
+  }
+}
+```
+
+And to add test attributes ([sample for NUnit](https://github.com/reportportal/example-net-nunit/blob/68f596712e153fd67e45cbd479a9aa40a7d5423a/src/Example/Tests/Class1.cs#L142)):
+
+```csharp
+[Test, Category("browser:chrome")]
+public void Test1()
+{
+  ReportPortal.Shared.Context.Current.Metadata.Attributes.Add("browser", "chrome");
+}
+```
+
+In Gherkin:
+
+```
+@browser:chrome
+Scenario: Scenario1
+```
+
+## Adding attributes via API
+
+You can initiate (launch, suite, test, or step) with one set of attributes and finish with a different set.
+
+Importantly, the new attributes do not overwrite the old ones; instead, they are added.
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes4.png')} alt="Adding attributes via API" />
+
+## System attributes
+
+In the ReportPortal, there is an opportunity to influence specific processes and data processing rules. To this end, ReportPortal supports system attributes. These attributes can be applied to the selected test items and trigger ReportPortal to take certain actions. System attributes are not visible on the UI (for that, the attribute should be sent with `system: true`).
+
+### immediateAutoAnalysis
+
+If `immediateAutoAnalysis=true`, then each test item will be analyzed right after it is completed, without waiting for the whole launch to finish.
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes5.png')} alt="immediateAutoAnalysis attribute" />
+
+### immediatePatternAnalysis
+
+When `immediatePatternAnalysis=true`, then each test item will be analyzed right after it is completed, without waiting for the whole launch to finish.
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes6.png')} alt="immediatePatternAnalysis attribute" />
+
+### skippedIsNotIssue
+
+If `skippedIsNotIssue=true` during launch import, then all test items with the SKIPPED status will be processed without applying a `To Investigate` defect type.
+
+<MediaViewer src={require('./img/report-attributes/ReportAttributes7.png')} alt="skippedIsNotIssue attribute in our test automation reporting dashboard" />
