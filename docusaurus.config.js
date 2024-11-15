@@ -301,7 +301,7 @@ const config = {
             from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows'],
           },
           {
-            to: '/category/saml-providers',
+            to: '/plugins/authorization/SamlProviders',
             from: ['/reportportal-configuration/authorization/SAMLProvider', '/SAML-integration'],
           },
           {
@@ -357,7 +357,7 @@ const config = {
             from: '/Sauce-Labs-integration',
           },
           {
-            to: '/category/authorization',
+            to: '/plugins/authorization',
             from: '/reportportal-configuration/authorization',
           },
           {
@@ -535,6 +535,14 @@ const config = {
           {
             to: '/installation-steps-advanced/ScalingReportPortalServices',
             from: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
+          },
+          {
+            to: '/plugins/authorization',
+            from: '/category/authorization',
+          },
+          {
+             to: '/plugins/authorization/SamlProviders',
+             from: '/category/saml-providers',
           },
         ],
       },
