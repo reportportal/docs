@@ -7,6 +7,8 @@ sidebar_label: Launches/test items attributes
 
 For more convenient and effective use of our test report dashboard, we recommend paying attention to attributes.
 
+## What are attributes?
+
 Attributes are specific data points that can be included at all levels in ReportPortal:
 
 **Launch**
@@ -27,88 +29,13 @@ Attributes are specific data points that can be included at all levels in Report
 2. Attributes are used for filtering.
 3. You can create a filter based on the attribute and then build widgets using this filter.
 
-## Parameters of attributes
+You can [report attributes to ReportPortal](/log-data-in-reportportal/HowToReportAttributesToReportPortal) via test framework integrations or via API and add or edit them via the UI. For that, click on the pencil icon next to the desired launch/test item. Then click on the existing attribute to edit the key and value.
 
-* Format – Key : Value
-* Key – any string value, optional field
-* Value – any string value, mandatory field
-* The maximum limit is 512 symbols each for both key and value.
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="Pencil icon to edit attribute via UI" />
 
-Multiple values can be associated with a single key. For example, if we have a `jira_id` key, the value can differ based on the Jira ticket.
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes6.png')} alt="Clicking on existing attribute" />
 
-<MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="jira_id key" />
-
-:::important
-The only valid use of the colon is to split the key and value.<br />
-When a colon is present in the key or in the value, it breaks the string into two parts.
-:::
-
-### Colon scenarios
-
-**1.** Key and value reported, colon used in key only.
-
-**Example:**<br />
-```{"key": "la:bel", "value": "smoke"}```
-
-**Behavior on UI:**<br />
-Key: la<br />
-Value: bel
-
-The original value "smoke" is not transmitted at all.
-
-**2.** Key and value reported, colon used in both key and value.
-
-**Example:**<br />
-```{"key": "la:bel", "value": "smo:ke"}```
-
-**Behavior on UI:**<br />
-Key: la<br />
-Value: bel
-
-The original value "smoke" is not transmitted at all.
-
-**3.** Key and value reported, colon used in value only.
-
-**Example:**<br />
-```{"key": "label", "value": "smo:ke"}```
-
-**Behavior on UI:**<br />
-Key: label<br />
-Value: smo
-
-The value is truncated at the colon, and only the part before the colon is transmitted.
-
-**4.** Value reported, colon used in value only.
-
-**Example:**<br />
-```{"value": "smo:ke"}```
-
-**Behavior on UI:**<br />
-Value: smo
-
-The value is truncated at the colon, and only the part before the colon is transmitted.
-
-## Adding attributes
-
-Attributes can be added in the following ways:
-
-1. Via test reporting.
-
-You can initiate (launch, suite, test, or step) with one set of attributes and finish with a different set.
-
-Importantly, the new attributes do not overwrite the old ones; instead, they are added.
-
-<MediaViewer src={require('./img/launches-test-items-attributes/Attributes6.png')} alt="Adding attributes via test reporting" />
-
-2. Via UI (manually).
-
-To add or edit attributes, click on the `pencil` icon next to the desired launch/test item. Then click on the `Add new` link or click on the existing attribute to edit the key and value.
-
-<MediaViewer src={require('./img/launches-test-items-attributes/Attributes7.png')} alt="pencil icon next to the desired launch/test item" />
-
-<MediaViewer src={require('./img/launches-test-items-attributes/Attributes8.png')} alt="Add new attribute" />
-
-<MediaViewer src={require('./img/launches-test-items-attributes/Attributes9.png')} alt="Adding attributes via UI" />
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes7.png')} alt="Editing attribute via UI" />
 
 ## Best practices for using attributes
 
@@ -155,7 +82,9 @@ Below you can find some examples of how attributes can describe launch/test item
 
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes13.png')} alt="Examples of categorizing tests using attributes" />
 
-## Use Case: using attributes for filtering
+## Use Cases
+
+### Using attributes for filtering
 
 Let's consider the following example. In the launch below, there are 31 Failed tests.
 
@@ -175,9 +104,9 @@ As a result of the investigation, we found that the least number of failures occ
 
 Thus, we understand that we need to focus on tests with controller type `contr_launch`.
 
-## Use Case: using attributes for creating widgets
+### Using attributes for creating widgets
 
-Widgets allow you to visually track metrics for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](/dashboards-and-widgets/CumulativeTrendChart).
+Widgets allow you to visually track [qa and test automation metrics metrics](/dashboards-and-widgets/ReportingAndMetricsInReportPortal/#qa-and-test-automation-metrics-in-reportportal) for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](/dashboards-and-widgets/CumulativeTrendChart).
 
 There are some launches with the `smoke` attribute.
 
@@ -195,6 +124,26 @@ On the screenshot below, we can observe a growth in statistics on the platforms 
 
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes22.png')} alt="Growth in statistics on the platforms from one build to the next" />
 
+Based on attributes specified for test items, you can also build a [Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/) to visually represent the passing rate of different application components.
+
+For example, if there are some launches with the `demo` attribute, you can create a filter using this attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck1.png')} alt="Launches with the demo attribute" />
+
+Next, construct a Component Health Check widget using this filter. Specify the components, functionality, platforms, or other criteria you want to monitor by defining the relevant attributes across different levels.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck2.png')} alt="Building a Component Health Check widget using filter" />
+
+As a result:
+
+- On the first level, you can view the passing rate for each build.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck3.png')} alt="First level of Component Health Check widget" />
+
+- On the second level, you can see which platform has the highest number of failed test cases, helping you identify areas that may need more attention.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck4.png')} alt="Second level of Component Health Check widget" />
+
 Therefore, properly using attributes in ReportPortal can greatly optimize test management and assist in providing clearer visualizations of trends through widgets.
 
-There are also [system attributes](/work-with-reports/SystemAttributes) that allow to extend the functionality of ReportPortal.
+There are also [system attributes](/log-data-in-reportportal/HowToReportAttributesToReportPortal#system-attributes) that allow to extend the functionality of ReportPortal.
