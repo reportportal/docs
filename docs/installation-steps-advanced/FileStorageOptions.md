@@ -96,7 +96,7 @@ To configure storage using Amazon S3, ReportPortal uses the following environmen
 ```bash
 RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage (recommended)
 DATASTORE_TYPE: s3
-DATASTORE_REGION: us-east-1             # Region of the bucket (also referred to as `us-standard`)
+DATASTORE_REGION: us-standard           # Region of the bucket (JCloud ref. to `us-east-1`)
 DATASTORE_ACCESSKEY: <access_key>
 DATASTORE_SECRETKEY: <secret_key>
 DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
