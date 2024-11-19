@@ -5,79 +5,103 @@ sidebar_label: File storage options
 
 # File storage options
 
-In ReportPortal 23.1 we can use multiple ways to store log attachments, user pictures and plugins.
+ReportPortal supports two types of storage structures:
+* Multi-bucket
+* Single-bucket
 
-- AWS S3
-- MinIO distributed object storage
-- File system
+Additionally, ReportPortal can store data in various locations:
 
-Currently, we have 2 file storage systems: **multi-bucket** and **single-bucket**.
+1. Filesystem (default for Docker)
+2. MinIO (default for Kubernetes)
+3. Cloud Storage
 
-In the multi-bucket system structure of buckets looks like this:
+## Storage Types
 
-- *bucketPrefix* + ‘keystore’ (bucket for storing integration secrets)
-- *bucketPrefix* + ‘users’ (bucket for storing user data)
-- *defaultBucketName* (bucket for storing plugins)
-- *bucketPrefix + projectId* (bucket for storing project attachments)
+### 1. Multi-bucket (default)
 
-In the single-bucket system structure of single-bucket is the following:
+Each project has its own bucket. This is the default option; however, it is not recommended for environments using Cloud Object Storage such as Amazon S3. It has a list structure.
 
-- *singleBucketName/*integration-secrets/ (prefix for integration secrets)
-- *singleBucketName/*user-data/ (prefix for user data)
-- *singleBucketName/*plugins/ (prefix for plugins)
-- *singleBucketName/*project-data/projectId (prefix for project attachments)
+```bash
+integration-secrets # Authorization bucket
+prj-1               # Project buckets
+prj-2     
+rp-bucket           # Plugins bucket
+user-data           # Users bucket
+```
 
-## AWS S3
+### 2. Single-bucket
 
-Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Bucket names must be unique across all AWS accounts in all the AWS Regions within a partition. A partition is a grouping of [Regions](https://docs.aws.amazon.com/general/latest/gr/s3.html).
+All projects share the same bucket. This is the recommended option for environments using Cloud Object Storage such as Amazon S3. It has a tree-like structure.
 
-To set up AWS S3 in API, UAT & Jobs services use the following variables:
+```bash
+rp-bucket                   # Main bucket
+    ├── integration-secrets # Authorization sub-directory
+    ├── plugins             # Plugins sub-directory
+    ├── project-data        # Projects sub-directory
+    │   ├── 1
+    │   └── 2
+    └── user-data           # Users sub-directory        
+```
 
-- DATASTORE_TYPE: s3
-- DATASTORE_ACCESSKEY for AWS S3 AccessKey
-- DATASTORE_SECRETKEY for AWS S3 SecretKey
-- DATASTORE_REGION for AWS region
+:::important
+Migration from Multi-bucket to Single-bucket is required. Please refer to the [Complex Migration Guide](https://github.com/reportportal/migrations-complex/tree/develop/charts) for more information. A fresh start from Single-bucket is recommended.
+:::
 
-> For us-east-1 value should be **us-standard**. More information [here](https://jclouds.apache.org/reference/javadoc/2.3.x/org/jclouds/aws/domain/Region.html)
+To configure the storage to Single-bucket, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
 
-To set up the **multi-bucket** system, use the following environment variables:
+```bash
+RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage
+DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
+```
 
-- DATASTORE_BUCKETPREFIX for prefix of bucket name (‘prj-‘ by default)
-- DATASTORE_DEFAULTBUCKETNAME for name of plugins bucket (‘rp-bucket’ by default)
+## Filesystem
 
-To set up the **single-bucket** system, use the following environment variables:
+The local filesystem is the default storage option for the Docker-based ReportPortal solution. It is simple to configure and use but is not recommended for production environments because it is not scalable and does not provide shareability between multiple instances or nodes.
 
-- DATASTORE_DEFAULTBUCKETNAME for single-bucket name
-- RP_FEATURE_FLAGS: singleBucket
+To configure filesystem storage, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
+
+```bash
+DATASTORE_TYPE: filesystem
+```
+
+Additionally, you can specify the path to the storage directory:
+
+```bash
+DATASTORE_PATH: /data/storage
+```
 
 ## MinIO
 
-[MinIO](https://min.io/) is a high-performance distributed object storage server. It stays on top of S3 or any other cloud storage and allows to have a shared FS for several API, UAT & Jobs pods in Kubernetes.
+MinIO is an open-source object storage server that is compatible with Amazon S3. It is designed for cloud-native workloads and optimized for high performance and scalability.
 
-To set up MinIO in services, use the following variables:
+To configure storage using MinIO, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
 
-- DATASTORE_TYPE: minio
-- DATASTORE_ENDPOINT for endpoint (address)
-- DATASTORE_ACCESSKEY for accesskey
-- DATASTORE_SECRETKEY for secretkey
+```bash
+DATASTORE_TYPE: minio
+DATASTORE_ACCESSKEY: <access_key>
+DATASTORE_SECRETKEY: <secret_key>
+DATASTORE_ENDPOINT: http://minio:9000
+```
 
-To set the **multi-bucket** system, use the following environment variables:
+## Cloud Storage
 
-- DATASTORE_BUCKETPREFIX for prefix of bucket name (‘prj-‘ by default)
-- DATASTORE_DEFAULTBUCKETNAME for name of plugins bucket (‘rp-bucket’ by default)
+ReportPortal supports cloud storage options through the Java library [JCLOUDS](https://jclouds.apache.org/).
 
-To set the **single-bucket** system, use the following environment variables:
+The supported cloud storage options are:
 
-- DATASTORE_DEFAULTBUCKETNAME for single-bucket name
-- RP_FEATURE_FLAGS : singleBucket
+### 1. Amazon S3
 
-## File system
+To configure storage using Amazon S3, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
 
-The file system option is used when storing this data in a mounted folder in the service-api or/and service-uat.
+```bash
+RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage (recommended)
+DATASTORE_TYPE: s3
+DATASTORE_REGION: us-east-1             # Region of the bucket (also referred to as `us-standard`)
+DATASTORE_ACCESSKEY: <access_key>
+DATASTORE_SECRETKEY: <secret_key>
+DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
+```
 
-To use this option, set up environment variables like this:
+### 2. Amazon Elastic File System (EFS)
 
-- DATASTORE_TYPE: filesystem
-- DATASTORE_PATH for path in filesystem to store files.
-
-It can be done in both Docker and Kubernetes ReportPortal versions.
+A guide for configuring storage with Amazon EFS will be available soon.
