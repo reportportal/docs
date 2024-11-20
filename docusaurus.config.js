@@ -553,10 +553,6 @@ const config = {
              from: '/Test-case-ID>what-is-it-test-case-id',
           },
           {
-             to: '/docs',
-             from: '/What-is-ReportPortal',
-          },
-          {
              to: '/dashboards-and-widgets/CumulativeTrendChart',
              from: '/Cumulative-trend-chart',
           },
