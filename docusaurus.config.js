@@ -556,6 +556,10 @@ const config = {
              to: '/dashboards-and-widgets/CumulativeTrendChart',
              from: '/Cumulative-trend-chart',
           },
+          {
+             to: '/api/intro',
+             from: '/docs/api',
+          },
         ],
       },
     ],
