@@ -490,7 +490,7 @@ const config = {
           },
           {
             to: '/tutorial',
-            from: '/reportportal-tutorial',
+            from: ['/reportportal-tutorial','/What-is-ReportPortal'],
           },
           {
             to: '/glossary',
