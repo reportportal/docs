@@ -242,7 +242,7 @@ const config = {
         redirects: [
           {
             to: '/installation-steps',
-            from: '/category/installation-steps',
+            from: ['/category/installation-steps', '/Installation-steps'],
           },
           {
             to: '/features',
@@ -298,7 +298,7 @@ const config = {
           },
           {
             to: '/installation-steps/DeployWithDocker',
-            from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows'],
+            from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows', '/Installation/Docker'],
           },
           {
             to: '/plugins/authorization/SamlProviders',
@@ -490,7 +490,7 @@ const config = {
           },
           {
             to: '/tutorial',
-            from: '/reportportal-tutorial',
+            from: ['/reportportal-tutorial','/What-is-ReportPortal'],
           },
           {
             to: '/glossary',
@@ -526,11 +526,11 @@ const config = {
           },
           {
             to: '/configuration/ProjectSettings',
-            from: '/configuration/ProjectConfiguration',
+            from: ['/configuration/ProjectConfiguration', '/reportportal-configuration/ProjectConfiguration'],
           },
           {
             to: '/admin-panel/AllProjectsPage',
-            from: '/configuration/CreationOfProjectAndAddingUsers',
+            from: ['/configuration/CreationOfProjectAndAddingUsers', '/reportportal-configuration/CreationOfProjectAndAddingUsers'],
           },
           {
             to: '/installation-steps-advanced/ScalingReportPortalServices',
@@ -543,6 +543,22 @@ const config = {
           {
              to: '/plugins/authorization/SamlProviders',
              from: '/category/saml-providers',
+          },
+          {
+             to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
+             from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
+          },
+          {
+             to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
+             from: '/Test-case-ID>what-is-it-test-case-id',
+          },
+          {
+             to: '/dashboards-and-widgets/CumulativeTrendChart',
+             from: '/Cumulative-trend-chart',
+          },
+          {
+             to: '/api/intro',
+             from: '/docs/api',
           },
         ],
       },
