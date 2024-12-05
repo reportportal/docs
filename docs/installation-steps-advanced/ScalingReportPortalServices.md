@@ -38,4 +38,4 @@ To effectively scale ReportPortal, you need to follow these steps:
          replicas: 2
    ```
 
-2. **Load Balancing**: The Teafik is already set up to automatically distribute incoming requests among all active services.
+2. **Load Balancing**: The Traefik is already set up to automatically distribute incoming requests among all active services.
