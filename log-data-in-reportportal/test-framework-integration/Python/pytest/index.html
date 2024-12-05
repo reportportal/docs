@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.e890450f.css">
-<script src="/docs/assets/js/runtime~main.2cf9305f.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.3f28c07e.js" defer="defer"></script>
 <script src="/docs/assets/js/main.2ba849c0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -61,6 +61,7 @@
 <li><code>rp_hierarchy_dirs = True</code> - Enables hierarchy for tests directories, default <code>False</code>. Doesn&#x27;t support &#x27;xdist&#x27; plugin.</li>
 <li><code>rp_hierarchy_dir_path_separator</code> - Path separator to display directories in test hierarchy. In case of empty value current system path separator will be used (os.path.sep).</li>
 <li><code>rp_hierarchy_code</code> - Enables hierarchy for inner classes and parametrized tests, default <code>False</code>. Doesn&#x27;t support &#x27;xdist&#x27; plugin.</li>
+<li><code>rp_hierarchy_test_file</code> - Controls display of test file name in the hierarchy and Item Name, default <code>True</code>.</li>
 <li><code>rp_bts_issue_url = https://bugzilla.some.com/show_bug.cgi?id={issue_id}</code> - issue URL (issue_id will be filled by parameter from <code>@pytest.mark.issue</code> decorator). Fill this parameter if you want to automatically link failed test with an external issue or put a comment into ReportPortal defect.</li>
 <li><code>rp_bts_project = PROJECT</code> - Bug Tracking System Project name to use along with <code>@pytest.mark.issue</code> decorator. Fill this parameter if you want to automatically link failed test with an external issue. Should be the same as in corresponding integration.</li>
 <li><code>rp_bts_url = https://bugzilla.some.com/</code> - Bug Tracking System base URL to use along with <code>@pytest.mark.issue</code> decorator. Fill this parameter if you want to automatically link failed test with an external issue. Should be the same as in corresponding integration.</li>
