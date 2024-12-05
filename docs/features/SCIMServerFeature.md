@@ -33,7 +33,3 @@ A default project role can be assigned to users who don't have a specific role p
 :::note
 The SCIM server feature is a premium offering from ReportPortal, available as part of our paid support services. We provide assistance with both the identity provider settings and the SCIM Server configuration.<br />
 If you're interested in enabling SCIM for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
-
-
-
-
