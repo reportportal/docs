@@ -1,163 +1,126 @@
 ---
 sidebar_position: 10
-sidebar_label: E-mail server
+sidebar_label: Email Server
 ---
 
-# E-mail server
+# Email Server
 
-E-mail server plugin is available in ReportPortal on the Plugins page.
+Email Server plugin is available in ReportPortal on the Plugins page.
 
 You don't need to download. It is already available in ReportPortal on the Plugins page.
 
-## Add E-mail server integrations
+## Add Email Server integration
 
-You can integrate our centralized test automation tool with an E-mail server via SMTP protocol. With this integration, you will be able to perform such functions as:
+You can integrate our centralized test automation tool with an Email Server via the SMTP protocol.
 
-- invite a new user to the project
-- configure notification rules on launch finish
+This integration enables you to perform functions such as:
 
+* inviting new users to the project
+* configuring notification rules on launch finish
+* receiving notifications about account deletion, creation of project Email Server integration, completion of index generation for the analyzer
 
-**Permissions:**
+:::important
+A user with the account role Administrator can configure email integration for the entire instance or on a per-project basis.<br />
+A user with the account role Project Manager can configure email integration only for projects where they are assigned as the Project Manager.
+:::
 
-user with account role *ADMINISTRATOR* can configure E-mail integration for the whole instance or per project.
-User with account role *PROJECT MANAGER* can configure E-mail integration only on a project where he is assigned on as Project Manager.
-
-## Global E-mail server integration
+## Global Email Server integration
 
 To configure the SMTP server for the whole instance:
 
-1. Log in to the ReportPortal as an ADMIN user
+1. Log in as ADMIN.
 
-2. Then open the list on the right of the user's image.
+2. Go to Administrate > Plugins.
 
-3. Click the 'Administrative' link
+3. Click on Email Server plugin panel.
 
-4. Click the 'Plugins' from the left-hand sidebar
+4. Click on "Add integration" button.
 
-5. Click on the 'Email Server' tab.
+<MediaViewer src={require('./img/email-server/EmailServer1.png')} alt="Add Email Server integration in our test reporting tool" />
 
-6. Click on Add new integration
+5. Fill in required parameters for integration.
 
-7. The next fields should be present:
-
-```javascript 
-`Host`: <host_name_of_email_server>
-`Protocol`: SMTP (predefined)
-`Default sender name`: (optional)
-`Port`: <port_number>
-`Authorization`: OFF/ON 
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-'TLS' or 'SSL': should be checked depends on the selected port.
-```
-
-Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
+6. Click "Create" button.
 
 ```javascript
-`Host`: smtp.gmail.com
-`Protocol`: SMTP
-`Default sender name`: Report Portal
-`Port`: 465
-`Authorization`: ON
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-`SSL`: checkbox should be checked.
+`Host`: <host name of email server> (required)
+`Protocol`: <SMTP> (predefined)
+`From name`: <string> (optional)
+`From Email`: <user email address> (required)
+`Port`: <port number> (required)
+`Authorization`: OFF/ON (dropdown)
+`Username`: <string> (required)
+`Password`: <user email password> (required)
+`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
 ```
-
-Example of an SMTP server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
-
-```javascript
-`Host`: smtp.yandex.com
-`Protocol`: SMTP
-`Default sender name`: Report Portal
-`Port`: 465
-`Authorization`: ON
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-`SSL`: checkbox should be checked.
-```
-
-8. Confirm data in the form
-
-<MediaViewer src="https://youtu.be/FekmJRNedfU" alt="E-mail server configuration on our qa automation dashboard" type="video" />
-
-After E-mail server integration adding, the configuration will be applied to all projects on the instance.
-
-## Project E-mail integration
-
-If E-mail integration has not to be added on the project, or if Project Manager or Admin want to specified special configurations for a special project, they can configure E-mail server in the project settings.
-
-To configure SMTP server for one single project instance:
-
-1. Log in to the ReportPortal as an ADMIN or PM user
-2. Then click on the Project settings icon.
-3. Click on the Integrations tab.
-4. Click on the 'E-mail Server' tab.
-5. Click on the button "Unlink & Setup Manually"
-6. The next fields should be present:
-```javascript 
-`Host`: <host_name_of_email_server>
-`Protocol`: SMTP (predefined)
-`Default sender name`: (optional)
-`Port`: <port_number>
-`Authorization`: OFF/ON 
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-'TLS' or 'SSL': should be checked depends on the selected port.
-```
-
-Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en))
-
-```javascript
-`Host`: smtp.gmail.com
-`Protocol`: SMTP
-`Default sender name`: Report Portal
-`Port`: 465
-`Authorization: ON
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-`SSL`: checkbox should be checked.
-```
-
-Example of an SMTP server configuration for a Yandex email server (detailed info can be found [here](https://yandex.com/support/mail-new/mail-clients.html))
-
-```javascript
-Host: smtp.yandex.com
-`Protocol`: SMTP
-`Default sender name`: Report Portal
-`Port`: 465
-`Authorization`: ON
-`Username`: <user_email_address>
-`Password`: <user_email_password>
-`SSL`: checkbox should be checked.
-```
-
-8. Confirm data in the form
-
-After E-mail server integration adding, the configuration will be applied to all projects on the instance.
 
 :::note
-In case you unlink your project settings from Global settings, for the chosen project
+You can configure an Email Server using an email service provider (such as SendGrid) and enter a username in the `Username` field without including the @ symbol or undergoing additional validation.
 :::
-**A possibility to provide custom host in links** (started from 5.4 version)
 
-You can make this operation via API.
-For that just choose an API call Integration controller - Update project integration instance, and provide a link to your host in the field  ' "rpHost": "custom_link.com" ''
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)).
 
 ```javascript
-PUT/v1/integration/{projectName}/{integrationId}
-
-{
- "enabled": true,
- "integrationParameters": {
- "protocol": "smtp",
- "rpHost": "custom_link.com",
- "authEnabled": true,
- "port": "",
- "sslEnabled": false,
- "starTlsEnabled": true,
- "host": "smtp.com",
- "username": ""
- }
-}
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`From name`: reportportal
+`From Email`: reportportal1@gmail.com
+`Port`: 587
+`Authorization`: ON
+`Username`: reportportal1
+`Password`: <user email password>
+`TLS`: checkbox should be checked
 ```
+
+<MediaViewer src={require('./img/email-server/EmailServer2.png')} alt="Example of Global Email Server integration" />
+
+After Email Server integration is added, the configuration will apply to all projects within the instance.
+
+## Project Email Server integration
+
+If email integration has not been added to the project, or if a Project Manager or Administrator wants to specify unique configurations for a specific project, they can configure the Email Server in the project settings.
+
+To configure an SMTP server for a single project instance:
+
+1. Log in as an ADMIN or Project Manager.
+
+2. Go to Project Settings > Integrations.
+
+3. Click on the Email Server integration panel.
+
+4. Click on "Add Project integration" button.
+
+<MediaViewer src={require('./img/email-server/EmailServer3.png')} alt="Add Project Email Server integration" />
+
+5. Fill in required parameters for integration.
+
+6. Click "Create" button.
+
+```javascript 
+`Host`: <host name of email server> (required)
+`Protocol`: <SMTP> (predefined)
+`From name`: <string> (optional)
+`From Email`: <user email address> (required)
+`Port`: <port number> (required)
+`Authorization`: OFF/ON (dropdown)
+`Username`: <string> (required)
+`Password`: <user email password> (required)
+`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
+```
+
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)):
+
+```javascript
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`From name`: reportportal
+`From Email`: reportportal1@gmail.com
+`Port`: 587
+`Authorization`: ON
+`Username`: reportportal1
+`Password`: <user email password>
+`TLS`: checkbox should be checked
+```
+<MediaViewer src={require('./img/email-server/EmailServer4.png')} alt="Example of Project Email Server integration" />
+
+<MediaViewer src="https://youtu.be/OVnc5nxwp24" alt="Email Server integration" type="video" />
