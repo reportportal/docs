@@ -5,7 +5,7 @@ sidebar_label: TestNG
 
 # ReportPortal TestNG Integration
 
-There is an agent to integrate [TestNG](https://testng.org/doc/) with ReportPortal.
+There is an agent to integrate [TestNG](https://testng.org/#_testng_documentation) with ReportPortal.
 
 TestNG provides support for attaching custom listeners, reporters, annotation transformers and method interceptors to your tests.
 
