@@ -34,7 +34,7 @@ Explanation:
 
 Make sure to replace placeholders like `DB_CONTAINER`, `DB_USER`, and `DB_NAME` with your actual container pod name, PostgreSQL username, and database name.
 
-### PostgreSQL Backup Process
+### PostgreSQL Restore Process
 
 To restore PostgreSQL database using following command:
 
