@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
-sidebar_label: Version 24.2
+sidebar_position: 2
+sidebar_label: Version 24.2.0
 ---
 
-# Version 24.2
+# Version 24.2.0
 
 <MediaViewer src={require('./img/24.2.png')} alt="Version 24.2 of our test automation metrics dashboard" />
 
