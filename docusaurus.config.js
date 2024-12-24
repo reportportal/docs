@@ -86,7 +86,7 @@ const config = {
           {
             label: 'APIs',
             position: 'left',
-            to: 'https://github.com/reportportal',
+            to: 'https://github.com/reportportal', //TODO: replace with actual link
             target: '_self',
           },
           {
