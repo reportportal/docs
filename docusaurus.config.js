@@ -2,7 +2,6 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import { themes } from 'prism-react-renderer';
-import openapiConfig from './src/config/openapi.config';
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -85,27 +84,10 @@ const config = {
             label: 'Docs',
           },
           {
-            type: 'dropdown',
             label: 'APIs',
             position: 'left',
-            items: [
-              {
-                label: 'Overview',
-                to: '/api/intro',
-              },
-              {
-                label: 'Service API',
-                to: '/category/api/service-api',
-              },
-              {
-                label: 'Service UAT',
-                to: '/category/api/service-uat',
-              },
-              {
-                label: 'API Design',
-                to: '/api/api-design/reportportal-api',
-              },
-            ],
+            to: 'https://github.com/reportportal',
+            target: '_self',
           },
           {
             href: 'https://reportportal.io/',
@@ -228,14 +210,6 @@ const config = {
 
   plugins: [
     './plugins/plugin-cookie-pro',
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: 'openapi',
-        docsPluginId: 'classic', // e.g. "classic" or the plugin-content-docs id
-        ...openapiConfig(baseUrl),
-      },
-    ],
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -555,10 +529,6 @@ const config = {
           {
              to: '/dashboards-and-widgets/CumulativeTrendChart',
              from: '/Cumulative-trend-chart',
-          },
-          {
-             to: '/api/intro',
-             from: '/docs/api',
           },
         ],
       },

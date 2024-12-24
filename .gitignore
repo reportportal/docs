@@ -1,14 +1,6 @@
 # Dependencies
 /node_modules
 
-# Production
-/build
-/docs/api/*
-!/docs/api/_category_.yml
-!/docs/api/intro.mdx
-!/docs/api/sidebars.ts
-!/docs/api/versioned_sidebars
-
 # Generated files
 .docusaurus
 .cache-loader
