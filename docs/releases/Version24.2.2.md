@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 24.2.2
 ---
 
@@ -46,6 +46,7 @@ Released services:
 |Auto Analyzer|reportportal/service-auto-analyzer|5.13.0|
 |Metrics Gatherer|reportportal/service-metrics-gatherer|5.13.0|
 
+Released plugins:
 |Plugin Name|Repository|Tag|
 |---|---| --- |
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.12.1|
