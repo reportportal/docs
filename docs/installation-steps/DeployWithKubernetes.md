@@ -13,7 +13,7 @@ The minimal requirements for a ReportPortal 1-node solution are 2 CPUs and 6Gi o
 * Kubernetes v1.26+
 * Helm Package Manager v3.4+
 
-## Installing the Chart
+## Installing the Helm Chart
 
 Add the official ReportPortal Helm Chart repository:
 
@@ -29,7 +29,7 @@ helm install my-release --set uat.superadminInitPasswd.password="MyPassword" rep
 :::note
 Upon the initial installation and the first login of the SuperAdmin, they will be required to create a unique initial password, distinct from the default password provided in the ReportPortal installation documentation. Failure to do so will result in the Auth service not starting.
 :::
-## Uninstalling the Chart
+## Uninstalling the Helm Chart
 
 ```bash
 helm uninstall my-release 
