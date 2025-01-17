@@ -54,7 +54,6 @@ The following info is sent:
 * Flag: “Analyzed by” (where shows by whom the test item has been analyzed by a user or by ReportPortal);
 * A launch name;
 * Launch ID;
-* Unique ID;
 * Test case ID;
 
 For the better analysis, we merge small logs (which consist of 1-2 log lines and words number less or equal 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field "merged_small_logs" for all the big logs if there are ones.
@@ -85,7 +84,7 @@ Analysis can be launched automatically (via Project Settings) or manually (via t
 
 Here is a simplified procedure of the Auto-analysis candidates searching via OpenSearch.
 
-When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.).
+When a "To investigate" test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by launch name, error message, found exceptions, numbers in the logs and etc.).
 
 Then OpenSearch receives a log message and divides it into the terms (words) with a tokenizer and calculates the importance of each term (word). For that OpenSearch computes TF-IDF for each term (word) in the analyzed log. If the level of term importance is low, the OpenSearch ignores it.
 
@@ -145,7 +144,6 @@ The ML model is an XGBoost model which features (about 30 features) represent di
 * the percent of selected test items with the following defect type
 * max/min/mean scores for the following defect type
 * cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields
-* whether it has the same unique id, from the same launch
 * the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
 
 The model gives a probability for each defect type group, and we choose the defect type group with the highest probability and the probability should be >= 50%.
