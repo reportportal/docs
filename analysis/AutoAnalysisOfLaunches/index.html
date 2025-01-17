@@ -9,8 +9,8 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.e890450f.css">
-<script src="/docs/assets/js/runtime~main.fbc0ded5.js" defer="defer"></script>
-<script src="/docs/assets/js/main.909006ee.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.82109ce4.js" defer="defer"></script>
+<script src="/docs/assets/js/main.3e501342.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -59,7 +59,6 @@ For effective using Auto–Analysis you should come through several stages.</p>
 <li>Flag: “Analyzed by” (where shows by whom the test item has been analyzed by a user or by ReportPortal);</li>
 <li>A launch name;</li>
 <li>Launch ID;</li>
-<li>Unique ID;</li>
 <li>Test case ID;</li>
 </ul>
 <p>For the better analysis, we merge small logs (which consist of 1-2 log lines and words number less or equal 100) together. We store this merged log message as a separate document if there are no other big logs (consisting of more than 2 log lines or having a stacktrace) in the test item. We store this merged log message in a separate field &quot;merged_small_logs&quot; for all the big logs if there are ones.</p>
@@ -82,7 +81,7 @@ For that, perform the following actions:</p><ul>
 <p>Analysis can be launched automatically (via Project Settings) or manually (via the menu on All launches view). After the process is started, all items with defect type “To investigate” with logs (log level &gt;= 40 000) from the analyzed launch are picked and sent to the Analyzer Service and the service OpenSearch for investigations.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-opensearch-returns-candidates-for-analysis">How OpenSearch returns candidates for Analysis<a href="#how-opensearch-returns-candidates-for-analysis" class="hash-link" aria-label="Direct link to How OpenSearch returns candidates for Analysis" title="Direct link to How OpenSearch returns candidates for Analysis">​</a></h3>
 <p>Here is a simplified procedure of the Auto-analysis candidates searching via OpenSearch.</p>
-<p>When a &quot;To investigate&quot; test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by unique id, launch name, error message, found exceptions, numbers in the logs and etc.).</p>
+<p>When a &quot;To investigate&quot; test item appears we search for the most similar test items in the analytical base. We create a query which searches by several fields, message similarity is a compulsory condition, other conditions boost the better results and they will have a higher score (boost conditions are similarity by launch name, error message, found exceptions, numbers in the logs and etc.).</p>
 <p>Then OpenSearch receives a log message and divides it into the terms (words) with a tokenizer and calculates the importance of each term (word). For that OpenSearch computes TF-IDF for each term (word) in the analyzed log. If the level of term importance is low, the OpenSearch ignores it.</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><em>Term frequency (TF)</em> – how many time term (word) is used in an analyzed log;</p><p><em>Document frequency (DF)</em> – in how many documents this term (word) is used in Index;</p><p><em>TF-IDF (TF — term frequency, IDF — inverse document frequency)</em> — a statistical measure used to assess the importance of a term (word) in the context of a log that is part of an Index. The weight of a term (word)   is proportional to the amount of use of this term (word)   in the analyzed log and inversely proportional to the frequency of term (word)   usage in Index.</p></div></div>
 <p>The term (word) with the highest level of importance is the term (word) that is used very frequently in analyzed log and moderately in the Index.</p>
@@ -120,7 +119,6 @@ Where:</p><ul>
 <li>the percent of selected test items with the following defect type</li>
 <li>max/min/mean scores for the following defect type</li>
 <li>cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields</li>
-<li>whether it has the same unique id, from the same launch</li>
 <li>the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors</li>
 </ul>
 <p>The model gives a probability for each defect type group, and we choose the defect type group with the highest probability and the probability should be &gt;= 50%.</p>

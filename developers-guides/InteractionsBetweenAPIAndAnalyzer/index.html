@@ -9,8 +9,8 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.e890450f.css">
-<script src="/docs/assets/js/runtime~main.fbc0ded5.js" defer="defer"></script>
-<script src="/docs/assets/js/main.909006ee.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.82109ce4.js" defer="defer"></script>
+<script src="/docs/assets/js/main.3e501342.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -40,7 +40,7 @@
 <p>AnalyzerConfig:</p>
 <table><thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>minDocFreq</td><td>The minimum frequency of the saved logs</td><td>1</td></tr><tr><td>minTermFreq</td><td>The minimum frequency of the word in the analyzed log</td><td>1</td></tr><tr><td>minShouldMatch</td><td>Percent of words equality between analyzed log and particular log from index</td><td>95</td></tr><tr><td>numberOfLogLines</td><td>The number of first lines of log message that should be considered in indeT</td><td>-1</td></tr><tr><td>isAutoAnalyzerEnabled</td><td>Is auto analysis enabled</td><td>true</td></tr><tr><td>analyzerMode</td><td>Analysis mode. Allowable values: &quot;all&quot;, &quot;launch_name&quot;, &quot;current_launch&quot;</td><td>all</td></tr><tr><td>indexingRunning</td><td>Is indexing running</td><td>false</td></tr></tbody></table>
 <p>IndexTestItem:</p>
-<table><thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>testItemId</td><td>Id of test item</td><td>123</td></tr><tr><td>issueType</td><td>Issue type locator</td><td>pb001</td></tr><tr><td>uniqueId</td><td>Unique id of test item</td><td>auto<!-- -->:c6edafc24a03c6f69b6ec070d1fd0089</td></tr><tr><td>isAutoAnalyzed</td><td>Is test item auto analyzed</td><td>false</td></tr><tr><td>logs</td><td>Array of test item logs</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>testItemId</td><td>Id of test item</td><td>123</td></tr><tr><td>issueType</td><td>Issue type locator</td><td>pb001</td></tr><tr><td>isAutoAnalyzed</td><td>Is test item auto analyzed</td><td>false</td></tr><tr><td>logs</td><td>Array of test item logs</td><td></td></tr></tbody></table>
 <p>IndexLog:</p>
 <table><thead><tr><th>Attribute</th><th>Descrioption</th><th>Example</th></tr></thead><tbody><tr><td>logId</td><td>Id of log</td><td>125</td></tr><tr><td>logLevel</td><td>Log level</td><td>40000</td></tr><tr><td>message</td><td>Log message</td><td>java.lang.AssertionError: 1 expectation failed. Expected status code &lt;200&gt; but was &lt;400&gt;.  	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)</td></tr></tbody></table>
 <p><code>API</code> send array of IndexLaunch entities that have to be indexed.</p>

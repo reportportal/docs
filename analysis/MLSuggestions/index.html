@@ -9,8 +9,8 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.e890450f.css">
-<script src="/docs/assets/js/runtime~main.fbc0ded5.js" defer="defer"></script>
-<script src="/docs/assets/js/main.909006ee.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.82109ce4.js" defer="defer"></script>
+<script src="/docs/assets/js/main.3e501342.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -52,7 +52,6 @@
 <li>the percent of selected test items with the following defect type</li>
 <li>max/min/mean scores for the following defect type</li>
 <li>cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields</li>
-<li>whether it has the same unique id, from the same launch</li>
 <li>the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors</li>
 </ul>
 <p>The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with &gt;= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.</p>
