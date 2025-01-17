@@ -18,19 +18,6 @@ Test case hash is a parameter that is automatically generated based on the Test 
 
 You can read about the Test Case ID [here](/work-with-reports/TestCaseId).
 
-### Unique ID history
-***(deprecated)***
-
-1. Take the ReportPortal release version 5.2.2 or higher. docker-compose.yml
-
-2. Add an environment variable to the service-API service:
-
-```
-RP_ENVIRONMENT_VARIABLE_HISTORY_OLD=true
-```
-
-3. Redeploy ReportPortal
-
 ### Test Case Hash history
 
 Run ReportPortal without env variable.
@@ -104,7 +91,7 @@ If you click on the Total statistic for  the launch *Regression_MacOS* and click
 
 ### History table for launches with the same name
 
-If you have configured ReportPortal with [TestCase History table](/work-with-reports/HistoryOfLaunches#history-table) or with Unique ID ***(deprecated)***.
+If you have configured ReportPortal with [TestCase History table](/work-with-reports/HistoryOfLaunches#history-table).
 This option is for you.
 
 **How you can open a history table with execution launches with the same name?**
@@ -114,7 +101,7 @@ This option is for you.
 - Click on the button 'History'
 - Choose the option **'Launches with the same name'** in the drop-down 'BASE'
 
-**What information is shown on the table based on Unique ID (deprecated) or Test Case Hash (with option "Launches with the same name"?)**
+**What information is shown on the table based on Test Case Hash (with option "Launches with the same name"?)**
 
 On the history table, you can see the first 20 test cases their last 10 (or 3/5/10/15/20/25/30) executions from only launches with the same name on the project.
 Each column on the history table is equaled to a number of the execution.

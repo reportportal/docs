@@ -41,7 +41,6 @@ The OpenSearch returns to the service Analyzer 10 logs with the highest score fo
 * the percent of selected test items with the following defect type
 * max/min/mean scores for the following defect type
 * cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields
-* whether it has the same unique id, from the same launch
 * the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
 
 The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.
