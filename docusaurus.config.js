@@ -44,8 +44,6 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
-          docRootComponent: '@theme/DocRoot',
-          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
         },
         blog: false,
         theme: {
@@ -205,8 +203,6 @@ const config = {
         searchPagePath: 'search',
       },
     }),
-
-  themes: ['docusaurus-theme-openapi-docs'], // exports ApiItem and ApiDemoPanel
 
   plugins: [
     './plugins/plugin-cookie-pro',
