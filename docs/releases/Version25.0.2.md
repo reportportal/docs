@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
-sidebar_label: Version 24.2.3
+sidebar_position: 1
+sidebar_label: Version 25.0.2
 ---
 
-# Version 24.2.3
+# Version 25.0.2
 
 ## 1. Bugs fixed:
 1. Fixed an [issue](https://github.com/reportportal/service-auto-analyzer/issues/149) with bucket prefix in service-auto-analyzer.
@@ -17,4 +17,4 @@ sidebar_label: Version 24.2.3
 |---|---| --- |
 |Auto Analyzer|reportportal/service-auto-analyzer|5.13.1|
 
-Rest of services and plugins are the same version as in https://github.com/reportportal/reportportal/releases/tag/24.2.2
+Rest of services and plugins are the same version as in [version 24.2.2](https://github.com/reportportal/reportportal/releases/tag/24.2.2).
