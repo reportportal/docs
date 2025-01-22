@@ -9,7 +9,6 @@
  Create as many sidebars as you want.
  */
 
-import apis from './docs/api/sidebars.ts';
 // @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -20,8 +19,6 @@ const sidebars = {
       dirName: '.',
     },
   ],
-  // Inject sidebar config for API docs
-  ...apis,
 };
 
 export default sidebars;
