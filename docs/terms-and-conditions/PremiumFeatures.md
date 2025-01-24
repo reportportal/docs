@@ -13,3 +13,4 @@ We invite you to explore our Premium Features, understanding their objectives an
 
 **Available Premium Features:**
  - [**Quality Gates**](/quality-gates)
+ - [**SCIM Server feature**](/features/SCIMServerFeature)
