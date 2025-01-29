@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Enhance your test automation with advanced Java reporting in ReportPortal.
 ---
 
 # Java
@@ -37,3 +38,5 @@ This set of properties will allow you to report your tests. And there are more [
 If you need a sophisticated and full-featured integration with a test framework, you can configure it by your self.
 
 All agents use [client-java](https://github.com/reportportal/client-java) to communicate with ReportPortal API and as common code library. Also you can use any combination of agent and logger.
+
+Advance your Java reporting with ReportPortal!
