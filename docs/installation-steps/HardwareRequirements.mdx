@@ -36,28 +36,18 @@ Find below the recommended hardware configuration to set up ReportPortal and hav
 
    Kubernetes:
 
-<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup1.png')} alt="Kubernetes server types for our centralized test automation tool" />
-
----
-:::note
-
-In ReportPortal version 5.7.3, the log double-entry saving approach to DB and Elasticsearch (to data streams) has been implemented. This saving approach reduces the DB footprint almost x10 times, improves the speed of reporting logs, minimizes computation power to clean up data, and brings full-text search capabilities.
-
-Starting from ReportPortal version 24.1, we have migrated to OpenSearch for enhanced functionality and compatibility, replacing ElasticSearch. We recommend transitioning to OpenSearch to ensure your system stays up-to-date and benefits from the latest improvements and optimizations. Our general recommendation is to roll out OpenSearch on the separate cluster nodes if you have a Kubernetes deployment (consider creating the node group for OpenSearch). But if you have or expect a large amount of the logs reporting, separate cluster nodes for OpenSearch are required. The proposed shapes for OpenSearch nodes have been verified during performance testing and perform stable without degradation on all server configurations (from Small server type to Large). However, if you report many logs, you can tune the node's Disk size or scale up the shapes according to your needs. In addition, please pay attention to the number of OpenSearch active shards (primary and total). In case you have a large count of projects, additional tuning for OpenSearch might be needed(due to limitations that OpenSearch has on the number of active shards). Please see Part 7 below for the tips.
-
-:::
-Additional nodes for OpenSearch:
-
-<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup3.png')} alt="Additional nodes for OpenSearch in ReportPortal Testops" />
-
----
-<br/>**io2 = 1 GB per month x 0.149 USD x 1 instances = 0.149 USD (EBS Storage Cost) / iops = 1 Provisioned IOPS x 0.119 USD x 1 instances = 0.119 USD (EBS IOPS Cost)*<br/>
-   ***Replica*
-
+| Server | EKS Nodes (Count) | EKS Nodes (Instance Type) | EKS Nodes (Disk Size GB) | EKS Nodes (Disk Type) | Amazon RDS (Instance Type) | Amazon RDS (Disk Size GB) | Amazon RDS (Disk Type) | Additional Volumes (RabbitMQ) | S3 Binary storage | Monthly Cost | Yearly Cost |
+| ----------- | ----------- | ------------ | ------------- | ------------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| Small | 3 | m5.large | 50 | gp2 | db.m6g.large | 300 | 	gp3 | 50 | 200 | $544.48 | $6,533.76 |
+| Middle | 3 | c5.xlarge | 50 | gp2 | db.m6g.xlarge | 500 | gp3 | 50 | 	300 | $892.04 | $10,704.48 |
+| Middle+ | 3 | c5.xlarge | 50 | gp2 | db.m6g.2xlarge | 1000 | gp3 | 50 | 500 | $1,241.38 | $14,896.56 |
+| Large | 3 | c5.2xlarge | 50 | gp2 | db.m6g.4xlarge | 2500 | gp3 | 50 | 1000 | $2,497.28 | $29,967.36 |
+<br/>
 
 :::note
 
-The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.
+The approximate server's cost is relevant for the current cost of infrastructure on AWS. The estimated server cost is the current cost of the AWS infrastructure. When changing any cost of resources, costs need to be recalculated.<br/><br/>
+These costs are calculated for the Frankfurt eu-central-1 region, including $73.00 for the EKS cluster and $29.71 for Elastic Load Balancing (Application). The costs for EBS volumes related to OpenSearch are not included, as the amount can vary for small and large instances, and we support both single-node and multi-node OpenSearch setups. Additionally, the costs do not cover the VPC or other network infrastructure components.
 :::
 
 ## 3. Which scale I need? Configuration testing results and saturation points
@@ -267,62 +257,3 @@ max_connections=500
 *The values of these parameters are given for example only, but in general, can be valid for all types of loads for servers middle+ and large.*
 
 Please note, that the max_connections paramether must be more than the sum of the RP_DATASOURCE_MAXIMUMPOOLSIZE for the API and the UAT services + several connections for connecting to the database from outside.
-
-## 7. OpenSearch Performance Tuning
-
-As mentioned above, in some cases may be necessary to increase the limits of shards. The general rule is 2 active shards per 1 data stream(1 data stream equals 1 project in the ReportPortal on the default configuration). If the data stream reaches the default 50 GB storage limit, it will be rollovered and a new generation will be created (please see the diagram below). Please consider that the number of OpenSearch shards on the default configuration is insufficient for ReportPortal installations with a large number of projects. As a result, after storing close to 3000 indices without any tuning the logs-saving behavior may be incorrect.
-
-<MediaViewer src={require('./img/OptimalPerformanceHardwareSetup2.png')} alt="OpenSearch Performance Tuning in our test automation dashboard" />
-
-To retrieve statistics from a cluster (_to check the value of shard_):
-
-```
-GET /_cluster/stats
-
-{
-    "_nodes": {
-        "total": 3,
-        "successful": 3,
-        "failed": 0
-    },
-    "cluster_name": "opensearch-cluster",
-    "cluster_uuid": "Oq5UUZUg3RGE0Pa_Trfds",
-    "timestamp": 172365897412,
-    "status": "green",
-    "indices": {
-        "count": 470,
-        "shards": {
-            "total": 940,
-            "primaries": 470,
-            "replication": 1.0,
-            "index": {
-                "shards": {
-                    "min": 2,
-                    "max": 2,
-                    "avg": 2.0
-                },
-...
-}
-```
-
-
-The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).
-
-To increase the limits of the total number of primary and replica shards for the cluster:
-
-```
-PUT /_cluster/settings
-
-{
-  "persistent" : {
-    "cluster.max_shards_per_node": 3000
-  }
-}
-```
-Keep in mind, that the more shards you allow per node the more resources each node will need and the worse the performance can get.
-
-We also recommend to check the next guides in the official OpenSearch documentation:
-
-[Data streams](https://opensearch.org/docs/latest/dashboards/im-dashboards/datastream/)
-
-[Size your shards](https://opensearch.org/blog/optimize-opensearch-index-shard-size/)
