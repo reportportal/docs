@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: TestNG
+description: Integrating TestNG test results with ReportPortal provides comprehensive analysis and insights.
 ---
 
 # ReportPortal TestNG Integration
@@ -25,6 +26,8 @@ TestNG agent can handle next events:
 - Fail of configuration
 - Successful finish of configuration
 - Skip configuration
+
+Elevate your TestNG test automation reporting with ReportPortal!
 
 [Installation guide](https://github.com/reportportal/agent-java-testNG#readme)
 
