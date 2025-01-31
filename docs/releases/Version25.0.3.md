@@ -9,7 +9,7 @@ sidebar_label: Version 25.0.3
 
 ReportPortal now supports M4-chip processors.
 
-## 2. **Released services:**
+## 2. Released services:
 |Service Name|Repository|Tag|
 |---|---| --- |
 |API|reportportal/service-api|5.13.3|
