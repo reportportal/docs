@@ -9,6 +9,10 @@ Shows the TOP-50 the most flaky test cases within the specified previous launche
 
 The test case is displayed in the table if test case status has changed at least once from Passed to Failed or from Failed to Passed in the specified previous launches.
 
+:::note
+For the Flaky Test Cases Table Top 50 widget, only the status of the last retry of a test case is considered. If a test case undergoes multiple retries during different launch executions, and the last retries of each launch yield identical statuses, the test case will not be classified as flaky. Thus, for a test to be identified as flaky, the final retry statuses in each launch must differ.
+:::
+
 **Widget's parameters:**
 
 - Launches count: 2-100. The default meaning is 30.
