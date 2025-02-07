@@ -84,7 +84,7 @@ const config = {
           {
             label: 'APIs',
             position: 'left',
-            to: 'https://github.com/reportportal', //TODO: replace with actual link
+            to: 'https://developers.reportportal.io/api-docs/',
             target: '_self',
           },
           {
