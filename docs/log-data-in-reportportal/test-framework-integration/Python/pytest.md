@@ -5,7 +5,7 @@ sidebar_label: pytest
 
 # ReportPortal pytest Integration
 
-There is an agent to integrate [pytest](https://docs.pytest.org/en/7.3.x/) with ReportPortal.
+There is an [agent](https://github.com/reportportal/agent-python-pytest) to integrate [pytest](https://docs.pytest.org/en/7.3.x/) with ReportPortal.
 
 Pytest is a popular testing framework for Python applications. One of its advantages is the ability to run tests automatically without the manual configuration.
 
@@ -17,7 +17,7 @@ To install the pytest plugin, run the following command in the terminal:
     pip install pytest-reportportal
 ```
 
-Look through the CONTRIBUTING.rst for contribution guidelines.
+Look through the [CONTRIBUTING.rst](https://github.com/reportportal/agent-python-pytest/blob/develop/CONTRIBUTING.rst) for contribution guidelines.
 
 ## Configuration
 
@@ -187,18 +187,13 @@ Example:
 
 ## Send attachment (screenshots)
 
-https://github.com/reportportal/client-Python#send-attachment-screenshots
+Screenshots [can be added](https://github.com/reportportal/client-Python#send-attachment-screenshots) to pytest tests for better debugging and visualization.
 
 ## Test internal steps, aka "Nested steps"
 
-To implement Nested steps reporting please follow our guide:
+To implement Nested steps reporting please follow [our guide](https://github.com/reportportal/client-Python/wiki/Nested-steps).
 
-https://github.com/reportportal/client-Python/wiki/Nested-steps
-
-Also, there are examples of usage:
-
-* https://github.com/reportportal/examples-python/blob/master/pytest/tests/test_nested_steps.py
-* https://github.com/reportportal/examples-python/blob/master/pytest/tests/test_nested_steps_ui.py
+Also, there are examples of usage: [example 1](https://github.com/reportportal/examples-python/blob/master/pytest/tests/test_nested_steps.py) and [example 2](https://github.com/reportportal/examples-python/blob/master/pytest/tests/test_nested_steps_ui.py).
 
 ## Troubleshooting
 
