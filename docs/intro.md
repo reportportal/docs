@@ -15,6 +15,8 @@ ReportPortal is distributed under the Apache v2.0 license, and it is free to use
 
 If a company is interested in our services, we can provide support hours to deploy, integrate, configure, or customize the tool, as well as [SaaS options](https://reportportal.io/pricing/saas).
 
+To explore our capabilities, you can try [ReportPortal demo](https://demo.reportportal.io/).
+
 ## What ReportPortal can do?
 
 - ***Mainstream platforms integration***
