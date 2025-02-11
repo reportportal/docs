@@ -33,7 +33,9 @@ Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/bl
 
 **6. Is there a demo available?**
 
-For sure, you can explore ReportPortal [without installation](/tutorial/#how-to-explore-reportportal-without-installation) visiting our Demo instance.
+* Explore ReportPortal without installation by visiting our [demo instance](https://demo.reportportal.io/).<br />
+* Check out our [demo video](https://www.youtube.com/watch?v=AKA_O8lcIdc).<br />
+* If you need a demo session, leave your [contact details](https://reportportal.io/contact-us/general/).
 
 **7. How can I begin using ReportPortal?**
 

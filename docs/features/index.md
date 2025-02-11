@@ -11,6 +11,8 @@ With ReportPortal, teams gain access to unified reporting that consolidates all 
 
 Moreover, ReportPortal’s flexibility allows teams to tailor the platform to their unique project requirements, from setting quality standards to automating integrations with existing tools through its REST API. These features empower teams to improve testing efficiency and reliability, making ReportPortal a comprehensive solution for elevating test automation to the next level.
 
+To see ReportPortal’s features in practice, check out our [demo instance](https://demo.reportportal.io/).
+
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
