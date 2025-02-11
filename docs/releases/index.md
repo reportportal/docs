@@ -13,6 +13,8 @@ Additionally, our release process includes critical security updates to fix vuln
 
 Whether you're interested in new features, performance enhancements, or security patches, the Releases section is your go-to resource for understanding what’s new and how these updates can benefit your project. Keeping your system updated is essential for maintaining efficient and secure test automation, so be sure to review the release notes regularly.
 
+To test-drive ReportPortal’s functionality, you can review all the features introduced in each release on our [demo instance](https://demo.reportportal.io/).
+
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
