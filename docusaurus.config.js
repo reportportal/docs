@@ -526,6 +526,14 @@ const config = {
              to: '/dashboards-and-widgets/CumulativeTrendChart',
              from: '/Cumulative-trend-chart',
           },
+          {
+             to: '/log-data-in-reportportal/test-framework-integration/Java',
+             from: '/JVM-based-clients-configuration',
+          },
+          {
+             to: '/releases/Version24.2.0',
+             from: '/releases/Version24.2',
+          },
         ],
       },
     ],
