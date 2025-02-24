@@ -63,33 +63,17 @@ Response will contain `access_token` field which is UI-token
 }
 ```
 
-Next step is retrieve API-token that lives longer that UI-token.
+Next step is retrieve API Key that lives longer that UI-token.
 
 ```shell
-curl --header "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzU5MDA0NDgsInVzZXJfbmFtZSI6ImRlZmF1bHQiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiOGQxZmUxOGUtNWY4NC00YTcwLWEwMTctNDBmZTU4ZmY3MjU3IiwiY2xpZW50X2lkIjoidWkiLCJzY29wZSI6WyJ1aSJdfQ.-5INLZnYJhNLwU5BTBuEDd0SBPoRGLBX6uX03kaEwLs" \
-     --request GET \
-     http://rp.com/uat/sso/me/apitoken
+curl http://localhost:8080/api/users/{user_id}/api-keys \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer {token}" \
+  --data '{"name": "Token name"}'
 ```
 
-And in response you can see `access_token` which is API-token
-
-```json
-{
-  "access_token": "039eda00-b397-4a6b-bab1-b1a9a90376d1",
-  "token_type": "bearer",
-  "scope": "api"
-}
-```
-
-In case you have response with `404` error code, you should send POST request to the same endpoint. It means API-token haven't been generated for user and this request will create one.
-
-```shell
-curl --header "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzU5MDA0NDgsInVzZXJfbmFtZSI6ImRlZmF1bHQiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiOGQxZmUxOGUtNWY4NC00YTcwLWEwMTctNDBmZTU4ZmY3MjU3IiwiY2xpZW50X2lkIjoidWkiLCJzY29wZSI6WyJ1aSJdfQ.-5INLZnYJhNLwU5BTBuEDd0SBPoRGLBX6uX03kaEwLs" \
-     --request POST \
-     http://rp.com/uat/sso/me/apitoken
-```
-
-So our API-token is `039eda00-b397-4a6b-bab1-b1a9a90376d1`
+Use `api_key` from response as a bearer token in the `Authorization` header.
 
 ## Start launch
 
