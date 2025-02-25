@@ -1,0 +1,36 @@
+# API Key Revocation
+
+## Overview
+
+This document describes the API Key revocation process in our API, including manual revocation, automated revocation through SCIM, and possible future improvements related to token expiration policies.
+
+## Manual Token Revocation
+
+Users have the ability to manually revoke their API keys through the following methods:
+
+1. **UI Revocation:** Users can navigate to the API Keys section of their profile page and use the "Revoke" button to disable a specific key.
+2. **API Revocation:** Users can revoke a key programmatically by making a DELETE request to:
+
+```http
+DELETE /users/{{user_id}}/api-keys/{{key_id}}
+```
+
+This API call immediately invalidates the specified key, preventing further use.
+
+## SCIM and API Keys Revocation
+
+When SCIM (System for Cross-domain Identity Management) is enabled, user account changes impact key accessibility as follows:
+
+- **User Deactivation:** API keys are not deleted when a user is deactivated, but the user loses the ability to use them.
+- **User Deletion:** When a user profile is permanently deleted, all associated API keys are also removed.
+
+## Future Enhancements
+
+We are considering adding key expiration policies, which would allow automatic key rotation or expiration after a defined period. This could be implemented through server-side configuration, providing additional security controls for API key management.
+
+## Summary
+
+- Users can revoke their keys manually via UI or API.
+- SCIM deactivation restricts key usage without deleting them.
+- Full user deletion removes all associated API keys.
+- Future improvements may include key expiration mechanisms.
