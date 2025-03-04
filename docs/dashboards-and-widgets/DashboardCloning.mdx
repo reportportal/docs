@@ -1,0 +1,143 @@
+---
+sidebar_position: 6
+sidebar_label: Dashboard cloning
+---
+
+# Dashboard cloning
+
+Dashboards simplify tracking key metrics and project performance. However, manually recreating the same dashboard for multiple projects can be time-consuming and inefficient.
+
+With the dashboard cloning feature, you only need to create a reference dashboard once you have an instance deployed for your organization. You can then replicate this dashboard across projects without wasting effort on manually recreating the same sequence of widgets from scratch.
+
+ReportPortal offers two ways to clone dashboards:
+- through the UI
+- via API
+
+**Permissions:**<br />
+Any user in a project, regardless of their role, can use the dashboard cloning feature.<br />
+If a user has access to multiple projects, they can clone a dashboard to any of them.<br />
+An admin can perform dashboard cloning without being assigned to a specific project.
+
+## Dashboard cloning via UI
+
+### Within a single project
+
+To duplicate dashboard via the UI within the same project:
+
+1. Log in to ReportPortal.
+2. Open Dashboards page.
+3. Click ‘Copy’ icon next to the desired dashboard.
+4. Select ‘Duplicate’ option from the dropdown menu.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning1.png')} alt="Duplicate dashboard within the same project" />
+
+5. In the modal window, update the duplicated dashboard's name if necessary.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning2.png')} alt="Update the duplicated dashboard's name" />
+
+6. Click ‘Duplicate’ button.
+
+As a result:
+
+1. The dashboard will be copied along with all its widgets, maintaining the same order as in the initial dashboard.
+2. If you haven't specified a new name for the duplicated dashboard, the word ‘copy’ will be added to the name.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning3.png')} alt="Dashboard cloning in our test automation metrics dashboard" />
+
+3. The ‘Owner’ field will display the name of the user who duplicated the dashboard, rather than the name of the original creator.
+4. New filters will appear on the filters page.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning4.png')} alt="New filters on the filters page" />
+
+### From one project to another
+
+To copy dashboard configuration to another project:
+
+1. Log in to ReportPortal.
+2. Open Dashboards page.
+3. Click ‘Copy’ icon next to the desired dashboard.
+4. Select ‘Copy dashboard configuration to clipboard’ option from the dropdown menu.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning5.png')} alt="Copy dashboard configuration to another project" />
+
+5. Open Dashboards page on another project.
+6. Click ‘Add New Dashboard’ button at the top of the page.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning6.png')} alt="Add new dashboard" />
+
+7. Enter the name of a new dashboard.
+8. Click ‘Show dashboard configuration’ link.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning7.png')} alt="Show dashboard configuration link" />
+
+9. Click ‘Paste configuration’ button.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning8.png')} alt="Paste configuration button" />
+
+10. Click ‘Add’ button.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning9.png')} alt="Add copied dashboard configuration to another project" />
+
+As a result:
+
+1. The dashboard will be copied along with all its widgets, maintaining the same order as in the initial dashboard.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning10.png')} alt="Copied dashboard" />
+
+2. If you haven't specified a new name for the dashboard, the word ‘copy’ will be added to the name.
+3. The ‘Owner’ field will display the name of the user who performed the dashboard configuration copying, rather than the name of the original dashboard creator.
+4. New filters will appear on the filters page.
+
+## Dashboard cloning via API
+
+To clone the dashboard configuration via API:
+
+1. Log in to ReportPortal.
+2. Open the API section on the bottom menu.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning11.png')} alt="API section in our test automation dashboard" />
+
+3. Click on ‘Dashboard’ controller link.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning12.png')} alt="Dashboard controller link" />
+
+4. Expand ```/v1/{projectName}/dashboard/{dashboardId}/config``` endpoint.
+5. Click ‘Try it out’ button.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning13.png')} alt="Try it out button" />
+
+6. Fill dashboard ID and project name fields.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning14.png')} alt="Where to find dashboard ID and project name fields" />
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning15.png')} alt="Filling the dashboard ID and project name fields" />
+
+7. Click ‘Execute’ button.
+8. Copy dashboard configuration.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning16.png')} alt="Copying dashboard configuration" />
+
+To add the copied dashboard configuration to another project via API:
+
+1. Expand ```/v1/{projectName}/dashboard/preconfigured``` endpoint.
+2. Click ‘Try it out’ button.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning17.png')} alt="Clicking the Try it out button" />
+
+3. Fill project name field.
+4. Specify new dashboard name in the Request body field.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning18.png')} alt="Specifying new dashboard name" />
+
+5. Paste copied dashboard configuration the Request body field instead of sample widgets.
+6. Click ‘Execute’ button.
+
+:::important
+Be careful with the JSON syntax.
+:::
+
+Dashboard ID in the response corresponds to cloned dashboard.
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning19.png')} alt="Dashboard ID in the response" />
+
+<MediaViewer src={require('./img/dashboard-cloning/DashboardCloning20.png')} alt="ID of the cloned dashboard" />
