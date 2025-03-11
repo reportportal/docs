@@ -43,7 +43,7 @@ Clean attachments binaries job uses data from the **temporary table** (filled by
 and removes binaries from the **file storage**
 Environment variables for configuration with default values:
 * `RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CRON=*/30 * * * * *` - specifies how often job will be started (every 30 seconds)
-* `RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CHUNKSize=1000` - specifies the size of the batch to be selected from the **temporary table** to be removed
+* `RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CHUNKSIZE=1000` - specifies the size of the batch to be selected from the **temporary table** to be removed
 
 ## Project binary storage size recalculation job
 
