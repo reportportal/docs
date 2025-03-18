@@ -1,0 +1,43 @@
+---
+sidebar_label: SCIM Okta
+---
+
+# SCIM Okta
+
+# Prerequisites
+
+- You have an Okta application.
+- You SAML Okta integration. For more information, see [SAML Okta](../../../plugins/authorization/SamlProviders/OktaSaml.mdx).
+
+# Configuration
+
+1. Go to your Okta account.
+
+2. Go to the `Applications` tab.
+
+3. Select the application you want to configure.
+
+4. Go to the `General` tab.
+
+5. In the `App Settings` section, click `Edit`.
+
+ <MediaViewer src={require('../../img/scimOkta/1.png')} alt="General tab" />
+
+6. Select `Enable SCIM provisioning` and `Save` the changes.
+
+<MediaViewer src={require('../../img/scimOkta/2.png')} alt="Enable SCIM provisioning" />
+
+7. Go to the `Provisioning` tab and click `Edit`.
+
+<MediaViewer src={require('../../img/scimOkta/3.png')} alt="Provisioning tab" />
+
+8. Fill in the following fields:
+- SCIM connector base URL: `https://<your-scim-server-host>`
+- Unique identifier field for users: `userName`
+- Supported provisioning actions: `Push New Users`, `Push Profile Updates`, `Push Groups`.
+- Authentication Mode: `HTTP Header`
+- Authorization: `{your-admin-api-key}`
+
+<MediaViewer src={require('../../img/scimOkta/4.png')} alt="Provisioning settings" />
+
+9. `Test connection configuration` and `Save` the changes.
