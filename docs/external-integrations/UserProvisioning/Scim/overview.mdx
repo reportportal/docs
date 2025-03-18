@@ -1,0 +1,30 @@
+---
+sidebar_label: Overview
+sidebar_position: 1
+---
+
+# SCIM Overview
+
+:::note
+This feature is available in ReportPortal Enterprise only.
+:::
+
+The System for Cross-domain Identity Management (SCIM) is a standard for synchronizing
+Users and Groups between identity providers and service providers over REST APIs calls.
+
+ReportPortal allows you to crate, update and delete users and groups in ReportPortal.
+
+## User provisioning
+
+SCIM synchronizes users from external identity providers that support SCIM. 
+If users already were crated via SAML JIT they will be synchronized with SCIM.
+
+All users synchronizing via SCIM will be created with the `SCIM` type.
+Users already exist in ReportPortal with `Internal` role will not be updated.
+
+## Group provisioning
+
+SCIM Groups is a way for assigning users to ReportPortal projects.
+
+We match groups by `displayName` attribute to ReportPortal projects name and role
+according to the group pattern.
