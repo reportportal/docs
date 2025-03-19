@@ -1,0 +1,44 @@
+---
+sidebar_label: Overview
+sidebar_position: 1
+---
+
+# User provisioning Overview
+
+ReportPortal supports user provisioning from external identity providers. This
+feature allows you to create and manage user accounts in ReportPortal from
+external identity providers. ReportPortal supports the following user
+provisioning methods:
+
+- [Just-in-Time (JIT) provisioning](#jit-provisioning) via SAML plugin.
+- [System for Cross-domain Identity Management (SCIM) provisioning](#scim-provisioning) via SCIM service.
+
+
+## JIT provisioning
+
+Just-in-time (JIT) provisioning is a feature that creates a user account in
+ReportPortal when a user logs in for the first time. This feature is available
+for SAML integrations.
+
+However, you can't provision a user from SAML Provider to ReportPortal if you
+already have a pre-created internal user in ReportPortal with the same email
+and different login. The login must be the email name without the domain part.
+For instance, if the email is `john_weak@babayaga.com` the login should be
+`john_weak`.
+In the opposite case, the user cannot log in to ReportPortal.
+You can fix it by changing the login name or email or deleting the user from
+the ReportPortal.
+
+## SCIM provisioning
+
+:::note
+This feature is available in ReportPortal Enterprise only.
+:::
+
+System for Cross-domain Identity Management (SCIM) is a standard for synchronizing Users and Groups
+between identity providers and service providers over REST APIs calls. 
+
+SCIM provisioning is a feature that allows you to create and manage user accounts in ReportPortal
+from external identity providers that support SCIM. 
+
+Moreover, SCIM provisioning allows you to assign Users to ReportPortal via Groups.
