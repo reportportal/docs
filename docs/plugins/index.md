@@ -9,7 +9,7 @@ The **Plugins** section provides comprehensive guides for integrating a variety 
 
 **Bug Tracking Systems plugins** allow you to automatically create tasks for detected defects directly from ReportPortal. This eliminates the need to manually log issues in a bug tracker, enabling teams to resolve defects faster and ensuring a smooth, continuous workflow.
 
-**Notification plugins** enable integration with popular notification services such as Slack and E-mail. With these plugins, you can receive instant updates on test results and critical events, helping teams stay connected and respond to issues promptly.
+**Notification plugins** enable integration with popular notification services such as Slack, Telegram, and E-mail. With these plugins, you can receive instant updates on test results and critical events, helping teams stay connected and respond to issues promptly.
 
 **Authorization plugins** provide flexible access control and security management within our qa metrics dashboard. This section includes instructions on integrating with various authorization systems, ensuring users have the correct access levels while protecting sensitive project data.
 

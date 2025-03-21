@@ -14,15 +14,13 @@ Users with the `Administrator` role can edit project settings on the project "Se
 Users with the `PROJECT_MANAGER` role can edit the settings on the project space only.
 `MEMBER`/ `OPERATOR`/ `CUSTOMER` can only view applied project settings.
 
-## Project settings
-
 To go to the project settings page, click the "Project Settings" icon in the left menu.
 
 The project configuration page will be opened.
 
 The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](/quality-gates)).
 
-### General settings
+## General settings
 
 Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
@@ -66,13 +64,13 @@ After this period a launch will be deleted, and you can not see it in ReportPort
 
 <MediaViewer src="https://youtu.be/ih-ECyC29f0" alt="Project settings in our real time dashboard open source" type="video" />
 
-### Integrations 
+## Integrations
 
 The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
 
 For more information on this topic, please refer to [Integration with external systems](/configuration/IntegrationViaPlugin).
 
-### Notifications
+## Notifications
 
 The ‘Notifications’ tab provides the administrator with the ability to activate notifications on the project – through either Email or Slack.
 
@@ -84,7 +82,7 @@ Users with PROJECT_MANAGER role can edit the settings on the project space only.
 Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however, they do have the permission to view them.
 :::
 
-**Email notifications**
+### Email notifications
 
 :::tip
 For using this functionality be sure that the Email server is configured. For that, go to the Project Settings -> Integrations -> Email Server.
@@ -138,7 +136,7 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 
 <MediaViewer src={require('./img/EmailNotification.png')} alt="Create Email Notification rule" />
 
-**Slack notifications**
+### Slack notifications
 
 :::tip
 To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
@@ -186,7 +184,55 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 
 <MediaViewer src={require('./img/SlackNotification.png')} alt="Create Email Notification rule" />
 
-### Custom defect types
+### Telegram notifications
+
+:::tip
+To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+:::
+
+To create Telegram notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Telegram Notifications Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Chat id** – mandatory field, copied from group info in [Telegram](/plugins/Telegram#configuration-on-telegram-side)
+
+:::important
+Add ‘-’ before the chat id.
+:::
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi-selection.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/TelegramNotification.png')} alt="Create Telegram Notification rule" />
+
+## Custom defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
 
