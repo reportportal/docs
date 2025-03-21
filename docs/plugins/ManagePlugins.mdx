@@ -8,7 +8,7 @@ sidebar_label: Manage plugins
 ReportPortal as a test management system can be reinforced by uploading plugins.  For now, you can install the next plugins from the box:
 
 * Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps, GitLab, Monday and Rally
-* Notification plugins: E-mail server, Slack
+* Notification plugins: E-mail server, Slack, Telegram
 * Authorization plugins: LDAP, Active directory, SAML
 * Import plugins: JUnit, RobotFramework
 * Sauce Labs
@@ -16,7 +16,7 @@ ReportPortal as a test management system can be reinforced by uploading plugins.
 | **Plugin**  | **Features**  |   
 |---|---|
 | Jira Server/Jira Cloud/Azure DevOps/GitLab/Monday/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses.|
-|E-mail server/Slack| With this plugin, you will be able to configure notifications about test result finish in real time.|
+|E-mail server/Slack/Telegram| With this plugin, you will be able to configure notifications about test result finish in real time.|
 |SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.
 |LDAP/Active directory/SAML| This plugin helps authorize without new user creation.|
 |JUnit/RobotFramework | This plugin is essential for importing tests into ReportPortal.|
@@ -39,6 +39,7 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 | Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally or https://github.com/reportportal/plugin-bts-rally/packages |
 | SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs or https://github.com/reportportal/plugin-saucelabs/packages |
 | Slack | https://github.com/reportportal/plugin-slack/packages |
+| Telegram | https://github.com/reportportal/plugin-telegram/packages |
 | JUnit | https://github.com/reportportal/plugin-import-junit/packages |
 | RobotFramework | https://github.com/reportportal/plugin-import-robot/packages |
 |E-mail/LDAP/Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
@@ -76,9 +77,9 @@ Only ADMINISTRATOR can enable / disable plugin.
 
 If you do not want to remove a plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
 For that:
-* login ReportPortal with Admin account
-*    come to Administrative page > Plugins tab > Plugin > Plugin details
-*    click a switcher Disable
+* log in to ReportPortal as administrator
+* go to Administrate -> Plugins section -> find plugin
+* click a switcher to disable
 
 The plugin will be removed from Project Settings on the project spaces. But all plugin configurations will be saved in the DataBase and you can return them back if you need by clicking on the switcher enable the plugin.
 
@@ -88,10 +89,10 @@ The plugin will be removed from Project Settings on the project spaces. But all 
 Only ADMINISTRATOR can uninstall the plugin.
 
 Users can remove a plugin from the system. For that  you should:
-* login ReportPortal with Admin account
-*    come to Administrative page > Plugins tab > Plugin > Plugin details
-*    click a button Uninstall
-*    
+* log in to ReportPortal as administrator
+* go to Administrate > Plugins tab > click on Plugin
+* click Uninstall button
+
 The plugin will be successfully deleted. All plugin configurations will be deleted from the DataBase.
 E-mail plugin can not be uninstalled.
 
@@ -118,6 +119,7 @@ Details on how to configure a specific plugin please find in the [Integration se
 * [integration with SauceLabs](/plugins/SauceLabs)
 * [integration with E-mail server](/plugins/EmailServer)
 * [integration with Slack](/plugins/Slack)
+* [integration with Telegram](/plugins/Telegram)
 * [integration with LDAP](/plugins/authorization/LDAP)
 * [integration with Active directory](/plugins/authorization/ActiveDirectory)
 * [integration with Okta SAML](/plugins/authorization/SamlProviders/OktaSaml)

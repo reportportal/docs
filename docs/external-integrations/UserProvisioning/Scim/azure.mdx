@@ -4,8 +4,8 @@ sidebar_label: SCIM Azure
 
 # SCIM Azure
 
-:::note
-This feature is available in ReportPortal Enterprise only.
+:::important
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
 :::
 
 ReportPortal allows you to synchronize users and groups from Azure Microsoft Entra ID
@@ -13,7 +13,7 @@ to ReportPortal via SCIM.
 
 ## Creating a SCIM provisioning
 
-1. Log in to [Azure portal](https://portal.azure.com)
+1. Log in to [Azure portal](https://portal.azure.com).
 
 2. Go to the `Azure Enterprise Applications` section and click `New application`.
 
@@ -24,12 +24,12 @@ to ReportPortal via SCIM.
 <MediaViewer src={require('../../img/scimAzure/2.png')} alt="Create your own application" />
 
 4. Enter the name of your application. 
-Choose `Integrate any other application you don't find in the gallery (Non-gallery)` bullet
-and click `Create` button.
+Choose the `Integrate any other application you don't find in the gallery (Non-gallery)` bullet
+and click the `Create` button.
 
 <MediaViewer src={require('../../img/scimAzure/3.png')} alt="Fill application fields" />
 
-5. After the creation of an application, go to the `Provisioning` section and click `New configuration`.
+5. After creating an application, go to the `Provisioning` section and click `New configuration`.
 
 <MediaViewer src={require('../../img/scimAzure/4.png')} alt="Provisioning" />
 
@@ -40,8 +40,7 @@ and click `Create` button.
   - Secret Token: `your_admin_api_key`
 
 :::note
-`?aadOptscim062020` is a special parameter that allows you to use the SCIM compatible protocol.
-More information can be found [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior).
+`?aadOptscim062020` is a special parameter that allows you to use the a [SCIM compatible protocol](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior).
 :::
 
 <MediaViewer src={require('../../img/scimAzure/6.png')} alt="Admin credentials" />
@@ -56,8 +55,8 @@ More information can be found [here](https://learn.microsoft.com/en-us/entra/ide
 
 <MediaViewer src={require('../../img/scimAzure/8.png')} alt="Attribute mapping" />
 
-2. In the `Attribute Mappings` find and delete the `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager` attribute.
-For some reasons Azure sends this attribute with the wrong SCIM format. This attribute is not used in ReportPortal.
+2. In the `Attribute Mappings` section, find and delete the `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager` attribute.
+For some reason, Azure sends this attribute with the wrong SCIM format. This attribute is not used in ReportPortal.
 
 <MediaViewer src={require('../../img/scimAzure/9.png')} alt="Delete attribute" />
 
@@ -65,7 +64,7 @@ For some reasons Azure sends this attribute with the wrong SCIM format. This att
 
 ## Admin role synchronization
 
-For the correct synchronization of the admin role, you need to create a new `App-role` in Azure.
+For proper synchronization of the admin role, you need to create a new `App-role` in Azure.
 
 1. Go to the `Provisioning` -> `Users and groups` section and click `application registration`.
 
@@ -92,11 +91,11 @@ For the correct synchronization of the admin role, you need to create a new `App
 
 <MediaViewer src={require('../../img/scimAzure/13.png')} alt="Attribute mapping" />
 
-8. Select the `Show advanced options` checkbox in the bottom and click to `Edit attribute list for customappsso` link.
+8. Select the `Show advanced options` checkbox at the bottom and click the `Edit attribute list for customappsso` link.
 
 <MediaViewer src={require('../../img/scimAzure/14.png')} alt="Advanced options" />
 
-9. You see a `Edit Attribute List`. In the bottom of the list fill empty fields with the name `roles` and type `String`.
+9. You will see the `Edit Attribute List`. At the bottom of the list, fill in the empty fields with the name `roles` and type `String`.
 
 <MediaViewer src={require('../../img/scimAzure/15.png')} alt="Edit attribute list" />
 
@@ -117,7 +116,7 @@ For the correct synchronization of the admin role, you need to create a new `App
 
 13. Click `Ok` and then `Save`.
 
-After these steps, then ypu add users or groups to the Azure project you can select
+After these steps, when you add users or groups to the Azure project you can select
 an application role for them: `User` or `Administrator`.
 
 <MediaViewer src={require('../../img/scimAzure/18.png')} alt="Select role" />
