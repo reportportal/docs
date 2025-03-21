@@ -53,3 +53,14 @@ Fill in the form:
 Click on 'Submit' button.
 A confirmation message in status bar should be shown.
 A 'Login with GitHub' button will appear on login form.
+
+### Resolving organization restrictions for OAuth Apps
+
+If you’ve specified an **Organization Name** in your configuration, ensure the organization allows access to your OAuth app.
+
+To do this:
+
+1. Navigate to your organization’s **Settings → Third-party access → OAuth app policy**.
+2. Choose one of the following actions:<br />
+    * **Remove restrictions** to allow all verified OAuth apps, **OR**<br />
+    * **Transfer ownership** of your OAuth app to the organization, **or create a new OAuth app** directly under the organization via **Developer Settings**.
