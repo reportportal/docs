@@ -5,6 +5,10 @@ sidebar_label: Delete Quality Gates
 
 # Delete Quality Gates
 
+:::important
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+:::
+
 If you want to delete Quality Gate:
 
 * Login ReportPortal as Project Manager or Admin
