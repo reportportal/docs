@@ -7,6 +7,10 @@ description: Drive efficiency with Quality Gates. Configure rules, integrate wit
 
 The Quality Gates section in ReportPortal is designed to help you maintain high standards of product quality throughout the testing process.
 
+:::important
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+:::
+
 ## What are Quality Gates?
 
 Quality Gates are checkpoints that validate and ensure product integrity during software development, allowing you to monitor, control, and manage the entire development lifecycle effectively.
