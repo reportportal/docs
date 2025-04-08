@@ -13,21 +13,27 @@ To download the Telegram plugin, see [Upload plugin](/plugins/ManagePlugins#uplo
 
 ## Configuration on Telegram side
 
-1. Run the [chatbot](https://t.me/reportPortal_bot).
+1. Create your chatbot.
+
+For that, run message @BotFather on Telegram to register your bot and receive its authentication token (Bot Api Key for notification rule).
+
+<MediaViewer src={require('./img/telegram/Telegram0.png')} alt="Create the chatbot" />
+
+2. Run the chatbot.
 
 <MediaViewer src={require('./img/telegram/Telegram1.png')} alt="Running the chatbot" />
 
-2. Create a Group in Telegram.
+3. Create a Group in Telegram.
 
 <MediaViewer src={require('./img/telegram/Telegram2.png')} alt="Create a Group in Telegram" />
 
 <MediaViewer src={require('./img/telegram/Telegram3.png')} alt="Group name" />
 
-3. Add the chatbot to your group.
+4. Add the chatbot to your group.
 
 <MediaViewer src={require('./img/telegram/Telegram4.png')} alt="Adding the chatbot to your group" />
 
-4. Copy chat ID
+5. Copy chat ID
 
 You can find the chat ID in two ways:
 
@@ -77,11 +83,12 @@ Chat id can be used to create notification rules in RP.
 
 **Rule name** – from 1 to 55 characters, mandatory field
 
-**Chat id** – mandatory field, copied from group info in Telegram
-
+**Chat id** – mandatory field, copied from group info in Telegram (step 5 of [configuration on Telegram side](/plugins/Telegram#configuration-on-telegram-side))
 :::important
 Add ‘-’ before the chat id.
 :::
+
+**Bot Api Key** - mandatory field, copied from the [step 1](/plugins/Telegram#configuration-on-telegram-side)
 
 **In case** – optional field, dropdown with the options:
 
