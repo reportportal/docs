@@ -1,0 +1,120 @@
+---
+sidebar_position: 27
+sidebar_label: Test Case Search widget
+---
+
+# Test case search
+
+Allows finding a test case by name or attribute throughout all launch executions within the same project.
+
+## Widget's parameters:
+
+- Widget name
+- Description
+
+## Widget view
+
+### Refine section:
+
+- "Test name" text field. Condition dropdown is disabled. By default – cnt (contains)
+- "Attribute" text field – key and value options
+- "Display launches" toggle – default state: OFF
+- "Edit" icon
+- "Update" icon
+- "Cross" icon
+
+### Table section:
+
+- Name – name of the test
+- Status – status of the test
+- Start Time – start time of the test
+- Defect type
+
+:::note
+The widget data is displayed in view mode. Navigate to the step level of the launch by clicking on the test name to make the changes under the test case.
+:::
+
+***Default state***
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch1.png')} alt="Default state of Test case search widget" />
+
+***Widget data***
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch2.png')} alt="Test case search widget in our test automation results dashboard" />
+
+:::important
+The search in the "Test name" field is performed for test items of type "Step".
+:::
+
+When the "Test name" is provided, "attribute" field is disabled.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch3.png')} alt="Test name provided" />
+
+When "Attribute" is added, "Test name" field is disabled.
+
+You can filter test cases by full match of key and value fields, or by attribute "value" only (when step item has empty "key"). Only one attribute can be specified.
+
+***Attribute with key and value***
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch4.png')} alt="Attribute with key and value" />
+
+***Attribute with value only***
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch5.png')} alt="Attribute with value only" />
+
+:::tip
+To ensure optimal search performance, avoid using special characters in search queries. Instead, use only Latin alphabetic and numeric characters.<br />
+
+**Reason:** PostgreSQL does not index special characters, meaning queries containing them trigger a full-table scan. This can noticeably impact search performance, particularly for large datasets or when no matching results are found.<br />
+
+**Wildcard Behavior:**
+Certain special characters, such as ```_``` and ```%```, function as wildcard symbols when placed at the beginning or end of a query.<br />
+
+**Example:** The query ```_atch``` will return results like patch, since ```_``` acts as a placeholder for any single character.
+:::
+
+The search results display the first 10 items found, sorted by start time in descending order.
+
+Besides attribute and test name, you can also filter the data based on test status.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch6.png')} alt="Filter the data based on test status" />
+
+If more than one page exists for the specified search criteria, a "Load more" button appears at the bottom of the widget.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch7.png')} alt="Load more button" />
+
+By clicking "Load more", additional 10 results (or less if available) appear. Previously loaded results remain visible and are supplemented with new data. If at least one more page is available, the "Load more" button continues to appear at the bottom of the widget.
+
+If more than 30 pages exist for the specified search criteria, the "Load more" button becomes disabled after loading the 30th page. The limit for the widget is 300 latest test cases.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch8.png')} alt="Load more button becomes disabled" />
+
+When the "Display launches" toggle is ON, the displayed results are grouped by launch execution and parent items (Launch/suite/test).
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch9.png')} alt="Display launches toggle is ON" />
+
+By clicking on the "Update" icon the page is refreshed a new request with specified in the widget parameters is sent. Only the first page is displayed.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch10.png')} alt="Update icon" />
+
+By clicking on the test name, the user is redirected to the test's log level in a new tab (the same action occurs when clicking the icon next to the test name).
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch11.png')} alt="Test's log level" />
+
+If a test item has a long description, an arrow appears to expand it.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch12.png')} alt="An arrow to expand description" />
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch13.png')} alt="A long description" />
+
+When hovering over the Start Time field, the format changes while hovering; clicking changes it per application settings.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch14.png')} alt="Start Time field" />
+
+Sorting is available by the Start Time field, with descending order set by default. Users can switch between ascending and descending order.
+
+By clicking the link to the bug tracking system, the ticket in the BTS opens.
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch15.png')} alt="The link to the bug tracking system" />
+
+<MediaViewer src={require('./img/widget-types/TestCaseSearch16.png')} alt="The ticket in the bug tracking system" />

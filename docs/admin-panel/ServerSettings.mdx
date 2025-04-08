@@ -9,6 +9,23 @@ In the Server Settings section, you can enable GitHub authorization, allowing us
 
 ## Authorization configuration
 
+### Inactivity timeout
+
+ADMIN can configure session expiration per instance.
+
+For that, the ADMIN needs to navigate to Administrate > Server Settings and set up the duration of user inactivity before automatic logout in 'Inactivity timeout' block:
+
+- 15 minutes
+- 1 hour
+- 12 hours
+- 24 hours (default value)
+
+The user is logged out if their session inactivity exceeds the defined timeout.
+
+If the user is working in multiple tabs and the inactivity timeout is reached in one tab while they are still active in another, the user remains logged in until the timeout is reached in all tabs.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings10.png')} alt="Inactivity timeout section" />
+
 ### GitHub
 
 To enable [GitHub authorization](/plugins/authorization/GitHub/):
@@ -25,7 +42,7 @@ Now you can access ReportPortal by clicking the "Login with GitHub" button on th
 
 ### Instance Invitations
 
-Administrator can disable the possibility for manual invitation of external users. In such case, users can get access to ReportPortal via identity provider only (for example, SAML) configured on the instance.
+ADMIN can disable the possibility for manual invitation of external users. In such case, users can get access to ReportPortal via identity provider only (for example, SAML) configured on the instance.
 
 The default state of toggle on "Instance Invitations" section is OFF.
 
