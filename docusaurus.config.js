@@ -347,10 +347,6 @@ const config = {
             from: '/dashboards-and-widgets/FlakyTestCasesTableTop20',
           },
           {
-            to: '/plugins/AtlassianJiraServer',
-            from: '/plugins/JiraServer',
-          },
-          {
             to: '/dashboards-and-widgets/ComponentHealthCheck',
             from: '/Component-health-check',
           },
@@ -471,14 +467,6 @@ const config = {
             from: '/reportportal-configuration/HowToGetAnAccessTokenInReportPortal',
           },
           {
-            to: '/plugins/AzureDevOps',
-            from: '/plugins/AzureDevOpsBTS',
-          },
-          {
-            to: '/plugins/GitLab',
-            from: '/plugins/GitLabBTS',
-          },
-          {
             to: '/plugins/authorization/GitHub',
             from: '/reportportal-configuration/authorization/GitHub',
           },
@@ -536,7 +524,7 @@ const config = {
           },
           {
              to: '/plugins/bug-tracking/AtlassianJiraServer',
-             from: '/plugins/AtlassianJiraServer',
+             from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
           },
           {
              to: '/plugins/bug-tracking/AtlassianJiraCloud',
@@ -544,11 +532,11 @@ const config = {
           },
           {
              to: '/plugins/bug-tracking/AzureDevOps',
-             from: '/plugins/AzureDevOps',
+             from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
           },
           {
              to: '/plugins/bug-tracking/GitLab',
-             from: '/plugins/GitLab',
+             from: ['/plugins/GitLab', '/plugins/GitLabBTS']
           },
           {
               to: '/plugins/bug-tracking/Monday',
