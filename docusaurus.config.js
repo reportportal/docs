@@ -534,6 +534,50 @@ const config = {
              to: '/releases/Version24.2.0',
              from: '/releases/Version24.2',
           },
+          {
+             to: '/plugins/bug-tracking/AtlassianJiraServer',
+             from: '/plugins/AtlassianJiraServer',
+          },
+          {
+             to: '/plugins/bug-tracking/AtlassianJiraCloud',
+             from: '/plugins/AtlassianJiraCloud',
+          },
+          {
+             to: '/plugins/bug-tracking/AzureDevOps',
+             from: '/plugins/AzureDevOps',
+          },
+          {
+             to: '/plugins/bug-tracking/GitLab',
+             from: '/plugins/GitLab',
+          },
+          {
+              to: '/plugins/bug-tracking/Monday',
+              from: '/plugins/Monday',
+          },
+          {
+              to: '/plugins/bug-tracking/Rally',
+              from: '/plugins/Rally',
+          },
+          {
+              to: '/plugins/notifications/EmailServer',
+              from: '/plugins/EmailServer',
+          },
+          {
+              to: '/plugins/notifications/Slack',
+              from: '/plugins/Slack',
+          },
+          {
+              to: '/plugins/notifications/Telegram',
+              from: '/plugins/Telegram',
+          },
+          {
+              to: '/plugins/import/JUnit',
+              from: '/plugins/JUnit',
+          },
+          {
+              to: '/plugins/import/RobotFramework',
+              from: '/plugins/RobotFramework',
+          },
         ],
       },
     ],
