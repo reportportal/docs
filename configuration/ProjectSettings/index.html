@@ -9,8 +9,8 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.f5e98727.js" defer="defer"></script>
-<script src="/docs/assets/js/main.800bdbcd.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.4de149fa.js" defer="defer"></script>
+<script src="/docs/assets/js/main.36012582.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK7ZHTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -153,7 +153,7 @@ Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability 
 </li>
 </ol>
 <p><strong>Rule name</strong> – from 1 to 55 characters, mandatory field</p>
-<p><strong>Webhook URL</strong> – mandatory field (it is configured on the <a href="/docs/plugins/Slack#create-an-application-in-slack">Slack side</a>)</p>
+<p><strong>Webhook URL</strong> – mandatory field (it is configured on the <a href="/docs/plugins/notifications/Slack#create-an-application-in-slack">Slack side</a>)</p>
 <p><strong>In case</strong> – optional field, dropdown with the options:</p>
 <ul>
 <li>Always – notification will be sent upon the launch finish.</li>
@@ -195,8 +195,9 @@ Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability 
 </li>
 </ol>
 <p><strong>Rule name</strong> – from 1 to 55 characters, mandatory field</p>
-<p><strong>Chat id</strong> – mandatory field, copied from group info in <a href="/docs/plugins/Telegram#configuration-on-telegram-side">Telegram</a></p>
+<p><strong>Chat id</strong> – mandatory field, copied from group info in <a href="/docs/plugins/notifications/Telegram#configuration-on-telegram-side">Telegram</a></p>
 <div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>important</div><div class="admonitionContent_BuS1"><p>Add ‘-’ before the chat id.</p></div></div>
+<p><strong>Bot Api Key</strong> - mandatory field, received during registration <a href="/docs/plugins/notifications/Telegram#configuration-on-telegram-side">your Telegram bot</a></p>
 <p><strong>In case</strong> – optional field, dropdown with the options:</p>
 <ul>
 <li>Always – notification will be sent in any case.</li>
