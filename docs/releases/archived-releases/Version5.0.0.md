@@ -24,8 +24,8 @@ In this version we have:
 Jira, Rally, SauceLabs integration now will work through the plugin functionality. You need to download [latest JAR package](/plugins/ManagePlugins#upload-plugin) from our Bintray repository, and drag-n-drop it ReportPortal in Administrative section -> Plugins.
 
 Available plugins to download:
-- [Jira](/plugins/AtlassianJiraServer)
-- [Rally](/plugins/Rally)
+- [Jira](/plugins/bug-tracking/AtlassianJiraServer)
+- [Rally](/plugins/bug-tracking/Rally)
 - [SauceLabs](/plugins/SauceLabs)
 ## Brand new features
 -	[#275](https://github.com/reportportal/reportportal/issues/275) [#639](https://github.com/reportportal/reportportal/issues/639)  Nested steps

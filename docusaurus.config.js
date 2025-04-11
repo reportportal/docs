@@ -347,10 +347,6 @@ const config = {
             from: '/dashboards-and-widgets/FlakyTestCasesTableTop20',
           },
           {
-            to: '/plugins/AtlassianJiraServer',
-            from: '/plugins/JiraServer',
-          },
-          {
             to: '/dashboards-and-widgets/ComponentHealthCheck',
             from: '/Component-health-check',
           },
@@ -471,14 +467,6 @@ const config = {
             from: '/reportportal-configuration/HowToGetAnAccessTokenInReportPortal',
           },
           {
-            to: '/plugins/AzureDevOps',
-            from: '/plugins/AzureDevOpsBTS',
-          },
-          {
-            to: '/plugins/GitLab',
-            from: '/plugins/GitLabBTS',
-          },
-          {
             to: '/plugins/authorization/GitHub',
             from: '/reportportal-configuration/authorization/GitHub',
           },
@@ -533,6 +521,50 @@ const config = {
           {
              to: '/releases/Version24.2.0',
              from: '/releases/Version24.2',
+          },
+          {
+             to: '/plugins/bug-tracking/AtlassianJiraServer',
+             from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
+          },
+          {
+             to: '/plugins/bug-tracking/AtlassianJiraCloud',
+             from: '/plugins/AtlassianJiraCloud',
+          },
+          {
+             to: '/plugins/bug-tracking/AzureDevOps',
+             from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
+          },
+          {
+             to: '/plugins/bug-tracking/GitLab',
+             from: ['/plugins/GitLab', '/plugins/GitLabBTS']
+          },
+          {
+              to: '/plugins/bug-tracking/Monday',
+              from: '/plugins/Monday',
+          },
+          {
+              to: '/plugins/bug-tracking/Rally',
+              from: '/plugins/Rally',
+          },
+          {
+              to: '/plugins/notifications/EmailServer',
+              from: '/plugins/EmailServer',
+          },
+          {
+              to: '/plugins/notifications/Slack',
+              from: '/plugins/Slack',
+          },
+          {
+              to: '/plugins/notifications/Telegram',
+              from: '/plugins/Telegram',
+          },
+          {
+              to: '/plugins/import/JUnit',
+              from: '/plugins/JUnit',
+          },
+          {
+              to: '/plugins/import/RobotFramework',
+              from: '/plugins/RobotFramework',
           },
         ],
       },

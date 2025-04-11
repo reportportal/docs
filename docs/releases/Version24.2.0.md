@@ -27,17 +27,17 @@ https://github.com/reportportal/reportportal/compare/v24.1...v24.2) or [Kubernet
 1. **New features** - **[Extended launches retention policy](/configuration/LaunchesRetentionPolicy)**: <br/>
    We've introduced an extended launches retention policy to allow important launches to be preserved beyond the existing retention periods. Previously, all launches were automatically deleted after a set time to save storage. With this update, you can now mark specific launches as important, ensuring they are never deleted, as long as there is sufficient storage available. This feature is useful for retaining critical data for compliance, auditing, or historical analysis.
 
-2. **New integrations** (Notifications) - **[Slack plugin](/plugins/Slack) and redesigned Notifications page**: <br/>
+2. **New integrations** (Notifications) - **[Slack plugin](/plugins/notifications/Slack) and redesigned Notifications page**: <br/>
    Teams using Slack can now set up Slack integration to receive ReportPortal notifications on launch event right in their Slack channel.<br/>
-   More details can be found in [Slack user guide](/plugins/Slack) and [blog post](https://reportportal.io/blog/report-test-results-in-real-time-to-slack).
+   More details can be found in [Slack user guide](/plugins/notifications/Slack) and [blog post](https://reportportal.io/blog/report-test-results-in-real-time-to-slack).
 
-3. **New integrations** (Bug Tracking Systems) - **[Monday plugin](/plugins/Monday)**: <br/>
+3. **New integrations** (Bug Tracking Systems) - **[Monday plugin](/plugins/bug-tracking/Monday)**: <br/>
    Teams working with Monday as their BTS can now set up an integration to post and link issues from ReportPortal directly to Monday.  
 
 4. **Import functionality moved to plugin**:  <br/> 
    To provide more flexibility for launch import, the feature has been moved from the core application to a plugin. Users can now choose between the Robot and JUnit import plugins developed by the ReportPortal team, or create their own plugins to import results from other test frameworks.<br/>
-   More details about [JUnit import plugin](/plugins/JUnit).<br/>
-   More details about [Robot Framework import plugin](/plugins/RobotFramework).<br/>
+   More details about [JUnit import plugin](/plugins/import/JUnit).<br/>
+   More details about [Robot Framework import plugin](/plugins/import/RobotFramework).<br/>
    [Guide on how to create import plugin](/developers-guides/PluginDevelopersGuide/DevelopACustomImportPlugin).
 
 5. **Microseconds added to timestamps** for better test items sequence tracking:<br/>
