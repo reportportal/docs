@@ -71,4 +71,4 @@ We do not support direct integration with performance testing frameworks, but as
 
 **15. Does ReportPortal have integration with Jira?**
 
-Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/AtlassianJiraServer), [Jira Cloud](/plugins/AtlassianJiraCloud), [Azure DevOps](/plugins/AzureDevOps), and [Rally](/plugins/Rally). 
+Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/bug-tracking/AtlassianJiraServer), [Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud), [Azure DevOps](/plugins/bug-tracking/AzureDevOps), [GitLab](/plugins/bug-tracking/GitLab), [Monday](/plugins/bug-tracking/Monday) and [Rally](/plugins/bug-tracking/Rally). 
