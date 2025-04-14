@@ -30,6 +30,11 @@ The first one is API service back-end environment variables that are described i
 The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
 - Name – is a disabled field as the project name cannot be changed.
+
+In addition to the Project Settings General section, you can find the project name on the left menu and in the URL.
+
+<MediaViewer src={require('./img/ProjectName.png')} alt="Where can I find project name in ReportPortal" />
+
 - **Launch inactivity timeout** - this parameter specifies the scheduled time for a job to interrupt inactive launches (launches which have the status 'in progress', but there is no any items during the chosen period). There are six options: 
   - 1 hour, 
   - 3 hours, 
@@ -53,6 +58,8 @@ After this period a launch will be deleted, and you can not see it in ReportPort
   * 21 days,
   * 30 days,
   * 90 days.
+
+Widgets continue to work even if the logs are deleted, as they are linked to test items.
 
 - **Keep attachments** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
     in the system. There are five options:
@@ -246,7 +253,7 @@ After Installation the ReportPortal by default sets-up the following defect type
 * **System Issue** - defect was investigated and it turns out that it is a system-level issue, like the app, crashed and caused the test to fail.
 * **No Defect** - defect was investigated and defined as not a defect.
 
-ReportPortal allows the use of existing defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on the project settings page.
+ReportPortal allows the use of existing default defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on the project settings page.
 
 To create custom defect types, perform the following steps:
 
