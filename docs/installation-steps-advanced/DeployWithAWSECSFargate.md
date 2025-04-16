@@ -89,7 +89,7 @@ Create Task Def for these components by adding Elastic File System mountpoints &
 **RabbitMQ**
 Create Task Def for RabbitMQ by mapping the credentials from SecretsManager in the environment variables.
 
-**API, jobs, metrics-gatherer, analyzer, analyzer-train & ui:**
+**API, jobs, analyzer, analyzer-train & ui:**
 
 Create Task Def for each of these components & add dockerlabel with `@ecs` suffix as per the provider.
 Eg: "traefik.http.routers.api.middlewares": "api-strip-prefix@ecs"
