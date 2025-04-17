@@ -15,13 +15,13 @@ Auto-analysis performs automated defect triaging and defines the reason for the 
 
 The process of Auto-Analysis is based on previous user-investigated users' results using Machine Learning.
 
-An auto-analyzer is presented by a combination of several services: OpenSearch, Analyzer service(two instances Analyzer and Analyzer train), Metrics gatherer:
-* OpenSearch contains an analytical base, stores training data for retraining of models and saves metrics for metrics gatherer.
+An auto-analyzer is presented by a combination of several services: OpenSearch and Analyzer service (two instances Analyzer and Analyzer train).
+
+* OpenSearch contains an analytical base and stores training data for retraining of models.
 * Analyzer instance performs all operations, connected with the basic functionality (indexing/removing logs, searching logs, auto-analysis,  ML suggestions).
 * Analyzer train instance is responsible for training models for Auto-analysis and ML suggestions functionality.
-* Metrics gatherer calculates metrics about the analyzer usage and requests deletion of custom models if metrics goes down.
 
-*You have the option to disable the Analyzer by removing the Analyzer, Analyzer train, and Metrics gatherer services from the installation.*
+*You have the option to disable the Analyzer by removing the Analyzer and Analyzer train services from the installation.*
 
 There are several ways to use an analyzer in our test automation reporting dashboard:
 
