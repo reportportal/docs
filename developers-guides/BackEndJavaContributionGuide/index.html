@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.4de149fa.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.1a94434c.js" defer="defer"></script>
 <script src="/docs/assets/js/main.36012582.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,25 +22,36 @@
 <p><a href="https://github.com/reportportal/reportportal/wiki/Contribution" target="_blank" rel="noopener noreferrer">Contribution notes on GitHub</a></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="deployment-components-description">Deployment components description<a href="#deployment-components-description" class="hash-link" aria-label="Direct link to Deployment components description" title="Direct link to Deployment components description">​</a></h2>
 <ul>
-<li><a href="https://traefik.io" target="_blank" rel="noopener noreferrer">Traefik</a> as reversed proxy and application entry point</li>
-<li>Data analysis<!-- -->
+<li>
+<p><a href="https://traefik.io" target="_blank" rel="noopener noreferrer">Traefik</a> as reversed proxy and application entry point</p>
+</li>
+<li>
+<p>Data analysis</p>
 <ul>
 <li><a href="https://opensearch.org/" target="_blank" rel="noopener noreferrer">OpenSearch</a> as logs analysis data storage</li>
 <li><a href="https://github.com/reportportal/service-auto-analyzer" target="_blank" rel="noopener noreferrer">Service Analyzer</a> as log messages analysis tool</li>
 <li><a href="https://github.com/reportportal/service-auto-analyzer" target="_blank" rel="noopener noreferrer">Service Analyzer Train</a> is a <code>Service Analyzer</code> running in training mode to increase analysis quality</li>
-<li><a href="https://github.com/reportportal/service-metrics-gatherer" target="_blank" rel="noopener noreferrer">Service Metrics Gatherer</a> as training model manager and <code>Service Analyzer</code> monitoring</li>
 </ul>
 </li>
-<li>Database<!-- -->
+<li>
+<p>Database</p>
 <ul>
 <li><a href="https://www.postgresql.org" target="_blank" rel="noopener noreferrer">Postgresql</a></li>
 <li><a href="https://github.com/reportportal/migrations" target="_blank" rel="noopener noreferrer">Service Migrations</a> - service for DB schema and data updates</li>
 </ul>
 </li>
-<li><a href="https://www.rabbitmq.com" target="_blank" rel="noopener noreferrer">RabbitMQ</a> - message broker for inter-service communication</li>
-<li><a href="https://min.io" target="_blank" rel="noopener noreferrer">Minio</a> - binary data storage (alternative to plain filesystem storage)</li>
-<li><a href="https://github.com/reportportal/service-index" target="_blank" rel="noopener noreferrer">Service Index</a> - gateway service with services metadata resolving mechanism</li>
-<li><a href="https://github.com/reportportal/service-ui" target="_blank" rel="noopener noreferrer">Service UI</a> - ReportPortal web UI</li>
+<li>
+<p><a href="https://www.rabbitmq.com" target="_blank" rel="noopener noreferrer">RabbitMQ</a> - message broker for inter-service communication</p>
+</li>
+<li>
+<p><a href="https://min.io" target="_blank" rel="noopener noreferrer">Minio</a> - binary data storage (alternative to plain filesystem storage)</p>
+</li>
+<li>
+<p><a href="https://github.com/reportportal/service-index" target="_blank" rel="noopener noreferrer">Service Index</a> - gateway service with services metadata resolving mechanism</p>
+</li>
+<li>
+<p><a href="https://github.com/reportportal/service-ui" target="_blank" rel="noopener noreferrer">Service UI</a> - ReportPortal web UI</p>
+</li>
 </ul>
 <p>There are three Java repositories that are part of the whole RP deployment:</p>
 <ul>

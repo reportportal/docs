@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.4de149fa.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.1a94434c.js" defer="defer"></script>
 <script src="/docs/assets/js/main.36012582.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,9 +31,11 @@ Functionality of data removing depends on two configurations.</p>
 <p>The first one is API service back-end environment variables that are described in <a href="/docs/installation-steps-advanced/JobsConfiguration">ReportPortal jobs configuration</a></p>
 <p>The second one is the &quot;General&quot; tab you can configure parameter of data storage in ReportPortal for this project:</p>
 <ul>
-<li>
-<p>Name – is a disabled field as the project name cannot be changed.</p>
-</li>
+<li>Name – is a disabled field as the project name cannot be changed.</li>
+</ul>
+<p>In addition to the Project Settings General section, you can find the project name on the left menu and in the URL.</p>
+<!-- -->
+<ul>
 <li>
 <p><strong>Launch inactivity timeout</strong> - this parameter specifies the scheduled time for a job to interrupt inactive launches (launches which have the status &#x27;in progress&#x27;, but there is no any items during the chosen period). There are six options:</p>
 <ul>
@@ -58,8 +60,7 @@ Functionality of data removing depends on two configurations.</p>
 </ul>
 <p>After this period a launch will be deleted, and you can not see it in ReportPortal.</p>
 <ul>
-<li>
-<p><strong>Keep logs</strong> - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are five options:</p>
+<li><strong>Keep logs</strong> - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are five options:<!-- -->
 <ul>
 <li>7 days,</li>
 <li>14 days,</li>
@@ -68,9 +69,11 @@ Functionality of data removing depends on two configurations.</p>
 <li>90 days.</li>
 </ul>
 </li>
-<li>
-<p><strong>Keep attachments</strong> - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
-in the system. There are five options:</p>
+</ul>
+<p>Widgets continue to work even if the logs are deleted, as they are linked to test items.</p>
+<ul>
+<li><strong>Keep attachments</strong> - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
+in the system. There are five options:<!-- -->
 <ul>
 <li>7 days,</li>
 <li>14 days,</li>
@@ -229,7 +232,7 @@ Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability 
 <li><strong>System Issue</strong> - defect was investigated and it turns out that it is a system-level issue, like the app, crashed and caused the test to fail.</li>
 <li><strong>No Defect</strong> - defect was investigated and defined as not a defect.</li>
 </ul>
-<p>ReportPortal allows the use of existing defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on the project settings page.</p>
+<p>ReportPortal allows the use of existing default defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on the project settings page.</p>
 <p>To create custom defect types, perform the following steps:</p>
 <ol>
 <li>Login into the ReportPortal.</li>

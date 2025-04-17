@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.4de149fa.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.1a94434c.js" defer="defer"></script>
 <script src="/docs/assets/js/main.36012582.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,14 +24,13 @@
 <li>comment <em>(in case if it exists)</em>;</li>
 </ul>
 <p>The process of Auto-Analysis is based on previous user-investigated users&#x27; results using Machine Learning.</p>
-<p>An auto-analyzer is presented by a combination of several services: OpenSearch, Analyzer service(two instances Analyzer and Analyzer train), Metrics gatherer:</p>
+<p>An auto-analyzer is presented by a combination of several services: OpenSearch and Analyzer service (two instances Analyzer and Analyzer train).</p>
 <ul>
-<li>OpenSearch contains an analytical base, stores training data for retraining of models and saves metrics for metrics gatherer.</li>
+<li>OpenSearch contains an analytical base and stores training data for retraining of models.</li>
 <li>Analyzer instance performs all operations, connected with the basic functionality (indexing/removing logs, searching logs, auto-analysis,  ML suggestions).</li>
 <li>Analyzer train instance is responsible for training models for Auto-analysis and ML suggestions functionality.</li>
-<li>Metrics gatherer calculates metrics about the analyzer usage and requests deletion of custom models if metrics goes down.</li>
 </ul>
-<p><em>You have the option to disable the Analyzer by removing the Analyzer, Analyzer train, and Metrics gatherer services from the installation.</em></p>
+<p><em>You have the option to disable the Analyzer by removing the Analyzer and Analyzer train services from the installation.</em></p>
 <p>There are several ways to use an analyzer in our test automation reporting dashboard:</p>
 <ul>
 <li>
