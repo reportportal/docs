@@ -7,10 +7,10 @@ description: Use .NET frameworks with ReportPortal for real-time test monitoring
 
 By integrating .NET frameworks with ReportPortal, you can monitor test executions in real-time, identify trends, manage test failures, analyze test results and create test automation report.
 
-ReportPortal supports seamless integration with the following .NET testing test frameworks:
+ReportPortal supports seamless integration with the following dotnet testing test frameworks:
 
 - [NUnit](/log-data-in-reportportal/test-framework-integration/Net/NUnit)<br />
-One of the most popular unit testing frameworks for .NET, NUnit is highly customizable and supports a variety of test cases. With ReportPortal integration, NUnit test results can be visualized in real-time. This allows you to monitor the progress of your unit tests and quickly identify issues.
+One of the most popular unit testing frameworks in net projects, NUnit is highly customizable and supports a variety of test cases. With ReportPortal integration, NUnit test results can be visualized in real-time. This allows you to monitor the progress of your unit tests and quickly identify issues.
 
 - [VSTest](/log-data-in-reportportal/test-framework-integration/Net/VSTest)<br />
 The built-in test runner for Visual Studio, VSTest, is commonly used for running unit tests, integration tests, and functional tests. Integration VSTest with ReportPortal allows you to centralize test execution data, ensuring you have a complete view of your test suite.
