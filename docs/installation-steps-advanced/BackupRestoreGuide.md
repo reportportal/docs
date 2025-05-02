@@ -32,27 +32,58 @@ Explanation:
 - `pg_dump -U $DB_USER -d $DB_NAME`: Initiates the PostgreSQL dump, specifying the username and database name.
 - `> reportportal_db_backup.sql`: Redirects the dump output to a file named `backup.sql`.
 
-Make sure to replace placeholders like `DB_CONTAINER`, `DB_USER`, and `DB_NAME` with your actual container pod name, PostgreSQL username, and database name.
+Make sure to replace placeholders like `DB_CONTAINER`, `DB_USER`, and `DB_NAME` with your container pod name, PostgreSQL username, and database name.
 
 ### PostgreSQL Restore Process
 
-To restore PostgreSQL database using following command:
+:::important
+Ensure that PostgreSQL is running as a standalone service before starting ReportPortal. Deploy ReportPortal only after the database has been successfully restored
+:::
+
+#### 1. Deploy PostgreSQL as a Standalone Service
+
+Start the PostgreSQL container using Docker Compose:
 
 ```bash
+docker compose up -d postgres
+```
+
+> This brings up only the `postgres` service defined in your `docker-compose.yml`.
+
+#### 2. Restore the PostgreSQL Database Backup
+
+Set the required environment variables:
+
+```bash
+DB_CONTAINER=postgres
 DB_USER=rpuser
 DB_NAME=reportportal
-DB_CONTAINER=postgres
+```
 
+Restore the database from your backup file:
 
+```bash
 docker exec -i $DB_CONTAINER psql -U $DB_USER -d $DB_NAME < reportportal_docker_db_backup.sql
 ```
 
+> Ensure the backup file `reportportal_docker_db_backup.sql` is in your current working directory.
+
+#### 3. Deploy ReportPortal
+
+Once the database is restored, bring up the full ReportPortal stack:
+
+```bash
+docker compose up -d
+```
+
+This command launches all remaining services, including all the ReportPortal services and components.
+
 ### Binary Storage Backup Process
 
-The simple way to backup binary storage is back up the volume’s directory (by default path is /var/lib/docker/volumes/volume_hash).
+The simple way to back up binary storage is to back up the volume’s directory (by default, the path is /var/lib/docker/volumes/volume_hash).
 
 :::important
-The following method available from ReportPortal version 24.1.
+The following method is available from ReportPortal version 24.1.
 :::
 
 ```bash
