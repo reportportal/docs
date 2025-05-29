@@ -27,7 +27,7 @@ SAML plugin is available in ReportPortal on the Plugins page.
 
 #### Go to the Okta dashboard
 
-<MediaViewer src={require('./img/okta-saml/okta-step-1.0.jpg')} alt="Create a new App Integreation" />
+<MediaViewer src={require('./img/okta-saml/okta-step-1.0.jpg')} alt="Create a new App Integration" />
 
 Click on the `Applications` in the sidebar menu and click on the
 `Create App Integration` button.
@@ -48,7 +48,7 @@ In the `App name` field, enter the application's name. Click `Next`.
 
 #### Fill in the SAML settings 
 
-<MediaViewer src={require('./img/okta-saml/okta-step-2.0.jpg')} alt="Fill in the SAML settings" />
+<MediaViewer src={require('./img/okta-saml/okta-step-2.0.png')} alt="Fill in the SAML settings" />
 
 In the `Single sign-on URL` field, enter the following URL:
 
@@ -58,8 +58,16 @@ https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
 In the example below, ReportPortal was deployed on the local machine using the following URL:
 
 ```url
-http://192.168.49.2/uat/saml/sp/SSO/alias/report-portal-sp
+http://localhost:8080/uat/login/saml2/sso/Okta
 ```
+
+for ReportPortal version older than 25.1, you can use the following URL:
+
+```url
+https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
+```
+
+More details about the ACS URL you can find in the [SAML Overview](/plugins/authorization/SamlProviders/Overview#identity-provider-configuration).
 
 In the `Audience URI (SP Entity ID)` field, enter the following identifier:
 

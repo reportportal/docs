@@ -63,10 +63,28 @@ ReportPortal contains the SAML Plugin by default.
 
 ### Identity provider configuration
 
-#### ReportPortal Assertion Consumer Service URL (ACS URL)
+#### ReportPortal Assertion Consumer Service URL
 
 You have to provide a URL for a SAML provider to deliver SAML data to the
 identity federation.
+
+For ReportPortal version 25.1 with Service authorization 5.14.0 and newer, the ACS URL is:
+
+```url
+https://<host>/uat/login/saml2/sso/{your-provider-name}
+```
+
+You can find the `{your-provider-name}` in the ReportPortal SAML plugin configuration.
+The field is called **Provider name**.
+
+<MediaViewer src={require('./img/saml-provider-name.png')} alt="SAML Provider name" />
+
+:::note
+The provider name must not contain spaces.
+Use only alphanumeric characters, dashes, and underscores.
+:::
+
+For ReportPortal version 25.0.6 with Service authorization 5.13.2 and older, the ACS URL is:
 
 ```url
 https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
