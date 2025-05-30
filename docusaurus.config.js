@@ -439,7 +439,7 @@ const config = {
             from: '/installation-steps/MigrateOneInstanceToAnother',
           },
           {
-            to: '/installation-steps-advanced/FileStorageOptions',
+            to: '/installation-steps-advanced/file-storage-options/',
             from: '/installation-steps/ReportPortal23.1FileStorageOptions',
           },
           {
@@ -565,6 +565,10 @@ const config = {
           {
               to: '/plugins/import/RobotFramework',
               from: '/plugins/RobotFramework',
+          },
+          {
+              to: '/installation-steps-advanced/file-storage-options/',
+              from: '/installation-steps-advanced/FileStorageOptions',
           },
         ],
       },

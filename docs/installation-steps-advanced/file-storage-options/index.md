@@ -1,8 +1,3 @@
----
-sidebar_position: 12
-sidebar_label: File storage options
----
-
 # File storage options
 
 ReportPortal supports two types of storage structures:
@@ -85,23 +80,4 @@ DATASTORE_ENDPOINT: http://minio:9000
 
 ## Cloud Storage
 
-ReportPortal supports cloud storage options through the Java library [JCLOUDS](https://jclouds.apache.org/).
-
-The supported cloud storage options are:
-
-### 1. Amazon S3
-
-To configure storage using Amazon S3, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
-
-```bash
-RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage (recommended)
-DATASTORE_TYPE: s3
-DATASTORE_REGION: us-standard           # Region of the bucket (JCloud ref. to `us-east-1`)
-DATASTORE_ACCESSKEY: <access_key>
-DATASTORE_SECRETKEY: <secret_key>
-DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
-```
-
-### 2. Amazon Elastic File System (EFS)
-
-A guide for configuring storage with Amazon EFS will be available soon.
+To set up Amazon S3 Cloud Storage with IAM user (secret keys) or IAM role, follow our [Advanced S3 Integration Guide](/installation-steps-advanced/file-storage-options/S3CloudStorage).
