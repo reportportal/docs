@@ -566,6 +566,10 @@ const config = {
               to: '/plugins/import/RobotFramework',
               from: '/plugins/RobotFramework',
           },
+          {
+              to: '/installation-steps-advanced/file-storage-options/',
+              from: '/installation-steps-advanced/FileStorageOptions',
+          },
         ],
       },
     ],
