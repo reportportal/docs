@@ -5,14 +5,14 @@ sidebar_label: Version 25.1
 
 # Version 25.1
 
-**Action Required 1 - Update all the Plugins on the Instance:**<br />
+**Action Required 1 - Update all the plugins on the instance:**<br />
 In ReportPortal 25.1, we've upgraded to Spring Boot 3. Starting with this version, only plugins built with Spring Boot 3 are supported. Please install the latest plugin versions specified in the 25.1 release notes.
 
-**Action Required 2 - Change API Key Format:**<br />
+**Action Required 2 - Change API key format:**<br />
 API keys containing special characters are no longer supported and will not function correctly.<br />
 If your API keys contain special characters, please regenerate them to ensure continued access. The updated format supports only these characters: ```[a-zA-Z0-9-._~+/]```
 
-**Action Required 3 - Update SAML Callback URL:**<br />
+**Action Required 3 - Update your SAML integration:**<br />
 Please update your existing SAML integration to use the new standard callback URL format: ```/login/saml2/sso/{saml-provider-name}```<br />
 This ensures compatibility with the latest updates and improved security practices.<br />
 More details can be found in our [SAML documentation](/plugins/authorization/SamlProviders/Overview/).
@@ -86,15 +86,15 @@ More details can be found in our [SAML documentation](/plugins/authorization/Sam
 
 
 ## 6. Released services:
-|Service Name|Repository|Tag|
-|---|---| --- |
-|Index|reportportal/service-index|5.14.0|
-|Authorization|reportportal/service-authorization|5.14.0|
-|UI|reportportal/service-ui|5.14.1|
-|API|reportportal/service-api|5.14.0|
-|Jobs|reportportal/service-jobs|5.14.0|
-|Migrations|reportportal/migrations|5.12.1|
-|Auto Analyzer|reportportal/service-auto-analyzer|5.14.1|
+|Service Name|Repository| Tag    |
+|---|---|--------|
+|Index|reportportal/service-index| 5.14.0 |
+|Authorization|reportportal/service-authorization| 5.14.0 |
+|UI|reportportal/service-ui| 5.14.1 |
+|API|reportportal/service-api| 5.14.0 |
+|Jobs|reportportal/service-jobs| 5.14.0 |
+|Migrations|reportportal/migrations| 5.14.0 |
+|Auto Analyzer|reportportal/service-auto-analyzer| 5.14.1 |
 
 **Released plugins:**
 |Plugin Name|Repository|Tag|
