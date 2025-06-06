@@ -72,3 +72,9 @@ We do not support direct integration with performance testing frameworks, but as
 **15. Does ReportPortal have integration with Jira?**
 
 Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/bug-tracking/AtlassianJiraServer), [Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud), [Azure DevOps](/plugins/bug-tracking/AzureDevOps), [GitLab](/plugins/bug-tracking/GitLab), [Monday](/plugins/bug-tracking/Monday) and [Rally](/plugins/bug-tracking/Rally). 
+
+**16. How can I check the ReportPortal version?**
+
+You can find the current version of ReportPortal on the login page. Simply hover your mouse over the ```i``` icon next to the "New versions are available" message to see the version details.
+
+<MediaViewer src={require('./img/NewVersions.png')} alt="New versions in our test automation dashboard" />
