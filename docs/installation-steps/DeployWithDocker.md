@@ -6,84 +6,105 @@ description: Make your test automation reporting more portable. Reduce the risk 
 
 # Deploy with Docker
 
-***This is the installation guide for Linux, Mac, and Windows.***
+## Installation Guide for ReportPortal
 
-ReportPortal can be easily deployed using Docker Compose.
+This concise, step-by-step guide will help you deploy ReportPortal using Docker Compose (version ≥2.2). It covers prerequisites, configuration, deployment, and verification to ensure anyone can set up the application quickly.
 
-## Install Docker
+### Prerequisites
 
-Docker is supported by all major Linux distributions, MacOS and Windows.
+1. **Operating System**
 
-* [Download](https://www.docker.com/get-started) Docker
-* [Download](https://docs.docker.com/compose/install/) Docker Compose
+    * **Linux** (Ubuntu 20.04+ or equivalent).
+    * **macOS** (Apple Silicon and Intel-based supported).
+    * **Windows** (64-bit Windows 11 Pro or higher)
 
-> ⚠️ Recomended change resources limits at least **2** CPU **5** GB RAM for Docker Desktop: [MAC](https://docs.docker.com/desktop/settings/mac/#advanced) | [Windows](https://docs.docker.com/desktop/settings/windows/#advanced) | [Linux](https://docs.docker.com/desktop/settings/linux/#advanced)
+2. **Docker & Docker Compose**. [Install the latest Docker Engine](https://docs.docker.com/engine/install/) and Docker Compose plugin
 
+3. **System Resources**
 
-## Deploy ReportPortal with Docker
+    * At least 2 CPU cores
+    * Minimum 6GB RAM allocated to Docker
+    * Swap or storage: ≥20GB free space for Docker images and data
 
-1. Download the latest ReportPortal Docker Compose file from [here](<https://github.com/reportportal/reportportal/blob/master/docker-compose.yml>). You can make it by run the following command:
+:::note
+For production, deploy on a Linux-based server or cloud instance. Adjust resource limits according to expected load.
+[See advanced deployment recommendations](/installation-steps/HardwareRequirements).
+:::
 
-```bash
-curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
-```
-Ensure you override the UAT Service environment variable `RP_INITIAL_ADMIN_PASSWORD`.
+### Step 1: Prepare the Environment
 
-2. Start the application using the following command:
+1. **Verify Docker & Compose Installation**
 
-```bash
-docker-compose -p reportportal up -d --force-recreate
-``` 
-Where:
-- **-p reportportal** adds project prefix 'reportportal' to all containers
-- **up** creates and starts containers
-- **-d** daemon mode
-- **--force-recreate** Re-creates containers if there any
+   ```bash
+   docker --version
+   docker compose version
+   ```
 
-Useful commands:
-- **docker-compose logs** shows logs from all containers
-- **docker logs &lt;;container_name&gt;** shows logs from selected container
-- **docker ps -a | grep "reportportal_" | awk '&#123;print $1}' | xargs docker rm -f** Deletes all ReportPortal containers
-- **docker-compose down**
+2. **Adjust Docker Resources (Desktop Users)**
 
-3. Open your web browser with an IP address of the deployed environment at port **8080**
+    * Open Docker Desktop settings.
+    * Allocate at least 2 CPUs and 6GB RAM under **Resources**.
 
-Use the following **login\pass** to access:
-* Default User: `default\1q2w3e`
-* Administrator: `superadmin\erebus`
+### Step 2: Obtain the Docker Compose File
 
-> ⚠️ Please change the admin password for better security
+1. **Download the Official `docker-compose.yml`**
 
-## Optional Customisation
+   ```bash
+   curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
+   ```
 
-1. Expose Docker Volumes to the file system
+2. **Review and Customize Environment Variables**
 
-Give the right permissions to the OpenSearch data folder using the following commands:
+    * Open `docker-compose.yml` in your editor.
+    * Locate the `RP_INITIAL_ADMIN_PASSWORD` variable under the `uat-service` (or equivalent) section.
 
-```bash
-mkdir -p data/opensearch
-chmod 775 data/opensearch
-chgrp 1000 data/opensearch
-```
+      ```yaml
+      services:
+        uat:
+          environment:
+            RP_INITIAL_ADMIN_PASSWORD: "ChangeMe123"
+      ```
+    * Replace `ChangeMe123` with a secure password of your choice.
+    * (Optional) Adjust other variables such as database credentials or ports if needed.
 
-2. PostgreSQL Performance Tuning
+### Step 3: Deploy ReportPortal
 
-Depending on your hardware configuration and the parameters of your system, you can additionally optimize your PostgreSQL performance by adding the following parameters to the "command" option in the Docker compose file:
+1. **Launch Containers**
 
-```bash
- -c effective_io_concurrency=
- -c shared_buffers=
- -c max_connections=
- -c effective_cache_size=
- -c maintenance_work_mem=
- -c random_page_cost=
- -c seq_page_cost= 
- -c min_wal_size= 
- -c max_wal_size=
- -c max_worker_processes=
- -c max_parallel_workers_per_gather=
-``` 
+   ```bash
+   docker compose -p reportportal up -d --force-recreate
+   ```
 
-Please choose to set the values of these variables that are right for your system. You can also change the PostgreSQL host by passing a new value to the `POSTGRES_SERVER` environment [variable](/installation-steps-advanced/AdditionalConfigurationParameters).
+    * `-p reportportal`: Prefixes container names with `reportportal_`.
+    * `up -d`: Creates and starts services in detached mode.
+    * `--force-recreate`: Ensures containers are recreated, applying any changes.
 
-More info can be found at the following [link](/installation-steps/HardwareRequirements#5-postgresql-performance-tuning)
+2. **Monitor Startup Logs**
+
+    * View combined logs:
+
+      ```bash
+      docker compose logs -f
+      ```
+
+    * View logs for a specific container:
+
+      ```bash
+      docker logs reportportal_uat
+      ```
+
+3. **Cleanup**
+
+    * To stop and remove all ReportPortal containers:
+
+      ```bash
+      docker compose down --volumes --remove-orphans
+      ```
+
+## Tips and Best Practices
+
+* **Use External Volumes**: Mount host volumes for data persistence (`/var/lib/reportportal`).
+* **Secure Secrets**: Store sensitive environment variables (e.g., DB passwords) in a `.env` file and reference them in `docker-compose.yml`.
+* **Use Docker Networks**: Isolate ReportPortal on its own network for enhanced security.
+* **Scale Services**: For high availability, consider using [Kubernetes](https://github.com/reportportal/kubernetes) with multiple replicas.
+* **Backups**: Schedule periodic backups of the PostgreSQL database and Storage. [How to backup ReportPortal guide](/installation-steps-advanced/BackupRestoreGuide/)
