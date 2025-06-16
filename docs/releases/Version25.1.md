@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 25.1
 ---
 
@@ -42,6 +42,24 @@ More details can be found in our [SAML documentation](/plugins/authorization/Sam
    Now the launch import is handling like a regular launch reporting using the asynchronous endpoints, that increases stability and durability of the service-API and speeds up the import processing.
 3. **New environment variable for JUnit import plugin:**<br />
    Introduced a new environment variable to regulate the loading of the default import plugin (JUnit import plugin) at startup.
+4. **Analyzer updates:**<br />
+
+Added:
+- AMQP_MAX_RETRY_TIME, AMQP_INITIAL_RETRY_INTERVAL, AMQP_BACKOFF_FACTOR, AMQP_HEARTBEAT_INTERVAL environment variables to configure AMQP client
+- ANALYZER_ENABLE_MEMORY_DUMP environment variable to print memory dump on healthcheck calls for debugging purpose
+- ES_BOOST_MA environment variable to boost manually analyzed test cases in ES
+
+Changed:
+- AMQP client was rewritten to better handle connection issues
+- uWSGI version updated to 2.0.29
+- Improved the way of URL and path extraction on data preparation stage
+- AMQP exchange declaration now performs on every connection, to avoid issues with exchange not being declared on RabbitMQ restarts
+- ES_BOOST_AA environment variable default value changed to 0.0
+- ES_TIME_WEIGHT_DECAY environment variable default value changed to 0.999
+- flask-cors dependency updated to 6.0.0 to address vulnerabilities
+
+Fixed:
+- 22 Sonar issues
 
 ## 3. Bugs fixed:
 1. **Dashboard cloning update**:<br />
