@@ -13,7 +13,7 @@ API keys containing special characters are no longer supported and will not func
 If your API keys contain special characters, please regenerate them to ensure continued access. The updated format supports only these characters: ```[a-zA-Z0-9-._~+/]```
 
 **Action Required 3 - Update your SAML integration:**<br />
-Please update your existing SAML integration to use the new standard callback URL format: ```/login/saml2/sso/{saml-provider-name}```<br />
+Please update your existing SAML integration to use the new standard callback URL format: ```/uat/login/saml2/sso/{saml-provider-name}```<br />
 This ensures compatibility with the latest updates and improved security practices.<br />
 More details can be found in our [SAML documentation](/plugins/authorization/SamlProviders/Overview/).
 
