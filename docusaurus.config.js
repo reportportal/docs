@@ -569,7 +569,7 @@ const config = {
           {
               to: '/installation-steps-advanced/file-storage-options/',
               from: '/installation-steps-advanced/FileStorageOptions',
-
+          },
           {
               to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
               from: '/dashboards-and-widgets/DashboardCloning',
