@@ -6,7 +6,7 @@ sidebar_label: Version 25.0.4
 # Version 25.0.4
 
 ## 1. **New features:**
-**[Dashboard cloning feature](/dashboards-and-widgets/DashboardCloning):**<br />
+**[Dashboard cloning feature](/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning):**<br />
 easily replicate dashboards across projects with the new Dashboard Cloning feature, saving time and effort when managing multiple projects. Clone via UI and API.
 
 ## 2. **Released services:**
