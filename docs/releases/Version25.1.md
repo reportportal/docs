@@ -17,6 +17,9 @@ Please update your existing SAML integration to use the new standard callback UR
 This ensures compatibility with the latest updates and improved security practices.<br />
 More details can be found in our [SAML documentation](/plugins/authorization/SamlProviders/Overview/).
 
+**Important Compatibility Notice:**<br />
+Java agents released prior to 2022 may experience compatibility issues with ReportPortal 25.1. Please verify agent compatibility and consider upgrading to newer agent versions to ensure full functionality.
+
 ## 1. What's Changed:
 
 1. **[Footer link updates](/admin-panel/ServerSettings#links--branding)**:<br />
