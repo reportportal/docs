@@ -1,15 +1,15 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 25.1.2
 ---
 
 # Version 25.1.2
 
-## 1. **Bugs fixed:**
+## 1. Bugs fixed:
 1. Fixed component health check widget (table view).
 2. Fixed post priority field in Jira Cloud.
 
-## 2. **Released services:**
+## 2. Released services:
 |Service Name|Repository|Tag|
 |---|---| --- |
 |API|reportportal/service-api|5.14.1|
@@ -18,7 +18,7 @@ sidebar_label: Version 25.1.2
 **Released plugins:**
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.1|
+|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.2|
 
 **Rest of services and plugins have the same version as before:**
 |Service Name|Repository|Tag|
