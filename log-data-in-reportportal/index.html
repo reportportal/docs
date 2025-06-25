@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.c83c388a.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.13c704fd.js" defer="defer"></script>
 <script src="/docs/assets/js/main.8d67e7eb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,7 +19,13 @@
 <p>ReportPortal is a CI/CD agnostic tool. Therefore, you can continue using your favorite CI/CD tool (GitLab, Jenkins, GitHub, Azure DevOps, Bamboo) to send data to ReportPortal and get test results of execution.</p>
 <p>The data transmission is regulated not by the CI/CD process, but by the test framework. The only requirement is to ensure that the machine where your CI/CD is located has access to the ReportPortal instance to which you are trying to send the data.</p>
 <p>As for test frameworks, a generic approach is to set the address of ReportPortal and other data in your test framework via properties or a configuration file, and your test framework will start reporting data to ReportPortal.</p>
-<p>ReportPortal supports various frameworks. For example, we have integration with <a href="/docs/log-data-in-reportportal/test-framework-integration/Java/">Java frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Java/TestNG">TestNG</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Java/JBehave">Jbehave</a>, etc.), <a href="/docs/log-data-in-reportportal/test-framework-integration/Python/">Python frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Python/pytest">Pytest</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Python/RobotFramework">Robot Framework</a>, etc.), <a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/">JavaScript frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Playwright">Playwright</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Postman">Postman</a>, etc.), <a href="/docs/log-data-in-reportportal/test-framework-integration/Net/">.NET frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Net/NUnit">NUnit</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Net/VSTest">VSTest</a>, etc.).</p>
+<p>ReportPortal supports various frameworks:</p>
+<ul>
+<li><a href="/docs/log-data-in-reportportal/test-framework-integration/Java/">Java frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Java/TestNG">TestNG</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Java/JBehave">Jbehave</a>, etc.)</li>
+<li><a href="/docs/log-data-in-reportportal/test-framework-integration/Python/">Python frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Python/pytest">Pytest</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Python/RobotFramework">Robot Framework</a>, etc.)</li>
+<li><a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/">JavaScript frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Playwright">Playwright</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Postman">Postman</a>, etc.)</li>
+<li><a href="/docs/log-data-in-reportportal/test-framework-integration/Net/">.NET frameworks</a> (<a href="/docs/log-data-in-reportportal/test-framework-integration/Net/NUnit">NUnit</a>, <a href="/docs/log-data-in-reportportal/test-framework-integration/Net/VSTest">VSTest</a>, etc.).</li>
+</ul>
 <p>Integration with ReportPortal is not dependent on the type of tests you run. It can be API tests, integration tests, or UI tests such as Selenium, Cypress, so, you can run different types of tests and get test results.</p>
 <p>ReportPortal can be integrated with external services, enabling you to report test results from platforms like Browserstack, Sauce Labs, and other third-party services. For Sauce Labs integration, we have a <a href="/docs/plugins/SauceLabs">plugin</a>.</p>
 <!-- -->

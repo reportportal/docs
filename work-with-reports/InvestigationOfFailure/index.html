@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.c83c388a.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.13c704fd.js" defer="defer"></script>
 <script src="/docs/assets/js/main.8d67e7eb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,7 +20,14 @@
 <p>ReportPortal provides the possibility for test failure analysis of your runs. The investigation includes setting the appropriate defect type of failed items, posting a defect for them or linking the ID of a defect that is already created in the bug tracking system.</p>
 <p>Using <a href="/docs/analysis/ManualAnalysis#make-decision-modal-redesign">“Make decision” modal</a>, you can choose the real reason of your failure and provide a comment for this fail.</p>
 <p>When a defect is found in a test, the bug triage should be performed and proper defect type should be assigned to it, in order to have accurate test runs statistics. You will be able to change a defect type for a test and mark it as a Product Bug/Automation Bug/System Issue/No Defect at any time.</p>
-<p>The available defect types are described below:</p>
+<p>The available defect types:</p>
+<ul>
+<li>“To investigate”</li>
+<li>“Product bug”</li>
+<li>“Automation bug”</li>
+<li>“System issue”</li>
+<li>“No defect”</li>
+</ul>
 <p><em><strong>“To investigate”</strong></em> means that no investigation has been made on this defect yet.</p>
 <p><em><strong>“Product bug”</strong></em> means that the defect was investigated and a production bug found as the reason for the failure of this test.</p>
 <p><em><strong>“Automation bug”</strong></em> means that the defect was investigated and the automation test is not correct.</p>
@@ -30,7 +37,7 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-create-a-custom-defect-type">How to create a custom defect type?<a href="#how-to-create-a-custom-defect-type" class="hash-link" aria-label="Direct link to How to create a custom defect type?" title="Direct link to How to create a custom defect type?">​</a></h2>
 <ol>
 <li>Open Project Settings</li>
-<li>Navigate to   “Defect Types” tab</li>
+<li>Navigate to “Defect Types” tab</li>
 <li>Click “Create Defect Type” button at the top of the page or click the icon near the defect type group</li>
 <li>Select the Defect Type Group</li>
 <li>Fill the “Defect Type Name” and the “Abbreviation” fields</li>
