@@ -1,17 +1,17 @@
 ---
-sidebar_position: 2
-sidebar_label: Version 25.1.4
+sidebar_position: 1
+sidebar_label: Version 25.1.5
 ---
 
-# Version 25.1.4
+# Version 25.1.5
 
 ## 1. **Bugs fixed:**
-Fixed an issue with SAML login when the email address contains uppercase letters.
+Fixed an issue with login of new users via AD/LDAP authorizations.
 
-## **Released plugins:**
-| Service Name  |Repository|Tag|
-|---------------|---| --- |
-| Authorization |reportportal/service-authorization|5.14.2|
+## 2. **Released plugins:**
+|Service Name|Repository|Tag|
+|---|---| --- |
+|Authorization|reportportal/service-authorization|5.14.3|
 
 **Rest of services and plugins have the same version as before:**
 |Service Name|Repository|Tag|
