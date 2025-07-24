@@ -15,7 +15,7 @@ To configure storage using Amazon S3, ReportPortal uses the following environmen
 
 ```bash
 RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage (recommended)
-DATASTORE_TYPE: s3
+DATASTORE_TYPE: aws-s3
 DATASTORE_REGION: us-standard           # Region of the bucket (JCloud ref. to `us-east-1`)
 DATASTORE_ACCESSKEY: <access_key>
 DATASTORE_SECRETKEY: <secret_key>
@@ -342,7 +342,7 @@ x-environment: &common-environment
   # IAM Role-Based S3 Access - Leave credentials empty
   DATASTORE_ACCESSKEY: ""
   DATASTORE_SECRETKEY: ""
-  DATASTORE_TYPE: s3
+  DATASTORE_TYPE: aws-s3
   DATASTORE_REGION: us-standard      # JClouds alias for us-east-1
   DATASTORE_DEFAULTBUCKETNAME: my-rp-docker-bucket
 ```
