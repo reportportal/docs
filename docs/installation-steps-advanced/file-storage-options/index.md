@@ -72,7 +72,7 @@ MinIO is an open-source object storage server that is compatible with Amazon S3.
 To configure storage using MinIO, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
 
 ```bash
-DATASTORE_TYPE: minio
+DATASTORE_TYPE: s3-compatible
 DATASTORE_ACCESSKEY: <access_key>
 DATASTORE_SECRETKEY: <secret_key>
 DATASTORE_ENDPOINT: http://minio:9000
