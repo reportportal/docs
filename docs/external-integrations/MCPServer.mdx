@@ -3,12 +3,11 @@ sidebar_position: 1
 sidebar_label: MCP Server
 ---
 
-
 # MCP Server
 
 To work with ReportPortal, users typically need to interact through its web UI. With our MCP Server, you can connect ReportPortal to your preferred AI tool — for example, Claude, Copilot, or Cursor.
 
-**What is MCP?**
+## What is MCP?
 
 MCP (Model Context Protocol) is a lightweight middleware protocol (and server) that facilitates structured communication between AI tools and external platforms, such as our test results dashboard. It provides a context-aware interface for language models to query, analyze, and manipulate data without direct UI access.
 
@@ -19,14 +18,18 @@ Available tools:
 1. Run Unique Error Analysis.
 2. Run Quality Gate.
 3. Run Auto-Analysis.
-4. List Test Items by Filter.
-5. List Launches.
+4. Get Test Items by Filter.
+5. Get Launches.
 6. Launch Force Finish.
 7. Launch Delete.
 8. Get Test Item Logs by Filter.
 9. Get Test Item by ID.
 10. Get Test Item Attachments.
 11. Get Last Launch by Name.
+
+## Usage with your favorite AI tools
+
+### Claude Desktop
 
 To configure ReportPortal MCP Server with Claude:
 
@@ -76,6 +79,8 @@ Token is API Key the user's Profile page.
 
 Below are brief setup instructions for configuring the ReportPortal MCP Server with Cursor and Copilot.
 
+### Cursor IDE
+
 To configure ReportPortal MCP Server with Cursor:
 
 1. Log in to Cursor.
@@ -92,6 +97,8 @@ To configure ReportPortal MCP Server with Cursor:
 6. The list of available tools appears.
 
 <MediaViewer src={require('./img/mcp-server/Cursor3.JPG')} alt="ReportPortal MCP Server configured with Cursor" />
+
+### GitHub Copilot
 
 To configure ReportPortal MCP Server with Copilot:
 
