@@ -209,6 +209,7 @@ Launch structure being exported:
 * launch
 * suit
 * test
+* step
 
 :::note
 Nested steps and logs are not exported.
@@ -218,13 +219,74 @@ To export a launch, perform the following steps:
 
 1. Go to the 'Launches' page.
 2. Open the burger menu for the launch.
-3. Click on the 'Export' option on the menu.
+3. Click on the 'Export report' option in the menu.
 
-<MediaViewer src="https://youtu.be/cTyZlR4ye5Y" alt="Export Launch in our real time dashboard open source" type="video" />
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches1.png')} alt="Export report option in the menu" />
+
+4. Select export file format in the dropdown (PDF, XLS, HTML).
+5. Check the 'Include Attachments' checkbox if needed.
+6. Click 'Export' button.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches2.png')} alt="Export button" />
+
+:::important
+Do not refresh the page while export report is being generated.
+:::
+
+System alerts appear at the bottom of the page and include:
+
+* Notification about the start of a launch report export
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches3.png')} alt="Notification about the start of a launch report export" />
+
+* Notification about the completion of a launch report export
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches4.png')} alt="Notification about the completion of a launch report export" />
+
+The notification about report generation appears at the top of the page. It also displays the number of reports that are currently in progress.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches5.png')} alt="The number of reports that are currently in progress" />
+
+:::important
+The export operation works for a separate launch only. You cannot export multiple launches at once.
+:::
 
 :::note
-The export operation works for a separate launch only. No multiple actions for the export of launches.
+The XLS and HTML reports are exported in a one-page format, while the PDF report is generated with page breaks.
 :::
+
+**Export with attachments**
+
+When exporting with the 'Include Attachments' checkbox selected, the generated report is a ZIP archive.
+
+:::note
+If you export launches with attachments and their total size is large, the export process will take longer.<br />
+PDF is the fastest export format, regardless of whether attachments are included. HTML is slightly slower, while XLS is the slowest.
+:::
+
+If the launch doesn't have attachments, then the ZIP file will contain only the launch report in the selected format.
+
+In case the launch has attachments, the ZIP archive will contain the launch report, parent folders, and subfolders for the test items with attachments.
+
+The hierarchical folder structure:
+
+* Launch level
+* Suite level
+* Test level
+* Step level
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches6.png')} alt="ZIP archive" />
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches7.png')} alt="Parent folders, and subfolders for the test items with attachments" />
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches8.png')} alt="Attachment in the exported launch report" />
+
+In the launch report, you can find the attachment names at the corresponding test item level.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches9.png')} alt="Attachment names" />
+
+<MediaViewer src="https://youtu.be/OvzlU1DSb-E" alt="Export Launch in our real time dashboard open source" type="video" />
+
 ## Delete launches
 
 The system allows deleting launches on the "Launches" and "Debug" pages.
