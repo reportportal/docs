@@ -19,7 +19,6 @@ Fixed an issue with login of new users via AD/LDAP authorizations.
 |Index|reportportal/service-index|5.14.0|
 |Jobs|reportportal/service-jobs|5.14.0|
 |Migrations|reportportal/migrations|5.14.0|
-|Authorization|reportportal/service-authorization|5.14.2|
 |Api|reportportal/service-api|5.14.1|
 |UI|reportportal/service-ui|5.14.2|
 |Auto Analyzer|reportportal/service-auto-analyzer|5.14.1|
