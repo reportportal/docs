@@ -88,6 +88,30 @@ or
 
 <MediaViewer src={require('./img/server-settings/ServerSettings8.png')} alt="Assign user on the project on the Members page" />
 
+## Features
+
+An admin can disable the "Important launches" functionality to better control storage usage and prevent launches from being stored indefinitely on the instance.
+
+By default, the "Important launches" functionality is enabled on all instances. Users can then [mark launches as important](/configuration/LaunchesRetentionPolicy/#mark-launch-as-important-on-ui) using the launch burger menu or [report launch as important](/configuration/LaunchesRetentionPolicy/#report-launch-as-important), and these launches can only be deleted manually or when [storage limits are exceeded](/configuration/LaunchesRetentionPolicy/#important-launch-deletion-on-full-storage).
+
+To **turn off the "Important launches" functionality**:
+
+1. Log in as an ADMIN.
+2. Navigate to Administrate > Server Settings > "Features" tab.
+3. Turn the toggle "Important launches" off.
+
+<MediaViewer src={require('./img/server-settings/ImportantLaunches2.png')} alt="Important launches toggle" />
+
+When toggling "Important Launches" off:
+
+1. The "Mark as important" option is disabled on the launch burger menu, and there is a tooltip with an explanation.
+
+<MediaViewer src={require('./img/server-settings/ImportantLaunches1.png')} alt="Disabled Mark as important option" />
+
+2. A background job runs to remove the "Important" flag from launches that were previously marked as important, converting them to regular launches and making them subject to the standard [retention policy](/configuration/LaunchesRetentionPolicy/).
+3. If the toggle is off, then even if a user reports a launch with the system attribute retentionPolicy:important, the launch will not be marked as important and will still be subject to the standard retention policy.
+4. If you previously had important launches, then turned off the toggle, and later turn it back on, the old launches that were once marked as important will not become important again.
+
 ## Analytics
 
 To turn on [Google Analytics](/terms-and-conditions/GoogleAnalyticsUsageByReportPortal/) on ReportPortal UI:
