@@ -1,14 +1,14 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 sidebar_label: Version 25.1.4
 ---
 
 # Version 25.1.4
 
-## 1. Bugs fixed:
+## 1. **Bugs fixed:**
 Fixed an issue with SAML login when the email address contains uppercase letters.
 
-## 2. Released plugins:
+## **Released plugins:**
 | Service Name  |Repository|Tag|
 |---------------|---| --- |
 | Authorization |reportportal/service-authorization|5.14.2|

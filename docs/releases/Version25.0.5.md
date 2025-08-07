@@ -1,15 +1,15 @@
 ---
-sidebar_position: 9
+sidebar_position: 8
 sidebar_label: Version 25.0.5
 ---
 
 # Version 25.0.5
 
-## 1. New integrations:
+## 1. **New integrations:**
 **Telegram plugin** enabling real-time test execution updates and failure alerts within Telegram channels.
 Learn more in our [documentation](/plugins/notifications/Telegram).
 
-## 2. Released services:
+## 2. **Released services:**
 |Plugin Name|Repository|Tag|
 |---|---| --- |
 |Telegram|reportportal/plugin-telegram|1.0.0||
