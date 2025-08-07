@@ -1,21 +1,21 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 sidebar_label: Version 25.0.6
 ---
 
 # Version 25.0.6
 
-## 1. **New features:**
+## 1. New features:
 - **[Test case search widget](/dashboards-and-widgets/TestCaseSearch):**<br />
   New widget enables searching test cases by name or attribute across all launches in a project.
 
 - **[Inactivity timeout](/admin-panel/ServerSettings/#inactivity-timeout):**<br />
   Admins can now set user session timeouts under Server Settings. Users will be logged out after inactivity timeout.
 
-## 2. **Bugs fixed:**
+## 2. Bugs fixed:
 Resolved an issue where the "Slack" and "Telegram" notification toggles did not retain their state after page reload on a newly created project.
 
-## 3. **Security updates:**
+## 3. Security updates:
 - **Updates in password policy for user registration and password changes:**<br />
   New passwords must be at least 8 characters long and include at least one digit, one special character, one uppercase letter, and one lowercase letter. Existing users can continue logging in with their current passwords, but any password updates will need to comply with the new requirements.
 
@@ -27,10 +27,10 @@ Resolved an issue where the "Slack" and "Telegram" notification toggles did not 
     - Service-ui:<br />
       [CVE-2024-45296](https://www.cve.org/CVERecord?id=CVE-2024-45296), [CVE-2025-27152](https://www.cve.org/CVERecord?id=CVE-2025-27152), [CVE-2025-26791](https://www.cve.org/CVERecord?id=CVE-2025-26791), [CVE-2024-53382](https://www.cve.org/CVERecord?id=CVE-2024-53382)
 
-## 4. **Technical updates:**
+## 4. Technical updates:
 Removed Service Metrics Gatherer.
 
-## 5. **Released services:**
+## 5. Released services:
 |Plugin Name|Repository|Tag|
 |---|---| --- |
 |API|reportportal/service-api|5.13.5|
