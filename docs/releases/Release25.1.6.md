@@ -29,6 +29,26 @@ Administrators can now control the Important Launches functionality at the serve
 - Enhanced RobotFramework import to properly display HTML screenshots with security restrictions on file paths and attachment types.
 - Added support for RobotFramework V7 XML reports with schema version 5, including ISO-8601 timestamps, start/elapsed time format, and updated attribute names (library → owner, timestamp → time).
 
+**4. Analyzer improvements:**<br />
+Added:<br />
+- Ability to use different ML models for Suggestions
+- Ability to switch ML model for Suggestions with ML_MODEL_FOR_SUGGESTIONS environment variable
+
+Changed:<br />
+- Handling of AMQP messages now moved to separate processes: "train" (only for model training) and "main" (for all other messages)
+- Handling of AMQP messages now performed in two separate queues: train and all
+- Handling of AMQP messages now performed in in strict order
+- Analyzer exchange type is changed to fanout
+- Many logging messages were refactored and improved
+- Choosing custom/global ML model now performed by Launch ID hash only
+
+Fixed:<br />
+- 11 Sonar issues
+
+Removed:<br />
+- analyzer-train service, as it is no longer needed
+
+
 ## 2. Bugs fixed:
 1. Fixed widget navigation issue where clicking on test items in the "Most failed test-cases table (TOP-50)" widget incorrectly redirected to the latest launch instead of the specific launch where the test item was last executed.
 2. Fixed screenshot display issue for XML reports in RobotFramework import plugin.
