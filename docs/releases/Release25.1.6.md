@@ -5,6 +5,15 @@ sidebar_label: Version 25.1.6
 
 # Release 25.1.6
 
+:::important
+**Action Required - Upgrade PostgreSQL:**<br />
+We have upgraded PostgreSQL to version 17.
+- Create a full database dump from the current PostgreSQL instance.
+- Restore the dump into a PostgreSQL 17 instance.
+- Follow the official [migration guide](https://github.com/reportportal/reportportal/wiki/Upgrading-PostgreSQL-for-ReportPortal).
+:::
+
+
 ## 1. What's changed:
 **1. [Launch export improvements](/work-with-reports/OperationsUnderLaunches#export-launches-reports):**<br />
 We've improved the launch report export functionality with new attachment support, better user experience, and enhanced file formatting. These changes make it easier to share comprehensive test reports with stakeholders while providing better visibility into the export process.
@@ -28,6 +37,26 @@ Administrators can now control the Important Launches functionality at the serve
 **3. RobotFramework import improvements:**
 - Enhanced RobotFramework import to properly display HTML screenshots with security restrictions on file paths and attachment types.
 - Added support for RobotFramework V7 XML reports with schema version 5, including ISO-8601 timestamps, start/elapsed time format, and updated attribute names (library → owner, timestamp → time).
+
+**4. Analyzer improvements:**<br />
+Added:<br />
+- Ability to use different ML models for Suggestions
+- Ability to switch ML model for Suggestions with ML_MODEL_FOR_SUGGESTIONS environment variable
+
+Changed:<br />
+- Handling of AMQP messages now moved to separate processes: "train" (only for model training) and "main" (for all other messages)
+- Handling of AMQP messages now performed in two separate queues: train and all
+- Handling of AMQP messages now performed in in strict order
+- Analyzer exchange type is changed to fanout
+- Many logging messages were refactored and improved
+- Choosing custom/global ML model now performed by Launch ID hash only
+
+Fixed:<br />
+- 11 Sonar issues
+
+Removed:<br />
+- analyzer-train service, as it is no longer needed
+
 
 ## 2. Bugs fixed:
 1. Fixed widget navigation issue where clicking on test items in the "Most failed test-cases table (TOP-50)" widget incorrectly redirected to the latest launch instead of the specific launch where the test item was last executed.
