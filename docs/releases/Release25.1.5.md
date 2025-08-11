@@ -1,14 +1,14 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 25.1.5
 ---
 
 # Version 25.1.5
 
-## 1. **Bugs fixed:**
+## 1. Bugs fixed:
 Fixed an issue with login of new users via AD/LDAP authorizations.
 
-## 2. **Released plugins:**
+## 2. Released plugins:
 |Service Name|Repository|Tag|
 |---|---| --- |
 |Authorization|reportportal/service-authorization|5.14.3|
