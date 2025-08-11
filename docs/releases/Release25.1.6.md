@@ -5,6 +5,15 @@ sidebar_label: Version 25.1.6
 
 # Release 25.1.6
 
+:::important
+**Action Required - Upgrade PostgreSQL:**<br />
+We have upgraded PostgreSQL to version 17.
+- Create a full database dump from the current PostgreSQL instance.
+- Restore the dump into a PostgreSQL 17 instance.
+- Follow the official [migration guide](https://github.com/reportportal/reportportal/wiki/Upgrading-PostgreSQL-for-ReportPortal).
+:::
+
+
 ## 1. What's changed:
 **1. [Launch export improvements](/work-with-reports/OperationsUnderLaunches#export-launches-reports):**<br />
 We've improved the launch report export functionality with new attachment support, better user experience, and enhanced file formatting. These changes make it easier to share comprehensive test reports with stakeholders while providing better visibility into the export process.
