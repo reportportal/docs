@@ -1,5 +1,5 @@
 ---
-sidebar_position: 19
+sidebar_position: 2
 sidebar_label: Version 5.7.4
 ---
 
