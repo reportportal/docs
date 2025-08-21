@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 25.1.7
 ---
 
-# Release 25.1.7
+# Version 25.1.7
 
 ## 1. Bugs fixed:
 Fixed base URL generation with credentials for ES/OS healthcheck and indices endpoints.
