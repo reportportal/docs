@@ -10,7 +10,7 @@ ReportPortal now lets you choose whether to analyze the latest retry or the long
 Available in Auto-Analysis settings. Admins and Project Managers can modify; others can view.
 
 Docs updated:
-- [Auto-Analysis Settings](https://reportportal.io/docs/analysis/AutoAnalysisOfLaunches/#auto-analysis-settings?utm_source=trigger&utm_medium=github&utm_campaign=25.1.8&utm_content=autoanalysis)
+- [Auto-Analysis Settings](/analysis/AutoAnalysisOfLaunches#defect-assignment-based-on-the-longest-retry)
 - [Manual Auto-Analysis](/analysis/AutoAnalysisOfLaunches#manual-analysis)
 - [Immediate Auto-Analysis](/analysis/ImmediateAutoAnalysis)
 
