@@ -574,6 +574,14 @@ const config = {
               to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
               from: '/dashboards-and-widgets/DashboardCloning',
           },
+          {
+              to: '/releases/Version25.1.6',
+              from: '/releases/Release25.1.6',
+          },
+        {
+              to: '/releases/Version25.1.5',
+              from: '/releases/Release25.1.5',
+          },
         ],
       },
     ],

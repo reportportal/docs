@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 sidebar_label: Version 25.1.6
 ---
 
-# Release 25.1.6
+# Version 25.1.6
 
 :::important
 **Action Required - Upgrade PostgreSQL:**<br />
