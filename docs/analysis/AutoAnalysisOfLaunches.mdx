@@ -222,6 +222,32 @@ Launches that will have analyzed if you choose **“Only current launch”** opt
 
 You can choose those configurations via Project configuration or from the list of actions on All launches view.
 
+### Defect assignment based on the longest retry
+
+ReportPortal allows users to control how the system prioritizes retries for analysis. By default, only the latest retry is considered, but users can also choose to analyze the longest retry — the one with the most passed nested steps before the first failure.
+
+If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the "Defect assignment based on the longest retry" checkbox in the Auto-Analysis settings. The Analyzer applies defect types based on this configuration during manual, auto, or Immediate Auto-Analysis.
+
+:::note
+**Permissions:**<br />
+Admin, Project Manager can modify the setting.<br />
+Customer, Member, Operator can view only.
+:::
+
+By default, **the checkbox is not checked**. In this case:
+
+* When a test has retries, ReportPortal sends the logs of the latest retry to the Analyzer.
+
+<MediaViewer src={require('./img/RetryLogAnalysis1.png')} alt="Defect assignment based on the longest retry checkbox is not checked" />
+
+When **the checkbox is checked**:
+
+* ReportPortal sends the logs of the longest retry (the retry with the maximum number of passed nested steps before the first failure) to the Analyzer.
+
+This ensures that defect assignment is based on the most representative retry, not just the most recent one.
+
+<MediaViewer src={require('./img/RetryLogAnalysis2.png')} alt="Defect assignment based on the longest retry checkbox is checked" />
+
 ### Remove/Generate OpenSearch index
 
 There two possible actions that can be performed under Index in OpenSearch.
@@ -297,6 +323,12 @@ For option **Only current launch** you can not choose *Items analyzed automatica
 4. Click the "Analysis" button. Now "Auto-Analysis" will start.
 
 Any launches with an active analyzing process will be marked with the "Analysis" label.
+
+:::note
+If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the ["Defect assignment based on the longest retry" checkbox](/analysis/AutoAnalysisOfLaunches#defect-assignment-based-on-the-longest-retry) in the Auto-Analysis settings.<br />
+* If the checkbox is not checked, ReportPortal sends the logs of the latest retry to the Analyzer.<br />
+* If the checkbox is checked, ReportPortal sends the logs of the longest retry (the retry with the maximum number of passed nested steps before the first failure) to the Analyzer.
+:::
 
 <MediaViewer src="https://youtu.be/OmT2exhOdC4" alt="Auto-Analysis Launched Manually" type="video" />
 

@@ -33,6 +33,12 @@ Immediate AA, like Auto-Analysis on Launch finish, is based on the following opt
 
 You can select the required option in the Project settings for Auto-Analysis.
 
+:::note
+If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the ["Defect assignment based on the longest retry" checkbox](/analysis/AutoAnalysisOfLaunches#defect-assignment-based-on-the-longest-retry) in the Auto-Analysis settings.<br />
+* If the checkbox is not checked, ReportPortal sends the logs of the latest retry to the Analyzer.<br />
+* If the checkbox is checked, ReportPortal sends the logs of the longest retry (the retry with the maximum number of passed nested steps before the first failure) to the Analyzer.
+:::
+
 It is important to highlight that Immediate AA works only for defect types from “To Investigate” group. If you reported a Launch with failed step, and this step has another defect type (“Product Bug”, etc.), then step will not be analyzed by Immediate AA.
 
 This way, Immediate AA allows to detect issues early and enhances testing performance.
