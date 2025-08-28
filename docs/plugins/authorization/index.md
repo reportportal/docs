@@ -1,3 +1,7 @@
+---
+description: Set up secure logins with Active Directory, GitHub, LDAP, and SAML. Manage authentication to keep ReportPortal access safe and simple for every role.
+---
+
 # Authorization
 
 The **Authorization section** in ReportPortal provides detailed guidance on supported methods for user authentication, offering secure and streamlined access management within your test automation reporting dashboard. ReportPortal supports multiple authorization options, including Active Directory, GitHub, LDAP, and SAML providers like Azure SAML and Okta SAML, allowing teams to choose the method that best integrates with their existing security infrastructure.

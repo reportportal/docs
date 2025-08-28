@@ -1,3 +1,7 @@
+---
+description: Integrate Jira, Azure DevOps, GitLab, Monday, and Rally to link, post, and sync issues from ReportPortal for faster defect triage and clearer ownership.
+---
+
 # Bug tracking
 
 Our bug tracking plugins are useful for projects that already use one of the following systems: **Jira Server**, **Jira Cloud**, **Azure DevOps**, **GitLab**, **Monday**, or **Rally**.

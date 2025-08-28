@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /
-description: How to get started with our test reporting tool. Improve testing process with ML-driven failure triage. Get real time results and test failure analytics.
+description: Get started with ReportPortal: real-time results, ML triage, and collaborative analysis to speed decisions and improve quality with a clear test report dashboard.
 ---
 
 # What is ReportPortal?

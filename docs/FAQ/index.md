@@ -1,6 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: FAQ
+description: Find quick answers about installing, integrating, and using ReportPortal, from AI features and licenses to dashboards, integrations, and performance guidance.
 ---
 
 # FAQ
