@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: JUnit5
+description: Integrate JUnit5 testing framework with ReportPortal for comprehensive test automation reporting tools and modern Java testing analysis.
 ---
 
 # ReportPortal JUnit5 Integration

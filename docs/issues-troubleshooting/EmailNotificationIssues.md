@@ -1,3 +1,7 @@
+---
+description: Troubleshoot email notification issues in ReportPortal test automation reporting tools with ThreadPool and SMTP configuration solutions.
+---
+
 # Email Notification Issues
 
 In case of observing issues with email notifications when email service stopped processing messages, RP administrators should be aware of some kinds of known issue types:

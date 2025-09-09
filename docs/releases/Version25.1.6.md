@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Version 25.1.6
+description: ReportPortal v25.1.6 release notes with PostgreSQL 17 upgrade and enhanced test automation reporting tools performance.
 ---
 
 # Version 25.1.6

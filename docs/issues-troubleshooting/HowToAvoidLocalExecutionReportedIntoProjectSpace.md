@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: How to avoid local execution reported into project space
+description: Learn how to prevent local test executions from being reported into project space in ReportPortal test automation reporting tools.
 ---
 
 # How to avoid local execution reported into project space

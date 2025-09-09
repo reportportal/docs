@@ -1,5 +1,6 @@
 ---
 sidebar_label: Integration with Bitrise CI/CD
+description: Integrate Bitrise CI/CD with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
 ---
 
 

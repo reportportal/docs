@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: PHPUnit
+description: Integrate PHPUnit with ReportPortal for comprehensive test automation reporting tools and PHP test execution analysis.
 ---
 
 # ReportPortal PHPUnit Integration

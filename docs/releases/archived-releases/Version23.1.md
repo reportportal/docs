@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Version 23.1
+description: ReportPortal v23.1 archived release notes with new logo, enhanced features, and improved test automation reporting tools capabilities.
 ---
 
 # Version 23.1

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: Version 25.1.4
+description: ReportPortal v25.1.4 release notes with bug fixes and enhanced test automation reporting tools stability.
 ---
 
 # Version 25.1.4

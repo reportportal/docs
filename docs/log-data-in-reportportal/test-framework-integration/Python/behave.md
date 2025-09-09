@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: behave
+description: Integrate behave with ReportPortal for comprehensive test automation reporting tools and Python BDD test execution analysis.
 ---
 
 # ReportPortal behave Integration

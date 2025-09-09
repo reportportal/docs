@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: Deploy with Kubernetes
+description: Deploy ReportPortal on Kubernetes for scalable test automation reporting tools with high availability and enterprise-grade performance.
 ---
 
 # Deploy with Kubernetes

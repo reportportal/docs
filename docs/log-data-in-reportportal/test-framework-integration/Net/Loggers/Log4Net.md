@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Log4Net
+description: Integrate Log4Net logging framework with ReportPortal for comprehensive test automation reporting tools and .NET application logging.
 ---
 
 # ReportPortal Log4Net Integration

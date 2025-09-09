@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: TraceListener
+description: Integrate TraceListener with ReportPortal for comprehensive test automation reporting tools and .NET trace logging.
 ---
 
 # ReportPortal TraceListener Integration

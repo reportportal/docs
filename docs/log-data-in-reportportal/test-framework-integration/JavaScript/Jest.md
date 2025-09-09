@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: Jest
+description: Integrate Jest testing framework with ReportPortal for comprehensive test automation reporting tools and JavaScript testing analysis.
 ---
 
 # ReportPortal Jest Integration

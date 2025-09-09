@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Reporting and metrics in ReportPortal
+description: Discover comprehensive test automation reports and QA metrics. Track execution trends, failure analysis, and quality insights using test automation reporting tools.
 ---
 
 # Reporting and metrics in ReportPortal

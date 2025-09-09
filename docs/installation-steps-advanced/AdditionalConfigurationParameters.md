@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: Additional configuration parameters
+description: Configure advanced ReportPortal parameters for optimal test automation reporting tools performance and customization.
 ---
 
 # Additional configuration parameters

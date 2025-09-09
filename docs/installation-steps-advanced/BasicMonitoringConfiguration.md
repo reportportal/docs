@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Basic monitoring configuration
+description: Configure basic monitoring for ReportPortal test automation reporting tools to ensure optimal performance and reliability.
 ---
 
 # Basic monitoring configuration

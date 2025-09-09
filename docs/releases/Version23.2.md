@@ -1,6 +1,7 @@
 ---
 sidebar_position: 18
 sidebar_label: Version 23.2
+description: ReportPortal v23.2 release notes with new monitoring features, data retention policies, and enhanced test automation reporting tools capabilities.
 ---
 
 # Version 23.2

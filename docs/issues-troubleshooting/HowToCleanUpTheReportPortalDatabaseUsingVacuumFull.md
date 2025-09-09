@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: How to clean up the ReportPortal database using VACUUM FULL
+description: Learn how to clean up ReportPortal database using VACUUM FULL for optimal test automation reporting tools performance.
 ---
 
 # How to clean up the ReportPortal database using VACUUM FULL

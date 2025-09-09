@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: Deploy on Ubuntu OS
+description: Deploy ReportPortal on Ubuntu OS for a robust test automation reporting tools setup with step-by-step installation instructions.
 ---
 
 # Deploy on Ubuntu OS

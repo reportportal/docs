@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: WebdriverIO
+description: Integrate WebdriverIO with ReportPortal for comprehensive test automation reporting tools and browser/mobile testing analysis.
 ---
 
 # ReportPortal WebdriverIO Integration

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Version 5.7.4
+description: ReportPortal v5.7.4 archived release notes with MinIO client updates and enhanced test automation reporting tools features.
 ---
 
 # Version 5.7.4

@@ -1,5 +1,6 @@
 ---
 sidebar_label: Quick Start Guide for Google Cloud Platform GKE
+description: Deploy ReportPortal on Google Cloud Platform GKE for scalable test automation reporting tools with Kubernetes orchestration.
 ---
 
 # Quick Start Guide for Google Cloud Platform GKE

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 38
 sidebar_label: Version 3.3.2
+description: ReportPortal v3.3.2 archived release notes with new features and enhanced test automation reporting tools capabilities.
 ---
 
 # Version 3.3.2

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Selenide
+description: Integrate Selenide with ReportPortal for comprehensive test automation reporting tools and web testing step logging.
 ---
 
 # ReportPortal Selenide Integration

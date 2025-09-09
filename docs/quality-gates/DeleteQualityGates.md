@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Delete Quality Gates
+description: Delete Quality Gates configurations in ReportPortal test automation reporting tools for quality control management.
 ---
 
 # Delete Quality Gates

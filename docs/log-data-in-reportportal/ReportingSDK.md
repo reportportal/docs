@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Reporting SDK
+description: Use ReportPortal Reporting SDK for nested test steps and comprehensive test automation reporting tools integration.
 ---
 
 # Reporting SDK

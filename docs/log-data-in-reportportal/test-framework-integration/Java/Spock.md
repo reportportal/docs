@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Spock
+description: Integrate Spock testing framework with ReportPortal for comprehensive test automation reporting tools and Java/Groovy testing analysis.
 ---
 
 # ReportPortal Spock Integration

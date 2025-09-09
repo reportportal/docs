@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: JBehave
+description: Integrate JBehave BDD framework with ReportPortal for comprehensive test automation reporting tools and behavior-driven testing analysis.
 ---
 
 # ReportPortal JBehave Integration

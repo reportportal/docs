@@ -1,3 +1,7 @@
+---
+description: Compare API changes between ReportPortal v4 and v5 versions for seamless migration and integration with test automation reporting tools.
+---
+
 # API differences between v4 and v5
 
 ## New endpoints

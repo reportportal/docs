@@ -1,3 +1,7 @@
+---
+description: Upgrade PostgreSQL database for ReportPortal v24.2 and later versions in test automation reporting tools with data preservation.
+---
+
 # Upgrading PostgreSQL for ReportPortal v24.2 and later
 
 :::important

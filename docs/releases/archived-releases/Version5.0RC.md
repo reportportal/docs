@@ -1,6 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: Version 5.0RC
+description: ReportPortal v5.0RC archived release candidate notes with new features and enhanced test automation reporting tools capabilities.
 ---
 
 # Version 5.0RC
