@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /
-description: Get started with ReportPortal: real-time results, ML triage, and collaborative analysis to speed decisions and improve quality with a clear test report dashboard.
+description: 'Get started with ReportPortal: real-time results, ML triage, and collaborative analysis to speed decisions and improve quality with a clear test report dashboard.'
 ---
 
 # What is ReportPortal?
