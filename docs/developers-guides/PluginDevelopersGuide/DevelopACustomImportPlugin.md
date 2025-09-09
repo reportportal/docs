@@ -1,4 +1,5 @@
 ---
+sidebar_label: Develop a custom import plugin
 description: Learn how to develop custom import plugins for ReportPortal test automation reporting tools using PF4J framework.
 ---
 

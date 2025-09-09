@@ -1,4 +1,5 @@
 ---
+sidebar_label: Other
 sidebar_position: 6
 description: Find integrations for other test frameworks with ReportPortal test automation reporting tools using community resources and APIs.
 ---

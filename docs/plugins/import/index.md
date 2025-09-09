@@ -1,4 +1,5 @@
 ---
+sidebar_label: Import
 description: Import JUnit and RobotFramework results to centralize analysis in ReportPortal. Simplify reporting, reduce manual work, and keep your automation test report current.
 ---
 

@@ -1,4 +1,5 @@
 ---
+sidebar_label: Authorization
 description: Set up secure logins with Active Directory, GitHub, LDAP, and SAML. Manage authentication to keep ReportPortal access safe and simple for every role.
 ---
 

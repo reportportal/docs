@@ -1,4 +1,5 @@
 ---
+sidebar_label: Email Notification Issues
 description: Troubleshoot email notification issues in ReportPortal test automation reporting tools with ThreadPool and SMTP configuration solutions.
 ---
 

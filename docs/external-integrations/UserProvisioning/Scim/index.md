@@ -1,4 +1,5 @@
 ---
+sidebar_label: System for Cross-domain Identity Management (SCIM)
 description: Configure SCIM user provisioning for automated user management in ReportPortal test automation reporting tools with identity providers.
 ---
 

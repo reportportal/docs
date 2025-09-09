@@ -1,4 +1,5 @@
 ---
+sidebar_label: How to run your tests
 description: Learn how to run your tests with ReportPortal test automation reporting tools integration in any CI/CD pipeline.
 ---
 

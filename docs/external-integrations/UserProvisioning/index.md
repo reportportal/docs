@@ -1,4 +1,5 @@
 ---
+sidebar_label: User Provisioning
 description: Set up JIT and SCIM user provisioning to automate account creation, updates, and roles in ReportPortal for secure, scalable access management.
 ---
 

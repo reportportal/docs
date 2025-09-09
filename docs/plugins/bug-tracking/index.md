@@ -1,4 +1,5 @@
 ---
+sidebar_label: Bug tracking
 description: Integrate Jira, Azure DevOps, GitLab, Monday, and Rally to link, post, and sync issues from ReportPortal for faster defect triage and clearer ownership.
 ---
 
