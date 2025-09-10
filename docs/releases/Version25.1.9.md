@@ -56,9 +56,9 @@ Fixed "Set up Own Integration" link to properly open in new browser tab instead 
 |Auto Analyzer|reportportal/service-auto-analyzer|5.14.5|
 
 
-|Plugin Name|Repository|Tag|
-|---|---| --- |
-|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.4|
+|Plugin Name|Repository| Tag    |
+|---|---|--------|
+|Jira Cloud|reportportal/plugin-bts-jira-cloud| 5.13.5 |
 
 
 **Rest of services and plugins have the same version as before:**
