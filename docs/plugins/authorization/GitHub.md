@@ -1,5 +1,6 @@
 ---
 sidebar_label: GitHub
+description: Configure GitHub OAuth integration for seamless authentication in ReportPortal test automation reporting tools.
 ---
 
 # GitHub

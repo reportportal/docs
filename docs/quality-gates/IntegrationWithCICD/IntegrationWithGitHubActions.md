@@ -1,5 +1,6 @@
 ---
 sidebar_label: Integration with GitHub Actions
+description: Integrate GitHub Actions with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
 ---
 
 # Integration with GitHub Actions

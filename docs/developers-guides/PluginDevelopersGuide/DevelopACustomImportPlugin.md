@@ -1,3 +1,8 @@
+---
+sidebar_label: Develop a custom import plugin
+description: Learn how to develop custom import plugins for ReportPortal test automation reporting tools using PF4J framework.
+---
+
 # Develop a custom import plugin
 
 This documentation guides on creating a custom import plugin for ReportPortal, using the PF4J plugin framework.

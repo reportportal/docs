@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Behat
+description: Integrate Behat with ReportPortal for comprehensive test automation reporting tools and PHP BDD test execution analysis.
 ---
 
 # ReportPortal Behat Integration

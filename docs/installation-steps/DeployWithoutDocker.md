@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Deploy without Docker
+description: Deploy ReportPortal without Docker for traditional server installations and custom test automation reporting tools configurations.
 ---
 
 # Deploy without Docker

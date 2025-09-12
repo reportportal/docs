@@ -1,5 +1,6 @@
 ---
 title: Archived Releases
+description: Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard.
 ---
 
 # Archived Releases

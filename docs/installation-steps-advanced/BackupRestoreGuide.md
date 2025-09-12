@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Backup & Restore Guide
+description: Learn how to backup and restore ReportPortal test automation reporting tools data for disaster recovery and data protection.
 ---
 
 # Backup & Restore Guide

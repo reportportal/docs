@@ -1,3 +1,8 @@
+---
+sidebar_label: File storage options
+description: Configure file storage options for ReportPortal test automation reporting tools including filesystem, MinIO, and cloud storage solutions.
+---
+
 # File storage options
 
 ReportPortal supports two types of storage structures:

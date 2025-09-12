@@ -1,3 +1,8 @@
+---
+sidebar_label: System for Cross-domain Identity Management (SCIM)
+description: Configure SCIM user provisioning for automated user management in ReportPortal test automation reporting tools with identity providers.
+---
+
 # System for Cross-domain Identity Management (SCIM)
 
 The **SCIM (System for Cross-domain Identity Management)** category covers the process of synchronizing users and groups between external identity providers and ReportPortal. SCIM provisioning automates user management, ensuring that accounts are created, updated, and deactivated based on identity provider changes.

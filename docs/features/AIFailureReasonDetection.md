@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: AI failure reason detection
+description: Use AI to auto-categorize failures, reduce manual triage, and speed bug discovery. ReportPortal automates test failure analytics for faster, accurate results.
 ---
 
 # AI-based failure reason detection

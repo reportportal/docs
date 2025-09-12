@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: Maintain commands Cheat sheet
+description: Quick reference for ReportPortal maintenance commands and operations in test automation reporting tools administration.
 ---
 
 # Maintain commands Cheat sheet

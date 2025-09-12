@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Rich artifacts in test reports
+description: Enrich your automation test report with logs, screenshots, videos, and network data. Simplify debugging, defect triage, and test failure analysis in one place.
 ---
 
 # Rich artifacts in test reports

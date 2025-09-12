@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: OkHttp3
+description: Integrate OkHttp3 with ReportPortal for comprehensive test automation reporting tools and HTTP client request/response logging.
 ---
 
 # ReportPortal OkHttp3 Integration

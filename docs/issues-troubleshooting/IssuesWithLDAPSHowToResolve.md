@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: 'Issues with LDAPS: how to resolve'
+description: Troubleshoot LDAPS authentication issues in ReportPortal test automation reporting tools with SSL certificate solutions.
 ---
 
 # Issues with LDAPS: how to resolve 

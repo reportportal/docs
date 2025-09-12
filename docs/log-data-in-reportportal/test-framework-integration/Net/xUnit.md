@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: xUnit
+description: Integrate xUnit testing framework with ReportPortal for comprehensive test automation reporting tools and .NET testing analysis.
 ---
 
 # ReportPortal xUnit Integration

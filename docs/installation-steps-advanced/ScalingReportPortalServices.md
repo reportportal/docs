@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: Scaling ReportPortal services
+description: Scale ReportPortal services for high-performance test automation reporting tools with dynamic load management and queue handling.
 ---
 
 # Scaling ReportPortal services

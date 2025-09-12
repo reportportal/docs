@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: Real-time reporting
+description: Get live test results as executions run. Start triage early, shorten feedback loops, and improve release speed with a real-time test results dashboard.
 ---
 
 # Real-time reporting

@@ -1,5 +1,6 @@
 ---
 sidebar_label: Plugin UI development guide
+description: Learn how to develop plugin UI components for ReportPortal test automation reporting tools with modern frontend technologies.
 ---
 
 # Plugin UI development guide

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: Vitest
+description: Integrate Vitest testing framework with ReportPortal for comprehensive test automation reporting tools and Vite-native testing analysis.
 ---
 
 # ReportPortal Vitest Integration

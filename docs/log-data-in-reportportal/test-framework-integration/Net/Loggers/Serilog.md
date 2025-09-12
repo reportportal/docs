@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Serilog
+description: Integrate Serilog logging framework with ReportPortal for comprehensive test automation reporting tools and .NET structured logging.
 ---
 
 # ReportPortal Serilog Integration

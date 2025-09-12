@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Visualisation of test results
+description: Track key metrics with real-time widgets and charts. Visualize trends, failures, and ROI on a flexible test automation metrics dashboard for faster decisions.
 ---
 
 # Visualization of test data

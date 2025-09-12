@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: Migrate one instance to another
+description: Learn how to migrate ReportPortal test automation reporting tools from one instance to another with data preservation.
 ---
 
 # Migrate one instance to another

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Jasmine
+description: Integrate Jasmine testing framework with ReportPortal for comprehensive test automation reporting tools and JavaScript testing analysis.
 ---
 
 # ReportPortal Jasmine Integration

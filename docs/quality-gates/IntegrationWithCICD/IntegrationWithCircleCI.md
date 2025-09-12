@@ -1,5 +1,6 @@
 ---
 sidebar_label: Integration with CircleCI
+description: Integrate CircleCI with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
 ---
 
 # Integration with CircleCI

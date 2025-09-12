@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Setup TLS(SSL) in Traefik 2.0.x
+description: Configure TLS/SSL certificates in Traefik 2.0.x for secure ReportPortal test automation reporting tools deployment.
 ---
 
 # Setup TLS(SSL) in Traefik 2.0.x

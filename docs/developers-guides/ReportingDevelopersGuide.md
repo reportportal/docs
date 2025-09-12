@@ -1,3 +1,8 @@
+---
+sidebar_label: Reporting developers guide
+description: Comprehensive guide for developers on implementing test reporting in ReportPortal with detailed examples and best practices.
+---
+
 # Reporting developers guide
 
 ## Preconditions

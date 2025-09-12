@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: How to check LDAP connection
+description: Learn how to check LDAP connection for ReportPortal test automation reporting tools authentication troubleshooting.
 ---
 
 # How to check LDAP connection

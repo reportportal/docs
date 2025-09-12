@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: VSTest
+description: Integrate VSTest framework with ReportPortal for comprehensive test automation reporting tools and cross-platform .NET testing analysis.
 ---
 
 # ReportPortal VSTest Integration

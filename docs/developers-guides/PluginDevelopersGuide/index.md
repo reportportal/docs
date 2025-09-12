@@ -1,5 +1,6 @@
 ---
 sidebar_label: Plugin developers guide
+description: Build custom plugins for ReportPortal. Learn APIs and UI hooks to extend reporting, streamline workflows, and tailor your test automation dashboard.
 ---
 
 # Plugin developers guide

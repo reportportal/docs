@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Jobs configuration
+description: Configure ReportPortal jobs for data retention and cleanup in test automation reporting tools for optimal storage management.
 ---
 
 # Jobs configuration

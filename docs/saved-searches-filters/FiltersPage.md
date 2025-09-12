@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Filters page
+description: Manage and organize saved searches on the filters page. View personal filters, streamline test data access, and focus on relevant information using test execution reporting tools.
 ---
 
 # Filters page

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: REST API
+description: Extend and integrate ReportPortal using a powerful REST API to push results, fetch analytics, and build custom reports and dashboards across your tooling.
 ---
 
 # REST API

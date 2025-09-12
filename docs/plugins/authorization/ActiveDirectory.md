@@ -1,5 +1,6 @@
 ---
 sidebar_label: Active Directory
+description: Configure Active Directory integration for secure authentication in ReportPortal test automation reporting tools with enterprise SSO.
 ---
 
 # Active Directory

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: NUnit
+description: Integrate NUnit testing framework with ReportPortal for comprehensive test automation reporting tools and .NET testing analysis.
 ---
 
 # ReportPortal NUnit Integration

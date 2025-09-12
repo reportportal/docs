@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: 'Issues with JIRA bug tracking system: how to resolve'
+description: Troubleshoot JIRA bug tracking system integration issues in ReportPortal test automation reporting tools.
 ---
 
 # Issues with JIRA bug tracking system: how to resolve 

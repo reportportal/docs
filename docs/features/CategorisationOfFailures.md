@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Categorisation of failures
+description: Learn how ReportPortal streamlines defect triage with clear categories, root cause insights, and faster resolution across teams for more reliable testing outcomes.
 ---
 
 # Categorization of failures based on issue roots

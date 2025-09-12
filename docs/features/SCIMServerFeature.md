@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: SCIM Server feature
+description: Automate user provisioning and access with SCIM in ReportPortal. Sync roles and projects from your IdP to simplify identity management and improve security.
 ---
 
 # SCIM Server feature

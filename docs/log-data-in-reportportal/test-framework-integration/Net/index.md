@@ -1,4 +1,5 @@
 ---
+sidebar_label: .Net
 sidebar_position: 3
 description: Use .NET frameworks with ReportPortal for real-time test monitoring, trend tracking, failure management, result analysis, and test automation reports.
 ---

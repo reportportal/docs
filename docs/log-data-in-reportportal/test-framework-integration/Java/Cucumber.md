@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Cucumber
+description: Integrate Cucumber BDD framework with ReportPortal for comprehensive test automation reporting tools and behavior-driven testing analysis.
 ---
 
 # ReportPortal Cucumber Integration

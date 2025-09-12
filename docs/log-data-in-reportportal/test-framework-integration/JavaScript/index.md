@@ -1,4 +1,5 @@
 ---
+sidebar_label: JavaScript
 sidebar_position: 2
 description: ReportPortal integrates with JavaScript frameworks, enabling better test management with a real-time test results dashboard.
 ---

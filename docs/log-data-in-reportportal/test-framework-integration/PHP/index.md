@@ -1,4 +1,5 @@
 ---
+sidebar_label: PHP
 sidebar_position: 5
 description: ReportPortal integrates with popular PHP frameworks, helping teams manage test results, visualize trends, and optimize testing efficiently.
 ---
