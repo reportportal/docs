@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Codeception
-description: Integrate Codeception with ReportPortal for comprehensive test automation reporting tools and PHP test execution analysis.
+description: Integrate Codeception for PHP test execution analysis.
 ---
 
 # ReportPortal Codeception Integration
