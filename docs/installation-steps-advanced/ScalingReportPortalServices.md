@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: Scaling ReportPortal services
-description: Scale ReportPortal services for high-performance test automation reporting tools with dynamic load management and queue handling.
+description: Learn how to dynamically scale ReportPortal services using Docker or Kubernetes, ensuring optimal performance and reliability for your testing infrastructure.
 ---
 
 # Scaling ReportPortal services
