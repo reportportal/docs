@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: SpecFlow
-description: Integrate SpecFlow BDD framework with ReportPortal for comprehensive test automation reporting tools and .NET behavior-driven testing analysis.
+description: Integrate SpecFlow BDD framework for test automation reporting.
 ---
 
 # ReportPortal SpecFlow Integration
