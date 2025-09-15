@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Deploy with Minikube
-description: Deploy ReportPortal on Minikube for local Kubernetes testing and development of test automation reporting tools.
+description: Deploy ReportPortal on Minikube for local Kubernetes testing and development.
 ---
 
 ## Prerequisites
