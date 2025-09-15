@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Backup & Restore Guide
-description: Learn how to backup and restore ReportPortal test automation reporting tools data for disaster recovery and data protection.
+description: Safeguard your ReportPortal data by learning how to back up and restore its PostgreSQL database and binary storage quickly and reliably.
 ---
 
 # Backup & Restore Guide
