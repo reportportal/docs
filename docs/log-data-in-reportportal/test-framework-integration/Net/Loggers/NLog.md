@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: NLog
-description: Integrate NLog logging framework with ReportPortal for comprehensive test automation reporting tools and .NET application logging.
+description: Integrate NLog with .NET tests to record detailed logs, monitor application health, and enhance debugging workflows for more efficient issue resolution.
 ---
 
 # ReportPortal NLog Integration
