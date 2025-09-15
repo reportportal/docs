@@ -1,6 +1,6 @@
 ---
 sidebar_label: System for Cross-domain Identity Management (SCIM)
-description: Configure SCIM user provisioning for automated user management in ReportPortal test automation reporting tools with identity providers.
+description: Use SCIM in ReportPortal to auto-provision users and groups from Okta or Azure, keeping roles, access, and attributes always up to date and secure.
 ---
 
 # System for Cross-domain Identity Management (SCIM)
