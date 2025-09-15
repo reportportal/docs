@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: Additional configuration parameters
-description: Configure advanced ReportPortal parameters for optimal test automation reporting tools performance and customization.
+description: Optimize ReportPortal setup with customizable parameters - ports, session timeouts, database and API settings via Docker-friendly environment variables.
 ---
 
 # Additional configuration parameters
