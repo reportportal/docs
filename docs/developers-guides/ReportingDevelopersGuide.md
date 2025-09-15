@@ -1,6 +1,6 @@
 ---
 sidebar_label: Reporting developers guide
-description: Comprehensive guide for developers on implementing test reporting in ReportPortal with detailed examples and best practices.
+description: Learn how to integrate test results into ReportPortal using HTTP requests, manage launches, and handle logs for effective test reporting.
 ---
 
 # Reporting developers guide
