@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: Migrate one instance to another
-description: Learn how to migrate ReportPortal test automation reporting tools from one instance to another with data preservation.
+description: Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity.
 ---
 
 # Migrate one instance to another
