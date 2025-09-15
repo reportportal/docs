@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Behat
-description: Integrate Behat with ReportPortal for comprehensive test automation reporting tools and PHP BDD test execution analysis.
+description: Integrate Behat with ReportPortal to log Gherkin scenarios, track feature execution, and streamline test reporting for PHP applications.
 ---
 
 # ReportPortal Behat Integration
