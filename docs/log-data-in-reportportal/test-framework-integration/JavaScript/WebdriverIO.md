@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: WebdriverIO
-description: Integrate WebdriverIO with ReportPortal for comprehensive test automation reporting tools and browser/mobile testing analysis.
+description: Use WebdriverIO to send detailed test logs, screenshots, and steps to ReportPortal, so failures are clear and debugging is faster.
 ---
 
 # ReportPortal WebdriverIO Integration
