@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Log4Net
-description: Integrate Log4Net logging framework with ReportPortal for comprehensive test automation reporting tools and .NET application logging.
+description: Learn how to set up Log4Net in .NET tests to capture detailed logs, track issues, and centralize reporting for faster troubleshooting and quality assurance.
 ---
 
 # ReportPortal Log4Net Integration
