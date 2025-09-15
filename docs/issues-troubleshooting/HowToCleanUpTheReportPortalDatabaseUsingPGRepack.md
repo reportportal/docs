@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: How to clean up the ReportPortal database using PG_REPACK
-description: Learn how to clean up ReportPortal database using PG_REPACK for optimal test automation reporting tools performance.
+description: Optimize ReportPortal performance by removing database bloat using PG_REPACK - an online, efficient method that minimizes downtime and system impact.
 ---
 
 # How to clean up the ReportPortal database using PG_REPACK
