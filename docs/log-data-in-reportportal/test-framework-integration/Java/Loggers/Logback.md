@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Logback
-description: Integrate Logback logging framework with ReportPortal for comprehensive test automation reporting tools and Java application logging.
+description: Integrate Logback with ReportPortal to automatically capture and send application logs for real-time analysis, enhancing test reporting and debugging efficiency.
 ---
 
 # ReportPortal Logback Integration
