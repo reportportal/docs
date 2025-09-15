@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: Maintain commands Cheat sheet
-description: Quick reference for ReportPortal maintenance commands and operations in test automation reporting tools administration.
+description: Quickly manage and troubleshoot your ReportPortal instance with essential Docker commands for installation, backup, cleanup, and service monitoring.
 ---
 
 # Maintain commands Cheat sheet
