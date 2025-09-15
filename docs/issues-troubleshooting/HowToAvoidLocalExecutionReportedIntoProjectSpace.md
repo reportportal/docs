@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: How to avoid local execution reported into project space
-description: Learn how to prevent local test executions from being reported into project space in ReportPortal test automation reporting tools.
+description: Learn how to prevent local test executions from appearing in your ReportPortal project space by configuring launch attributes and user roles effectively.
 ---
 
 # How to avoid local execution reported into project space
