@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: pytest
-description: Integrate pytest with ReportPortal for comprehensive test automation reporting tools and Python test execution analysis.
+description: Automatically log pytest test steps, capture failures with screenshots, and attach detailed logs to simplify test analysis and improve debugging efficiency.
 ---
 
 # ReportPortal pytest Integration
