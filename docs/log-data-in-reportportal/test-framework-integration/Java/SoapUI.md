@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: SoapUI (outdated)
-description: Integrate SoapUI API testing with ReportPortal for comprehensive test automation reporting tools and SOAP/REST API analysis.
+description: Integrate SoapUI API testing with ReportPortal for test automation reporting and SOAP/REST API analysis.
 ---
 
 # ReportPortal SoapUI Integration
