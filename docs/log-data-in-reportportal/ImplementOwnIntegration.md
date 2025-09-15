@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Implement own integration
-description: Learn how to implement custom integration with ReportPortal test automation reporting tools using the developer guide.
+description:  Learn how to implement custom integration with ReportPortal using the developer guide.
 ---
 
 # Implement own integration
