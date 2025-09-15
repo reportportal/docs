@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: JUnit4
-description: Integrate JUnit4 testing framework with ReportPortal for comprehensive test automation reporting tools and unit testing analysis.
+description: Integrate JUnit4 with ReportPortal to automate test execution, track results in real-time, and enhance your QA workflow with detailed analytics.
 ---
 
 # ReportPortal JUnit4 Integration
