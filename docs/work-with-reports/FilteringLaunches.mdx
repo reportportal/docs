@@ -154,3 +154,52 @@ The system searches for the items with or without a specified Issue in BTS. Mult
 
 <MediaViewer src="https://youtu.be/rTDWrkaBM9k" alt="Step Level Filters in our test reporting tool" type="video" />
 
+## Filtering by direct link
+
+To create a direct link with a predefined filter in the UI, follow these steps:
+
+1. Start with the standard project link structure, which remains unchanged:
+
+<MediaViewer src={require('./img/filtering-launches/FilteringLaunches1.png')} alt="Standard link for all launches" />
+
+2. Append the **launchesParams** query parameter. This allows you to include all existing filters, e.g. *attributes, name,* etc. and generate shareable, direct links to launches based on specific values defined in the filter.
+
+:::note
+Ensure that all special characters (e.g. “=”, “,”) are properly encoded as [URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) before using the link, e.g.
+```
+https://demo.reportportal.io/ui/#default_personal/launches/all?launchesParams=filter.cnt.name%3Ddemo
+```
+:::
+
+You can encode links either programmatically within your favorite programming language or manually using any [URL encoder](https://meyerweb.com/eric/tools/dencoder/).
+
+:::tip
+This way, as a most common use case you can create a shareable direct URL for launches based on attribute values filter:
+```
+https://demo.reportportal.io/ui/#default_personal/launches/all?launchesParams=filter.has.compositeAttribute%3Dplatform%3Alinux
+```
+:::
+
+<MediaViewer src={require('./img/filtering-launches/FilteringLaunches2.png')} alt="Filtering by direct link" />
+
+In the table below, you can see description of all the parameters that can be applied to filter launches and generate a direct URL for them. All these filters are the same as filter fields for the launches on ReportPortal UI.
+
+| **Filter name**  | **URL parameter**  | **Possible conditions**  |  **Example**  |
+|---|---|---|---|
+|Launch name  | `filter.{condition}.name` | `cnt,!cnt, eq, ne` | `filter.!cnt.name=demo`|
+|Launch number | `filter.{condition}.number` | `eq, gte, lte` | `filter.gte.number=1`|
+|Description  | `filter.{condition}.description` | `cnt, !cnt, eq, ne` | `filter.eq.description=test`|
+|Owner | `filter.{condition}.user` | `cnt` | `filter.cnt.user=Jon`|
+|Attribute | `filter.{condition}.compositeAttribute` | `has, !has, any, !any` | `filter.has.compositeAttribute=platform:windows`|
+|Start time   | `filter.{condition}.startTime` | `btw` | `filter.btw.startTime=1757278800000%2C1757451600000`|
+|Total  | `filter.{condition}.statistics$executions$total` | `eq, gte, lte` | `filter.gte.statistics$executions$total=3`|
+|Passed    | `filter.{condition}.statistics$executions$passed` | `eq, gte, lte` | `filter.lte.statistics$executions$passed=4`|
+|Failed    | `filter.{condition}.statistics$executions$failed` | `eq, gte, lte` | `filter.gte.statistics$executions$failed=4`|
+|Skipped  | `filter.{condition}.statistics$executions$skipped` | `eq, gte, lte` | `filter.gte.statistics$executions$skipped=5`|
+|Automation Bug Group    | `filter.{condition}.statistics$defects$automation_bug$total` | `eq, gte, lte` | `filter.gte.statistics$defects$automation_bug$total=5`|
+|System Issue Group   | `filter.{condition}.statistics$defects$system_issue$total` | `eq, gte, lte` | `filter.gte.statistics$defects$system_issue$total=5`|
+|To Investigate Group | `filter.{condition}.statistics$defects$to_investigate$total` | `eq, gte, lte` | `filter.gte.statistics$defects$to_investigate$total=5`|
+
+:::note
+For the "Start time" parameter, both the start and end values are timestamps in milliseconds.
+:::
