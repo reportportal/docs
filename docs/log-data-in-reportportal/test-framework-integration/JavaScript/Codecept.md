@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Codecept
-description: Integrate Codecept testing framework with ReportPortal for comprehensive test automation reporting tools and Node.js testing analysis.
+description: Use ReportPortal with CodeceptJS to send test results, logs, and screenshots automatically to a centralized dashboard for easier debugging and analysis.
 ---
 
 # ReportPortal Codecept Integration
