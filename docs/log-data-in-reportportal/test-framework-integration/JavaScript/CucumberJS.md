@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: CucumberJS
-description: Integrate CucumberJS BDD framework with ReportPortal for comprehensive test automation reporting tools and JavaScript behavior-driven testing.
+description: Integrate CucumberJS BDD framework with ReportPortal for comprehensive test automation reporting and JavaScript behavior-driven testing.
 ---
 
 # ReportPortal CucumberJS Integration
