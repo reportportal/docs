@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Basic monitoring configuration
-description: Configure basic monitoring for ReportPortal test automation reporting tools to ensure optimal performance and reliability.
+description: Configure basic monitoring in ReportPortal to track server health, database performance, and resource usage with Telegraf, InfluxDB, and Grafana.
 ---
 
 # Basic monitoring configuration
