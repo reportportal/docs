@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Karate
-description: Integrate Karate BDD framework with ReportPortal for comprehensive test automation reporting tools and API testing analysis.
+description: Integrate Karate BDD framework with ReportPortal to automate API, UI, and performance tests, enhancing reporting and API testing analysis.
 ---
 
 # ReportPortal Karate Integration
