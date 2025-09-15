@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Reporting SDK
-description: Use ReportPortal Reporting SDK for nested test steps and comprehensive test automation reporting tools integration.
+description: Integrate your test framework with ReportPortal using the Reporting SDK to log detailed test data, including nested steps and test case IDs, for enhanced reporting.
 ---
 
 # Reporting SDK
