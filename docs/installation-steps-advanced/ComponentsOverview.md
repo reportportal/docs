@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Components Overview
-description: Understand ReportPortal architecture components for effective deployment and management of test automation reporting tools.
+description: ReportPortal Components Overview page explains each service - Gateway, API, UAT, Analyzer, Migrations, Index, UI - to help you configure and scale your system effectively.
 ---
 
 # Components Overview
