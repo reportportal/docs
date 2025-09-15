@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: Nightwatch
-description: Integrate Nightwatch testing framework with ReportPortal for comprehensive test automation reporting tools and web/mobile testing analysis.
+description:  Integrate Nightwatch testing framework web/mobile testing analysis.
 ---
 
 # ReportPortal Nightwatch Integration
