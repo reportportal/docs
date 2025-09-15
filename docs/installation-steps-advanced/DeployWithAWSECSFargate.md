@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: Deploy with AWS ECS Fargate
-description: Deploy ReportPortal on AWS ECS Fargate for scalable test automation reporting tools with serverless container management.
+description: Deploy ReportPortal on AWS ECS Fargate for scalable test automation reporting with serverless container management.
 ---
 
 # Deploy with AWS ECS Fargate
