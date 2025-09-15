@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: Deploy on Ubuntu OS
-description: Deploy ReportPortal on Ubuntu OS for a robust test automation reporting tools setup with step-by-step installation instructions.
+description: Deploy ReportPortal on Ubuntu with Docker and Docker Compose. Follow step-by-step instructions to launch your test reporting environment efficiently.
 ---
 
 # Deploy on Ubuntu OS
