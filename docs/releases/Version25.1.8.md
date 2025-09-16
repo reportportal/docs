@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Version 25.1.8
-description: ReportPortal v25.1.8 release notes with retry analysis improvements and enhanced test automation reporting tools features.
+description: Explore ReportPortal Version 25.1.8 release notes: enhanced Auto-Analysis settings, improved retry handling, and updated service and plugin versions.
 ---
 
 # Version 25.1.8

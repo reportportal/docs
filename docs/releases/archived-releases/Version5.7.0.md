@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Version 5.7.0
-description: ReportPortal v5.7.0 archived release notes with new features and enhanced test automation reporting tools capabilities.
+description: ReportPortal v5.7.0 archived release notes with new features.
 ---
 
 # Version 5.7.0
