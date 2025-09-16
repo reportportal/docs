@@ -1,5 +1,7 @@
 ---
+sidebar_label: Other
 sidebar_position: 6
+description: Integrate unsupported or custom test frameworks by implementing your own integration with ReportPortal, enabling centralized test result visualization.
 ---
 
 # Other

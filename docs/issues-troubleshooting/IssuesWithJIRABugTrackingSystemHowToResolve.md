@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: 'Issues with JIRA bug tracking system: how to resolve'
+description: Resolve JIRA integration issues in ReportPortal by verifying URLs, project keys, credentials, and importing necessary certificates for seamless connectivity.
 ---
 
 # Issues with JIRA bug tracking system: how to resolve 

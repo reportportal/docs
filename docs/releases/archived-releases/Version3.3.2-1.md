@@ -1,6 +1,7 @@
 ---
 sidebar_position: 37
 sidebar_label: Version 3.3.2-1
+description: ReportPortal v3.3.2-1 archived release notes with bug fixes and enhanced test automation reporting tools stability.
 ---
 
 # Version 3.3.2-1

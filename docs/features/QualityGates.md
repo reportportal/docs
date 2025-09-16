@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Quality Gates
+description: Automate GO/NO-GO checks with Quality Gates in ReportPortal. Enforce standards, speed releases, and ensure reliability using aggregated test execution data.
 ---
 
 # Quality Gates

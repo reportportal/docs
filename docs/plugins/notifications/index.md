@@ -1,3 +1,8 @@
+---
+sidebar_label: Notifications
+description: Configure notification plugins for Email, Slack, and Telegram in ReportPortal for real-time alerts.
+---
+
 # Notifications
 
 Notifications plugins help teams stay informed about test results and project updates by sending messages directly to your preferred communication channels. These plugins support integration with **Email server**, **Slack**, and **Telegram**, allowing you to receive timely updates without constantly checking dashboards.

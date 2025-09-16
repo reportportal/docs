@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Selenide
+description: Integrate Selenide with ReportPortal to automatically log test steps, capture screenshots on failure, and attach WebDriver logs for enhanced test analysis.
 ---
 
 # ReportPortal Selenide Integration

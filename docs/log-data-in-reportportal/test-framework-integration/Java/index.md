@@ -1,4 +1,5 @@
 ---
+sidebar_label: Java
 sidebar_position: 1
 description: Enhance your test automation with advanced Java reporting in ReportPortal.
 ---

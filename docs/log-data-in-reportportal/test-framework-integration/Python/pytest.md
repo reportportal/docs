@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: pytest
+description: Automatically log pytest test steps, capture failures with screenshots, and attach detailed logs to simplify test analysis and improve debugging efficiency.
 ---
 
 # ReportPortal pytest Integration

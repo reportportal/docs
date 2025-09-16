@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Codeception
+description: Integrate Codeception for PHP test execution analysis.
 ---
 
 # ReportPortal Codeception Integration

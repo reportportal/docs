@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: Vitest
+description: Integrate Vitest with ReportPortal to capture logs, analyze failed tests, and gain clear insights into JavaScript test execution and quality.
 ---
 
 # ReportPortal Vitest Integration

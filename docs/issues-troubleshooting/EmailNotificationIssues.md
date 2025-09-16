@@ -1,3 +1,8 @@
+---
+sidebar_label: Email Notification Issues
+description: Troubleshoot email notification issues in ReportPortal QA metric dashboard with ThreadPool and SMTP configuration solutions.
+---
+
 # Email Notification Issues
 
 In case of observing issues with email notifications when email service stopped processing messages, RP administrators should be aware of some kinds of known issue types:

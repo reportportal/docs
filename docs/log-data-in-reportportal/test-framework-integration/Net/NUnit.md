@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: NUnit
+description: Monitor NUnit tests in real time, record failures with screenshots, and gain actionable insights to speed up .NET application testing.
 ---
 
 # ReportPortal NUnit Integration

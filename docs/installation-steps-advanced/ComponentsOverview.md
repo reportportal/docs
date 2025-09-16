@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Components Overview
+description: ReportPortal Components Overview page explains each service - Gateway, API, UAT, Analyzer, Migrations, Index, UI - to help you configure and scale your system effectively.
 ---
 
 # Components Overview

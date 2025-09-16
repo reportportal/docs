@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Unified test reporting
+description: Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard.
 ---
 
 # Single-entry point and unified test reporting

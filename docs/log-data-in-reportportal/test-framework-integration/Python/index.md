@@ -1,4 +1,5 @@
 ---
+sidebar_label: Python
 sidebar_position: 4
 description: Use Python test frameworks with automation testing reporting tools to centralize results, analyze failures, and improve test management and QA processes.
 ---

@@ -1,5 +1,6 @@
 ---
 sidebar_label: Integration with CI/CD
+description: Connect ReportPortal with GitHub Actions, GitLab CI, Jenkins, and more to automate quality checks and surface insights in your test execution dashboard.
 ---
 
 # Integration with CI/CD

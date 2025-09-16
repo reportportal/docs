@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Premium Features
+description: Explore ReportPortal premium features for enterprises, including Quality Gates and SCIM, designed to scale continuous testing and streamline user management.
 ---
 
 # Premium Features

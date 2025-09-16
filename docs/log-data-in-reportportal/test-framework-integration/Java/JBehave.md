@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: JBehave
+description: Integrate JBehave with ReportPortal to automate acceptance testing, enhance BDD workflows, and gain real-time insights into test results.
 ---
 
 # ReportPortal JBehave Integration

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Logback
+description: Integrate Logback with ReportPortal to automatically capture and send application logs for real-time analysis, enhancing test reporting and debugging efficiency.
 ---
 
 # ReportPortal Logback Integration

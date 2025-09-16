@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Codecept
+description: Use ReportPortal with CodeceptJS to send test results, logs, and screenshots automatically to a centralized dashboard for easier debugging and analysis.
 ---
 
 # ReportPortal Codecept Integration

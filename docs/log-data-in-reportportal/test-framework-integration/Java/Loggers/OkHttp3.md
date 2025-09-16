@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: OkHttp3
+description: Integrate OkHttp3 with ReportPortal to automatically log HTTP requests and responses, including images and binary data, for enhanced test analysis.
 ---
 
 # ReportPortal OkHttp3 Integration

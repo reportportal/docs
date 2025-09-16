@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Version 25.1.6
+description: "Explore ReportPortal Version 25.1.6 release notes: PostgreSQL 17 upgrade, enhanced launch exports, improved RobotFramework imports, and analyzer updates."
 ---
 
 # Version 25.1.6
