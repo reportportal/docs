@@ -1,6 +1,6 @@
 ---
 sidebar_label: Integration with GitHub Actions
-description: Integrate GitHub Actions with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
+description: Integrate ReportPortal with GitHub Actions to automate test result reporting, enforce Quality Gates, and enhance CI/CD workflows for faster, reliable releases.
 ---
 
 # Integration with GitHub Actions

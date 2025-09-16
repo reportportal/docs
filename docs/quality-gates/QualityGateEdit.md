@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Quality Gate Edit
-description: Edit Quality Gates configurations in ReportPortal test automation reporting tools for quality control management.
+description: Edit Quality Gates configurations for quality control management.
 ---
 
 # Quality Gate Edit

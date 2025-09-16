@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: Version 24.1
-description: ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and enhanced test automation reporting tools features.
+description: ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features.
 ---
 
 # Version 24.1

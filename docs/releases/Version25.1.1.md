@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: Version 25.1.1
-description: ReportPortal v25.1.1 release notes with bug fixes and enhanced test automation reporting tools stability.
+description: ReportPortal Version 25.1.1 addresses SAML reply URL generation issues, enhancing security and compatibility.
 ---
 
 # Version 25.1.1

@@ -1,6 +1,6 @@
 ---
 sidebar_label: Integration with GitLab CI
-description: Integrate GitLab CI with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
+description: Integrate ReportPortal with GitLab CI to automate test result reporting, enforce quality gates, and enhance your CI/CD pipeline's efficiency and reliability.
 ---
 
 # Integration with GitLab CI

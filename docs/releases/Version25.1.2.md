@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: Version 25.1.2
-description: ReportPortal v25.1.2 release notes with bug fixes and enhanced test automation reporting tools stability.
+description: Explore ReportPortal Version 25.1.2 release notes detailing bug fixes for Jira Cloud integration and component health check widget enhancements.
 ---
 
 # Version 25.1.2
