@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: S3 Cloud Storage
+description: Configure S3 cloud storage for the ReportPortal Flaky Test Detection tool using AWS, MinIO, or other S3-compatible providers.
 ---
 
 # S3 Cloud Storage

@@ -1,5 +1,6 @@
 ---
 sidebar_label: Amazon Application Load Balancer Configuration Guide
+description: Configure Amazon ALB and NGINX Ingress Controller for ReportPortal test automation reporting tools on AWS EKS.
 ---
 
 # Amazon Application Load Balancer Configuration Guide

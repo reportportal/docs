@@ -1,5 +1,6 @@
 ---
 sidebar_label: Integration with CircleCI
+description: Integrate ReportPortal with CircleCI to automate test execution, capture launch IDs, and enforce Quality Gates, ensuring consistent and reliable deployments.
 ---
 
 # Integration with CircleCI

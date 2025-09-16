@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: How to resolve issues with migration to the new version
+description: Learn how to resolve migration issues when upgrading ReportPortal to new versions.
 ---
 
 # How to resolve issues with migration to the new version

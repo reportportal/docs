@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Log4Net
+description: Learn how to set up Log4Net in .NET tests to capture detailed logs, track issues, and centralize reporting for faster troubleshooting and quality assurance.
 ---
 
 # ReportPortal Log4Net Integration

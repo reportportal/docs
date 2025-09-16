@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: How models are retrained
+description: Learn when Auto-Analysis and ML models retrain, how data is used, and what thresholds apply to keep ReportPortal test failure analysis accurate and project-specific.
 ---
 
 # How models are retrained

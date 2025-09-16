@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: ML Suggestions
+description: Get AI-powered suggestions for similar failures during triage. Reuse defect types, comments, and BTS links to speed analysis in your test automation dashboard.
 ---
 
 # ML Suggestions

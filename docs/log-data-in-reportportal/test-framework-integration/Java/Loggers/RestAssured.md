@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Rest Assured
+description: Integrate REST Assured with ReportPortal for comprehensive test automation reporting and API testing request/response logging.
 ---
 
 # ReportPortal Rest Assured Integration

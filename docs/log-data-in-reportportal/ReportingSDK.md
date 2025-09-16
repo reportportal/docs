@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Reporting SDK
+description: Integrate your test framework with ReportPortal using the Reporting SDK to log detailed test data, including nested steps and test case IDs, for enhanced reporting.
 ---
 
 # Reporting SDK

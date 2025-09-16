@@ -1,3 +1,8 @@
+---
+sidebar_label: Upgrading PostgreSQL for ReportPortal v24.2 and later
+description: Upgrade PostgreSQL database for ReportPortal v24.2 and later versions with data preservation.
+---
+
 # Upgrading PostgreSQL for ReportPortal v24.2 and later
 
 :::important

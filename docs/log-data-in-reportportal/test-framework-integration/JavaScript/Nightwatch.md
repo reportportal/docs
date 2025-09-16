@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: Nightwatch
+description:  Integrate Nightwatch testing framework web/mobile testing analysis.
 ---
 
 # ReportPortal Nightwatch Integration

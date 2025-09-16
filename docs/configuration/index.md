@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: Set up your test report dashboard. Detailed configuration steps from project creation to authorization.
+description: Configure projects, users, and retention in ReportPortal. Step-by-step guides for access, roles, and policies to manage your test report dashboard effectively.
 ---
 
 # Configuration

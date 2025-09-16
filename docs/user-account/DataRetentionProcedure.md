@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Data retention procedure
+description: Configure data retention periods for PII data in ReportPortal. Set individual retention durations and manage data lifecycle using test execution reporting.
 ---
 
 # Data retention procedure

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: behave
+description: Track and visualize Behave test results automatically, view Gherkin scenario outcomes, and streamline team collaboration for faster issue resolution.
 ---
 
 # ReportPortal behave Integration

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Apache HttpComponents
+description: Integrate Apache HttpComponents with ReportPortal for comprehensive test automation reporting tools and HTTP request/response logging.
 ---
 
 # ReportPortal Apache HttpComponents Integration

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Log4J
+description: Integrate Log4J with ReportPortal to capture and manage application logs efficiently, enhancing test analysis and reporting in your Java projects.
 ---
 
 # ReportPortal Log4J Integration

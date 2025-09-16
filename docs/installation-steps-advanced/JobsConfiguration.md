@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Jobs configuration
+description: Configure ReportPortal jobs for automated data retention and cleanup to keep your system running efficiently and organized.
 ---
 
 # Jobs configuration

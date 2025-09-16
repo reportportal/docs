@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: Version 25.1.1
+description: ReportPortal Version 25.1.1 addresses SAML reply URL generation issues, enhancing security and compatibility.
 ---
 
 # Version 25.1.1
