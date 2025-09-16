@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: How to install Quality Gates
-description: Install Quality Gates premium feature in ReportPortal for enhanced test automation reporting tools with quality control.
+description: Install Quality Gates premium feature in ReportPortal for enhanced test automation reporting with quality control.
 ---
 
 # How to install Quality Gates

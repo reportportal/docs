@@ -1,6 +1,6 @@
 ---
 sidebar_label: Integration with Azure DevOps
-description: Integrate Azure DevOps with ReportPortal Quality Gates for automated quality control in test automation reporting tools.
+description: Integrate Azure DevOps with ReportPortal Quality Gates for automated quality control in QA automation dashboard.
 ---
 
 # Integration with Azure DevOps
