@@ -403,5 +403,5 @@ might stop you. In this article we set up GitHub Actions integration with Report
 shell scripts and console commands. To provide more outlook we described how to run tests in Kotlin and Python.
 
 And here are full versions of corresponding pipeline files, which we implemented:
-* [Kotlin](https://github.com/reportportal/examples-java/blob/master/.gitlab-ci.yml)
-* [Python](https://github.com/reportportal/examples-python/blob/master/.gitlab-ci.yml)
+* [Kotlin](https://github.com/reportportal/examples-java/blob/master/.github/workflows/qg-example.yml)
+* [Python](https://github.com/reportportal/examples-python/blob/master/.github/workflows/qg-example.yml)
