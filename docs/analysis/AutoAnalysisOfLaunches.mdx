@@ -163,7 +163,7 @@ All settings and configurations of Analyzer and OpenSearch are situated on a sep
 
 2. Come on Project Settings, choose Auto-Analysis section;
 
-<MediaViewer src="https://youtu.be/0AK2OHD79Ps" alt="Auto-analysis settings for AI-based defects triage" type="video" />
+<MediaViewer src="https://youtu.be/4y-n8Qr_F_0" alt="Auto-analysis settings for AI-based defects triage" type="video" />
 
 In this section user can perform the following actions:
 
@@ -227,7 +227,11 @@ You can choose those configurations via Project configuration or from the list o
 
 ReportPortal allows users to control how the system prioritizes retries for analysis. By default, only the latest retry is considered, but users can also choose to analyze the longest retry — the one with the most passed nested steps before the first failure.
 
-If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the "Defect assignment based on the longest retry" checkbox in the Auto-Analysis settings. The Analyzer applies defect types based on this configuration during manual, auto, or Immediate Auto-Analysis.
+If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the **"Defect assignment based on the longest retry" checkbox** in the Auto-Analysis settings.
+
+<MediaViewer src={require('./img/LongestRetrySetting1.png')} alt="Longest retry setting" />
+
+The Analyzer applies defect types based on this configuration during manual, auto, or Immediate Auto-Analysis.
 
 :::note
 **Permissions:**<br />
@@ -245,6 +249,8 @@ When **the checkbox is checked**:
 
 * ReportPortal sends the logs of the longest retry (the retry with the maximum number of passed nested steps before the first failure) to the Analyzer.
 
+<MediaViewer src={require('./img/LongestRetrySetting2.png')} alt="Longest retry setting with the checkbox checked" />
+
 This ensures that defect assignment is based on the most representative retry, not just the most recent one.
 
 <MediaViewer src={require('./img/RetryLogAnalysis2.png')} alt="Defect assignment based on the longest retry checkbox is checked" />
@@ -259,7 +265,7 @@ You can **remove the Index from OpenSearch** and all logs with there defect type
 Your investigations in ReportPortal will not be changed. The operation concerns only OpenSearch base.
 :::
 
-<MediaViewer src="https://youtu.be/4Xhwu7NSeQ4" alt="Remove Index" type="video" />
+<MediaViewer src="https://youtu.be/gvvx1egd2ek" alt="Remove Index" type="video" />
 
 Another option, you can **generate the Index in OpenSearch**. In the case of generation, all data will be removed from OpenSearch and the new one will be generated based on all previous investigations on the project following current analysis settings.
 
@@ -274,7 +280,7 @@ The new base will be generated following logs and settings that are existing on 
 :::
 * you have changed a parameter **Number of log lines** for 3.  But your existing index contains logs with value ALL. You can generate a new index, the old index will be removed, and a new one will be generated. Logs in the new index will contain 3 lines;
 
-<MediaViewer src="https://youtu.be/HYvtZmIzfiA" alt="Generate Index" type="video" />
+<MediaViewer src="https://youtu.be/mL-9Ryx-DIY" alt="Generate Index" type="video" />
 
 We strongly do not recommend use auto-analysis until the new index will be generated.
 
