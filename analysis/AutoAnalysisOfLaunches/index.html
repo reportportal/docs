@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.bd8f6de4.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.4ccc5f94.js" defer="defer"></script>
 <script src="/docs/assets/js/main.2adf4a32.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -188,7 +188,9 @@ Where:</p><ul>
 <p>You can choose those configurations via Project configuration or from the list of actions on All launches view.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="defect-assignment-based-on-the-longest-retry">Defect assignment based on the longest retry<a href="#defect-assignment-based-on-the-longest-retry" class="hash-link" aria-label="Direct link to Defect assignment based on the longest retry" title="Direct link to Defect assignment based on the longest retry">​</a></h3>
 <p>ReportPortal allows users to control how the system prioritizes retries for analysis. By default, only the latest retry is considered, but users can also choose to analyze the longest retry — the one with the most passed nested steps before the first failure.</p>
-<p>If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the &quot;Defect assignment based on the longest retry&quot; checkbox in the Auto-Analysis settings. The Analyzer applies defect types based on this configuration during manual, auto, or Immediate Auto-Analysis.</p>
+<p>If a test has retries and the test structure contains nested steps, the assignment of defects is determined by the <strong>&quot;Defect assignment based on the longest retry&quot; checkbox</strong> in the Auto-Analysis settings.</p>
+<!-- -->
+<p>The Analyzer applies defect types based on this configuration during manual, auto, or Immediate Auto-Analysis.</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><strong>Permissions:</strong><br>
 Admin, Project Manager can modify the setting.<br>
 Customer, Member, Operator can view only.</p></div></div>
@@ -201,6 +203,7 @@ Customer, Member, Operator can view only.</p></div></div>
 <ul>
 <li>ReportPortal sends the logs of the longest retry (the retry with the maximum number of passed nested steps before the first failure) to the Analyzer.</li>
 </ul>
+<!-- -->
 <p>This ensures that defect assignment is based on the most representative retry, not just the most recent one.</p>
 <!-- -->
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="removegenerate-opensearch-index">Remove/Generate OpenSearch index<a href="#removegenerate-opensearch-index" class="hash-link" aria-label="Direct link to Remove/Generate OpenSearch index" title="Direct link to Remove/Generate OpenSearch index">​</a></h3>
