@@ -25,6 +25,8 @@ On this page, we have put together a list of the most frequently asked questions
 14. [Can ReportPortal aggregate performance test results?](/FAQ/#14-can-reportportal-aggregate-performance-test-results)
 15. [Does ReportPortal have integration with Jira?](/FAQ/#15-does-reportportal-have-integration-with-jira)
 16. [How can I check the ReportPortal version?](/FAQ/#16-how-can-i-check-the-reportportal-version)
+17. [How can I check if the ReportPortal API is working?](/FAQ/#17-how-can-i-check-if-the-reportportal-api-is-working)
+18. [What are the application limits in ReportPortal?](/FAQ/#18-what-are-the-application-limits-in-reportportal)
 
 #### 1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?
 
@@ -108,3 +110,55 @@ Our test automation reporting dashboard have integration with following Bug Trac
 You can find the current version of ReportPortal on the login page. Simply hover your mouse over the ```i``` icon next to the "New versions are available" message to see the version details.
 
 <MediaViewer src={require('./img/NewVersions.png')} alt="New versions in our test automation dashboard" />
+
+#### 17. How can I check if the ReportPortal API is working?
+
+Open your browser and go to the following URL: ```http://{your-hostname}/composite/info```. This page provides essential information about the API's status.
+
+<MediaViewer src={require('./img/ApiService.png')} alt="Check ReportPortal's API Service" />
+
+#### 18. What are the application limits in ReportPortal?
+
+ReportPortal has defined application limits to maintain stable performance and consistent API behavior across all projects and endpoints. Below is the complete list of limits and recommendations:
+
+**1. Pagination & Collections**
+
+**Max page size: 300** items per page across collection endpoints:
+- Launches
+- Dashboards
+- Filters
+- Project members
+- Suites / Tests / Steps / Logs
+- Widgets
+
+**2. Dashboards & Widgets**
+
+- **Dashboards per project:** up to **3,000** (increased from 300 in version 24.2).
+- **Dashboard name length: 3–55** characters, must be unique per user per project.
+- **Widget fullscreen auto-refresh:** occurs every **30 seconds**.
+- **Test Case Search widget results cap: 300** total cases (10 per page × 30 pages).
+
+**3. Attributes & Text Fields**
+
+- **Attribute key length:** up to **512** characters.
+- **Attribute value length:** up to **512** characters.
+- **Quality Gate name length** (Managed Plugin): **1–55** characters.
+
+**4. Files, Uploads & Storage**
+
+- **API attachment uploads:** default limit **64 MB** (configurable at the service-api level).
+- **JUnit/Robot imports via UI:** up to **32 MB** per ZIP/XML file.
+- **User avatars:**
+   - Accepted formats: **JPEG, PNG, GIF**
+   - Maximum size: **1 MB**
+   - Maximum dimensions: **300×500 px**
+- **RabbitMQ message size:** infrastructure-dependent; it’s recommended to keep log payloads reasonably sized, as very large logs may be rejected to process.
+
+**5. API Behavior & Miscellaneous**
+
+- **Rate limiting:** none built-in; throughput and concurrency depend on infrastructure capacity.
+- **Import timeout UX:** works similar to ```/v2``` reporting, depends on infrastructure.
+
+**6. Launch Merge**
+
+- **No hard cap**, but treat **around 20 launches** per merge as a safe operational limit, unless you have tested higher based on your infrastructure size and data distribution.
