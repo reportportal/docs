@@ -23,7 +23,7 @@ Java agents released prior to 2022 may experience compatibility issues with Repo
 
 ## 1. What's Changed:
 
-1. **[Footer link updates](/admin-panel/ServerSettings#links--branding)**:<br />
+1. **[Footer link updates](/admin-panel/ServerSettings/#links--branding)**:<br />
    Admin users can now customize footer links in ReportPortal by adding new links, naming them, and rearranging their order. This allows users to easily access important shortcuts relevant to their organization.
 
 2. **Dashboard sorting**:<br />

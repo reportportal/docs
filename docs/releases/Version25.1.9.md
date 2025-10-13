@@ -20,7 +20,7 @@ Introduced new monitoring capabilities in the History table with customizable ce
 - Set threshold-based highlighting to identify items that fall outside acceptable parameters
 - Make data-driven decisions based on historical patterns and trend analysis
 
-Learn more about [cell preview improvements](/work-with-reports/HistoryOfLaunches#cell-preview-options).
+Learn more about [cell preview improvements](/work-with-reports/HistoryOfLaunches/#cell-preview-options).
 
 **4. Amazon Application Load Balancer (ALB) Support**<br />
 We are excited to announce that our [Helm chart](https://github.com/reportportal/kubernetes) now supports deployment with Amazon Application Load Balancer (ALB). This enhancement makes it easier to integrate ReportPortal with AWS environments using ALB. For setup instructions, check out our [ALB deployment guide](https://github.com/reportportal/kubernetes/blob/master/docs/alb-deployment-guide.md)
