@@ -54,9 +54,22 @@ Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/bl
 
 #### 6. Is there a demo available?
 
-* Explore ReportPortal without installation by visiting our [demo instance](https://demo.reportportal.io/).<br />
-* Check out our [demo video](https://www.youtube.com/watch?v=AKA_O8lcIdc).<br />
-* If you need a demo session, leave your [contact details](https://reportportal.io/contact-us/general/).
+You can explore ReportPortal without installation by visiting our [demo instance](https://demo.reportportal.io/) which offers:
+* Free trial available indefinitely
+* Data is flushed every 24 hours
+* All enterprise features included
+
+You can either join a shared project or create a personal one.
+
+When a user visits the demo instance, they can log in using the default/pre-filled credentials. In this case, they will access a **shared project** that is available to everyone using the same demo account. This means that anything they report will be visible to all users and can be modified or managed by anyone.
+
+<MediaViewer src={require('./img/DemoShared.png')} alt="Shared project on our test results reporting service" />
+
+Alternatively, the user can log in via GitHub. In this case, a **personal project** and user account will be created just for them. Only that user will be able to view and manage the data reported within their personal project.
+
+<MediaViewer src={require('./img/DemoPersonal.png')} alt="Personal project in our test automation reporting tool" />
+
+If you need a personalized demo session, please leave your [contact details](https://reportportal.io/contact-us/general/). To get a quick overview, check out our [demo video](https://www.youtube.com/watch?v=AKA_O8lcIdc).
 
 #### 7. How can I begin using ReportPortal?
 
