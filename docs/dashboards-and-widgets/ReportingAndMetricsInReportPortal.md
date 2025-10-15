@@ -9,7 +9,7 @@ description: With ReportPortal, you can boost your software quality by obtaining
 ## Test automation reports in ReportPortal
 
 With ReportPortal, you can boost your software quality by obtaining detailed
-test automation reports to monitor test execution, identify issues, and analyze trends for continuous enhancement.
+test automation reports to monitor test execution, identify issues, and analyze trends for continuous enhancement through collaborative dashboards in test reporting.
 
 | Report                        | Description | Widget |
 |-------------------------------| --|-------------|
