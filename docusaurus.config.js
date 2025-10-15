@@ -212,7 +212,7 @@ const config = {
         redirects: [
           {
             to: '/installation-steps',
-            from: ['/category/installation-steps', '/Installation-steps'],
+            from: ['/category/installation-steps', '/Installation-steps', '/Installation', '/installation'],
           },
           {
             to: '/features',
@@ -578,9 +578,13 @@ const config = {
               to: '/releases/Version25.1.6',
               from: '/releases/Release25.1.6',
           },
-        {
+          {
               to: '/releases/Version25.1.5',
               from: '/releases/Release25.1.5',
+          },
+          {
+              to: '/developers-guides/ReportPortalAPI',
+              from: '/api',
           },
         ],
       },
