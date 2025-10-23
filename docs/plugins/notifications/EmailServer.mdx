@@ -125,3 +125,67 @@ Example of SMTP server configuration for Gmail email server (detailed info could
 <MediaViewer src={require('./img/email-server/EmailServer4.png')} alt="Example of Project Email Server integration" />
 
 <MediaViewer src="https://youtu.be/OVnc5nxwp24" alt="Email Server integration" type="video" />
+
+## Create Email notification rule
+
+1. Go to the Project settings -> [Notifications](/configuration/ProjectSettings/#email-notifications).
+
+2. Choose Email Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Recipients** - optional field, user name on the project or valid email
+
+**Launch owner** - optional checkbox, who launched - that receives
+
+:::note
+When the `Launch owner` checkbox is unchecked, you must fill in the `Recipients` field.
+:::
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi select.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/email-server/EmailNotificationRule.png')} alt="Create Email notification rule in our test report dashboard" />
+
+## Disable Email notifications
+
+1. Go to the Project settings -> Notifications.
+
+2. Turn OFF for Email.
+
+<MediaViewer src={require('./img/email-server/EmailDisableRule.png')} alt="Disable Email notifications in ReportPortal" />
+
+## Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Email plugin and click on it.
+
+4. Turn OFF.
+
+<MediaViewer src={require('./img/email-server/EmailDisablePlugin.png')} alt="Disable Email plugin in our qa metrics dashboard" />
