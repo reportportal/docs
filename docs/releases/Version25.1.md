@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 13
 sidebar_label: Version 25.1
 description: ReportPortal v25.1 release notes with Spring Boot 3 upgrade, enhanced test execution reporting, and improved performance.
 ---
