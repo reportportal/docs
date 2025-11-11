@@ -1,5 +1,5 @@
 ---
-sidebar_position: 18
+sidebar_position: 21
 sidebar_label: Version 24.2
 description: ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance.
 ---

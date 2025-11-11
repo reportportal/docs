@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 sidebar_label: Version 25.1.7
 description: Explore ReportPortal Version 25.1.7 release notes detailing bug fixes, updated services, and plugin versions to enhance your test automation experience.
 ---
