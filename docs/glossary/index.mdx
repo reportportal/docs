@@ -75,3 +75,11 @@ Logs are textual data necessary for debugging and problem solving. Our Analyzer 
 The ID which is used along with Steps. It is unique signature of tests by which we build test history. In general, you don’t need to manipulate these IDs, since every agent usually generates them with Code reference and parameters. But if you want to customize your history view this is the first point where to look. Agents usually generate Test Case IDs based on code reference and have a way to customize it.
 
 <MediaViewer src={require('./img/Glossary9.png')} alt="Test Case ID scheme on ReportPortal" />
+
+## Before Method
+
+A lifecycle hook or method provided by test frameworks that is executed before a test case or test suite starts. In the context of ReportPortal, it is used to initialize test data, set up configurations, or send a "start test" event to ReportPortal to log the beginning of a test execution.
+
+## After Method
+
+A lifecycle hook or method provided by test frameworks that is executed after a test case or test suite finishes. In the context of ReportPortal, it is used to clean up resources, log results, or send a "finish test" event to ReportPortal to log the completion of a test execution along with its status (e.g., passed, failed, skipped).
