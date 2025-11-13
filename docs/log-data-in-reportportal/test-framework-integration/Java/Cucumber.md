@@ -20,6 +20,7 @@ Cucumber is a popular open-source framework for behavior-driven development (BDD
 | 4.4.0 - 4.8.1  | 3.2.0 - 5.1.0 | [sources/cucumber4](https://github.com/reportportal/agent-java-cucumber4) |
 | 5.0.0 - 5.7.0  | _ | [sources/cucumber5](https://github.com/reportportal/agent-java-cucumber5) |
 | 6.0.0 - 7.0.0  | 6.0.0 - 7.0.0 | [sources/cucumber6](https://github.com/reportportal/agent-java-cucumber6) |
+| 6.0.0 - 7.0.0  | 6.0.0 - 7.0.0 | [sources/cucumber7](https://github.com/reportportal/agent-java-cucumber7) |
 
 [Installation guide](https://github.com/reportportal/agent-java-cucumber#readme)
 
