@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.bd4e6dd9.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.88fcb0a0.js" defer="defer"></script>
 <script src="/docs/assets/js/main.d6f7d153.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -27,15 +27,24 @@
 <div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">    py</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">test </span><span class="token operator" style="color:#393A34">-</span><span class="token plain">c config</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">cfg</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>The <code>pytest.ini</code> file should have next mandatory fields:</p>
 <ul>
-<li><code>rp_api_key</code> - value could be found in the User Profile section</li>
 <li><code>rp_project</code> - name of project in ReportPortal</li>
 <li><code>rp_endpoint</code> - address of ReportPortal Server</li>
 </ul>
+<p>And one type of authorization: API Key or OAuth 2.0 Password grant. You can do this by setting:</p>
+<ul>
+<li><code>rp_api_key</code> or <code>RP_API_KEY</code> environment variable. You can get it in the User Profile section on the UI.</li>
+</ul>
+<p>Or:</p>
+<ul>
+<li><code>rp_oauth_uri</code> - OAuth 2.0 token endpoint URL for password grant authentication. <strong>Required</strong> if API key is not used.</li>
+<li><code>rp_oauth_username</code> - OAuth 2.0 username for password grant authentication. <strong>Required</strong> if OAuth 2.0 is used.</li>
+<li><code>rp_oauth_password</code> - OAuth 2.0 password for password grant authentication. <strong>Required</strong> if OAuth 2.0 is used.</li>
+<li><code>rp_oauth_client_id</code> - OAuth 2.0 client identifier. <strong>Required</strong> if OAuth 2.0 is used.</li>
+<li><code>rp_oauth_client_secret</code> - OAuth 2.0 client secret. <strong>Optional</strong> for OAuth 2.0 authentication.</li>
+<li><code>rp_oauth_scope</code> - OAuth 2.0 access token scope. <strong>Optional</strong> for OAuth 2.0 authentication.</li>
+</ul>
 <p>Example of <code>pytest.ini</code>:</p>
 <div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">pytest</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_api_key </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> fb586627</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">32be</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">47dd</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">93c1</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">678873458a5f</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_endpoint </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> http</span><span class="token punctuation" style="color:#393A34">:</span><span class="token operator" style="color:#393A34">//</span><span class="token number" style="color:#36acaa">192.168</span><span class="token number" style="color:#36acaa">.1</span><span class="token number" style="color:#36acaa">.10</span><span class="token punctuation" style="color:#393A34">:</span><span class="token number" style="color:#36acaa">8080</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_project </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> user_personal</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_launch </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> AnyLaunchName</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_launch_attributes </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;PyTest&#x27;</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;Smoke&#x27;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_launch_description </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;Smoke test&#x27;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rp_ignore_attributes </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;xfail&#x27;</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;usefixture&#x27;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<ul>
-<li>The <code>rp_api_key</code> can also be set with the environment variable <code>RP_API_KEY</code>. This will override the value set for <code>rp_api_key</code> in pytest.ini</li>
-</ul>
 <p>The following parameters are optional:</p>
 <ul>
 <li><code>rp_client_type = SYNC</code> - Type of the under-the-hood ReportPortal client implementation. Possible values: [SYNC, ASYNC_THREAD, ASYNC_BATCHED].</li>
@@ -52,7 +61,7 @@
 <li><code>rp_connect_timeout = 15</code> - Connection timeout to ReportPortal server. Default value is &quot;10.0&quot;.</li>
 <li><code>rp_read_timeout = 15</code> - Response read timeout for ReportPortal connection. Default value is &quot;10.0&quot;.</li>
 <li><code>rp_log_batch_size = 20</code> - size of batch log request.</li>
-<li><code>rp_log_batch_payload_size = 65000000</code> - maximum payload size in bytes of async batch log requests.</li>
+<li><code>rp_log_batch_payload_limit = 65000000</code> - maximum payload size in bytes of async batch log requests.</li>
 <li><code>rp_log_level = INFO</code> - The log level that will be reported.</li>
 <li><code>rp_log_format = [%(levelname)7s] (%(name)s) %(message)s (%(filename)s:%(lineno)s)</code> - Format string to be used for logs sent to the service.</li>
 <li><code>rp_ignore_attributes = &#x27;xfail&#x27; &#x27;usefixture&#x27;</code> - Ignore specified pytest markers.</li>
