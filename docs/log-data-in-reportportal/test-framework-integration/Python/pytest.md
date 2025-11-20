@@ -30,9 +30,19 @@ Create the configuration file `pytest.ini` in the root directory of tests, or al
 
 The `pytest.ini` file should have next mandatory fields:
 
-- `rp_api_key` - value could be found in the User Profile section
 - `rp_project` - name of project in ReportPortal
 - `rp_endpoint` - address of ReportPortal Server
+
+And one type of authorization: API Key or OAuth 2.0 Password grant. You can do this by setting:
+- `rp_api_key` or `RP_API_KEY` environment variable. You can get it in the User Profile section on the UI.
+
+Or:
+- `rp_oauth_uri` - OAuth 2.0 token endpoint URL for password grant authentication. **Required** if API key is not used.
+- `rp_oauth_username` - OAuth 2.0 username for password grant authentication. **Required** if OAuth 2.0 is used.
+- `rp_oauth_password` - OAuth 2.0 password for password grant authentication. **Required** if OAuth 2.0 is used.
+- `rp_oauth_client_id` - OAuth 2.0 client identifier. **Required** if OAuth 2.0 is used.
+- `rp_oauth_client_secret` - OAuth 2.0 client secret. **Optional** for OAuth 2.0 authentication.
+- `rp_oauth_scope` - OAuth 2.0 access token scope. **Optional** for OAuth 2.0 authentication.
 
 Example of `pytest.ini`:
 
@@ -46,8 +56,6 @@ Example of `pytest.ini`:
     rp_launch_description = 'Smoke test'
     rp_ignore_attributes = 'xfail' 'usefixture'
 ```
-
-- The `rp_api_key` can also be set with the environment variable `RP_API_KEY`. This will override the value set for `rp_api_key` in pytest.ini
 
 The following parameters are optional:
 
@@ -65,7 +73,7 @@ The following parameters are optional:
 - `rp_connect_timeout = 15` - Connection timeout to ReportPortal server. Default value is "10.0".
 - `rp_read_timeout = 15` - Response read timeout for ReportPortal connection. Default value is "10.0".
 - `rp_log_batch_size = 20` - size of batch log request.
-- `rp_log_batch_payload_size = 65000000` - maximum payload size in bytes of async batch log requests.
+- `rp_log_batch_payload_limit = 65000000` - maximum payload size in bytes of async batch log requests.
 - `rp_log_level = INFO` - The log level that will be reported.
 - `rp_log_format = [%(levelname)7s] (%(name)s) %(message)s (%(filename)s:%(lineno)s)` - Format string to be used for logs sent to the service.
 - `rp_ignore_attributes = 'xfail' 'usefixture'` - Ignore specified pytest markers.
