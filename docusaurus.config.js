@@ -279,7 +279,7 @@ const config = {
             from: ['/reportportal-configuration/authorization/SAMLProvider/OktaSAML', '/reportportal-configuration/authorization/SamlProviders/OktaSaml'],
           },
           {
-            to: '/installation-steps-advanced/SetupTSLSSLInTraefik2.0.x',
+            to: '/installation-steps-advanced',
             from: ['/Setup-TLS(SSL)-in', '/installation-steps/SetupTSLSSLInTraefik2.0.x'],
           },
           {
