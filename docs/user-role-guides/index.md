@@ -1,5 +1,5 @@
 ---
-sidebar_position: 19
+sidebar_position: 20
 sidebar_label: User role guides
 description: Understand roles and permissions for admins, managers, members, operators, and customers. Configure access and responsibilities to keep projects secure and efficient.
 ---
