@@ -294,6 +294,186 @@ If user want to view attached logs:
 
 <MediaViewer src={require('./img/view-launches/LogViewForContainers2.png')} alt="Launch Logs" />
 
+## Log level settings
+
+The Log level settings (Full-width mode, Colorized background, No logs collapsing, Log Size, pagination off/on) are stored individually for each user, browser, and project, and remain active until you change them manually or clear your browser cache. If the cache is cleared, the settings must be configured again.
+
+### Full-width mode
+
+You can configure how log will be displayed by enabling or disabling the "Full-width mode" option.
+
+To **enable Full-width mode**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "Full-width mode" checkbox in the dropdown.
+
+<MediaViewer src={require('./img/view-launches/FullWidthMode.png')} alt="Full-width mode for logs on our qa automation dashboard" />
+
+When Full-width mode is enabled, all log-related tabs – including Stack trace, All logs, Attachments, Item details, and History of actions – automatically expand to use the full available screen width, providing a broader and more comfortable viewing area for detailed information.
+
+To **disable Full-width mode**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the "Full-width mode" checkbox in the dropdown.
+
+When the option is disabled, all tabs return to their standard layout with default width constraints.
+
+<MediaViewer src="https://youtu.be/mka5rk_lomA" alt="Log level settings. Full-width mode" type="video" />
+
+### Colorized background
+
+You can customize how log entries are visually highlighted by enabling or disabling the "Colorized background" option.
+
+To **enable Colorized background**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "Colorized background" checkbox in the dropdown.
+
+When "Colorized background" is enabled, all logs receive background colors according to the configuration defined in Project settings -> Log types. Log entries will display the appropriate label color, background color, text color, and text style (bold or normal), making it easier to distinguish log types visually.
+
+<MediaViewer src={require('./img/view-launches/ColorizedBackground.png')} alt="Colorized background for logs" />
+
+To **disable Colorized background**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the "Colorized background" checkbox in the dropdown.
+
+When this option is disabled, logs are displayed without background color highlighting, using the default styling.
+
+<MediaViewer src="https://youtu.be/0cFTAXlZ51Q" alt="Log level settings. Colorized background" type="video" />
+
+### No logs collapsing
+
+You can control whether logs appear collapsed or fully expanded.
+
+To **enable "No logs collapsing" option**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "No logs collapsing" checkbox.
+
+When "No logs collapsing" is enabled, all logs on the current item level are displayed expanded by default, allowing you to view details without manually opening each log entry.
+
+**Nested step logs** remain collapsed initially and require individual clicks to expand.
+
+<MediaViewer src={require('./img/view-launches/NoLogsCollapsing.png')} alt="No logs collapsing option" />
+
+To **disable No logs collapsing option**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the No logs collapsing checkbox.
+
+When this option is disabled, logs follow the standard collapsed view, and you can expand them individually as needed.
+
+:::important
+The "No logs collapsing" option is not available when viewing logs in Console mode. In this mode, the checkbox will not appear in the Log Appearance section.
+:::
+
+<MediaViewer src="https://youtu.be/smsRLlUTrMo" alt="Log level settings. No logs collapsing" type="video" />
+
+### Log Size
+
+You can adjust how large log text appears by selecting a preferred Log Size.
+
+To **change the Log Size**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Size block**, choose one of the available radio buttons: Small, Medium, or Large.
+
+<MediaViewer src={require('./img/view-launches/LogSize.png')} alt="Log Size setting in our test results dashboard" />
+
+The **default value is Medium**.
+
+When you change the log size, the dropdown remains open so you can immediately see your selection.
+
+The chosen log size is applied consistently across all display modes – default, markdown, and console – and affects logs **for all item types: launch, suite, and test**. The selected size also applies to the **Stack trace tab**.
+
+<MediaViewer src="https://youtu.be/HsOt1Y7hlpM" alt="Log level settings. Log Size" type="video" />
+
+### Turn Off pagination
+
+You can choose whether logs are displayed with standard pagination or loaded continuously as you scroll.
+
+To **turn OFF pagination**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Pagination block**, select "Turn Off Pagination" option.
+
+<MediaViewer src={require('./img/view-launches/TurnOffPagination1.png')} alt="Turn Off Pagination for logs" />
+
+4. Confirm the action by clicking "Turn Off & Reload".
+
+<MediaViewer src={require('./img/view-launches/TurnOffPagination2.png')} alt="Turn Off & Reload button" />
+
+After the page reloads, pagination controls are removed, and logs load dynamically as you scroll.
+
+If pagination is turned off while you are on a later page (for example, page 3), the view resets to the first page after reload, and you can scroll down to load more logs continuously.
+
+To **turn ON pagination**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Pagination block**, select "Turn Off Pagination" option.
+4. Confirm the action by clicking "Turn Off & Reload".
+
+After the page reloads, the standard pagination controls become visible again. You are returned to the first page.
+
+**Additional behavior**
+
+A "Back to the Top" button is available when navigating deeper into the log feed. Clicking it brings you back to the first page (when pagination is ON) or to the top of the continuous log list (when pagination is OFF).
+
+When pagination is OFF, logs load in batches (50 items at a time) as you scroll down.
+
+The pagination setting affects all display modes – default, markdown, and console – and applies consistently across the item log view.
+
+<MediaViewer src={require('./img/view-launches/BackToTheTop.png')} alt="Back to the Top option" />
+
+<MediaViewer src="https://youtu.be/LnzXOP26j0w" alt="Turn Off Pagination on Log Level" type="video" />
+
+### Error log navigation
+
+On the log view you can find the number of error logs found in current item. In case no error logs, the "Show" button will be disabled with "No error logs" message. In case only one error log is found, the "Show" button will be available and by clicking on it you will be navigated to the correspondent page, and the error log will be highlighted. In case there is more than one error log, you will be able to switch between "Previous" and "Next" error logs.
+
+You can move between error logs even when pagination is turned off. This helps you quickly jump to the next important error without scrolling through all logs manually.
+
+**Moving to the next error log**
+
+* If pagination is OFF and the next error log is not in the currently loaded part of the list, clicking the "Next error" button loads the required part of the logs and brings you directly to that error.
+* The error log is highlighted, and you can continue scrolling up or down to load more logs if needed.
+
+**Using search with error navigation**
+
+* If you use the search bar while pagination is OFF, only logs that match your search are shown.
+* You can still use the "Next error" button to move through the filtered error logs.
+* The error counter updates to show how many error logs match your search.
+
+<MediaViewer src={require('./img/view-launches/MovingToTheNextErrorLog.png')} alt="Moving to the next error log" />
+
+<MediaViewer src="https://youtu.be/DskrpiWDUgo" alt="Error log navigation" type="video" />
+
+### Search and jump to log
+
+You can quickly find a specific log and jump directly to it, even if it’s located on another page.
+
+1. When you are on the log level and multiple pages of logs exist, you can enter a value into the Search field to filter logs.
+2. The system shows all logs that match your search.
+3. When you click the "Jump to" button for one of the found logs, you are taken straight to the page where that log is located.
+
+<MediaViewer src={require('./img/view-launches/JumpToLog1.png')} alt="Jump to button" />
+
+4. The log is highlighted so you can easily spot it.
+
+<MediaViewer src={require('./img/view-launches/JumpToLog2.png')} alt="Highlighted log" />
+
+<MediaViewer src="https://youtu.be/ZcUs__HlDdk" alt="Search and jump to log" type="video" />
+
 ## Nested Steps
 
 <MediaViewer src="https://youtu.be/t6kvmpwZE8Y" alt="Nested Steps" type="video" />
