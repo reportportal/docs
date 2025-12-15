@@ -242,7 +242,7 @@ When the ‘Attributes’ checkbox is checked, you can provide key/value for att
 
 <MediaViewer src={require('./img/TelegramNotification.png')} alt="Create Telegram Notification rule" />
 
-## Custom defect types
+## Defect types
 
 The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
 
@@ -284,13 +284,118 @@ will be shown as "Product Bug".
 :::
 <MediaViewer src="https://youtu.be/CcU2_dEu59k" alt="Defect Type Configuration for clear test execution report" type="video" />
 
-### Auto-analysis and Pattern analysis
+## Log Types
 
-The "Auto-Analysis" and "Pattern analysis" tabs can allow reducing test failure analysis routine on the project.
+Log types define how log entries are categorized and visually highlighted, helping users quickly understand the importance and context of events. Every log entry belongs to a specific log type. Some core system log types are built in and cannot be removed, while custom log types can be added and configured to meet your project needs.
 
-For more information on this topic, please refer to [Analysis](/analysis).
+In the Project Settings -> Log Types tab, you can find the log types available in your project –  both system and custom. On this page, you can create custom log types, edit their appearance, delete custom log types, and configure which log types will be displayed in the log level slider on the Log page of the test item.
 
-### Demo data
+**Permissions:**<br />
+Only Admin and Project Manager can manage log types.
+
+### Create custom log type
+
+You can create your own log types to better control how logs are organized and visually presented within a project.
+
+**To create a custom log type:**
+
+1. Go to the Project settings -> Log types.
+2. Click the "Create log type" button.
+3. Enter a unique "Log type name".
+4. Provide a numeric "Log level" value.
+5. Select colors for the "Label color", "Background", and "Text color".
+6. Toggle "Text bold" if you want the log type to appear in bold.
+7. Click "Create" button.
+
+<MediaViewer src={require('./img/log-types/CreateLogType.png')} alt="Create Log Type in our test report dashboard" />
+
+When a custom log type is created, it is added to the list of available log types and becomes immediately usable within the project.
+
+:::note
+The "Show in log filter" flag for newly created log types is OFF by default.
+:::
+
+<MediaViewer src={require('./img/log-types/FilterOff.png')} alt="Show in log filter flag for just created log type" />
+
+:::note
+If a user reports tests with a log type that doesn’t exist in the project, the system assigns them level 60000 – Unknown.
+:::
+
+<MediaViewer src="https://youtu.be/SPjcH5UJ2Dk" alt="Create custom log type" type="video" />
+
+### Edit log type
+
+You can update existing log types, adjust their appearance, and manage whether they appear in the log type filter slider.
+
+:::note
+If you update a log type name, make sure to update it in your reporting configuration as well. The system currently identifies log types by their name. <br />
+If you change a log level, all previously reported logs with the old level will be treated as Unknown.
+:::
+
+**To edit log type:**
+
+1. Go to the Project settings -> Log types.
+2. Click the "Edit" icon next to a custom log type.
+3. Update the "Log type name", "Log level", and appearance settings (label color, background color, text color, bold).
+4. Click "Save" button.
+
+<MediaViewer src={require('./img/log-types/EditCustom.png')} alt="Edit custom log type" />
+
+:::note
+Log type name and Log level of a system log type cannot be changed.
+:::
+
+<MediaViewer src={require('./img/log-types/EditSystem.png')} alt="Edit system log type" />
+
+**To manage the "Show in log filter" toggle:**
+
+1. Go to the Project settings -> Log types.
+2. Modify the "Show in log filter" toggle.
+
+Log types marked as filterable appear in the log type filter slider on the log view, along with an additional "All" option that shows logs of every type.
+
+When a log type is selected in the slider, logs with that log level and all higher log levels are displayed. Even if a specific type does not appear in the slider but falls within the selected range, its logs are still included. If no log types are marked as filterable, the slider does not appear.
+
+:::note
+A maximum of 6 log types can be active in the filter slider at the same time (plus the "All" option).
+:::
+
+<MediaViewer src={require('./img/log-types/ShowInLogFilter.png')} alt="Managing Show in log filter" />
+
+<MediaViewer src="https://youtu.be/YNo3yHyo1os" alt="Edit log type" type="video" />
+
+### Delete custom log types
+
+You can delete custom log types from the project.
+
+:::important
+System log types cannot be deleted.
+:::
+
+**To delete a custom log type:**
+
+1. Go to the Project settings -> Log types.
+2. Find the custom log type you want to delete.
+3. Click the "Delete" icon.
+4. Click "Confirm" button.
+
+<MediaViewer src={require('./img/log-types/Delete.png')} alt="Delete custom log type" />
+
+<MediaViewer src="https://youtu.be/zE1w5MzQcS8" alt="Delete custom log type" type="video" />
+
+## Analyzer
+
+The Analyzer can allow reducing test failure analysis routine on the project.
+
+For more information on this topic, please refer to [Auto-Analysis documentation](/analysis/AutoAnalysisOfLaunches).
+
+## Pattern Analysis
+
+The "Pattern Analysis" feature allows identifying recurring failure patterns and common behaviors across test results.
+
+For more details, see the [Pattern Analysis documentation](/analysis/PatternAnalysis).
+
+## Demo data
 
 The "Demo Data" tab provides a way to generate demo data on the project.
 

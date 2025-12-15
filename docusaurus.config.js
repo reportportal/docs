@@ -586,6 +586,14 @@ const config = {
               to: '/developers-guides/ReportPortalAPI',
               from: '/api',
           },
+          {
+              to: '/configuration/ProjectSettings#defect-types',
+              from: '/configuration/ProjectSettings#custom-defect-types',
+          },
+          {
+              to: '/configuration/ProjectSettings#analyzer',
+              from: '/configuration/ProjectSettings#auto-analysis-and-pattern-analysis',
+          },
         ],
       },
     ],
