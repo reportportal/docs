@@ -33,4 +33,9 @@ This helps you see your data the way you prefer.
 
 **4. Faster and Clearer Analysis**
 
-Test Executions removes extra navigation, speeds up daily checks, and makes troubleshooting easier – whether you’re managing a few tests or thousands. 
+Test Executions removes extra navigation, speeds up daily checks, and makes troubleshooting easier – whether you’re managing a few tests or thousands. <br />
+
+:::note
+The Test Executions feature is a premium offering from ReportPortal, available as part of our paid support services.
+If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
+:::
