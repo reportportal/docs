@@ -586,7 +586,11 @@ const config = {
               to: '/developers-guides/ReportPortalAPI',
               from: '/api',
           },
-          ],
+          {
+              to: '/plugins/other/SauceLabs',
+              from: '/plugins/SauceLabs',
+          },
+        ],
       },
     ],
   ],
