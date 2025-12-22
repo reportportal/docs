@@ -76,6 +76,7 @@ The following parameters are optional:
 - `rp_log_batch_payload_limit = 65000000` - maximum payload size in bytes of async batch log requests.
 - `rp_log_level = INFO` - The log level that will be reported.
 - `rp_log_format = [%(levelname)7s] (%(name)s) %(message)s (%(filename)s:%(lineno)s)` - Format string to be used for logs sent to the service.
+- `rp_log_custom_levels = 35:ASSUMPTION 37:ASSERTION` - Custom log levels specified as 'int level:string'. Overrides existing level if int level matches.
 - `rp_ignore_attributes = 'xfail' 'usefixture'` - Ignore specified pytest markers.
 - `rp_is_skipped_an_issue = False` - Treat skipped tests as required investigation. Default `True`.
 - `rp_hierarchy_dirs_level = 0` - Directory starting hierarchy level (from pytest.ini level) (default `0`).
