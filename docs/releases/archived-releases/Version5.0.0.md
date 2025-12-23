@@ -27,7 +27,7 @@ Jira, Rally, SauceLabs integration now will work through the plugin functionalit
 Available plugins to download:
 - [Jira](/plugins/bug-tracking/AtlassianJiraServer)
 - [Rally](/plugins/bug-tracking/Rally)
-- [SauceLabs](/plugins/SauceLabs)
+- [SauceLabs](/plugins/other/SauceLabs)
 ## Brand new features
 -	[#275](https://github.com/reportportal/reportportal/issues/275) [#639](https://github.com/reportportal/reportportal/issues/639)  Nested steps
 -	[#348](https://github.com/reportportal/reportportal/issues/348) Integration with SauceLabs
