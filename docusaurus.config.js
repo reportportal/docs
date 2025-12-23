@@ -212,7 +212,7 @@ const config = {
         redirects: [
           {
             to: '/installation-steps',
-            from: ['/category/installation-steps', '/Installation-steps', '/Installation', '/installation'],
+            from: ['/category/installation-steps', '/Installation'],
           },
           {
             to: '/features',
@@ -323,7 +323,7 @@ const config = {
             from: '/Issues-with-LDAPS',
           },
           {
-            to: '/plugins/SauceLabs',
+            to: '/plugins/other/SauceLabs',
             from: '/Sauce-Labs-integration',
           },
           {
@@ -585,6 +585,10 @@ const config = {
           {
               to: '/developers-guides/ReportPortalAPI',
               from: '/api',
+          },
+          {
+              to: '/plugins/other/SauceLabs',
+              from: '/plugins/SauceLabs',
           },
         ],
       },
