@@ -19,7 +19,7 @@ ReportPortal supports various frameworks:
 
 Integration with ReportPortal is not dependent on the type of tests you run. It can be API tests, integration tests, or UI tests such as Selenium, Cypress, so, you can run different types of tests and get test results.
 
-ReportPortal can be integrated with external services, enabling you to report test results from platforms like Browserstack, Sauce Labs, and other third-party services. For Sauce Labs integration, we have a [plugin](/plugins/SauceLabs).
+ReportPortal can be integrated with external services, enabling you to report test results from platforms like Browserstack, Sauce Labs, and other third-party services. For Sauce Labs integration, we have a [plugin](/plugins/other/SauceLabs).
 
 import DocCardList from '@theme/DocCardList';
 
