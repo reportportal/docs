@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: Version 5.7.3
 description: "Explore ReportPortal Version 5.7.3: enhanced error log navigation, improved lazy loading, and optimized Elasticsearch performance for better test analysis."
 ---
