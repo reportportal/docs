@@ -27,6 +27,40 @@ If the user is working in multiple tabs and the inactivity timeout is reached in
 
 <MediaViewer src={require('./img/server-settings/ServerSettings10.png')} alt="Inactivity timeout section" />
 
+### Password
+
+Admin can define the minimum password length for the whole instance. This setting applies to:
+
+* all new user accounts
+* password changes for any existing accounts
+
+:::note
+Existing passwords are not affected and remain valid even if they do not meet the newly configured minimum length.
+:::
+
+To set minimum password length:
+
+1. Log in as ADMIN.
+2. Navigate to Administrate -> Server Settings -> "Authorization Configuration" tab.
+3. Set the minimum password length to a value between 8 and 256 characters.
+4. Click "Submit".
+
+If the entered value is outside the allowed range, the system automatically adjusts it:
+
+* if the value is less than 8, it is set to 8
+* if the value is greater than 256, it is set to 256
+
+<MediaViewer src={require('./img/server-settings/PasswordLength.png')} alt="Password section in Server Settings" />
+
+The configured minimum password length is validated in the following scenarios:
+
+* User registration form
+* Create User modal window
+* Password change in the user profile
+* Password reset from the login page
+
+<MediaViewer src="https://youtu.be/Df0A5Ig6hq8" alt="Configuring password length in our test results dashboard" type="video" />
+
 ### GitHub
 
 To enable [GitHub authorization](/plugins/authorization/GitHub/):
