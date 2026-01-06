@@ -175,3 +175,8 @@ ReportPortal has defined application limits to maintain stable performance and c
 **6. Launch Merge**
 
 - **No hard cap**, but treat **around 20 launches** per merge as a safe operational limit, unless you have tested higher based on your infrastructure size and data distribution.
+
+:::note
+All bulk operations triggered from the “Make decision” modal are limited to 300 test items per request.<br />
+When more items are selected, the operation must be divided into multiple requests.
+:::
