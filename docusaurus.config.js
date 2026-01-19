@@ -590,10 +590,6 @@ const config = {
               to: '/plugins/other/SauceLabs',
               from: '/plugins/SauceLabs',
           },
-          {
-              to: '/work-with-reports/LogLevel#log-level-settings',
-              from: '/work-with-reports/ViewLaunches#log-level-settings',
-          },
         ],
       },
     ],
