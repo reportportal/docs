@@ -27,6 +27,10 @@ on:
       - README.md
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   empty-s3-bucket:
     runs-on: ubuntu-latest
