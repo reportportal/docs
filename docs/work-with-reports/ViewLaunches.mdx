@@ -109,7 +109,7 @@ preparation methods.
 
 >   PB + AB + SI + TI = Failed\_Test\_Cases + Skipped\_Test\_Cases +
 >   other\_FAILED\_methods
- 
+
 ## Navigate to items
 
 You can navigate to certain items using clickable values and charts with the number of tests items with all statuses available within the system:
@@ -138,6 +138,32 @@ The switcher is located on the left hand of the Name column header.
 Please note that that hidden item will not be visible on the LOG view for 'Next'/'Previous' listing.
 
 <MediaViewer src="https://youtu.be/1QWmSH_brVg" alt="Viewing data in our test report dashboard" type="video" />
+
+## Change Status on Step and Log level
+
+ReportPortal allows to manually change the execution status of Logs and Steps.
+This functionality can be used to correct execution results or reflect the actual test behavior.
+
+You can change the status of a Step or Log to one of the following values:
+- Passed
+- Failed
+- Skipped
+
+**Step level**
+
+<MediaViewer src={require('./img/view-launches/StepLevel.png')} alt="Change status on the Step level" />
+
+**Log level**
+
+<MediaViewer src={require('./img/view-launches/LogLevel.png')} alt="Change status on the Log level" />
+
+Changing the status on Log or Step level affects launch statistics and aggregated counters
+(Passed, Failed, Skipped) displayed in the Launches and Debug views.
+
+:::note
+Changing the execution status does not assign, modify, or remove a defect type.<br />
+Defect classification (Product Bug, Automation Bug, System Issue, No Defect, To Investigate) is a separate operation and should be performed independently during failure analysis.
+:::
 
 ## Nested Steps
 
