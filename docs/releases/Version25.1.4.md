@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 sidebar_label: Version 25.1.4
 description: Explore ReportPortal Version 25.1.4 release notes detailing bug fixes, plugin updates, and improvements, including SAML login issue resolution.
 ---
