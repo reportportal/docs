@@ -44,6 +44,18 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          lastVersion: '26.2-organizations',
+          onlyIncludeVersions: ['26.2-organizations', '26.1'],
+          versions: {
+            '26.2-organizations': {
+              label: '26.2-organizations',
+              banner: 'none',
+            },
+            '26.1': {
+              label: '26.1',
+              banner: 'none',
+            },
+          },
         },
         blog: false,
         theme: {
@@ -86,6 +98,10 @@ const config = {
             position: 'left',
             to: 'https://developers.reportportal.io/api-docs/',
             target: '_self',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
           },
           {
             href: 'https://reportportal.io/',
@@ -201,6 +217,7 @@ const config = {
           to: baseUrl, // To suggest URLs correctly for local and dev deployment
         },
         searchPagePath: 'search',
+        contextualSearch: true,
       },
     }),
 

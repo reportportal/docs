@@ -12,7 +12,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "version": "docusaurus docs:version"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,9 @@
   },
   "homepage": "https://github.com/reportportal/documentation#readme",
   "dependencies": {
-    "@docusaurus/core": "^3.6.0",
-    "@docusaurus/plugin-client-redirects": "^3.6.0",
-    "@docusaurus/preset-classic": "^3.6.0",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/plugin-client-redirects": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
     "@mdx-js/react": "3.0.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
@@ -38,9 +39,9 @@
     "yet-another-react-lightbox": "^3.15.6"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.6.0",
-    "@docusaurus/module-type-aliases": "^3.6.0",
-    "@docusaurus/types": "^3.3.2",
+    "@docusaurus/eslint-plugin": "^3.9.2",
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/types": "^3.9.2",
     "docusaurus-mdx-checker": "^3.0.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",

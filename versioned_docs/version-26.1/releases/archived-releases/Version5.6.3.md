@@ -1,0 +1,10 @@
+---
+sidebar_position: 15
+sidebar_label: Version 5.6.3
+description: ReportPortal v5.6.3 archived release notes with bug fixes and enhanced test automation reporting tools stability.
+---
+
+# Version 5.6.3
+
+## Bugfixing
+- Log4J vulnerabilities: [CVE-2021-44832](https://github.com/advisories/GHSA-8489-44mv-ggj8)

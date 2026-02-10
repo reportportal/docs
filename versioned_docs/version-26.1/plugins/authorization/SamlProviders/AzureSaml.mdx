@@ -1,0 +1,109 @@
+---
+sidebar_position: 2
+sidebar_label: Azure SAML
+description: Seamlessly integrate Azure SAML with ReportPortal for secure single sign-on, automatic user synchronization, and simplified access management in enterprise environments.
+---
+
+# Azure SAML
+
+SAML plugin is available in ReportPortal on the Plugins page.
+
+***If you have a pre-created Internal user, you can't log in by SAML using their credentials (Email or Name).***
+
+Login to ReportPortal via Azure SAML is available starting from version 5.7 (SAML Okta was implemented in versions before 5.7).
+
+Azure SAML is a useful authorization method for big companies with 100+ employees, especially if this organization is already presented in Azure service. The main benefit here is no need for manual account creation. Users can log in to the ReportPortal using Azure SAML in an uncomplicated way: select login with SAML, then choose Azure, and upon login users’ data is synchronized with ReportPortal automatically.
+
+If your organization is using Azure SAML and some employees left, there is no need to remove their accounts from ReportPortal and from other Azure applications – just clearing their accounts in Azure will be enough.
+
+To configure authorization via Azure SAML we need to synchronize Azure and ReportPortal.
+
+Firstly, configure SAML on Azure side.
+
+## Configure SAML on Azure side
+
+1. Log in to [Azure portal](https://portal.azure.com) using your organization creds.
+2. Click ```App Services```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML1.png')} alt="App Services button" />
+3. Click ```View``` in the ```Manage Azure Active Directory``` section.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML2.png')} alt="View button" />
+4. Click ```Manage Tenants```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML3.png')} alt="Manage Tenants" />
+
+### Create organization in Azure
+
+5. If you haven’t configured organization in Azure yet, click ```Create```.
+  :::note
+  if you have configured organization in Azure, please, go to step 9.
+  :::
+  <MediaViewer src={require('./img/azure-saml/AzureSAML4.png')} alt="Configure organization" />
+6. Select a tenant type (```Azure Active Directory```) and click ```Next: Configuration >``` button.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML5.png')} alt="Select a tenant type" />
+7. Fill in the necessary fields and click ```Next: Review + create >``` button.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML6.png')} alt="Create a tenant" />
+8. Pass the Captcha verification and click the ```Create``` button.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML7.png')} alt="Captcha verification" />
+
+### Create your application in Azure
+
+9. After the creation of an organization go to the ```Enterprise Applications``` section.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML8.png')} alt="Enterprise Applications section" />
+10. Click ```New application```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML9.png')} alt="New application button" />
+11. Click ```Create your own application```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML10.png')} alt="Create your own application" />
+12. Enter the name of your application, choose ```Integrate any other application you don't find in the gallery (Non-gallery)``` bullet and click ```Create``` button.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML11.png')} alt="The name of your application" />
+
+### Assign users to the application in Azure
+
+13. Assign users (e.g., yourself) to this application. Please, follow the next screenshots:
+  <MediaViewer src={require('./img/azure-saml/AzureSAML12.png')} alt="Assign users to your application" />
+  <MediaViewer src={require('./img/azure-saml/AzureSAML13.png')} alt="Add user/group" />
+  <MediaViewer src={require('./img/azure-saml/AzureSAML14.png')} alt="Add assignment" />
+
+### Configure Single sign-on on Azure
+
+14. Go to the ```Single sign-on``` section.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML15.png')} alt="Single sign-on section" />
+15. Choose SAML.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML16.png')} alt="Select a Single sign-on method" />
+
+### Basic SAML Configuration
+
+16. Configure ```Basic SAML Configuration``` settings as follows:
+  <MediaViewer src={require('./img/azure-saml/AzureSAML17.png')} alt="Basic SAML Configuration" />
+
+### Add Azure attributes
+
+17. Edit ```Attributes & Claims``` settings and add ***email***, ***firstName*** and ***lastName*** attributes (default Azure attributes have ugly format). Please follow the next screenshots:
+  <MediaViewer src={require('./img/azure-saml/AzureSAML18.png')} alt="Edit Attributes & Claims settings" />
+  <MediaViewer src={require('./img/azure-saml/AzureSAML19.png')} alt="Add new claim" />
+  <MediaViewer src={require('./img/azure-saml/AzureSAML20.png')} alt="Manage claim" />
+
+SAML configuration is completed on Azure side after adding these attributes.
+
+Ensure that your Advanced SAML claims options match those shown in the screenshots below.
+
+  <MediaViewer src={require('./img/azure-saml/AzureSAMLadvanced.png')} alt="Advanced SAML claims options" />
+
+Lastly, configure SAML on ReportPortal side.
+
+## Configure SAML on ReportPortal side
+
+1. Log in to **ReportPortal** as Admin.
+2. Open Menu at the bottom and choose ```Administrate``` section.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML21.png')} alt="Administrate section in our test automation reporting platform" />
+3. Select ```Plugins```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML22.png')} alt="Plugins section in our continuous testing platform" />
+4. Open ```SAML```.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML23.png')} alt="SAML plugin" />
+5. Click the ```Add integration``` button.
+  <MediaViewer src={require('./img/azure-saml/AzureSAML24.png')} alt="Add integration" />
+
+## Synchronize Azure SAML and ReportPortal
+
+6. Synchronize Azure SAML and ReportPortal as follows:
+  <MediaViewer src={require('./img/azure-saml/SAMLIntegration.png')} alt="Configure Azure SAML in our test automation dashboard" />
+
+Finally, you can log in to ReportPortal using Azure SAML.

@@ -1,0 +1,78 @@
+---
+sidebar_position: 2
+sidebar_label: Integration with testRigor
+description: Integrate testRigor with ReportPortal for seamless test case reporting and automated test result analysis workflows.
+---
+
+# Integration with testRigor
+
+Establish integration with the testRigor application to enable you to send your test cases directly to ReportPortal each time they are created and executed.
+
+:::note
+Please be aware that this integration has been carried out by the testRigor team.
+:::
+
+1. Open the [testRigor](https://testrigor.com) application.
+
+2. Initiate integration with ReportPortal.
+
+- If you have already created Test Suites, enable integration by clicking on the necessary Test Suite name to navigate to the Test Cases page.
+- For Test Suites that are newly created, avoid generating the tests at the Test Suites level. Instead, proceed to the Test Cases.
+
+<MediaViewer src={require('./img/testRigor/testRigor1.png')} alt="Initiate integration with ReportPortal" />
+
+3. On the Test Cases page, locate and click on 'Settings' in the left sidebar.
+
+4. On the Settings page, select the Integrations tab.
+
+<MediaViewer src={require('./img/testRigor/testRigor2.png')} alt="Integrations tab in testRigor" />
+
+5. Find ReportPortal in the list.
+
+6. Enable the checkmark “Enable ReportPortal”. Additional fields will become available.
+
+<MediaViewer src={require('./img/testRigor/testRigor3.png')} alt="Enable ReportPortal" />
+
+***Web address:*** enter the web address of the ReportPortal instance you are working with.
+
+***Project name:*** specify the name of the RP project where your tests should run.
+
+<MediaViewer src={require('./img/testRigor/testRigor4.png')} alt="Project name in our test automation reporting dashboard" />
+
+***API Key:*** generate your API Key on the ReportPortal application, accessible via Profile page > API Keys tab, and input it here.
+
+<MediaViewer src={require('./img/testRigor/testRigor5.png')} alt="API Key in our test reporting tool" />
+
+***Launch name:*** Provide a launch name to ensure your tests are properly identified. Otherwise, it will be displayed in the format 'appName Run #ID'.
+
+<MediaViewer src={require('./img/testRigor/testRigor6.png')} alt="Launch name in ReportPortal" />
+
+By selecting the *"Ignore SSL Errors"* checkbox, you will avoid recording any additional SSL logs.
+
+Tick the checkbox for *"Collect step statistics"* if you want to view Steps level on ReportPortal.
+
+<MediaViewer src={require('./img/testRigor/testRigor7.png')} alt="Steps level in ReportPortal" />
+
+Keep the checkbox for *"Collect step statistics"* unchecked to generate Nested Steps level in ReportPortal.
+
+<MediaViewer src={require('./img/testRigor/testRigor8.png')} alt="Nested Steps level in ReportPortal" />
+
+7. Scroll to the bottom of the page and click on the "Save" button.
+
+8. Switch to the Test Cases Page using the left sidebar menu and create Test Cases.
+
+<MediaViewer src={require('./img/testRigor/testRigor9.png')} alt="Create Test Cases in testRigor" />
+
+9. Switch to the Test Suite Details tab.
+
+10. Execute the Test Suite with the pre-created test cases.
+
+<MediaViewer src={require('./img/testRigor/testRigor10.png')} alt="Execute the Test Suite in testRigor" />
+
+11. Open ReportPortal -> the project specified in the integration.
+
+12. Verify that Launch is available.
+
+<MediaViewer src={require('./img/testRigor/testRigor11.png')} alt="Launch from testRigor in ReportPortal" />
+
+If you need to perform new executions, simply replicate the steps, and rerun the Test Suite, ensuring that the *"Do not update ReportPortal"* checkbox remains unchecked.

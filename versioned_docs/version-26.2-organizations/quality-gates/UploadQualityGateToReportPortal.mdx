@@ -1,0 +1,31 @@
+---
+sidebar_position: 4
+sidebar_label: Upload Quality Gate to ReportPortal
+description: Upload Quality Gates to ReportPortal for quality control.
+---
+
+# Upload Quality Gate to ReportPortal
+
+:::important
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+:::
+
+The default configuration of our continuous testing platform doesn't contain Quality Gate. For adding this feature, you need to [receive a link to the .jar file from ReportPortal](/quality-gates/HowToInstallQualityGates).
+
+Download the .jar file and upload it to ReportPortal. For that, perform following actions:
+
+* Login ReportPortal as an Admin
+* Open ```Admin Page > Plugins```
+* Click on the button ```Upload```
+* Add .jar file to the modal ```Upload plugin```
+* And click the button ```Upload```
+* Reload page
+
+As soon as the plugin has been added to the ReportPortal, a new ``` Quality Gates tab``` will be added to the Project Settings.
+
+<MediaViewer src={require('./img/NoQualityGatesView.png')} alt="No Quality Gates View" />
+
+On the All launches page, the system adds a label "N/A" to each launch.
+```A label "N/A"``` means that the Quality Gates has not been run for a launch yet.
+
+<MediaViewer src={require('./img/NAQualityGateLabel.png')} alt="N/A Quality Gate Label in our continuous testing platform" />

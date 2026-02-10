@@ -1,0 +1,98 @@
+---
+sidebar_position: 6
+sidebar_label: How to get an access token in ReportPortal
+description: Learn how to obtain an access token in ReportPortal using your login credentials or API key, enabling secure interactions with the ReportPortal REST API.
+---
+
+# How to get an access token in ReportPortal
+
+There are two ways to authorize in the ReportPortal API:
+
+## 1. Authorization with user’s login and password
+
+This is the main and **recommended way** to get access to ReportPortal API.
+
+Make the following HTTP request to get user's access token using login and password:
+
+```
+POST <report_portal_url>/uat/sso/oauth/token
+
+BODY with parameters:
+grant_type: password
+username: <username>
+password: <password> 
+```
+<MediaViewer src={require('./img/AccessToken/AccessToken1.png')} alt="Authorization to ReportPortal Testops with user’s login and password" />
+
+Or you can use the following curl request:
+
+```curl
+curl --header "Content-Type: application/x-www-form-urlencoded" \
+     --request POST \
+     --data "grant_type=password&username=<username>&password=<password>" \
+     --user "ui:uiman" \
+     <report_portal_url>/uat/sso/oauth/token
+```
+
+Then you will receive a response with an access token:
+
+```json
+{
+     "access_token": <access_token>,
+     "token_type": "bearer",
+     "expires_in": <token_lifetime_ms>,
+     "refresh_token": <refresh_token>,
+     ...
+}
+```
+Now you can use “access_token” with any request to API by sending it as HTTP Authorization header:
+
+```http
+HTTP Header:
+Authorization: Bearer <access_token>
+
+```
+
+## 2. Authorization with user's API Key (for agents)
+
+Another method involves using the API Key found on the user's Profile page.
+
+The API Key is a unique token that grants access to the ReportPortal REST API.
+
+To use it, log in and navigate to the Profile page, then find the API Keys tab. If you’ve previously integrated agents using UUID, it has been converted to a Legacy API Key at the moment of migration to newest version and it remains valid and operational.
+
+:::note
+It will continue to work even if you generate new API Keys.
+:::
+
+Thus, you can use several API keys at the same time. And revoke unused, expired or publicly exposed keys.
+
+<MediaViewer src={require('./img/AccessToken/LegacyAPIKey.png')} alt="Authorization with user's API Key (for agents)" />
+
+To generate a new API key in the ReportPortal app, click on the "Generate API Key" button.
+
+You are free to assign any name to this API key, as long as it is unique and consists of 1 to 40 characters. Keep in mind that duplicate API key names are not allowed.
+
+The system will automatically prefix the generated API key with its assigned name for easy identification. If the API key name contains spaces or underscores, these will be replaced by hyphens in the API key prefix.
+
+It's crucial to understand that the API key will be visible only at the point of creation. We strongly recommend copying and securely storing it for future use, as it will be impossible to retrieve later. This practice aligns with stringent security measures and standards.
+
+<MediaViewer src={require('./img/AccessToken/NewAPIKeys.png')} alt="API Keys" />
+
+You have the ability to create multiple API keys for various purposes, such as for automation or for integration with third-party services. However, it's important to note that all API keys generated from the user's Profile page are functionally equivalent from the permissions standpoint.
+
+Users can also revoke an API key at any time. Upon revocation, all related information will be removed from the database, and the revoked API key will no longer be usable.
+
+An API key functions similarly to a regular token. When making requests to the ReportPortal API, simply include it in the HTTP Authorization header as follows:
+
+```http
+HTTP Header:<br />
+Authorization: Bearer <access_token>
+```
+
+<MediaViewer src={require('./img/AccessToken/APIKeyUsing.png')} alt="How to use API Key" />
+
+
+:::note
+Please be aware that this type of token is specifically designed for use by ReportPortal client tools (agents). We do not recommend using it to provide direct access to API endpoints.
+:::
