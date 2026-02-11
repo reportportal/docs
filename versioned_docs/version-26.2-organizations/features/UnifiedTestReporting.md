@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Unified test reporting
-description: Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard.
+description: Unify results from all test frameworks in one place. Streamline collaboration and real-time insights in a single test automation dashboard.
 ---
 
 # Single-entry point and unified test reporting
@@ -18,9 +18,9 @@ ReportPortal is designed to unify reports from various test frameworks and langu
 
 With a single link, you can direct team members to a central location where test results are not just collected but also analyzed. This facilitates collaboration by creating a universal language and understanding of test results across different team members, irrespective of their roles or technical proficiencies. The centralized reporting also aids in "Shift Left" testing approaches, where test feedback is made available earlier in the development cycle by Developers and not only QA Engineers.
 
-**Immediate Feedback and Quality Gate Integration**
+**Immediate Feedback**
 
-When combined with automated quality gates, the platform can provide instantaneous verdicts on whether code changes have passed or failed the tests. In the event of a failure, the platform's auto-analysis feature helps to pinpoint the exact cause. This real-time, automated feedback is invaluable in modern DevOps pipelines, accelerating the release process and enhancing code quality.
+The platform can provide instantaneous verdicts on whether code changes have passed or failed the tests. In the event of a failure, the platform's auto-analysis feature helps to pinpoint the exact cause. This real-time, automated feedback is invaluable in modern DevOps pipelines, accelerating the release process and enhancing code quality.
 
 In summary, ReportPortal’s single-entry point for all test reports offers the unique advantage of consolidating, standardizing, and analyzing test data in one location. This unified approach significantly simplifies the testing process, fosters better collaboration, and enables more agile development cycles. Adopting ReportPortal is a strategic move toward a more efficient and streamlined testing environment. 
 

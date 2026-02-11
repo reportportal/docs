@@ -13,6 +13,5 @@ Our Premium Features have been meticulously designed and developed with large-sc
 We invite you to explore our Premium Features, understanding their objectives and benefits in detail on our documentation page. We are confident that you'll find the value they add to be well worth the investment. As always, we're here to answer any questions and assist you in getting the most out of your ReportPortal experience.
 
 **Available Premium Features:**
- - [**Quality Gates**](/quality-gates)
  - [**SCIM Server feature**](/features/SCIMServerFeature)
  - [**Test Executions**](/features/TestExecutions)

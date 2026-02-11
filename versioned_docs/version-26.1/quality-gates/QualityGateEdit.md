@@ -12,4 +12,4 @@ This feature is available in ReportPortal with a [managed services subscription]
 
 If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.
 
-If you want to recalculate Quality Gate with a new values, please check the  section [How to recalculate Quality Gates](/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates).
+If you want to recalculate Quality Gate with a new values, please check the  section [How to recalculate Quality Gates](/26.1/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates).

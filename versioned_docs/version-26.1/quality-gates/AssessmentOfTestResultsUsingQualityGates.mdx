@@ -71,7 +71,7 @@ How is status calculated:
 * For "Amount of issues" rule: if a number of To Investigate issues in the analyzed launch is more than allowable To Investigate level
 * For "New Failure": if a baseline is not found in the system
 
-If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section [How to recalculate Quality Gates](/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates).
+If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section [How to recalculate Quality Gates](/26.1/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates).
 
 ### Timeout
 Specially for integration with CI\CD, Quality Gates has parameter ```Timeout```. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from ```Timeout```. Default ```Timeout``` equals to 2 hours. It means, that after 2 hours after launch finish, the system force recaluculats Quality Gate Status and defined status.

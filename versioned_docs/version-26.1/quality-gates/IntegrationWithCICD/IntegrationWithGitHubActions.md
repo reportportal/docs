@@ -216,7 +216,7 @@ will cut it off from the output.
 
 Enterprise users can utilize our Quality Gates plugin to get more
 control over application-under-test quality. To enable and configure Quality Gates plugin on
-ReportPortal, please, refer to [corresponding documentation](/quality-gates).
+ReportPortal, please, refer to [corresponding documentation](/26.1/quality-gates).
 
 ReportPortal's Quality Gates plugin doesn't have native integration with GitHub Actions, so we
 need to use a custom approach here. One way is polling ReportPortal Launch info API for

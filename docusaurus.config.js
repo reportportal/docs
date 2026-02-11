@@ -100,6 +100,11 @@ const config = {
             target: '_self',
           },
           {
+            label: 'Releases',
+            position: 'left',
+            target: '_self',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
           },
@@ -212,18 +217,8 @@ const config = {
         appId: 'CRZVCU6DFV',
         apiKey: 'd8b54d5902dab4d50e4fba6321fb01a7',
         indexName: 'reportportal',
-        replaceSearchResultPathname: {
-          from: '/docs/',
-          to: baseUrl, // To suggest URLs correctly for local and dev deployment
-        },
         searchPagePath: 'search',
-        contextualSearch: true, 
-        searchParameters: {
-          facetFilters: [], 
-          attributesToRetrieve: ['hierarchy', 'content', 'anchor', 'url', 'version'],
-          attributesToHighlight: ['hierarchy', 'content'],
-        },
-        externalUrlRegex: 'external\\.com|domain\\.com',
+        contextualSearch: false,
       },
     }),
 
@@ -276,10 +271,6 @@ const config = {
           {
             to: '/external-integrations',
             from: '/category/external-integrations',
-          },
-          {
-            to: '/quality-gates',
-            from: '/category/quality-gates',
           },
           {
             to: '/case-studies',

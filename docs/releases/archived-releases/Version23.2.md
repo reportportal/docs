@@ -37,7 +37,7 @@ Please note that Features 3 and 4 are configurable, giving you the flexibility t
 
 You can now generate as many API Keys as you need. You also have the ability to keep track of the creation date of API Keys and revoke any that are unused. Old tokens will still continue to function. Additionally, easy identification of the purpose of API Keys is facilitated through the use of prefixes.  
 
-- **[Gitlab CI integration](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI) Workaround:**  
+- **Gitlab CI integration Workaround:**  
 
 ## 2. Small updates:
 

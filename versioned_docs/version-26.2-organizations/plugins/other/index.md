@@ -11,8 +11,6 @@ The [Sauce Labs](/plugins/other/SauceLabs) plugin connects ReportPortal with Sau
 
 The [Test Executions](/test-executions/) plugin introduces a refreshed approach to exploring and managing test results in ReportPortal. Instead of focusing on individual launches, it displays all test cases in a unified, easily searchable list. Users can apply multi-level filters, adjust the view to match their workflow, and analyze execution details with greater precision. This feature simplifies navigation across large datasets, enhances visibility into test progress, and supports more efficient decision-making during the testing process.
 
-The [Quality Gates](/quality-gates/) plugin automates quality control in continuous testing pipelines, helping teams accelerate release cycles and ensure product reliability. It allows users to define customizable quality rules directly in ReportPortal and automatically evaluates each CI/CD build against them. Once a test run is completed, ReportPortal sends instant feedback to the CI/CD system, indicating whether the build meets predefined criteria or should be stopped for review. 
-
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

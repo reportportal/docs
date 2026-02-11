@@ -77,7 +77,7 @@ The initial steps involve installing and configuring the tool. [Installation ste
 
 #### 8. Does the tool integrate with my existing test automation framework?
 
-ReportPortal can be integrated with common testing frameworks and CI tools. Consult [this section](/log-data-in-reportportal/test-framework-integration) of the documentation for detailed information on test framework integration. And use following links for Integration with CI/CD: [Integration with GitLab CI](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI/), [Integration with Jenkins](/quality-gates/IntegrationWithCICD/IntegrationWithJenkins/).
+ReportPortal can be integrated with common testing frameworks and CI tools. Consult [this section](/log-data-in-reportportal/test-framework-integration) of the documentation for detailed information on test framework integration. And use following links for Integration with CI/CD: [Integration with GitLab CI](/26.1/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI/), [Integration with Jenkins](/26.1/quality-gates/IntegrationWithCICD/IntegrationWithJenkins/).
 
 #### 9. What type of license does ReportPortal use?
 
@@ -87,7 +87,7 @@ ReportPortal is licensed under Apache v2.0, which means it’s free to use, come
 
 We offer two premium features:
 
-* [Quality Gates](/quality-gates/) – a set of predefined criteria that must be met for a test run to be considered successful.
+* [Quality Gates](/26.1/quality-gates/) – a set of predefined criteria that must be met for a test run to be considered successful.
 * [SCIM Server](/features/SCIMServerFeature) – helps automate user management by syncing users and their access rights between your identity provider and ReportPortal.
 
 #### 11. Does ReportPortal use AI?
