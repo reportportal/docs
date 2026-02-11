@@ -1,0 +1,405 @@
+---
+sidebar_position: 3
+sidebar_label: Project settings
+description: Configure project settings, notifications, defect types, and data retention policies to optimize your test automation reporting dashboard performance.
+---
+
+# Project settings
+
+To see the list of available projects and open a project, click the drop-down list in the top of the left menu.
+
+ReportPortal supports customization of the default settings.
+
+**Permission:** 
+Users with the `Administrator` role can edit project settings on the project "Settings" page in Administrate section and on the Project space.
+Users with the `PROJECT_MANAGER` role can edit the settings on the project space only.
+`MEMBER`/ `OPERATOR`/ `CUSTOMER` can only view applied project settings.
+
+To go to the project settings page, click the "Project Settings" icon in the left menu.
+
+The project configuration page will be opened.
+
+The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](/26.1/quality-gates)).
+
+## General settings
+
+Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
+Functionality of data removing depends on two configurations. 
+
+The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](/installation-steps-advanced/JobsConfiguration)
+
+The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
+
+- Name – is a disabled field as the project name cannot be changed.
+
+In addition to the Project Settings General section, you can find the project name on the left menu and in the URL.
+
+<MediaViewer src={require('./img/ProjectName.png')} alt="Where can I find project name in ReportPortal" />
+
+- **Launch inactivity timeout** - this parameter specifies the scheduled time for a job to interrupt inactive launches (launches which have the status 'in progress', but there is no any items during the chosen period). There are six options: 
+  - 1 hour, 
+  - 3 hours, 
+  - 6 hours, 
+  - 12 hours, 
+  - 1 day, 
+  - 7 days.
+
+- **Keep launches** - this parameter specifies how long the system will keep old launches in the data base. There are five options:
+  * 7 days,
+  * 14 days,
+  * 21 days,
+  * 30 days,
+  * 90 days.
+
+After this period a launch will be deleted, and you can not see it in ReportPortal.
+
+- **Keep logs** - this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are five options:
+  * 7 days,
+  * 14 days,
+  * 21 days,
+  * 30 days,
+  * 90 days.
+
+Widgets continue to work even if the logs are deleted, as they are linked to test items.
+
+- **Keep attachments** - this parameter specifies how long to keep binary data (screenshots, files, video, and others attachments)
+    in the system. There are five options:
+  * 7 days,
+  * 14 days,
+  * 21 days,
+  * 30 days,
+  * 90 days.
+
+<MediaViewer src="https://youtu.be/ih-ECyC29f0" alt="Project settings in our real time dashboard open source" type="video" />
+
+## Integrations
+
+The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
+
+For more information on this topic, please refer to [Integration with external systems](/configuration/IntegrationViaPlugin).
+
+## Notifications
+
+The ‘Notifications’ tab provides the administrator with the ability to activate notifications on the project – through either Email or Slack.
+
+ReportPortal provides a way to add multiple rules with specific conditions. The notification rule should be unique per Notification group – Email or Slack, have a unique parameter set. For example: In case, Launch names, Attributes.
+
+:::note
+Users with ADMINISTRATOR role can configure ‘Notifications’ in the Administrate section.<br />
+Users with PROJECT_MANAGER role can edit the settings on the project space only.<br />
+Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability to edit the project settings, however, they do have the permission to view them.
+:::
+
+### Email notifications
+
+:::tip
+For using this functionality be sure that the [Email server](/plugins/notifications/EmailServer/) is configured. For that, go to the Project Settings -> Integrations -> Email Server.
+:::
+
+To create Email notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Email Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Recipients** – optional field
+
+Start typing any symbols into the ‘Recipients’ field. You can select an item from the auto-complete tooltip using the keyboard (use the ‘Up’ and ‘Down’ arrows and ‘Enter’ button). You can also enter a custom email into the ‘Recipients’ field. To add a custom email, just enter the email address and press ‘Enter’.
+
+**Launch owner** – optional checkbox
+
+The ‘Launch owner’ checkbox is selected by default. Uncheck ‘Launch owner’ to exclude him/her from the notification.
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent upon the launch finish.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+Start typing any symbols into the ‘Launch names’ field. You can select an item from the auto-complete tooltip using the ‘Up’ and ‘Down’ arrows and clicking ‘Enter’ on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications when each of them finishes.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, user can provide key/value for attributes and select the necessary radio button:
+
+* All attributes should match
+* Any attribute should match
+
+Start typing any symbols into the ‘Attribute key’ and ‘Attribute value’ fields. The system will suggest the results in the dropdown, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
+
+You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/EmailNotification.png')} alt="Create Email Notification rule" />
+
+### Slack notifications
+
+:::tip
+To use this functionality, ensure that the [Slack plugin](/plugins/notifications/Slack) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+:::
+
+To create Slack notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Slack Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Webhook URL** – mandatory field (it is configured on the [Slack side](/plugins/notifications/Slack#create-an-application-in-slack))
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent upon the launch finish.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+Start typing any symbols into the ‘Launch names’ field. You can select an item from the auto-complete tooltip using the ‘Up’ and ‘Down’ arrows and clicking ‘Enter’ on the keyboard. This is an alternate way you can add a new launch name that does not exist on the project. Several launches names can be selected; the recipients will receive notifications when each of them finishes.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, user can provide key/value for attributes and select the necessary radio button:
+
+* All attributes should match
+* Any attribute should match
+
+Start typing any symbols into the ‘Attribute key’ and ‘Attribute value’ fields. The system will suggest the results in the dropdown, after at least 1 symbol is provided. It is also possible to add a new attribute (that does not exist on the project). Several attributes can be selected at once; the corresponding recipients will receive notifications about the launches that have all the specified attributes.
+
+You can edit/ copy/enable/disable notification rule by clicking on the appropriate controls on the notification rule.
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/SlackNotification.png')} alt="Create Email Notification rule" />
+
+### Telegram notifications
+
+:::tip
+To use this functionality, ensure that the [Telegram plugin](/plugins/notifications/Telegram) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+:::
+
+To create Telegram notification rule, perform the following steps:
+
+1. Go to the Project settings -> Notifications.
+
+2. Choose Telegram Notifications Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Chat id** – mandatory field, copied from group info in [Telegram](/plugins/notifications/Telegram#configuration-on-telegram-side)
+
+:::important
+Add ‘-’ before the chat id.
+:::
+
+**Bot Api Key** - mandatory field, received during registration [your Telegram bot](/plugins/notifications/Telegram#configuration-on-telegram-side)
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi-selection.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/TelegramNotification.png')} alt="Create Telegram Notification rule" />
+
+## Defect types
+
+The "Defect Types" tab allows users with permissions to create custom defect types as subtypes of default defects on the project.
+
+After Installation the ReportPortal by default sets-up the following defect types groups:
+
+* **To investigate** - means that no investigation was performed on this defect yet.
+* **Product Bug** - defect was investigated and a production bug was found as a cause for this test failure.
+* **Automation Bug** - defect was investigated and an automation test is not correct.
+* **System Issue** - defect was investigated and it turns out that it is a system-level issue, like the app, crashed and caused the test to fail.
+* **No Defect** - defect was investigated and defined as not a defect.
+
+ReportPortal allows the use of existing default defect types (Product Bug, Automation Bug, System Issue, No Defect, To investigate) and or to create custom ones on the project settings page.
+
+To create custom defect types, perform the following steps:
+
+1. Login into the ReportPortal.
+2. Navigate to Projects -\> Project "Settings" page.
+3. Open "Defect Types" tab 
+4. Click "Add Defect Type" button under any default defect type
+5. Add new defect type form will appear 
+6. Enter "Defect name" and "Abbreviation", select color for defect presentation on the launches grid and widgets.  
+7. Submit form. You will see an added defect type on the chart preview.
+
+Add more custom defects, if you need it. The system allows us to add up to ten subtypes of each default defect type.
+
+Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
+For more information refer to the [Investigation of failure](/work-with-reports/InvestigationOfFailure) topic.
+
+:::note
+Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
+
+You can create up to 15 custom defect types for each group.
+:::
+:::tip
+If you have deleted a custom type from the system, all test executions with this deleted defect type get the parent type of the group in which deleted defect has belonged. Statistics updates in all launches where a deleted defect was present.  
+For example, if you create a custom "Product Bug-1" as a subtype of "Product Bugs" group and investigate a few
+defects as "Product Bug-1", then remove "Product Bug-1" from your project, all investigated "Product Bug-1" defects
+will be shown as "Product Bug".
+:::
+<MediaViewer src="https://youtu.be/CcU2_dEu59k" alt="Defect Type Configuration for clear test execution report" type="video" />
+
+## Log Types
+
+Log types define how log entries are categorized and visually highlighted, helping users quickly understand the importance and context of events. Every log entry belongs to a specific log type. Some core system log types are built in and cannot be removed, while custom log types can be added and configured to meet your project needs.
+
+In the Project Settings -> Log Types tab, you can find the log types available in your project –  both system and custom. On this page, you can create custom log types, edit their appearance, delete custom log types, and configure which log types will be displayed in the log level slider on the Log page of the test item.
+
+**Permissions:**<br />
+Only Admin and Project Manager can manage log types.
+
+### Create custom log type
+
+You can create your own log types to better control how logs are organized and visually presented within a project.
+
+**To create a custom log type:**
+
+1. Go to the Project settings -> Log types.
+2. Click the "Create log type" button.
+3. Enter a unique "Log type name".
+4. Provide a numeric "Log level" value.
+5. Select colors for the "Label color", "Background", and "Text color".
+6. Toggle "Text bold" if you want the log type to appear in bold.
+7. Click "Create" button.
+
+<MediaViewer src={require('./img/log-types/CreateLogType.png')} alt="Create Log Type in our test report dashboard" />
+
+When a custom log type is created, it is added to the list of available log types and becomes immediately usable within the project.
+
+:::note
+The "Show in log filter" flag for newly created log types is OFF by default.
+:::
+
+<MediaViewer src={require('./img/log-types/FilterOff.png')} alt="Show in log filter flag for just created log type" />
+
+:::note
+If a user reports tests with a log type that doesn’t exist in the project, the system assigns them level 60000 – Unknown.
+:::
+
+<MediaViewer src="https://youtu.be/SPjcH5UJ2Dk" alt="Create custom log type" type="video" />
+
+### Edit log type
+
+You can update existing log types, adjust their appearance, and manage whether they appear in the log type filter slider.
+
+:::note
+If you update a log type name, make sure to update it in your reporting configuration as well. The system currently identifies log types by their name. <br />
+If you change a log level, all previously reported logs with the old level will be treated as Unknown.
+:::
+
+**To edit log type:**
+
+1. Go to the Project settings -> Log types.
+2. Click the "Edit" icon next to a custom log type.
+3. Update the "Log type name", "Log level", and appearance settings (label color, background color, text color, bold).
+4. Click "Save" button.
+
+<MediaViewer src={require('./img/log-types/EditCustom.png')} alt="Edit custom log type" />
+
+:::note
+Log type name and Log level of a system log type cannot be changed.
+:::
+
+<MediaViewer src={require('./img/log-types/EditSystem.png')} alt="Edit system log type" />
+
+**To manage the "Show in log filter" toggle:**
+
+1. Go to the Project settings -> Log types.
+2. Modify the "Show in log filter" toggle.
+
+Log types marked as filterable appear in the log type filter slider on the log view, along with an additional "All" option that shows logs of every type.
+
+When a log type is selected in the slider, logs with that log level and all higher log levels are displayed. Even if a specific type does not appear in the slider but falls within the selected range, its logs are still included. If no log types are marked as filterable, the slider does not appear.
+
+:::note
+A maximum of 6 log types can be active in the filter slider at the same time (plus the "All" option).
+:::
+
+<MediaViewer src={require('./img/log-types/ShowInLogFilter.png')} alt="Managing Show in log filter" />
+
+<MediaViewer src="https://youtu.be/YNo3yHyo1os" alt="Edit log type" type="video" />
+
+### Delete custom log types
+
+You can delete custom log types from the project.
+
+:::important
+System log types cannot be deleted.
+:::
+
+**To delete a custom log type:**
+
+1. Go to the Project settings -> Log types.
+2. Find the custom log type you want to delete.
+3. Click the "Delete" icon.
+4. Click "Confirm" button.
+
+<MediaViewer src={require('./img/log-types/Delete.png')} alt="Delete custom log type" />
+
+<MediaViewer src="https://youtu.be/zE1w5MzQcS8" alt="Delete custom log type" type="video" />
+
+## Analyzer
+
+The Analyzer can allow reducing test failure analysis routine on the project.
+
+For more information on this topic, please refer to [Auto-Analysis documentation](/analysis/AutoAnalysisOfLaunches).
+
+## Pattern Analysis
+
+The "Pattern Analysis" feature allows identifying recurring failure patterns and common behaviors across test results.
+
+For more details, see the [Pattern Analysis documentation](/analysis/PatternAnalysis).
+
+## Demo data
+
+The "Demo Data" tab provides a way to generate demo data on the project.
+
+The generated data could demonstrate how the launches, filter, and dashboard will look. On the other hand, demo data could be 
+modified or removed without any effect of your real objects.
+
+<MediaViewer src="https://youtu.be/bXHY0_sXAF8" alt="Generate Demo Data with test report&analytics dashboard" type="video" />

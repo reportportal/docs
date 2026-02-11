@@ -1,0 +1,363 @@
+---
+sidebar_position: 2
+sidebar_label: Operations under launches
+description: Manage launch operations including editing attributes, merging launches, and bulk actions to streamline test execution reporting workflows.
+---
+
+# Operations under launches
+
+There are several ways of how launches could be modified and managed in our test automation reporting dashboard.
+
+## Edit launch attributes and description
+
+The system allows editing attributes and descriptions for the launch on the "Launches" and "Debug" modes.
+
+Permission: next users can modify launches:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+To edit a launch, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select "Edit" option ('pencil' icon) to the selected launch.
+3. The launch editor will be opened with the following options.
+4. Make the required changes and click the "Save" button.
+
+<MediaViewer src="https://youtu.be/XRjtJ8Dq468" alt="Edit Launch in our test automation reporting dashboard" type="video" />
+
+## Edit test item attributes and description
+
+The system allows to edit attributes and description for the test items on the "Launches" and "Debug" pages.
+
+Permission: next users can modify test items:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+To edit description of tests in ReportPortal or edit attributes, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Drill down to the test level of any launch.
+3. Select the "Edit" option ('pencil' icon) to the selected test item.
+4. Make the required changes and click the "Save" button.
+
+<MediaViewer src="https://youtu.be/mGhwWwq_R3g" alt="Edit Item" type="video" />
+
+## Merge launches
+
+Merge launches feature can help you to merge the existing launches into one. If your project has a really huge number of regression suites and they cannot be in one particular launch, so, they divided into parts. As soon as they completed, they could be merged in one separate launch to represent this data on dashboards and create reports.
+
+ReportPortal provides two options for merge: Linear and Deep. The difference in merge options is described below.
+
+Basically, the merge models distinguished by how the launches elements are collected in a resulting launch as shown on a picture:
+
+<MediaViewer src={require('./img/manage-launches/MergeBasicModel.png')} alt="Merge Basic Model" />
+
+**Linear merge**
+
+In case the user selects the "Linear merge" option, the new launch is created. The new launch contains elements of merging launches. Levels of elements stay the same as in origin launches. Status and issues statistics are calculated as the sum of statistics of all merged launches. The origin launches are deleted from the system.
+
+**Deep merge**
+
+In case the user selects the "Deep merge" option, the system creates a new launch and check items with the following conditions simultaneously:
+
+* test items with the same names
+* test items have the same type (SUITE or TEST)
+* test items are on the same path (number of parents)
+* test items with descendants.
+
+If such elements are found only the earliest one is added to the new launch. All descendants are collected on their levels as in the original launches. The merge is started from the upper levels to the lower levels. In case the upper level is not merged, the lower levels will not be merged as well. Items without descendants are not merged despite their level. Status and issues statistics are calculated for a new launch. The original launches are deleted from the system.
+
+The Linear and Deep Merge algorithm, as described above, is shown on a scheme:
+
+<MediaViewer src={require('./img/manage-launches/MergeScheme.png')} alt="Merge Scheme" />
+
+For instance, we have Launch-1 and Launch-2 to be merged. If system founds that Suite_A in Launch-1 and Suite_A in Launch-2 have the same names and the same types and the same path and have descendants, so only the earliest Suite_A (according to start time) is added to the new launch. All descendants of merged suites are combined under the Suite_A. Then the system searches for the same matches on the next level (Test level).
+
+If items do not meet the conditions described for the "Deep Merge" option then they are collected the same way as described for the "Linear merge" option.
+
+Permission: Next users can merge launches:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+To merge launches, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select required launches by clicking on their checkboxes.
+3. Open 'Actions' list
+4. Click the "Merge" button.
+5. Merge launches popup will be opened.
+6. Select the merge type 'Linear Merge' or 'Deep Merge'
+7. Parameters fields become active. Merge popup contains:
+
+```javascript
+                      Launch name: (editable)
+                            Owner: The field is filled in with the current user.
+                      Description: collect data from all launches 
+                             Attributes: collect unique attributes from all launches
+                   Time Start/End: filled in and disabled.
+Checkbox 'Extend child suites description with original launches names': Unchecked by default
+```
+
+8. Make changes and click the "Merge" button on the "Merge Launches" window. After the merge, a new run will be shown on the common launches list.
+
+:::note
+The following launches cannot be merged:
+- Launches in progress
+- Launches with active "Analysis" process
+- Launches with active "Match issues in launch" process
+:::
+
+:::important
+No fixed limit, but merging ~20 launches at a time is recommended for stable performance.
+:::
+
+<MediaViewer src="https://youtu.be/oOyuiYEZLnQ" alt="Merge Launches in our centralized test automation tool" type="video" />
+
+## Compare launches
+
+Compare launches feature in our test execution dashboard can help you to compare launches side by side to define differences between them.
+
+Permissions: All users on the project
+
+To compare launches, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select required launches by clicking on their checkboxes.
+3. Expand the 'Actions' list
+4. Select the "Compare" option.
+5. The system shows a window where a widget with bars is displayed, reflecting the Passed/Failed/Skipped and Product Bug/Automation Bug/System Issue/To Investigate test items.
+
+:::note
+Launches can be compared on the 'Launches' page and not on the 'Debug' page.
+:::
+<MediaViewer src="https://youtu.be/bfLVTKIHf7U" alt="Compare Launches" type="video" />
+
+## Move launches to Debug
+
+The "Debug" section is used to hide incorrect launches from the CUSTOMER view.
+
+Permission: Next users can move launches to "Debug"/"Launches" mode:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with MEMBER Project Role - Launch Owner
+
+To move a launch to the "Debug" section, perform the following steps:
+
+1. Navigate to the "Launches" page
+2. Select the "Move to Debug" option from the context menu on the left hand of the launch name.
+3. The warning popup will be opened
+4. Click the 'Move' button
+5. The launch gets to "Debug" page and removed from "Launches" page
+
+To return the launch to the "Launches" section, navigate to the "Debug" section and select the "Move to All Launches" from the context menu.
+
+To move some launches to the "Debug" section simultaneously, perform the following steps:
+
+1. Navigate to the "Launches" page
+2. Select required launches by click on their checkboxes
+3. Open 'Actions' list
+4. Select "Move to Debug" from the list
+5. The warning popup will be opened.
+6. Confirm the action
+7. The launches get to the "Debug" page and removed from the "Launches" page.
+
+To return the launches to the "Launches" section, navigate to the "Debug" section, select them and select "Move to All Launches" from the 'Actions' list.
+
+<MediaViewer src="https://youtu.be/-DBDmyWEQ5A" alt="Move launches to Debug" type="video" />
+
+## Force finish launches
+
+The system allows finishing launches on the "Launches" and the "Debug" pages manually.
+
+Permission: Next users can stop launches:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+To finish a launch that is in progress now, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select the "Force Finish" option in the context menu on the launch name's left hand.
+3. The warning popup will be opened.
+4. Click the "Finish" button.
+5. The launch will be stopped and shown in the launches table with the "stopped" tag and the "stopped" description. All the statistics collected by this time will be displayed.
+
+<MediaViewer src="https://youtu.be/rRyfktuvhH0" alt="Force finish" type="video" />
+
+To finish some launches simultaneously those are in progress now, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select required launches that are in progress by click on their checkboxes
+3. Open 'Actions' list
+4. Select "Force Finish" from the list
+5. The warning popup will be opened.
+6. Confirm the action
+7. All selected launches will be stopped and shown in the launches table with the "stopped" tag and the "stopped" description. All the statistics collected by this time will be displayed.
+
+## Export launches reports
+
+The system allows exporting launches reports on the 'Launches' and the 'Debug' modes.
+
+You can export the launch report in the following formats: PDF, XLS, HTML. This feature supports test results download as Excel (XLS), PDF, HTML, providing flexibility for further analysis or sharing.
+
+Launch structure being exported:
+
+* launch
+* suit
+* test
+* step
+
+:::note
+Nested steps and logs are not exported.
+:::
+
+To export a launch, perform the following steps:
+
+1. Go to the 'Launches' page.
+2. Open the burger menu for the launch.
+3. Click on the 'Export report' option in the menu.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches1.png')} alt="Export report option in the menu" />
+
+4. Select export file format in the dropdown (PDF, XLS, HTML).
+5. Check the 'Include Attachments' checkbox if needed.
+6. Click 'Export' button.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches2.png')} alt="Export button" />
+
+:::important
+Do not refresh the page while export report is being generated.
+:::
+
+System alerts appear at the bottom of the page and include:
+
+* Notification about the start of a launch report export
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches3.png')} alt="Notification about the start of a launch report export" />
+
+* Notification about the completion of a launch report export
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches4.png')} alt="Notification about the completion of a launch report export" />
+
+The notification about report generation appears at the top of the page. It also displays the number of reports that are currently in progress.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches5.png')} alt="The number of reports that are currently in progress" />
+
+:::important
+The export operation works for a separate launch only. You cannot export multiple launches at once.
+:::
+
+:::note
+The XLS and HTML reports are exported in a one-page format, while the PDF report is generated with page breaks.
+:::
+
+**Export with attachments**
+
+When exporting with the 'Include Attachments' checkbox selected, the generated report is a ZIP archive.
+
+:::note
+If you export launches with attachments and their total size is large, the export process will take longer.<br />
+PDF is the fastest export format, regardless of whether attachments are included. HTML is slightly slower, while XLS is the slowest.
+:::
+
+If the launch doesn't have attachments, then the ZIP file will contain only the launch report in the selected format.
+
+In case the launch has attachments, the ZIP archive will contain the launch report, parent folders, and subfolders for the test items with attachments.
+
+The hierarchical folder structure:
+
+* Launch level
+* Suite level
+* Test level
+* Step level
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches6.png')} alt="ZIP archive" />
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches7.png')} alt="Parent folders, and subfolders for the test items with attachments" />
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches8.png')} alt="Attachment in the exported launch report" />
+
+In the launch report, you can find the attachment names at the corresponding test item level.
+
+<MediaViewer src={require('./img/operations-under-launches/ExportLaunches9.png')} alt="Attachment names" />
+
+<MediaViewer src="https://youtu.be/OvzlU1DSb-E" alt="Export Launch in our real time dashboard open source" type="video" />
+
+## Delete launches
+
+The system allows deleting launches on the "Launches" and "Debug" pages.
+
+Permission: next users can delete launches:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+There are two ways how the launch/es can be deleted.
+
+To delete a launch, perform the following steps:
+
+1. Navigate to the "Launches" page.
+2. Select the "Delete" option in the context menu on the launch name's left.
+3. The warning popup will be opened.
+4. Click the "Delete" button.
+5. The launch will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
+
+<MediaViewer src="https://youtu.be/_KQk6qgc1g0" alt="Delete launch in our test reporting tool" type="video" />
+
+To delete more than one launch simultaneously, perform the following steps:
+
+1. Navigate to the "Launches" page
+2. Select required launches by click on their checkboxes
+3. Open 'Actions' list
+4. Click 'Delete' option
+5. The warning popup will be opened.
+6. Confirm the action
+7. The launches will be deleted from ReportPortal. All related content will be deleted: test items, logs, screenshots.
+
+:::note
+It is impossible to delete launches IN PROGRESS - "Delete" launch option will be disabled.
+:::
+
+## Delete test item
+
+The system allows deleting test items in all levels of launch in the "Launches" and "Debug" pages.
+
+Permission: Next users can delete the test item:
+
+- Administrator
+- User with PROJECT MANAGER Project Role
+- User with one of Project Role MEMBER, CUSTOMER on the project - Launch Owner
+
+To delete a test item, perform the following steps:
+
+1. Navigate to the "Launches" page
+2. Drill down to the test level of any item
+3. Select the "Delete" option in the context menu next to the selected test item.
+4. The warning popup will be opened.
+5. Click the "Delete" button.
+6. The test item will be deleted from ReportPortal with all related content (logs, screenshots).
+
+<MediaViewer src="https://youtu.be/w6wFP86bvJQ" alt="Delete Items" type="video" />
+
+To delete some test items simultaneously, perform the following steps:
+
+1. Navigate to the "Launches" page
+2. Drill down to the test level of any item
+3. Select required test items by click on their checkboxes
+4. If you are on SUITE or TEST view, click 'Delete' button from the header. If you are on STEP view, open 'Actions' list and select "Delete" option
+5. The warning popup will be opened.
+6. Confirm the action
+7. Test items will be deleted from ReportPortal with all related content (logs, screenshots).
+
+:::note
+It is impossible to delete test items in launches IN PROGRESS - "Delete" test item option is disabled for test items in launches IN PROGRESS.
+:::

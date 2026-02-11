@@ -1,0 +1,222 @@
+---
+sidebar_position: 12
+sidebar_label: Test executions
+description: Manage and analyze test executions across multiple launches with powerful filters, customizable columns, and fast data refresh.
+---
+
+# Test executions
+
+On the [Test Executions](/features/TestExecutions) page, you can conveniently view and manage individual test cases across multiple launches without navigating through hierarchical launch structures.
+
+## Page layout
+
+### No launches
+
+For a new project, or if no launches have been reported yet, "No results" is displayed.
+
+<MediaViewer src={require('./img/NoResults.png')} alt="Test Executions page when no launches" />
+
+### Launches reported
+
+The "Last 7 days" option is pre-selected in the "Launch start time" dropdown, and the following columns are displayed in the Search results table:
+
+* Name
+* Start time
+* Status
+* Defect type
+* Defect comment
+
+At the top of the page, the following filtering options are available:
+
+* Launch start time
+* Launch names
+* Launch attributes
+
+Additionally, "Refresh" button is displayed.
+
+<MediaViewer src={require('./img/LaunchesReported.png')} alt="Launches Reported on the Test Executions page" />
+
+You can expand or collapse all rows in the Search Results table by clicking on the corresponding icon.
+
+<MediaViewer src={require('./img/Expand.png')} alt="Expand or collapse rows on our test reporting tool" />
+
+In addition, you can expand or collapse an individual row as needed.
+
+:::note
+The limit for the search results is 10.000 latest test cases.
+:::
+
+<MediaViewer src="https://youtu.be/e62nohd5XKk" alt="Test Executions page in our qa metrics dashboard" type="video" />
+
+## Launch level filtering
+
+You can filter test executions by the characteristics of the launch to which the tests belong. You can use one or more criteria.
+
+### Launch start time
+
+You can filter test executions by Launch start time using dropdown.
+
+In this case only tests which belong to the launches started in the specified range will be displayed regardless the launch status.
+
+:::note
+Test of the launches in "In Progress" status will also be displayed.
+:::
+
+Available options:
+
+* Today
+* Last 2 Days
+* Last 3 Days
+* Last 7 Days
+* Last 30 Days
+* Last 60 Days
+* Last 90 Days
+* Custom range (date picker)
+
+<MediaViewer src={require('./img/LaunchStartTime.png')} alt="Launch start time filter" />
+
+### Launch names
+
+You can filter test executions by Launch names. In this case, only tests which belong to specified launches will be displayed.
+
+<MediaViewer src={require('./img/LaunchNames.png')} alt="Launch names filter" />
+
+### Launch attributes
+
+You can filter test executions by one or more launch attributes. Only tests which belong to launches with all the specified attributes will be displayed.
+
+:::note
+You can filter launch attributes in three ways: by **key**, by **value**, or by a **key:value** pair.
+:::
+
+<MediaViewer src={require('./img/Attributes1.png')} alt="Filtering launches by value" />
+
+<MediaViewer src={require('./img/Attributes2.png')} alt="Filtering launches by some attributes" />
+
+<MediaViewer src="https://youtu.be/hRRAaCjJQyg" alt="Test Executions page. Launch level filtering" type="video" />
+
+## Test level filtering
+
+You can apply both the launch level filters and the test level filters at the same time.
+
+### Search by test name
+
+You can search tests by the name.
+
+<MediaViewer src={require('./img/TestName.png')} alt="Filtering tests by name" />
+
+### Test cases filter
+
+You can filter test cases using the following criteria:
+
+* Status
+* Defect type
+* Start time
+* Test attributes
+* Description
+* Defect comment
+* Issue in BTS
+* Method type
+* Retry
+* Pattern name
+* Ignore in AA
+* Analyzed by AA
+
+After you apply the filter, on the Test Executions page the tests will be filtered and the filter icon will indicate how many filter criteria are currently applied to the tests. When at least one test filter criterion is applied, the "Clear all" button becomes enabled in the Filter modal window, allowing you to clear the selected criteria.
+
+<MediaViewer src={require('./img/TestCasesFilter1.png')} alt="Test cases filter" />
+
+<MediaViewer src={require('./img/TestCasesFilter2.png')} alt="Options on test cases filter" />
+
+<MediaViewer src="https://youtu.be/FOYbC0BBvRA" alt="Test Executions page. Test level filtering" type="video" />
+
+## Customize columns
+
+You can customize the columns displayed on the Test Execution page by adding new columns from a predefined list, removing existing columns, and reordering them.
+
+### Add New Column
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Click "Add Column" button.
+4. Select a column from the dropdown and confirm.
+5. Click the "Save" button.
+
+<MediaViewer src={require('./img/AddColumn1.png')} alt="Add column on the Customize Columns filter" />
+
+<MediaViewer src={require('./img/AddColumn2.png')} alt="Options on the Customize Columns filter" />
+
+### Remove Column
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Click the "X" button next to a column name.
+4. Click the "Save" button.
+
+<MediaViewer src={require('./img/RemoveColumn.png')} alt="Remove column on the Customize Columns filter" />
+
+### Reorder Columns
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Drag and drop a column name to reorder the list.
+4. Click the "Save" button.
+
+<MediaViewer src={require('./img/Reorder.png')} alt="Reordering columns on the Customize Columns filter" />
+
+### Cancel Changes
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Make some changes (for example, add new column).
+4. Click the "Cancel" button.
+
+<MediaViewer src={require('./img/Cancel.png')} alt="Cancel changes on the Customize Columns filter" />
+
+### Reset Columns
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Make some changes (for example, add new column).
+4. Click the "Reset to Default" button.
+5. Click the "Save" button.
+
+<MediaViewer src={require('./img/ResetToDefault.png')} alt="Reset to default on the Customize Columns filter" />
+
+### Add custom column
+
+1. Open Test Executions page.
+2. Click the "Customize Columns" button.
+3. Click the "Add Column" button.
+4. Select "Custom attribute" option from the dropdown.
+5. Specify the key.
+6. Click the "Tick" button.
+
+<MediaViewer src={require('./img/CustomColumn1.png')} alt="Selecting Custom attribute" />
+
+7. Click the "Save" button.
+
+<MediaViewer src={require('./img/CustomColumn2.png')} alt="Displaying of custom column on Customize Columns filter" />
+
+The attribute key becomes the column header, and the attribute values are populated for each item.
+
+:::note
+You can create multiple "Custom attribute" columns.
+:::
+
+<MediaViewer src={require('./img/CustomColumn3.png')} alt="Displaying of custom column on Test Execution page" />
+
+<MediaViewer src="https://youtu.be/ky0VVxmy5ds" alt="Customize columns on the Test Executions page" type="video" />
+
+## Refresh
+
+You can update the list of test executions without reconfiguring filters.
+
+When new launches or test items that meet the active filter conditions (Launch level and Test level) are reported, using the "Refresh" button updates the Search results table to reflect the most recent data.
+
+To reload data on the Test Executions page:
+
+1. Open Test Executions page.
+2. Click the "Refresh" button.
+
+<MediaViewer src={require('./img/Refresh.png')} alt="Refresh option on Test Execution page" />

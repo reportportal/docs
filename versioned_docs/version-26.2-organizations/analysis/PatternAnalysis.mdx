@@ -1,0 +1,98 @@
+---
+sidebar_position: 7
+sidebar_label: Pattern Analysis
+description: Define string or regex rules to detect known error patterns. Speed up investigations and track frequent causes with the Most Popular Pattern widget.
+---
+
+# Pattern Analysis
+
+Pattern Analysis is a feature that helps you to speed up test failure analysis by finding common patterns in error logs.
+
+## How to run Pattern Analysis
+
+You can run Pattern Analysis automatically or manually.
+
+To run Pattern Analysis **automatically**:
+
+1. Go to the Project Settings.
+
+2. Open Pattern-Analysis tab.
+
+3. Check the "Auto Pattern-Analysis" checkbox.
+
+4. Create rule.
+
+5. Run a launch.
+
+6. After launch finish, automatic Pattern Analysis will occur.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis1.png')} alt="Run Pattern Analysis automatically" />
+
+:::note
+Automatic Pattern Analysis is activated by default.
+:::
+
+In case automatic Pattern Analysis is turned off, you can run **manually** from the menu next to a particular launch:
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis2.png')} alt="Run Pattern Analysis manually" />
+
+If we have Auto-Analysis enabled together with Pattern Analysis, Pattern Analysis starts before Auto-Analysis: in this case, ReportPortal first identifies known patterns, and then the Analyzer assigns defect types and links issues in the BTS, if available.
+As a result, when both Auto-Analysis and Auto Pattern Analysis occur, a test item will have two labels: AA and PA.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis11.png')} alt="Both Auto-Analysis and Auto Pattern Analysis occurred" />
+
+## How to create rules for Pattern Analysis
+
+To create rule:
+
+1. Go to the Project Settings.
+2. Open Pattern Analysis tab.
+3. Click ‘Create Pattern’ button.
+4. Fill in the form.
+5. Create ‘Create’ button.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis3.png')} alt="Create Pattern button" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis4.png')} alt="Creating Pattern Analysis rule" />
+
+## Types of Pattern Analysis rules
+
+There are two types of Pattern Analysis rules:
+
+1. String – any problem phrase.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis5.png')} alt="String Pattern Analysis rule" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis6.png')} alt="Example of String Pattern Analysis rule" />
+
+2. Regex – regular expression.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis7.png')} alt="Regex Pattern Analysis rule" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis8.png')} alt="Example of Regex Pattern Analysis rule" />
+
+:::note
+It would be better to use STRING rule instead of REGEX rule in all possible cases to speed up the Pattern Analysis processing in the database. As a result, you can get your analysis completed faster using the STRING patterns rather than REGEX and reduce the database workload.
+:::
+
+## Use case 1
+
+**Problem:**<br/>
+A user is aware of several common reasons why test cases fail. During a test run, many tests have failed, and the user needs to check the logs to identify the reasons behind the failures.
+
+**Solution:**<br/>
+Create pattern rules for all common failure reasons, which include specific problem phrases (e.g., `Expected status code <404> but was <500>` or `Null response`) or use Regex queries (e.g., `java:[0-9]*`). Enable pattern analysis and launch a test run. This way, the ReportPortal system can identify all failed items that match known patterns in the error logs and label them with the corresponding pattern name. To find all items that failed for the same reason, apply a filter by ‘Pattern Name’ in the Step view. Additionally, add a ‘Most Popular Pattern’ widget to track the top 20 most frequent reasons for test failures in the build.
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis9.png')} alt="Pattern Name filter" />
+
+<MediaViewer src={require('./img/PatternAnalysis/PatternAnalysis10.png')} alt="Select pattern name" />
+
+## Use case 2
+
+**Problem:**<br/>
+The test run has finished, and the user notices that more than three items have failed for the same reason. The user wants to find all such items.
+
+**Solution:**<br/>
+Create a new pattern rule in the Project Settings. Manually launch a pattern analysis for a specific test run. Use the ‘Pattern Name’ filter in the Step view to find all items that failed for the same reason.
+
+<MediaViewer src="https://youtu.be/W7qMwhLpIFI" alt="Pattern Analysis launched Manually" type="video" />

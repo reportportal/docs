@@ -1,0 +1,167 @@
+---
+sidebar_position: 12
+sidebar_label: Telegram
+description: Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group.
+---
+
+# Telegram
+
+Get real-time updates on the launch completion in your Telegram.
+
+With the Telegram plugin, everyone instantly knows about important test automation updates. This helps avoid delays in communication and allows teams to respond quickly to issues.
+
+To download the Telegram plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
+
+## Configuration on Telegram side
+
+1. Create your chatbot.
+
+For that, run message @BotFather on Telegram to register your bot and receive its authentication token (Bot Api Key for notification rule).
+
+<MediaViewer src={require('./img/telegram/Telegram0.png')} alt="Create the chatbot" />
+
+2. Run the chatbot.
+
+<MediaViewer src={require('./img/telegram/Telegram1.png')} alt="Running the chatbot" />
+
+3. Create a Group in Telegram.
+
+<MediaViewer src={require('./img/telegram/Telegram2.png')} alt="Create a Group in Telegram" />
+
+<MediaViewer src={require('./img/telegram/Telegram3.png')} alt="Group name" />
+
+4. Add the chatbot to your group.
+
+<MediaViewer src={require('./img/telegram/Telegram4.png')} alt="Adding the chatbot to your group" />
+
+5. Copy chat ID
+
+You can find the chat ID in two ways:
+
+* In the URL of the web version of Telegram
+
+<MediaViewer src={require('./img/telegram/Telegram5.png')} alt="Chat ID in the web version" />
+
+* In the Telegram app under Advanced settings.
+
+<MediaViewer src={require('./img/telegram/Telegram6.png')} alt="Telegram settings" />
+
+<MediaViewer src={require('./img/telegram/Telegram7.png')} alt="Advanced option in Telegram settings" />
+
+<MediaViewer src={require('./img/telegram/Telegram8.png')} alt="Experimental settings" />
+
+<MediaViewer src={require('./img/telegram/Telegram9.png')} alt="Show ID setting" />
+
+<MediaViewer src={require('./img/telegram/Telegram10.png')} alt="Chat ID in the Telegram app" />
+
+:::important
+Chat id can be used to create notification rules in RP.
+:::
+
+## Configuration on ReportPortal side
+
+### Upload plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section.
+
+3. Click ‘Upload’ button at the top of the page.
+
+4. Add Telegram plugin [.jar file](https://github.com/reportportal/plugin-telegram/packages/) and click ‘Upload’ button.
+
+<MediaViewer src={require('./img/telegram/Telegram11.png')} alt="Upload Telegram plugin to our test automation reporting dashboard" />
+
+### Create notification rule
+
+1. Go to the Project settings -> [Notifications](/configuration/ProjectSettings#telegram-notifications).
+
+2. Choose Telegram Notifications Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Chat id** – mandatory field, copied from group info in Telegram (step 5 of [configuration on Telegram side](/plugins/notifications/Telegram#configuration-on-telegram-side))
+
+:::important
+Add ‘-’ before the chat id.
+:::
+
+**Bot Api Key** - mandatory field, copied from the [step 1](/plugins/notifications/Telegram#configuration-on-telegram-side)
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi-selection.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/telegram/Telegram12.png')} alt="Create Telegram notification rule" />
+
+### How to receive notifications in Telegram
+
+When you have the plugin installed and Telegram notification rules configured, you can start receiving notifications to the channel configured. For this you need to report a launch which matches the notification rule and after the launch is finished you will receive a corresponding message in the Telegram channel with some details on the Launch results.
+
+<MediaViewer src={require('./img/telegram/Telegram13.png')} alt="Notifications in Telegram from our test report dashboard" />
+
+### Disable Telegram notifications
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins -> Notifications tab.
+
+3. Turn OFF for Telegram.
+
+<MediaViewer src={require('./img/telegram/Telegram14.png')} alt="Disable Telegram notifications" />
+
+### Disable Telegram rules
+
+1. Go to the Project settings -> Notifications.
+
+2. Find Telegram Notifications Group.
+
+3. Turn OFF for the rule.
+
+<MediaViewer src={require('./img/telegram/Telegram15.png')} alt="Disable Telegram rule" />
+
+### Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Telegram plugin.
+
+4. Turn OFF.
+
+<MediaViewer src={require('./img/telegram/Telegram16.png')} alt="Disable Telegram plugin" />
+
+### Uninstall plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Telegram plugin and click on it.
+
+4. Click ‘Uninstall’ button and confirm your choice.
+
+<MediaViewer src={require('./img/telegram/Telegram17.png')} alt="Uninstall Telegram plugin" />

@@ -1,0 +1,111 @@
+---
+sidebar_position: 25
+sidebar_label: Table Component health check
+description: See which components need attention, compare metrics across builds, and quickly investigate failures to keep your system running smoothly.
+---
+
+# Table Component health check
+
+Shows the detailed statistics of the application components which are indicated by the specified attributes with an ability to exclude Skipped tests from the statistics.
+As far as the widget contains complicated queries, the widget can be rendering some time (~10 min).
+
+:::note
+To use this widget, you need to report (or manually add) attributes to test items.
+:::
+
+## Widget's parameters:
+
+- Filter
+- Parameters: All Launches/Latest Launches
+- Checkbox 'Exclude Skipped Tests from Statistics'
+- The minimum allowable passing rate for the component: possible values range from 50 - 100%. The default value is 100%.
+- Attribute key for the first level (mandatory)
+- Attribute key for the 2nd to 10th levels (optional)
+- Custom column (enter an attribute key - optional)
+- Sorting: 'Sort By' dropdown with the options 'Custom Column', 'Total', 'Passing Rate', 'Failed Items'. The default value is 'Passing Rate'.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTableCreate.png')} alt="Create Component Health Check Table widget in our test reporting tool" />
+
+When the **checkbox 'Exclude Skipped tests from statistics' is selected**, the passing rate is calculated based on the total number of test cases, excluding the skipped tests.
+
+When the **checkbox 'Exclude Skipped tests from statistics' is not selected**, the passing rate is calculated based on the total number of test cases, including the skipped tests.
+
+## Widget View
+
+The widget has a table view. Each line contains information about one component (one unique attribute value):
+
+- Component name
+- Component passing rate
+- Statistics: Total/Passed/Failed/Skipped/Product bugs/ Automation bugs/System issues/To investigate
+- Information about attribute value in the custom column
+
+The total line presents a summary of all components.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTableView.png')} alt="Component Health Check Table view" />
+
+When you click on **'Total'** test cases for the component and checkbox 'Exclude Skipped tests from statistics' is not selected, system redirects you to the test item view. Test items with statuses Passed, Failed, Interrupted, Skipped are displayed.
+
+When you click on **'Total'** test cases for the component and checkbox 'Exclude Skipped tests from statistics' is selected, system redirects you to the test item view. Test items with statuses Passed, Failed and Interrupted are displayed.
+
+When you click on **'Passed'** test cases for the component (if any) and checkbox 'Exclude Skipped tests from statistics' is not selected, system redirects you to the test item view. Test items with statuses Passed are displayed.
+
+When you click on **'Passed'** test cases for the component (if any) and checkbox 'Exclude Skipped tests from statistics' is selected, system redirects you to the test item view. Test items with statuses Passed are displayed.
+
+When you click on **'Failed'** test cases for the component (if any) and checkbox 'Exclude Skipped tests from statistics' is not selected, system redirects you to the test item view. Test items with statuses Failed, Interrupted are displayed.
+
+When you click on **'Failed'** test cases for the component (if any) and checkbox 'Exclude Skipped tests from statistics' is selected system redirects you to the test item view. Test items with statuses Failed, Interrupted are displayed.
+
+When you click on **Skipped** test cases for the component (if any) and checkbox 'Exclude Skipped tests from statistics' is not selected, system redirects you to the test item view. Test items with statuses Skipped are displayed.
+
+**Custom Column**
+
+Why might you need a custom column? Let's explore this through an example.
+
+## Use case #1
+
+**Use Case:** You need to understand the impact of failed test cases.
+
+**Problem:** You have created a Component Health Check widget and can view a list of features along with their passing rate. However, you cannot ascertain the significance of the failed features.
+
+**Solution:** For all test executions, add attributes with the attribute key 'priority: XXX'. For instance:
+
+- priority: low
+- priority: major
+- priority: critical
+
+Then, in the widget wizard, add the attribute key 'priority' in the custom column field. This action enables the system to include information regarding the priority of each feature in the widget view.
+
+**Custom Sorting**
+
+You can select how components should be sorted in the table. Possible criteria include:
+
+- Total
+- Passing Rate
+- Custom Column
+- Failed Items
+
+## Use case #2
+
+**Use Case:** To track information about the latest version without updating the filter.
+
+**Problem:** As a test lead, you want to track information about the latest results without having to make additional adjustments. Your version contains several launches: a launch with API test cases, a launch with UI test cases, and a launch with Integration test cases. You aim to track the summary statistics of the latest results for the API launch, UI launch, and Integration launch. For this, you've added an attribute 'version: XXX' to all the necessary launches, denoting the number of versions. You've also created a filter including all launches with the respective attribute. Now, you can create an Overall Statistics widget which will show you a summary of the latest results for version: xxx. But whenever you run a new version (for instance, version: xxx+1), you have to repeatedly carry out the previous steps - creating the filter and updating the widget.
+
+**Solution:** To avoid these redundant steps, create a filter that includes three launches: API, UI, and Integration. Subsequently, create a Component Health Check widget (table view) with this filter and add the attribute key 'version' for grouping. Now, you will see a summary for the latest version every day. Whenever a new version enters the system, the widget automatically updates to remove information about the previous version and adds information about the latest version.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTableBuild.png')} alt="Track information about the latest version without updating the filter" />
+
+## Use case #3
+
+**Use Case:** To track information about components such as features, browsers, platforms, etc.
+
+**Problem:** You are running different launches: API launch, UI launch, and Integration launch. These three launches include test cases that belong to different features. You need to track overall statistics for features, not for launches.
+
+**Solution:** Create a filter that includes the three launches: API launch, UI launch, and Integration launch. Then, create a Component Health Check widget (table view) with this filter and add the attribute key 'feature' for grouping. As a result, you will see a summary of all features across various launches.
+
+<MediaViewer src={require('./img/widget-types/ComponentHealthCheckTableFeature.png')} alt="Track information about components" />
+
+<MediaViewer src="https://youtu.be/krGfJSrMGOA" alt="Component Health Check Table widget in our test report dashboard" type="video" />
+
+:::important
+The Component Health Check widget (table view) is the first widget to use a materialized view in PostgreSQL. The creation of this view takes time. As a result, information about new launches in the filter is added dynamically. Therefore, users should manually update the widget by clicking on the update button. The time of the last update is displayed on the widget.
+:::
