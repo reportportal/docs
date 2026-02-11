@@ -217,7 +217,13 @@ const config = {
           to: baseUrl, // To suggest URLs correctly for local and dev deployment
         },
         searchPagePath: 'search',
-        contextualSearch: true,
+        contextualSearch: true, 
+        searchParameters: {
+          facetFilters: [], 
+          attributesToRetrieve: ['hierarchy', 'content', 'anchor', 'url', 'version'],
+          attributesToHighlight: ['hierarchy', 'content'],
+        },
+        externalUrlRegex: 'external\\.com|domain\\.com',
       },
     }),
 
