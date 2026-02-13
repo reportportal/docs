@@ -39,7 +39,7 @@ docker-compose -p $RP_PRJ down --rmi -v --remove-orphans
 **Backup / Dump the data:** 
 
 ```
-docker exec <postgres_container_name> pg_dump -U <POSTGRES_USER> <database_name> > backup.sql
+docker exec <postgres_container_name> pg_dump -U <POSTGRES_USER> -d <database_name> > backup.sql
 ```
 
 **Clean up the data:** 
