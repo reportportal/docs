@@ -1,0 +1,77 @@
+# Copyright 2026 EPAM Systems
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Sync GitHub Releases
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'How many releases to check'
+        required: false
+        default: 'latest'
+        type: choice
+        options:
+          - latest
+          - last-n
+          - last-month
+          - all
+      count:
+        description: 'Number of releases to check (only used with "last-n")'
+        required: false
+        default: '5'
+        type: string
+
+env:
+  RELEASES_URL: https://api.github.com/repos/reportportal/reportportal/releases
+
+jobs:
+  sync-releases:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync release pages
+        run: node scripts/sync-releases.js
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          RELEASES_URL: ${{ env.RELEASES_URL }}
+          SYNC_SCOPE: ${{ inputs.scope == 'last-n' && format('last-{0}', inputs.count) || inputs.scope }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status docs/releases/ --porcelain)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No new release pages to add."
+          fi
+
+      - name: Commit and push new release pages
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/releases/
+          git commit -m "docs: sync release pages from GitHub Releases"
+          git push
