@@ -14,6 +14,22 @@
 name: Sync GitHub Releases
 
 on:
+  workflow_call:
+    inputs:
+      scope:
+        description: 'How many releases to check'
+        required: false
+        default: 'latest'
+        type: string
+      count:
+        description: 'Number of releases to check (only used with "last-n")'
+        required: false
+        default: '5'
+        type: string
+    secrets:
+      GH_TOKEN:
+        required: true
+
   workflow_dispatch:
     inputs:
       scope:
