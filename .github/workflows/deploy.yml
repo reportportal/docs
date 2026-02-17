@@ -81,16 +81,24 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Merge master into develop
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin develop:develop || exit 0
+          if ! git fetch origin develop:develop 2>/dev/null; then
+            echo "::warning::develop branch not found, skipping merge."
+            exit 0
+          fi
           if git diff --quiet develop..master; then
             echo "No differences between master and develop, skipping merge."
             exit 0
           fi
           git checkout develop
-          git merge --no-ff master -m "Sync || merge master into develop"
+          if ! git merge --no-ff master -m "Sync || merge master into develop"; then
+            echo "::error::Merge conflict detected when merging master into develop."
+            git merge --abort
+            exit 1
+          fi
           git push origin develop
