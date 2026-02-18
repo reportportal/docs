@@ -70,7 +70,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./${{ env.BUILD_DIR }}
           publish_branch: gh-pages
-          commit_message: ${{ github.event.head_commit.message }}
+          commit_message: ${{ github.event.head_commit.message || format('Manual deploy of {0} by {1}', github.sha, github.actor) }}
 
   merge-to-develop:
     needs: deploy
