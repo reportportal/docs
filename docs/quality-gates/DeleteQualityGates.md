@@ -12,7 +12,7 @@ This feature is available in ReportPortal with a [managed services subscription]
 
 If you want to delete Quality Gate:
 
-* Login ReportPortal as Project Manager or Admin
+* Log in to ReportPortal as Project Manager or Admin
 * Open ```Project Settings> Quality Gates```
 * Click on ```the trash``` on the Quality Gate rule
 * The system removes Quality Gate from the DB
