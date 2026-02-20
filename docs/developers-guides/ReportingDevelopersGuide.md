@@ -96,7 +96,7 @@ Start launch request model contains the following attributes:
 | attributes  | No       | Launch attributes. Pairs of key and value                                | empty                                     | build:3.0.1, os:bionic                                                                                                                                                  |
 | mode        | No       | Launch mode. Allowable values 'default' or 'debug'                       | default                                   | DEFAULT                                                                                                                                                                 |
 | rerun       | No       | Rerun mode. Allowable values 'true' of 'false'                           | false                                     | false                                                                                                                                                                   |
-| rerunOf     | No       | Rerun mode. Specifies launch to be rerun. Uses with 'rerun' attribute. | empty                                     | 694e1549-b8ab-4f20-b7d8-8550c92431b0                                                                                                                                    |
+| rerunOf     | No       | Rerun mode. Specifies launch to be rerun. Used with 'rerun' attribute. | empty                                     | 694e1549-b8ab-4f20-b7d8-8550c92431b0                                                                                                                                    |
 
 Start launch response contains the following attributes:
 
