@@ -7,7 +7,7 @@ description: Enhance collaboration with our External Integrations section. Integ
 
 The **External Integrations** section of ReportPortal is designed to help you extend the capabilities of your test automation processes and enhance overall efficiency. By integrating external tools and identity management systems, you can streamline workflows, improve data synchronization, and better manage both testing activities and user access. This section provides essential information on how to connect and configure external systems.
 
-Thу integration with **testRigor** enables seamless data synchronization between the two systems, allowing for better test management and more efficient collaboration across teams. By linking ReportPortal with testRigor, you can automatically import test results, track performance, and manage test data in one centralized location. This ensures that your team can focus on improving software quality without manually handling test information.
+The integration with **testRigor** enables seamless data synchronization between the two systems, allowing for better test management and more efficient collaboration across teams. By linking ReportPortal with testRigor, you can automatically import test results, track performance, and manage test data in one centralized location. This ensures that your team can focus on improving software quality without manually handling test information.
 
 Beyond test automation, ReportPortal also offers identity and access management integrations, including **user provisioning via SAML and SCIM**, to help teams efficiently manage user provisioning and authentication.
 
