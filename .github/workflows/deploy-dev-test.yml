@@ -1,4 +1,4 @@
-# Copyright 2024 EPAM Systems
+# Copyright 2026 EPAM Systems
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -11,10 +11,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Deploy to dev (AWS S3)
+name: Deploy to dev-test (AWS S3)
 env:
-  AWS_S3_BUCKET_NAME : ${{ vars.AWS_S3_BUCKET_NAME }}
-  AWS_REGION_NAME : ${{ vars.AWS_REGION_NAME }}
+  AWS_S3_BUCKET_NAME : rpp-landing-testing
+  AWS_REGION_NAME : eu-central-1
+  CLOUDFRONT_ID: EILUB1IE9EON0
   BUILD_DIR : "build/"
   DOCS_BASE_URL: "/docs/"
 
@@ -85,4 +86,4 @@ jobs:
         run: aws s3 sync ./${{ env.BUILD_DIR }} s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/
 
       - name: Clearing CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/docs/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_ID }} --paths "/docs/*"
