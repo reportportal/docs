@@ -14,21 +14,142 @@ MCP (Model Context Protocol) is a lightweight middleware protocol (and server) t
 
 ReportPortal MCP Server allows to receive summaries of launches and perform various operations without manually opening the UI. The actions that can be performed through the MCP Server are called Tools.
 
-Available tools:
+## Prerequisites
 
-1. Run Unique Error Analysis
-2. Run Quality Gate
-3. Run Auto-Analysis
-4. Get Test Items by Filter
-5. Get Launches
-6. Launch Force Finish
-7. Launch Delete
-8. Get Test Item Logs by Filter
-9. Get Test Item by ID
-10. Get Test Item Attachments
-11. Get Last Launch by Name
-12. Get Project Defect Types
-13. Update defect types by item IDs
+### Server Mode (MCP_MODE)
+
+First, you need to decide on a strategy for using MCP Server: whether to use it locally or as a remote endpoint. In the second case, first deploy the MCP Server and then configure a connection to it.
+
+`MCP_MODE` is a system environment variable that controls the transport mode of the MCP server:
+
+| Value | Description |
+|-------|-------------|
+| `stdio` | **(default)** Standard input/output – used for local AI tool integrations (Claude Desktop, Cursor, VS Code Copilot, etc.) |
+| `http` | HTTP/SSE streaming – exposes an HTTP endpoint for remote or multi-client access |
+
+This variable is only needed when you want to run the server in HTTP mode. For local AI tool integrations the default `stdio` mode is used and no extra configuration is required.
+
+:::important
+`http` mode is intended for server deployments. The MCP server must be **deployed and running** with `MCP_MODE=http` before any AI tool can connect to it remotely.
+:::
+
+Before setting up the MCP server, you need the following information from your ReportPortal instance:
+
+### ReportPortal Host URL (RP_HOST)
+
+The URL of your ReportPortal instance:
+  - Example: https://reportportal.example.com
+  - For local: http://localhost:8080
+
+### Project Name (RP_PROJECT)
+
+To find your project name:
+  1. Log into ReportPortal
+  2. Check the URL: https://your-rp-instance.com/ui/#PROJECT_NAME/...
+  3. Or find it in the top-left dropdown menu
+
+### API Token (RP_API_TOKEN)
+
+You can get an API token from your ReportPortal Profile or generate a new one.
+
+:::note
+Never commit tokens to version control or share them publicly.
+:::
+
+## Available Tools
+
+The MCP Server provides the following tools for interacting with ReportPortal:
+
+- Get Launches by filter
+- Get Last Launch by Name
+- Get Launch by ID
+- Run Quality Gate
+- Run Auto Analysis
+- Run Unique Error Analysis
+- Force Finish Launch
+- Delete Launch
+- Get Suites by filter
+- Get Test Items by filter
+- Get Logs by filter
+- Get Attachment by ID
+- Get Test Item by ID
+- Get Project Defect Types
+- Update defect types by item IDs
+
+## Installation
+
+There are two ways to connect to the ReportPortal MCP Server:
+1. **Locally** - via *Docker* (recommended) or using *pre-built binaries*.
+2. **Connecting to a remote MCP server** (when the server is already deployed)
+
+### Local Installation
+
+The configurations below use the default `stdio` mode (`MCP_MODE=stdio`), which is the correct choice for all local AI tool integrations.
+
+#### Via Docker (recommended)
+
+Configuration:
+```json
+{
+  "reportportal": {
+    "command": "docker",
+    "args": [
+      "run",
+      "-i",
+      "--rm",
+      "-e",
+      "RP_API_TOKEN",
+      "-e",
+      "RP_HOST",
+      "-e",
+      "RP_PROJECT",
+      "reportportal/mcp-server"
+    ],
+    "env": {
+      "RP_API_TOKEN": "your-report-portal-api-token",
+      "RP_HOST": "https://your-reportportal-instance.com",
+      "RP_PROJECT": "YourProjectInReportPortal"
+    }
+  }
+}
+```
+
+#### Using Pre-built Binaries
+
+Configuration:
+```json
+{
+  "reportportal": {
+    "command": "/path/to/reportportal-mcp-server-binary",
+    "args": ["stdio"],
+    "env": {
+      "RP_API_TOKEN": "your-report-portal-api-token",
+      "RP_HOST": "https://your-reportportal-instance.com",
+      "RP_PROJECT": "YourProjectInReportPortal"
+    }
+  }
+}
+```
+
+### Connecting to a Remote MCP Server
+
+If the ReportPortal MCP Server is already deployed and accessible via HTTP, you can connect to it remotely:
+
+:::note
+The remote server must be **deployed and running** in HTTP mode (system environment variable `MCP_MODE=http`) before any AI tool can connect to it.
+:::
+
+```json
+{
+  "reportportal": {
+    "url": "http://your-mcp-server-host:port/mcp/",
+    "headers": {
+      "Authorization": "Bearer your-report-portal-api-token",
+      "X-Project": "YourProjectInReportPortal"
+    }
+  }
+}
+```
 
 ## Usage with your favorite AI tools
 
@@ -36,28 +157,37 @@ Below are brief setup instructions for configuring the ReportPortal MCP Server w
 
 ### Cursor IDE
 
-#### Local installation
+You can install MCP Server from the official Cursor IDE server repository in one click
 
-To configure ReportPortal MCP Server with Cursor:
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=reportportal&config=eyJjb21tYW5kIjoiZG9ja2VyIHJ1biAtaSAtLXJtIC1lIFJQX0FQSV9UT0tFTiAtZSBSUF9IT1NUIC1lIFJQX1BST0pFQ1QgcmVwb3J0cG9ydGFsL21jcC1zZXJ2ZXIiLCJlbnYiOnsiUlBfQVBJX1RPS0VOIjoieW91ci1hcGktdG9rZW4iLCJSUF9IT1NUIjoiaHR0cHM6Ly95b3VyLXJlcG9ydHBvcnRhbC1pbnN0YW5jZS5jb20iLCJSUF9QUk9KRUNUIjoiWW91clByb2plY3RJblJlcG9ydFBvcnRhbCJ9fQ%3D%3D)
 
-1. Log in to Cursor.
-2. Open Settings.
-3. Select "Tools & Integrations" section.
-4. Click "New MCP Server".
+Or follow the next steps:
 
-<MediaViewer src={require('./img/mcp-server/Cursor1.JPG')} alt="Cursor Settings" />
+1. In Cursor, go to **Settings** then **Tools & MCP** and click **Add Custom MCP**.
 
-5. Fill in the required fields in the Config file.
+<MediaViewer src={require('./img/mcp-server/Cursor1.png')} alt="Cursor Settings" />
 
-<MediaViewer src={require('./img/mcp-server/Cursor2.JPG')} alt="Cursor Config file" />
+2. That will open file `mcp.json` where you need to add a new MCP server entry:
 
-6. The list of available tools appears.
+<MediaViewer src={require('./img/mcp-server/Cursor2.png')} alt="Cursor Config file" />
 
-<MediaViewer src={require('./img/mcp-server/Cursor3.JPG')} alt="ReportPortal MCP Server configured with Cursor" />
+#### Local Installation
 
-#### Remote server
+```json
+{
+  "mcpServers": {
+    "reportportal": {
+      // choose your MCP configuration from the "Installation" section above and place it instead of this line
+    }
+  }
+}
+```
+#### Remote Server
 
-This setup allows Cursor to communicate with a remote ReportPortal MCP Server.
+:::note
+The remote server must be **deployed and running** in HTTP mode before connecting.
+:::
+
 
 ```json
 {
@@ -65,7 +195,7 @@ This setup allows Cursor to communicate with a remote ReportPortal MCP Server.
     "reportportal": {
       "url": "http://your-mcp-server-host:port/mcp/",
       "headers": {
-        "Authorization": "Bearer your-api-token",
+        "Authorization": "Bearer your-report-portal-api-token",
         "X-Project": "YourProjectInReportPortal"
       }
     }
@@ -73,25 +203,36 @@ This setup allows Cursor to communicate with a remote ReportPortal MCP Server.
 }
 ```
 
-### GitHub Copilot
+<MediaViewer src={require('./img/mcp-server/Cursor3.png')} alt="ReportPortal MCP Server configured with Cursor" />
 
-#### Local installation
+### GitHub Copilot (VS Code)
 
-To configure ReportPortal MCP Server with Copilot:
+1. Install/update the GitHub Copilot plugin.
+2. Press **"Ctrl+P"** and type **>mcp** in the search bar and select **MCP: Open User Configuration**.
 
-1. Log in to Copilot.
-2. Type ">mcp" in the search bar.
-3. Select "MCP: Open User Configuration" option.
+<MediaViewer src={require('./img/mcp-server/Copilot1.png')} alt="Copilot settings" />
 
-<MediaViewer src={require('./img/mcp-server/Copilot1.jpg')} alt="Copilot settings" />
+3. That will open file `mcp.json` where you need to add a new MCP server entry:
 
-4. Fill in the required fields in the Config file.
+<MediaViewer src={require('./img/mcp-server/Copilot2.png')} alt="Copilot Config file" />
 
-<MediaViewer src={require('./img/mcp-server/Copilot2.JPG')} alt="Copilot Config file" />
+#### Local Installation
 
-#### Remote server
+```json
+{
+  "servers": {
+    "reportportal": {
+      // choose your MCP configuration from the "Installation" section above and place it instead of this line
+    }
+  }
+}
+```
 
-Use this configuration to connect Copilot to a remote ReportPortal MCP Server.
+#### Remote Server
+
+:::note
+The remote server must be **deployed and running** in HTTP mode before connecting.
+:::
 
 ```json
 {
@@ -100,7 +241,7 @@ Use this configuration to connect Copilot to a remote ReportPortal MCP Server.
       "url": "http://your-mcp-server-host:port/mcp/",
       "requestInit": {
         "headers": {
-          "Authorization": "Bearer your-api-token",
+          "Authorization": "Bearer your-report-portal-api-token",
           "X-Project": "YourProjectInReportPortal"
         }
       }
@@ -108,7 +249,6 @@ Use this configuration to connect Copilot to a remote ReportPortal MCP Server.
   }
 }
 ```
-
 ### Claude Desktop
 
 To configure ReportPortal MCP Server with Claude:
@@ -157,6 +297,76 @@ Token is API Key the user's Profile page.
 <MediaViewer src={require('./img/mcp-server/MCP9-2.png')} alt="Summary from AI based on the data from our qa metrics dashboard" />
 <MediaViewer src={require('./img/mcp-server/MCP10.png')} alt="Launches page" />
 
-Refer to the detailed user guide for the [full setup instructions](https://github.com/reportportal/reportportal-mcp-server) of the MCP Server.
+## Verifying Your Setup
+
+### 1. Verify Remote MCP Server (if using remote deployment)
+
+If connecting to a remote MCP server, verify it's accessible before configuring your AI tool:
+
+**Via Browser:**
+```
+http://your-mcp-server-host:port/
+```
+Should return server information and available endpoints.
+
+**Via ping (network connectivity only):**
+```bash
+ping your-mcp-server-host
+```
+
+**Via curl (MCP protocol test):**
+```bash
+# Test MCP endpoint with JSON-RPC request
+curl -X POST http://your-mcp-server-host:port/mcp \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your-api-token" \
+  -H "X-Project: YourProject" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/list",
+    "id": 1
+  }'
+```
+
+**Expected Results:**
+- Server responds to health checks
+- `/info` returns server configuration
+- MCP endpoint returns list of available tools
+- No connection refused or timeout errors
+
+### 2. Verify MCP Server Integration
+
+After configuration, verify the AI assistant can communicate with the MCP server:
+
+1. **Check Available Tools**: Ask your AI assistant "What ReportPortal tools are available?"
+   - Expected: A list of 15 tools including launches, test items, analysis tools, etc.
+
+2. **Test Basic Query**: Try "List the 5 most recent test launches"
+   - Expected: A formatted list of recent launches with names, statuses, and timestamps.
+
+For detailed verification steps, troubleshooting, and developer information, refer to the [full documentation](https://github.com/reportportal/reportportal-mcp-server).
+
+## Example Queries
+
+Here are some real-world examples of what you might ask your AI after setup:
+
+- **"List the 5 most recent test launches."** – returns a paginated list of recent test runs with names and statuses.
+- **"What tests failed in the latest run?"** – shows failed test items for the most recent launch.
+- **"Show me details of launch with ID 119000."** – retrieves a specific launch directly by its ID.
+- **"Run quality gate on launch 12345."** – executes quality gate analysis to verify if launch meets defined quality criteria.
+- **"Run an analysis on launch ABC."** – triggers the ReportPortal's auto-analysis to summarize results and failures.
+- **"Show me the top five 500-level errors in the last hour"** - lists the top 5 such errors from the recent test results.
+
+## More Information
+
+For comprehensive documentation including:
+- Detailed installation and configuration options
+- ReportPortal compatibility information
+- Complete tools reference with all parameters
+- Developer guide and API documentation
+- Troubleshooting and common issues
+- Building from source
+
+Please refer to the [complete README](https://github.com/reportportal/reportportal-mcp-server).
 
 Whether you're aiming to optimize test analysis or simplify routine QA tasks, MCP empowers your AI tools to act with clarity and precision.
