@@ -13,7 +13,7 @@
 
 name: Deploy to dev-test (AWS S3)
 env:
-  AWS_S3_BUCKET_NAME : rpp-landing-test
+  AWS_S3_BUCKET_NAME : rpp-landing-testing
   AWS_REGION_NAME : eu-central-1
   CLOUDFRONT_ID: EILUB1IE9EON0
   BUILD_DIR : "build/"
