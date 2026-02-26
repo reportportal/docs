@@ -87,3 +87,9 @@ jobs:
 
       - name: Clearing CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_ID }} --paths "/docs/*"
+
+      - name: Trigger Amplify redeploy
+        run: |
+          aws amplify start-deployment \
+            --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
+            --branch-name staging
