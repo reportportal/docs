@@ -90,6 +90,8 @@ jobs:
 
       - name: Trigger Amplify redeploy
         run: |
+          aws s3 sync s3://${{ env.AWS_S3_BUCKET_NAME }} /tmp/full-site
+
           DEPLOY_RESULT=$(aws amplify create-deployment \
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
             --branch-name staging)
@@ -97,9 +99,8 @@ jobs:
           JOB_ID=$(echo "$DEPLOY_RESULT" | jq -r '.jobId')
           ZIP_URL=$(echo "$DEPLOY_RESULT" | jq -r '.zipUploadUrl')
 
-          cd ${{ env.BUILD_DIR }}
+          cd /tmp/full-site
           zip -r /tmp/deploy.zip .
-          cd ..
 
           curl --fail -T /tmp/deploy.zip "$ZIP_URL"
 
