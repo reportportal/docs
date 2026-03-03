@@ -44,10 +44,10 @@ const config = {
             const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
             const seen = new Set();
+            const fileExtensions = ['.html', '.htm', '.xml', '.pdf', '.jpg', '.png', '.css', '.js'];
             return items
               .map((item) => {
                 const u = new URL(item.url);
-                const fileExtensions = ['.html', '.htm', '.xml', '.pdf', '.jpg', '.png', '.css', '.js'];
                 const hasFileExtension = fileExtensions.some(ext => u.pathname.endsWith(ext));
                 if (!hasFileExtension && !u.pathname.endsWith('/')) {
                   u.pathname += '/';
