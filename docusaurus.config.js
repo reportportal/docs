@@ -37,8 +37,17 @@ const config = {
       ({
         sitemap: {
           changefreq: 'weekly',
+          priority: 0.9,
           ignorePatterns: ['/docs/search'],
           filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, ...rest } = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.map((item) => ({
+              ...item,
+              url: item.url.endsWith('/') ? item.url : `${item.url}/`,
+            }));
+          },
         },
         docs: {
           routeBasePath: '/',
