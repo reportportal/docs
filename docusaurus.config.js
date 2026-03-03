@@ -43,10 +43,20 @@ const config = {
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
-            return items.map((item) => ({
-              ...item,
-              url: item.url.endsWith('/') ? item.url : `${item.url}/`,
-            }));
+            const seen = new Set();
+            return items
+              .map((item) => {
+                const u = new URL(item.url);
+                if (!u.pathname.endsWith('/')) {
+                  u.pathname += '/';
+                }
+                return { ...item, url: u.toString() };
+              })
+              .filter((item) => {
+                if (seen.has(item.url)) return false;
+                seen.add(item.url);
+                return true;
+              });
           },
         },
         docs: {
