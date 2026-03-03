@@ -47,7 +47,8 @@ const config = {
             return items
               .map((item) => {
                 const u = new URL(item.url);
-                const hasFileExtension = /\.[a-zA-Z0-9]+$/.test(u.pathname);
+                const fileExtensions = ['.html', '.htm', '.xml', '.pdf', '.jpg', '.png', '.css', '.js'];
+                const hasFileExtension = fileExtensions.some(ext => u.pathname.endsWith(ext));
                 if (!hasFileExtension && !u.pathname.endsWith('/')) {
                   u.pathname += '/';
                 }
