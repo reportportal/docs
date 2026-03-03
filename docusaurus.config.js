@@ -47,7 +47,8 @@ const config = {
             return items
               .map((item) => {
                 const u = new URL(item.url);
-                if (!u.pathname.endsWith('/')) {
+                const hasFileExtension = /\.[a-zA-Z0-9]+$/.test(u.pathname);
+                if (!hasFileExtension && !u.pathname.endsWith('/')) {
                   u.pathname += '/';
                 }
                 return { ...item, url: u.toString() };
@@ -475,7 +476,7 @@ const config = {
           },
           {
             to: '/tutorial',
-            from: ['/reportportal-tutorial','/What-is-ReportPortal'],
+            from: ['/reportportal-tutorial', '/What-is-ReportPortal'],
           },
           {
             to: '/glossary',
@@ -494,8 +495,8 @@ const config = {
             from: '/reportportal-configuration/authorization/LDAP',
           },
           {
-           to: '/plugins/authorization/SamlProviders/Overview',
-           from: '/reportportal-configuration/authorization/SamlProviders/Overview',
+            to: '/plugins/authorization/SamlProviders/Overview',
+            from: '/reportportal-configuration/authorization/SamlProviders/Overview',
           },
           {
             to: '/configuration/IntegrationViaPlugin',
@@ -518,96 +519,96 @@ const config = {
             from: '/category/authorization',
           },
           {
-             to: '/plugins/authorization/SamlProviders',
-             from: '/category/saml-providers',
+            to: '/plugins/authorization/SamlProviders',
+            from: '/category/saml-providers',
           },
           {
-             to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
-             from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
+            to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
+            from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
           },
           {
-             to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
-             from: '/Test-case-ID>what-is-it-test-case-id',
+            to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
+            from: '/Test-case-ID>what-is-it-test-case-id',
           },
           {
-             to: '/dashboards-and-widgets/CumulativeTrendChart',
-             from: '/Cumulative-trend-chart',
+            to: '/dashboards-and-widgets/CumulativeTrendChart',
+            from: '/Cumulative-trend-chart',
           },
           {
-             to: '/log-data-in-reportportal/test-framework-integration/Java',
-             from: '/JVM-based-clients-configuration',
+            to: '/log-data-in-reportportal/test-framework-integration/Java',
+            from: '/JVM-based-clients-configuration',
           },
           {
-             to: '/releases/Version24.2.0',
-             from: '/releases/Version24.2',
+            to: '/releases/Version24.2.0',
+            from: '/releases/Version24.2',
           },
           {
-             to: '/plugins/bug-tracking/AtlassianJiraServer',
-             from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
+            to: '/plugins/bug-tracking/AtlassianJiraServer',
+            from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
           },
           {
-             to: '/plugins/bug-tracking/AtlassianJiraCloud',
-             from: '/plugins/AtlassianJiraCloud',
+            to: '/plugins/bug-tracking/AtlassianJiraCloud',
+            from: '/plugins/AtlassianJiraCloud',
           },
           {
-             to: '/plugins/bug-tracking/AzureDevOps',
-             from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
+            to: '/plugins/bug-tracking/AzureDevOps',
+            from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
           },
           {
-             to: '/plugins/bug-tracking/GitLab',
-             from: ['/plugins/GitLab', '/plugins/GitLabBTS']
+            to: '/plugins/bug-tracking/GitLab',
+            from: ['/plugins/GitLab', '/plugins/GitLabBTS']
           },
           {
-              to: '/plugins/bug-tracking/Monday',
-              from: '/plugins/Monday',
+            to: '/plugins/bug-tracking/Monday',
+            from: '/plugins/Monday',
           },
           {
-              to: '/plugins/bug-tracking/Rally',
-              from: '/plugins/Rally',
+            to: '/plugins/bug-tracking/Rally',
+            from: '/plugins/Rally',
           },
           {
-              to: '/plugins/notifications/EmailServer',
-              from: '/plugins/EmailServer',
+            to: '/plugins/notifications/EmailServer',
+            from: '/plugins/EmailServer',
           },
           {
-              to: '/plugins/notifications/Slack',
-              from: '/plugins/Slack',
+            to: '/plugins/notifications/Slack',
+            from: '/plugins/Slack',
           },
           {
-              to: '/plugins/notifications/Telegram',
-              from: '/plugins/Telegram',
+            to: '/plugins/notifications/Telegram',
+            from: '/plugins/Telegram',
           },
           {
-              to: '/plugins/import/JUnit',
-              from: '/plugins/JUnit',
+            to: '/plugins/import/JUnit',
+            from: '/plugins/JUnit',
           },
           {
-              to: '/plugins/import/RobotFramework',
-              from: '/plugins/RobotFramework',
+            to: '/plugins/import/RobotFramework',
+            from: '/plugins/RobotFramework',
           },
           {
-              to: '/installation-steps-advanced/file-storage-options/',
-              from: '/installation-steps-advanced/FileStorageOptions',
+            to: '/installation-steps-advanced/file-storage-options/',
+            from: '/installation-steps-advanced/FileStorageOptions',
           },
           {
-              to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
-              from: '/dashboards-and-widgets/DashboardCloning',
+            to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
+            from: '/dashboards-and-widgets/DashboardCloning',
           },
           {
-              to: '/releases/Version25.1.6',
-              from: '/releases/Release25.1.6',
+            to: '/releases/Version25.1.6',
+            from: '/releases/Release25.1.6',
           },
           {
-              to: '/releases/Version25.1.5',
-              from: '/releases/Release25.1.5',
+            to: '/releases/Version25.1.5',
+            from: '/releases/Release25.1.5',
           },
           {
-              to: '/developers-guides/ReportPortalAPI',
-              from: '/api',
+            to: '/developers-guides/ReportPortalAPI',
+            from: '/api',
           },
           {
-              to: '/plugins/other/SauceLabs',
-              from: '/plugins/SauceLabs',
+            to: '/plugins/other/SauceLabs',
+            from: '/plugins/SauceLabs',
           },
         ],
       },
