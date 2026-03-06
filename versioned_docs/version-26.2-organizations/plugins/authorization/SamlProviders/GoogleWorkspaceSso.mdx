@@ -1,0 +1,59 @@
+---
+sidebar_position: 4
+sidebar_label: Google Workspace SSO
+description: Simplify user access to ReportPortal by configuring Google Workspace SSO, enabling secure, seamless login and centralized identity management.
+---
+
+# Google Workspace SSO
+
+:::note
+This guide was provided by a [contributor](https://github.com/reportportal/reportportal/issues/2598).<br />
+This integration has not been tested by our team.
+:::
+
+## Configuration on Google side
+
+1. Open Google Workspace Admin panel.
+2. Navigate to Apps -> Web and mobile apps.
+3. Select Add app -> Add custom SAML App.
+
+<MediaViewer src={require('./img/google-workspace-sso/GoogleWorkspaceSSO1.png')} alt="Add custom SAML App in Google Workspace" />
+
+4. Enter App Name (for example, `ReportPortal`).
+5. Enter Description (optional field).
+6. Upload icon.
+7. Click "Download Metadata" button.
+
+<MediaViewer src={require('./img/google-workspace-sso/GoogleWorkspaceSSO2.png')} alt="Download Metadata button" />
+
+8. Host the metadata somewhere so that it is accessible to ReportPortal via HTTPS.
+9. Enter the ACS URL: `https:///uat/login/saml2/sso/GoogleSSO`
+
+:::note
+GoogleSSO will be used as the ReportPortal SAML Provider name.<br />
+:::
+
+10. Enter the Entity ID: `report.portal.sp.id`
+11. Leave the bottom part untouched.
+
+## Configuration on ReportPortal side
+
+1. Log in to ReportPortal as Admin.
+2. Open the menu at the bottom by clicking on the user’s icon.
+3. Click the "Administrate" link.
+4. Click the "Plugins" from the left-hand sidebar.
+5. Click on the "SAML" tab.
+6. Click on "Add integration" button.
+7. Fill in the fields:
+
+* Identity provider name ID: `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`
+* Provider name: `GoogleSSO` (same as in ACS URL)
+* Metadata URL: URL with the hosted metadata file
+* Email: `email`
+* Name attributes mode: `First and last name`
+* First name: `firstname`
+* Last name: `lastname`
+
+## SAML attribute mapping
+
+<MediaViewer src={require('./img/google-workspace-sso/GoogleWorkspaceSSO3.png')} alt="SAML attribute mapping for integration with Google Workspace SSO" />

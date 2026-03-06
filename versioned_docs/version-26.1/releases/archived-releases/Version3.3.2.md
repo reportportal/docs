@@ -1,0 +1,20 @@
+---
+sidebar_position: 38
+sidebar_label: Version 3.3.2
+description: ReportPortal v3.3.2 archived release notes with new features and enhanced test automation reporting tools capabilities.
+---
+
+# Version 3.3.2
+
+[milestone 3.3](https://github.com/reportportal/reportportal/milestone/5?closed=1)
+
+[Migrate to version 3.1+ instructions](https://github.com/reportportal/reportportal/wiki/Migration-to-3.1)
+
+
+## Bug fixes
+
+Fixed the following bugs:
+
+[#267](https://github.com/reportportal/reportportal/issues/267) Couldn't expand log of test
+
+[#248](https://github.com/reportportal/reportportal/issues/248) Log message is not expanded if lower than 'level-ERROR'

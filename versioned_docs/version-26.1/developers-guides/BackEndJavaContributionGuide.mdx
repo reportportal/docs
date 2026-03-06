@@ -1,0 +1,476 @@
+---
+sidebar_label: Back-end Java contribution guide
+description: Contribute to ReportPortal's Java backend with comprehensive development guidelines, setup instructions, and coding standards.
+---
+
+# Back-end Java contribution guide
+
+## Useful links
+
+[Landing page](https://reportportal.io)
+
+[Official documentation](https://reportportal.io/docs)
+
+[Contribution notes on GitHub](https://github.com/reportportal/reportportal/wiki/Contribution)
+
+## Deployment components description
+
+- [Traefik](https://traefik.io) as reversed proxy and application entry point
+- Data analysis
+  - [OpenSearch](https://opensearch.org/) as logs analysis data storage
+  - [Service Analyzer](https://github.com/reportportal/service-auto-analyzer) as log messages analysis tool
+  - [Service Analyzer Train](https://github.com/reportportal/service-auto-analyzer) is a `Service Analyzer` running in training mode to increase analysis quality
+
+- Database
+  - [Postgresql](https://www.postgresql.org)
+  - [Service Migrations](https://github.com/reportportal/migrations) - service for DB schema and data updates
+- [RabbitMQ](https://www.rabbitmq.com) - message broker for inter-service communication
+- [Minio](https://min.io) - binary data storage (alternative to plain filesystem storage)
+- [Service Index](https://github.com/reportportal/service-index) - gateway service with services metadata resolving mechanism
+- [Service UI](https://github.com/reportportal/service-ui) - ReportPortal web UI
+
+There are three Java repositories that are part of the whole RP deployment:
+- [Service API](https://github.com/reportportal/service-api) - REST API service as ReportPortal functionality provider
+- [Service Authorization](https://github.com/reportportal/service-authorization) - REST Authorization service for users authentication
+- [Service Jobs](https://github.com/reportportal/service-jobs) - Service with jobs to process data in the back-ground
+
+## Code conventions
+
+### IDE Formatter
+
+[Settings file](https://github.com/reportportal/reportportal/blob/master/idea_formatting_profile.xml)
+
+Steps to import:
+- Click on IDEA "Preferences"
+- Choose "Editor" section
+- Click on "Code style"
+- In "Scheme" section click on settings wheel → Import Scheme → IntelliJ IDEA code style XML
+
+<MediaViewer src={require('./img/backend/IdeaFormatter.png')} alt="Idea Formatter" />
+
+### Code style
+
+This document is aimed at improving aspects of our existing code base and synchronizing implementation/design approaches within the team. It serves as a blueprint for now but will be continually updated and improved.
+
+- Code should be as simple and readable as possible.
+- Avoid unnecessary interfaces. In our case, if we aren't planning to extend functionality and can easily refactor, we should avoid creating an interface unless there is a distinct need (e.g., for testing, code auto-generation, etc.).
+- Methods and classes should be named according to their responsibilities. If a name isn't self-explanatory, provide a description.
+- Overloaded or overridden methods with the same name should perform similar operations.
+- Keep parameter order consistent across methods with the same name.
+- Parameter names should be clear and indicative of their function. For example, instead of using a generic "id", specify the `entity` it's related to, like "userId" or "projectId."
+- The same principle applies to return parameters.
+- It's advisable to use a suitable structure to avoid unnecessary conversions.
+- Commonly used flows (checks, structure processing, etc.) should be moved to utilities.
+- Manually working with threads should be avoided unless necessary (utilize defined `TaskExecutor` or create a new one).
+- `Optional` and `Stream` should be used primarily when they enhance readability. Always return `Optional` instead of `null`.
+- Avoid using two terminal operations in a Stream.
+
+### Git branch requirements
+
+- Working branch names should start with the Jira-id (EPMRPP-DDD) and an optional description, e.g., `PMRPP-444` or `EPMRPP-443-fix-some-bugs`. All Jira branches must be related to a Jira ticket.
+- All commit messages in `master`, `develop`, and `release` branches must start with a Jira-id as well: EPMRPP-445 Some important fix.
+- It is better to divide commits into small, logically complete parts within the branch, for clarity during code review.
+- When merging a PR into the main branch (`master`, `develop`, `release`), all commits should be squashed and provided with a suitable description with the Jira-id by the person who performs the merge.
+
+**For contributors who do not have access to our Jira tasks**, the branch name prefix should be the GitHub issue name. It is highly recommended to create an issue that doesn't already exist and then fix it within your PR, even if it's a new function. The issue will remain there, a record of your ideas and comments from other contributors. Additionally, ReportPortal users who are not developers might prefer to look through issues rather than PRs to verify if a specific issue has been addressed in a new version of ReportPortal. This is a crucial component in maintaining a transparent, efficient test automation reporting dashboard for all users.
+
+## Open-source contribution workflow
+
+All features fixes should be added to `develop` branch only, exclusions: hot-fixes
+
+Changes applying workflow:
+
+- Clone repository or fork from it
+- Checkout `develop` branch
+- Create branch according to name policy
+- Push branch to the remote
+- Create PR according to name policy into the `develop` branch of the RP repository
+- Review and merge/reject PR (squash commits in one during merge)
+
+## Dev environment setup
+
+### Pre requirements
+
+- Postgresql should be deployed
+- Service Migration should fill/update DB data
+- Binary data storage should be configured
+
+To deploy DB with the latest schema we need the `docker-compose.yml` that looks like this:
+
+```yaml
+version: '2.4'
+services:
+
+  postgres:
+    image: postgres:12-alpine
+    shm_size: '512m'
+    environment:
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+      POSTGRES_DB: reportportal
+    volumes:
+      # For unix host
+      - ./data/postgres:/var/lib/postgresql/data
+      # For windows host
+      # - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    command:
+      -c checkpoint_completion_target=0.9
+      -c work_mem=96MB
+      -c wal_writer_delay=20ms
+      -c synchronous_commit=off
+      -c wal_buffers=32MB
+      -c min_wal_size=2GB
+      -c max_wal_size=4GB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 120s
+      retries: 10
+    restart: always
+  
+  db-scripts:
+    image: reportportal/migrations:5.6.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_SERVER: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: reportportal
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+    restart: on-failure
+```
+
+#### How to keep DB data up-to-date
+
+Maintaining an up-to-date database (DB) schema is an important aspect of efficient test automation reporting tools management.
+
+`image: reportportal/migrations:5.6.0` is the released version of the migrations service. However, if any changes were made in the develop branch after the release, the migrated DB schema may be outdated. To prevent this and ensure your DB data remains current, follow the steps outlined below:
+
+- clone/update [Migrations Repository](https://github.com/reportportal/migrations)
+- checkout `develop` branch
+- run the following command:
+```shell
+docker-compose run --rm migrations
+```
+
+This process leverages all SQL scripts present in the develop branch to update your locally running DB instance.
+
+By default, filesystem storage is employed for binary data; meaning all data will be stored on your local filesystem. If you prefer to store binaries using Minio (as we do in our production), you need to deploy it as well. You can do this by adding the necessary pieces to the existing `docker-compose.yml`:
+
+```yaml
+  minio:
+    image: minio/minio:RELEASE.2020-10-27T04-03-55Z
+    ports:
+      - '9000:9000'
+    volumes:
+      # For unix host
+      - ./data/storage:/data
+      # For windows host
+      # - minio:/data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: always
+```
+
+Please be aware of the comments directed towards `Windows` - if you are developing on Windows, uncomment the sections for `Windows` and comment out any `Linux`-related sections, applicable to both Postgres and Minio. Then, add the following statement to the `docker-compose.yml`:
+
+```yaml
+volumes:
+  postgres:
+  minio:
+```
+
+As the result we have the `docker-compose.yml`:
+```yaml
+version: '2.4'
+services:
+
+  postgres:
+    image: postgres:12-alpine
+    shm_size: '512m'
+    environment:
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+      POSTGRES_DB: reportportal
+    volumes:
+      # For unix host
+      - ./data/postgres:/var/lib/postgresql/data
+      # For windows host
+      # - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    command:
+      -c checkpoint_completion_target=0.9
+      -c work_mem=96MB
+      -c wal_writer_delay=20ms
+      -c synchronous_commit=off
+      -c wal_buffers=32MB
+      -c min_wal_size=2GB
+      -c max_wal_size=4GB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 120s
+      retries: 10
+    restart: always
+  
+  db-scripts:
+    image: reportportal/migrations:5.6.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_SERVER: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: reportportal
+      POSTGRES_USER: rpuser
+      POSTGRES_PASSWORD: rppass
+    restart: on-failure
+
+  minio:
+    image: minio/minio:RELEASE.2020-10-27T04-03-55Z
+    ports:
+      - '9000:9000'
+    volumes:
+      # For unix host
+      - ./data/storage:/data
+      # For windows host
+      # - minio:/data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: always
+    
+volumes:
+  postgres:
+  minio:
+```
+
+This file will be updated in the subsequent sections, but we can already initiate the development of our first service.
+
+### Service Authorization
+
+To start up Service Authorization, you should populate the marked values in the `application.yaml file`:
+
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Authorization" />
+
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Values you should fill" />
+
+(Optional) Adjust the `context-path` value from `/` to `/uat` if you plan to deploy Service UI locally (described in a later section).
+
+### Service API
+
+Prior to initiating the Service API, RabbitMQ needs to be included in our deployment.
+
+In ReportPortal, RabbitMQ serves three key functions:
+
+- Inter-service communication between Service API and Service Analyzer.
+- Asynchronous reporting feature.
+- User activity event publishing.
+
+To add RabbitMQ to our deployment, the following should be incorporated into our existing `docker-compose.yml`:
+
+```yaml
+  rabbitmq:
+    image: rabbitmq:3.7.16-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      retries: 5
+    restart: always
+```
+
+We can now begin deploying the Service API without encountering any issues. However, it's important to note that all Analyzer-related interactions (such as publishing to analyzer queues and receiving responses) will not be successful. To rectify this, we need to deploy the Service Analyzer and all its required services. To achieve this, we add the following to our `docker-compose.yml`:
+
+```yaml
+  opensearch:
+    image: opensearchproject/opensearch:2.11.0
+    container_name: opensearch
+    environment:
+      discovery.type: single-node
+      plugins.security.disabled: "true"
+      bootstrap.memory_lock: "true"
+      OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    volumes:
+      - opensearch:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD", "curl","-s" ,"-f", "http://0.0.0.0:9200/_cat/health"]
+    restart: always
+
+  analyzer: 
+    image: reportportal/service-auto-analyzer:5.6.0
+    environment:
+      LOGGING_LEVEL: info
+      AMQP_EXCHANGE_NAME: analyzer-default
+      AMQP_URL: amqp://rabbitmq:rabbitmq@rabbitmq:5672
+      ES_HOSTS: http://opensearch:9200
+      # ES_USER: 
+      # ES_PASSWORD: 
+      # MINIO_SHORT_HOST: minio:9000
+      # MINIO_ACCESS_KEY: minio
+      # MINIO_SECRET_KEY: minio123
+    depends_on:
+      opensearch:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    restart: always
+```
+
+As a result of these additions, your `docker-compose.yml` should look something like [this](pathname:///files/DockerCompose.yml).
+
+To start the Service API, populate the marked values in your `application.yaml` file:
+
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service API" />
+
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Authorization binary Configuration" />
+
+<MediaViewer src={require('./img/backend/RabbitmqConfig.png')} alt="Rabbitmq Configuration" />
+
+Alternatively, you may need to change the `context-path` value from `/` to `/api` should you plan to deploy Service UI locally (detailed instructions will be provided at a later stage).
+
+### Service Jobs
+
+To start Service Jobs, fill in the marked values in your `application.yaml` file:
+
+<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Jobs" />
+
+<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Values for binary" />
+
+<MediaViewer src={require('./img/backend/RabbitmqConfig.png')} alt="Values for Rabbitmq" />
+
+### Service UI
+
+After all back-end services deployed you may want to interact with them not only using tool like Postman but use ReportPortal UI too.
+Once all back-end services are deployed, you may want to interface with them beyond using a tool like Postman and use ReportPortal UI. To accomplish this, follow these steps:
+
+- Clone or update the [Service UI repository](https://github.com/reportportal/service-ui).
+- Checkout the `develop` branch.
+- Make changes to the `dev.config.js` file.
+
+Before:
+
+```javascript
+proxy: [
+        {
+          context: ['/composite', '/api/', '/uat/'],
+          target: process.env.PROXY_PATH,
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+      ]
+```
+
+After:
+```javascript
+proxy: [
+        {
+          context: ['/composite', '/api/'],
+          target: 'http://localhost:8585',
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+        {
+          context: ['/uat/'],
+          target: 'http://localhost:9999',
+          bypass(req) {
+            console.log(`proxy url: ${req.url}`);
+          },
+        },
+      ]
+```
+
+- If NodeJs is not already installed, install it (version 20 is recommended).
+- From the root folder(service-ui), run Service UI using the following commands:
+```shell
+cd app
+npm install
+npm run dev
+```
+
+- Open the Service UI page on `localhost` using port `3000` and try to login using the default credentials.
+
+This will allow you to view your test automation dashboard and interact with the reported test results.
+
+## Development workflow
+
+### Introduction to dependencies
+
+In addition to common dependencies such as `spring-...`, our Java services also have ReportPortal libraries distributed across different repositories. Here is a list of these dependencies:
+- [Commons DAO](https://github.com/reportportal/commons-dao) - Data layer dependency with domain model configuration
+- [Commons Model](https://github.com/reportportal/commons-model) - REST models dependency
+- [Commons](https://github.com/reportportal/commons) - Some common utils for multiple usage purposes
+- [Commons Rules](https://github.com/reportportal/commons-rules) - Business rules validation dependency
+- [Plugin API](https://github.com/reportportal/plugin-api) - ReportPortal plugin API
+- [Commons BOM](https://github.com/reportportal/commons-bom) - POM config for releases
+
+### Updates in dependencies
+
+Let's assume you found a bug when trying to retrieve a user from the DB. The logic is invoked within Service API, but the buggy code is in the Commons DAO dependency. To apply a fix and validate its effectiveness, follow these steps:
+
+- Clone or update the `Commons DAO` repository.
+- Checkout the `develop` branch.
+- Implement the necessary changes.
+- Create a branch according to naming policy.
+- Push the changes to the remote.
+- Create a pull request (PR) to the `develop` branch. Now, you can see your branch and the `commit hash` on the GitHub page:
+
+<MediaViewer src={require('./img/backend/CommitHash.png')} alt="Commit hash" />
+
+- Go to the service where your changes need to be applied (Service API in our instance).
+- Copy the `commit hash` and replace the existing one in the `build.gradle` of the required service (Service API in our instance):
+
+<MediaViewer src={require('./img/backend/BuildGradleUpdated.png')} alt="Build gradle updated" />
+
+- After rebuilding the project using `Gradle`, the dependency will be resolved and downloaded using the [Jitpack tool](https://jitpack.io).
+- Generate a branch according to the naming policy.
+- Push the changes to the remote.
+- Create a PR to the `develop` branch.
+
+## Summary notes
+
+This documentation should assist you in configuring the ReportPortal local development environment and provide an understanding of the standards and conventions we adhere to.
+
+The simplified development workflow should look as follows:
+
+- Always [maintain the latest schema and data](#how-to-keep-db-data-up-to-date) in your local DB instance.
+- Checkout the `develop` branch in the required repository.
+- Implement changes.
+- If changes in dependencies are necessary:
+   - Go to the dependency repository, apply changes, and create a branch and PR according to conventions.
+   - Using the `commit hash`, update the dependency in the `build.gradle`.
+- Create a branch according to the name policy.
+- Push to the remote.
+- Create a PR following the name policy.

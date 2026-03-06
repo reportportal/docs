@@ -1,0 +1,66 @@
+---
+sidebar_label: Test Framework Integration
+description: Integrate your test framework with ReportPortal. Configure agents, send results, and enrich logs, attachments, and attributes for a clear automation test report.
+---
+
+# Test Framework Integration
+
+ReportPortal is a system that **integrates with your Test Framework**, listens for events and visualizes test results. You cannot execute results right from ReportPortal.
+
+**[Agent](/glossary/#agent)** is a self-sufficient integration with a test framework that automatically sends test results and metadata after minimal configuration.
+
+**[Client](/glossary/#client)** is a REST API library that helps send data programmatically, but requires you to implement the logic and manage metadata yourself.
+
+<MediaViewer src={require('./img/Integrations.png')} alt="Integrations in our test management system" />
+
+
+How can ReportPortal be integrated with Test Framework?
+
+:::tip
+Check out our useful resources for ReportPortal integration and test result visualization.<br />
+**Blog posts:**<br />
+[ReportPortal integration with Playwright](https://reportportal.io/blog/reportportal-integration-with-playwright)<br />
+[Reporting Cypress test results to ReportPortal](https://reportportal.io/blog/reporting-cypress-test-results-to-reportportal)<br />
+[Test results visualization](https://reportportal.io/blog/test-results-visualization)<br />
+**Video guides:**<br />
+[Integrating Playwright with ReportPortal](https://www.youtube.com/watch?v=UdeRKqFVcuU)<br />
+[Integrating Cypress with ReportPortal](https://www.youtube.com/watch?v=BNQpsVDMQ4E)<br />
+[From Reporting to Insights: Visualize Your Test Results with ReportPortal](https://www.youtube.com/watch?v=CMDa5ZUUOh0)
+:::
+
+## Integration steps
+
+To do this, you need to follow a few simple steps.
+
+1. Installation<br />
+Add an agent to your project that corresponds to the Test Framework you use.
+2. Configuration<br />
+Provide parameters such as ReportPortal URL, API key/token, project, launch name, etc.
+
+:::tip
+After completing these two steps, the report will be available on the ReportPortal side.<br />
+But if you want to use all the features of ReportPortal, you need to take one more step.
+:::
+
+3. Update tests with additional data<br />
+Fill your reports with valuable attributes, descriptions, logs, attachments, and more.
+
+:::note
+Each step may differ depending on the language and Test Framework.<br />
+For specific tool details, select your language and Test Framework in the sections below.
+:::
+
+## Examples
+
+If you do not know anything about ReportPortal.
+If you just want to integrate ReportPortal with your Test Framework and view info about test case executions: a name, a status, a duration, parameters, attachments (files, screenshots, video and other), logs and others.
+So this section for you.
+
+You can review and mimic the following examples to start your integration with the ReportPortal.
+
+| **Test frameworks**              | **Examples**|
+|----------------------------------| ------------- |
+| Java Test Frameworks             |https://github.com/reportportal/examples-java  |
+| JavaScript based Test Frameworks | https://github.com/reportportal/examples-js |
+| .Net based Test Frameworks       | https://github.com/reportportal?q=example-net&type=&language=&sort=|
+| Python based Test Frameworks     | https://github.com/reportportal/examples-python|

@@ -1,0 +1,155 @@
+---
+sidebar_position: 4
+sidebar_label: Launches/test items attributes
+description: Use attributes to organize and categorize test data for better test automation reporting tools performance and easier analysis across launches.
+---
+
+# Launches/test items attributes
+
+For more convenient and effective use of our test report dashboard, we recommend paying attention to attributes.
+
+## What are attributes?
+
+Attributes are specific data points that can be included at all levels in ReportPortal:
+
+* launch
+* suite
+* test
+* step
+
+**Launch**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes1.png')} alt="Launch level attributes in our test report dashboard" />
+
+**Suite**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes2.png')} alt="Suite level attributes" />
+
+**Test**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes3.png')} alt="Test level attributes" />
+
+**Step**
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes4.png')} alt="Step level attributes" />
+
+**The purposes of attributes are:**
+
+1. Attributes allow you to categorize, group, or classify tests, making them easier to manage in the future.
+2. Attributes are used for filtering.
+3. You can create a filter based on the attribute and then build widgets using this filter.
+
+You can [report attributes to ReportPortal](/log-data-in-reportportal/HowToReportAttributesToReportPortal) via test framework integrations or via API and add or edit them via the UI. For that, click on the pencil icon next to the desired launch/test item. Then click on the existing attribute to edit the key and value.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="Pencil icon to edit attribute via UI" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes6.png')} alt="Clicking on existing attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes7.png')} alt="Editing attribute via UI" />
+
+## Best practices for using attributes
+
+1. Avoid having too many attributes on a single item.
+
+When there are too many attributes, they can become unreadable.
+
+Use attributes that will assist you in grouping tests, debugging them, or constructing widgets.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes10.png')} alt="Attributes for grouping tests in our test reporting tool" />
+
+2. The attribute name should be informative.
+
+Avoid making the attribute name excessively long, even though the field allows up to 512 characters. The name should be understandable and clearly indicate what the attribute refers to.
+
+For instance, in the example below, the attribute `v5: beta5_24.1` could have been divided into two separate attributes: `version` and `environment`.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes11.png')} alt="Informative attribute name" />
+
+3. Examples of categorizing tests using attributes.
+
+Below you can find some examples of how attributes can describe launch/test item characteristics:
+
+* feature: Quality Gates
+* feature: login
+* feature: notifications
+* Epic: @F1_functionality
+* Story: @F11_functionality
+* Use case: @F11_use_case_111
+* browser: Chrome
+* configuration: Chrome desktop
+* team: Sirius
+* squad: 1
+* run.id: 12345
+* run.type: scheduled
+* entity.id: 56789
+* Region: Canada
+* test.type: UI
+* branch: develop
+* build: 3.24.16.17.5
+* priority: critical
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes12.png')} alt="Categorizing tests using attributes" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes13.png')} alt="Examples of categorizing tests using attributes" />
+
+## Use Cases
+
+### Using attributes for filtering
+
+Let's consider the following example. In the launch below, there are 31 Failed tests.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes14.png')} alt="31 failed tests" />
+
+It is difficult to identify the most problematic area, so we can use filtering by attribute, for example, by different controller types.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes15.png')} alt="Filtering by attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes16.png')} alt="Filtering by controller type attribute" />
+
+As a result of the investigation, we found that the least number of failures occurred with tests using controller type `contr_test_item` (1), and the most failures occurred with tests using controller type `contr_launch` (12).
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes17.png')} alt="Tests with contr_test_item attribute" />
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes18.png')} alt="Tests with contr_launch attribute" />
+
+Thus, we understand that we need to focus on tests with controller type `contr_launch`.
+
+### Using attributes for creating widgets
+
+Widgets allow you to visually track [qa and test automation metrics metrics](/dashboards-and-widgets/ReportingAndMetricsInReportPortal/#qa-and-test-automation-metrics-in-reportportal) for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](/dashboards-and-widgets/CumulativeTrendChart).
+
+There are some launches with the `smoke` attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes19.png')} alt="Tests with smoke attribute" />
+
+You can create a filter based on this attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes20.png')} alt="Create a filter based on the attribute" />
+
+Afterwards, create a **Cumulative trend chart widget** using this filter.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes21.png')} alt="Cumulative trend chart widget" />
+
+On the screenshot below, we can observe a growth in statistics on the platforms from one build to the next.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/Attributes22.png')} alt="Growth in statistics on the platforms from one build to the next" />
+
+Based on attributes specified for test items, you can also build a [Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/) to visually represent the passing rate of different application components.
+
+For example, if there are some launches with the `demo` attribute, you can create a filter using this attribute.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck1.png')} alt="Launches with the demo attribute" />
+
+Next, construct a Component Health Check widget using this filter. Specify the components, functionality, platforms, or other criteria you want to monitor by defining the relevant attributes across different levels.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck2.png')} alt="Building a Component Health Check widget using filter" />
+
+As a result:
+
+- On the first level, you can view the passing rate for each build.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck3.png')} alt="First level of Component Health Check widget" />
+
+- On the second level, you can see which platform has the highest number of failed test cases, helping you identify areas that may need more attention.
+
+<MediaViewer src={require('./img/launches-test-items-attributes/ComponentHealthCheck4.png')} alt="Second level of Component Health Check widget" />
+
+Therefore, properly using attributes in ReportPortal can greatly optimize test management and assist in providing clearer visualizations of trends through widgets.
+
+There are also [system attributes](/log-data-in-reportportal/HowToReportAttributesToReportPortal#system-attributes) that allow to extend the functionality of ReportPortal.

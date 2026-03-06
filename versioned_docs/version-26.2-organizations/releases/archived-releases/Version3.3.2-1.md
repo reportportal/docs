@@ -1,0 +1,14 @@
+---
+sidebar_position: 37
+sidebar_label: Version 3.3.2-1
+description: ReportPortal v3.3.2-1 archived release notes with bug fixes and enhanced test automation reporting tools stability.
+---
+
+# Version 3.3.2-1
+
+**Update instructions**
+- In case of update from 3.3.2 version, just update version of API container.
+- In case of update from older versions: follow update guide for version 3.3.2
+
+**Minor improvements:**
+- Backward compatibility with 4.0.x Agents

@@ -98,3 +98,31 @@ h1 {
 .version-button .dropdown--right .dropdown__menu {
   left: 0px;
 }
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 20px;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right:hover {
+  background-color: var(--ifm-color-primary);
+}
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right:hover .navbar__link {
+  color: #fff;
+}
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right .navbar__link {
+  padding: 0;
+  font-size: 14px;
+}
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right .navbar__link::after {
+  border-color: var(--ifm-color-primary) transparent transparent;
+}
+
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right:hover .navbar__link::after {
+  border-color: #fff transparent transparent;
+}
