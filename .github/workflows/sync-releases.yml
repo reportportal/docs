@@ -14,6 +14,12 @@
 name: Sync GitHub Releases
 
 on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'docs/releases/**'
+
   workflow_call:
     inputs:
       scope:
@@ -39,6 +45,7 @@ on:
         type: choice
         options:
           - latest
+          - last-2
           - last-n
           - last-month
           - all
@@ -60,18 +67,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - name: Resolve sync scope
+        id: scope
+        run: |
+          INPUT_SCOPE="${{ inputs.scope }}"
+          echo "value=${INPUT_SCOPE:-latest}" >> "$GITHUB_OUTPUT"
+
       - name: Sync release pages
         run: node scripts/sync-releases.js
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           RELEASES_URL: ${{ env.RELEASES_URL }}
-          SYNC_SCOPE: ${{ inputs.scope == 'last-n' && format('last-{0}', inputs.count) || inputs.scope }}
+          SYNC_SCOPE: ${{ inputs.scope == 'last-n' && format('last-{0}', inputs.count) || steps.scope.outputs.value }}
 
       - name: Check for changes
         id: changes
