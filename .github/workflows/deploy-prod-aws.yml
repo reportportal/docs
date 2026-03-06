@@ -1,0 +1,149 @@
+# Copyright 2026 EPAM Systems
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Deploy to prod (AWS S3)
+env:
+  AWS_S3_BUCKET_NAME : rpp-landing-prod
+  AWS_REGION_NAME : eu-central-1
+  BUILD_DIR : "build/"
+  DOCS_BASE_URL: "/docs/"
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+      - README.md
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  sync-versions:
+    uses: ./.github/workflows/sync-releases.yml
+    with:
+      scope: 'last-2'
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  clean-docs-folder:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION_NAME }}
+
+      - name: Clear docs folder in S3 bucket
+        run: |
+          if aws s3 ls "s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/" 2>/dev/null; then
+            echo "docs/ folder exists, removing it..."
+            aws s3 rm s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/ --recursive
+          else
+            echo "docs/ folder does not exist, nothing to clean."
+          fi
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [sync-versions, clean-docs-folder]
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Pull latest changes
+        run: git pull origin master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install of node dependencies
+        run: npm ci
+
+      - name: create env file
+        run: |
+          touch .env
+          echo DOCS_BASE_URL=${{ env.DOCS_BASE_URL }} >> .env
+
+      - name: Build the source code
+        run: npm run build
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION_NAME }}
+
+      - name: Deploy to AWS S3
+        run: aws s3 sync ./${{ env.BUILD_DIR }} s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/
+
+      - name: Trigger Amplify redeploy
+        run: |
+          aws s3 sync s3://${{ env.AWS_S3_BUCKET_NAME }} /tmp/full-site
+
+          DEPLOY_RESULT=$(aws amplify create-deployment \
+            --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
+            --branch-name production)
+
+          JOB_ID=$(echo "$DEPLOY_RESULT" | jq -r '.jobId')
+          ZIP_URL=$(echo "$DEPLOY_RESULT" | jq -r '.zipUploadUrl')
+
+          cd /tmp/full-site
+          zip -r /tmp/deploy.zip .
+
+          curl --fail -T /tmp/deploy.zip "$ZIP_URL"
+
+          aws amplify start-deployment \
+            --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
+            --branch-name production \
+            --job-id "$JOB_ID"
+
+  merge-to-develop:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Merge master into develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git fetch origin develop:develop 2>/dev/null; then
+            echo "::warning::develop branch not found, skipping merge."
+            exit 0
+          fi
+          if git diff --quiet develop..master; then
+            echo "No differences between master and develop, skipping merge."
+            exit 0
+          fi
+          git checkout develop
+          if ! git merge --no-ff master -m "Sync || merge master into develop"; then
+            echo "::error::Merge conflict detected when merging master into develop."
+            git merge --abort
+            exit 1
+          fi
+          git push origin develop
