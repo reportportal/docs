@@ -32,13 +32,6 @@ permissions:
   contents: write
 
 jobs:
-  sync-versions:
-    uses: ./.github/workflows/sync-releases.yml
-    with:
-      scope: 'last-2'
-    secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
   clean-docs-folder:
     runs-on: ubuntu-latest
     environment: production
@@ -60,7 +53,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: [sync-versions, clean-docs-folder]
+    needs: [clean-docs-folder]
     environment: production
     steps:
       - name: Checkout repository
