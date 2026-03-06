@@ -15,7 +15,6 @@ name: Deploy to dev (AWS S3)
 env:
   AWS_S3_BUCKET_NAME : rpp-landing
   AWS_REGION_NAME : eu-central-1
-  CLOUDFRONT_ID: EILUB1IE9EON0
   BUILD_DIR : "build/"
   DOCS_BASE_URL: "/docs/"
 
@@ -84,9 +83,6 @@ jobs:
 
       - name: Deploy to AWS S3
         run: aws s3 sync ./${{ env.BUILD_DIR }} s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/
-
-      - name: Clearing CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_ID }} --paths "/docs/*"
 
       - name: Trigger Amplify redeploy
         run: |
