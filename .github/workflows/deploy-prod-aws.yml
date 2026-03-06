@@ -102,7 +102,7 @@ jobs:
 
           DEPLOY_RESULT=$(aws amplify create-deployment \
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
-            --branch-name main)
+            --branch-name production)
 
           JOB_ID=$(echo "$DEPLOY_RESULT" | jq -r '.jobId')
           ZIP_URL=$(echo "$DEPLOY_RESULT" | jq -r '.zipUploadUrl')
@@ -114,7 +114,7 @@ jobs:
 
           aws amplify start-deployment \
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
-            --branch-name main \
+            --branch-name production \
             --job-id "$JOB_ID"
 
   merge-to-develop:
