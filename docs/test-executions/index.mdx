@@ -10,6 +10,20 @@ On the [Test Executions](/features/TestExecutions) page, you can conveniently vi
 
 ## Page layout
 
+At the top of the page, the following launch filtering options are available:
+
+* **Launch Start Time:** Filter by launch start date within predefined ranges (e.g., last 7 days).
+* **Launch Names:** Refine results based on specific launch names.
+* **Launch Attributes:** Add applicable attributes to customize the filter criteria.
+
+### Header Elements
+
+The following elements are displayed in the header of the page:
+
+* **Export:** Export the filtered table data as a downloadable file.
+* **Refresh:** Refresh the table to include the latest updates.
+* **All Filters** (icon): Expand to view additional filter options.
+
 ### No launches
 
 For a new project, or if no launches have been reported yet, "No results" is displayed.
@@ -18,35 +32,43 @@ For a new project, or if no launches have been reported yet, "No results" is dis
 
 ### Launches reported
 
-The "Last 7 days" option is pre-selected in the "Launch start time" dropdown, and the following columns are displayed in the Search results table:
+In case there are launches which correspond default filter criterion (start time = Last 7 days), then the Search Results table displays detailed information about test executions based on applied filters.
 
-* Name
-* Start time
-* Status
-* Defect type
-* Defect comment
+Statistics section **in the table header** includes the following counters:
 
-At the top of the page, the following filtering options are available:
+* **Total:** Total number of test executions.
+* **Passed:** Count of successful tests.
+* **Failed:** Count of failed tests.
+* **Skipped:** Count of skipped tests.
+* **In Progress:** Count of tests that are currently running.
+* **Interrupted:** Count of tests that were prematurely stopped.
 
-* Launch start time
-* Launch names
-* Launch attributes
+The table includes the following **default columns** for each test execution:
 
-Additionally, "Refresh" button is displayed.
+* "Name" column
+* "Retries" column
+* "Start Time" column
+* "Status" column
+* "Defect Type" column
+* "Defect Comment" column
 
 <MediaViewer src={require('./img/LaunchesReported.png')} alt="Launches Reported on the Test Executions page" />
 
 You can expand or collapse all rows in the Search Results table by clicking on the corresponding icon.
 
-<MediaViewer src={require('./img/Expand.png')} alt="Expand or collapse rows on our test reporting tool" />
-
 In addition, you can expand or collapse an individual row as needed.
+
+<MediaViewer src={require('./img/Expand.png')} alt="Expand or collapse rows on our test reporting tool" />
 
 :::note
 The limit for the search results is 10.000 latest test cases.
 :::
 
-<MediaViewer src="https://youtu.be/e62nohd5XKk" alt="Test Executions page in our qa metrics dashboard" type="video" />
+:::important
+Total statistics represent all test results that match the applied filter criteria, irrespective of the 10k item limit on the Test Executions page.
+:::
+
+<MediaViewer src="https://youtu.be/Q38n1Y8yJeU" alt="Test Executions page in our qa metrics dashboard" type="video" />
 
 ## Launch level filtering
 
@@ -89,11 +111,11 @@ You can filter test executions by one or more launch attributes. Only tests whic
 You can filter launch attributes in three ways: by **key**, by **value**, or by a **key:value** pair.
 :::
 
-<MediaViewer src={require('./img/Attributes1.png')} alt="Filtering launches by value" />
+<MediaViewer src={require('./img/LaunchAttributes1.png')} alt="Filtering launches by value" />
 
-<MediaViewer src={require('./img/Attributes2.png')} alt="Filtering launches by some attributes" />
+<MediaViewer src={require('./img/LaunchAttributes2.png')} alt="Filtering launches by some attributes" />
 
-<MediaViewer src="https://youtu.be/hRRAaCjJQyg" alt="Test Executions page. Launch level filtering" type="video" />
+<MediaViewer src="https://youtu.be/ZFXlgvLS0l4" alt="Test Executions page. Launch level filtering" type="video" />
 
 ## Test level filtering
 
@@ -103,12 +125,18 @@ You can apply both the launch level filters and the test level filters at the sa
 
 You can search tests by the name.
 
-<MediaViewer src={require('./img/TestName.png')} alt="Filtering tests by name" />
+<MediaViewer src={require('./img/TestCaseName.png')} alt="Filtering tests by name" />
 
-### Test cases filter
+<MediaViewer src="https://youtu.be/JBFlR2pqrnE" alt="Search tests by the name" type="video" />
 
-You can filter test cases using the following criteria:
+## All filters
 
+On the "All Filters" modal window you can apply both the launch level filters and the test level filters at the same time.
+
+* Launch start time
+* Launch names
+* Launch attributes
+* Test execution name
 * Status
 * Defect type
 * Start time
@@ -118,17 +146,158 @@ You can filter test cases using the following criteria:
 * Issue in BTS
 * Method type
 * Retry
-* Pattern name
-* Ignore in AA
 * Analyzed by AA
+* Ignored in AA
 
-After you apply the filter, on the Test Executions page the tests will be filtered and the filter icon will indicate how many filter criteria are currently applied to the tests. When at least one test filter criterion is applied, the "Clear all" button becomes enabled in the Filter modal window, allowing you to clear the selected criteria.
+<MediaViewer src={require('./img/AllFilters.png')} alt="All Filters modal window in our test automation reporting dashboard" />
 
-<MediaViewer src={require('./img/TestCasesFilter1.png')} alt="Test cases filter" />
+## Saved filters
 
-<MediaViewer src={require('./img/TestCasesFilter2.png')} alt="Options on test cases filter" />
+The Saved Filters feature allows users to store filter configurations on the Test Executions page so they can quickly switch between frequently used criteria without reconfiguring filters each time.
 
-<MediaViewer src="https://youtu.be/FOYbC0BBvRA" alt="Test Executions page. Test level filtering" type="video" />
+This filters are saved per user per project. Other users won't see the filters created by other users.
+
+Users can:
+
+* Create new filters
+* Apply saved filters
+* Rename saved filters
+* Edit saved filters
+* Duplicate saved filters
+* Delete saved filters
+* Reorder saved filters
+* Clear applied filters
+
+### Create filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Configure filter criteria in the "Filters" side panel.
+4. Click the "Save Filter" button.
+
+<MediaViewer src={require('./img/saved-filters/CreateFilter1-1.png')} alt="Save Filter button" />
+
+5. If no filters exist, enter filter name (should be unique per user per project).
+
+<MediaViewer src={require('./img/saved-filters/CreateFilter1-2.png')} alt="Save Filter if no filter exist" />
+
+6. If filters exist, choose "Save as new" and provide filter name.
+
+<MediaViewer src={require('./img/saved-filters/CreateFilter2.png')} alt="Save Filter if filters exist" />
+
+7. Click "Save & Apply" button.
+
+### Apply filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click the three-dots menu on a saved filter.
+4. Select "Apply" from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/ApplyFilter1.png')} alt="Apply option in the dropdown" />
+
+or
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click on saved filter.
+4. Click "Apply" button.
+
+<MediaViewer src={require('./img/saved-filters/ApplyFilter2.png')} alt="Apply button" />
+
+On Test Executions page you will see the name of the filter which is currently applied to the search results.
+
+<MediaViewer src={require('./img/saved-filters/ApplyFilter3.png')} alt="Saved filter on Test Executions page on our qa automation dashboard" />
+
+### Rename filter
+
+1. Open the Test Executions page.
+2. Click the "Filters" icon in the header.
+3. Click the three-dots menu on a saved filter.
+4. Select "Rename" from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/RenameFilter1.png')} alt="Rename option in the dropdown" />
+
+5. Change filter name (should be unique per user per project).
+
+<MediaViewer src={require('./img/saved-filters/RenameFilter2.png')} alt="Changing the filter name" />
+
+6. Click "Save" button.
+
+### Edit filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click the three-dots menu on a saved filter.
+4. Select "Edit" from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/EditFilter.png')} alt="Edit option in the dropdown" />
+
+5. Modify filter criteria.
+6. Click "Save & Apply" button.
+
+or
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Configure filter criteria in the "Filters" side panel.
+4. Click the "Save Filter" button.
+5. Select "Update existing filter".
+
+<MediaViewer src={require('./img/saved-filters/EditFilter2-1.png')} alt="Update existing filter" />
+
+6. Select a filter from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/EditFilter2-2.png')} alt="Select a filter from the dropdown" />
+
+7. Click "Save & Apply" button.
+
+### Duplicate filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click the three-dots menu on a saved filter.
+4. Select "Duplicate" from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/DuplicateFilter1.png')} alt="Duplicate option in the dropdown" />
+
+5. Click "Duplicate" button.
+
+<MediaViewer src={require('./img/saved-filters/DuplicateFilter2.png')} alt="Duplicated filter name" />
+
+### Delete filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click the three-dots menu on a saved filter.
+4. Select "Delete" from the dropdown.
+
+<MediaViewer src={require('./img/saved-filters/DeleteFilter1.png')} alt="Delete option in the dropdown" />
+
+5. Click "Delete" button.
+
+<MediaViewer src={require('./img/saved-filters/DeleteFilter2.png')} alt="Confirm Delete" />
+
+### Reorder filters
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Drag a filter chip.
+4. Drop it between filters or at the top/bottom of the list.
+
+<MediaViewer src={require('./img/saved-filters/ReorderFilter.png')} alt="Confirm Delete" />
+
+### Clear applied filter
+
+1. Open the Test Executions page.
+2. Click the "All Filters" icon in the header.
+3. Click on saved filter.
+4. Click "Apply" button.
+5. Click the cross icon next to the filter name in the header.
+
+<MediaViewer src={require('./img/saved-filters/ClearAppliedFilter.png')} alt="Clear applied filter on Test Executions page" />
+
+<MediaViewer src="https://youtu.be/afBbw_WWt5o" alt="Saved filters on our test automation reporting dashboard" type="video" />
 
 ## Customize columns
 
@@ -162,7 +331,7 @@ You can customize the columns displayed on the Test Execution page by adding new
 3. Drag and drop a column name to reorder the list.
 4. Click the "Save" button.
 
-<MediaViewer src={require('./img/Reorder.png')} alt="Reordering columns on the Customize Columns filter" />
+<MediaViewer src={require('./img/ReorderColumns.png')} alt="Reordering columns on the Customize Columns filter" />
 
 ### Cancel Changes
 
@@ -171,7 +340,7 @@ You can customize the columns displayed on the Test Execution page by adding new
 3. Make some changes (for example, add new column).
 4. Click the "Cancel" button.
 
-<MediaViewer src={require('./img/Cancel.png')} alt="Cancel changes on the Customize Columns filter" />
+<MediaViewer src={require('./img/CancelChanges.png')} alt="Cancel changes on the Customize Columns filter" />
 
 ### Reset Columns
 
@@ -206,7 +375,7 @@ You can create multiple "Custom attribute" columns.
 
 <MediaViewer src={require('./img/CustomColumn3.png')} alt="Displaying of custom column on Test Execution page" />
 
-<MediaViewer src="https://youtu.be/ky0VVxmy5ds" alt="Customize columns on the Test Executions page" type="video" />
+<MediaViewer src="https://youtu.be/Pz9lvefxBAA" alt="Customize columns on the Test Executions page" type="video" />
 
 ## Refresh
 

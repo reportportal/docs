@@ -22,7 +22,9 @@ An account with the "Administrator" type has permission to configure the entire 
 
 You can check the permissions for each other role on the Project Members page.
 
-<MediaViewer src={require('./img/PermissionMap.png')} alt="Permission map in our test automation metrics dashboard" />
+<MediaViewer src={require('./img/PermissionMap1.png')} alt="Permission map in our test automation metrics dashboard" />
+
+<MediaViewer src={require('./img/PermissionMap2.png')} alt="Full permission map in our test results dashboard" />
 
 ## Administrator
 [Installation steps](/installation-steps)  
