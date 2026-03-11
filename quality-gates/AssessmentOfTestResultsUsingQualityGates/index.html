@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.87377039.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.68dd1b4f.js" defer="defer"></script>
 <script src="/docs/assets/js/main.550c3b70.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -54,11 +54,11 @@ Second, let&#x27;s check how to send assessment results to CI/CD.</p>
 </ul>
 <p>If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section <a href="/docs/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates">How to recalculate Quality Gates</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="timeout">Timeout<a href="#timeout" class="hash-link" aria-label="Direct link to Timeout" title="Direct link to Timeout">​</a></h3>
-<p>Specially for integration with CI\CD, Quality Gates has parameter <code>Timeout</code>. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from <code>Timeout</code>. Default <code>Timeout</code> equals to 2 hours. It means, that after 2 hours after launch finish, the system force recaluculats Quality Gate Status and defined status.</p>
-<table><thead><tr><th style="text-align:center">Jenkins Job Status</th><th style="text-align:center">Quality Gate Status</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:center">SUCCESS</td><td style="text-align:center">PASSED</td><td style="text-align:left">All Rulles Passed</td></tr><tr><td style="text-align:center">FAILED</td><td style="text-align:center">FAILED</td><td style="text-align:left">At least one rule does not pass</td></tr></tbody></table>
+<p>Especially for integration with CI/CD, Quality Gates has a parameter <code>Timeout</code>. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from <code>Timeout</code>. Default <code>Timeout</code> equals to 2 hours. It means, that after 2 hours after launch finish, the system forcibly recalculates Quality Gate Status and determines the status.</p>
+<table><thead><tr><th style="text-align:center">Jenkins Job Status</th><th style="text-align:center">Quality Gate Status</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:center">SUCCESS</td><td style="text-align:center">PASSED</td><td style="text-align:left">All Rules Passed</td></tr><tr><td style="text-align:center">FAILED</td><td style="text-align:center">FAILED</td><td style="text-align:left">At least one rule does not pass</td></tr></tbody></table>
 <p>If you want to choose other options for a timeout, you can do it:</p>
 <ul>
-<li>Login ReportPortal as Project Manager or Admin</li>
+<li>Log in to ReportPortal as Project Manager or Admin</li>
 <li>Open <code>Project Settings&gt; Quality Gates</code></li>
 <li>Click on <code>the pencil</code> on the Quality Gate rule</li>
 <li>Click on <code>&quot;Edit Details.&quot;</code></li>

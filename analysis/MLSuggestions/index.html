@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.87377039.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.68dd1b4f.js" defer="defer"></script>
 <script src="/docs/assets/js/main.550c3b70.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,7 +33,7 @@
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-the-ml-suggestions-functionality-is-working">How the ML suggestions functionality is working<a href="#how-the-ml-suggestions-functionality-is-working" class="hash-link" aria-label="Direct link to How the ML suggestions functionality is working" title="Direct link to How the ML suggestions functionality is working">​</a></h2>
 <p>ML Suggestions searches for similar previously analyzed items to the current test item, so it requires an analytical base saved in OpenSearch. ML suggestions takes into account all user-investigated, auto-analyzed items or items chosen from ML suggestions. While the analytical base is growing ML suggestions functionality will have more examples to search by and suggest you the best options.</p>
-<p>ML suggestions analysis is run everytime you enter &quot;Make decision&quot; editor. ML suggestions are run for all test items no matter what defect type they have now. This functionality is processing only test items with logs (log level &gt;= 40000).</p>
+<p>ML suggestions analysis is run every time you enter &quot;Make decision&quot; editor. ML suggestions are run for all test items no matter what defect type they currently have. This functionality is processing only test items with logs (log level &gt;= 40000).</p>
 <p>The request for the suggestions part looks like this:</p>
 <ul>
 <li>testItemId;</li>
@@ -54,7 +54,7 @@
 <li>cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields</li>
 <li>the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors</li>
 </ul>
-<p>The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with &gt;= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.</p>
+<p>The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with &gt;= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximum 5 items with the highest score to show in the ML Suggestions section.</p>
 <p>ML suggestions section contains at maximum 5 suggested items, they are shown together with the scores given by the model and we divide them into 3 groups:</p>
 <ul>
 <li>the group &quot;SAME&quot;, test items with the score = 100%</li>

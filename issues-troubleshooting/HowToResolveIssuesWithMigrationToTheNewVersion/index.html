@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="ReportPortal Documentation" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.6f75df29.css">
-<script src="/docs/assets/js/runtime~main.87377039.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.68dd1b4f.js" defer="defer"></script>
 <script src="/docs/assets/js/main.550c3b70.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,7 +19,7 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="error-dirty-database-version-xx-fix-and-force-version">Error: Dirty database version XX. Fix and force version.<a href="#error-dirty-database-version-xx-fix-and-force-version" class="hash-link" aria-label="Direct link to Error: Dirty database version XX. Fix and force version." title="Direct link to Error: Dirty database version XX. Fix and force version.">​</a></h2>
 <p>That means, migration process has been interrupted during XX migration (migration has been started but not finished)</p>
 <ol>
-<li>At first, you need to check the logs of migration (service itselft and database), it can be helpful, if yes, make some actions based on logs, if not then move next.</li>
+<li>At first, you need to check the logs of migration (service itself and database), it can be helpful, if yes, make some actions based on logs, if not then move next.</li>
 <li>You need to rollback all applied (if any) migration XX parts.</li>
 </ol>
 <p>The format for url is the next:</p>
@@ -31,7 +31,7 @@
 </ol>
 <p>For instance, if you have &quot;Error: Dirty database version 10. Fix and force version.&quot;</p>
 <ol>
-<li>Check the logs(service itselft and database), in case we&#x27;ve found nothing, move next.</li>
+<li>Check the logs (service itself and database), in case we&#x27;ve found nothing, move next.</li>
 <li>You need to check 10 migration (<a href="https://github.com/reportportal/migrations/blob/develop/migrations/10_attachment_size.up.sql" target="_blank" rel="noopener noreferrer">https://github.com/reportportal/migrations/blob/develop/migrations/10_attachment_size.up.sql</a>) and rollback if you have some partly migration.</li>
 <li>Then execute #update schema_migrations set version=9, dirty=f</li>
 <li>Redeploy RP based on docker-composer for example (migration should be started automatically, if you followed by instructions of installation for this way.)</li>
