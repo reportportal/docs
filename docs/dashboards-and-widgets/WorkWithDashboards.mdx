@@ -202,3 +202,79 @@ Dashboard ID in the response corresponds to cloned dashboard.
 <MediaViewer src={require('./img/dashboard-cloning/DashboardCloning19.png')} alt="Dashboard ID in the response" />
 
 <MediaViewer src={require('./img/dashboard-cloning/DashboardCloning20.png')} alt="ID of the cloned dashboard" />
+
+## Lock dashboard
+
+You can prevent any modifications to dashboards when necessary, starting from version 26.0.2.
+
+**Permissions:**<br />
+Admin and Project Manager can Lock/Unlock dashboard.
+
+**To lock** dashboard:
+
+1. Log in to ReportPortal as Admin or Project Manager.
+2. Open Dashboards page.
+3. Open the desired dashboard.
+4. Click ‘Lock’ button.
+
+<MediaViewer src={require('./img/lock-dashboard/LockDashboard1.png')} alt="Lock icon" />
+
+The lock indicator appears next to the dashboard on the ‘All Dashboards’ page.
+
+<MediaViewer src={require('./img/lock-dashboard/LockDashboard2.png')} alt="The lock indicator" />
+
+When the **dashboard is locked** and the user role is Member, Customer, or Operator:
+
+The following actions are **disabled**:
+
+* Edit Dashboard
+* Delete Dashboard
+* Add New Widget
+* Edit Widget (partially allowed in terms of changing filters applied in the widget)
+* Delete Widget
+
+The following action remains **enabled**:
+
+* Refresh Widget
+
+If the dashboard is locked, any user can still edit the filters on it:
+
+* Apply another filter
+
+<MediaViewer src={require('./img/lock-dashboard/ApplyAnother.png')} alt="Apply another filter in the locked dashboard" />
+
+* Edit a filter
+
+<MediaViewer src={require('./img/lock-dashboard/EditFilter.png')} alt="Edit a filter in the locked dashboard" />
+
+* Add a new filter and apply it instantly
+
+<MediaViewer src={require('./img/lock-dashboard/AddNewFilter.png')} alt="Add a new filter in the locked dashboard" />
+
+:::important
+Admin and Project Manager retain full control regardless of dashboard lock state.
+:::
+
+**To unlock** dashboard:
+
+1. Log in to ReportPortal as Admin or Project Manager.
+2. Open Dashboards page.
+3. Open the desired dashboard.
+4. Click ‘Unlock’ button.
+
+<MediaViewer src={require('./img/lock-dashboard/UnlockDashboard1.png')} alt="Unlock button" />
+
+The lock indicator disappears next to the dashboard on the ‘All Dashboards’ page.
+
+<MediaViewer src={require('./img/lock-dashboard/UnlockDashboard2.png')} alt="Disappeared indicator on the All Dashboards page" />
+
+When the **dashboard is unlocked** and the user role is Member, Customer, or Operator:
+
+The following actions are **enabled**:
+
+* Edit Dashboard
+* Delete Dashboard
+* Add New Widget
+* Edit Widget
+* Refresh Widget
+* Delete Widget

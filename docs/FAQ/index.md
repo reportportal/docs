@@ -50,7 +50,7 @@ ReportPortal is containerized and can be orchestrated using either docker-compos
 
 #### 5. Is there any training available to use ReportPortal effectively?
 
-Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigate [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
+Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigating [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
 
 #### 6. Is there a demo available?
 
@@ -164,7 +164,7 @@ ReportPortal has defined application limits to maintain stable performance and c
 - **User avatars:**
    - Accepted formats: **JPEG, PNG, GIF**
    - Maximum size: **1 MB**
-   - Maximum dimensions: **300×500 px**
+   - Maximum dimensions: **300x500 px**
 - **RabbitMQ message size:** infrastructure-dependent; it’s recommended to keep log payloads reasonably sized, as very large logs may be rejected to process.
 
 **5. API Behavior & Miscellaneous**

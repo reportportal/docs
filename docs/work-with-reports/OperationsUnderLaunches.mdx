@@ -259,7 +259,7 @@ The export operation works for a separate launch only. You cannot export multipl
 The XLS and HTML reports are exported in a one-page format, while the PDF report is generated with page breaks.
 :::
 
-**Export with attachments**
+### Export with attachments
 
 When exporting with the 'Include Attachments' checkbox selected, the generated report is a ZIP archive.
 
@@ -290,6 +290,15 @@ In the launch report, you can find the attachment names at the corresponding tes
 <MediaViewer src={require('./img/operations-under-launches/ExportLaunches9.png')} alt="Attachment names" />
 
 <MediaViewer src="https://youtu.be/OvzlU1DSb-E" alt="Export Launch in our real time dashboard open source" type="video" />
+
+:::info
+Export launch report with nested steps attachments is available starting from version **26.0.2**.<br />
+Attachments from nested steps are organized according to their hierarchy within the test structure. Parent step attachments are placed directly in the corresponding Step folder.<br />
+Each nested step has its own dedicated subfolder (one folder per nested step), which contains only that nested step’s attachments.<br />
+This structure ensures that attachments from nested steps are clearly separated and easy to locate within the exported archive.
+:::
+
+<MediaViewer src={require('./img/operations-under-launches/NestedStepsAttachments.png')} alt="Attachment names" />
 
 ## Delete launches
 

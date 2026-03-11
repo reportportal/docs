@@ -6,7 +6,7 @@ description: Track and visualize Behave test results automatically, view Gherkin
 
 # ReportPortal behave Integration
 
-There is [behave](https://behave.readthedocs.io/en/stable/) extension for reporting test results of behave to the ReportalPortal.
+There is [behave](https://behave.readthedocs.io/en/stable/) extension for reporting test results of behave to the ReportPortal.
 
 Behave is a popular Python-based testing framework. It can be used for testing different types of applications: web applications, APIs, desktop. Behave has a syntax which is easy to understand even for non-technical users.
 

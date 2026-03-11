@@ -6,7 +6,7 @@ description: Integrate nosetests with ReportPortal to capture detailed test resu
 
 # ReportPortal nosetests Integration
 
-There is [Nose](https://nose.readthedocs.io/en/latest/) plugin for reporting test results of Nose to the ReportalPortal.
+There is [Nose](https://nose.readthedocs.io/en/latest/) plugin for reporting test results of Nose to the ReportPortal.
 
 nosetests is the command-line tool used for running tests with the Nose testing framework. It makes it simple to run all tests with a single command.
 
