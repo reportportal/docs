@@ -24,7 +24,7 @@ DELETE `/v1/{projectName}/dashboard/{dashboardId}/{widgetId}` - Delete specified
 ### Launch controller
 
 :::note
-Tags from v4 was replaced by attributes in v5.
+Tags from v4 were replaced by attributes in v5.
 Attribute contains key and value. It may have null key, but non-null value.
 Attribute with null value is analog for v4 tag.
 :::
@@ -104,7 +104,7 @@ DELETE `/v1/{projectName}/settings/pattern/{id}` - Delete specified pattern temp
 ### Test item controller
 
 :::note
-Tags from v4 was replaced by attributes in v5.<br />
+Tags from v4 were replaced by attributes in v5.<br />
 Attribute contains key and value. It may have null key, but non-null value.<br />
 Attribute with null value is analog for v4 tag.
 :::
@@ -115,7 +115,7 @@ GET `/v1/{projectName}/item/attribute/keys/all` - Retrieve all unique attributes
 
 GET `/v1/{projectName}/item/attribute/values` - Retrieve all unique attributes values of specified launch.
 
-GET `/v1/{projectName}/item/ticket/ids` - Get tickets that contains a term as a part inside for specified launch.
+GET `/v1/{projectName}/item/ticket/ids` - Get tickets that contain a term as a part inside for specified launch.
 
 GET `/v1/{projectName}/item/uuid/{itemId}` - Get test item by uuid.
 

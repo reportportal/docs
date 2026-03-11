@@ -20,7 +20,7 @@ This analysis hints what are the most similar analyzed items to the current test
 
 ML Suggestions searches for similar previously analyzed items to the current test item, so it requires an analytical base saved in OpenSearch. ML suggestions takes into account all user-investigated, auto-analyzed items or items chosen from ML suggestions. While the analytical base is growing ML suggestions functionality will have more examples to search by and suggest you the best options.
 
-ML suggestions analysis is run everytime you enter "Make decision" editor. ML suggestions are run for all test items no matter what defect type they have now. This functionality is processing only test items with logs (log level >= 40000).
+ML suggestions analysis is run every time you enter "Make decision" editor. ML suggestions are run for all test items no matter what defect type they currently have. This functionality is processing only test items with logs (log level >= 40000).
 
 The request for the suggestions part looks like this:
 * testItemId;
@@ -44,7 +44,7 @@ The OpenSearch returns to the service Analyzer 10 logs with the highest score fo
 * cosine similarity between vectors, representing error message/stacktrace/the whole message/urls/paths and other text fields
 * the probability for being of a specific defect type given by the Random Forest Classifier trained on Tf-Idf vectors
 
-The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximimum 5 items with the highest score to show in the ML Suggestions section.
+The model gives a probability for each candidate, we filter out test items with the probability less or equal 40%. We sort the test items by this probability, after that we deduplicate test items inside this ranked list. If two test items are similar with >= 98% by their messages, then we will leave the test item with the highest probability. After deduplication we take maximum 5 items with the highest score to show in the ML Suggestions section.
 
 ML suggestions section contains at maximum 5 suggested items, they are shown together with the scores given by the model and we divide them into 3 groups:
 * the group "SAME", test items with the score = 100%

@@ -93,7 +93,7 @@ Fixed:
 
 [#80](https://github.com/reportportal/reportportal/issues/80): Jira Cloud Plugin: Fixed URL validation preventing connections to *.jira.com domains.<br />
 [#2488](https://github.com/reportportal/reportportal/issues/2488): GitHub Authorization: Fixed organization membership validation preventing valid organization members from logging in.<br />
-[#2454](https://github.com/reportportal/reportportal/issues/2454): JIRA Server Sub-task Creation Error: Fixed paren)t issue data formatting that prevented creating sub-tasks in JIRA Server integration.
+[#2454](https://github.com/reportportal/reportportal/issues/2454): JIRA Server Sub-task Creation Error: Fixed parent issue data formatting that prevented creating sub-tasks in JIRA Server integration.
 
 ## 5. CVE addressed:
 
