@@ -611,6 +611,14 @@ const config = {
             to: '/plugins/other/SauceLabs',
             from: '/plugins/SauceLabs',
           },
+          {
+            to: '/releases/Version26.0.2',
+            from: '/releases/Release26.0.2',
+          },
+          {
+            to: '/releases/Version26.0.1',
+            from: '/releases/Release26.0.1',
+          },
         ],
       },
     ],
