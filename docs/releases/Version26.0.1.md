@@ -1,19 +1,17 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Version 26.0.1
 ---
 
 # Version 26.0.1
 
-![Component Update 26 0 1](https://github.com/user-attachments/assets/f76ff029-f507-493d-8e8e-e43b191f173a)
-
-# 1. **Bugs fixed:**
+## 1. Bugs fixed:
 Fixed texts in modal windows when disabling the Plugins.
 
-# 2. **CVE addressed:**
+## 2. CVE addressed:
 Fixed Service Auto Analyzer vulnerabilities.
 
-# 3. **Released services and plugins:**
+## 3. Released services and plugins:
 |Service Name|Repository|Tag|
 |---|---| --- |
 |Auto Analyzer|reportportal/service-auto-analyzer|5.15.1|
