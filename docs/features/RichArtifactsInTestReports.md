@@ -28,4 +28,4 @@ Besides, ReportPortal also supports integration with Sauce Labs via correspondin
 
 These are details about the network calls performed while the test was running (requests and responses).
 
-You can send all the artifacts to ReportPortal as attachments and use them to simplify defect triage, to replicate and debug issues, to find performance and network-related issues, to comprehend the context in which certain problems occurred. 
+You can send all the artifacts to ReportPortal as [attachments](/developers-guides/AttachmentsGuide) and use them to simplify defect triage, to replicate and debug issues, to find performance and network-related issues, to comprehend the context in which certain problems occurred. 

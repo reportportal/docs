@@ -8,7 +8,7 @@ description: Automate user provisioning and access with SCIM in ReportPortal. Sy
 
 SCIM is a protocol that simplifies how you manage user identities and access across various applications and services. It automates the sharing of user identity information between your identity provider (like Azure AD or Okta) and service providers, such as ReportPortal.
 
-ReportPortal includes a SCIM Server that acts as a bridge between your identity provider and ReportPortal, streamlining the management of user accounts.
+ReportPortal includes a [SCIM Server](/external-integrations/UserProvisioning/Scim/) that acts as a bridge between your identity provider and ReportPortal, streamlining the management of user accounts.
 
 **Benefits**
 

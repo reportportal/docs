@@ -14,7 +14,7 @@ Running daily regression tests can be a double-edged sword: they're essential fo
 
 **Speed and Precision in Defect Identification**
 
-The power of AI doesn't stop at handling daily jobs; it extends to making your defect identification process lightning-fast and razor-sharp. ReportPortal's Auto-Analysis feature scans through test results, logs, and other associated data to quickly pinpoint failures and automatically tag them with defect types. This efficiency enables your team to discover a maximum number of bugs in minimal time, supercharging your QA process.
+The power of AI doesn't stop at handling daily jobs; it extends to making your defect identification process lightning-fast and razor-sharp. ReportPortal's [Auto-Analysis feature](/analysis/AutoAnalysisOfLaunches) scans through test results, logs, and other associated data to quickly pinpoint failures and automatically tag them with defect types. This efficiency enables your team to discover a maximum number of bugs in minimal time, supercharging your QA process.
 
 **Elevated Accuracy in Failure Classification**
 
@@ -22,9 +22,9 @@ Human error is an inevitable part of any process, particularly one as monotonous
 
 ReportPortal's AI functionality comes in three distinct forms to accommodate various testing needs:
 
-- **Analyzer:** This feature automatically classifies test failures, sparing your team the manual labor of sifting through results. Utilizing advanced algorithms, the Analyzer categorizes different types of test failures, so you can prioritize issues that need immediate attention.
-- **Unique Error:** This tool groups identical test failures together for accelerated bulk analysis. By clustering similar failures, Unique Error allows for more efficient troubleshooting and quicker resolution of recurring issues.
-- **ML-Based Suggestions:** Leveraging machine learning algorithms, this feature provides suggestions for failures that are most similar to ones you've encountered before while do manual analysis. The suggestions guide your team in identifying the root causes of test failures more accurately and swiftly.
+- [**Analyzer:**](/analysis/AutoAnalysisOfLaunches) This feature automatically classifies test failures, sparing your team the manual labor of sifting through results. Utilizing advanced algorithms, the Analyzer categorizes different types of test failures, so you can prioritize issues that need immediate attention.
+- [**Unique Error:**](/analysis/UniqueErrorAnalysis) This tool groups identical test failures together for accelerated bulk analysis. By clustering similar failures, Unique Error allows for more efficient troubleshooting and quicker resolution of recurring issues.
+- [**ML-Based Suggestions:**](/analysis/MLSuggestions) Leveraging machine learning algorithms, this feature provides suggestions for failures that are most similar to ones you've encountered before while do manual analysis. The suggestions guide your team in identifying the root causes of test failures more accurately and swiftly.
 
 **Conclusion: A Smarter Way to Test**
 

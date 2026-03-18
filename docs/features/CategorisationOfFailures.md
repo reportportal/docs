@@ -12,7 +12,7 @@ Navigate to the 'Launches' tab in ReportPortal and you'll find an intuitive brea
 
 **The Process of Intelligent Triage**
 
-When you open one of these “To Investigate” items, a QA engineer engages in defect triage by reviewing logs, screenshots, and video recordings, all of which are seamlessly integrated into each failed test item. Based on this comprehensive analysis, the engineer categorizes the failures through the “Make Decision” modal, as follows:
+When you open one of these “To Investigate” items, a QA engineer engages in defect triage by reviewing logs, screenshots, and video recordings, all of which are seamlessly integrated into each failed test item. Based on this comprehensive analysis, the engineer categorizes the failures through the [“Make Decision” modal](/analysis/ManualAnalysis), as follows:
 
 - **Product Bug:** These issues stem from flaws in the application code and should be the developers' first priority for resolution.
 - **Automation Bug:** This category addresses issues related to test data, such as outdated tests or incorrect data, and timeouts.
