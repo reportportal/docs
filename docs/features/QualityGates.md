@@ -6,7 +6,7 @@ description: Automate GO/NO-GO checks with Quality Gates in ReportPortal. Enforc
 
 # Quality Gates
 
-Quality Gates is a feature thanks to which ReportPortal becomes an integral part of continuous testing platform. It prevents the code from moving forward if it doesn’t meet testing criteria. ReportPortal uses aggregated data and rule engine to verify testing results against required conditions.
+[Quality Gates](/quality-gates/) is a feature thanks to which ReportPortal becomes an integral part of continuous testing platform. It prevents the code from moving forward if it doesn’t meet testing criteria. ReportPortal uses aggregated data and rule engine to verify testing results against required conditions.
 
 Top-3 benefits of Quality Gates:
 
