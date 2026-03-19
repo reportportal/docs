@@ -6,7 +6,7 @@ description: View all test executions in one place with powerful filters and a c
 
 # Test Executions 
 
-The Test Executions page gives you a simple, unified view of all test cases from multiple launches. Instead of navigating complex structures, you see all executed tests in one clean list, making daily analysis faster and simpler.
+The [Test Executions page](/test-executions/) gives you a simple, unified view of all test cases from multiple launches. Instead of navigating complex structures, you see all executed tests in one clean list, making daily analysis faster and simpler.
 
 Key benefits:
 
@@ -44,6 +44,6 @@ This helps you see your data the way you prefer.
 Test Executions removes extra navigation, speeds up daily checks, and makes troubleshooting easier – whether you’re managing a few tests or thousands. <br />
 
 :::note
-The Test Executions feature is a premium offering from ReportPortal, available as part of our paid support services.
+The [Test Executions feature](/test-executions/) is a premium offering from ReportPortal, available as part of our paid support services.
 If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
 :::

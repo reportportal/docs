@@ -10,7 +10,7 @@ ReportPortal's dynamic visualization capabilities provide teams with real-time i
 
 **Real-Time Dashboards and Widgets**
 
-One of ReportPortal's most compelling features is its real-time dashboards and widgets. These dashboards can be customized to focus on specific test executions or take a broader view at the build level by consolidating multiple executions. As your tests run, widgets update in real-time, ensuring your data is always current. This eliminates the cumbersome task of having to recreate reports for every testing cycle or regression.
+One of ReportPortal's most compelling features is its real-time [dashboards and widgets](/dashboards-and-widgets/). These dashboards can be customized to focus on specific test executions or take a broader view at the build level by consolidating multiple executions. As your tests run, widgets update in real-time, ensuring your data is always current. This eliminates the cumbersome task of having to recreate reports for every testing cycle or regression.
 
 **Versatile Tracking**
 
