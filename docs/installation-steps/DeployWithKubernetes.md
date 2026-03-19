@@ -19,7 +19,8 @@ The minimal requirements for a ReportPortal 1-node solution are 2 CPUs and 6Gi o
 Add the official ReportPortal Helm Chart repository:
 
 ```bash
-helm repo add reportportal https://reportportal.io/kubernetes && helm repo update reportportal
+helm repo add reportportal https://k8s.reportportal.io
+helm repo update reportportal
 ```
 
 Install the chart:
