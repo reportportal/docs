@@ -1,0 +1,162 @@
+---
+sidebar_position: 1
+sidebar_label: MCP Server
+description: Automate test analysis with MCP Server, use AI to detect issues, summarize results, and streamline QA workflows for faster, smarter decision-making.
+---
+
+# MCP Server
+
+To work with ReportPortal, users typically need to interact through its web UI. With our MCP Server, you can connect ReportPortal to your preferred AI tool — for example, Claude, Copilot, or Cursor.
+
+## What is MCP?
+
+MCP (Model Context Protocol) is a lightweight middleware protocol (and server) that facilitates structured communication between AI tools and external platforms, such as our test results dashboard. It provides a context-aware interface for language models to query, analyze, and manipulate data without direct UI access.
+
+ReportPortal MCP Server allows to receive summaries of launches and perform various operations without manually opening the UI. The actions that can be performed through the MCP Server are called Tools.
+
+Available tools:
+
+1. Run Unique Error Analysis
+2. Run Quality Gate
+3. Run Auto-Analysis
+4. Get Test Items by Filter
+5. Get Launches
+6. Launch Force Finish
+7. Launch Delete
+8. Get Test Item Logs by Filter
+9. Get Test Item by ID
+10. Get Test Item Attachments
+11. Get Last Launch by Name
+12. Get Project Defect Types
+13. Update defect types by item IDs
+
+## Usage with your favorite AI tools
+
+Below are brief setup instructions for configuring the ReportPortal MCP Server with Cursor, Copilot, and Claude Desktop.
+
+### Cursor IDE
+
+#### Local installation
+
+To configure ReportPortal MCP Server with Cursor:
+
+1. Log in to Cursor.
+2. Open Settings.
+3. Select "Tools & Integrations" section.
+4. Click "New MCP Server".
+
+<MediaViewer src={require('./img/mcp-server/Cursor1.JPG')} alt="Cursor Settings" />
+
+5. Fill in the required fields in the Config file.
+
+<MediaViewer src={require('./img/mcp-server/Cursor2.JPG')} alt="Cursor Config file" />
+
+6. The list of available tools appears.
+
+<MediaViewer src={require('./img/mcp-server/Cursor3.JPG')} alt="ReportPortal MCP Server configured with Cursor" />
+
+#### Remote server
+
+This setup allows Cursor to communicate with a remote ReportPortal MCP Server.
+
+```json
+{
+  "mcpServers": {
+    "reportportal": {
+      "url": "http://your-mcp-server-host:port/mcp/",
+      "headers": {
+        "Authorization": "Bearer your-api-token",
+        "X-Project": "YourProjectInReportPortal"
+      }
+    }
+  }
+}
+```
+
+### GitHub Copilot
+
+#### Local installation
+
+To configure ReportPortal MCP Server with Copilot:
+
+1. Log in to Copilot.
+2. Type ">mcp" in the search bar.
+3. Select "MCP: Open User Configuration" option.
+
+<MediaViewer src={require('./img/mcp-server/Copilot1.jpg')} alt="Copilot settings" />
+
+4. Fill in the required fields in the Config file.
+
+<MediaViewer src={require('./img/mcp-server/Copilot2.JPG')} alt="Copilot Config file" />
+
+#### Remote server
+
+Use this configuration to connect Copilot to a remote ReportPortal MCP Server.
+
+```json
+{
+  "servers": {
+    "reportportal": {
+      "url": "http://your-mcp-server-host:port/mcp/",
+      "requestInit": {
+        "headers": {
+          "Authorization": "Bearer your-api-token",
+          "X-Project": "YourProjectInReportPortal"
+        }
+      }
+    }
+  }
+}
+```
+
+### Claude Desktop
+
+To configure ReportPortal MCP Server with Claude:
+
+1. Log in to Claude.
+2. Open Settings.
+
+<MediaViewer src={require('./img/mcp-server/MCP1.png')} alt="Claude Settings" />
+
+3. Select "Developer" section.
+4. Click "Edit Config" button.
+
+<MediaViewer src={require('./img/mcp-server/MCP2.png')} alt="Claude Config" />
+
+5. Open Config file.
+
+<MediaViewer src={require('./img/mcp-server/MCP3.png')} alt="Initiate integration with ReportPortal" />
+
+6. Fill in the required fields: token, host, project.
+
+<MediaViewer src={require('./img/mcp-server/MCP4.png')} alt="ReportPortal MCP Server configuration" />
+
+:::note
+Token is API Key the user's Profile page.
+:::
+
+7. Open the list of available tools.
+
+<MediaViewer src={require('./img/mcp-server/MCP5.png')} alt="The actions that can be performed through the MCP Server" />
+
+8. Enable the tools you want to use and disable those you don't.
+
+<MediaViewer src={require('./img/mcp-server/MCP6.png')} alt="Enable or disable tools" />
+
+9. Create a prompt.
+
+<MediaViewer src={require('./img/mcp-server/MCP7.png')} alt="Prompt for interaction with our test reporting tool" />
+
+10. Allow Claude to use ReportPortal MCP Server.
+
+<MediaViewer src={require('./img/mcp-server/MCP8.png')} alt="Allowing Claude to use ReportPortal MCP Server" />
+
+11. Check your AI's output based on the data from ReportPortal.
+
+<MediaViewer src={require('./img/mcp-server/MCP9-1.png')} alt="AI's output" />
+<MediaViewer src={require('./img/mcp-server/MCP9-2.png')} alt="Summary from AI based on the data from our qa metrics dashboard" />
+<MediaViewer src={require('./img/mcp-server/MCP10.png')} alt="Launches page" />
+
+Refer to the detailed user guide for the [full setup instructions](https://github.com/reportportal/reportportal-mcp-server) of the MCP Server.
+
+Whether you're aiming to optimize test analysis or simplify routine QA tasks, MCP empowers your AI tools to act with clarity and precision.

@@ -1,0 +1,47 @@
+---
+sidebar_position: 8
+sidebar_label: Immediate Pattern Analysis
+description: Start Pattern Analysis before a launch ends to catch issues early. Trigger via attributes and speed defect triage on large runs in ReportPortal.
+---
+
+# Immediate Pattern Analysis
+
+In a modern software world, quick issue detection becomes necessary. ReportPortal as a progressive test automation dashboard, follows today’s faster development methods. Starting from version 24.1, Pattern Analysis can be started via API after certain test cases finish before whole Launch is done. Immediate Pattern Analysis (PA) significantly speeds up failure triage.
+
+Previously, Pattern Analysis can’t be started before Launch finish. Since some users may have their launches last up to 12 hours, or even all day, they couldn’t start test failure analysis for a long time. This was slowing down issue spotting. With Immediate Pattern Analysis, you can begin looking at your test results much faster, which is especially valuable for large Launches.
+
+To initiate Immediate PA, fulfill the following conditions:
+
+1. PA rule should be created.
+
+2. PA rule should be enabled.
+
+3. When reporting, you need to specify the following parameters in the **attributes** section **for each step on its start or finish**:
+
+<MediaViewer src={require('./img/ImmediatePA1.png')} alt="Parameters to initiate Immediate PA in our test reporting tool" />
+
+If the value for **“immediatePatternAnalysis”** is set to **“false”**, Immediate PA will not work.
+
+If the “immediatePatternAnalysis” attribute is not specified, Immediate PA will not work either.
+
+The “system” parameter determines whether the “immediatePatternAnalysis” attribute will be displayed in the UI. If **“system”** is set to **“true”**, the “immediatePatternAnalysis” attribute will not be displayed on the UI, and if **“system”** is set to **“false”**, it will be.
+
+<MediaViewer src={require('./img/ImmediatePA2.png')} alt="immediatePatternAnalysis attribute with system parameter set to false" />
+
+You can provide this attribute at the start of the step or at the finish. You can also set one value at the start and another at the finish, in which case the last value will take.
+
+:::note
+Immediate PA will work in any case if this attribute is present, regardless Auto Pattern Analysis is enabled or disabled. In this case, Auto Pattern Analysis and Manual Pattern Analysis on Launch finish will skip previously analyzed items by Immediate Pattern Analysis.
+:::
+
+:::important
+It would be better to use STRING rule instead of REGEX rule in all possible cases to speed up the Pattern Analysis processing in the database. As a result, you can get your analysis completed faster using the STRING patterns rather than REGEX and reduce the database workload.
+:::
+
+Apart from the timing of execution, Immediate PA differs from PA on Launch finish in that Immediate PA works for any issue type, whereas PA on Launch finish works for "To Investigate" items only. This means that you can report certain items, such as Automation Bug or System Issue, and specify parameters for launching Immediate PA.
+
+<MediaViewer src={require('./img/ImmediatePA3.png')} alt="Item reported as Automation Bug with immediatePatternAnalysis attribute" />
+
+Overall, Immediate PA helps to catch issues early and improves testing quality.
+
+<MediaViewer src="https://youtu.be/i9LYeiRXSxA" alt="Immediate Pattern Analysis: how it works" type="video" />

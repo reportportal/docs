@@ -1,0 +1,340 @@
+---
+sidebar_position: 4
+sidebar_label: Log level
+description: test
+---
+
+# Log level
+
+The log level is used to store all data related to a test case, including execution logs and screenshots, making debugging and analysis easier.
+
+## Logs messages
+
+To see a table with log messages, navigate to the lowest level.
+
+Log object has the following levels:
+
+| Level        | Value |
+| -------- |:-------------:|
+| Trace | >= 5 000 |
+| Debug |>= 10 000 |
+| Info | >= 20 000 |
+| Warn |>= 30 000  |
+| Error | >= 40 000 |
+| Fatal | >= 50 000 |
+
+You can set a necessary log level using a slider.
+
+The table with log messages is painted in different colors depending on the log type:
+
+>   red - for failed log steps
+
+>   green - for log steps with positive validation made
+
+>   blue - for system messages
+
+Error logs are always highlighted in red. The others are highlighted on mouse
+hover only.
+
+Logs with *Trace*, *Debug*, *Error* labels are collapsed if the log has more
+than 5 lines. You can expand the log message clicking on the special "Expand" icon.
+
+You can use a filter to specify the level.
+
+Also, you can use the logs sorting by time, and filtering logs to find a certain message in logs.
+
+<MediaViewer src="https://youtu.be/_g0GW16sXGU" alt="Log Messages in our automated testing tool" type="video" />
+
+## Timestamps
+
+In ReportPortal version 24.2, microseconds have been added to timestamps to provide a more precise log sequence.
+Previously, some logs shared identical timestamps at the millisecond level, which led to issues with log ordering.
+
+With this update, you have the flexibility to view timestamps in two formats:
+
+1. Date & time
+
+<MediaViewer src={require('./img/log-level/Milliseconds.png')} alt="Date & time" />
+
+2. Time with microseconds
+
+<MediaViewer src={require('./img/log-level/Microseconds.png')} alt="Time with number of microseconds" />
+
+You can easily switch between these options with a simple click.
+
+The choice will be saved to `localStorage` to persist between sessions in a particular browser.
+
+## Stack trace
+
+On the Log view for the fast redirection to the last 5 error log messages, please click on the tab Stack trace, in this section you can find *5 last error logs".
+
+## Attachments
+
+In case you are interested in logs with attachments only, check the corresponding checkbox.
+
+Click on the file in log opens the preview of the attachment.
+
+The attachments could be rotated on a preview screen if needed.
+
+ReportPortal provides the possibility of preview for such types of attachments as:
+ - 'xml',
+ - 'javascript',
+ - 'json',
+ - 'css',
+ - 'php'
+
+Other types of attachments will be opened in a new browser tab or downloaded.
+
+The alternative way to view these files is by using the Attachments.
+
+To view data via the Attachments section, perform the following steps:
+
+1. Open Log view of launch for test items with attachments available
+
+2. Click 'Attachments' tab
+
+3. Select the required file by clicking on its thumbnail.
+
+4. To expand the area, click the view on the main box.
+
+<MediaViewer src="https://youtu.be/nMSSAcqrfC0" alt="Screenshot Gallery" type="video" />
+
+## Items details
+
+In the section Items details, you can find information about test case such as:
+
+* Test Case name
+* Test case status
+* Test case start time
+* Duration and duration fluctuation
+* Description
+* Parameters
+* Attributes
+* Code location (that can be easily copied by a user)
+
+## History of actions
+
+In this section, you can find all activities which were performed under the test case such as:
+
+* user changed defect type of test item
+* user posted a comment to the test item
+* user posted a bug to the Bug Tracking System
+* user-added link to the existing in Bug Tracking System bug.
+* analyzer changed defect type of test item based on the item (where "item" is a link to a log view of an item which has been chosen by the analyzer as the most relevant result)
+* analyzer posted a comment to the test item
+* analyzer posted a bug to the Bug Tracking System or added a link to the existing in Bug Tracking System issue.
+* pattern analysis add a found pattern
+
+History of actions is not shown if nobody performed actions with the item.
+By default, you will see the last action in one line.
+
+## Markdown mode on Logs view
+
+You can view logs in Markdown mode or in the Console view.
+
+To enable Markdown mode, please perform actions:
+
+* Click on "M" button on the log level
+
+To disable Markdown mode, please perform actions:
+
+* Click on "M" button on log level one more time
+
+The same logic applies to the Console view.
+
+## Log view for containers (for a launch or a suite)
+
+A user can report logs not only to the test execution but also to containers:
+
+* Launch
+* Suite
+
+If user want to view attached logs:
+
+* Login ReportPortal
+* Click on a launch name, or a suite name
+* Click on Log tab
+
+<MediaViewer src={require('./img/log-level/LogViewForContainers1.png')} alt="Log view for container - launch" />
+
+<MediaViewer src={require('./img/log-level/LogViewForContainers2.png')} alt="Launch Logs" />
+
+## Log level settings
+
+The Log level settings (Full-width mode, Colorized background, No logs collapsing, Log Size, pagination off/on) are stored individually for each user, browser, and project, and remain active until you change them manually or clear your browser cache. If the cache is cleared, the settings must be configured again.
+
+### Full-width mode
+
+You can configure how log will be displayed by enabling or disabling the "Full-width mode" option.
+
+To **enable Full-width mode**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "Full-width mode" checkbox in the dropdown.
+
+<MediaViewer src={require('./img/log-level/FullWidthMode.png')} alt="Full-width mode for logs on our qa automation dashboard" />
+
+When Full-width mode is enabled, all log-related tabs – including Stack trace, All logs, Attachments, Item details, and History of actions – automatically expand to use the full available screen width, providing a broader and more comfortable viewing area for detailed information.
+
+To **disable Full-width mode**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the "Full-width mode" checkbox in the dropdown.
+
+When the option is disabled, all tabs return to their standard layout with default width constraints.
+
+<MediaViewer src="https://youtu.be/mka5rk_lomA" alt="Log level settings. Full-width mode" type="video" />
+
+### Colorized background
+
+You can customize how log entries are visually highlighted by enabling or disabling the "Colorized background" option.
+
+To **enable Colorized background**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "Colorized background" checkbox in the dropdown.
+
+When "Colorized background" is enabled, all logs receive background colors according to the configuration defined in [Project settings -> Log types](/configuration/ProjectSettings#log-types). Log entries will display the appropriate label color, background color, text color, and text style (bold or normal), making it easier to distinguish log types visually.
+
+<MediaViewer src={require('./img/log-level/ColorizedBackground.png')} alt="Colorized background for logs" />
+
+To **disable Colorized background**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the "Colorized background" checkbox in the dropdown.
+
+When this option is disabled, logs are displayed without background color highlighting, using the default styling.
+
+<MediaViewer src="https://youtu.be/0cFTAXlZ51Q" alt="Log level settings. Colorized background" type="video" />
+
+### No logs collapsing
+
+You can control whether logs appear collapsed or fully expanded.
+
+To **enable "No logs collapsing" option**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, check the "No logs collapsing" checkbox.
+
+When "No logs collapsing" is enabled, all logs on the current item level are displayed expanded by default, allowing you to view details without manually opening each log entry.
+
+**Nested step logs** remain collapsed initially and require individual clicks to expand.
+
+<MediaViewer src={require('./img/log-level/NoLogsCollapsing.png')} alt="No logs collapsing option" />
+
+To **disable No logs collapsing option**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Appearance block**, uncheck the No logs collapsing checkbox.
+
+When this option is disabled, logs follow the standard collapsed view, and you can expand them individually as needed.
+
+:::important
+The "No logs collapsing" option is not available when viewing logs in Console mode. In this mode, the checkbox will not appear in the Log Appearance section.
+:::
+
+<MediaViewer src="https://youtu.be/smsRLlUTrMo" alt="Log level settings. No logs collapsing" type="video" />
+
+### Log Size
+
+You can adjust how large log text appears by selecting a preferred Log Size.
+
+To **change the Log Size**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Log Size block**, choose one of the available radio buttons: Small, Medium, or Large.
+
+<MediaViewer src={require('./img/log-level/LogSize.png')} alt="Log Size setting in our test results dashboard" />
+
+The **default value is Medium**.
+
+When you change the log size, the dropdown remains open so you can immediately see your selection.
+
+The chosen log size is applied consistently across all display modes – default, markdown, and console – and affects logs **for all item types: launch, suite, and test**. The selected size also applies to the **Stack trace tab**.
+
+<MediaViewer src="https://youtu.be/HsOt1Y7hlpM" alt="Log level settings. Log Size" type="video" />
+
+### Turn Off pagination
+
+You can choose whether logs are displayed with standard pagination or loaded continuously as you scroll.
+
+To **turn OFF pagination**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Pagination block**, select "Turn Off Pagination" option.
+
+<MediaViewer src={require('./img/log-level/TurnOffPagination1.png')} alt="Turn Off Pagination for logs" />
+
+4. Confirm the action by clicking "Turn Off & Reload".
+
+<MediaViewer src={require('./img/log-level/TurnOffPagination2.png')} alt="Turn Off & Reload button" />
+
+After the page reloads, pagination controls are removed, and logs load dynamically as you scroll.
+
+If pagination is turned off while you are on a later page (for example, page 3), the view resets to the first page after reload, and you can scroll down to load more logs continuously.
+
+To **turn ON pagination**:
+
+1. Go to the Log view (launch, suite, test, or step level).
+2. Click the Log Settings button.
+3. In the **Pagination block**, select "Turn Off Pagination" option.
+4. Confirm the action by clicking "Turn Off & Reload".
+
+After the page reloads, the standard pagination controls become visible again. You are returned to the first page.
+
+**Additional behavior**
+
+A "Back to the Top" button is available when navigating deeper into the log feed. Clicking it brings you back to the first page (when pagination is ON) or to the top of the continuous log list (when pagination is OFF).
+
+When pagination is OFF, logs load in batches (50 items at a time) as you scroll down.
+
+The pagination setting affects all display modes – default, markdown, and console – and applies consistently across the item log view.
+
+<MediaViewer src={require('./img/log-level/BackToTheTop.png')} alt="Back to the Top option" />
+
+<MediaViewer src="https://youtu.be/LnzXOP26j0w" alt="Turn Off Pagination on Log Level" type="video" />
+
+### Error log navigation
+
+On the log view you can find the number of error logs found in current item. In case no error logs, the "Show" button will be disabled with "No error logs" message. In case only one error log is found, the "Show" button will be available and by clicking on it you will be navigated to the correspondent page, and the error log will be highlighted. In case there is more than one error log, you will be able to switch between "Previous" and "Next" error logs.
+
+You can move between error logs even when pagination is turned off. This helps you quickly jump to the next important error without scrolling through all logs manually.
+
+**Moving to the next error log**
+
+* If pagination is OFF and the next error log is not in the currently loaded part of the list, clicking the "Next error" button loads the required part of the logs and brings you directly to that error.
+* The error log is highlighted, and you can continue scrolling up or down to load more logs if needed.
+
+**Using search with error navigation**
+
+* If you use the search bar while pagination is OFF, only logs that match your search are shown.
+* You can still use the "Next error" button to move through the filtered error logs.
+* The error counter updates to show how many error logs match your search.
+
+<MediaViewer src={require('./img/log-level/MovingToTheNextErrorLog.png')} alt="Moving to the next error log" />
+
+<MediaViewer src="https://youtu.be/DskrpiWDUgo" alt="Error log navigation" type="video" />
+
+### Search and jump to log
+
+You can quickly find a specific log and jump directly to it, even if it’s located on another page.
+
+1. When you are on the log level and multiple pages of logs exist, you can enter a value into the Search field to filter logs.
+2. The system shows all logs that match your search.
+3. When you click the "Jump to" button for one of the found logs, you are taken straight to the page where that log is located.
+
+<MediaViewer src={require('./img/log-level/JumpToLog1.png')} alt="Jump to button" />
+
+4. The log is highlighted so you can easily spot it.
+
+<MediaViewer src={require('./img/log-level/JumpToLog2.png')} alt="Highlighted log" />
+
+<MediaViewer src="https://youtu.be/ZcUs__HlDdk" alt="Search and jump to log" type="video" />

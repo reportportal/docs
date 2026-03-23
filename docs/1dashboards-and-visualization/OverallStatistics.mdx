@@ -1,0 +1,41 @@
+---
+sidebar_position: 7
+sidebar_label: Overall statistics
+description: Visualize passed, failed, skipped, and defect types across launches. Track trends and drill into details on your test automation reporting dashboard.
+---
+
+# Overall statistics
+
+The panel shows a summary of test cases with each status for each selected launch.
+
+**Widget's parameters:**
+
+- Filter: At least one filter is required
+- Items: 1-150. The default meaning is 50.
+- Widget Criteria: All criteria are selected by default.
+- Type of view: Panel view/ Donut view
+- Mode All launches/ Latest launches
+
+
+**Widget view**
+
+The widget shows statistics of the All launches/or Latest launches for the chosen filter. Statistics are divided into the following sections:
+-    Skipped, Passed, Failed
+-    Product Bug, System Issue, Automation Bug, No Defect and To Investigate.
+
+The statistics for every type are shown in percentages. On hover, the exact number is shown for each type.
+The Widget has clickable sections when you click on a specified section in the widget, the system forwards you to launch view for appropriate selection.
+
+If you chose *All launches* mode, the widget will show the statistics about all launches in the filter. To view only the latest executions of each launch, you should choose *Latest launches*.
+
+The widget can be viewed in two options as shown on pictures: Panel view
+
+<MediaViewer src={require('./img/widget-types/OverallStatistics1.png')} alt="Dashboard to manage test results: Overall statistics" />
+
+or Donut view.
+
+<MediaViewer src={require('./img/widget-types/OverallStatistics2.png')} alt="Overall Statistics Donut View" />
+
+:::note
+The widget doesn't contain "IN PROGRESS" launches.
+:::
