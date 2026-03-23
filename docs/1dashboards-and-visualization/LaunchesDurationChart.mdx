@@ -1,0 +1,34 @@
+---
+sidebar_position: 8
+sidebar_label: Launches duration chart
+description: Compare launch durations to spot slow runs and trends. Switch between all and latest modes to highlight performance in your test automation results dashboard.
+---
+
+#  Launches duration chart
+
+The Launch Duration Chart shows the duration of the selected launches.
+
+**Widget's parameters:**
+
+- Filter: At least one filter is required
+- Items: 1-150. Default meaning is 50
+- Mode All launches/ Latest launches
+
+**Widget view**
+
+The widget shows the duration of the filtered launches.
+
+- The X-axis shows launches duration.
+- Y-axis shows launches numbers and launches names on hover.
+
+Tooltip on mouse hover over chart area shows launch details: launch name, number, and duration.
+
+The Widget has clickable sections when you click on a specified section in a widget, the system forwards you to launch view for appropriate selection.
+
+The Widget has two states: All launches and Latest lunches. If you chose *All launches* mode, the widget will show statistics about all launches in the filter. To view only the latest executions of each launch, you should choose *Latest launches*.
+
+<MediaViewer src={require('./img/widget-types/LaunchesDurationChart.png')} alt="Dashboard for QA automation: Launches duration chart" />
+
+:::note
+The widget doesn't contain "IN PROGRESS" launches.
+:::

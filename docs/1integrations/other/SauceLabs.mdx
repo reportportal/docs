@@ -1,0 +1,67 @@
+---
+sidebar_position: 9
+sidebar_label: Sauce Labs
+description: Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow.
+---
+
+# Sauce Labs
+
+To install the Sauce Labs plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
+
+## Add the Sauce Labs integration
+
+Configure the integration with Sauce Labs to watch a video of test executions in the our centralized test automation tool.
+
+
+**Permissions:**
+
+- User with account role *ADMINISTRATOR* can configure the integration for the whole instance or per project.
+- User with account role *PROJECT MANAGER* can configure the integration only on a project where they are assigned on as Project Manager.
+
+## Global Sauce Labs integration
+
+To configure Sauce Labs for the whole instance:
+
+1. Log in to ReportPortal as an ADMIN user.
+
+2. Open the list on the right of the user's image.
+
+3. Click the 'Administrative' link.
+
+4. Click 'Plugins' from the left-hand sidebar.
+
+5. Click the 'Sauce Labs' tab.
+
+6. Click 'Add integration'.
+
+7. The following fields should be present:
+
+  ```javascript 
+  `User name`: <host_name_of_email_server>
+  `Access token`: <your access token>
+  `Data center`: <Europe, USA>
+  ```
+
+8. Confirm data in the form.
+
+After you've added the Sauce Labs integration, you can use the Sauce Labs in ReportPortal.
+
+## Project Sauce Labs integration
+
+If the plugin is configured on the global level, then all projects at this instance will use this configuration by default.
+
+However, you can unlink the integration from the global level and use a project level configuration instead.
+
+To unlink the integration, click 'Unlink & Setup Manually', then follow the on-screen instructions.
+
+<MediaViewer src={require('./img/SauceLabsUnlinkGlobal.png')} alt="Sauce Labs Unlink Global integration" />
+
+## How to use the Sauce Labs integration
+
+Before using this feature, you should report test results to ReportPortal with the attribute: `SLID: XXXXXXXX`.
+
+Where: SLID = `Sauce Labs ID` and XXXXXXXX = `# of job in Sauce Labs`
+
+The `SLID: XXXXXXXX` attribute links the execution in ReportPortal and a job in Sauce Labs. If a test item has attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs for the appropriate job in ReportPortal on a log view.
+
+<MediaViewer src="https://youtu.be/RQAxGz6koh0" alt="How to use Sauce Labs Integration with our centralized test automation tool" type="video" />
