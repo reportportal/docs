@@ -12,15 +12,27 @@ description: Configure S3 cloud storage for the ReportPortal Flaky Test Detectio
 
 ReportPortal supports cloud storage options through the Java library [JCLOUDS](https://jclouds.apache.org/).
 
-To configure storage using Amazon S3, ReportPortal uses the following environment variables for the services **API**, **Jobs**, and **Authorization**:
+To configure storage using Amazon S3, ReportPortal uses the following **environment variables for the services API, Jobs, and Authorization**:
 
 ```bash
 RP_FEATURE_FLAGS: singleBucket          # Enable single-bucket storage (recommended)
-DATASTORE_TYPE: aws-s3
+DATASTORE_TYPE: s3
 DATASTORE_REGION: us-standard           # Region of the bucket (JCloud ref. to `us-east-1`)
 DATASTORE_ACCESSKEY: <access_key>
 DATASTORE_SECRETKEY: <secret_key>
 DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
+```
+
+**Environment variables for for Analyzer:**
+
+```bash
+x-analyzer-environment: &common-analyzer-environment
+  DATASTORE_REGION: us-east-1
+  DATASTORE_ACCESSKEY: "<access_key>" 
+  DATASTORE_SECRETKEY: "<secret_key>"
+  DATASTORE_BUCKETPREFIX: prj-
+  DATASTORE_BUCKETPOSTFIX: ""
+  DATASTORE_DEFAULTBUCKETNAME: my-rp-docker-bucket/analyzer
 ```
 
 ## IAM Role-based authentication
@@ -341,11 +353,25 @@ In your `docker-compose.yml`, configure ReportPortal to use IAM-based S3 access:
 ```yaml
 x-environment: &common-environment
   # IAM Role-Based S3 Access - Leave credentials empty
-  DATASTORE_ACCESSKEY: ""
-  DATASTORE_SECRETKEY: ""
-  DATASTORE_TYPE: aws-s3
-  DATASTORE_REGION: us-standard      # JClouds alias for us-east-1
+  DATASTORE_ACCESSKEY: ""        # Leave empty for IAM Role-based access
+  DATASTORE_SECRETKEY: ""        # Leave empty for IAM Role-based access
+  RP_FEATURE_FLAGS: singleBucket
+  DATASTORE_TYPE: s3             # Enable single-bucket storage (necessary for Amazon S3)
+  DATASTORE_REGION: us-standard  # JClouds alias for us-east-1
   DATASTORE_DEFAULTBUCKETNAME: my-rp-docker-bucket
+
+x-analyzer-environment: &common-analyzer-environment
+  LOGGING_LEVEL: info
+  AMQP_EXCHANGE_NAME: analyzer-default
+  AMQP_VIRTUAL_HOST: analyzer
+  AMQP_URL: amqp://${RABBITMQ_DEFAULT_USER-rabbitmq}:${RABBITMQ_DEFAULT_PASS-rabbitmq}@rabbitmq:5672
+  ES_HOSTS: http://opensearch:9200
+  DATASTORE_REGION: us-east-1
+  DATASTORE_ACCESSKEY: ""         # Leave empty for IAM Role-based access
+  DATASTORE_SECRETKEY: ""         # Leave empty for IAM Role-based access
+  DATASTORE_BUCKETPREFIX: prj-
+  DATASTORE_BUCKETPOSTFIX: ""
+  DATASTORE_DEFAULTBUCKETNAME: my-rp-docker-bucket/analyzer
 ```
 
 :::note
