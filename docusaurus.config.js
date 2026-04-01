@@ -20,6 +20,7 @@ const config = {
   onBrokenAnchors: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',
+  trailingSlash: true,
   favicon: 'img/favicon.ico',
 
   organizationName: 'reportportal',
@@ -136,15 +137,15 @@ const config = {
               },
               {
                 label: 'Installation steps',
-                to: '/installation-steps',
+                to: '/installation-steps/',
               },
               {
                 label: 'RP Configuration',
-                to: '/configuration',
+                to: '/configuration/',
               },
               {
                 label: 'Developers Guide',
-                to: '/developers-guides',
+                to: '/developers-guides/',
               },
             ],
           },
