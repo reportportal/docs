@@ -27,6 +27,7 @@ DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
 
 ```bash
 x-analyzer-environment: &common-analyzer-environment
+  DATASTORE_TYPE: s3
   DATASTORE_REGION: us-east-1
   DATASTORE_ACCESSKEY: "<access_key>" 
   DATASTORE_SECRETKEY: "<secret_key>"
@@ -365,7 +366,8 @@ x-analyzer-environment: &common-analyzer-environment
   AMQP_EXCHANGE_NAME: analyzer-default
   AMQP_VIRTUAL_HOST: analyzer
   AMQP_URL: amqp://${RABBITMQ_DEFAULT_USER-rabbitmq}:${RABBITMQ_DEFAULT_PASS-rabbitmq}@rabbitmq:5672
-  ES_HOSTS: http://opensearch:9200
+  ES_HOSTS: <a href="http://opensearch:9200" rel="noreferrer noopener" title="http://opensearch:9200/" target="_blank">http://opensearch:9200</a>
+  DATASTORE_TYPE: s3
   DATASTORE_REGION: us-east-1
   DATASTORE_ACCESSKEY: ""         # Leave empty for IAM Role-based access
   DATASTORE_SECRETKEY: ""         # Leave empty for IAM Role-based access
