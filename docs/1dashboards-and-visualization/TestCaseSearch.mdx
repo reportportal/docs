@@ -17,7 +17,7 @@ Allows finding a test case by name or attribute throughout all launch executions
 
 ### Refine section:
 
-- "Test name" text field. Condition dropdown is disabled. By default – cnt (contains)
+- "Test name" text field. Condition dropdown is disabled. By default – starts with
 - "Attribute" text field – key and value options
 - "Display launches" toggle – default state: OFF
 - "Edit" icon
@@ -84,40 +84,34 @@ If more than one page exists for the specified search criteria, a "Load more" bu
 
 <MediaViewer src={require('./img/widget-types/TestCaseSearch7.png')} alt="Load more button" />
 
-By clicking "Load more", additional 10 results (or less if available) appear. Previously loaded results remain visible and are supplemented with new data. If at least one more page is available, the "Load more" button continues to appear at the bottom of the widget.
+By clicking “Load more,” up to 10 additional results appear, depending on how many results are available. Previously loaded results remain visible and are supplemented with new data. The maximum number of search results is 20 items.
 
-If more than 30 pages exist for the specified search criteria, the "Load more" button becomes disabled after loading the 30th page. The limit for the widget is 300 latest test cases.
-
-<MediaViewer src={require('./img/widget-types/TestCaseSearch8.png')} alt="Load more button becomes disabled" />
+If you need more flexible search options, advanced filtering, sorting, or access to a larger result set, try our premium feature: [Test Executions](/features/TestExecutions/). Learn which [plan](https://reportportal.io/pricing/saas/) best fits your testing needs.
 
 When the "Display launches" toggle is ON, the displayed results are grouped by launch execution and parent items (Launch/suite/test).
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch9.png')} alt="Display launches toggle is ON" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch8.png')} alt="Display launches toggle is ON" />
 
 By clicking on the "Update" icon the page is refreshed a new request with specified in the widget parameters is sent. Only the first page is displayed.
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch10.png')} alt="Update icon" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch9.png')} alt="Update icon" />
 
 By clicking on the test name, the user is redirected to the test's log level in a new tab (the same action occurs when clicking the icon next to the test name).
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch11.png')} alt="Test's log level" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch10.png')} alt="Test's log level" />
 
 If a test item has a long description, an arrow appears to expand it.
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch12.png')} alt="An arrow to expand description" />
-
-<MediaViewer src={require('./img/widget-types/TestCaseSearch13.png')} alt="A long description" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch11.png')} alt="An arrow to expand description" />
 
 When hovering over the Start Time field, the format changes while hovering; clicking changes it per application settings.
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch14.png')} alt="Start Time field" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch12.png')} alt="Start Time field" />
 
 Sorting is available by the Start Time field, with descending order set by default. Users can switch between ascending and descending order.
 
 By clicking the link to the bug tracking system, the ticket in the BTS opens.
 
-<MediaViewer src={require('./img/widget-types/TestCaseSearch15.png')} alt="The link to the bug tracking system" />
-
-<MediaViewer src={require('./img/widget-types/TestCaseSearch16.png')} alt="The ticket in the bug tracking system" />
+<MediaViewer src={require('./img/widget-types/TestCaseSearch13.png')} alt="The link to the bug tracking system" />
 
 <MediaViewer src="https://youtu.be/HxHCJTNqGaY" alt="Test Case Widget" type="video" />

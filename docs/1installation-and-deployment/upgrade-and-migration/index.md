@@ -1,9 +1,9 @@
 ---
-title: Upgrade & Mogration
+title: Upgrade & Migration
 description: test
 ---
 
-# Upgrade & Mogration
+# Upgrade & Migration
 
 test
 

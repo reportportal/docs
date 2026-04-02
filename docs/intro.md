@@ -75,3 +75,7 @@ ReportPortal offers widgets with a user-friendly visual interface to create inte
 - ***Easily running CI/CD tests***
 
 ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](/log-data-in-reportportal/HowToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
+
+- ***Clear data management***
+
+With Organizations, ReportPortal allows you to structure and manage test data across multiple projects using a scalable, two-level hierarchy. You can organize tests results by project in a way that makes the most sense for your team – by test type, business unit, or any structure that fits your workflow.
