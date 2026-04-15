@@ -49,7 +49,7 @@ Create Secrets to store the credentials & config of the components & refer the v
 
 Secret Structure:
 ```json
-{   
+{
     "app_username": "foo",
     "app_password: "bar"
 }
@@ -97,11 +97,11 @@ Eg: "traefik.http.routers.api.middlewares": "api-strip-prefix@ecs"
 
 **Traefik:**
 
-a. Create Task Def with following configuration (Launch Type as Fargate) 
+a. Create Task Def with following configuration (Launch Type as Fargate)
     - image: "traefik:v2.4",
     - entryPoint: "traefik"
     - command: "--providers.ecs=true", "--ping=true", "--ping.entrypoint=web", "--providers.ecs.region=AWS_REGION","--providers.ecs.clusters=report-portal","--providers.ecs.exposedByDefault=false","--providers.ecs.refreshSeconds=60","--entrypoints.web.address=:8080","--entrypoints.traefik.address=:8081","--api.dashboard=true","--api.insecure=true","--log.level=DEBUG","--accesslog=true","--accesslog.format=json"
-   
+
 b. Create ECS Service mapping to the Traefik Target Group
 c. Now inspect the logs of traefik service to see if all RP components are being picked up in the configuration from ECS provider.
 
@@ -124,7 +124,7 @@ def lambda_handler(event, context):
     print(event)
     print("-------------------EVENT END-------------------------------")
     traefik_services= mureq.get(os.environ['TRAEFIK_SERVICES_URL'])
-    
+
     if event['path'] == '/composite/info':
         rp_status = {}
         for service in traefik_services.json():
@@ -169,7 +169,7 @@ def lambda_handler(event, context):
             },
             "body": ""
         }
-        
+
     if event['path'] == '/ui':
         redirect_url= event['headers']['x-forwarded-proto'] + "://" + event['headers']['host'] + '/ui/'
         print(redirect_url)

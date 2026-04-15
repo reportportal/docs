@@ -27,7 +27,7 @@ Deployments in private subnets without an Internet Gateway **must use DNS-01** i
 
 | **Component** | **Specification**                |
 | ----------- |----------------------------------|
-| EC2 | t3.medium (2 vCPU, 4 GB RAM) /   
+| EC2 | t3.medium (2 vCPU, 4 GB RAM) /
 | OS | Ubuntu 24.04 / Amazon Linux 2023 |
 | Subnet | Public subnet with IGW           |
 | DNS | Route 53 public hosted zone      |
@@ -144,15 +144,15 @@ command:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --entrypoints.traefik.address=:8081
- 
+
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entrypoints.web.http.redirections.entrypoint.scheme=https
- 
+
       - --certificatesresolvers.letsencrypt.acme.email=admin@example.com
       - --certificatesresolvers.letsencrypt.acme.storage=/acme.json
       - --certificatesresolvers.letsencrypt.acme.httpchallenge=true
       - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
- 
+
       - --api.dashboard=true
       - --api.insecure=true
 ```

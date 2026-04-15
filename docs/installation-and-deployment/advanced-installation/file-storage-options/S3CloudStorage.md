@@ -29,7 +29,7 @@ DATASTORE_DEFAULTBUCKETNAME: my-bucket  # Name of the bucket
 x-analyzer-environment: &common-analyzer-environment
   DATASTORE_TYPE: s3
   DATASTORE_REGION: us-east-1
-  DATASTORE_ACCESSKEY: "<access_key>" 
+  DATASTORE_ACCESSKEY: "<access_key>"
   DATASTORE_SECRETKEY: "<secret_key>"
   DATASTORE_BUCKETPREFIX: prj-
   DATASTORE_BUCKETPOSTFIX: ""

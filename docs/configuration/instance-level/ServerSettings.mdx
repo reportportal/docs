@@ -1,0 +1,205 @@
+---
+sidebar_position: 4
+sidebar_label: Server Settings
+description: Configure server settings including GitHub authorization, SSO login, and Google Analytics in ReportPortal test automation reporting tools.
+---
+
+# Server Settings
+
+On the Server Settings page, you can enable GitHub authorization, allowing users to sign in with their GitHub credentials. Additionally, you can configure the instance to allow login only through SSO and here you can enable or disable Google Analytics.
+
+## Authorization configuration
+
+### Inactivity timeout
+
+Admin can configure session expiration per instance.
+
+For that, the Admin needs to navigate to the Server Settings -> "Authorization configuration" tab -> Inactivity timeout section and set up the duration of user inactivity before automatic logout in 'Inactivity timeout' block:
+
+* 15 minutes
+* 1 hour
+* 12 hours
+* 24 hours (default value)
+
+The user is logged out if their session inactivity exceeds the defined timeout.
+
+If the user is working in multiple tabs and the inactivity timeout is reached in one tab while they are still active in another, the user remains logged in until the timeout is reached in all tabs.
+
+<MediaViewer src={require('./img/server-settings/InactivityTimeout.png')} alt="Inactivity timeout section" />
+
+### Password
+
+Admin can define the minimum password length for the whole instance. This setting applies to:
+
+* all new user accounts
+* password changes for any existing accounts
+
+:::note
+Existing passwords are not affected and remain valid even if they do not meet the newly configured minimum length.
+:::
+
+To set minimum password length:
+
+1. Log in as ADMIN.
+2. Navigate to Server Settings -> "Authorization configuration" tab -> Password section
+3. Set the minimum password length to a value between 8 and 256 characters.
+4. Click "Submit".
+
+If the entered value is outside the allowed range, the system automatically adjusts it:
+
+* if the value is less than 8, it is set to 8
+* if the value is greater than 256, it is set to 256
+
+<MediaViewer src={require('./img/server-settings/Password.png')} alt="Password section in Server Settings" />
+
+The configured minimum password length is validated in the following scenarios:
+
+* User registration form
+* Create User modal window
+* Password change in the user profile
+* Password reset from the login page
+
+### GitHub
+
+To enable [GitHub authorization](/integrations/authorization/GitHub):
+
+1. Log in as Admin.
+2. Go to the Server Settings -> "Authorization configuration" tab -> GitHub section.
+3. Switch ON the "GitHub authorization" toggle.
+4. Fill in required [parameters for authorization](/integrations/authorization/GitHub#reportportal-configuration).
+5. Click "Submit".
+
+<MediaViewer src={require('./img/server-settings/GitHub.png')} alt="Enable GitHub authorization in our test automation dashboard" />
+
+Now you can access ReportPortal by clicking the "Login with GitHub" button on the login page.
+
+### Instance Invitations
+
+Admin can disable the possibility for manual invitation of external users. In such case, users can get access to ReportPortal via identity provider only (for example, SAML) configured on the instance.
+
+The default state of toggle on "Instance Invitations" section is OFF.
+
+<MediaViewer src={require('./img/server-settings/InstanceInvitations.png')} alt="Toggle OFF Instance Invitations section" />
+
+When toggle is OFF:
+
+1. The "Invite user" and "Create user" buttons are displayed on the "All Users" page.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings5.png')} alt="All Users page when toggle is OFF" />
+
+2. The "Invite user" button is displayed on the "Organization users" page.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings6.png')} alt="Organization Users page when toggle is OFF" />
+
+3. The "Invite user" button is displayed on the "Project Team" page.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings7.png')} alt="Project Team page when toggle is OFF" />
+
+When toggle is ON, manual invitation of external users is disabled:
+
+1. The "Invite user" and "Create user" buttons are removed from the "All Users" page.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings8.png')} alt="Project Team page when toggle is OFF" />
+
+2. The "Invite user" button on the "Organization users" page has been changed to the "Assign user" button.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings9.png')} alt="Project Team page when toggle is OFF" />
+
+3. The "Invite user" button on the "Project Team" page has been changed to the "Assign user" button.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings10.png')} alt="Project Team page when toggle is OFF" />
+
+Now, Admin, Manager, and Member can no longer invite new users to either projects or organizations; they can only assign existing users.
+
+### Features
+
+An admin can disable the "Important launches" functionality to better control storage usage and prevent launches from being stored indefinitely on the instance.
+
+By default, the "Important launches" functionality is enabled on all instances. Users can then [mark launches as important](/administration-and-maintenance/LaunchesRetentionPolicy#mark-launch-as-important-on-ui) using the launch burger menu or [report launch as important](/administration-and-maintenance/LaunchesRetentionPolicy#report-launch-as-important), and these launches can only be deleted manually or when [storage limits are exceeded](/administration-and-maintenance/LaunchesRetentionPolicy#important-launch-deletion-on-full-storage).
+
+To turn off the "Important launches" functionality:
+
+1. Log in as an Admin.
+2. Go to the Server Settings page -> "Features" tab.
+3. Turn the toggle "Important launches" off.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings11.png')} alt="Important launches toggle" />
+
+When toggling "Important Launches" off:
+
+1. The "Mark as important" option is disabled on the launch burger menu, and there is a tooltip with an explanation.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings12.png')} alt="Disabled Mark as important option" />
+
+2. A background job runs to remove the "Important" flag from launches that were previously marked as important, converting them to regular launches and making them subject to the standard [retention policy](/administration-and-maintenance/LaunchesRetentionPolicy).
+
+3. If the toggle is off, then even if a user reports a launch with the system attribute retentionPolicy:important, the launch will not be marked as important and will still be subject to the standard retention policy.
+
+4. If you previously had important launches, then turned off the toggle, and later turn it back on, the old launches that were once marked as important will not become important again.
+
+### Analytics
+
+To turn on [Google Analytics](/references/GoogleAnalyticsUsageByReportPortal) on ReportPortal UI:
+
+1. Log in as Admin.
+2. Go to the Server Settings page -> "Analytics" tab.
+3. Check "Help make Report Portal better by automatically sending analytics to us" checkbox.
+4. Click on "Submit" button.
+
+:::note
+By enabling analytics, you help us improve the app’s performance and usability.
+:::
+
+<MediaViewer src={require('./img/server-settings/ServerSettings13.png')} alt="turn on Google Analytics on our test automation results dashboard" />
+
+### Links & Branding
+
+Admin can configure the necessary links in the "Help and Service Versions" block of the sidebar under Server Settings -> "Links & Branding" tab.
+
+<MediaViewer src={require('./img/server-settings/ServerSettings14.png')} alt="Links & Branding tab" />
+
+By default, there are 2 links hardcoded on UI:
+
+- [Fork us on GitHub](https://github.com/reportportal)
+- [Documentation](https://reportportal.io/docs/)
+
+Next links are displayed by default, but can be changed:
+
+- [Chat with us on Slack](https://slack.epmrpp.reportportal.io/)
+- [Contact us](mailto:support@reportportal.io)
+- [EPAM](https://www.epam.com/)
+
+Admin can add 5 links except 2 hardcoded links, so a maximum of 7 links can be displayed in the "Help and Service Versions" block of the sidebar.
+
+To add a new link:
+
+1. Log in as ADMIN.
+2. Go to Server Settings -> "Links & Branding" tab.
+3. Click the "Add new" button.
+
+<MediaViewer src={require('./img/server-settings/AddNewLink.png')} alt="Add new footer link" />
+
+4. Provide Link name (from 3 to 30 characters).
+5. Provide URL or Email (from 3 to 1024 characters).
+
+<MediaViewer src={require('./img/server-settings/NewLink.png')} alt="New footer link" />
+
+6. Click the "Save" button.
+
+To delete link:
+
+1. Go to Server Settings -> "Links & Branding" tab.
+2. Click on the "Trash" icon.
+3. Click the "Delete" button on the "Delete link" modal.
+
+<MediaViewer src={require('./img/server-settings/DeleteLink.png')} alt="Delete footer link" />
+
+To change the links order:
+
+1. Go to Server Settings -> "Links & Branding" tab -> "Sidebar Links" section.
+2. Click on the drag-n-drop icon.
+3. Change the links order.
+
+All added/updated links are displayed in the "Help and Service Versions" block of the sidebar.
+
+<MediaViewer src={require('./img/server-settings/Sidebar.png')} alt="Change footer links order" />

@@ -270,7 +270,7 @@ helm install \
 Minimal storage size for Google Filestore is 1 TB.<br />
 Check the [pricing](https://cloud.google.com/filestore/pricing).
 :::
-> 
+>
 ### Install Helm chart on GKE Standard Cluster
 
 For installing ReportPortal on GKE Standard Cluster you need to set:
@@ -307,7 +307,7 @@ helm install \
 Minimal storage size for Google Filestore is 1 TB.<br />
 Check the [pricing](https://cloud.google.com/filestore/pricing).
 :::
- 
+
 ## Ingress configuration
 
 You can add custom gce ingress annotations via `ingress.annotations.gce` parameter:

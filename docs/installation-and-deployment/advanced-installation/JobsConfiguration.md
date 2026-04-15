@@ -40,7 +40,7 @@ Environment variables for configuration with default values:
 
 ## Clean attachments binaries job
 
-Clean attachments binaries job uses data from the **temporary table** (filled by previous job) 
+Clean attachments binaries job uses data from the **temporary table** (filled by previous job)
 and removes binaries from the **file storage**
 Environment variables for configuration with default values:
 * `RP_ENVIRONMENT_VARIABLE_CLEAN_STORAGE_CRON=*/30 * * * * *` - specifies how often job will be started (every 30 seconds)

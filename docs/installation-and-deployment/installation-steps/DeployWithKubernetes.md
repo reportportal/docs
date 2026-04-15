@@ -34,7 +34,7 @@ Upon the initial installation and the first login of the SuperAdmin, they will b
 ## Uninstalling the Helm Chart
 
 ```bash
-helm uninstall my-release 
+helm uninstall my-release
 ```
 
 ## Configuration
