@@ -6,6 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "npm run docusaurus clear && docusaurus start",
     "build": "docusaurus build",
+    "validate:schema": "node scripts/validate-schema.js",
     "lint": "eslint src/**/*.{js,jsx}",
     "format": "npm run lint -- --fix",
     "swizzle": "docusaurus swizzle",
@@ -50,7 +51,15 @@
     "eslint-plugin-prettier": "^5.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "cheerio": "^1.0.0",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "mdast-util-to-string": "^4.0.0",
+    "remark-mdx": "^3.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.4",
+    "unist-util-visit": "^5.0.0"
   },
   "browserslist": {
     "production": [
