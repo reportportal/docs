@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension, react/no-array-index-key, react/jsx-props-no-spreading */
 import React from 'react';
 import Head from '@docusaurus/Head';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
