@@ -233,392 +233,576 @@ const config = {
       {
         redirects: [
           {
-            to: '/installation-steps',
+            to: '/installation-steps/',
             from: ['/category/installation-steps', '/Installation'],
           },
           {
-            to: '/features',
+            to: '/features/',
             from: '/category/features',
           },
           {
-            to: '/releases',
+            to: '/releases/',
             from: '/category/releases',
           },
           {
-            to: '/user-account',
+            to: '/user-account/',
             from: '/category/user-account',
           },
           {
-            to: '/work-with-reports',
+            to: '/work-with-reports/',
             from: '/category/work-with-reports',
           },
           {
-            to: '/analysis',
+            to: '/analysis/',
             from: '/category/analysis',
           },
           {
-            to: '/saved-searches-filters',
+            to: '/saved-searches-filters/',
             from: '/category/saved-searches-filters',
           },
           {
-            to: '/dashboards-and-widgets',
+            to: '/dashboards-and-widgets/',
             from: '/category/dashboards-and-widgets',
           },
           {
-            to: '/admin-panel',
+            to: '/admin-panel/',
             from: '/category/admin-panel',
           },
           {
-            to: '/plugins',
+            to: '/plugins/',
             from: '/category/plugins',
           },
           {
-            to: '/external-integrations',
+            to: '/external-integrations/',
             from: '/category/external-integrations',
           },
           {
-            to: '/quality-gates',
+            to: '/quality-gates/',
             from: '/category/quality-gates',
           },
           {
-            to: '/case-studies',
+            to: '/case-studies/',
             from: '/category/case-studies',
           },
           {
-            to: '/terms-and-conditions',
+            to: '/terms-and-conditions/',
             from: '/category/terms--conditions',
           },
           {
-            to: '/installation-steps/DeployWithDocker',
+            to: '/installation-steps/DeployWithDocker/',
             from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows', '/Installation/Docker'],
           },
           {
-            to: '/plugins/authorization/SamlProviders',
-            from: ['/reportportal-configuration/authorization/SAMLProvider', '/SAML-integration'],
+            to: '/plugins/authorization/SamlProviders/',
+            from: ['/reportportal-configuration/authorization/SAMLProvider', '/SAML-integration', '/category/saml-providers'],
           },
           {
-            to: '/plugins/authorization/SamlProviders/OktaSaml',
+            to: '/plugins/authorization/SamlProviders/OktaSaml/',
             from: ['/reportportal-configuration/authorization/SAMLProvider/OktaSAML', '/reportportal-configuration/authorization/SamlProviders/OktaSaml'],
           },
           {
-            to: '/installation-steps-advanced',
+            to: '/installation-steps-advanced/',
             from: ['/Setup-TLS(SSL)-in', '/installation-steps/SetupTSLSSLInTraefik2.0.x'],
           },
           {
-            to: '/plugins/authorization/SamlProviders/AzureSaml',
+            to: '/plugins/authorization/SamlProviders/AzureSaml/',
             from: ['/reportportal-configuration/authorization/SAMLProvider/AzureSAML', '/Azure-SAML-Integration', '/reportportal-configuration/authorization/SamlProviders/AzureSaml'],
           },
           {
-            to: '/issues-troubleshooting/ResolveAnalyzerKnownIssues',
+            to: '/issues-troubleshooting/ResolveAnalyzerKnownIssues/',
             from: '/Resolve-Analyzer-Known',
           },
           {
-            to: '/issues-troubleshooting',
+            to: '/issues-troubleshooting/',
             from: ['/How-to-resolve', '/category/issues-troubleshooting'],
           },
           {
-            to: '/log-data-in-reportportal/ImportDataToReportPortal',
+            to: '/log-data-in-reportportal/ImportDataToReportPortal/',
             from: ['/Import-data-to', '/Log-data-import'],
           },
           {
-            to: '/log-data-in-reportportal',
+            to: '/log-data-in-reportportal/',
             from: ['/Log-Data-in', '/category/log-data-in-reportportal'],
           },
           {
-            to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
+            to: '/installation-steps-advanced/MaintainCommandsCheatSheet/',
             from: ['/Maintain-commands-Cheat', '/installation-steps/MaintainCommandsCheatSheet'],
           },
           {
-            to: '/installation-steps/DeployWithKubernetes',
+            to: '/installation-steps/DeployWithKubernetes/',
             from: ['/Deploy-with-Kubernetes', '/installation-steps/deploy-with-kubernetes'],
           },
           {
-            to: '/log-data-in-reportportal/test-framework-integration',
+            to: '/log-data-in-reportportal/test-framework-integration/',
             from: '/Test-Framework-Integration',
           },
           {
-            to: '/analysis/AutoAnalysisOfLaunches',
+            to: '/analysis/AutoAnalysisOfLaunches/',
             from: '/Auto-Analysis-of-launches',
           },
           {
-            to: '/issues-troubleshooting/IssuesWithLDAPSHowToResolve',
+            to: '/issues-troubleshooting/IssuesWithLDAPSHowToResolve/',
             from: '/Issues-with-LDAPS',
           },
           {
-            to: '/plugins/other/SauceLabs',
-            from: '/Sauce-Labs-integration',
+            to: '/plugins/other/SauceLabs/',
+            from: ['/Sauce-Labs-integration', '/plugins/SauceLabs'],
           },
           {
-            to: '/plugins/authorization',
-            from: '/reportportal-configuration/authorization',
+            to: '/plugins/authorization/',
+            from: ['/reportportal-configuration/authorization', '/category/authorization'],
           },
           {
-            to: '/installation-steps/DeployWithoutDocker',
+            to: '/installation-steps/DeployWithoutDocker/',
             from: ['/Deploy-ReportPortal-without', '/Deploy-Without-Docker'],
           },
           {
-            to: '/plugins/authorization/ActiveDirectory',
+            to: '/plugins/authorization/ActiveDirectory/',
             from: ['/Active-Directory-Auth', '/reportportal-configuration/authorization/ActiveDirectory'],
           },
           {
-            to: '/work-with-reports/ViewLaunches',
+            to: '/work-with-reports/ViewLaunches/',
             from: '/View-launches',
           },
           {
-            to: '/dashboards-and-widgets/FlakyTestCasesTableTop50',
+            to: '/dashboards-and-widgets/FlakyTestCasesTableTop50/',
             from: '/dashboards-and-widgets/FlakyTestCasesTableTop20',
           },
           {
-            to: '/dashboards-and-widgets/ComponentHealthCheck',
+            to: '/dashboards-and-widgets/ComponentHealthCheck/',
             from: '/Component-health-check',
           },
           {
-            to: '/installation-steps-advanced/DeployWithAWSECSFargate',
+            to: '/installation-steps-advanced/DeployWithAWSECSFargate/',
             from: ['/Deploy-with-AWS', '/installation-steps/DeployWithAWSECSFargate'],
           },
           {
-            to: '/work-with-reports/ViewLaunches#markdown-mode-on-logs-view',
+            to: '/work-with-reports/ViewLaunches/#markdown-mode-on-logs-view',
             from: '/How-to-activate',
           },
           {
-            to: '/installation-steps/HardwareRequirements',
+            to: '/installation-steps/HardwareRequirements/',
             from: ['/Optimal-Performance-Hardware', '/installation-steps/OptimalPerformanceHardwareSetup'],
           },
           {
-            to: '/configuration',
+            to: '/configuration/',
             from: ['/Report-Portal-Configuration', '/reportportal-configuration', '/category/reportportal-configuration'],
           },
           {
-            to: '/dashboards-and-widgets/TableComponentHealthCheck',
+            to: '/dashboards-and-widgets/TableComponentHealthCheck/',
             from: '/Table-Component-health',
           },
           {
-            to: '/developers-guides',
+            to: '/developers-guides/',
             from: ['/category/dev-guides', '/category/developers-guides'],
           },
           {
-            to: '/developers-guides/APIDifferencesBetweenV4AndV5',
+            to: '/developers-guides/APIDifferencesBetweenV4AndV5/',
             from: '/dev-guides/APIDifferencesBetweenV4AndV5',
           },
           {
-            to: '/developers-guides/AsynchronousReporting',
+            to: '/developers-guides/AsynchronousReporting/',
             from: '/dev-guides/AsynchronousReporting',
           },
           {
-            to: '/developers-guides/AttachmentsGuide',
+            to: '/developers-guides/AttachmentsGuide/',
             from: '/dev-guides/AttachmentsGuide',
           },
           {
-            to: '/developers-guides/BackEndJavaContributionGuide',
+            to: '/developers-guides/BackEndJavaContributionGuide/',
             from: '/dev-guides/BackEndJavaContributionGuide',
           },
           {
-            to: '/developers-guides/InteractionsBetweenAPIAndAnalyzer',
+            to: '/developers-guides/InteractionsBetweenAPIAndAnalyzer/',
             from: '/dev-guides/InteractionsBetweenAPIAndAnalyzer',
           },
           {
-            to: '/developers-guides/PluginDevelopersGuide',
+            to: '/developers-guides/PluginDevelopersGuide/',
             from: '/dev-guides/PluginDevelopersGuide',
           },
           {
-            to: '/developers-guides/ReportPortalAPI',
-            from: '/dev-guides/ReportPortalAPI',
+            to: '/developers-guides/ReportPortalAPI/',
+            from: ['/dev-guides/ReportPortalAPI', '/api'],
           },
           {
-            to: '/developers-guides/ReportingDevelopersGuide',
+            to: '/developers-guides/ReportingDevelopersGuide/',
             from: '/dev-guides/ReportingDevelopersGuide',
           },
           {
-            to: '/developers-guides/RerunDevelopersGuide',
+            to: '/developers-guides/RerunDevelopersGuide/',
             from: '/dev-guides/RerunDevelopersGuide',
           },
           {
-            to: '/developers-guides/RetriesReporting',
+            to: '/developers-guides/RetriesReporting/',
             from: '/dev-guides/RetriesReporting',
           },
           {
-            to: '/installation-steps-advanced/ComponentsOverview',
+            to: '/installation-steps-advanced/ComponentsOverview/',
             from: '/reportportal-configuration/ComponentsOverview',
           },
           {
-            to: '/installation-steps-advanced/BasicMonitoringConfiguration',
+            to: '/installation-steps-advanced/BasicMonitoringConfiguration/',
             from: '/installation-steps/BasicMonitoringConfiguration',
           },
           {
-            to: '/installation-steps-advanced/JobsConfiguration',
+            to: '/installation-steps-advanced/JobsConfiguration/',
             from: '/reportportal-configuration/ReportPortalJobsConfiguration',
           },
           {
-            to: '/installation-steps-advanced/BackupRestoreGuide',
+            to: '/installation-steps-advanced/BackupRestoreGuide/',
             from: '/reportportal-configuration/ReportPortalBackupRestoreGuide',
           },
           {
-            to: '/installation-steps-advanced/AdditionalConfigurationParameters',
+            to: '/installation-steps-advanced/AdditionalConfigurationParameters/',
             from: '/installation-steps/AdditionalConfigurationParameters',
           },
           {
-            to: '/installation-steps-advanced/MigrateOneInstanceToAnother',
+            to: '/installation-steps-advanced/MigrateOneInstanceToAnother/',
             from: '/installation-steps/MigrateOneInstanceToAnother',
           },
           {
             to: '/installation-steps-advanced/file-storage-options/',
-            from: '/installation-steps/ReportPortal23.1FileStorageOptions',
+            from: ['/installation-steps/ReportPortal23.1FileStorageOptions', '/installation-steps-advanced/FileStorageOptions'],
           },
           {
-            to: '/installation-steps-advanced/ScalingReportPortalServices',
-            from: '/installation-steps/ScalingUpReportPortalAPIService',
+            to: '/installation-steps-advanced/ScalingReportPortalServices/',
+            from: ['/installation-steps/ScalingUpReportPortalAPIService', '/installation-steps-advanced/ScalingUpReportPortalAPIService'],
           },
           {
-            to: '/installation-steps-advanced/AmazonALBNGINXIngressController',
+            to: '/installation-steps-advanced/AmazonALBNGINXIngressController/',
             from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
           },
           {
-            to: '/installation-steps-advanced/QuickStartWithGCPGKE',
+            to: '/installation-steps-advanced/QuickStartWithGCPGKE/',
             from: '/installation-steps/deploy-with-kubernetes/QuickStartWithGCPGKE',
           },
           {
-            to: '/tutorial',
+            to: '/tutorial/',
             from: ['/reportportal-tutorial', '/What-is-ReportPortal'],
           },
           {
-            to: '/glossary',
+            to: '/glossary/',
             from: '/reportportal-glossary',
           },
           {
-            to: '/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal',
+            to: '/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal/',
             from: '/reportportal-configuration/HowToGetAnAccessTokenInReportPortal',
           },
           {
-            to: '/plugins/authorization/GitHub',
+            to: '/plugins/authorization/GitHub/',
             from: '/reportportal-configuration/authorization/GitHub',
           },
           {
-            to: '/plugins/authorization/LDAP',
+            to: '/plugins/authorization/LDAP/',
             from: '/reportportal-configuration/authorization/LDAP',
           },
           {
-            to: '/plugins/authorization/SamlProviders/Overview',
+            to: '/plugins/authorization/SamlProviders/Overview/',
             from: '/reportportal-configuration/authorization/SamlProviders/Overview',
           },
           {
-            to: '/configuration/IntegrationViaPlugin',
+            to: '/configuration/IntegrationViaPlugin/',
             from: '/reportportal-configuration/IntegrationViaPlugin',
           },
           {
-            to: '/configuration/ProjectSettings',
+            to: '/configuration/ProjectSettings/',
             from: ['/configuration/ProjectConfiguration', '/reportportal-configuration/ProjectConfiguration'],
           },
           {
-            to: '/admin-panel/AllProjectsPage',
+            to: '/admin-panel/AllProjectsPage/',
             from: ['/configuration/CreationOfProjectAndAddingUsers', '/reportportal-configuration/CreationOfProjectAndAddingUsers'],
           },
           {
-            to: '/installation-steps-advanced/ScalingReportPortalServices',
-            from: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
-          },
-          {
-            to: '/plugins/authorization',
-            from: '/category/authorization',
-          },
-          {
-            to: '/plugins/authorization/SamlProviders',
-            from: '/category/saml-providers',
-          },
-          {
-            to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
+            to: '/work-with-reports/TestCaseId/#what-does-happen-if-you-do-not-report-items-with-test-case-id',
             from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
           },
           {
-            to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
+            to: '/work-with-reports/TestCaseId/#what-is-it-test-case-id',
             from: '/Test-case-ID>what-is-it-test-case-id',
           },
           {
-            to: '/dashboards-and-widgets/CumulativeTrendChart',
+            to: '/dashboards-and-widgets/CumulativeTrendChart/',
             from: '/Cumulative-trend-chart',
           },
           {
-            to: '/log-data-in-reportportal/test-framework-integration/Java',
+            to: '/log-data-in-reportportal/test-framework-integration/Java/',
             from: '/JVM-based-clients-configuration',
           },
           {
-            to: '/releases/Version24.2.0',
-            from: '/releases/Version24.2',
+            to: '/releases/Version24.2.0/',
+            from: ['/releases/Version24.2', '/releases/Version24.2.0'],
           },
           {
-            to: '/plugins/bug-tracking/AtlassianJiraServer',
-            from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
+            to: '/plugins/bug-tracking/AtlassianJiraServer/',
+            from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer'],
           },
           {
-            to: '/plugins/bug-tracking/AtlassianJiraCloud',
+            to: '/plugins/bug-tracking/AtlassianJiraCloud/',
             from: '/plugins/AtlassianJiraCloud',
           },
           {
-            to: '/plugins/bug-tracking/AzureDevOps',
-            from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
+            to: '/plugins/bug-tracking/AzureDevOps/',
+            from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS'],
           },
           {
-            to: '/plugins/bug-tracking/GitLab',
-            from: ['/plugins/GitLab', '/plugins/GitLabBTS']
+            to: '/plugins/bug-tracking/GitLab/',
+            from: ['/plugins/GitLab', '/plugins/GitLabBTS'],
           },
           {
-            to: '/plugins/bug-tracking/Monday',
+            to: '/plugins/bug-tracking/Monday/',
             from: '/plugins/Monday',
           },
           {
-            to: '/plugins/bug-tracking/Rally',
+            to: '/plugins/bug-tracking/Rally/',
             from: '/plugins/Rally',
           },
           {
-            to: '/plugins/notifications/EmailServer',
+            to: '/plugins/notifications/EmailServer/',
             from: '/plugins/EmailServer',
           },
           {
-            to: '/plugins/notifications/Slack',
+            to: '/plugins/notifications/Slack/',
             from: '/plugins/Slack',
           },
           {
-            to: '/plugins/notifications/Telegram',
+            to: '/plugins/notifications/Telegram/',
             from: '/plugins/Telegram',
           },
           {
-            to: '/plugins/import/JUnit',
+            to: '/plugins/import/JUnit/',
             from: '/plugins/JUnit',
           },
           {
-            to: '/plugins/import/RobotFramework',
+            to: '/plugins/import/RobotFramework/',
             from: '/plugins/RobotFramework',
           },
           {
-            to: '/installation-steps-advanced/file-storage-options/',
-            from: '/installation-steps-advanced/FileStorageOptions',
-          },
-          {
-            to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
+            to: '/dashboards-and-widgets/WorkWithDashboards/#dashboard-cloning',
             from: '/dashboards-and-widgets/DashboardCloning',
           },
           {
-            to: '/releases/Version25.1.6',
-            from: '/releases/Release25.1.6',
+            to: '/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24.2AndLater/',
+            from: '/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24.2AndLater',
           },
           {
-            to: '/releases/Version25.1.5',
-            from: '/releases/Release25.1.5',
+            to: '/releases/Version25.1.1/',
+            from: '/releases/Version25.1.1',
           },
           {
-            to: '/developers-guides/ReportPortalAPI',
-            from: '/api',
+            to: '/releases/Version25.1.5/',
+            from: ['/releases/Release25.1.5', '/releases/Release25.1.5/', '/releases/Version25.1.5'],
           },
           {
-            to: '/plugins/other/SauceLabs',
-            from: '/plugins/SauceLabs',
+            to: '/releases/Version25.0.4/',
+            from: '/releases/Version25.0.4',
           },
           {
-            to: '/releases/Version26.0.2',
-            from: '/releases/Release26.0.2',
+            to: '/releases/Version25.1.4/',
+            from: '/releases/Version25.1.4',
           },
           {
-            to: '/releases/Version26.0.1',
-            from: '/releases/Release26.0.1',
+            to: '/releases/Version25.0.5/',
+            from: '/releases/Version25.0.5',
+          },
+          {
+            to: '/releases/Version25.1.11/',
+            from: '/releases/Version25.1.11',
+          },
+          {
+            to: '/releases/Version25.1/',
+            from: '/releases/Version25.1',
+          },
+          {
+            to: '/releases/Version24.1/',
+            from: '/releases/Version24.1',
+          },
+          {
+            to: '/releases/Version25.1.10/',
+            from: '/releases/Version25.1.10',
+          },
+          {
+            to: '/releases/Version24.2.2/',
+            from: '/releases/Version24.2.2',
+          },
+          {
+            to: '/releases/Version25.1.9/',
+            from: '/releases/Version25.1.9',
+          },
+          {
+            to: '/releases/archived-releases/Version5.7.4/',
+            from: '/releases/archived-releases/Version5.7.4',
+          },
+          {
+            to: '/releases/archived-releases/Version3.3.2/',
+            from: '/releases/archived-releases/Version3.3.2',
+          },
+          {
+            to: '/releases/archived-releases/Version23.1/',
+            from: '/releases/archived-releases/Version23.1',
+          },
+          {
+            to: '/releases/archived-releases/Version5.7.0/',
+            from: '/releases/archived-releases/Version5.7.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.6.1/',
+            from: '/releases/archived-releases/Version5.6.1',
+          },
+          {
+            to: '/releases/archived-releases/Version5.7.1/',
+            from: '/releases/archived-releases/Version5.7.1',
+          },
+          {
+            to: '/releases/archived-releases/Version4.2.0/',
+            from: '/releases/archived-releases/Version4.2.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.6.0/',
+            from: '/releases/archived-releases/Version5.6.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.1.0/',
+            from: '/releases/archived-releases/Version5.1.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.2.3/',
+            from: '/releases/archived-releases/Version5.2.3',
+          },
+          {
+            to: '/releases/archived-releases/Version5.3.2/',
+            from: '/releases/archived-releases/Version5.3.2',
+          },
+          {
+            to: '/releases/archived-releases/Version5.2.2/',
+            from: '/releases/archived-releases/Version5.2.2',
+          },
+          {
+            to: '/releases/archived-releases/Version3.3.2-1/',
+            from: '/releases/archived-releases/Version3.3.2-1',
+          },
+          {
+            to: '/releases/archived-releases/Version5.3.3/',
+            from: '/releases/archived-releases/Version5.3.3',
+          },
+          {
+            to: '/releases/archived-releases/Version5.0.0/',
+            from: '/releases/archived-releases/Version5.0.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.2.1/',
+            from: '/releases/archived-releases/Version5.2.1',
+          },
+          {
+            to: '/releases/archived-releases/Version5.3.0/',
+            from: '/releases/archived-releases/Version5.3.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.3.5/',
+            from: '/releases/archived-releases/Version5.3.5',
+          },
+          {
+            to: '/releases/archived-releases/Version5.2.0/',
+            from: '/releases/archived-releases/Version5.2.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.0RC/',
+            from: '/releases/archived-releases/Version5.0RC',
+          },
+          {
+            to: '/releases/archived-releases/Version4.3/',
+            from: '/releases/archived-releases/Version4.3',
+          },
+          {
+            to: '/releases/archived-releases/Version5.3.1/',
+            from: '/releases/archived-releases/Version5.3.1',
+          },
+          {
+            to: '/releases/archived-releases/Version5.7.2/',
+            from: '/releases/archived-releases/Version5.7.2',
+          },
+          {
+            to: '/releases/archived-releases/Version5.6.3/',
+            from: '/releases/archived-releases/Version5.6.3',
+          },
+          {
+            to: '/releases/archived-releases/Version4.1.0/',
+            from: '/releases/archived-releases/Version4.1.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.5.0/',
+            from: '/releases/archived-releases/Version5.5.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.4.0/',
+            from: '/releases/archived-releases/Version5.4.0',
+          },
+          {
+            to: '/releases/archived-releases/Version23.2/',
+            from: '/releases/archived-releases/Version23.2',
+          },
+          {
+            to: '/releases/archived-releases/Version4.0.0/',
+            from: '/releases/archived-releases/Version4.0.0',
+          },
+          {
+            to: '/releases/archived-releases/Version5.7.3/',
+            from: '/releases/archived-releases/Version5.7.3',
+          },
+          {
+            to: '/releases/archived-releases/Version5.6.2/',
+            from: '/releases/archived-releases/Version5.6.2',
+          },
+          {
+            to: '/releases/Version26.0.1/',
+            from: ['/releases/Release26.0.1', '/releases/Release26.0.1/', '/releases/Version26.0.1'],
+          },
+          {
+            to: '/releases/Version25.1.8/',
+            from: '/releases/Version25.1.8',
+          },
+          {
+            to: '/releases/Version25.1.12/',
+            from: '/releases/Version25.1.12',
+          },
+          {
+            to: '/releases/Version25.2/',
+            from: '/releases/Version25.2',
+          },
+          {
+            to: '/releases/Version24.2.3/',
+            from: '/releases/Version24.2.3',
+          },
+          {
+            to: '/releases/Version25.1.7/',
+            from: '/releases/Version25.1.7',
+          },
+          {
+            to: '/releases/Version25.0.6/',
+            from: '/releases/Version25.0.6',
+          },
+          {
+            to: '/releases/Version25.1.3/',
+            from: '/releases/Version25.1.3',
+          },
+          {
+            to: '/releases/Version25.0.2/',
+            from: '/releases/Version25.0.2',
+          },
+          {
+            to: '/releases/Version25.1.2/',
+            from: '/releases/Version25.1.2',
+          },
+          {
+            to: '/releases/Version25.0.3/',
+            from: '/releases/Version25.0.3',
+          },
+          {
+            to: '/releases/Version25.1.6/',
+            from: ['/releases/Release25.1.6', '/releases/Release25.1.6/', '/releases/Version25.1.6'],
+          },
+          {
+            to: '/releases/Version26.0.2/',
+            from: ['/releases/Release26.0.2', '/releases/Release26.0.2/', '/releases/Version26.0.2'],
           },
         ],
       },
