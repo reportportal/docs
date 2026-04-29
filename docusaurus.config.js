@@ -3,6 +3,8 @@
 
 import { themes } from 'prism-react-renderer';
 
+import { expandRedirectFromVariants } from './scripts/expand-redirect-from-variants.js';
+
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -231,7 +233,7 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: [
+        redirects: expandRedirectFromVariants([
           {
             to: '/installation-steps/',
             from: ['/category/installation-steps/', '/Installation/'],
@@ -613,14 +615,14 @@ const config = {
             from: '/plugins/SauceLabs/',
           },
           {
-            to: '/releases/Version26.0.2/',
+            to: '/releases/Version26.0.1/',
             from: '/releases/Release26.0.2/',
           },
           {
             to: '/releases/Version26.0.1/',
             from: '/releases/Release26.0.1/',
           },
-        ],
+        ]),
       },
     ],
   ],
