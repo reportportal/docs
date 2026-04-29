@@ -1,0 +1,61 @@
+# Copyright 2026 EPAM Systems
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Delete Release Page
+
+on:
+  repository_dispatch:
+    types: [release-deleted]
+
+jobs:
+  delete-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Delete release page
+        run: node scripts/delete-release.js
+        env:
+          RELEASE_NAME: ${{ github.event.client_payload.release_name }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status docs/releases/ --porcelain)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No release file was deleted."
+          fi
+
+      - name: Commit and push deletion
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          RELEASE_NAME: ${{ github.event.client_payload.release_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/releases/
+          git commit -m "docs: remove release page for $RELEASE_NAME"
+          git push
