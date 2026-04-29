@@ -20,6 +20,9 @@ on:
     paths-ignore:
       - 'docs/releases/**'
 
+  repository_dispatch:
+    types: [release-published]
+
   workflow_call:
     inputs:
       scope:
