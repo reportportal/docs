@@ -84,18 +84,6 @@ jobs:
       - name: Deploy to AWS S3
         run: aws s3 sync ./${{ env.BUILD_DIR }} s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/
 
-      - name: Create dot-path redirect stubs in S3
-        run: |
-          find ./build -mindepth 1 -type d | while IFS= read -r dir; do
-            name=$(basename "$dir")
-            if [[ "$name" == *.* ]]; then
-              rel="${dir#./build/}"
-              printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=./%s/"><script>window.location.replace(location.pathname.replace(/\/?$/,"/")+location.search+location.hash)</script></head></html>' "$name" \
-                | aws s3 cp - "s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/$rel" \
-                  --content-type "text/html; charset=utf-8"
-            fi
-          done
-
       - name: Trigger Amplify redeploy
         run: |
           aws s3 sync s3://${{ env.AWS_S3_BUCKET_NAME }} /tmp/full-site

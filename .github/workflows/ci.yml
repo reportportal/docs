@@ -36,6 +36,20 @@ jobs:
       - name: Install of node dependencies
         run: npm ci
 
+      - name: Check for dots in doc filenames
+        run: |
+          found=$(find docs -type f \( -name "*.md" -o -name "*.mdx" \) | while IFS= read -r f; do
+            stem=$(basename "$f" | sed 's/\.[^.]*$//')
+            if echo "$stem" | grep -q '\.'; then
+              echo "$f"
+            fi
+          done)
+          if [ -n "$found" ]; then
+            echo "::error::Doc filenames with dots create broken Amplify URLs. Use dashes instead (e.g. Version25-1-1.md):"
+            echo "$found"
+            exit 1
+          fi
+
       - name: Run lint
         run: npm run lint
 

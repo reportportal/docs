@@ -543,8 +543,8 @@ const config = {
             from: '/JVM-based-clients-configuration/',
           },
           {
-            to: '/releases/Version24.2.0/',
-            from: '/releases/Version24.2/',
+            to: '/releases/Version24-2-0/',
+            from: ['/releases/Version24.2/', '/releases/Version24.2.0/'],
           },
           {
             to: '/plugins/bug-tracking/AtlassianJiraServer/',
@@ -599,12 +599,12 @@ const config = {
             from: '/dashboards-and-widgets/DashboardCloning/',
           },
           {
-            to: '/releases/Version25.1.6/',
-            from: '/releases/Release25.1.6/',
+            to: '/releases/Version25-1-6/',
+            from: ['/releases/Release25.1.6/', '/releases/Version25.1.6/'],
           },
           {
-            to: '/releases/Version25.1.5/',
-            from: '/releases/Release25.1.5/',
+            to: '/releases/Version25-1-5/',
+            from: ['/releases/Release25.1.5/', '/releases/Version25.1.5/'],
           },
           {
             to: '/developers-guides/ReportPortalAPI/',
@@ -615,12 +615,221 @@ const config = {
             from: '/plugins/SauceLabs/',
           },
           {
-            to: '/releases/Version26.0.1/',
-            from: '/releases/Release26.0.2/',
+            to: '/releases/Version26-0-1/',
+            from: ['/releases/Release26.0.2/', '/releases/Release26.0.1/', '/releases/Version26.0.1/'],
+          },
+          // Redirects from old dot-URLs to new dash-URLs (Amplify treats dots as file extensions)
+          {
+            to: '/releases/Version25-1-1/',
+            from: '/releases/Version25.1.1/',
           },
           {
-            to: '/releases/Version26.0.1/',
-            from: '/releases/Release26.0.1/',
+            to: '/releases/Version25-0-4/',
+            from: '/releases/Version25.0.4/',
+          },
+          {
+            to: '/releases/Version25-1-4/',
+            from: '/releases/Version25.1.4/',
+          },
+          {
+            to: '/releases/Version25-0-5/',
+            from: '/releases/Version25.0.5/',
+          },
+          {
+            to: '/releases/Version25-1-11/',
+            from: '/releases/Version25.1.11/',
+          },
+          {
+            to: '/releases/Version25-1/',
+            from: '/releases/Version25.1/',
+          },
+          {
+            to: '/releases/Version24-1/',
+            from: '/releases/Version24.1/',
+          },
+          {
+            to: '/releases/Version26-0-2/',
+            from: '/releases/Version26.0.2/',
+          },
+          {
+            to: '/releases/Version25-1-10/',
+            from: '/releases/Version25.1.10/',
+          },
+          {
+            to: '/releases/Version24-2-2/',
+            from: '/releases/Version24.2.2/',
+          },
+          {
+            to: '/releases/Version25-1-9/',
+            from: '/releases/Version25.1.9/',
+          },
+          {
+            to: '/releases/Version25-1-8/',
+            from: '/releases/Version25.1.8/',
+          },
+          {
+            to: '/releases/Version25-1-12/',
+            from: '/releases/Version25.1.12/',
+          },
+          {
+            to: '/releases/Version25-2/',
+            from: '/releases/Version25.2/',
+          },
+          {
+            to: '/releases/Version24-2-3/',
+            from: '/releases/Version24.2.3/',
+          },
+          {
+            to: '/releases/Version25-1-7/',
+            from: '/releases/Version25.1.7/',
+          },
+          {
+            to: '/releases/Version25-0-6/',
+            from: '/releases/Version25.0.6/',
+          },
+          {
+            to: '/releases/Version25-1-3/',
+            from: '/releases/Version25.1.3/',
+          },
+          {
+            to: '/releases/Version25-0-2/',
+            from: '/releases/Version25.0.2/',
+          },
+          {
+            to: '/releases/Version25-1-2/',
+            from: '/releases/Version25.1.2/',
+          },
+          {
+            to: '/releases/Version25-0-3/',
+            from: '/releases/Version25.0.3/',
+          },
+          {
+            to: '/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24-2AndLater/',
+            from: '/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24.2AndLater/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-7-4/',
+            from: '/releases/archived-releases/Version5.7.4/',
+          },
+          {
+            to: '/releases/archived-releases/Version3-3-2/',
+            from: '/releases/archived-releases/Version3.3.2/',
+          },
+          {
+            to: '/releases/archived-releases/Version23-1/',
+            from: '/releases/archived-releases/Version23.1/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-7-0/',
+            from: '/releases/archived-releases/Version5.7.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-6-1/',
+            from: '/releases/archived-releases/Version5.6.1/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-7-1/',
+            from: '/releases/archived-releases/Version5.7.1/',
+          },
+          {
+            to: '/releases/archived-releases/Version4-2-0/',
+            from: '/releases/archived-releases/Version4.2.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-6-0/',
+            from: '/releases/archived-releases/Version5.6.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-1-0/',
+            from: '/releases/archived-releases/Version5.1.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-2-3/',
+            from: '/releases/archived-releases/Version5.2.3/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-3-2/',
+            from: '/releases/archived-releases/Version5.3.2/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-2-2/',
+            from: '/releases/archived-releases/Version5.2.2/',
+          },
+          {
+            to: '/releases/archived-releases/Version3-3-2-1/',
+            from: '/releases/archived-releases/Version3.3.2-1/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-3-3/',
+            from: '/releases/archived-releases/Version5.3.3/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-0-0/',
+            from: '/releases/archived-releases/Version5.0.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-2-1/',
+            from: '/releases/archived-releases/Version5.2.1/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-3-0/',
+            from: '/releases/archived-releases/Version5.3.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-3-5/',
+            from: '/releases/archived-releases/Version5.3.5/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-2-0/',
+            from: '/releases/archived-releases/Version5.2.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-0RC/',
+            from: '/releases/archived-releases/Version5.0RC/',
+          },
+          {
+            to: '/releases/archived-releases/Version4-3/',
+            from: '/releases/archived-releases/Version4.3/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-3-1/',
+            from: '/releases/archived-releases/Version5.3.1/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-7-2/',
+            from: '/releases/archived-releases/Version5.7.2/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-6-3/',
+            from: '/releases/archived-releases/Version5.6.3/',
+          },
+          {
+            to: '/releases/archived-releases/Version4-1-0/',
+            from: '/releases/archived-releases/Version4.1.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-5-0/',
+            from: '/releases/archived-releases/Version5.5.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-4-0/',
+            from: '/releases/archived-releases/Version5.4.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version23-2/',
+            from: '/releases/archived-releases/Version23.2/',
+          },
+          {
+            to: '/releases/archived-releases/Version4-0-0/',
+            from: '/releases/archived-releases/Version4.0.0/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-7-3/',
+            from: '/releases/archived-releases/Version5.7.3/',
+          },
+          {
+            to: '/releases/archived-releases/Version5-6-2/',
+            from: '/releases/archived-releases/Version5.6.2/',
           },
         ]),
       },
