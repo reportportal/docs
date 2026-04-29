@@ -1,7 +1,9 @@
 /**
- * Expands each client redirect `from` to include both trailing-slash forms so
- * the static HTML redirect pages Docusaurus emits work for /path and /path/.
- * See @docusaurus/plugin-client-redirects (one emitted file per `from` pathname).
+ * Normalises each client redirect `from` path to its trailing-slash form and
+ * deduplicates the list. With trailingSlash: true, both /path and /path/ produce
+ * the same build/index.html — emitting both causes an EEXIST conflict in the
+ * redirect plugin. Non-trailing-slash requests are handled by Amplify's
+ * directory-index lookup (no-dot paths) or the S3 stub CI step (dot paths).
  *
  * @param {Array<{ to: string, from: string | string[] }>} redirects
  * @returns {Array<{ to: string, from: string[] }>}
@@ -40,14 +42,9 @@ function slashVariantsForFrom(pathname) {
 
   const without = pathPart.replace(/\/+$/, '') || '/';
   const withSlash = without === '/' ? '/' : `${without}/`;
-  if (withSlash === without) {
-    return [`${withSlash}${hash}`];
-  }
-  // Amplify treats path segments with dots as file requests and won't serve
-  // their directory index — skip the no-trailing-slash variant for those paths.
-  const lastSegment = without.split('/').filter(Boolean).pop() ?? '';
-  if (lastSegment.includes('.')) {
-    return [`${withSlash}${hash}`];
-  }
-  return [`${without}${hash}`, `${withSlash}${hash}`];
+  // Only emit the trailing-slash variant. With trailingSlash: true, both forms
+  // produce the same build/index.html output — emitting both causes an EEXIST
+  // conflict in the redirect plugin. Non-trailing-slash requests are handled by
+  // Amplify's directory-index lookup (no-dot paths) or the S3 stub step (dot paths).
+  return [`${withSlash}${hash}`];
 }
