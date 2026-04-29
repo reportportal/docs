@@ -1,14 +1,21 @@
+function sanitizeFileToken(value) {
+  return value
+    .replace(/[\\/:*?"<>|]/g, '-')
+    .replace(/\.\.(\/|\\)?/g, '')
+    .trim();
+}
+
 function buildFileName(name) {
-  let v = stripPrefix(name);
+  let v = sanitizeFileToken(stripPrefix(name));
 
   if (/^BETA/i.test(v)) {
     const nums = v.match(/[\d.]+/);
-    return nums ? `Version${nums[0]}RC.md` : `Version${v.replace(/\s+/g, '')}.md`;
+    return nums ? `Version${nums[0]}RC.md` : `Version${sanitizeFileToken(v).replace(/\s+/g, '')}.md`;
   }
 
   v = v.replace(/\s+(Final|RC|Beta|Alpha)$/i, '').trim();
 
-  return `Version${v}.md`;
+  return `Version${sanitizeFileToken(v)}.md`;
 }
 
 function buildSidebarLabel(name) {
