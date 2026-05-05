@@ -4,9 +4,13 @@ sidebar_label: Test Executions
 description: View all test executions in one place with powerful filters and a customizable layout for faster analysis and easier troubleshooting.
 ---
 
-# Test Executions 
+# Test Executions
 
-The [Test Executions page](/test-executions/) gives you a simple, unified view of all test cases from multiple launches. Instead of navigating complex structures, you see all executed tests in one clean list, making daily analysis faster and simpler.
+:::info
+This is a [premium feature](/premium-features/).
+:::
+
+The Test Executions page gives you a simple, unified view of all test cases from multiple launches. Instead of navigating complex structures, you see all executed tests in one clean list, making daily analysis faster and simpler.
 
 Key benefits:
 

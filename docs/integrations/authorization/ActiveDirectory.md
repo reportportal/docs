@@ -5,6 +5,10 @@ description: Configure Active Directory integration for secure authentication in
 
 # Active Directory
 
+:::info
+Use LDAP instead of Active Directory. If your project specifically requires AD, it’s available via a [Managed Service](https://reportportal.io/pricing/service-packages/).
+:::
+
 The Active Directory plugin is available in ReportPortal on the Plugins page, enhancing the efficiency of our test report dashboard.
 
 To set up access with Active Directory, follow these steps:

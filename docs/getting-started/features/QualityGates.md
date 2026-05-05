@@ -6,7 +6,11 @@ description: Automate GO/NO-GO checks with Quality Gates in ReportPortal. Enforc
 
 # Quality Gates
 
-[Quality Gates](/quality-gates/) is a feature thanks to which ReportPortal becomes an integral part of continuous testing platform. It prevents the code from moving forward if it doesn’t meet testing criteria. ReportPortal uses aggregated data and rule engine to verify testing results against required conditions.
+:::info
+This is a [premium feature](/premium-features/).
+:::
+
+Quality Gates is a feature thanks to which ReportPortal becomes an integral part of continuous testing platform. It prevents the code from moving forward if it doesn’t meet testing criteria. ReportPortal uses aggregated data and rule engine to verify testing results against required conditions.
 
 Top-3 benefits of Quality Gates:
 
@@ -22,4 +26,4 @@ By setting standardized quality criteria, automated quality gates ensure that ea
 
 Automated quality gates provide immediate, objective feedback that is accessible to all team members, from developers to QA to management. This shared understanding of what constitutes "quality" improves collaboration and holds everyone accountable for the quality of the software.
 
-In summary, Quality Gates are an essential feature in ReportPortal that helps to understand the quality of your product and make release decisions. 
+In summary, Quality Gates are an essential feature in ReportPortal that helps to understand the quality of your product and make release decisions.

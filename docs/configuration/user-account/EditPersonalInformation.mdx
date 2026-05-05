@@ -6,18 +6,19 @@ description: Manage your personal profile information, preferences, and account 
 
 # Edit personal information
 
-To navigate to the User Profile page, open menu at the bottom of the page and select "Profile" option.
+To navigate to the User Profile page, open menu at the bottom of the page and select "My profile" option.
 
 The User Profile page consists of the following elements:
 
 - Personal information and photo – JPEG, PNG, GIF file, with a file size limit no more than 1 MB and 300x500px.
 
-- Project Assignment – is the list of your projects and the specified roles that are tied to them. This
-is a read-only list.
+- Assignments – a read-only list of your organizations and projects, along with the roles associated with them.
 
 - API Keys - unique tokens that grant access to the ReportPortal REST API.
 
 - Configuration Examples
+
+<MediaViewer src={require('./img/EditPersonalInfo1.png')} alt="User Profile page" />
 
 ## Edit name, email and password
 
@@ -27,18 +28,21 @@ You can edit the name, email and password fields.
 The specified login at user
 creation cannot be changed.
 :::
-To edit the full name and/or email, click on the "Edit personal information" button. The full
+To edit the full name and/or email, click on the pencil icon. The full
 name and email fields will become available.
 
-The full name allows: 3-256 symbols, English, Latin, Cyrillic, numeric characters and the
-following symbols: hyphen, underscore, dot, and space. The email should be unique in ReportPortal.
+<MediaViewer src={require('./img/EditPersonalInfo2.png')} alt="Pencil icon" />
 
-Make changes and click the "Save" button.
+Full name may contain only Latin, numeric characters, symbols: hyphen, underscore, apostrophe, dot. The email should be unique in ReportPortal.
+
+Make changes and click the "Submit" button.
+
+<MediaViewer src={require('./img/EditPersonalInfo3.png')} alt="Edit name, email and password" />
 
 <MediaViewer src="https://youtu.be/yVdo-C8kkkU" alt="Edit Personal Info in our test automation results dashboard" type="video" />
 
 :::note
-Personal information for a GitHub user cannot be changed.  
+Personal information for users who were created in ReportPortal via auth providers (e.g. GitHub, SAML etc.) cannot be changed.
 :::
 ## Change password
 
@@ -56,7 +60,7 @@ Fill in these fields and click the "Submit" button under the form.
 <MediaViewer src="https://youtu.be/WzcQsK-PzyM" alt="Change Password real time dashboard open source" type="video" />
 
 :::note
-GitHub users cannot change the password on ReportPortal.
+Users who were created in ReportPortal via auth providers (e.g. GitHub, SAML etc.) cannot change the password in ReportPortal.
 :::
 
 ## Language setting
@@ -65,4 +69,4 @@ In ReportPortal, you can personalize your experience by selecting a preferred in
 
 The language settings are available on the Profile page, where users may choose from six supported languages: English (United States), Ukrainian, Russian, Belarusian, Chinese, Spanish. Once selected, the chosen language will be applied across the entire application interface.
 
-<MediaViewer src={require('./img/LanguageSetting.png')} alt="Feedback options" />
+<MediaViewer src={require('./img/EditPersonalInfo4.png')} alt="Select interface language" />

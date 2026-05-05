@@ -4,6 +4,12 @@ sidebar_label: Organizations
 description: Structure projects in ReportPortal using a two-level hierarchy, centralized settings, and scalable test management.
 ---
 
+# Organizations
+
+:::info
+This is a [premium feature](/premium-features/).
+:::
+
 Organizations in ReportPortal introduce a new level of flexibility and control by allowing you to group multiple projects under a two-level hierarchy. This scalable structure simplifies how teams manage and organize their testing efforts, making it easier to support enterprise-level testing at scale.
 
 Organizations come with the next key benefits:

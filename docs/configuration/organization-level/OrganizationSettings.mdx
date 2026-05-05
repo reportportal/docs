@@ -5,3 +5,48 @@ description: test
 ---
 
 # Organization Settings
+
+"Organization Settings" page can be accessible using sidebar.
+
+On this page, Admin and Manager can update organization settings.
+
+<MediaViewer src={require('./img/organization-settings/OrganizationSettings.png')} alt="Organization Settings page" />
+
+**Keep launches** – this parameter specifies how long the system will keep old launches in the database. There are seven options:
+
+* 7 days
+* 14 days
+* 21 days
+* 30 days
+* 90 days
+* 180 days
+* Forever
+
+**Keep logs** – this parameter specifies how long the system will keep old logs in launches. Related launch structures will be saved, to keep statistics. There are six options:
+
+* 7 days
+* 14 days
+* 21 days
+* 30 days
+* 90 days
+* 180 days
+* Forever
+
+**Keep attachments** – this parameter specifies how long to keep binary data (screenshots, files, video, and other attachments) in the system. There are five options:
+
+* 7 days
+* 14 days
+* 21 days
+* 30 days
+* 90 days
+* 180 days
+* Forever
+
+:::info
+The retention period for logs and attachments cannot be longer than the retention period for launches.
+:::
+
+:::note
+Changes made at the organization level affect the settings of its projects.
+The organizational retention settings set the maximum limits for all projects in the organization. You can change the project settings, but they can’t exceed the organizational ones.
+:::
