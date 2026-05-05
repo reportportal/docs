@@ -1,7 +1,123 @@
 ---
 sidebar_position: 2
 sidebar_label: Organization Users
-description: test
+description: Manage organization users - invite or assign users, set roles, control project access, and unassign members—all from one centralized page.
 ---
 
 # Organization Users
+
+The "Organization users" page can be accessible using sidebar from organization level. On the "Organization Users" page, Admin and Manager can view the list of users in the organization, manage organizational users, and handle their project assignments in one place.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers1.png')} alt="Access to the Organization Users page" />
+
+The page provides next information:
+
+* User avatar icon – avatar of assigned user
+* Name – Full name of assigned user
+* Email – email of assigned user
+* Last Login – when user last logged in in "time ago" format
+* Role – organizational role
+* Projects – number of projects the user is assigned to in this organization
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers2.png')} alt="Organization Users page in our test automation dashboard" />
+
+"Organization users" page allows:
+
+* to invite/assign users to organization
+* to manage roles and permissions in the organization and its projects
+* to unassign users from organization
+
+In the header of the "Organization users" page, the following controls are displayed:
+
+* Search
+* "Invite user" button
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers3.png')} alt="Controls on the Organization Users page" />
+
+## Search
+
+Admin and Manager can search for users in the organization.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers4.png')} alt="Search on the Organization Users page" />
+
+## Invite user
+
+To invite a user to the project from "Organization Users" page:
+
+1. Log in as Admin or Manager.
+2. Navigate to organization level -> "Organization users" page.
+3. Click on the "Invite user" button.
+4. Type in the "Email" field the full email of user.
+5. Select a role in the organization – Member or Manager – from the dropdown.
+6. Click "Add project" link.
+7. Enter the name of project.
+8. Check the "Can edit" checkbox if needed.
+9. Click tick icon.
+10. Click "Invite" button.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers5.png')} alt="Invite user on the Organization Users page" />
+
+## Assign user
+
+When the instance is [set to SSO users only](/configuration/instance-level/ServerSettings#instance-invitations), the "Invite User" button on the "Organization Users" page changes to the "Assign User" button.
+
+To assign a user to the project from "Organization Users" page:
+
+1. Log in as Admin or Manager.
+2. Navigate to organization level -> "Organization users" page.
+3. Click on the "Assign user" button.
+4. Type in the "Email" field the full email of user.
+5. Select a role in the organization – Member or Manager – from the dropdown.
+6. Click "Add project" link.
+7. Enter the name of project.
+8. Check the "Can edit" checkbox if needed.
+9. Click tick icon.
+10. Click "Assign" button.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers6.png')} alt="Assign user on the Organization Users page" />
+
+## Manage assignments
+
+Admin or Manager can define roles and access within the organization and its projects on the "Organization users" page.
+
+For that:
+
+1. Log in as Admin or Manager.
+2. Navigate to organization level -> "Organization users" page.
+3. Search for the user.
+4. Click on the meatball menu.
+5. Select the "Manage assignments" option.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers7.png')} alt="Manage assignments option" />
+
+Manage assignment modal provides following info:
+
+* current organizational role
+* project assignment and roles on the projects within organization
+
+Manage assignment allows to:
+
+* change organization role
+* assign/unassign to/from project
+* change project role
+* unassign from organization
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers8.png')} alt="Manage assignments in our test automation metrics dashboard" />
+
+## Unassign user from organization
+
+To unassign user from organization from the "Organization users" page:
+
+1. Log in as Admin or Manager.
+2. Navigate to organization level -> "Organization users" page.
+3. Search for the user.
+4. Click on the meatball menu.
+5. Select the "Unassign" option.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers9.png')} alt="Unassign user from organization" />
+
+6. Click "Unassign" button.
+
+<MediaViewer src={require('./img/organization-users/OrganizationUsers10.png')} alt="Unassign option" />
+
+

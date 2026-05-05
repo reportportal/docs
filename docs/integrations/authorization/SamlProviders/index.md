@@ -5,6 +5,10 @@ description: Use SAML SSO with Azure or Okta to securely access your test automa
 
 # SAML Providers
 
+:::info
+This is a [premium feature](/premium-features/).
+:::
+
 The **SAML Providers** category in ReportPortal enables efficient and secure user authentication using popular SAML providers like Azure SAML and Okta SAML. These services allow ReportPortal to connect seamlessly with existing identity management frameworks, making login processes faster and more reliable while meeting enterprise-grade security standards.
 
 When using Azure SAML as an authentication provider, users can log in with the credentials they already use within their organization. This setup offers a single sign-on (SSO) experience, making access management more efficient and reducing the need for password resets. Similarly, Okta SAML leverages Okta’s identity management platform to facilitate secure and simple login. With Okta SAML, ReportPortal users can also enjoy SSO functionality, boosting productivity and providing robust identity verification for consistent security.

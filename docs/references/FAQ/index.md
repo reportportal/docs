@@ -9,24 +9,29 @@ description: Find quick answers about installing, integrating, and using ReportP
 
 On this page, we have put together a list of the most frequently asked questions. Here, you can find prompt responses.
 
-1. [Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?](/FAQ/#1-does-on-prem-installed-reportportal-make-any-external-calls-what-are-the-content-and-nature-of-these-calls)
-2. [Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?](/FAQ/#2-assuming-reportportal-locally-caches-logs-to-understand-their-content-where-are-these-stored-and-what-are-the-associated-retention-policies)
-3. [How is data encrypted in transit and at rest?](/FAQ/#3-how-is-data-encrypted-in-transit-and-at-rest)
-4. [Does the containerized solution function as a standalone, or can it be integrated with K8S or other orchestration platforms? Is there a helm chart available?](/FAQ/#4-does-the-containerized-solution-function-as-a-standalone-or-can-it-be-integrated-with-k8s-or-other-orchestration-platforms-is-there-a-helm-chart-available)
-5. [Is there any training available to use ReportPortal effectively?](/FAQ/#5-is-there-any-training-available-to-use-reportportal-effectively)
-6. [Is there a demo available?](/FAQ/#6-is-there-a-demo-available)
-7. [How can I begin using ReportPortal?](/FAQ/#7-how-can-i-begin-using-reportportal)
-8. [Does the tool integrate with my existing test automation framework?](/FAQ/#8-does-the-tool-integrate-with-my-existing-test-automation-framework)
-9. [What type of license does ReportPortal use?](/FAQ/#9-what-type-of-license-does-reportportal-use)
-10. [Does ReportPortal have any paid features?](/FAQ/#10-does-reportportal-have-any-paid-features)
-11. [Does ReportPortal use AI?](/FAQ/#11-does-reportportal-use-ai)
-12. [Do we need specific infrastructure prerequisites to avoid performance problems?](/FAQ/#12-do-we-need-specific-infrastructure-prerequisites-to-avoid-performance-problems)
-13. [What types of reports can I generate with the ReportPortal?](/FAQ/#13-what-types-of-reports-can-i-generate-with-the-reportportal)
-14. [Can ReportPortal aggregate performance test results?](/FAQ/#14-can-reportportal-aggregate-performance-test-results)
-15. [Does ReportPortal have integration with Jira?](/FAQ/#15-does-reportportal-have-integration-with-jira)
-16. [How can I check the ReportPortal version?](/FAQ/#16-how-can-i-check-the-reportportal-version)
-17. [How can I check if the ReportPortal API is working?](/FAQ/#17-how-can-i-check-if-the-reportportal-api-is-working)
-18. [What are the application limits in ReportPortal?](/FAQ/#18-what-are-the-application-limits-in-reportportal)
+1. [Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?](/references/FAQ/#1-does-on-prem-installed-reportportal-make-any-external-calls-what-are-the-content-and-nature-of-these-calls)
+2. [Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?](/references/FAQ/#2-assuming-reportportal-locally-caches-logs-to-understand-their-content-where-are-these-stored-and-what-are-the-associated-retention-policies)
+3. [How is data encrypted in transit and at rest?](/references/FAQ/#3-how-is-data-encrypted-in-transit-and-at-rest)
+4. [Does the containerized solution function as a standalone, or can it be integrated with K8S or other orchestration platforms? Is there a helm chart available?](/references/FAQ/#4-does-the-containerized-solution-function-as-a-standalone-or-can-it-be-integrated-with-k8s-or-other-orchestration-platforms-is-there-a-helm-chart-available)
+5. [Is there any training available to use ReportPortal effectively?](/references/FAQ/#5-is-there-any-training-available-to-use-reportportal-effectively)
+6. [Is there a demo available?](/references/FAQ/#6-is-there-a-demo-available)
+7. [How can I begin using ReportPortal?](/references/FAQ/#7-how-can-i-begin-using-reportportal)
+8. [Does the tool integrate with my existing test automation framework?](/references/FAQ/#8-does-the-tool-integrate-with-my-existing-test-automation-framework)
+9. [What type of license does ReportPortal use?](/references/FAQ/#9-what-type-of-license-does-reportportal-use)
+10. [Does ReportPortal have any paid features?](/references/FAQ/#10-does-reportportal-have-any-paid-features)
+11. [Does ReportPortal use AI?](/references/FAQ/#11-does-reportportal-use-ai)
+12. [Do we need specific infrastructure prerequisites to avoid performance problems?](/references/FAQ/#12-do-we-need-specific-infrastructure-prerequisites-to-avoid-performance-problems)
+13. [What types of reports can I generate with the ReportPortal?](/references/FAQ/#13-what-types-of-reports-can-i-generate-with-the-reportportal)
+14. [Can ReportPortal aggregate performance test results?](/references/FAQ/#14-can-reportportal-aggregate-performance-test-results)
+15. [Does ReportPortal have integration with Jira?](/references/FAQ/#15-does-reportportal-have-integration-with-jira)
+16. [How can I check the ReportPortal version?](/references/FAQ/#16-how-can-i-check-the-reportportal-version)
+17. [How can I check if the ReportPortal API is working?](/references/FAQ/#17-how-can-i-check-if-the-reportportal-api-is-working)
+18. [What are the application limits in ReportPortal?](/references/FAQ/#18-what-are-the-application-limits-in-reportportal)
+19. [Does ReportPortal have any paid features?](/references/FAQ/#19-does-reportportal-have-any-paid-features)
+20. [What is Organizations?](/references/FAQ/#20-what-is-organizations)
+21. [What happens to my data during migration to a version with Organizations?](/references/FAQ/#21-what-happens-to-my-data-during-migration-to-a-version-with-organizations)
+22. [How will the UI change for users after data migration to a version with Organizations?](/references/FAQ/#22-how-will-the-ui-change-for-users-after-data-migration-to-a-version-with-organizations)
+23. [How will role-based access change with the introduction of Organizations?](/references/FAQ/#23-how-will-role-based-access-change-with-the-introduction-of-organizations)
 
 #### 1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?
 
@@ -180,3 +185,33 @@ ReportPortal has defined application limits to maintain stable performance and c
 All bulk operations triggered from the “Make decision” modal are limited to 300 test items per request.<br />
 When more items are selected, the operation must be divided into multiple requests.
 :::
+
+#### 19. Does ReportPortal have any paid features?
+
+We offer several premium features:
+
+- [Quality Gates](/getting-started/features/QualityGates) – a set of predefined criteria that must be met for a test run to be considered successful.
+- [SCIM Server](/getting-started/features/SCIMServerFeature) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Organizations](/getting-started/features/Organizations) – a scalable way to group and manage multiple projects, apply shared settings, and streamline permissions across teams or business units.
+- [Test Executions](/getting-started/features/TestExecutions) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
+- [Authorization Plugins](/integrations/authorization/) (LDAP, SAML) – enable centralized and secure user authentication by integrating ReportPortal with enterprise identity providers.
+    - [LDAP](/integrations/authorization/LDAP) – enables authentication via directory services, allowing users to access ReportPortal using their domain credentials while simplifying user management through existing directory infrastructure.
+    - [SAML](/integrations/authorization/SamlProviders/) – provides single sign-on (SSO) through providers like Azure or Okta, allowing users to log in with existing corporate credentials while ensuring secure and streamlined access management. 
+
+#### 20. What is Organizations?
+
+Organizations is our premium feature which lets you structure multiple projects in a clear and manageable way. An Organization is a higher-level space in ReportPortal that contains several projects. It helps centralize settings, manage permissions more easily, and keep complex testing environments organized as your team grows.
+
+#### 21. What happens to my data during migration to a version with Organizations?
+
+- **Open-Source (free):** Your instance will have one Organization created during migration. All existing Projects – including personal projects – are moved into it. You can create unlimited Projects within this Organization. Creating additional Organizations requires a paid subscription.
+
+- **Enterprise (paid):** Each existing Project – including personal projects – will have a same-named Organization created above it and the Project will be placed inside. You can create unlimited new Projects within these Organizations and create additional Organizations on the instance, subject to your permissions.
+
+#### 22. How will the UI change for users after data migration to a version with Organizations? 
+
+Users will notice a new Organizations layer in the navigation, while project-level workflows will remain unchanged.
+
+#### 23. How will role-based access change with the introduction of Organizations?
+
+The access model is now more structured. There are two account types at the instance level — **Administrator** (full instance access) and **Regular user**. Within an Organization, users can be **Managers** or **Members**, and each Member has a project-level role: **Editor** or **Viewer**. This makes permissions clearer and easier to manage across multiple projects.
