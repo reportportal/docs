@@ -11,11 +11,9 @@
   { "source": "/kubernetes/",      "status": "301", "target": "https://k8s.reportportal.io/" },
   { "source": "/kubernetes/<*>",   "status": "301", "target": "https://k8s.reportportal.io/<*>" },
 
-  { "source": "/docs/releases/archived-releases/:version",   "status": "301", "target": "/docs/releases/archived-releases/:version/" },
-  { "source": "/docs/releases/:version",                     "status": "301", "target": "/docs/releases/:version/" },
-  { "source": "/docs/installation-steps-advanced/:page",     "status": "301", "target": "/docs/installation-steps-advanced/:page/" },
-
-  { "source": "</^([^.]+[^/])$/>", "status": "301", "target": "/$1/" },
+  { "source": "/docs/releases/archived-releases/:version",   "status": "200", "target": "/docs/releases/archived-releases/:version/index.html" },
+  { "source": "/docs/releases/:version",                     "status": "200", "target": "/docs/releases/:version/index.html" },
+  { "source": "/docs/installation-steps-advanced/:page",     "status": "200", "target": "/docs/installation-steps-advanced/:page/index.html" },
 
   { "source": "/docs/<*>", "status": "404", "target": "/docs/404.html" },
   { "source": "/<*>",      "status": "404", "target": "/404.html" }
