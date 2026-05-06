@@ -1,0 +1,22 @@
+[
+  { "source": "/pricing/on-premises/",                       "status": "301", "target": "/pricing/service-packages/" },
+  { "source": "/contact-us/on-premises/lite/",               "status": "301", "target": "/contact-us/service-packages/silver/" },
+  { "source": "/contact-us/on-premises/service-pro/",        "status": "301", "target": "/contact-us/service-packages/gold/" },
+  { "source": "/contact-us/on-premises/advanced/",           "status": "301", "target": "/contact-us/service-packages/platinum/" },
+  { "source": "/contact-us/on-premises/compare/lite/",       "status": "301", "target": "/contact-us/service-packages/silver/" },
+  { "source": "/contact-us/on-premises/compare/service-pro/","status": "301", "target": "/contact-us/service-packages/gold/" },
+  { "source": "/contact-us/on-premises/compare/advanced/",   "status": "301", "target": "/contact-us/service-packages/platinum/" },
+
+  { "source": "/kubernetes",       "status": "301", "target": "https://k8s.reportportal.io/" },
+  { "source": "/kubernetes/",      "status": "301", "target": "https://k8s.reportportal.io/" },
+  { "source": "/kubernetes/<*>",   "status": "301", "target": "https://k8s.reportportal.io/<*>" },
+
+  { "source": "/docs/releases/archived-releases/:version",   "status": "301", "target": "/docs/releases/archived-releases/:version/" },
+  { "source": "/docs/releases/:version",                     "status": "301", "target": "/docs/releases/:version/" },
+  { "source": "/docs/installation-steps-advanced/:page",     "status": "301", "target": "/docs/installation-steps-advanced/:page/" },
+
+  { "source": "</^([^.]+[^/])$/>", "status": "301", "target": "/$1/" },
+
+  { "source": "/docs/<*>", "status": "404", "target": "/docs/404.html" },
+  { "source": "/<*>",      "status": "404", "target": "/404.html" }
+]

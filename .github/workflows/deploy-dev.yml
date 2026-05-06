@@ -88,6 +88,9 @@ jobs:
         run: |
           aws s3 sync s3://${{ env.AWS_S3_BUCKET_NAME }} /tmp/full-site
 
+          # Drop amplify.yml into the zip root so Amplify skips its own build phase
+          cp amplify.yml /tmp/full-site/amplify.yml
+
           DEPLOY_RESULT=$(aws amplify create-deployment \
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
             --branch-name staging)
@@ -104,3 +107,9 @@ jobs:
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
             --branch-name staging \
             --job-id "$JOB_ID"
+
+      - name: Sync Amplify custom redirect rules
+        run: |
+          aws amplify update-app \
+            --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
+            --custom-rules file://amplify-custom-rules.json

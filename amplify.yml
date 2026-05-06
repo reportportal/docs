@@ -1,0 +1,15 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Build handled externally via GitHub Actions; nothing to do here."
+    build:
+      commands:
+        - echo "Artifacts are pre-built and uploaded as a zip."
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'
+  cache:
+    paths: []
