@@ -39,7 +39,7 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.9,
-          ignorePatterns: ['/docs/search'],
+          ignorePatterns: ['/docs/search', '/docs/search/'],
           filename: 'sitemap.xml',
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, ...rest } = params;
