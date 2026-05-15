@@ -85,10 +85,11 @@ ReportPortal is licensed under Apache v2.0, which means it’s free to use, come
 
 #### 10. Does ReportPortal have any paid features?
 
-We offer two premium features:
+We offer several premium features:
 
-* [Quality Gates](/quality-gates/) – a set of predefined criteria that must be met for a test run to be considered successful.
-* [SCIM Server](/features/SCIMServerFeature) – helps automate user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Quality Gates](/features/QualityGates/) – a set of predefined criteria that must be met for a test run to be considered successful.
+- [SCIM Server](/features/SCIMServerFeature/) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Test Executions](/features/TestExecutions/) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
 
 #### 11. Does ReportPortal use AI?
 
