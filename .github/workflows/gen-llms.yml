@@ -36,11 +36,14 @@ jobs:
     steps:
       - name: Resolve target branch
         id: target
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             echo "ref=develop" >> "$GITHUB_OUTPUT"
           else
-            echo "ref=${{ github.event.pull_request.head.ref }}" >> "$GITHUB_OUTPUT"
+            printf 'ref=%s\n' "$PR_HEAD_REF" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
@@ -57,6 +60,8 @@ jobs:
         run: node ./scripts/gen-llms.js
 
       - name: Commit regenerated files
+        env:
+          TARGET_REF: ${{ steps.target.outputs.ref }}
         run: |
           git add static/llms.txt static/ai-sitemap.json
           if git diff --cached --quiet -- static/llms.txt static/ai-sitemap.json; then
@@ -66,4 +71,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: regenerate llms.txt and ai-sitemap.json"
-          git push origin HEAD:${{ steps.target.outputs.ref }}
+          git push origin "HEAD:$TARGET_REF"
