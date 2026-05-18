@@ -1696,16 +1696,6 @@
           "title": "FAQ",
           "url": "https://reportportal.io/docs/FAQ/",
           "description": "Find quick answers about installing, integrating, and using ReportPortal, from AI features and licenses to dashboards, integrations, and performance guidance."
-        },
-        {
-          "title": "llms.txt regeneration smoke test",
-          "url": "https://reportportal.io/docs/FAQ/test-llms/",
-          "description": "Temporary FAQ page used to verify that the gen-llms workflow detects new articles and pushes a regeneration commit back to the PR branch."
-        },
-        {
-          "title": "llms.txt regeneration trigger validation",
-          "url": "https://reportportal.io/docs/FAQ/test-llms-second/",
-          "description": "Second temporary FAQ page used to confirm that pushing a new article triggers the gen-llms workflow and produces a bot commit on the PR branch."
         }
       ]
     },

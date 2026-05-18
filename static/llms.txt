@@ -380,8 +380,6 @@
 ## FAQ
 
 - [FAQ](https://reportportal.io/docs/FAQ/): Find quick answers about installing, integrating, and using ReportPortal, from AI features and licenses to dashboards, integrations, and performance guidance.
-- [llms.txt regeneration smoke test](https://reportportal.io/docs/FAQ/test-llms/): Temporary FAQ page used to verify that the gen-llms workflow detects new articles and pushes a regeneration commit back to the PR branch.
-- [llms.txt regeneration trigger validation](https://reportportal.io/docs/FAQ/test-llms-second/): Second temporary FAQ page used to confirm that pushing a new article triggers the gen-llms workflow and produces a bot commit on the PR branch.
 
 ## Terms & conditions
 
