@@ -1,0 +1,1735 @@
+{
+  "name": "ReportPortal Documentation",
+  "url": "https://reportportal.io/docs/",
+  "description": "Get started with ReportPortal: real-time results, ML triage, and collaborative analysis to speed decisions and improve quality with a clear test report dashboard.",
+  "overview": {
+    "title": "What is ReportPortal?",
+    "url": "https://reportportal.io/docs/",
+    "description": "Get started with ReportPortal: real-time results, ML triage, and collaborative analysis to speed decisions and improve quality with a clear test report dashboard."
+  },
+  "sections": [
+    {
+      "title": "Features",
+      "url": "https://reportportal.io/docs/features/",
+      "description": "Discover ReportPortal's features like real-time reporting, AI-based defects triage, visualization of test data and more.",
+      "pages": [
+        {
+          "title": "Features",
+          "url": "https://reportportal.io/docs/features/",
+          "description": "Discover ReportPortal's features like real-time reporting, AI-based defects triage, visualization of test data and more."
+        },
+        {
+          "title": "Unified test reporting",
+          "url": "https://reportportal.io/docs/features/UnifiedTestReporting/",
+          "description": "Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard."
+        },
+        {
+          "title": "Categorisation of failures",
+          "url": "https://reportportal.io/docs/features/CategorisationOfFailures/",
+          "description": "Learn how ReportPortal streamlines defect triage with clear categories, root cause insights, and faster resolution across teams for more reliable testing outcomes."
+        },
+        {
+          "title": "AI failure reason detection",
+          "url": "https://reportportal.io/docs/features/AIFailureReasonDetection/",
+          "description": "Use AI to auto-categorize failures, reduce manual triage, and speed bug discovery. ReportPortal automates test failure analytics for faster, accurate results."
+        },
+        {
+          "title": "Rich artifacts in test reports",
+          "url": "https://reportportal.io/docs/features/RichArtifactsInTestReports/",
+          "description": "Enrich your automation test report with logs, screenshots, videos, and network data. Simplify debugging, defect triage, and test failure analysis in one place."
+        },
+        {
+          "title": "Real-time reporting",
+          "url": "https://reportportal.io/docs/features/RealTimeReporting/",
+          "description": "Get live test results as executions run. Start triage early, shorten feedback loops, and improve release speed with a real-time test results dashboard."
+        },
+        {
+          "title": "Visualisation of test results",
+          "url": "https://reportportal.io/docs/features/VisualisationOfTestResults/",
+          "description": "Track key metrics with real-time widgets and charts. Visualize trends, failures, and ROI on a flexible test automation metrics dashboard for faster decisions."
+        },
+        {
+          "title": "Quality Gates",
+          "url": "https://reportportal.io/docs/features/QualityGates/",
+          "description": "Automate GO/NO-GO checks with Quality Gates in ReportPortal. Enforce standards, speed releases, and ensure reliability using aggregated test execution data."
+        },
+        {
+          "title": "REST API",
+          "url": "https://reportportal.io/docs/features/RESTAPI/",
+          "description": "Extend and integrate ReportPortal using a powerful REST API to push results, fetch analytics, and build custom reports and dashboards across your tooling."
+        },
+        {
+          "title": "SCIM Server feature",
+          "url": "https://reportportal.io/docs/features/SCIMServerFeature/",
+          "description": "Automate user provisioning and access with SCIM in ReportPortal. Sync roles and projects from your IdP to simplify identity management and improve security."
+        },
+        {
+          "title": "Test Executions",
+          "url": "https://reportportal.io/docs/features/TestExecutions/",
+          "description": "View all test executions in one place with powerful filters and a customizable layout for faster analysis and easier troubleshooting."
+        }
+      ]
+    },
+    {
+      "title": "Tutorial",
+      "url": "https://reportportal.io/docs/tutorial/",
+      "description": "ReportPortal guide. How to do test failure analysis, how to create dashboard to manage test results and use capabilities of continuous testing platform.",
+      "pages": [
+        {
+          "title": "Tutorial",
+          "url": "https://reportportal.io/docs/tutorial/",
+          "description": "ReportPortal guide. How to do test failure analysis, how to create dashboard to manage test results and use capabilities of continuous testing platform."
+        }
+      ]
+    },
+    {
+      "title": "Installation Steps",
+      "url": "https://reportportal.io/docs/installation-steps/",
+      "description": "Explore step-by-step instructions for deploying ReportPortal, a powerful, centralized test automation tool.",
+      "pages": [
+        {
+          "title": "Installation Steps",
+          "url": "https://reportportal.io/docs/installation-steps/",
+          "description": "Explore step-by-step instructions for deploying ReportPortal, a powerful, centralized test automation tool."
+        },
+        {
+          "title": "Hardware Requirements",
+          "url": "https://reportportal.io/docs/installation-steps/HardwareRequirements/",
+          "description": "Boost performance with expert-backed configuration tips for your test automation dashboard."
+        },
+        {
+          "title": "Deploy with Docker",
+          "url": "https://reportportal.io/docs/installation-steps/DeployWithDocker/",
+          "description": "Make your test automation reporting more portable. Reduce the risk of configuration issues with your test reporting tool using Docker."
+        },
+        {
+          "title": "Deploy without Docker",
+          "url": "https://reportportal.io/docs/installation-steps/DeployWithoutDocker/",
+          "description": "Deploy ReportPortal without Docker for traditional server installations and custom test automation reporting tools configurations."
+        },
+        {
+          "title": "Deploy with Kubernetes",
+          "url": "https://reportportal.io/docs/installation-steps/DeployWithKubernetes/",
+          "description": "Deploy ReportPortal on Kubernetes using Helm to streamline test reporting and analysis with scalable, containerized infrastructure."
+        },
+        {
+          "title": "Deploy via Google Cloud Marketplace",
+          "url": "https://reportportal.io/docs/installation-steps/DeployViaGoogleCloudMarketplace/",
+          "description": "Deploy ReportPortal quickly via Google Cloud Marketplace with one-click installation for scalable test automation reporting tools."
+        },
+        {
+          "title": "Deploy with Minikube",
+          "url": "https://reportportal.io/docs/installation-steps/DeployWithMinikube/",
+          "description": "Deploy ReportPortal on Minikube for local Kubernetes testing and development."
+        },
+        {
+          "title": "Deploy on Ubuntu OS",
+          "url": "https://reportportal.io/docs/installation-steps/DeployOnUbuntuOS/",
+          "description": "Deploy ReportPortal on Ubuntu with Docker and Docker Compose. Follow step-by-step instructions to launch your test reporting environment efficiently."
+        }
+      ]
+    },
+    {
+      "title": "Installation Steps Advanced",
+      "url": "https://reportportal.io/docs/installation-steps-advanced/",
+      "description": "Explore advanced installation capabilities to optimize your test automation dashboard.",
+      "pages": [
+        {
+          "title": "Installation Steps Advanced",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/",
+          "description": "Explore advanced installation capabilities to optimize your test automation dashboard."
+        },
+        {
+          "title": "File storage options",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/file-storage-options/",
+          "description": "Configure file storage options for ReportPortal including filesystem, MinIO, and cloud storage solutions."
+        },
+        {
+          "title": "Components Overview",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/ComponentsOverview/",
+          "description": "ReportPortal Components Overview page explains each service - Gateway, API, UAT, Analyzer, Migrations, Index, UI - to help you configure and scale your system effectively."
+        },
+        {
+          "title": "Basic monitoring configuration",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/BasicMonitoringConfiguration/",
+          "description": "Configure basic monitoring in ReportPortal to track server health, database performance, and resource usage with Telegraf, InfluxDB, and Grafana."
+        },
+        {
+          "title": "Jobs configuration",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/JobsConfiguration/",
+          "description": "Configure ReportPortal jobs for automated data retention and cleanup to keep your system running efficiently and organized."
+        },
+        {
+          "title": "Backup & Restore Guide",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/BackupRestoreGuide/",
+          "description": "Safeguard your ReportPortal data by learning how to back up and restore its PostgreSQL database and binary storage quickly and reliably."
+        },
+        {
+          "title": "Maintain commands Cheat sheet",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/MaintainCommandsCheatSheet/",
+          "description": "Quickly manage and troubleshoot your ReportPortal instance with essential Docker commands for installation, backup, cleanup, and service monitoring."
+        },
+        {
+          "title": "Additional configuration parameters",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/AdditionalConfigurationParameters/",
+          "description": "Optimize ReportPortal setup with customizable parameters - ports, session timeouts, database and API settings via Docker-friendly environment variables."
+        },
+        {
+          "title": "Setup TLS / HTTPS Docker Compose + Traefik v2",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/SetupTLSHTTPSDockerComposeTraefikV2/",
+          "description": "Practical guide to setting up TLS/HTTPS in our test results dashboard"
+        },
+        {
+          "title": "Migrate one instance to another",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/MigrateOneInstanceToAnother/",
+          "description": "Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity."
+        },
+        {
+          "title": "Scaling ReportPortal services",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/ScalingReportPortalServices/",
+          "description": "Learn how to dynamically scale ReportPortal services using Docker or Kubernetes, ensuring optimal performance and reliability for your testing infrastructure."
+        },
+        {
+          "title": "Deploy with AWS ECS Fargate",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/DeployWithAWSECSFargate/",
+          "description": "Deploy ReportPortal on AWS ECS Fargate for scalable test automation reporting with serverless container management."
+        },
+        {
+          "title": "Amazon Application Load Balancer Configuration Guide",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/AmazonALBNGINXIngressController/",
+          "description": "Configure Amazon ALB and NGINX Ingress Controller for ReportPortal test automation reporting tools on AWS EKS."
+        },
+        {
+          "title": "Quick Start Guide for Google Cloud Platform GKE",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/QuickStartWithGCPGKE/",
+          "description": "Deploy ReportPortal on Google Cloud Platform GKE for scalable test automation reporting tools with Kubernetes orchestration."
+        },
+        {
+          "title": "Upgrading PostgreSQL for ReportPortal v24.2 and later",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24.2AndLater/",
+          "description": "Upgrade PostgreSQL database for ReportPortal v24.2 and later versions with data preservation."
+        },
+        {
+          "title": "S3 Cloud Storage",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/file-storage-options/S3CloudStorage/",
+          "description": "Configure S3 cloud storage for the ReportPortal Flaky Test Detection tool using AWS, MinIO, or other S3-compatible providers."
+        }
+      ]
+    },
+    {
+      "title": "Releases",
+      "url": "https://reportportal.io/docs/releases/",
+      "description": "Check out the latest ReportPortal version, release notes, and updates.",
+      "pages": [
+        {
+          "title": "Releases",
+          "url": "https://reportportal.io/docs/releases/",
+          "description": "Check out the latest ReportPortal version, release notes, and updates."
+        },
+        {
+          "title": "Archived Releases",
+          "url": "https://reportportal.io/docs/releases/archived-releases/",
+          "description": "Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard."
+        },
+        {
+          "title": "Version 26.0.2",
+          "url": "https://reportportal.io/docs/releases/Version26.0.2/",
+          "description": ""
+        },
+        {
+          "title": "Version 26.0.1",
+          "url": "https://reportportal.io/docs/releases/Version26.0.1/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.2",
+          "url": "https://reportportal.io/docs/releases/Version25.2/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.1.12",
+          "url": "https://reportportal.io/docs/releases/Version25.1.12/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.1.11",
+          "url": "https://reportportal.io/docs/releases/Version25.1.11/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.1.10",
+          "url": "https://reportportal.io/docs/releases/Version25.1.10/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.1.9",
+          "url": "https://reportportal.io/docs/releases/Version25.1.9/",
+          "description": ""
+        },
+        {
+          "title": "Version 25.1.8",
+          "url": "https://reportportal.io/docs/releases/Version25.1.8/",
+          "description": "Explore ReportPortal Version 25.1.8 release notes: enhanced Auto-Analysis settings, improved retry handling, and updated service and plugin versions."
+        },
+        {
+          "title": "Version 25.1.7",
+          "url": "https://reportportal.io/docs/releases/Version25.1.7/",
+          "description": "Explore ReportPortal Version 25.1.7 release notes detailing bug fixes, updated services, and plugin versions to enhance your test automation experience."
+        },
+        {
+          "title": "Version 25.1.6",
+          "url": "https://reportportal.io/docs/releases/Version25.1.6/",
+          "description": "Explore ReportPortal Version 25.1.6 release notes: PostgreSQL 17 upgrade, enhanced launch exports, improved RobotFramework imports, and analyzer updates."
+        },
+        {
+          "title": "Version 25.1.5",
+          "url": "https://reportportal.io/docs/releases/Version25.1.5/",
+          "description": "Explore ReportPortal Version 25.1.5 release notes detailing bug fixes, plugin updates, and improvements to enhance your test automation experience."
+        },
+        {
+          "title": "Version 25.1.4",
+          "url": "https://reportportal.io/docs/releases/Version25.1.4/",
+          "description": "Explore ReportPortal Version 25.1.4 release notes detailing bug fixes, plugin updates, and improvements, including SAML login issue resolution."
+        },
+        {
+          "title": "Version 25.1.3",
+          "url": "https://reportportal.io/docs/releases/Version25.1.3/",
+          "description": "Explore ReportPortal Version 25.1.3 release notes, featuring Jira Cloud integration fixes, plugin updates, and enhanced system stability for improved test management."
+        },
+        {
+          "title": "Version 25.1.2",
+          "url": "https://reportportal.io/docs/releases/Version25.1.2/",
+          "description": "Explore ReportPortal Version 25.1.2 release notes detailing bug fixes for Jira Cloud integration and component health check widget enhancements."
+        },
+        {
+          "title": "Version 25.1.1",
+          "url": "https://reportportal.io/docs/releases/Version25.1.1/",
+          "description": "ReportPortal Version 25.1.1 addresses SAML reply URL generation issues, enhancing security and compatibility."
+        },
+        {
+          "title": "Version 25.1",
+          "url": "https://reportportal.io/docs/releases/Version25.1/",
+          "description": "ReportPortal v25.1 release notes with Spring Boot 3 upgrade, enhanced test execution reporting, and improved performance."
+        },
+        {
+          "title": "Version 25.0.6",
+          "url": "https://reportportal.io/docs/releases/Version25.0.6/",
+          "description": "ReportPortal v25.0.6 release notes with bug fixes and enhanced stability."
+        },
+        {
+          "title": "Version 25.0.5",
+          "url": "https://reportportal.io/docs/releases/Version25.0.5/",
+          "description": "ReportPortal v25.0.5 release notes with bug fixes."
+        },
+        {
+          "title": "Version 25.0.4",
+          "url": "https://reportportal.io/docs/releases/Version25.0.4/",
+          "description": "ReportPortal v25.0.4 release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 25.0.3",
+          "url": "https://reportportal.io/docs/releases/Version25.0.3/",
+          "description": "ReportPortal v25.0.3 release notes with bug fixes."
+        },
+        {
+          "title": "Version 25.0.2",
+          "url": "https://reportportal.io/docs/releases/Version25.0.2/",
+          "description": "ReportPortal v25.0.2 release notes with bug fixes."
+        },
+        {
+          "title": "Version 24.2.3",
+          "url": "https://reportportal.io/docs/releases/Version24.2.3/",
+          "description": "ReportPortal v24.2.3 release notes with bug fixes."
+        },
+        {
+          "title": "Version 24.2.2",
+          "url": "https://reportportal.io/docs/releases/Version24.2.2/",
+          "description": "ReportPortal v24.2.2 release notes with bug fixes and enhanced stability."
+        },
+        {
+          "title": "Version 24.1",
+          "url": "https://reportportal.io/docs/releases/Version24.1/",
+          "description": "ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features."
+        },
+        {
+          "title": "Version 24.2",
+          "url": "https://reportportal.io/docs/releases/Version24.2.0/",
+          "description": "ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance."
+        },
+        {
+          "title": "Version 23.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version23.2/",
+          "description": "ReportPortal v23.2 release notes with new monitoring features, data retention policies, and enhanced test automation reporting tools capabilities."
+        },
+        {
+          "title": "Version 23.1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version23.1/",
+          "description": "ReportPortal v23.1 archived release notes with new logo, enhanced features."
+        },
+        {
+          "title": "Version 5.7.4",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.7.4/",
+          "description": "ReportPortal v5.7.4 archived release notes with MinIO client updates."
+        },
+        {
+          "title": "Version 5.7.3",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.7.3/",
+          "description": "Explore ReportPortal Version 5.7.3: enhanced error log navigation, improved lazy loading, and optimized Elasticsearch performance for better test analysis."
+        },
+        {
+          "title": "Version 5.7.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.7.2/",
+          "description": "Discover ReportPortal 5.7.2: introduces dual logging to ElasticSearch, new Jira and Azure DevOps plugins, enhanced UI, and performance improvements."
+        },
+        {
+          "title": "Version 5.7.1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.7.1/",
+          "description": "ReportPortal v5.7.1 archived release notes with bug fixes."
+        },
+        {
+          "title": "Version 5.7.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.7.0/",
+          "description": "ReportPortal v5.7.0 archived release notes with new features."
+        },
+        {
+          "title": "Version 5.6.3",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.6.3/",
+          "description": "ReportPortal v5.6.3 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.6.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.6.2/",
+          "description": "ReportPortal v5.6.2 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.6.1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.6.1/",
+          "description": "ReportPortal v5.6.1 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.6.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.6.0/",
+          "description": "ReportPortal v5.6.0 archived release notes with new features and enhanced test automation reporting tools capabilities."
+        },
+        {
+          "title": "Version 5.5.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.5.0/",
+          "description": "ReportPortal v5.5.0 archived release notes with new features and enhanced test automation reporting tools capabilities."
+        },
+        {
+          "title": "Version 5.4.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.4.0/",
+          "description": "ReportPortal v5.4.0 archived release notes with new features and enhanced test automation reporting tools capabilities."
+        },
+        {
+          "title": "Version 5.3.5",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.3.5/",
+          "description": "ReportPortal v5.3.5 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.3.3",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.3.3/",
+          "description": "ReportPortal v5.3.3 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.3.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.3.2/",
+          "description": "ReportPortal v5.3.2 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.3.1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.3.1/",
+          "description": "ReportPortal v5.3.1 archived release notes with bug fixes."
+        },
+        {
+          "title": "Version 5.3.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.3.0/",
+          "description": "ReportPortal v5.3.0 archived release notes with new features and enhanced test automation reporting tools capabilities."
+        },
+        {
+          "title": "Version 5.2.3",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.2.3/",
+          "description": "ReportPortal v5.2.3 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 5.2.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.2.2/",
+          "description": "ReportPortal v5.2.2 archived release notes with bug fixes."
+        },
+        {
+          "title": "Version 5.2.1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.2.1/",
+          "description": "ReportPortal v5.2.1 archived release notes with bug fixes."
+        },
+        {
+          "title": "Version 5.2.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.2.0/",
+          "description": "ReportPortal v5.2.0 archived release notes with new features."
+        },
+        {
+          "title": "Version 5.1.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.1.0/",
+          "description": "ReportPortal v5.1.0 archived release notes with enhanced security, encryption updates."
+        },
+        {
+          "title": "Version 5.0.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.0.0/",
+          "description": "ReportPortal v5.0.0 archived release notes with major updates."
+        },
+        {
+          "title": "Version 5.0RC",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version5.0RC/",
+          "description": "ReportPortal v5.0RC archived release candidate notes with new features."
+        },
+        {
+          "title": "Version 4.3",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version4.3/",
+          "description": "ReportPortal v4.3 archived release notes with new features."
+        },
+        {
+          "title": "Version 4.2.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version4.2.0/",
+          "description": "ReportPortal v4.2.0 archived release notes with new features."
+        },
+        {
+          "title": "Version 4.1.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version4.1.0/",
+          "description": "ReportPortal v4.1.0 archived release notes with new features."
+        },
+        {
+          "title": "Version 4.0.0",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version4.0.0/",
+          "description": "ReportPortal v4.0.0 archived release notes with major updates and enhanced test automation reporting tools features."
+        },
+        {
+          "title": "Version 3.3.2-1",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version3.3.2-1/",
+          "description": "ReportPortal v3.3.2-1 archived release notes with bug fixes and enhanced test automation reporting tools stability."
+        },
+        {
+          "title": "Version 3.3.2",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version3.3.2/",
+          "description": "ReportPortal v3.3.2 archived release notes with new features and enhanced test automation reporting tools capabilities."
+        }
+      ]
+    },
+    {
+      "title": "Configuration",
+      "url": "https://reportportal.io/docs/configuration/",
+      "description": "Configure projects, users, and retention in ReportPortal. Step-by-step guides for access, roles, and policies to manage your test report dashboard effectively.",
+      "pages": [
+        {
+          "title": "Configuration",
+          "url": "https://reportportal.io/docs/configuration/",
+          "description": "Configure projects, users, and retention in ReportPortal. Step-by-step guides for access, roles, and policies to manage your test report dashboard effectively."
+        },
+        {
+          "title": "Project settings",
+          "url": "https://reportportal.io/docs/configuration/ProjectSettings/",
+          "description": "Configure project settings, notifications, defect types, and data retention policies to optimize your test automation reporting dashboard performance."
+        },
+        {
+          "title": "User management",
+          "url": "https://reportportal.io/docs/configuration/UserManagement/",
+          "description": "Manage users, roles, and permissions in ReportPortal test automation reporting tools for secure project access control."
+        },
+        {
+          "title": "Integration via plugin",
+          "url": "https://reportportal.io/docs/configuration/IntegrationViaPlugin/",
+          "description": "Integrate ReportPortal with external systems like Jira, Slack, and bug tracking tools to enhance your test automation reporting tools capabilities."
+        },
+        {
+          "title": "Launches retention policy",
+          "url": "https://reportportal.io/docs/configuration/LaunchesRetentionPolicy/",
+          "description": "Configure data retention policies to manage storage and keep important launches. Set up automated cleanup for test execution reporting data."
+        }
+      ]
+    },
+    {
+      "title": "User account",
+      "url": "https://reportportal.io/docs/user-account/",
+      "description": "Manage your ReportPortal user account for an efficient real time dashboard open source.",
+      "pages": [
+        {
+          "title": "User account",
+          "url": "https://reportportal.io/docs/user-account/",
+          "description": "Manage your ReportPortal user account for an efficient real time dashboard open source."
+        },
+        {
+          "title": "Edit personal information",
+          "url": "https://reportportal.io/docs/user-account/EditPersonalInformation/",
+          "description": "Manage your personal profile information, preferences, and account settings in ReportPortal."
+        },
+        {
+          "title": "Restore a password",
+          "url": "https://reportportal.io/docs/user-account/RestoreAPassword/",
+          "description": "Reset your ReportPortal password securely using email verification to regain access to your account."
+        },
+        {
+          "title": "Delete account",
+          "url": "https://reportportal.io/docs/user-account/DeleteAccount/",
+          "description": "Delete your ReportPortal account and personal data securely with proper data retention policies."
+        },
+        {
+          "title": "Data retention procedure",
+          "url": "https://reportportal.io/docs/user-account/DataRetentionProcedure/",
+          "description": "Configure data retention periods for PII data in ReportPortal. Set individual retention durations and manage data lifecycle using test execution reporting."
+        },
+        {
+          "title": "API Key Revocation",
+          "url": "https://reportportal.io/docs/user-account/api-key-revocation/",
+          "description": "Manage API key revocation for secure access control in ReportPortal with manual and automated options."
+        }
+      ]
+    },
+    {
+      "title": "Log data in ReportPortal",
+      "url": "https://reportportal.io/docs/log-data-in-reportportal/",
+      "description": "Discover how to efficiently import data, integrate test frameworks, and run your tests with our test reporting tool.",
+      "pages": [
+        {
+          "title": "Log data in ReportPortal",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/",
+          "description": "Discover how to efficiently import data, integrate test frameworks, and run your tests with our test reporting tool."
+        },
+        {
+          "title": "Test Framework Integration",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/",
+          "description": "Integrate your test framework with ReportPortal. Configure agents, send results, and enrich logs, attachments, and attributes for a clear automation test report."
+        },
+        {
+          "title": "Java",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/",
+          "description": "Enhance your test automation with advanced Java reporting in ReportPortal."
+        },
+        {
+          "title": "JavaScript",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/",
+          "description": "ReportPortal integrates with JavaScript frameworks, enabling better test management with a real-time test results dashboard."
+        },
+        {
+          "title": ".Net",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/",
+          "description": "Use .NET frameworks with ReportPortal for real-time test monitoring, trend tracking, failure management, result analysis, and test automation reports."
+        },
+        {
+          "title": "Python",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/",
+          "description": "Use Python test frameworks with automation testing reporting tools to centralize results, analyze failures, and improve test management and QA processes."
+        },
+        {
+          "title": "PHP",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/PHP/",
+          "description": "ReportPortal integrates with popular PHP frameworks, helping teams manage test results, visualize trends, and optimize testing efficiently."
+        },
+        {
+          "title": "Other",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Other/",
+          "description": "Integrate unsupported or custom test frameworks by implementing your own integration with ReportPortal, enabling centralized test result visualization."
+        },
+        {
+          "title": "Implement own integration",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/ImplementOwnIntegration/",
+          "description": "Learn how to implement custom integration with ReportPortal using the developer guide."
+        },
+        {
+          "title": "Reporting SDK",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/ReportingSDK/",
+          "description": "Integrate your test framework with ReportPortal using the Reporting SDK to log detailed test data, including nested steps and test case IDs, for enhanced reporting."
+        },
+        {
+          "title": "Import data to ReportPortal",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/ImportDataToReportPortal/",
+          "description": "Import test logs into ReportPortal using the UI or API, supporting JUnit and RobotFramework formats for streamlined test data integration."
+        },
+        {
+          "title": "How to get an access token in ReportPortal",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal/",
+          "description": "Learn how to obtain an access token in ReportPortal using your login credentials or API key, enabling secure interactions with the ReportPortal REST API."
+        },
+        {
+          "title": "How to report attributes to ReportPortal",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/HowToReportAttributesToReportPortal/",
+          "description": "Learn how to report attributes to ReportPortal to categorize, filter, and analyze test data effectively, enhancing your test management process."
+        },
+        {
+          "title": "How to run your tests",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/HowToRunYourTests/",
+          "description": "Learn how to run your tests with ReportPortal test automation reporting tools integration in any CI/CD pipeline."
+        },
+        {
+          "title": "JUnit5",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/JUnit5/",
+          "description": "Integrate JUnit5 testing framework with ReportPortal for comprehensive test automation reporting and modern Java testing analysis."
+        },
+        {
+          "title": "NUnit",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/NUnit/",
+          "description": "Monitor NUnit tests in real time, record failures with screenshots, and gain actionable insights to speed up .NET application testing."
+        },
+        {
+          "title": "PHPUnit",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/PHP/PHPUnit/",
+          "description": "Integrate PHPUnit with ReportPortal for comprehensive test automation reporting."
+        },
+        {
+          "title": "Playwright",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Playwright/",
+          "description": "Integrate Playwright test reporting with ReportPortal to track automation results and optimize testing workflows."
+        },
+        {
+          "title": "pytest",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/pytest/",
+          "description": "Automatically log pytest test steps, capture failures with screenshots, and attach detailed logs to simplify test analysis and improve debugging efficiency."
+        },
+        {
+          "title": "SilkTest",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Other/silktest/",
+          "description": "Track and analyze SilkTest automation results in one place, get clear insights into test execution."
+        },
+        {
+          "title": "Behat",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/PHP/Behat/",
+          "description": "Integrate Behat with ReportPortal to log Gherkin scenarios, track feature execution, and streamline test reporting for PHP applications."
+        },
+        {
+          "title": "CucumberJS",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/CucumberJS/",
+          "description": "Integrate CucumberJS BDD framework with ReportPortal for comprehensive test automation reporting and JavaScript behavior-driven testing."
+        },
+        {
+          "title": "JUnit4",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/JUnit4/",
+          "description": "Integrate JUnit4 with ReportPortal to automate test execution, track results in real-time, and enhance your QA workflow with detailed analytics."
+        },
+        {
+          "title": "Robot Framework",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/RobotFramework/",
+          "description": "Enable seamless result tracking and analysis using Robot Framework reporting in ReportPortal."
+        },
+        {
+          "title": "VSTest",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/VSTest/",
+          "description": "Integrate VSTest with ReportPortal to centralize .NET test results, monitor execution trends, and enhance test analysis across platforms like Windows and Linux."
+        },
+        {
+          "title": "XCTest Agent",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Other/xctest/",
+          "description": "Collect, analyze, and visualize XCTest execution results in our test automation reporting dashboard."
+        },
+        {
+          "title": "behave",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/behave/",
+          "description": "Track and visualize Behave test results automatically, view Gherkin scenario outcomes, and streamline team collaboration for faster issue resolution."
+        },
+        {
+          "title": "Codecept",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Codecept/",
+          "description": "Use ReportPortal with CodeceptJS to send test results, logs, and screenshots automatically to a centralized dashboard for easier debugging and analysis."
+        },
+        {
+          "title": "Codeception",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/PHP/Codeception/",
+          "description": "Integrate Codeception for PHP test execution analysis."
+        },
+        {
+          "title": "Gauge",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Other/gauge/",
+          "description": "Connect Gauge test results with ReportPortal to monitor specifications execution, analyze automation outcomes, and enhance testing efficiency."
+        },
+        {
+          "title": "SpecFlow",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/SpecFlow/",
+          "description": "Integrate SpecFlow BDD framework for test automation reporting."
+        },
+        {
+          "title": "TestNG",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/TestNG/",
+          "description": "Integrating TestNG test results with ReportPortal provides comprehensive analysis and insights."
+        },
+        {
+          "title": "Cucumber",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Cucumber/",
+          "description": "Integrate Cucumber BDD framework with ReportPortal for comprehensive test automation reporting tools and behavior-driven testing analysis."
+        },
+        {
+          "title": "nosetests",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/nosetests/",
+          "description": "Integrate nosetests with ReportPortal to capture detailed test results, monitor trends, and enhance test analysis for improved software quality."
+        },
+        {
+          "title": "WebdriverIO",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/WebdriverIO/",
+          "description": "Use WebdriverIO to send detailed test logs, screenshots, and steps to ReportPortal, so failures are clear and debugging is faster."
+        },
+        {
+          "title": "xUnit",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/xUnit/",
+          "description": "Integrate xUnit with ReportPortal to capture real-time test results, visualize trends, and identify failures efficiently, enhancing your .NET test automation."
+        },
+        {
+          "title": "JBehave",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/JBehave/",
+          "description": "Integrate JBehave with ReportPortal to automate acceptance testing, enhance BDD workflows, and gain real-time insights into test results."
+        },
+        {
+          "title": "Postman",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Postman/",
+          "description": "Postman reporting with ReportPortal streamlines API testing and development workflows."
+        },
+        {
+          "title": "Reqnroll",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/Reqnroll/",
+          "description": "Track, analyze, and manage your Reqnroll test results with structured Given-When-Then scenarios."
+        },
+        {
+          "title": "Cypress",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Cypress/",
+          "description": "Effortlessly monitor test execution using Cypress test reporting with ReportPortal."
+        },
+        {
+          "title": "Spock",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Spock/",
+          "description": "Integrate Spock testing framework with ReportPortal for test execution reporting and Java/Groovy testing analysis."
+        },
+        {
+          "title": "Karate",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Karate/",
+          "description": "Integrate Karate BDD framework with ReportPortal to automate API, UI, and performance tests, enhancing reporting and API testing analysis."
+        },
+        {
+          "title": "Mocha",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Mocha/",
+          "description": "Mocha reporting with ReportPortal provides detailed insights and seamless test result management for JavaScript applications."
+        },
+        {
+          "title": "Jest",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Jest/",
+          "description": "Integrate Jest with ReportPortal to log test results, capture failures and trace details, and improve debugging and insight into your test runs."
+        },
+        {
+          "title": "SoapUI (outdated)",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/SoapUI/",
+          "description": "Integrate SoapUI API testing with ReportPortal for test automation reporting and SOAP/REST API analysis."
+        },
+        {
+          "title": "TestCafe",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/TestCafe/",
+          "description": "Simplify TestCafe test reporting with ReportPortal."
+        },
+        {
+          "title": "Jasmine",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Jasmine/",
+          "description": "Integrate Jasmine testing framework with ReportPortal for testing analysis."
+        },
+        {
+          "title": "Nightwatch",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Nightwatch/",
+          "description": "Integrate Nightwatch testing framework web/mobile testing analysis."
+        },
+        {
+          "title": "Vitest",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/JavaScript/Vitest/",
+          "description": "Integrate Vitest with ReportPortal to capture logs, analyze failed tests, and gain clear insights into JavaScript test execution and quality."
+        },
+        {
+          "title": "Logback",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/Logback/",
+          "description": "Integrate Logback with ReportPortal to automatically capture and send application logs for real-time analysis, enhancing test reporting and debugging efficiency."
+        },
+        {
+          "title": "Serilog",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/Loggers/Serilog/",
+          "description": "Integrate Serilog with .NET to log structured events, capture detailed test information, and enhance debugging and analysis in your testing workflows."
+        },
+        {
+          "title": "Log4J",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/Log4J/",
+          "description": "Integrate Log4J with ReportPortal to capture and manage application logs efficiently, enhancing test analysis and reporting in your Java projects."
+        },
+        {
+          "title": "Log4Net",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/Loggers/Log4Net/",
+          "description": "Learn how to set up Log4Net in .NET tests to capture detailed logs, track issues, and centralize reporting for faster troubleshooting and quality assurance."
+        },
+        {
+          "title": "NLog",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/Loggers/NLog/",
+          "description": "Integrate NLog with .NET tests to record detailed logs, monitor application health, and enhance debugging workflows for more efficient issue resolution."
+        },
+        {
+          "title": "Rest Assured",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/RestAssured/",
+          "description": "Integrate REST Assured with ReportPortal for comprehensive test automation reporting and API testing request/response logging."
+        },
+        {
+          "title": "Selenide",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/Selenide/",
+          "description": "Integrate Selenide with ReportPortal to automatically log test steps, capture screenshots on failure, and attach WebDriver logs for enhanced test analysis."
+        },
+        {
+          "title": "TraceListener",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Net/Loggers/TraceListener/",
+          "description": "Capture .NET TraceListener logs to track application behavior, monitor test execution, and gain actionable insights for faster and more efficient QA."
+        },
+        {
+          "title": "OkHttp3",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/OkHttp3/",
+          "description": "Integrate OkHttp3 with ReportPortal to automatically log HTTP requests and responses, including images and binary data, for enhanced test analysis."
+        },
+        {
+          "title": "Apache HttpComponents",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Java/Loggers/ApacheHttpComponents/",
+          "description": "Integrate Apache HttpComponents with ReportPortal for comprehensive test automation reporting tools and HTTP request/response logging."
+        }
+      ]
+    },
+    {
+      "title": "Developers guides",
+      "url": "https://reportportal.io/docs/developers-guides/",
+      "description": "Enhance your test results dashboard with ReportPortal's comprehensive Developers' guides.",
+      "pages": [
+        {
+          "title": "Developers guides",
+          "url": "https://reportportal.io/docs/developers-guides/",
+          "description": "Enhance your test results dashboard with ReportPortal's comprehensive Developers' guides."
+        },
+        {
+          "title": "Plugin developers guide",
+          "url": "https://reportportal.io/docs/developers-guides/PluginDevelopersGuide/",
+          "description": "Build custom plugins for ReportPortal. Learn APIs and UI hooks to extend reporting, streamline workflows, and tailor your test automation dashboard."
+        },
+        {
+          "title": "API differences between v4 and v5",
+          "url": "https://reportportal.io/docs/developers-guides/APIDifferencesBetweenV4AndV5/",
+          "description": "Compare API changes between ReportPortal v4 and v5 versions for seamless migration and integration with test automation reporting tool."
+        },
+        {
+          "title": "Asynchronous reporting",
+          "url": "https://reportportal.io/docs/developers-guides/AsynchronousReporting/",
+          "description": "Implement asynchronous reporting using AMQP and RabbitMQ for high-performance test automation reporting tools with load balancing."
+        },
+        {
+          "title": "Attachments Guide",
+          "url": "https://reportportal.io/docs/developers-guides/AttachmentsGuide/",
+          "description": "Add screenshots and file attachments to test logs for comprehensive test failure analysis and debugging in ReportPortal."
+        },
+        {
+          "title": "Back-end Java contribution guide",
+          "url": "https://reportportal.io/docs/developers-guides/BackEndJavaContributionGuide/",
+          "description": "Contribute to ReportPortal's Java backend with comprehensive development guidelines, setup instructions, and coding standards."
+        },
+        {
+          "title": "Interactions between API and Analyzer",
+          "url": "https://reportportal.io/docs/developers-guides/InteractionsBetweenAPIAndAnalyzer/",
+          "description": "Understand API and Analyzer service communication using AMQP and RabbitMQ for test failure analytics and ML processing."
+        },
+        {
+          "title": "Reporting developers guide",
+          "url": "https://reportportal.io/docs/developers-guides/ReportingDevelopersGuide/",
+          "description": "Learn how to integrate test results into ReportPortal using HTTP requests, manage launches, and handle logs for effective test reporting."
+        },
+        {
+          "title": "ReportPortal API",
+          "url": "https://reportportal.io/docs/developers-guides/ReportPortalAPI/",
+          "description": "Explore ReportPortal's REST API to automate test reporting, manage projects, and integrate with CI/CD pipelines, enhancing your testing workflow efficiency."
+        },
+        {
+          "title": "Rerun developers guide",
+          "url": "https://reportportal.io/docs/developers-guides/RerunDevelopersGuide/",
+          "description": "Implement test rerun functionality in ReportPortal for selective test execution reporting and failure investigation workflows."
+        },
+        {
+          "title": "Retries reporting",
+          "url": "https://reportportal.io/docs/developers-guides/RetriesReporting/",
+          "description": "Report test retries and retry attempts in ReportPortal for comprehensive test execution reporting and failure analysis."
+        },
+        {
+          "title": "Develop a custom import plugin",
+          "url": "https://reportportal.io/docs/developers-guides/PluginDevelopersGuide/DevelopACustomImportPlugin/",
+          "description": "Learn how to develop custom import plugins for ReportPortal test automation reporting tools using PF4J framework."
+        },
+        {
+          "title": "Plugin API development guide",
+          "url": "https://reportportal.io/docs/developers-guides/PluginDevelopersGuide/PluginAPIDevelopersGuide/",
+          "description": "Develop custom plugins for ReportPortal using APIs and microservices architecture for enhanced test automation reporting tools functionality."
+        },
+        {
+          "title": "Plugin UI development guide",
+          "url": "https://reportportal.io/docs/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide/",
+          "description": "Learn how to develop plugin UI components for ReportPortal test automation reporting tools with modern frontend technologies."
+        }
+      ]
+    },
+    {
+      "title": "Work with reports",
+      "url": "https://reportportal.io/docs/work-with-reports/",
+      "description": "Maximize your test automation results dashboard. Learn operations under launches, failure investigation and more.",
+      "pages": [
+        {
+          "title": "Work with reports",
+          "url": "https://reportportal.io/docs/work-with-reports/",
+          "description": "Maximize your test automation results dashboard. Learn operations under launches, failure investigation and more."
+        },
+        {
+          "title": "View launches",
+          "url": "https://reportportal.io/docs/work-with-reports/ViewLaunches/",
+          "description": "View and manage test launches with detailed execution data, filtering options, and real-time test reporting capabilities for comprehensive analysis."
+        },
+        {
+          "title": "Operations under launches",
+          "url": "https://reportportal.io/docs/work-with-reports/OperationsUnderLaunches/",
+          "description": "Manage launch operations including editing attributes, merging launches, and bulk actions to streamline test execution reporting workflows."
+        },
+        {
+          "title": "Filtering launches",
+          "url": "https://reportportal.io/docs/work-with-reports/FilteringLaunches/",
+          "description": "Filter launches and test items using advanced criteria to quickly find specific test execution reporting data and analyze results efficiently."
+        },
+        {
+          "title": "Launches/test items attributes",
+          "url": "https://reportportal.io/docs/work-with-reports/LaunchesTestItemsAttributes/",
+          "description": "Use attributes to organize and categorize test data for better test automation reporting tools performance and easier analysis across launches."
+        },
+        {
+          "title": "Log level",
+          "url": "https://reportportal.io/docs/work-with-reports/LogLevel/",
+          "description": ""
+        },
+        {
+          "title": "Investigation of failure",
+          "url": "https://reportportal.io/docs/work-with-reports/InvestigationOfFailure/",
+          "description": "Investigate test failures by setting defect types, linking bug tracking systems, and performing detailed test failure analysis for better quality control."
+        },
+        {
+          "title": "History of launches",
+          "url": "https://reportportal.io/docs/work-with-reports/HistoryOfLaunches/",
+          "description": "Track test execution history and trends over time to identify patterns and improve test automation metrics dashboard insights."
+        },
+        {
+          "title": "Test case ID",
+          "url": "https://reportportal.io/docs/work-with-reports/TestCaseId/",
+          "description": "Link test cases with external test management systems using unique test case IDs. Track and manage test execution reporting across platforms."
+        }
+      ]
+    },
+    {
+      "title": "Test executions",
+      "url": "https://reportportal.io/docs/test-executions/",
+      "description": "Manage and analyze test executions across multiple launches with powerful filters, customizable columns, and fast data refresh.",
+      "pages": [
+        {
+          "title": "Test executions",
+          "url": "https://reportportal.io/docs/test-executions/",
+          "description": "Manage and analyze test executions across multiple launches with powerful filters, customizable columns, and fast data refresh."
+        }
+      ]
+    },
+    {
+      "title": "Analysis",
+      "url": "https://reportportal.io/docs/analysis/",
+      "description": "Deep into ReportPortal's advanced analysis methods for robust test automation metrics & efficient defect triaging.",
+      "pages": [
+        {
+          "title": "Analysis",
+          "url": "https://reportportal.io/docs/analysis/",
+          "description": "Deep into ReportPortal's advanced analysis methods for robust test automation metrics & efficient defect triaging."
+        },
+        {
+          "title": "Auto-Analysis of launches",
+          "url": "https://reportportal.io/docs/analysis/AutoAnalysisOfLaunches/",
+          "description": "Use Auto-Analysis to categorize failures with ML, reduce manual work, and link defects automatically. Speed investigations and improve accuracy with test failure analytics."
+        },
+        {
+          "title": "Immediate Auto-Analysis",
+          "url": "https://reportportal.io/docs/analysis/ImmediateAutoAnalysis/",
+          "description": "Kick off Auto-Analysis before a launch finishes to flag failures sooner. Use attributes to accelerate test failure analytics and shorten feedback loops."
+        },
+        {
+          "title": "Search for the similar \"To investigate\" items",
+          "url": "https://reportportal.io/docs/analysis/SearchForTheSimilarToInvestigateItems/",
+          "description": "Find similar “To investigate” items by logs across launches to bulk apply decisions. Accelerate defect triage and simplify your test reporting tool workflow."
+        },
+        {
+          "title": "ML Suggestions",
+          "url": "https://reportportal.io/docs/analysis/MLSuggestions/",
+          "description": "Get AI-powered suggestions for similar failures during triage. Reuse defect types, comments, and BTS links to speed analysis in your test automation dashboard."
+        },
+        {
+          "title": "How models are retrained",
+          "url": "https://reportportal.io/docs/analysis/HowModelsAreRetrained/",
+          "description": "Learn when Auto-Analysis and ML models retrain, how data is used, and what thresholds apply to keep ReportPortal test failure analysis accurate and project-specific."
+        },
+        {
+          "title": "Manual Analysis",
+          "url": "https://reportportal.io/docs/analysis/ManualAnalysis/",
+          "description": "Use the Make decision modal to assign defect types, apply ML suggestions, and bulk update items. Streamline bug triage for a faster automation test report."
+        },
+        {
+          "title": "Pattern Analysis",
+          "url": "https://reportportal.io/docs/analysis/PatternAnalysis/",
+          "description": "Define string or regex rules to detect known error patterns. Speed up investigations and track frequent causes with the Most Popular Pattern widget."
+        },
+        {
+          "title": "Immediate Pattern Analysis",
+          "url": "https://reportportal.io/docs/analysis/ImmediatePatternAnalysis/",
+          "description": "Start Pattern Analysis before a launch ends to catch issues early. Trigger via attributes and speed defect triage on large runs in ReportPortal."
+        },
+        {
+          "title": "Unique Error Analysis",
+          "url": "https://reportportal.io/docs/analysis/UniqueErrorAnalysis/",
+          "description": "Group identical errors to speed triage. See unique failures, match tests by error, and apply ML suggestions for faster, clearer test failure analysis."
+        }
+      ]
+    },
+    {
+      "title": "Saved searches (filters)",
+      "url": "https://reportportal.io/docs/saved-searches-filters/",
+      "description": "Simplify filter management for your QA automation dashboard. Visit our Saved Searches section to streamline filter creation and optimization.",
+      "pages": [
+        {
+          "title": "Saved searches (filters)",
+          "url": "https://reportportal.io/docs/saved-searches-filters/",
+          "description": "Simplify filter management for your QA automation dashboard. Visit our Saved Searches section to streamline filter creation and optimization."
+        },
+        {
+          "title": "Create filters",
+          "url": "https://reportportal.io/docs/saved-searches-filters/CreateFilters/",
+          "description": "Create and manage saved search filters for launches. Use filters as independent objects or for creating widgets in your test execution reporting dashboard."
+        },
+        {
+          "title": "Manage filters",
+          "url": "https://reportportal.io/docs/saved-searches-filters/ManageFilters/",
+          "description": "Manage saved filters with edit, copy, delete, and share operations. Organize filters for efficient test execution reporting and dashboard creation."
+        },
+        {
+          "title": "Filters page",
+          "url": "https://reportportal.io/docs/saved-searches-filters/FiltersPage/",
+          "description": "Manage and organize saved searches on the filters page. View personal filters, streamline test data access, and focus on relevant information using test execution reporting tools."
+        }
+      ]
+    },
+    {
+      "title": "Dashboards and widgets",
+      "url": "https://reportportal.io/docs/dashboards-and-widgets/",
+      "description": "Explore guides for dashboard & widget management, aiding effective, real-time test failure analytics.",
+      "pages": [
+        {
+          "title": "Dashboards and widgets",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/",
+          "description": "Explore guides for dashboard & widget management, aiding effective, real-time test failure analytics."
+        },
+        {
+          "title": "Possible Dashboards in ReportPortal",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/PossibleDashboardsInReportPortal/",
+          "description": "Explore the possible dashboards and widgets in ReportPortal to visualize your test results, monitor progress, and gain actionable insights."
+        },
+        {
+          "title": "Reporting and metrics in ReportPortal",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/ReportingAndMetricsInReportPortal/",
+          "description": "With ReportPortal, you can boost your software quality by obtaining detailed test automation reports to monitor test execution, identify issues, and analyze trends for continuous enhancement."
+        },
+        {
+          "title": "Work with dashboards",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/WorkWithDashboards/",
+          "description": "Create, edit, clone, and manage dashboards in ReportPortal. Build focused views with widgets and videos to monitor releases on a live test results dashboard."
+        },
+        {
+          "title": "Widget Creation",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/WidgetCreation/",
+          "description": "Create widgets to visualize trends, failures, and KPIs. Use templates and filters to build a clear test automation metrics dashboard tailored to your needs."
+        },
+        {
+          "title": "Manage Widgets",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/ManageWidgets/",
+          "description": "Customize, resize, edit, and delete widgets on your dashboard. Organize layout and manage widget settings for optimal test automation reporting and monitoring."
+        },
+        {
+          "title": "Launch statistics chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/LaunchStatisticsChart/",
+          "description": "Track failure reasons and statuses across runs or dates with area or bar views. Zoom and click through for deeper insights on your test results dashboard."
+        },
+        {
+          "title": "Overall statistics",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/OverallStatistics/",
+          "description": "Visualize passed, failed, skipped, and defect types across launches. Track trends and drill into details on your test automation reporting dashboard."
+        },
+        {
+          "title": "Launches duration chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/LaunchesDurationChart/",
+          "description": "Compare launch durations to spot slow runs and trends. Switch between all and latest modes to highlight performance in your test automation results dashboard."
+        },
+        {
+          "title": "Launch execution and issue statistic",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/LaunchExecutionAndIssueStatistic/",
+          "description": "View the latest launch’s pass/fail and defect breakdown at a glance. Click to explore details and triage on your test automation reporting dashboard."
+        },
+        {
+          "title": "Project activity panel",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/ProjectActivityPanel/",
+          "description": "Monitor all project activities and user actions in real-time. Track launches, user management, and system changes using qa metrics dashboard."
+        },
+        {
+          "title": "Test-cases growth trend chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/TestCasesGrowthTrendChart/",
+          "description": "Monitor the addition of new test cases in each launch, identify growth patterns, and assess testing coverage to optimize your test strategy."
+        },
+        {
+          "title": "Investigated percentage of launches",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/InvestigatedPercentageOfLaunches/",
+          "description": "Track the share of Investigated vs To Investigate items by launch or date. Monitor analysis progress to improve triage on your test report dashboard."
+        },
+        {
+          "title": "Launches table",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/LaunchesTable/",
+          "description": "View configurable launch data in table format. Click through to explore details, track progress, and analyze results using test automation reporting tools."
+        },
+        {
+          "title": "Unique bugs table",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/UniqueBugsTable/",
+          "description": "Track unique bugs posted to bug tracking systems. View bug details, submission dates, and linked test items using QA dashboard tool."
+        },
+        {
+          "title": "Most failed test-cases table (TOP-50)",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/MostFailedTestCasesTableTop50/",
+          "description": "Identify top 50 most problematic test cases with failure statistics. Track the time since the last status change and detect flaky test cases."
+        },
+        {
+          "title": "Failed cases trend chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/FailedCasesTrendChart/",
+          "description": "See failed test trends over time to catch regressions early. Analyze totals by defect categories and drill into launches on your test automation dashboard."
+        },
+        {
+          "title": "Non-passed test-cases trend chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/NonPassedTestCasesTrendChart/",
+          "description": "Track non-passed test trends over time to identify quality issues. Monitor failed and skipped test percentages using QA dashboard tool."
+        },
+        {
+          "title": "Different launches comparison chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/DifferentLaunchesComparisonChart/",
+          "description": "Compare statistics between two latest launches side by side. Analyze test execution differences and track progress using qa dashboard tools."
+        },
+        {
+          "title": "Passing rate per launch",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/PassingRatePerLaunch/",
+          "description": "See passed vs total per launch with bar or pie views. Toggle skipped items, explore details, and drill down into tests on your test execution dashboard."
+        },
+        {
+          "title": "Passing rate summary",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/PassingRateSummary/",
+          "description": "Analyze passing rates across multiple launches with bar or pie views. Toggle skipped items and drill down for detailed test execution reporting insight."
+        },
+        {
+          "title": "Flaky test cases table (TOP-50)",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/FlakyTestCasesTableTop50/",
+          "description": "Track flaky tests that change status between runs. Identify unstable test cases and improve reliability using test automation metrics dashboard."
+        },
+        {
+          "title": "Cumulative trend chart",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/CumulativeTrendChart/",
+          "description": "Track cumulative growth trends across builds and versions. Compare statistics over time with drill-down capabilities using qa metrics dashboard."
+        },
+        {
+          "title": "Most popular pattern table (TOP-20)",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/MostPopularPatternTableTop20/",
+          "description": "Explore the top 20 most popular patterns in dashboards and widgets to analyze trends and improve reporting insights effectively."
+        },
+        {
+          "title": "Component health check",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/ComponentHealthCheck/",
+          "description": "Generate a detailed test automation report with passing rate of the application components."
+        },
+        {
+          "title": "Table Component health check",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/TableComponentHealthCheck/",
+          "description": "See which components need attention, compare metrics across builds, and quickly investigate failures to keep your system running smoothly."
+        },
+        {
+          "title": "Most time-consuming test cases widget (TOP-20)",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/MostTimeConsumingTestCasesWidgetTop20/",
+          "description": "Identify the slowest test cases with duration analysis. View top 20 time-consuming tests in table or bar format using QA dashboard tool."
+        },
+        {
+          "title": "Test Case Search widget",
+          "url": "https://reportportal.io/docs/dashboards-and-widgets/TestCaseSearch/",
+          "description": "Find specific test cases by name or attributes across all launches. Search, filter, and drill down into test details using qa metrics dashboard."
+        }
+      ]
+    },
+    {
+      "title": "Admin Panel",
+      "url": "https://reportportal.io/docs/admin-panel/",
+      "description": "Efficiently manage projects and users with our Admin Panel. Explore event monitoring and more for your centralized test automation tool.",
+      "pages": [
+        {
+          "title": "Admin Panel",
+          "url": "https://reportportal.io/docs/admin-panel/",
+          "description": "Efficiently manage projects and users with our Admin Panel. Explore event monitoring and more for your centralized test automation tool."
+        },
+        {
+          "title": "All Projects page",
+          "url": "https://reportportal.io/docs/admin-panel/AllProjectsPage/",
+          "description": "Manage all projects in ReportPortal with administrator privileges. View project details, settings, and user access for comprehensive test automation reporting tools administration."
+        },
+        {
+          "title": "All Users page",
+          "url": "https://reportportal.io/docs/admin-panel/AllUsersPage/",
+          "description": "Manage all users in ReportPortal with administrator privileges. View user details, roles, and permissions for comprehensive test automation reporting tools administration."
+        },
+        {
+          "title": "Event monitoring",
+          "url": "https://reportportal.io/docs/admin-panel/EventMonitoring/",
+          "description": "Monitor all activities and events in ReportPortal at project and instance levels for comprehensive test automation reporting tools administration and auditing."
+        },
+        {
+          "title": "Server Settings",
+          "url": "https://reportportal.io/docs/admin-panel/ServerSettings/",
+          "description": "Configure server settings including GitHub authorization, SSO login, and Google Analytics in ReportPortal test automation reporting tools."
+        }
+      ]
+    },
+    {
+      "title": "Plugins",
+      "url": "https://reportportal.io/docs/plugins/",
+      "description": "Explore seamless connections to Jira Server, Jira Cloud, E-mail server and other plugins for enhanced test reporting tool.",
+      "pages": [
+        {
+          "title": "Plugins",
+          "url": "https://reportportal.io/docs/plugins/",
+          "description": "Explore seamless connections to Jira Server, Jira Cloud, E-mail server and other plugins for enhanced test reporting tool."
+        },
+        {
+          "title": "Authorization",
+          "url": "https://reportportal.io/docs/plugins/authorization/",
+          "description": "Set up secure logins with Active Directory, GitHub, LDAP, and SAML. Manage authentication to keep ReportPortal access safe and simple for every role."
+        },
+        {
+          "title": "Bug tracking",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/",
+          "description": "Integrate Jira, Azure DevOps, GitLab, Monday, and Rally to link, post, and sync issues from ReportPortal for faster defect triage and clearer ownership."
+        },
+        {
+          "title": "Import",
+          "url": "https://reportportal.io/docs/plugins/import/",
+          "description": "Import JUnit and RobotFramework results to centralize analysis in ReportPortal. Simplify reporting, reduce manual work, and keep your automation test report current."
+        },
+        {
+          "title": "Notifications",
+          "url": "https://reportportal.io/docs/plugins/notifications/",
+          "description": "Configure notification plugins for Email, Slack, and Telegram in ReportPortal for real-time alerts."
+        },
+        {
+          "title": "Other",
+          "url": "https://reportportal.io/docs/plugins/other/",
+          "description": "The Other plugins section showcases add-ons that extend our test automation results dashboard."
+        },
+        {
+          "title": "SAML Providers",
+          "url": "https://reportportal.io/docs/plugins/authorization/SamlProviders/",
+          "description": "Use SAML SSO with Azure or Okta to securely access your test automation metrics dashboard and simplify user login."
+        },
+        {
+          "title": "Manage plugins",
+          "url": "https://reportportal.io/docs/plugins/ManagePlugins/",
+          "description": "Install, configure, and manage plugins to extend ReportPortal functionality for enhanced test execution reporting capabilities."
+        },
+        {
+          "title": "Jira Server",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/AtlassianJiraServer/",
+          "description": "Integrate Jira Server with your test automation reporting tool to track defects, sync statuses, and streamline bug reporting."
+        },
+        {
+          "title": "Jira Cloud",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/AtlassianJiraCloud/",
+          "description": "Integrate Jira Cloud with your test reporting tool to streamline issue tracking, link defects, and sync updates across your QA process."
+        },
+        {
+          "title": "Azure DevOps",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/AzureDevOps/",
+          "description": "Connect Azure DevOps with your test report dashboard to post, link, and manage issue in just a few clicks."
+        },
+        {
+          "title": "GitLab",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/GitLab/",
+          "description": "Integrate GitLab to post issues, link defects, and sync status updates seamlessly."
+        },
+        {
+          "title": "Monday",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/Monday/",
+          "description": "Integrate ReportPortal with Monday to streamline issue reporting, link test failures, and synchronize statuses between your test results and Monday boards."
+        },
+        {
+          "title": "Rally",
+          "url": "https://reportportal.io/docs/plugins/bug-tracking/Rally/",
+          "description": "Integrate Rally with your QA automation dashboard to track, post, and manage defects efficiently from test results."
+        },
+        {
+          "title": "Sauce Labs",
+          "url": "https://reportportal.io/docs/plugins/other/SauceLabs/",
+          "description": "Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow."
+        },
+        {
+          "title": "Email Server",
+          "url": "https://reportportal.io/docs/plugins/notifications/EmailServer/",
+          "description": "Configure email server settings for automated notifications in ReportPortal."
+        },
+        {
+          "title": "Slack",
+          "url": "https://reportportal.io/docs/plugins/notifications/Slack/",
+          "description": "Configure Slack notifications for real-time test execution reporting updates in ReportPortal."
+        },
+        {
+          "title": "Telegram",
+          "url": "https://reportportal.io/docs/plugins/notifications/Telegram/",
+          "description": "Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group."
+        },
+        {
+          "title": "JUnit",
+          "url": "https://reportportal.io/docs/plugins/import/JUnit/",
+          "description": "Easily import JUnit test results into ReportPortal via UI or API, enabling streamlined test analysis and enhanced reporting capabilities."
+        },
+        {
+          "title": "RobotFramework",
+          "url": "https://reportportal.io/docs/plugins/import/RobotFramework/",
+          "description": "Import RobotFramework test results into ReportPortal for comprehensive test execution reporting integration and analysis."
+        },
+        {
+          "title": "Active Directory",
+          "url": "https://reportportal.io/docs/plugins/authorization/ActiveDirectory/",
+          "description": "Configure Active Directory integration for secure authentication in ReportPortal with enterprise SSO."
+        },
+        {
+          "title": "GitHub",
+          "url": "https://reportportal.io/docs/plugins/authorization/GitHub/",
+          "description": "Enable GitHub OAuth login in ReportPortal to streamline access management, allowing developers to sign in using their GitHub credentials for seamless authentication."
+        },
+        {
+          "title": "LDAP",
+          "url": "https://reportportal.io/docs/plugins/authorization/LDAP/",
+          "description": "Configure LDAP integration in your test automation results dashboard with secure encryption."
+        },
+        {
+          "title": "Overview",
+          "url": "https://reportportal.io/docs/plugins/authorization/SamlProviders/Overview/",
+          "description": "Enable secure SSO in ReportPortal with SAML providers, streamline user authentication, support Just-in-Time provisioning, and simplify access management."
+        },
+        {
+          "title": "Azure SAML",
+          "url": "https://reportportal.io/docs/plugins/authorization/SamlProviders/AzureSaml/",
+          "description": "Seamlessly integrate Azure SAML with ReportPortal for secure single sign-on, automatic user synchronization, and simplified access management in enterprise environments."
+        },
+        {
+          "title": "Okta SAML",
+          "url": "https://reportportal.io/docs/plugins/authorization/SamlProviders/OktaSaml/",
+          "description": "Enable secure single sign-on (SSO) in ReportPortal by integrating with Okta SAML, streamlining user authentication and enhancing access management."
+        },
+        {
+          "title": "Google Workspace SSO",
+          "url": "https://reportportal.io/docs/plugins/authorization/SamlProviders/GoogleWorkspaceSso/",
+          "description": "Simplify user access to ReportPortal by configuring Google Workspace SSO, enabling secure, seamless login and centralized identity management."
+        }
+      ]
+    },
+    {
+      "title": "External Integrations",
+      "url": "https://reportportal.io/docs/external-integrations/",
+      "description": "Enhance collaboration with our External Integrations section. Integrate with tools for end to end testing reporting tools.",
+      "pages": [
+        {
+          "title": "External Integrations",
+          "url": "https://reportportal.io/docs/external-integrations/",
+          "description": "Enhance collaboration with our External Integrations section. Integrate with tools for end to end testing reporting tools."
+        },
+        {
+          "title": "User Provisioning",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/",
+          "description": "Set up JIT and SCIM user provisioning to automate account creation, updates, and roles in ReportPortal for secure, scalable access management."
+        },
+        {
+          "title": "System for Cross-domain Identity Management (SCIM)",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/Scim/",
+          "description": "Use SCIM in ReportPortal to auto-provision users and groups from Okta or Azure, keeping roles, access, and attributes always up to date and secure."
+        },
+        {
+          "title": "MCP Server",
+          "url": "https://reportportal.io/docs/external-integrations/MCPServer/",
+          "description": "Automate test analysis with MCP Server, use AI to detect issues, summarize results, and streamline QA workflows for faster, smarter decision-making."
+        },
+        {
+          "title": "Integration with testRigor",
+          "url": "https://reportportal.io/docs/external-integrations/testRigor/",
+          "description": "Integrate testRigor with ReportPortal for seamless test case reporting and automated test result analysis workflows."
+        },
+        {
+          "title": "Overview",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/overview/",
+          "description": "Configure user provisioning from external identity providers for automated user management in ReportPortal test automation reporting tools."
+        },
+        {
+          "title": "Overview",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/Scim/overview/",
+          "description": "Use SCIM protocol for automated user provisioning and management in ReportPortal with identity providers."
+        },
+        {
+          "title": "SCIM Azure",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/Scim/azure/",
+          "description": "Configure SCIM to sync Azure Entra ID users and groups automatically to ReportPortal, map attributes, and sync admin roles to streamline access control and user management."
+        },
+        {
+          "title": "SCIM Okta",
+          "url": "https://reportportal.io/docs/external-integrations/UserProvisioning/Scim/okta/",
+          "description": "Configure SCIM integration with Okta for automated user provisioning in ReportPortal test automation reporting tools."
+        }
+      ]
+    },
+    {
+      "title": "Quality Gates",
+      "url": "https://reportportal.io/docs/quality-gates/",
+      "description": "Drive efficiency with Quality Gates. Configure rules, integrate with CI/CD for enhanced test report dashboard.",
+      "pages": [
+        {
+          "title": "Quality Gates",
+          "url": "https://reportportal.io/docs/quality-gates/",
+          "description": "Drive efficiency with Quality Gates. Configure rules, integrate with CI/CD for enhanced test report dashboard."
+        },
+        {
+          "title": "Integration with CI/CD",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/",
+          "description": "Connect ReportPortal with GitHub Actions, GitLab CI, Jenkins, and more to automate quality checks and surface insights in your test execution dashboard."
+        },
+        {
+          "title": "Quality Gate Purpose",
+          "url": "https://reportportal.io/docs/quality-gates/QualityGatePurpose/",
+          "description": "Understand Quality Gates purpose and benefits for quality control."
+        },
+        {
+          "title": "How to install Quality Gates",
+          "url": "https://reportportal.io/docs/quality-gates/HowToInstallQualityGates/",
+          "description": "Install Quality Gates premium feature in ReportPortal for enhanced test automation reporting with quality control."
+        },
+        {
+          "title": "Upload Quality Gate to ReportPortal",
+          "url": "https://reportportal.io/docs/quality-gates/UploadQualityGateToReportPortal/",
+          "description": "Upload Quality Gates to ReportPortal for quality control."
+        },
+        {
+          "title": "Quality Rules Configuration",
+          "url": "https://reportportal.io/docs/quality-gates/QualityRulesConfiguration/",
+          "description": "Configure Quality Rules for automated quality control."
+        },
+        {
+          "title": "Quality Gate Edit",
+          "url": "https://reportportal.io/docs/quality-gates/QualityGateEdit/",
+          "description": "Edit Quality Gates configurations for quality control management."
+        },
+        {
+          "title": "Delete Quality Gates",
+          "url": "https://reportportal.io/docs/quality-gates/DeleteQualityGates/",
+          "description": "Delete Quality Gates configurations in ReportPortal for quality control management."
+        },
+        {
+          "title": "Assessment of test results using Quality Gates",
+          "url": "https://reportportal.io/docs/quality-gates/AssessmentOfTestResultsUsingQualityGates/",
+          "description": "Use Quality Gates to assess test results and enforce quality standards in your test automation workflow."
+        },
+        {
+          "title": "Integration with Azure DevOps",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithAzureDevOps/",
+          "description": "Integrate Azure DevOps with ReportPortal Quality Gates for automated quality control in QA automation dashboard."
+        },
+        {
+          "title": "Integration with Bitrise CI/CD",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithBitrise/",
+          "description": "Integrate Bitrise CI/CD with ReportPortal Quality Gates for automated quality control."
+        },
+        {
+          "title": "Integration with CircleCI",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithCircleCI/",
+          "description": "Integrate ReportPortal with CircleCI to automate test execution, capture launch IDs, and enforce Quality Gates, ensuring consistent and reliable deployments."
+        },
+        {
+          "title": "Integration with GitHub Actions",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithGitHubActions/",
+          "description": "Integrate ReportPortal with GitHub Actions to automate test result reporting, enforce Quality Gates, and enhance CI/CD workflows for faster, reliable releases."
+        },
+        {
+          "title": "Integration with GitLab CI",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI/",
+          "description": "Integrate ReportPortal with GitLab CI to automate test result reporting, enforce quality gates, and enhance your CI/CD pipeline's efficiency and reliability."
+        },
+        {
+          "title": "Integration with Jenkins",
+          "url": "https://reportportal.io/docs/quality-gates/IntegrationWithCICD/IntegrationWithJenkins/",
+          "description": "Integrate ReportPortal into Jenkins to visualize test outcomes, apply quality gates, and ensure faster, more consistent CI/CD delivery."
+        }
+      ]
+    },
+    {
+      "title": "User role guides",
+      "url": "https://reportportal.io/docs/user-role-guides/",
+      "description": "Understand roles and permissions for admins, managers, members, operators, and customers. Configure access and responsibilities to keep projects secure and efficient.",
+      "pages": [
+        {
+          "title": "User role guides",
+          "url": "https://reportportal.io/docs/user-role-guides/",
+          "description": "Understand roles and permissions for admins, managers, members, operators, and customers. Configure access and responsibilities to keep projects secure and efficient."
+        }
+      ]
+    },
+    {
+      "title": "Issues Troubleshooting",
+      "url": "https://reportportal.io/docs/issues-troubleshooting/",
+      "description": "Utilize ReportPortal's Issues Troubleshooting guide for improved test report generation and effective bug triage.",
+      "pages": [
+        {
+          "title": "Issues Troubleshooting",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/",
+          "description": "Utilize ReportPortal's Issues Troubleshooting guide for improved test report generation and effective bug triage."
+        },
+        {
+          "title": "Tuning CI tool",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/TuningCITool/",
+          "description": "Optimize your CI pipeline by passing parameters via system variables in Jenkins, enhancing test execution flexibility and integration with ReportPortal."
+        },
+        {
+          "title": "Issues with JIRA bug tracking system: how to resolve",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/IssuesWithJIRABugTrackingSystemHowToResolve/",
+          "description": "Resolve JIRA integration issues in ReportPortal by verifying URLs, project keys, credentials, and importing necessary certificates for seamless connectivity."
+        },
+        {
+          "title": "How to avoid local execution reported into project space",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToAvoidLocalExecutionReportedIntoProjectSpace/",
+          "description": "Learn how to prevent local test executions from appearing in your ReportPortal project space by configuring launch attributes and user roles effectively."
+        },
+        {
+          "title": "How to add a test stack trace to a description automatically",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToAddATestStackTraceToADescriptionAutomatically/",
+          "description": "Automatically add test stack traces to descriptions for faster test failure analysis in ReportPortal."
+        },
+        {
+          "title": "Issues with LDAPS: how to resolve",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/IssuesWithLDAPSHowToResolve/",
+          "description": "Troubleshoot LDAPS authentication issues in ReportPortal with SSL certificate solutions."
+        },
+        {
+          "title": "Resolve Analyzer Known Issues",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/ResolveAnalyzerKnownIssues/",
+          "description": "Troubleshoot and resolve common Analyzer issues in ReportPortal, including OpenSearch health, AMQP connections, and performance optimizations."
+        },
+        {
+          "title": "How to check LDAP connection",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToCheckLDAPConnection/",
+          "description": "Learn how to check LDAP connection for ReportPortal authentication troubleshooting."
+        },
+        {
+          "title": "How to clean up the ReportPortal database using PG_REPACK",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToCleanUpTheReportPortalDatabaseUsingPGRepack/",
+          "description": "Optimize ReportPortal performance by removing database bloat using PG_REPACK - an online, efficient method that minimizes downtime and system impact."
+        },
+        {
+          "title": "How to clean up the ReportPortal database using VACUUM FULL",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToCleanUpTheReportPortalDatabaseUsingVacuumFull/",
+          "description": "Learn how to clean up ReportPortal database using VACUUM FULL for optimal performance."
+        },
+        {
+          "title": "How to resolve issues with migration to the new version",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/HowToResolveIssuesWithMigrationToTheNewVersion/",
+          "description": "Learn how to resolve migration issues when upgrading ReportPortal to new versions."
+        },
+        {
+          "title": "Email Notification Issues",
+          "url": "https://reportportal.io/docs/issues-troubleshooting/EmailNotificationIssues/",
+          "description": "Troubleshoot email notification issues in ReportPortal QA metric dashboard with ThreadPool and SMTP configuration solutions."
+        }
+      ]
+    },
+    {
+      "title": "Case Studies",
+      "url": "https://reportportal.io/docs/case-studies/",
+      "description": "Discover success stories to see how top organizations improved processes thanks to our test automation reporting dashboard.",
+      "pages": [
+        {
+          "title": "Case Studies",
+          "url": "https://reportportal.io/docs/case-studies/",
+          "description": "Discover success stories to see how top organizations improved processes thanks to our test automation reporting dashboard."
+        },
+        {
+          "title": "Reducing regression time by 50%",
+          "url": "https://reportportal.io/docs/case-studies/ReducingRegressionTimeBy50/",
+          "description": "Learn how to reduce regression time by 50% using ReportPortal's test automation reporting tools and qa dashboard tools for faster analysis."
+        },
+        {
+          "title": "Increasing test automation stability and visibility",
+          "url": "https://reportportal.io/docs/case-studies/IncreasingTestAutomationStabilityAndVisibility/",
+          "description": "Discover how ReportPortal boosted test stability from 25% to 95%, cut analysis effort by 90%, and improved visibility for smarter release decisions."
+        },
+        {
+          "title": "Reducing regression analysis efforts",
+          "url": "https://reportportal.io/docs/case-studies/ReducingRegressionAnalysisEfforts/",
+          "description": "Discover how ReportPortal reduces regression analysis time by enabling real-time insights, automated reruns, and a powerful QA metrics dashboard for faster, smarter testing."
+        },
+        {
+          "title": "Improving test automation stability",
+          "url": "https://reportportal.io/docs/case-studies/ImprovingTestAutomationStability/",
+          "description": "Learn how ReportPortal improve test automation stability, reduced failures, and cut analysis time with better logging, triage, and dashboards."
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "url": "https://reportportal.io/docs/glossary/",
+      "description": "Explore ReportPortal terminology like agents, clients, loggers, launches, and widgets to understand how test reporting and analysis work across the platform.",
+      "pages": [
+        {
+          "title": "Glossary",
+          "url": "https://reportportal.io/docs/glossary/",
+          "description": "Explore ReportPortal terminology like agents, clients, loggers, launches, and widgets to understand how test reporting and analysis work across the platform."
+        }
+      ]
+    },
+    {
+      "title": "FAQ",
+      "url": "https://reportportal.io/docs/FAQ/",
+      "description": "Find quick answers about installing, integrating, and using ReportPortal, from AI features and licenses to dashboards, integrations, and performance guidance.",
+      "pages": [
+        {
+          "title": "FAQ",
+          "url": "https://reportportal.io/docs/FAQ/",
+          "description": "Find quick answers about installing, integrating, and using ReportPortal, from AI features and licenses to dashboards, integrations, and performance guidance."
+        },
+        {
+          "title": "llms.txt regeneration smoke test",
+          "url": "https://reportportal.io/docs/FAQ/test-llms/",
+          "description": "Temporary FAQ page used to verify that the gen-llms workflow detects new articles and pushes a regeneration commit back to the PR branch."
+        },
+        {
+          "title": "llms.txt regeneration trigger validation",
+          "url": "https://reportportal.io/docs/FAQ/test-llms-second/",
+          "description": "Second temporary FAQ page used to confirm that pushing a new article triggers the gen-llms workflow and produces a bot commit on the PR branch."
+        }
+      ]
+    },
+    {
+      "title": "Terms & conditions",
+      "url": "https://reportportal.io/docs/terms-and-conditions/",
+      "description": "Read Terms & Conditions for clear guidance on premium features and Google Analytics usage in our test automation reporting tool.",
+      "pages": [
+        {
+          "title": "Terms & conditions",
+          "url": "https://reportportal.io/docs/terms-and-conditions/",
+          "description": "Read Terms & Conditions for clear guidance on premium features and Google Analytics usage in our test automation reporting tool."
+        },
+        {
+          "title": "Premium Features",
+          "url": "https://reportportal.io/docs/terms-and-conditions/PremiumFeatures/",
+          "description": "Explore ReportPortal premium features for enterprises, including Quality Gates and SCIM, designed to scale continuous testing and streamline user management."
+        },
+        {
+          "title": "Google Analytics usage by ReportPortal",
+          "url": "https://reportportal.io/docs/terms-and-conditions/GoogleAnalyticsUsageByReportPortal/",
+          "description": "Learn about Google Analytics usage in ReportPortal test automation reporting tools for web analytics and user experience improvement."
+        }
+      ]
+    }
+  ]
+}
