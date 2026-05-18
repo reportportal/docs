@@ -58,12 +58,12 @@ jobs:
 
       - name: Commit regenerated files
         run: |
-          if git diff --quiet -- static/llms.txt static/ai-sitemap.json; then
+          git add static/llms.txt static/ai-sitemap.json
+          if git diff --cached --quiet -- static/llms.txt static/ai-sitemap.json; then
             echo "No changes to llms.txt or ai-sitemap.json — skipping commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add static/llms.txt static/ai-sitemap.json
           git commit -m "chore: regenerate llms.txt and ai-sitemap.json"
           git push origin HEAD:${{ steps.target.outputs.ref }}
