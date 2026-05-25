@@ -95,6 +95,13 @@ Available options:
 * Last 90 Days
 * Custom range (date picker)
 
+:::info
+The maximum custom date range for displaying test executions is 90 days.
+This limitation applies to both:
+- the Launch start time control in the page header
+- the Launch start time field inside the "All Filters" side panel
+:::
+
 <MediaViewer src={require('./img/LaunchStartTime.png')} alt="Launch start time filter" />
 
 ### Launch names
@@ -137,6 +144,7 @@ On the "All Filters" modal window you can apply both the launch level filters an
 * Launch names
 * Launch attributes
 * Test execution name
+* Execution type
 * Status
 * Defect type
 * Start time
@@ -311,6 +319,19 @@ You can customize the columns displayed on the Test Execution page by adding new
 4. Select a column from the dropdown and confirm.
 5. Click the "Save" button.
 
+"Add Column" dropdown contains the following columns:
+
+- Analyzed by AA
+- Attributes
+- Custom attribute
+- Description
+- Duration
+- Execution type
+- Ignore in AA
+- Issue in BTS
+- Method type
+- Test ID
+
 <MediaViewer src={require('./img/AddColumn1.png')} alt="Add column on the Customize Columns filter" />
 
 <MediaViewer src={require('./img/AddColumn2.png')} alt="Options on the Customize Columns filter" />
@@ -389,3 +410,26 @@ To reload data on the Test Executions page:
 2. Click the "Refresh" button.
 
 <MediaViewer src={require('./img/Refresh.png')} alt="Refresh option on Test Execution page" />
+
+## Export
+
+You can export Tests executions report into two formats XLS and PDF. The report itself will mirror the configured columns on Test Executions page and in case the filters are applied, then the exported data will also be filtered in the report.
+
+When the **"Include attachments" option** is enabled, the exported result is downloaded as a ZIP archive containing XLS or PDF report and all available attachments related to the exported results.
+
+If no attachments are found, the archive contains only the report file.
+
+:::info
+Attachments from nested steps are also included in Test Executions exports.
+:::
+
+The **"Export attachments without preserving folder structure" option** controls how attachments are organized inside the archive.
+
+- When disabled, attachments are exported using a hierarchical step-based folder structure.
+- When enabled, all attachments are placed into a single "Attachments" folder.
+
+:::note
+Reports exported with attachments are limited to the first 10,000 items. Any items beyond this limit are excluded from the export.
+:::
+
+<MediaViewer src={require('./img/Export.png')} alt="Export options" />
