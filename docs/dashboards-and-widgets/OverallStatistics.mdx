@@ -15,13 +15,23 @@ The panel shows a summary of test cases with each status for each selected launc
 - Widget Criteria: All criteria are selected by default.
 - Type of view: Panel view/ Donut view
 - Mode All launches/ Latest launches
+- 'Show the "Interrupted" status independently from "Failed" items' checkbox (unselected by default)
 
 
 **Widget view**
 
 The widget shows statistics of the All launches/or Latest launches for the chosen filter. Statistics are divided into the following sections:
--    Skipped, Passed, Failed
--    Product Bug, System Issue, Automation Bug, No Defect and To Investigate.
+-  Skipped, Passed, Failed, Interrupted (*)
+-  Product Bug, System Issue, Automation Bug, No Defect and To Investigate.
+
+\* The widget view depends on the state of the 'Show the "Interrupted" status independently from "Failed" items' checkbox:
+
+- If the **checkbox is unselected**, Interrupted tests are included in the Failed count.
+- If the **checkbox is selected**, failed tests are divided into Failed and Interrupted categories independently, regardless of the selected view type (Panel view or Donut view).
+
+<MediaViewer src={require('./img/widget-types/OverallStatisticsInterrupted1.png')} alt="Show the Interrupted status checkbox" />
+
+<MediaViewer src={require('./img/widget-types/OverallStatisticsInterrupted2.png')} alt="Included Interrupted tests" />
 
 The statistics for every type are shown in percentages. On hover, the exact number is shown for each type.
 The Widget has clickable sections when you click on a specified section in the widget, the system forwards you to launch view for appropriate selection.
