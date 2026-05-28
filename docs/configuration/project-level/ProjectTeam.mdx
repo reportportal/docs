@@ -5,3 +5,99 @@ description: test
 ---
 
 # Project Team
+
+The "Project team" page can be accessible using sidebar from project level.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam1.png')} alt="How to find Project team page" />
+
+The page provides next information:
+
+* User avatar icon – avatar of assigned user
+* Name – Full name of assigned user
+* Email – email of assigned user
+* Last Login – when user last logged in in "time ago" format
+* Permissions – user’s permissions in the project
+
+<MediaViewer src={require('./img/project-team/ProjectTeam2.png')} alt="Project team page in our test results dashboard" />
+
+"Project team" page allows:
+
+* to invite/assign users to project
+* to change project role
+* to unassign users from project
+
+In the header of the "Project team" page, the following controls are displayed:
+
+* Search
+* "Invite user" button
+
+<MediaViewer src={require('./img/project-team/ProjectTeam3.png')} alt="Controls on the Project team page" />
+
+## Search
+
+User can search for users in their project by Full name.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam4.png')} alt="Search on the Project team page" />
+
+## Invite user
+
+To invite a user to the project from "Project team" page:
+
+1. Log in as Admin, Manager, or Member (Editor).
+2. Navigate to project level -> "Project team" page.
+3. Click on the "Invite user" button.
+4. Type in the "Email" field the full email of user.
+5. Check the "Can edit the Project" checkbox if needed.
+6. Click "Invite" button.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam5.png')} alt="Invite on the Project team page" />
+
+:::note
+User will also be assigned to the organization with Member role by default.
+:::
+
+## Assign user
+
+When the instance is configured for SSO users only, user management is restricted to identities that already exist within the organization’s SSO directory. In this mode, the "Invite user" button is replaced with "Assign user" on the "Project team" page.
+
+To assign a user to the project from "Project team" page:
+
+1. Log in as Admin, Manager, or Member (Editor).
+2. Navigate to project level -> "Project team" page.
+3. Click on the "Assign user" button.
+4. Type in the "Email" field the full email of user.
+5. Check the "Can edit the Project" checkbox if needed.
+6. Click "Assign" button.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam6.png')} alt="Assign user on the Project team page" />
+
+## Change project role
+
+Admin, Manager, Member (Editor) can change user’s permission in the project.
+
+For that:
+
+1. Log in as Admin, Manager, or Member (Editor).
+2. Navigate to project level -> "Project team" page.
+3. Search for the user.
+4. Click on the meatball menu.
+5. Choose "Change to View only" or "Change to Can edit" option.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam7.png')} alt="Change project role on the Project team page" />
+
+:::note
+User can't change their own project role.
+:::
+
+## Unassign user from project
+
+To unassign user from the project from the "Project team" page:
+
+1. Log in as Admin, Manager, or Member (Editor).
+2. Navigate to organization level -> "Project team" page.
+3. Search for the user.
+4. Click on the meatball menu.
+5. Select the "Unassign" option.
+6. Click "Unassign" button.
+
+<MediaViewer src={require('./img/project-team/ProjectTeam8.png')} alt="Unassign user from the project" />

@@ -90,10 +90,15 @@ ReportPortal is licensed under Apache v2.0, which means it’s free to use, come
 
 #### 10. Does ReportPortal have any paid features?
 
-We offer two premium features:
+We offer several premium features:
 
-* [Quality Gates](/quality-gates/) – a set of predefined criteria that must be met for a test run to be considered successful.
-* [SCIM Server](/features/SCIMServerFeature) – helps automate user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Quality Gates](/getting-started/features/QualityGates) – a set of predefined criteria that must be met for a test run to be considered successful.
+- [SCIM Server](/getting-started/features/SCIMServerFeature) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Organizations](/getting-started/features/Organizations) – a scalable way to group and manage multiple projects, apply shared settings, and streamline permissions across teams or business units.
+- [Test Executions](/getting-started/features/TestExecutions) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
+- [Authorization Plugins](/integrations/authorization/) (LDAP, SAML) – enable centralized and secure user authentication by integrating ReportPortal with enterprise identity providers.
+  - [LDAP](/integrations/authorization/LDAP) – enables authentication via directory services, allowing users to access ReportPortal using their domain credentials while simplifying user management through existing directory infrastructure.
+  - [SAML](/integrations/authorization/SamlProviders/) – provides single sign-on (SSO) through providers like Azure or Okta, allowing users to log in with existing corporate credentials while ensuring secure and streamlined access management.
 
 #### 11. Does ReportPortal use AI?
 
@@ -186,32 +191,20 @@ All bulk operations triggered from the “Make decision” modal are limited to 
 When more items are selected, the operation must be divided into multiple requests.
 :::
 
-#### 19. Does ReportPortal have any paid features?
-
-We offer several premium features:
-
-- [Quality Gates](/getting-started/features/QualityGates) – a set of predefined criteria that must be met for a test run to be considered successful.
-- [SCIM Server](/getting-started/features/SCIMServerFeature) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
-- [Organizations](/getting-started/features/Organizations) – a scalable way to group and manage multiple projects, apply shared settings, and streamline permissions across teams or business units.
-- [Test Executions](/getting-started/features/TestExecutions) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
-- [Authorization Plugins](/integrations/authorization/) (LDAP, SAML) – enable centralized and secure user authentication by integrating ReportPortal with enterprise identity providers.
-    - [LDAP](/integrations/authorization/LDAP) – enables authentication via directory services, allowing users to access ReportPortal using their domain credentials while simplifying user management through existing directory infrastructure.
-    - [SAML](/integrations/authorization/SamlProviders/) – provides single sign-on (SSO) through providers like Azure or Okta, allowing users to log in with existing corporate credentials while ensuring secure and streamlined access management. 
-
-#### 20. What is Organizations?
+#### 19. What is Organizations?
 
 Organizations is our premium feature which lets you structure multiple projects in a clear and manageable way. An Organization is a higher-level space in ReportPortal that contains several projects. It helps centralize settings, manage permissions more easily, and keep complex testing environments organized as your team grows.
 
-#### 21. What happens to my data during migration to a version with Organizations?
+#### 20. What happens to my data during migration to a version with Organizations?
 
 - **Open-Source (free):** Your instance will have one Organization created during migration. All existing Projects – including personal projects – are moved into it. You can create unlimited Projects within this Organization. Creating additional Organizations requires a paid subscription.
 
 - **Enterprise (paid):** Each existing Project – including personal projects – will have a same-named Organization created above it and the Project will be placed inside. You can create unlimited new Projects within these Organizations and create additional Organizations on the instance, subject to your permissions.
 
-#### 22. How will the UI change for users after data migration to a version with Organizations? 
+#### 21. How will the UI change for users after data migration to a version with Organizations? 
 
 Users will notice a new Organizations layer in the navigation, while project-level workflows will remain unchanged.
 
-#### 23. How will role-based access change with the introduction of Organizations?
+#### 22. How will role-based access change with the introduction of Organizations?
 
 The access model is now more structured. There are two account types at the instance level — **Administrator** (full instance access) and **Regular user**. Within an Organization, users can be **Managers** or **Members**, and each Member has a project-level role: **Editor** or **Viewer**. This makes permissions clearer and easier to manage across multiple projects.

@@ -5,3 +5,210 @@ description: test
 ---
 
 # All Users
+
+"All Users" page can be accessible using sidebar.
+On this page, Admin can view and manage all users on the instance.
+
+<MediaViewer src={require('./img/all-users/AllUsers1.png')} alt="How to find All Users page in our centralized test automation tool" />
+
+The page provides next information:
+
+* Name – user’s full name
+* Email – user email
+* Last login – when user last logged in in "time ago" format
+* Type – options: Synced, Internal, GitHub, SAML, LDAP, SCIM
+* Organizations – number of organizations to which the user is assigned
+
+:::note
+**Synced** – users that were created in ReportPortal via synchronization with internal systems.<br />
+**Internal** – users that were created in ReportPortal via invite flow or by Admin.<br />
+**GitHub, SAML, LDAP** – users that were created in ReportPortal via authorization through correspondent identity provider.<br />
+**SCIM** – users that were created in ReportPortal via SCIM server.
+:::
+
+<MediaViewer src={require('./img/all-users/AllUsers2.png')} alt="All Users page" />
+
+"All Users" page allows:
+
+* to create and invite new ReportPortal users
+* to assign users to the organizations and projects
+* to unassign users from organizations and projects
+* to update organization and project roles
+* to provide/revoke admin rights for the users
+* to delete users from ReportPortal
+
+In the header of the "All Users" page, the following controls are displayed:
+
+* Search
+* Filter
+* Export
+* Invite user
+* Meatball menu – Create user
+
+<MediaViewer src={require('./img/all-users/AllUsers3.png')} alt="Controls on All Users page" />
+
+## Sorting
+
+Admin can sort the list of all users by full name.
+
+By default, users are sorted in ascending (ASC) order.
+When the arrow next to the "Name" column is clicked, users are sorted by full name in descending (DESC) order.
+
+<MediaViewer src={require('./img/all-users/AllUsers4.png')} alt="Sorting on All Users page" />
+
+## Search
+
+Admin can search users by full user’s name.
+
+<MediaViewer src={require('./img/all-users/AllUsers5.png')} alt="Sorting on All Users page" />
+
+## Filter
+
+Admin can filter users according to specific conditions:
+
+* Permissions
+* Type
+* Last login
+* Email
+
+<MediaViewer src={require('./img/all-users/AllUsers6.png')} alt="Filter on All Users page" />
+
+:::note
+You can use both the filter and the search at the same time.
+:::
+
+## Export
+
+By clicking the "Export" button, you can download the list of users to your computer.
+
+You can apply a filter to the list of users and then click the "Export" button. In this case, the downloaded file will contain only the filtered list of users.
+
+<MediaViewer src={require('./img/all-users/AllUsers7.png')} alt="Export option on All Users page" />
+
+<MediaViewer src={require('./img/all-users/AllUsers8.png')} alt="Downloaded list of users" />
+
+## Invite user
+
+To invite a user on the "All Users" page, perform the following steps:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Click "Invite user" button.
+4. Specify organizations and projects where the invited user will have access.
+
+<MediaViewer src={require('./img/all-users/AllUsers9.png')} alt="Invite user modal window" />
+
+## Create User
+
+:::note
+This option is available only if the "SSO users only" toggle in Server Settings is switched OFF.
+:::
+
+To add a user on the "All Users" page, perform the following steps:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Click on the meatball menu on the header.
+4. Click "Create user" button.
+
+<MediaViewer src={require('./img/all-users/AllUsers10.png')} alt="Create user button" />
+
+5. Fill in all required fields with valid data in the "Create user" modal window and click on the "Create" button.
+
+<MediaViewer src={require('./img/all-users/AllUsers11.png')} alt="Create user modal window" />
+
+<MediaViewer src={require('./img/all-users/AllUsers12.png')} alt="Create user flow" />
+
+## Manage assignments
+
+Admin can define roles and access within the organization and its projects on the "All Users" page.
+
+For that:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Find the user.
+4. Click on the meatball menu.
+5. Select "Manage assignments" option.
+
+<MediaViewer src={require('./img/all-users/AllUsers13.png')} alt="Manage assignments option" />
+
+Manage assignment modal provides following info:
+
+* organizations assignment
+* project assignment within organization
+
+Manage assignment allows to:
+
+* add organization
+* change organization role
+* assign/unassign to/from project
+* change project role
+* unassign from organization
+
+<MediaViewer src={require('./img/all-users/AllUsers14.png')} alt="Manage assignments modal window" />
+
+## Provide Admin rights
+
+Admin can provide admin rights to ReportPortal users.
+
+For that:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Find the user.
+4. Click on the meatball menu.
+5. Select "Provide Admin rights" option.
+
+<MediaViewer src={require('./img/all-users/AllUsers15.png')} alt="Provide Admin rights option" />
+
+6. Confirm the action by clicking "Provide Admin rights" button.
+
+:::note
+By providing admin rights you give full privilege to the user with full access to all the organizations and its data.
+:::
+
+<MediaViewer src={require('./img/all-users/AllUsers16.png')} alt="Provide Admin rights window" />
+
+## Revoke Admin rights
+
+Admin can revoke admin rights from ReportPortal users.
+
+For that:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Find the user.
+4. Click on the meatball menu.
+5. Select "Revoke Admin rights" option.
+
+<MediaViewer src={require('./img/all-users/AllUsers17.png')} alt="Revoke Admin rights option" />
+
+6. Confirm the action by clicking "Revoke Admin rights" button.
+
+:::note
+By revoking admin rights, the user will only have access to the organizations and projects they are assigned to.
+:::
+
+<MediaViewer src={require('./img/all-users/AllUsers18.png')} alt="Revoke Admin rights modal window" />
+
+## Delete
+
+To delete a user from ReportPortal, perform the following steps:
+
+1. Log in into ReportPortal instance as Admin.
+2. Navigate to "All users" page.
+3. Find the user.
+4. Click on the meatball menu.
+5. Select the "Delete" option.
+
+<MediaViewer src={require('./img/all-users/AllUsers19.png')} alt="Delete option" />
+
+6. Confirm the action by clicking "Delete" button.
+
+:::note
+If a user is deleted, their personal organization will also be deleted along with all associated projects and data.
+:::
+
+<MediaViewer src={require('./img/all-users/AllUsers20.png')} alt="Delete user modal window" />
+
