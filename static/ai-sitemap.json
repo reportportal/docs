@@ -232,6 +232,11 @@
           "description": "Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard."
         },
         {
+          "title": "Version 26.0.3",
+          "url": "https://reportportal.io/docs/releases/Version26.0.3/",
+          "description": ""
+        },
+        {
           "title": "Version 26.0.2",
           "url": "https://reportportal.io/docs/releases/Version26.0.2/",
           "description": ""
@@ -347,14 +352,14 @@
           "description": "ReportPortal v24.2.2 release notes with bug fixes and enhanced stability."
         },
         {
-          "title": "Version 24.1",
-          "url": "https://reportportal.io/docs/releases/Version24.1/",
-          "description": "ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features."
-        },
-        {
           "title": "Version 24.2",
           "url": "https://reportportal.io/docs/releases/Version24.2.0/",
           "description": "ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance."
+        },
+        {
+          "title": "Version 24.1",
+          "url": "https://reportportal.io/docs/releases/Version24.1/",
+          "description": "ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features."
         },
         {
           "title": "Version 23.2",
