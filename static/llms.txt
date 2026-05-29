@@ -58,6 +58,7 @@
 
 - [Releases](https://reportportal.io/docs/releases/): Check out the latest ReportPortal version, release notes, and updates.
 - [Archived Releases](https://reportportal.io/docs/releases/archived-releases/): Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard.
+- [Version 26.0.3](https://reportportal.io/docs/releases/Version26.0.3/)
 - [Version 26.0.2](https://reportportal.io/docs/releases/Version26.0.2/)
 - [Version 26.0.1](https://reportportal.io/docs/releases/Version26.0.1/)
 - [Version 25.2](https://reportportal.io/docs/releases/Version25.2/)
@@ -81,8 +82,8 @@
 - [Version 25.0.2](https://reportportal.io/docs/releases/Version25.0.2/): ReportPortal v25.0.2 release notes with bug fixes.
 - [Version 24.2.3](https://reportportal.io/docs/releases/Version24.2.3/): ReportPortal v24.2.3 release notes with bug fixes.
 - [Version 24.2.2](https://reportportal.io/docs/releases/Version24.2.2/): ReportPortal v24.2.2 release notes with bug fixes and enhanced stability.
-- [Version 24.1](https://reportportal.io/docs/releases/Version24.1/): ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features.
 - [Version 24.2](https://reportportal.io/docs/releases/Version24.2.0/): ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance.
+- [Version 24.1](https://reportportal.io/docs/releases/Version24.1/): ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features.
 - [Version 23.2](https://reportportal.io/docs/releases/archived-releases/Version23.2/): ReportPortal v23.2 release notes with new monitoring features, data retention policies, and enhanced test automation reporting tools capabilities.
 - [Version 23.1](https://reportportal.io/docs/releases/archived-releases/Version23.1/): ReportPortal v23.1 archived release notes with new logo, enhanced features.
 - [Version 5.7.4](https://reportportal.io/docs/releases/archived-releases/Version5.7.4/): ReportPortal v5.7.4 archived release notes with MinIO client updates.
