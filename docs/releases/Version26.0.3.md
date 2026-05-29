@@ -10,7 +10,7 @@ sidebar_label: Version 26.0.3
 
 # 1. **What's new:**
 
-**[Agentic testing results support](https://reportportal.io/docs/work-with-reports/ViewLaunches/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_3&utm_content=launches_tab#launches-tab)**
+**[Agentic testing results support](https://reportportal.io/docs/log-data-in-reportportal/AgenticTestResults/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_3&utm_content=agentic_launch#merge-launches)**
 As AI-driven testing becomes a core part of modern quality engineering, ReportPortal provides first-class support for agentic test results — outcomes produced by autonomous AI agents rather than traditional scripted test automation.
 
 Starting from version 26.0.3, ReportPortal can receive and display results from AI agentic testing pipelines alongside classic automation results. This gives teams a unified view of their entire testing landscape — human-authored tests, automated regression suites, and AI agent sessions — in one place.
