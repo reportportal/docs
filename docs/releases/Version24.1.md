@@ -1,5 +1,5 @@
 ---
-sidebar_position: 24
+sidebar_position: 26
 sidebar_label: Version 24.1
 description: ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features.
 ---
