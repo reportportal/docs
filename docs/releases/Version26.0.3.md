@@ -61,6 +61,7 @@ Search now uses 'starts with' logic (previously 'contains'). Results are capped 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
 |Jira Cloud|reportportal/plugin-bts-jira-cloud|5.15.10|
+|Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.2|
 |Test Executions||1.0.3|
 
 
@@ -77,7 +78,6 @@ Search now uses 'starts with' logic (previously 'contains'). Results are capped 
 |Monday|reportportal/plugin-bts-monday|1.1.1|
 |Azure|reportportal/plugin-bts-azure|5.13.2|
 |Jira|reportportal/plugin-bts-jira|5.15.0|
-|Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.1|
 |Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Slack|reportportal/plugin-slack|1.1.2|
