@@ -640,7 +640,12 @@
         {
           "title": "Reporting SDK",
           "url": "https://reportportal.io/docs/log-data-in-reportportal/ReportingSDK/",
-          "description": "Integrate your test framework with ReportPortal using the Reporting SDK to log detailed test data, including nested steps and test case IDs, for enhanced reporting."
+          "description": "Integrate your test framework with ReportPortal using the Reporting SDKs to log detailed test data, including nested steps and test case IDs, for enhanced reporting."
+        },
+        {
+          "title": "Agentic test results",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/AgenticTestResults/",
+          "description": "Learn how to report AI agentic test results to ReportPortal to get a unified view of your testing pipeline, verify AI agent work with evidence, and make informed release decisions."
         },
         {
           "title": "Import data to ReportPortal",
