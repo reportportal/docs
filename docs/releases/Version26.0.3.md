@@ -50,7 +50,13 @@ The Overall Statistics widget now has a new checkbox: Consider interrupted tests
 **4. [Test Case Search widget](https://reportportal.io/docs/dashboards-and-widgets/TestCaseSearch/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_3&utm_content=search_widget): search behavior and result limits**
 Search now uses 'starts with' logic (previously 'contains'). Results are capped at 10 by default and 20 maximum.
 
-# 6. **Released services and plugins:**
+# 6. **Known issues:**
+Hovering over a defect type “bagel” may crash the page if the related custom defect type was deleted after being assigned to a test item. The issue occurs on the Launches page at step level and may display a TypeError instead of showing the defect type popup.
+
+Workaround: To avoid this issue, do not delete custom defect types that have already been assigned to test items.
+This issue will be fixed in version 26.0.4.
+
+# 7. **Released services and plugins:**
 |Service Name|Repository|Tag|
 |---|---| --- |
 |API|reportportal/service-api|5.15.2|
