@@ -12,49 +12,40 @@ To install the Sauce Labs plugin, see [Upload plugin](/plugins/ManagePlugins#upl
 
 Configure the integration with Sauce Labs to watch a video of test executions in the our centralized test automation tool.
 
-
-**Permissions:**
-
-- User with account role *ADMINISTRATOR* can configure the integration for the whole instance or per project.
-- User with account role *PROJECT MANAGER* can configure the integration only on a project where they are assigned on as Project Manager.
+:::important
+Admin can upload Sauce Labs plugin and create global integrations (applicable to all projects on the instance) on the Plugins page.<br />
+Manager and Member (Editor) can re-write global configuration with project ones on Project Settings -> Integrations.
+:::
 
 ## Global Sauce Labs integration
 
 To configure Sauce Labs for the whole instance:
 
-1. Log in to ReportPortal as an ADMIN user.
-
-2. Open the list on the right of the user's image.
-
-3. Click the 'Administrative' link.
-
-4. Click 'Plugins' from the left-hand sidebar.
-
-5. Click the 'Sauce Labs' tab.
-
-6. Click 'Add integration'.
-
-7. The following fields should be present:
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Sauce Labs" panel.
+4. Click "Add integration" button.
+5. Fill and confirm the authorization form.
+6. Click "Create" button.
 
   ```javascript 
   `User name`: <host_name_of_email_server>
   `Access token`: <your access token>
   `Data center`: <Europe, USA>
   ```
-
-8. Confirm data in the form.
-
-After you've added the Sauce Labs integration, you can use the Sauce Labs in ReportPortal.
-
 ## Project Sauce Labs integration
 
-If the plugin is configured on the global level, then all projects at this instance will use this configuration by default.
+If any project needs different Sauce Labs configuration, you can add a project configuration. This means that when a new global integration is added to our test automation results dashboard, it will no longer be applied to this project.
 
-However, you can unlink the integration from the global level and use a project level configuration instead.
+For that,
 
-To unlink the integration, click 'Unlink & Setup Manually', then follow the on-screen instructions.
+1. Log in to ReportPortal as Admin, Manager, or Member (Editor).
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Sauce Labs" panel.
+4. Click on "Add Project integration" button.
+5. Fill and confirm the authorization form.
 
-<MediaViewer src={require('./img/SauceLabsUnlinkGlobal.png')} alt="Sauce Labs Unlink Global integration" />
+<MediaViewer src={require('./img/SauceLabsProject.png')} alt="Sauce Labs project integration" />
 
 ## How to use the Sauce Labs integration
 

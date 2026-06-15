@@ -14,15 +14,11 @@ To install the Rally plugin, see [Upload plugin](/plugins/ManagePlugins#upload-p
 
 If all projects on your instance are using the same RALLY  projects, you will be able to configure **global integrations** which will be applied on all projects.
 
-1. Log in as ADMIN
-
-2. Go to Administrative > Plugins
-
-3. Click on RALLY plugin panel
-
-4. Click on "Add integration" button
-
-5. Fill and confirm the authorization form
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Rally" panel.
+4. Click on "Add integration" button.
+5. Fill and confirm the authorization form.
 
 ```javascript
 'Integration Name': <The name which you want to give to your integration> - should be unique
@@ -38,14 +34,9 @@ This feature gives you the ability to choose which type you will post a ticket.
 
 To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions:
 
-1. Click on "Configure" button
-
-2. Choose issue type from the drop-down
-
-3. Check the needed fields and fill them in if necessary
-
-4. Click on "Submit" button
-
+1. In the Configuration section, choose issue type from the drop-down.
+2. Check the required fields and complete them.
+3. Click on "Submit" button.
 
 Now team members on all your projects will be able to submit issues in RALLY. Options for Post Issue / Link issue are activated.
 
@@ -68,20 +59,13 @@ User can add several integrations, but with a different name to the **one RALLY 
 
 If you need to edit RALLY integration authorization parameters, please perform actions:
 
-1. Log in as ADMIN
-
-2. Go to Administrative > Plugins
-
-3. Click on RALLY plugin panel
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Rally" panel.
 4. Click on a tab with existing integration
-
-5. Click on "Edit authorization" link
-
+5. Click on "Edit" icon.
 6. Change "Integration name"
-
 7. Type your RALLY credentials
-
 8. Submit the form
 
 :::note
@@ -90,56 +74,41 @@ You can edit only "Integration name". If you need other changes, please submit n
 
 If you need to edit fields which should be posted in RALLY, please perform actions:
 
-1. Log in as ADMIN
-
-2. Go to Administrative > Plugins
-
-3. Click on RALLY plugin panel
-
-4. Click on a tab with existing integration
-
-5. Click on "Configure" button
-
-6. Choose issue type from the drop-down
-
-7. Check the needed fields and fill them in if necessary
-
-8. Click on "Submit" button
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Rally" panel.
+4. Click on the tab with existing integration.
+5. Click on "Edit" button in Configuration section.
+6. Choose issue type from the drop-down.
+7. Check the needed fields and fill them in if necessary.
+8. Click on "Submit" button.
 
 
 ### Remove global RALLY integration
 
 If you need to remove RALLY integration, please perform actions:
 
-1. Log in as ADMIN
-
-2. Go to Administrative > Plugins
-
-3. Click on RALLY plugin panel
-
-4. Click on a tab with existing integration
-
-5. Click on "Remove integration"
-
-6. Submit the action
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Rally" panel.
+4. Click on the tab with existing integration.
+5. Click on "Remove" icon.
+6. Click "Delete" button.
 
 ## Project RALLY integration
 
 ### Add new project RALLY integration
 
-If any project needs different RALLY configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to the ReportPortal, it won't be applied to the unlinked project.
+If any project needs different RALLY configurations, you can add a project configuration. This means that when a new global integration is added to our centralized test automation tool, it will no longer be applied to this project.
 
 For that,
 
-1. Log in as an ADMIN or Project Manager
-
-2. Go to Project Settings > Integrations
-
-3. Click on the RALLY integration panel
-
-4. Click on "Unlink and setup manually" button
-
-5. Fill and confirm the authorization form
+1. Log in to ReportPortal as Admin, Manager, or Member (Editor).
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Rally" panel.
+4. Click on "Add Project integration" button.
+5. Fill in the necessary fields.
+6. Click "Create" button.
 
 ```javascript
 'Integration Name ': <The name which you want to give to your integration> - should be unique
@@ -156,32 +125,13 @@ This feature gives you the ability to choose which type you will post a ticket w
 
 To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions:
 
-1. Click on "Configure" button
-
-2. Choose issue type from the drop-down
-
-3. Check the needed fields and fill them in if necessary
-
-4. Click on "Submit" button
-
+1. In the Configuration section, choose issue type from the dropdown.
+2. Check the required fields and complete them.
+3. Click on "Submit" button.
 
 Now team members on **this project** will be able to submit issues in RALLY. Options for Post Issue / Link issue are activated.
 
 You can add more integrations by clicking on "Add integration" button.
-
-### Reset to project RALLY Integrations
-
-If you want to delete project integrations with RALLY and link your project with global configurations, please perform actions described below:
-
-1. Log in as an ADMIN or Project Manager
-
-2. Go to Project Settings > Integrations
-
-3. Click on the RALLY integration panel
-
-4. Click on "Reset to global settings" button
-
-5. Confirm the action
 
 ## Post issue to Rally
 
@@ -193,17 +143,12 @@ If you want to post a new issue to Rally, you need to have a project or global i
 
 Post issue via Step view
 
-1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
-
-2. Go to a Step view
-
-3. Choose a needed item
-
-4. Click on "Actions" button
-
-5. Choose "Post issue" option
-
-6. Fill in the "Post issue" form with valid data
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
+2. Go to a Step view.
+3. Click on the pencil icon near a needed item to open "Make decision" modal.
+4. Select "Post issue" option and then "Apply & Continue".
+5. Fill in the "Post issue" form with valid data.
+6. Click "Post issue" button.
 
 ```javascript
 `BTS`: if you have configured BTS integrations, you will be able to choose between them
@@ -213,11 +158,8 @@ Post issue via Step view
 `ApiKey`: user apikey
 ```
 
-7. Submit the form
-
-8. A new issue will be posted in BTS with information from ReportPortal
-
-9. A label with issue ID will be added to the test item
+A new issue will be posted in BTS with information from ReportPortal.
+A label with issue ID will be added to the test item.
 
 ## Link an issue with an issue in Rally
 
@@ -227,17 +169,12 @@ Linking an issue with an issue in Rally means adding a clickable link to an exis
 
 Link issue via Step view
 
-1. Log in to ReportPortal as Admin, PM, Member, Customer or Operator
-
-2. Go to a Step view
-
-3. Choose a needed item
-
-4. Click on "Actions" button
-
-5. Choose "Link issue" option
-
-6. Fill in the "Link issue" form with valid data
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
+2. Go to a Step view.
+3. Click on the pencil icon near a needed item to open "Make decision" modal.
+4. Select "Link issue" option and then "Apply & Continue".
+5. Fill in the "Link issue" form with valid data.
+6. Click "Link issue" button.
 
 ```javascript
 `BTS`: if you have configured BTS integrations, you will be able to choose between them
@@ -246,6 +183,4 @@ Link issue via Step view
 `Issue ID`: information which will be displayed on the label in ReportPortal
 ```
 
-7. Submit the form
-
-8. A label with issue ID will be added to the test item
+A label with issue ID will be added to the test item.
