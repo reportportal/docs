@@ -11,8 +11,8 @@ To install the Jira Server plugin, see [Upload plugin](/plugins/ManagePlugins#up
 Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
 :::important
-The Administrator can upload Jira Server plugin and create global integrations on the Plugins tab in the Administrate section.<br />
-The Project Manager can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+Admin can upload Jira Server plugin and create global integrations (applicable to all projects on the instance) on the Plugins page.<br />
+Manager and Member (Editor) can re-write global configuration with project ones on Project Settings -> Integrations.
 :::
 
 ## Global JIRA Server integration
@@ -21,13 +21,10 @@ The Project Manager can work only on the project level. He can unlink and re-wri
 
 If all projects on your instance are using the same Jira projects, you will be able to configure **global integrations** which will be applied on all projects.
 
-1. Log in as ADMIN.
-
-2. Go to Administrate > Plugins.
-
-3. Click on JIRA Server plugin panel.
-
-4. Click on "Add integration" button.
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Jira Server" panel.
+4. Click "Add integration" button.
 
 <MediaViewer src={require('./img/jira/JiraServer1.png')} alt="Add global Jira Server integration in our test results reporting service" />
 
@@ -53,9 +50,7 @@ This feature gives you the ability to choose which type you will post a ticket.
 To select a needed issue type and predefined fields for the chosen issue, you should perform the following actions:
 
 1. In the Configuration section, choose issue type from the drop-down.
-
 2. Check the required fields and fill them in if necessary (if you want them to be prepopulated).
-
 3. Click on "Submit" button.
 
 <MediaViewer src={require('./img/jira/JiraServer3.png')} alt="Selecting a needed issue type and predefined fields" />
@@ -79,60 +74,43 @@ Users can add several integrations, but with a different name to the **one JIRA 
 
 If you need to edit Jira Server integration parameters, please perform actions:
 
-1. Log in as ADMIN.
-
-2. Go to Administrate > Plugins.
-
-3. Click on Jira Server plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
-
 5. Click on "Edit" icon.
 
 <MediaViewer src={require('./img/jira/JiraServer4.png')} alt="Update global Jira Server integration" />
 
 6. Change "Integration name".
-
 7. Type your BTS password or API Token.
-
 8. Click on "Save" button.
 
 <MediaViewer src={require('./img/jira/JiraServer5.png')} alt="Change Integration name" />
 
 If you need to edit fields which should be posted in Jira Server, please perform actions:
 
-1. Log in as ADMIN.
-
-2. Go to Administrate > Plugins.
-
-3. Click on Jira Server plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
-
 5. Click on "Edit" button in Configuration section.
 
 <MediaViewer src={require('./img/jira/JiraServer6.png')} alt="Edit fields which should be posted in Jira Server" />
 
 6. Choose issue type from the drop-down.
-
 7. Check the needed fields and fill them in if necessary.
-
 8. Click on "Submit" button.
 
 ### Remove global Jira Server integration
 
 If you need to remove Jira Server integration, please perform actions:
 
-1. Log in as ADMIN.
-
-2. Go to Administrate > Plugins.
-
-3. Click on Jira Server plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
-
 5. Click on "Remove" icon.
-
 6. Click "Delete" button.
 
 <MediaViewer src={require('./img/jira/JiraServer7.png')} alt="Delete global Jira Server integration" />
@@ -143,22 +121,18 @@ If you need to remove Jira Server integration, please perform actions:
 
 ### Add new project Jira Server integration
 
-If any project needs different Jira Server configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to our centralized test automation tool, it won't be applied to the unlinked project.
+If any project needs different Jira Server configurations, you can add a project configuration. This means that when a new global integration is added to our centralized test automation tool, it will no longer be applied to this project.
 
 For that,
 
-1. Log in as an ADMIN or Project Manager.
-
-2. Go to Project Settings > Integrations.
-
-3. Click on the Jira Server integration panel.
-
+1. Log in to ReportPortal as Admin, Manager, or Member (Editor).
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Jira Server" panel.
 4. Click on "Add Project integration" button.
 
 <MediaViewer src={require('./img/jira/JiraServer8.png')} alt="Add project Jira Server integration in our test results dashboard" />
 
 5. Fill in the necessary fields.
-
 6. Click "Create" button.
 
 <MediaViewer src={require('./img/jira/JiraServer9.png')} alt="Authorization form for project Jira Server integration" />
@@ -179,9 +153,7 @@ This feature gives you the ability to choose which type you will post a ticket.
 To choose a needed issue type and predefined field for the chosen issue, you should perform the following actions:
 
 1. In the Configuration section, choose issue type from the drop-down.
-
 2. Check the needed fields and fill them in if necessary.
-
 3. Click on "Submit" button.
 
 <MediaViewer src={require('./img/jira/JiraServer10.png')} alt="Selecting a needed issue type and predefined fields" />
@@ -189,22 +161,6 @@ To choose a needed issue type and predefined field for the chosen issue, you sho
 Now team members on **this project** will be able to submit issues in Jira. Options for Post issue / Link issue are activated.
 
 You can add more integrations by clicking on "Add integration" button.
-
-### Reset to global Jira Server Integrations
-
-If you want to delete project integrations with Jira Server and link your project with global configurations, please perform actions described below:
-
-1. Log in as an ADMIN or Project Manager.
-
-2. Go to Project Settings > Integrations.
-
-3. Click on the JIRA Server integration panel.
-
-4. Click on "Reset to Global Integrations" button.
-
-5. Confirm the action.
-
-<MediaViewer src={require('./img/jira/JiraServer11.png')} alt="Reset to Global Integrations" />
 
 <MediaViewer src="https://youtu.be/t3XwploIgbc" alt="Project Jira Integration" type="video" />
 
@@ -229,10 +185,8 @@ Posting an issue to Jira Server means to create a new issue in Jira from ReportP
 
 If you want to post a new issue to Jira, you need to have a project or global integration with Jira Server.
 
-1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
-
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
 2. Go to a Test view.
-
 3. Click on the pencil icon near a needed item to open "Make decision" modal.
 
 <MediaViewer src={require('./img/jira/JiraServer12.png')} alt="Open Make decision modal" />
@@ -242,7 +196,6 @@ If you want to post a new issue to Jira, you need to have a project or global in
 <MediaViewer src={require('./img/jira/JiraServer13.png')} alt="Selecting Post issue option" />
 
 5. Fill in the "Post issue" form with valid data.
-
 6. Click "Post issue" button.
 
 <MediaViewer src={require('./img/jira/JiraServer14.png')} alt="Post issue form" />
@@ -261,16 +214,11 @@ A label with Jira Issue ID will be added to the test item. Details of the create
 
 You can also link ReportPortal item to already existing issue in Jira.
 
-1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
-
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
 2. Go to a Test view.
-
 3. Click on the pencil icon near a needed item to open "Make decision" modal.
-
 4. Select "Link issue" option and then "Apply & Continue".
-
 5. Fill in the "Link issue" form with valid data.
-
 6. Click "Link issue" button.
 
 <MediaViewer src={require('./img/jira/JiraServer17.png')} alt="Link issue form" />

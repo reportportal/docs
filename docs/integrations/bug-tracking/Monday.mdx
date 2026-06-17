@@ -11,8 +11,8 @@ To install the Monday plugin, see [Upload plugin](/plugins/ManagePlugins#upload-
 Integration with the Monday Bug Tracking System (BTS) can be helpful for projects which are already using Monday BTS as a tracking tool. The integration provides an exchange of information between our test results reporting service and the Monday Server, such as posting issues and linking issues, getting updates on their statuses.
 
 :::important
-The Administrator can upload a plugin and create global integrations on the Plugin tab in the Administrate section.<br />
-The Project Manager can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+Admin can upload Monday plugin and create global integrations (applicable to all projects on the instance) on the Plugins page.<br />
+Manager and Member (Editor) can re-write global configuration with project ones on Project Settings -> Integrations.
 :::
 
 Monday BTS integration can be configured on the global level (for all projects on the instance) or on the project level (only for one project).
@@ -23,12 +23,9 @@ Monday BTS integration can be configured on the global level (for all projects o
 
 You might want to configure global integrations which will be applied on all projects if all projects in your instance are using the same Monday BTS projects.
 
-1. Log in as ADMIN.
-
-2. Go to Administrate > Plugins.
-
-3. Click on Monday plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Monday" panel.
 4. Click on ‘Add integration’ button.
 
 <MediaViewer src={require('./img/monday/Monday1.png')} alt="Add new global Monday BTS integration in our automation testing reporting tool" />
@@ -47,9 +44,7 @@ You might want to configure global integrations which will be applied on all pro
 How to find API Token in Monday:
 
 1. Click on the user icon at the top right corner.
-
 2. Open ‘Developers’ section.
-
 3. Open ‘My access tokens’ tab.
 
 <MediaViewer src={require('./img/monday/Monday3.png')} alt="How to find API Token in Monday" />
@@ -66,38 +61,25 @@ You can add more integrations by clicking on ‘Add integration’ button.
 
 If you need to edit Monday BTS integration parameters, perform actions described below:
 
-1. Log in as ADMIN.
-
-2. Go to Administrative > Plugins.
-
-3. Click on Monday plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Monday" panel.
 4. Click on the tab with existing integration.
-
 5. Click on ‘Edit’ icon.
-
 6. Change ‘Integration name’.
-
 7. Type your API Token.
-
 8. Click ‘Save’ button.
 
 <MediaViewer src={require('./img/monday/Monday5.png')} alt="Edit Monday BTS integration parameters" />
 
 If you need to edit fields which should be posted in Monday BTS, perform actions described below:
 
-1. Log in as ADMIN.
-
-2. Go to Administrative > Plugins.
-
-3. Click on Monday plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Monday" panel.
 4. Click on the tab with existing integration.
-
 5. Click on ‘Edit’ button in Configuration section.
-
 6. Check the needed fields and fill them in if necessary.
-
 7. Click on ‘Submit’ button.
 
 <MediaViewer src={require('./img/monday/Monday6.png')} alt="Edit fields which should be posted in Monday BTS" />
@@ -106,16 +88,11 @@ If you need to edit fields which should be posted in Monday BTS, perform actions
 
 If you need to remove Monday BTS integration, perform actions described below:
 
-1. Log in as ADMIN.
-
-2. Go to Administrative > Plugins.
-
-3. Click on Monday plugin panel.
-
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Monday" panel.
 4. Click on the tab with existing integration.
-
 5. Click on ‘Remove’ icon.
-
 6. Click ‘Delete’ button.
 
 <MediaViewer src={require('./img/monday/Monday7.png')} alt="Remove global Monday BTS integration in our test results dashboard" />
@@ -126,18 +103,14 @@ If you need to remove Monday BTS integration, perform actions described below:
 
 ### Add new project Monday BTS integration
 
-If any project needs different Monday BTS configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added, it won't be applied to the unlinked project.
+If any project needs different Monday BTS configurations, you can add a project configuration. This means that when a new global integration is added, it will no longer be applied to this project.
 
 For that,
 
-1. Log in as an ADMIN or Project Manager.
-
-2. Go to Project Settings > Integrations.
-
-3. Click on the Monday integration panel.
-
+1. Log in to ReportPortal as Admin, Manager, or Member (Editor).
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Monday" panel.
 4. Click on ‘Add Project Integration’ button.
-
 5. Fill in the necessary fields and click ‘Create’ button.
 
 <MediaViewer src={require('./img/monday/Monday8.png')} alt="Add project Monday BTS integration" />
@@ -157,22 +130,6 @@ Now team members on this project will be able to submit issues in Monday. Option
 
 You can add more integrations by clicking on ‘Add Project Integration’ button.
 
-### Reset to global Monday BTS Integration
-
-If you want to delete project integrations with Monday BTS and link your project with global configurations, perform actions described below:
-
-1. Log in as an ADMIN or Project Manager.
-
-2. Go to Project Settings > Integrations.
-
-3. Click on the Monday integration panel.
-
-4. Click on ‘Reset to Global Integrations’ button.
-
-5. Click ‘Reset’ button.
-
-<MediaViewer src={require('./img/monday/Monday10.png')} alt="Reset to global Monday BTS Integration" />
-
 <MediaViewer src="https://youtu.be/LLGLjIKLvlo" alt="Monday plugin. Project integration" type="video" />
 
 ### Post issue to Monday BTS
@@ -183,10 +140,8 @@ If you want to post a new issue to Monday BTS, you need to have a project or glo
 
 **Post issue via Step view**
 
-1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
-
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
 2. Go to a Step view.
-
 3. Click on the pencil icon near a needed item to open ‘Make decision’ modal.
 
 <MediaViewer src={require('./img/monday/Monday11.png')} alt="Post issue to Monday BTS" />
@@ -196,7 +151,6 @@ If you want to post a new issue to Monday BTS, you need to have a project or glo
 <MediaViewer src={require('./img/monday/Monday12.png')} alt="Select ‘Post issue’ option" />
 
 5. Fill in the ‘Post issue’ form with valid data.
-
 6. Click ‘Post issue’ button.
 
 <MediaViewer src={require('./img/monday/Monday13.png')} alt="Fill in the ‘Post issue’ form" />
@@ -217,18 +171,14 @@ Linking an issue with an issue in Monday BTS means adding a clickable link to an
 
 **Link issue via Step view**
 
-1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
-
+1. Log in to ReportPortal as Admin, Manager, Member (Editor).
 2. Go to a Step view.
-
 3. Click on the pencil icon near a needed item to open ‘Make decision’ modal.
-
 4. Select ‘Link issue’ option and then ‘Apply & Continue’.
 
 <MediaViewer src={require('./img/monday/Monday16.png')} alt="Select ‘Link issue’ option" />
 
 5. Fill in the ‘Link issue’ form with valid data.
-
 6. Click ‘Link issue’ button.
 
 <MediaViewer src={require('./img/monday/Monday17.png')} alt="Fill in the ‘Link issue’ form" />
