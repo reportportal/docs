@@ -24,13 +24,10 @@ Once new application is created, you will have Client ID. Click on "Generate a n
 ### ReportPortal configuration
 
 To setup access with GitHub auth on ReportPortal:
-1. Log in to the ReportPortal as an ADMIN user
-2. Open the list on the right of the user's image.
-3. Click the 'Administrative' link
-4. Click the 'Server Settings' from the left-hand sidebar
-5. Go to the 'Authorization Configuration' tab
-6. Then change the switcher position of 'Activate GitHub Authorization' to ON
-7. The Next fields should appear:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to the "Server Settings" page -> "Authorization Configuration" tab.
+3. Change the switcher position of "Activate GitHub Authorization" to ON.
 
 ```javascript 
 'Client ID': <value_of_clientId>
