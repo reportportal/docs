@@ -10,9 +10,9 @@ ReportPortal as a test management system can be reinforced by uploading plugins.
 
 * Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps, GitLab, Monday and Rally
 * Notification plugins: E-mail server, Slack, Telegram
-* Authorization plugins: LDAP, Active directory, SAML
+* Authorization plugins: LDAP, SAML
 * Import plugins: JUnit, RobotFramework
-* Sauce Labs
+* Other: Organizations, Sauce Labs, Quality Gates, Test Executions
 
 | **Plugin**  | **Features**  |   
 |---|---|
@@ -26,7 +26,7 @@ ReportPortal as a test management system can be reinforced by uploading plugins.
 ## Upload plugin
 
 **Permissions:**
-Only ADMINISTRATOR can upload plugin.
+Only ADMIN can upload plugin.
 
 You can find the latest version of all ReportPortal plugins by the [link](https://search.maven.org/search?q=g:com.epam.reportportal%20plugin). Then you should download the latest version of a needed plugin. Or you can use a direct link to the needed plugin from the table below.
 
@@ -47,12 +47,13 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 
 <MediaViewer src="https://youtu.be/57QfOZ8hGwg" alt="Upload Plugin to our open source test reporting tool" type="video" />
 
-For a plugin uploading please perform the following actions:
-* log in to ReportPortal as administrator
-* go to Administrate -> Plugins section
-* click on Upload button
-* choose .jar file which should be uploaded
-* and click Upload
+For a plugin uploading perform the following actions:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on "Upload" button.
+4. Choose .jar file which should be uploaded.
+5. Click "Upload" button.
 
 > **Technical requirements for the plugin:**
 >
@@ -66,33 +67,39 @@ For a plugin uploading please perform the following actions:
 ## Update a plugin
 
 **Permissions:**
-Only ADMINISTRATOR can update the plugin.
+Only ADMIN can update the plugin.
+
 It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and an existing version will be updated to the latest one. 
 
 ## Enable / Disable a plugin
 
 **Permissions:**
-Only ADMINISTRATOR can enable / disable plugin.
+Only ADMIN can enable / disable plugin.
 
 <MediaViewer src="https://youtu.be/3rKYlzUqg_0" alt="Enable/Disable Plugin" type="video" />
 
 If you do not want to remove a plugin from project settings, but want to save plugin configurations, you can use an enable/disable function. 
+
 For that:
-* log in to ReportPortal as administrator
-* go to Administrate -> Plugins section -> find plugin
-* click a switcher to disable
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Find plugin.
+4. Click a switcher to disable.
 
 The plugin will be removed from Project Settings on the project spaces. But all plugin configurations will be saved in the DataBase and you can return them back if you need by clicking on the switcher enable the plugin.
 
 ## Uninstall a plugin 
 
 **Permissions:**
-Only ADMINISTRATOR can uninstall the plugin.
+Only ADMIN can uninstall the plugin.
 
-Users can remove a plugin from the system. For that  you should:
-* log in to ReportPortal as administrator
-* go to Administrate > Plugins tab > click on Plugin
-* click Uninstall button
+You can remove a plugin from the system by following these steps:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click on Plugin.
+4. Click "Uninstall" button.
 
 The plugin will be successfully deleted. All plugin configurations will be deleted from the DataBase.
 E-mail plugin can not be uninstalled.
@@ -110,25 +117,6 @@ Users can configure a plugin on the **instance-level** (global configuration) an
 If a user configures plugin on the **global level**, then these configurations will be applied to all projects on the instance, which do not have their own configurations.
 
 If the user configures a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
-
-Details on how to configure a specific plugin please find in the [Integration section](/configuration/IntegrationViaPlugin):
-
-* [integration with Jira Server](/plugins/bug-tracking/AtlassianJiraServer)
-* [integration with Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud)
-* [integration with Azure DevOps](/plugins/bug-tracking/AzureDevOps)
-* [integration with GitLab](/plugins/bug-tracking/GitLab)
-* [integration with Monday](/plugins/bug-tracking/Monday)
-* [integration with Rally](/plugins/bug-tracking/Rally)
-* [integration with SauceLabs](/plugins/other/SauceLabs)
-* [integration with E-mail server](/plugins/notifications/EmailServer)
-* [integration with Slack](/plugins/notifications/Slack)
-* [integration with Telegram](/plugins/notifications/Telegram)
-* [integration with LDAP](/plugins/authorization/LDAP)
-* [integration with Active directory](/plugins/authorization/ActiveDirectory)
-* [integration with Okta SAML](/plugins/authorization/SamlProviders/OktaSaml)
-* [integration with Azure SAML](/plugins/authorization/SamlProviders/AzureSaml)
-* [integration with JUnit](/plugins/import/JUnit)
-* [integration with RobotFramework](/plugins/import/RobotFramework)
 
 > **Use case 1:** 
 > 
