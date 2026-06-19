@@ -82,7 +82,8 @@ const config = {
                   u.pathname += '/';
                 }
                 const releaseMatch = u.pathname.match(/\/releases\/(Version[^/]+)\/?$/);
-                const lastmod = releaseMatch ? releaseLastmod[releaseMatch[1]] : undefined;
+                const releaseDate = releaseMatch ? releaseLastmod[releaseMatch[1]] : undefined;
+                const lastmod = releaseDate ?? item.lastmod;
                 return { ...item, url: u.toString(), lastmod };
               })
               .filter((item) => {
