@@ -5,3 +5,209 @@ description: test
 ---
 
 # All Organizations
+
+"All organizations" page can be accessible using sidebar.
+
+On this page, Admin can see a list of all organizations on the instance, while other users only see the organizations they are assigned to.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations1.png')} alt="How to find All Organizations page in our qa automation dashboard" />
+
+The page provides next information:
+
+* **Organization name**<br />
+By clicking on the organization name user is redirected to Organization level. In case the organization name is too long, an ellipsis appears at the end. Upon hovering over the ellipsis, a browser tooltip appears with full organization name.
+* **Organization type icon**<br />
+    * **Internal** – organizations, created directly in ReportPortal
+    * **Personal** – organizations, created for each user upon user account creation in ReportPortal. The creation of personal organizations on the instance is configured by Admin in Server Settings>Authorization configuration
+    * **Synched** – organizations, created via synchronization of ReportPortal and external systems.
+
+"All Organizations" page allows:
+
+* to view a list of all organizations on the instance (Admin) or only assigned organizations (other roles)
+* to export the list of organizations (Admin), with or without applied filters
+* see all the events of all the projects within a single organization (Admin)
+* to assign/unassign users from organization
+* to rename an organization
+* to delete an organization
+
+## Controls
+
+In the header of the "All Organizations" page, the following controls are displayed if at least one organization is available to the user:
+
+* Search icon – available for all roles
+* Filter icon – available for Admin, Manager
+* Sorting – available for all roles
+* Panel view – available for all roles
+* Table view – available for all roles
+* Export button – available for Admin
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations2.png')} alt="Controls on the All Organizations page" />
+
+20 organizations by default are displayed. By clicking on the default value user can choose available values from dropdown: 10, 20, 50, 100.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations3.png')} alt="Dropdown at the bottom" />
+
+There are two types of "All Organizations" page available:
+
+* Table view
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations4.png')} alt="All Organizations page table view" />
+
+* Panel view
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations5.png')} alt="All Organizations page panel view" />
+
+## Search
+
+The search allows you to find organizations by name.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations6.png')} alt="Search on All Organizations page" />
+
+## Filter
+
+Admins and Managers can filter organizations by specific conditions and search by name at the same time. For Managers, this option is available only if they are assigned to at least two organizations.
+
+Organization type:
+
+* Personal
+* Internal
+* synched
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations7.png')} alt="Filter on All Organizations page" />
+
+## Sorting
+
+Admin can sort the list of organizations by the following fields:
+
+* Creation date
+* Name
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations8.png')} alt="Sorting on All Organizations page" />
+
+## Export
+
+By clicking the "Export" button, you can download the list of organizations to your computer.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations9.png')} alt="Export on All Organizations page" />
+
+You can apply a filter to the list of organizations and then click the "Export" button. In this case, the downloaded file will contain only the filtered list of organizations.
+
+## Create organization
+
+:::note
+Organization management is available only when the Organizations [premium feature](/premium-features/) is enabled.
+:::
+
+To create an organization from the "All Organizations" page:
+
+1. Log in as Admin.
+2. Navigate to "All Organizations" page.
+3. Click on the "Create Organization" button.
+4. Enter organization’s name.
+5. In the modal window, click on "Create" button.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations10.png')} alt="Create Organization" />
+
+## Activity
+
+On the "All organizations" page, Admin can see all the events of all the projects within a single organization.
+
+For that:
+
+1. Log in as Admin.
+2. Navigate to "All organizations" page.
+3. Click on meatball menu on organization panel.
+4. Click on "Activity" option.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations11.png')} alt="Activity option on All Organizations page" />
+
+All events are displayed in a table consisting of the following columns:
+
+* **Time** – when the event occurred.
+* **Project Name** – the project in which the event took place (optional if the event is not project-related).
+* **Subject Type** – who performed the action. Possible values: User / Application / Rule.
+* **Subject Name** – ```<login>``` / ReportPortal / Pattern Analysis.
+* **Action** – the action that was performed.
+* **Object Type** – the type of object on which the action was performed.
+* **Object Name** – the name of the object on which the action was performed.
+* **Old Value** – the previous value before the change.
+* **New Value** – the updated value after the change.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations12.png')} alt="Activities on All Organizations page" />
+
+## Rename organization
+
+:::note
+Organization management is available only when the Organizations [premium feature](/premium-features/) is enabled.
+:::
+
+To rename an organization from the "All Organizations" page:
+
+1. Log in as Admin.
+2. Navigate to "All organizations" page.
+3. Click on meatball menu on organization panel.
+4. Click on "Rename" option.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations13.png')} alt="Rename option on All Organizations page" />
+
+5. Enter new name.
+6. In the modal window, click on "Rename" button.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations14.png')} alt="Rename Organizations" />
+
+## Self-assign to organization
+
+To self-assign to the organization from the "All Organizations" page:
+
+1. Log in as Admin.
+2. Navigate to "All organizations" page.
+3. Click on meatball menu on organization panel.
+4. Choose "Assign" option.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations15.png')} alt="Assign option on All Organizations page" />
+
+5. In the modal window, click on "Assign" button.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations16.png')} alt="Assign to Organizations" />
+
+## Self-unassign from organization
+
+To self-unassign from the organization from the "All Organizations" page:
+
+1. Log in as Admin.
+2. Navigate to "All organizations" page.
+3. Click on meatball menu on organization panel.
+4. Choose "Unassign" option.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations17.png')} alt="Unassign option on All Organizations page" />
+
+5. In the modal window, click on "Unassign" button.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations18.png')} alt="Unassign from Organization" />
+
+## Delete organization
+
+:::note
+Organization management is available only when the Organizations [premium feature](/premium-features/) is enabled.
+:::
+
+To delete organization from the "All Organizations" page:
+
+1. Log in as Admin.
+2. Navigate to "All organizations" page.
+3. Click on meatball menu on organization panel.
+4. Choose "Delete" option.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations19.png')} alt="Delete option on All Organizations page" />
+
+5. Enter the name of the organization.
+6. In the modal window, click on "Delete" button.
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations20.png')} alt="Delete from Organization" />
+
+Redirects from the " All Organizations " page
+
+Users -> Organization Users
+Settings -> Organization Settings
+
+<MediaViewer src={require('./img/all-organizations/AllOrganizations21.png')} alt="Options on the All Organization page" />
