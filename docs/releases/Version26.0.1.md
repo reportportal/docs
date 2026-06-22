@@ -1,6 +1,8 @@
 ---
 sidebar_position: 3
 sidebar_label: Version 26.0.1
+last_update:
+  date: '2026-02-16'
 ---
 
 # Version 26.0.1

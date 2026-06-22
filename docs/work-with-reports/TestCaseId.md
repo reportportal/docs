@@ -25,7 +25,7 @@ Test case id is using for:
 
 You can find a test case ID in the 'Edit' modal.
 
-## How you can report items with Test case ID?
+## How can you report items with Test case ID?
 
 You can [report test case id via agents](https://github.com/reportportal/client-java/wiki/Test-case-ID). 
 

@@ -3,6 +3,10 @@
 
 import { themes } from 'prism-react-renderer';
 
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
+
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -10,6 +14,28 @@ require('dotenv').config();
 
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
+
+const RELEASES_DIR = path.join(__dirname, 'docs', 'releases');
+
+function readReleaseLastmodDates() {
+  const dates = {};
+  let files = [];
+  try {
+    files = fs.readdirSync(RELEASES_DIR);
+  } catch {
+    return dates;
+  }
+  for (const file of files) {
+    if (!file.endsWith('.md')) continue;
+    const { data } = matter.read(path.join(RELEASES_DIR, file));
+    const rawDate = data?.last_update?.date;
+    if (!rawDate) continue;
+    const date = new Date(rawDate);
+    if (Number.isNaN(date.getTime())) continue;
+    dates[path.basename(file, '.md')] = date.toISOString().split('T')[0];
+  }
+  return dates;
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,6 +65,7 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.9,
+          lastmod: 'date',
           ignorePatterns: ['/docs/search', '/docs/search/'],
           filename: 'sitemap.xml',
           createSitemapItems: async (params) => {
@@ -46,6 +73,7 @@ const config = {
             const items = await defaultCreateSitemapItems(rest);
             const seen = new Set();
             const fileExtensions = ['.html', '.htm', '.xml', '.pdf', '.jpg', '.png', '.css', '.js'];
+            const releaseLastmod = readReleaseLastmodDates();
             return items
               .map((item) => {
                 const u = new URL(item.url);
@@ -53,7 +81,10 @@ const config = {
                 if (!hasFileExtension && !u.pathname.endsWith('/')) {
                   u.pathname += '/';
                 }
-                return { ...item, url: u.toString() };
+                const releaseMatch = u.pathname.match(/\/releases\/(Version[^/]+)\/?$/);
+                const releaseDate = releaseMatch ? releaseLastmod[releaseMatch[1]] : undefined;
+                const lastmod = releaseDate ?? item.lastmod;
+                return { ...item, url: u.toString(), lastmod };
               })
               .filter((item) => {
                 if (seen.has(item.url)) return false;

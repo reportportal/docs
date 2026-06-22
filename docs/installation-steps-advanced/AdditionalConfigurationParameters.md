@@ -16,7 +16,7 @@ description: Optimize ReportPortal setup with customizable parameters - ports, s
 | POSTGRES_USER | rpuser | API,UAT,MIGRATIONS | PostgreSQL user name |
 | POSTGRES_PASSWORD | rppass | API,UAT,MIGRATIONS | PostgreSQL user password |
 | POSTGRES_DB | reportportal | API,UAT,MIGRATIONS | PostgreSQL database name |
-| RABBITMQ_DEFAULT_USER | rabbitmq | API,ANALYZER | PostgreSQL database name |
-| RABBITMQ_DEFAULT_PASS | rabbitmq | API,ANALYZER | PostgreSQL database name |
+| RABBITMQ_DEFAULT_USER | rabbitmq | API,ANALYZER | RabbitMQ Default user name |
+| RABBITMQ_DEFAULT_PASS | rabbitmq | API,ANALYZER | RabbitMQ Default password |
 
 [Example of docker compose](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml) with filled out configuration parameters.
