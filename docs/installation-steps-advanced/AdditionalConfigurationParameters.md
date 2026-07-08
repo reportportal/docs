@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 6
 sidebar_label: Additional configuration parameters
 description: Optimize ReportPortal setup with customizable parameters - ports, session timeouts, database and API settings via Docker-friendly environment variables.
 ---
