@@ -500,7 +500,7 @@ const config = {
             from: '/installation-steps/ScalingUpReportPortalAPIService',
           },
           {
-            to: '/installation-steps-advanced/AmazonALBNGINXIngressController',
+            to: '/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS',
             from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
           },
           {
