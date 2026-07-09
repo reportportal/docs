@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 7
 sidebar_label: Setup TLS / HTTPS Docker Compose + Traefik v2
 description: Practical guide to setting up TLS/HTTPS in our test results dashboard
 ---

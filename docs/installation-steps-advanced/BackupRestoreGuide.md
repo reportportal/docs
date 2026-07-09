@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
 sidebar_label: Backup & Restore Guide
 description: Safeguard your ReportPortal data by learning how to back up and restore its PostgreSQL database and binary storage quickly and reliably.
 ---

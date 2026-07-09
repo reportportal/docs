@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 9
 sidebar_label: Migrate one instance to another
 description: Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity.
 ---
