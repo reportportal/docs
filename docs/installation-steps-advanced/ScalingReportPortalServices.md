@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 12
 sidebar_label: Scaling ReportPortal services
 description: Learn how to dynamically scale ReportPortal services using Docker or Kubernetes, ensuring optimal performance and reliability for your testing infrastructure.
 ---
