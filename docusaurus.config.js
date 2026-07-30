@@ -97,6 +97,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          includeCurrentVersion: false,
         },
         blog: false,
         theme: {
@@ -139,6 +140,10 @@ const config = {
             position: 'left',
             to: 'https://developers.reportportal.io/api-docs/',
             target: '_self',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
           },
           {
             href: 'https://reportportal.io/',

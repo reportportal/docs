@@ -1,0 +1,299 @@
+---
+sidebar_position: 6
+sidebar_label: GitLab
+description: Integrate GitLab to post issues, link defects, and sync status updates seamlessly.
+---
+
+# GitLab
+
+To install the GitLab plugin, see [Upload plugin](/plugins/ManagePlugins#upload-plugin) section.
+
+Integration with the GitLab Bug Tracking System (BTS) can be helpful for projects which are already using GitLab BTS as a tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the GitLab Server, such as posting issues and linking issues, getting updates on their statuses.
+
+**Permission:**
+
+The Administrator can upload a plugin and create global integrations on the Plugin tab in the Administrate section. The Project Manager can work only on the project level. He can unlink and re-write global configuration with project ones on Project Settings > Integrations.
+
+GitLab BTS integration can be configured on the global level (for all projects on the instance) or on the project level (only for one project).
+
+## Global GitLab BTS integration
+
+### Add new global GitLab BTS integration
+
+You might want to configure global integrations which will be applied on all projects if all projects on your instance are using the same GitLab BTS projects.
+
+1. Log in as ADMIN.
+
+2. Go to Administrate > Plugins.
+
+3. Click on GitLab plugin panel.
+
+4. Click on "Add integration" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab1.png')} alt="Add new global GitLab BTS integration in our test reporting tool" />
+
+5. Fill and confirm the authorization form.
+
+```javascript
+'Integration Name': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+'Project ID in BTS': <project ID in bug tracking system>
+'Access Token': <your personal Access Token from GitLab>
+```
+
+<MediaViewer src={require('./img/gitlab/GitLab2.png')} alt="Create Global GitLab BTS integration" />
+
+How to find Access Token in Gitlab? Please, see the image below.
+
+<MediaViewer src={require('./img/gitlab/GitLab3.png')} alt="Access Token in Gitlab" />
+
+After you have created a connection with the GitLab project, you can choose predefined GitLab ticket fields. These fields will be shown to you all the time when you post the issue in GitLab.
+
+* Issue type: dropdown with options "issue" (default) or "incident"
+* Title (required)
+* Description
+* Confidential: dropdown with options "Yes" or "No"
+* Assignee(s)
+* Due date
+* Labels
+* Milestone
+* Epic – **GitLab Enterprise Version**
+* Weight – **GitLab Enterprise Version**
+
+:::important
+You can fill in the fields marked as 'GitLab Enterprise Version,' but this data will only appear in GitLab if you have the Paid Enterprise version.
+
+In the free version of GitLab, you can only enter one Assignee.
+:::
+
+:::note
+The Assignee(s) field searches both by login and by name.
+
+The Milestone, Epic, Assignee(s), Label fields work through autocomplete.
+:::
+
+<MediaViewer src={require('./img/gitlab/GitLab4.png')} alt="Configuration of Global GitLab BTS integration" />
+
+Now team members on all your projects will be able to submit issues in GitLab. Options for Post Issue/Link issue are activated.
+
+You can add more integrations by clicking on "Add integration" button.
+
+<MediaViewer src="https://youtu.be/O-Y9y_C7a6k" alt="Global GitLab BTS integration" type="video" />
+
+### Update global GitLab BTS integration
+
+If you need to edit GitLab BTS integration authorization parameters, perform actions described below:
+
+1. Log in as ADMIN.
+
+2. Go to Administrative > Plugins.
+
+3. Click on GitLab plugin panel.
+
+4. Click on a tab with existing integration.
+
+5. Click on "Edit" icon.
+
+6. Change "Integration name".
+
+7. Type your Access Token.
+
+8. Click "Save" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab5.png')} alt="Update global GitLab BTS integration" />
+
+If you need to edit fields which should be posted in GitLab BTS, perform actions described below:
+
+1. Log in as ADMIN.
+
+2. Go to Administrative > Plugins.
+
+3. Click on GitLab plugin panel.
+
+4. Click on a tab with existing integration.
+
+5. Click on "Edit" button in Configuration section.
+
+6. Check the needed fields and fill them in if necessary.
+
+7. Click on "Submit" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab6.png')} alt="Edit fields which should be posted in GitLab BTS" />
+
+### Remove global GitLab BTS integration
+
+If you need to remove GitLab BTS integration, perform actions described below:
+
+1. Log in as ADMIN.
+
+2. Go to Administrative > Plugins.
+
+3. Click on GitLab plugin panel.
+
+4. Click on a tab with existing integration.
+
+5. Click on "Remove" icon.
+
+6. Click "Delete" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab7.png')} alt="Delete global GitLab BTS integration" />
+
+## Project GitLab BTS integration
+
+### Add new project GitLab BTS integration
+
+If any project needs different GitLab BTS configurations, you should unlink a project from Global configurations and add a project configuration. It means that now when a new global integration is added to our test automation results dashboard tool, it won't be applied to the unlinked project.
+
+For that,
+
+1. Log in as an ADMIN or Project Manager.
+
+2. Go to Project Settings > Integrations.
+
+3. Click on the GitLab integration panel.
+
+4. Click on "Add Project Integration" button.
+
+5. Fill necessary fields and click "Create" button.
+
+```javascript
+'Integration Name': <The name which you want to give to your integration> - should be unique
+'Link to BTS': <valid URL of bug tracking system>
+' Project ID in BTS': <project ID in bug tracking system>
+'Access Token': <your personal Access Token from GitLab>
+```
+
+<MediaViewer src={require('./img/gitlab/GitLab8.png')} alt="Create project GitLab BTS integration in our qa automation dashboard" />
+
+After you have created a connection with the GitLab project, you can choose predefined GitLab ticket fields. These fields will be shown to you all the time when you post the issue in GitLab.
+
+* Issue type: dropdown with options "issue" (default) or "incident"
+* Title (required)
+* Description
+* Confidential: dropdown with options "Yes" or "No"
+* Assignee(s)
+* Due date
+* Labels
+* Milestone
+* Epic – **GitLab Enterprise Version**
+* Weight – **GitLab Enterprise Version**
+
+:::important
+You can fill in the fields marked as 'GitLab Enterprise Version,' but this data will only appear in GitLab if you have the Paid Enterprise version.
+
+In the free version of GitLab, you can only enter one Assignee.
+:::
+
+:::note
+The Assignee(s) field searches both by login and by name.
+
+The Milestone, Epic, Assignee(s), Label fields work through autocomplete.
+:::
+
+<MediaViewer src={require('./img/gitlab/GitLab9.png')} alt="Configuration of project GitLab BTS integration" />
+
+You can add more integrations by clicking on "Add Project Integration" button.
+
+<MediaViewer src="https://youtu.be/tbkd_DjW3Ok" alt="Project GitLab BTS integration" type="video" />
+
+### Reset to global GitLab BTS Integration
+
+If you want to delete project integrations with GitLab BTS and link your project with global configurations, perform actions described below:
+
+1. Log in as an ADMIN or Project Manager.
+
+2. Go to Project Settings > Integrations.
+
+3. Click on the GitLab integration panel.
+
+4. Click on "Reset to Global Integrations" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab10.png')} alt="Reset to global GitLab BTS Integration" />
+
+5. Click "Reset" button.
+
+<MediaViewer src={require('./img/gitlab/GitLab11.png')} alt="Reset button" />
+
+## Post issue to GitLab BTS
+
+Posting an issue to GitLab BTS means to create a new issue in GitLab BTS from ReportPortal.
+
+If you want to post a new issue to GitLab BTS, you need to have a project or global integration with GitLab.
+
+**Post issue via Step view**
+
+1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator
+
+2. Go to a Step view.
+
+3. Click on the pencil icon near a needed item to open “Make decision” modal.
+
+<MediaViewer src={require('./img/gitlab/GitLab12.png')} alt="Open Make decision modal to Post issue" />
+
+4. Set defect type, add comment, select “Post issue” option and then “Apply & Continue”.
+
+<MediaViewer src={require('./img/gitlab/GitLab13.png')} alt="Select “Post issue” option" />
+
+5. Fill in the “Post issue” form with valid data and submit the form.
+
+<MediaViewer src={require('./img/gitlab/GitLab14.png')} alt="Post issue form" />
+
+:::note
+You can add labels from the dropdown while configuring GitLab integration and during the issue posting. Labels lift from the project in GitLab.
+:::
+
+<MediaViewer src={require('./img/gitlab/GitLab15.png')} alt="Add labels while configuring GitLab integration" />
+
+6. Click “Post issue” button.
+
+A new issue will be posted in GitLab BTS with information from ReportPortal.
+
+<MediaViewer src={require('./img/gitlab/GitLab16.png')} alt="New issue in GitLab BTS" />
+
+A label with issue ID will be added to the test item.
+
+<MediaViewer src={require('./img/gitlab/GitLab17.png')} alt="A label with issue ID in ReportPortal" />
+
+<MediaViewer src="https://youtu.be/Ydh_Zrvpglg" alt="GitLab plugin. Post issue" type="video" />
+
+## Link an issue with an issue in GitLab BTS
+
+Linking an issue with an issue in GitLab BTS means adding a clickable link to an existing issue in GitLab BTS from ReportPortal that will show a status of this issue.
+
+**Link issue via Step view**
+
+1. Log in to ReportPortal as Admin, Project Manager, Member, Customer or Operator.
+
+2. Go to a Step view.
+
+3. Click on the pencil icon near a needed item to open “Make decision” modal.
+
+4. Set defect type, select “Link issue” option and then “Apply & Continue”.
+
+<MediaViewer src={require('./img/gitlab/GitLab18.png')} alt="Open Make decision modal to Link issue" />
+
+5. Fill in the “Link issue” form with valid data and submit the form.
+
+<MediaViewer src={require('./img/gitlab/GitLab19.png')} alt="Link issue form" />
+
+6. Click “Link issue” button.
+
+A label with issue ID will be added to the test item.
+
+<MediaViewer src="https://youtu.be/oMowQ88Q27o" alt="GitLab plugin. Link issue" type="video" />
+
+## Unlink an issue in GitLab BTS
+
+You can also unlink an issue.
+
+1. Click on the “remove” icon.
+
+<MediaViewer src={require('./img/gitlab/GitLab20.png')} alt="Remove icon to unlink issue" />
+
+2. Click “Unlink Issue”.
+
+<MediaViewer src={require('./img/gitlab/GitLab21.png')} alt="Click Unlink Issue" />
+
+Link to the issue in GitLab BTS is removed.
+
+<MediaViewer src="https://youtu.be/QR-2X2Ka9jM" alt="GitLab plugin. Unlink issue" type="video" />
