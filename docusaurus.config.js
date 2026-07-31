@@ -264,6 +264,7 @@ const config = {
 
   plugins: [
     './plugins/plugin-cookie-pro',
+    './plugins/plugin-schema-org',
     [
       '@docusaurus/plugin-client-redirects',
       {
