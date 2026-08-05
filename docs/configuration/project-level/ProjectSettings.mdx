@@ -15,9 +15,8 @@ To open the "Project Settings" page, click the corresponding icon in the left me
 <MediaViewer src={require('./img/project-settings/ProjectSettings2.png')} alt="Project settings in the left menu" />
 
 :::info
-**Permission:**
-All users can view the project settings.
-Member (Editor) can update project settings.
+All users can view the project settings.<br />
+Admin, Manager, and user with edit permissions can update project settings.
 :::
 
 The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", Log Types, "Analyzer", "Pattern-Analysis", "Demo Data" and "Quality Gates".
@@ -104,6 +103,10 @@ Performing these steps will unlink your current project from the global (instanc
 The *Notifications* tab provides the ability to activate notifications for the project through Email, Slack, or Telegram.
 
 ReportPortal provides a way to add multiple rules with specific conditions. The notification rule should be unique per Notification group – Email or Slack, have a unique parameter set. For example: In case, Launch names, Attributes.
+
+:::info
+Admin, Manager, and user with edit permissions can configure notifications.
+:::
 
 ### Email notifications
 
@@ -299,8 +302,9 @@ Log types define how log entries are categorized and visually highlighted, helpi
 
 In the Project Settings -> Log Types tab, you can find the log types available in your project –  both system and custom. On this page, you can create custom log types, edit their appearance, delete custom log types, and configure which log types will be displayed in the log level slider on the Log page of the test item.
 
-**Permissions:**<br />
-Only Admin and Project Manager can manage log types.
+:::info
+Admin, Manager, and user with edit permissions can configure log types.
+:::
 
 ### Create custom log type
 

@@ -11,8 +11,8 @@ To install the Jira Server plugin, see [Upload plugin](/plugins/ManagePlugins#up
 Integration with the JIRA Server can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between our test automation reporting dashboard and the JIRA Server, such as posting issues and linking issues, getting updates on their statuses.
 
 :::important
-Admin can upload Jira Server plugin and create global integrations (applicable to all projects on the instance) on the Plugins page.<br />
-Manager and Member (Editor) can re-write global configuration with project ones on Project Settings -> Integrations.
+Admin can upload Jira Server plugin and create global integrations (applicable to all projects on the instance) on the Instance plugins page.<br />
+Manager and user with edit permissions can re-write global configuration with project ones on Project Settings -> Integrations.
 :::
 
 ## Global JIRA Server integration
@@ -22,7 +22,7 @@ Manager and Member (Editor) can re-write global configuration with project ones 
 If all projects on your instance are using the same Jira projects, you will be able to configure **global integrations** which will be applied on all projects.
 
 1. Log in to ReportPortal as Admin.
-2. Navigate to Plugins page.
+2. Navigate to Instance plugins page.
 3. Click on "Jira Server" panel.
 4. Click "Add integration" button.
 
@@ -75,7 +75,7 @@ Users can add several integrations, but with a different name to the **one JIRA 
 If you need to edit Jira Server integration parameters, please perform actions:
 
 1. Log in to ReportPortal as Admin.
-2. Navigate to Plugins page.
+2. Navigate to Instance plugins page.
 3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
 5. Click on "Edit" icon.
@@ -91,7 +91,7 @@ If you need to edit Jira Server integration parameters, please perform actions:
 If you need to edit fields which should be posted in Jira Server, please perform actions:
 
 1. Log in to ReportPortal as Admin.
-2. Navigate to Plugins page.
+2. Navigate to Instance plugins page.
 3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
 5. Click on "Edit" button in Configuration section.
@@ -107,7 +107,7 @@ If you need to edit fields which should be posted in Jira Server, please perform
 If you need to remove Jira Server integration, please perform actions:
 
 1. Log in to ReportPortal as Admin.
-2. Navigate to Plugins page.
+2. Navigate to Instance plugins page.
 3. Click on "Jira Server" panel.
 4. Click on the tab with existing integration.
 5. Click on "Remove" icon.
@@ -125,7 +125,7 @@ If any project needs different Jira Server configurations, you can add a project
 
 For that,
 
-1. Log in to ReportPortal as Admin, Manager, or Member (Editor).
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
 2. Go to the Project settings -> Integrations tab.
 3. Click on "Jira Server" panel.
 4. Click on "Add Project integration" button.
@@ -185,7 +185,7 @@ Posting an issue to Jira Server means to create a new issue in Jira from ReportP
 
 If you want to post a new issue to Jira, you need to have a project or global integration with Jira Server.
 
-1. Log in to ReportPortal as Admin, Manager, Member (Editor).
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
 2. Go to a Test view.
 3. Click on the pencil icon near a needed item to open "Make decision" modal.
 
@@ -214,7 +214,7 @@ A label with Jira Issue ID will be added to the test item. Details of the create
 
 You can also link ReportPortal item to already existing issue in Jira.
 
-1. Log in to ReportPortal as Admin, Manager, Member (Editor).
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
 2. Go to a Test view.
 3. Click on the pencil icon near a needed item to open "Make decision" modal.
 4. Select "Link issue" option and then "Apply & Continue".

@@ -8,6 +8,10 @@ description: Manage and organize saved searches on the filters page. View person
 
 The **Filters page** in ReportPortal is a dedicated space for managing and organizing saved searches, providing a clear and accessible overview of all filters. This page shows your personal filters, making it easy to streamline test data access and focus on relevant information.
 
+:::info
+Admin, Manager, user with edit permissions can do the actions, user with view permissions has only read only access.
+:::
+
 The Filters page includes several key details for each filter:
 
 - **Filter name and description**<br />
@@ -20,12 +24,12 @@ The Filters page includes several key details for each filter:
   The name of the team member who created the filter is displayed.
 
 - **Display on launches toggle**<br />
-  This ON/OFF switch determines if the filter should be readily available on the Launches page. Activating this option makes the filter easily accessible for all users, while deactivating it keeps the filter private.
+  This ON/OFF switch determines if the filter should be readily available on the Automated Launches page. Activating this option makes the filter easily accessible for all users, while deactivating it keeps the filter private.
 
 - **Delete option**<br />
   Each filter has a delete icon, allowing users to remove unnecessary filters if no longer needed.
 
-To open launches based on a saved filter, click on the filter’s name. This action will open a new tab on the Launches page, pre-filtered according to the selected criteria, simplifying navigation through large datasets.
+To open launches based on a saved filter, click on the filter’s name. This action will open a new tab on the Automated Launches page, pre-filtered according to the selected criteria, simplifying navigation through large datasets.
 
 This Filters page is the only location where filters can be permanently deleted from test automation results dashboard. To delete a filter, simply click the delete icon associated with it and confirm the action. Note that while this will remove the filter, it will not delete the test launches or results associated with it.
 

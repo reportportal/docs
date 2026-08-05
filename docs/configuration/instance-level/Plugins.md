@@ -1,16 +1,16 @@
 ---
 sidebar_position: 4
-sidebar_label: Plugins
+sidebar_label: Instance Plugins
 description: Integrate ReportPortal with bug tracking, notifications, authorization, and import plugins to streamline QA workflows.
 ---
 
-# Plugins
+# Instance Plugins
 
-"Plugins" page can be accessible using sidebar.
+Instance Plugins page can be accessible using sidebar.
 
 <MediaViewer src={require('./img/Plugins.png')} alt="Plugins section in our test report dashboard" />
 
-The Plugins page provides the ability to integrate a variety of plugins with ReportPortal. These plugins are grouped into five main categories: Bug Tracking System plugins, Notification plugins, Authorization plugins, Import plugins, and Other plugins. 
+The Instance Plugins page provides the ability to integrate a variety of plugins with ReportPortal. These plugins are grouped into five main categories: Bug Tracking System plugins, Notification plugins, Authorization plugins, Import plugins, and Other plugins. 
 
 **Bug Tracking Systems** plugins allow you to automatically create tasks for detected defects directly from ReportPortal. This eliminates the need to manually log issues in a bug tracker, enabling teams to resolve defects faster and ensuring a smooth, continuous workflow.
 
@@ -20,7 +20,7 @@ The Plugins page provides the ability to integrate a variety of plugins with Rep
 
 **Import** plugins make it possible to upload test data from different sources directly into ReportPortal, simplifying data migration and consolidating test reports from multiple tools. These plugins are invaluable for teams using diverse testing platforms that need a centralized reporting solution.
 
-The **Other** plugins group includes the Sauce Labs, Test Executions, Quality Gates, and Organizations plugins.
+The **Other** plugins group includes the Sauce Labs, Mobitru, Test Executions, Quality Gates, and Organizations plugins.
 
 Using these plugins, you can tailor ReportPortal to your specific workflows, boosting testing efficiency and enhancing team collaboration.
 
