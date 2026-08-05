@@ -12,42 +12,57 @@ last_update:
 
 ## 1. Premium updates for subscribers:
 
-**[Test Executions](/test-executions/):**
+**[Test Executions](https://reportportal.io/docs/test-executions/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=tep):**
 
-* **Latest executions only**<br />
-New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
+- **Latest executions only** — New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
 
-* **Launch owner**<br />
-Filter by launch owner in the side panel; optional **Launch owner** column (sortable) in Customize Columns; included in XLS/PDF exports.
+- **Launch owner** — Filter by launch owner in the side panel; optional **Launch owner** column (sortable) in Customize Columns; included in XLS/PDF exports.
 
-* **Statistics display mode**<br />
-Switch statistics between **Counts**, **Percentages**, and **Counts & Percentages** (default remains Counts).
+- **Statistics display mode** — Switch statistics between **Counts**, **Percentages**, and **Counts & Percentages** (default remains Counts).
 
-* **Attribute presence column**<br />
-Custom column that shows Yes/No for a chosen attribute (value only, or key + value). Included in exports when selected.
+- **Attribute presence column** — Custom column that shows Yes/No for a chosen attribute (value only, or key + value). Included in exports when selected.
 
-* **Test Case ID & UUID columns**<br />
-Optional **Test Case ID** column from test item details. The former **Test ID** column is renamed to **UUID**. Both are available in Customize Columns and in exports when selected.
+- **Test Case ID & UUID columns** — Optional **Test Case ID** column from test item details. The former **Test ID** column is renamed to **UUID**. Both are available in Customize Columns and in exports when selected.
 
 ## 2. What's new:
 
-**[Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/): Owner grouping**  
+**[Component Health Check widget](https://reportportal.io/docs/dashboards-and-widgets/ComponentHealthCheck/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=widget_chc): Owner grouping**  
 The Component Health Check widget can now use **Owner** as a grouping level alongside attribute keys. You can build hierarchies such as Owner → platform → feature, or mix Owner at any level. Drill-down to test items respects the Owner grouping.
 
 ## 3. Bugs fixed:
 
-1. **Filters**<br />
-Filtering test items by a non-numeric `testCaseId` no longer returns HTTP 500 ([GitHub #2688](https://github.com/reportportal/reportportal/issues/2688)).
+1. **Filters** — Filtering test items by a non-numeric `testCaseId` no longer returns HTTP 500 ([GitHub #2688](https://github.com/reportportal/reportportal/issues/2688)).
 
-2. **SCIM**<br />
-Personal project is removed when the user is deprovisioned from Azure.
+2. **SCIM** — Personal project is removed when the user is deprovisioned from Azure.
 
-3. **Plugins**<br />
-Fixed plugin upload / enable / uninstall failures when using SeaweedFS storage (plugins with spaces in the plugin ID).
+3. **Plugins** — Fixed plugin upload / enable / uninstall failures when using SeaweedFS storage (plugins with spaces in the plugin ID).
 
 ## 4. CVE addressed:
 
-Security vulnerabilities fixed in **Service API**, **Authorization**, **Jobs**, **Index**, and **Migrations**.
+### Service-api
+CVE-2026-42584, CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-41417, CVE-2026-42583,  
+CVE-2026-42587, CVE-2026-41284, CVE-2026-41293, CVE-2026-43514, CVE-2026-43515, CVE-2026-43513,  
+CVE-2026-42498, CVE-2020-29582, CVE-2026-1225
+
+### Service-authorization
+CVE-2026-40971, CVE-2026-40974, CVE-2026-22746, CVE-2026-22751, CVE-2026-22748, CVE-2026-22752,  
+CVE-2026-22732, CVE-2026-5588, CVE-2026-0636, CVE-2026-22733, CVE-2026-22731, CVE-2026-42584,  
+CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-41417, CVE-2026-33870, CVE-2025-67735,  
+CVE-2026-42583, CVE-2026-42587, CVE-2026-33871, CVE-2026-43512, CVE-2026-43513, CVE-2026-43514,  
+CVE-2026-43515, CVE-2025-66614, CVE-2026-34483, CVE-2026-42498, CVE-2026-42198, CVE-2026-22737,  
+CVE-2026-22741, CVE-2026-22740, CVE-2026-22745, CVE-2026-40973, CVE-2026-40977, CVE-2026-1225
+
+### Service-jobs
+CVE-2026-42584, CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-42583, CVE-2026-42587,  
+CVE-2026-43512, CVE-2026-41284, CVE-2026-41293, CVE-2026-43515, CVE-2026-43513, CVE-2026-43514,  
+CVE-2026-42498
+
+### Service-index
+CVE-2026-39821, CVE-2026-33814, CVE-2025-69725
+
+### Migrations
+CVE-2026-33816, CVE-2026-33815, CVE-2026-41889, CVE-2026-39821, CVE-2026-33186,  
+CVE-2026-33814, CVE-2025-22868
 
 ## 5. Released services and plugins:
 
