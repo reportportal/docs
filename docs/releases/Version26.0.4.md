@@ -12,7 +12,7 @@ last_update:
 
 ## 1. Premium updates for subscribers:
 
-**Test Executions:**
+**[Test Executions](https://reportportal.io/docs/test-executions/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=tep):**
 
 - **Latest executions only** — New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
 
@@ -26,7 +26,7 @@ last_update:
 
 ## 2. What's new:
 
-**Component Health Check widget: Owner grouping**  
+**[Component Health Check widget](https://reportportal.io/docs/dashboards-and-widgets/ComponentHealthCheck/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=widget_chc): Owner grouping**  
 The Component Health Check widget can now use **Owner** as a grouping level alongside attribute keys. You can build hierarchies such as Owner → platform → feature, or mix Owner at any level. Drill-down to test items respects the Owner grouping.
 
 ## 3. Bugs fixed:
