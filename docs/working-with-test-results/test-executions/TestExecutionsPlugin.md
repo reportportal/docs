@@ -57,8 +57,8 @@ The Test Executions plugin is a premium ReportPortal feature. It introduces a fl
 **Upload plugin**
 
 1. Log in to ReportPortal as Admin.
-2. Navigate to the **Plugins** page.
-3. Click the **Upload** button at the top of the page.
+2. Navigate to the **Instance plugins** page.
+3. Click the **Upload Plugin** button.
 4. Add the `.jar` file and click the **Upload** button.
 
 ## Upgrading
