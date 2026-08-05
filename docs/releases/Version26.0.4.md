@@ -12,30 +12,38 @@ last_update:
 
 ## 1. Premium updates for subscribers:
 
-**[Test Executions](https://reportportal.io/docs/test-executions/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=tep):**
+**[Test Executions](/test-executions/):**
 
-- **Latest executions only** — New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
+* **Latest executions only**<br />
+New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
 
-- **Launch owner** — Filter by launch owner in the side panel; optional **Launch owner** column (sortable) in Customize Columns; included in XLS/PDF exports.
+* **Launch owner**<br />
+Filter by launch owner in the side panel; optional **Launch owner** column (sortable) in Customize Columns; included in XLS/PDF exports.
 
-- **Statistics display mode** — Switch statistics between **Counts**, **Percentages**, and **Counts & Percentages** (default remains Counts).
+* **Statistics display mode**<br />
+Switch statistics between **Counts**, **Percentages**, and **Counts & Percentages** (default remains Counts).
 
-- **Attribute presence column** — Custom column that shows Yes/No for a chosen attribute (value only, or key + value). Included in exports when selected.
+* **Attribute presence column**<br />
+Custom column that shows Yes/No for a chosen attribute (value only, or key + value). Included in exports when selected.
 
-- **Test Case ID & UUID columns** — Optional **Test Case ID** column from test item details. The former **Test ID** column is renamed to **UUID**. Both are available in Customize Columns and in exports when selected.
+* **Test Case ID & UUID columns**<br />
+Optional **Test Case ID** column from test item details. The former **Test ID** column is renamed to **UUID**. Both are available in Customize Columns and in exports when selected.
 
 ## 2. What's new:
 
-**[Component Health Check widget](https://reportportal.io/docs/dashboards-and-widgets/ComponentHealthCheck/?utm_source=trigger&utm_medium=github&utm_campaign=rel_26_0_4&utm_content=widget_chc): Owner grouping**  
+**[Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/): Owner grouping**  
 The Component Health Check widget can now use **Owner** as a grouping level alongside attribute keys. You can build hierarchies such as Owner → platform → feature, or mix Owner at any level. Drill-down to test items respects the Owner grouping.
 
 ## 3. Bugs fixed:
 
-1. **Filters** — Filtering test items by a non-numeric `testCaseId` no longer returns HTTP 500 ([GitHub #2688](https://github.com/reportportal/reportportal/issues/2688)).
+1. **Filters**<br />
+Filtering test items by a non-numeric `testCaseId` no longer returns HTTP 500 ([GitHub #2688](https://github.com/reportportal/reportportal/issues/2688)).
 
-2. **SCIM** — Personal project is removed when the user is deprovisioned from Azure.
+2. **SCIM**<br />
+Personal project is removed when the user is deprovisioned from Azure.
 
-3. **Plugins** — Fixed plugin upload / enable / uninstall failures when using SeaweedFS storage (plugins with spaces in the plugin ID).
+3. **Plugins**<br />
+Fixed plugin upload / enable / uninstall failures when using SeaweedFS storage (plugins with spaces in the plugin ID).
 
 ## 4. CVE addressed:
 
