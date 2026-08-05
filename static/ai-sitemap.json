@@ -237,6 +237,11 @@
           "description": "Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard."
         },
         {
+          "title": "Version 26.0.4",
+          "url": "https://reportportal.io/docs/releases/Version26.0.4/",
+          "description": ""
+        },
+        {
           "title": "Version 26.0.3",
           "url": "https://reportportal.io/docs/releases/Version26.0.3/",
           "description": ""
