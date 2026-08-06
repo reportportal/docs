@@ -74,6 +74,11 @@ How is status calculated:
 If you get this status, you can proceed with launch analysis (or choose another baseline) and rerun Quality Gates. For that check the section [How to recalculate Quality Gates](/quality-gates/AssessmentOfTestResultsUsingQualityGates#how-to-recalculate-quality-gates).
 
 ### Timeout
+
+:::info
+Admin, Manager, and user with edit permissions can configure timeout options.
+:::
+
 Specially for integration with CI\CD, Quality Gates has parameter ```Timeout```. If a launch whose status should be sent to a pipeline, gets UNDEFINED status, the system uses a value from ```Timeout```. Default ```Timeout``` equals to 2 hours. It means, that after 2 hours after launch finish, the system force recaluculats Quality Gate Status and defined status.
 
 | Jenkins Job Status | Quality Gate Status | Description              |
