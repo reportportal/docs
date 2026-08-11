@@ -1,12 +1,17 @@
 const fs = require('fs');
 const path = require('path');
-const { buildFileName, buildSidebarLabel, transformBody } = require('./release-utils');
+const {
+  RELEASES_DIR,
+  buildFileName,
+  buildSidebarLabel,
+  transformBody,
+  mirrorReleaseToVersioned,
+} = require('./release-utils');
 
 const RELEASES_API_URL =
   process.env.RELEASES_URL ||
   'https://api.github.com/repos/reportportal/reportportal/releases';
 const RELEASES_PER_PAGE = 100;
-const RELEASES_DIR = path.join(__dirname, '..', 'docs', 'releases');
 
 async function main() {
   const releases = await fetchAllReleases();
@@ -28,6 +33,7 @@ async function main() {
   );
 
   let created = 0;
+  let mirrored = 0;
 
   for (let i = 0; i < filtered.length; i++) {
     const release = filtered[i];
@@ -41,6 +47,9 @@ async function main() {
 
     if (existingFiles.has(fileName.toLowerCase())) {
       console.log(`Already exists: ${fileName}`);
+      if (mirrorReleaseToVersioned(fileName, { onlyIfMissing: true })) {
+        mirrored++;
+      }
       continue;
     }
 
@@ -64,16 +73,21 @@ async function main() {
     fs.writeFileSync(filePath, content, 'utf-8');
     console.log(`Created: ${fileName}`);
     created++;
+    existingFiles.add(fileName.toLowerCase());
+
+    if (mirrorReleaseToVersioned(fileName)) {
+      mirrored++;
+    }
   }
 
   console.log(
-    `\nDone. ${created} new file(s) created, ${filtered.length - created} already existed or skipped.`,
+    `\nDone. ${created} new file(s) created, ${mirrored} mirrored to versioned docs, ${filtered.length - created} already existed or skipped.`,
   );
 
-  if (created > 0) {
+  if (created > 0 || mirrored > 0) {
     fs.writeFileSync(
       path.join(__dirname, '..', '.releases-updated'),
-      String(created),
+      String(created + mirrored),
     );
   }
 }
