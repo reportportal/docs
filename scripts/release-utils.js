@@ -127,7 +127,6 @@ function syncReleasePositions() {
       : text.replace(/^---\n/, `---\nsidebar_position: ${position}\n`);
 
     fs.writeFileSync(filePath, updated, 'utf-8');
-    console.log(`Position ${fileName}: ${current ?? 'none'} -> ${position}`);
     mirrorReleaseToVersioned(fileName);
     changed.push(fileName);
   });
