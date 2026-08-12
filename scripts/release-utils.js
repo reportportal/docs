@@ -75,6 +75,77 @@ function deleteVersionedRelease(fileName) {
   return true;
 }
 
+function parseReleaseVersion(fileName) {
+  const match = fileName.match(/^Version(\d+(?:\.\d+)*)(RC)?\.md$/i);
+  if (!match) return null;
+
+  return {
+    parts: match[1].split('.').map((part) => parseInt(part, 10)),
+    isRc: Boolean(match[2]),
+  };
+}
+
+function compareReleaseVersionsDesc(fileA, fileB) {
+  const a = parseReleaseVersion(fileA);
+  const b = parseReleaseVersion(fileB);
+  if (!a && !b) return 0;
+  if (!a) return 1;
+  if (!b) return -1;
+
+  const length = Math.max(a.parts.length, b.parts.length);
+  for (let i = 0; i < length; i++) {
+    const av = a.parts[i] || 0;
+    const bv = b.parts[i] || 0;
+    if (av !== bv) return bv - av;
+  }
+
+  // same numbers: final release before RC
+  if (a.isRc !== b.isRc) return a.isRc ? 1 : -1;
+  return 0;
+}
+
+function syncReleasePositions(publishedReleases) {
+  const seen = new Set();
+  const files = [];
+
+  for (const release of publishedReleases) {
+    const name = release.name?.trim();
+    if (!name) continue;
+
+    const fileName = buildFileName(name);
+    if (seen.has(fileName)) continue;
+    if (!fs.existsSync(path.join(RELEASES_DIR, fileName))) continue;
+
+    seen.add(fileName);
+    files.push(fileName);
+  }
+
+  files.sort(compareReleaseVersionsDesc);
+
+  const changed = [];
+
+  files.forEach((fileName, index) => {
+    const position = index + 1;
+    const filePath = path.join(RELEASES_DIR, fileName);
+    const text = fs.readFileSync(filePath, 'utf-8');
+    const match = text.match(/^sidebar_position:\s*(\d+)/m);
+    const current = match ? parseInt(match[1], 10) : null;
+
+    if (current === position) return;
+
+    const updated = match
+      ? text.replace(/^sidebar_position:\s*\d+/m, `sidebar_position: ${position}`)
+      : text.replace(/^---\n/, `---\nsidebar_position: ${position}\n`);
+
+    fs.writeFileSync(filePath, updated, 'utf-8');
+    console.log(`Position ${fileName}: ${current ?? 'none'} -> ${position}`);
+    mirrorReleaseToVersioned(fileName);
+    changed.push(fileName);
+  });
+
+  return changed;
+}
+
 function buildFileName(name) {
   let v = sanitizeFileToken(stripPrefix(name));
 
@@ -143,6 +214,8 @@ module.exports = {
   getVersionedReleasesDir,
   mirrorReleaseToVersioned,
   deleteVersionedRelease,
+  syncReleasePositions,
+  compareReleaseVersionsDesc,
   buildFileName,
   buildSidebarLabel,
   transformBody,
