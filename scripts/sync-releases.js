@@ -6,6 +6,7 @@ const {
   buildSidebarLabel,
   transformBody,
   mirrorReleaseToVersioned,
+  syncReleasePositions,
 } = require('./release-utils');
 
 const RELEASES_API_URL =
@@ -80,14 +81,17 @@ async function main() {
     }
   }
 
+  const reordered = syncReleasePositions();
+  mirrored += reordered.length;
+
   console.log(
-    `\nDone. ${created} new file(s) created, ${mirrored} mirrored to versioned docs, ${filtered.length - created} already existed or skipped.`,
+    `\nDone. ${created} new file(s) created, ${reordered.length} positions updated, ${mirrored} mirrored to versioned docs, ${filtered.length - created} already existed or skipped.`,
   );
 
-  if (created > 0 || mirrored > 0) {
+  if (created > 0 || reordered.length > 0 || mirrored > 0) {
     fs.writeFileSync(
       path.join(__dirname, '..', '.releases-updated'),
-      String(created + mirrored),
+      String(created + reordered.length + mirrored),
     );
   }
 }
