@@ -81,7 +81,7 @@ async function main() {
     }
   }
 
-  const reordered = syncReleasePositions(published);
+  const reordered = syncReleasePositions();
   mirrored += reordered.length;
 
   console.log(

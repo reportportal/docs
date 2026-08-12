@@ -104,23 +104,12 @@ function compareReleaseVersionsDesc(fileA, fileB) {
   return 0;
 }
 
-function syncReleasePositions(publishedReleases) {
-  const seen = new Set();
-  const files = [];
-
-  for (const release of publishedReleases) {
-    const name = release.name?.trim();
-    if (!name) continue;
-
-    const fileName = buildFileName(name);
-    if (seen.has(fileName)) continue;
-    if (!fs.existsSync(path.join(RELEASES_DIR, fileName))) continue;
-
-    seen.add(fileName);
-    files.push(fileName);
-  }
-
-  files.sort(compareReleaseVersionsDesc);
+function syncReleasePositions() {
+  const files = fs
+    .readdirSync(RELEASES_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && parseReleaseVersion(entry.name))
+    .map((entry) => entry.name)
+    .sort(compareReleaseVersionsDesc);
 
   const changed = [];
 
