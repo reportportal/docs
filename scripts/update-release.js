@@ -1,8 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const { buildFileName, buildSidebarLabel, transformBody } = require('./release-utils');
+const {
+  RELEASES_DIR,
+  buildFileName,
+  buildSidebarLabel,
+  transformBody,
+  mirrorReleaseToVersioned,
+} = require('./release-utils');
 
-const RELEASES_DIR = path.join(__dirname, '..', 'docs', 'releases');
 const BASE_API_URL = 'https://api.github.com/repos/reportportal/reportportal/releases/tags';
 
 async function main() {
@@ -45,6 +50,8 @@ async function main() {
   fs.mkdirSync(RELEASES_DIR, { recursive: true });
   fs.writeFileSync(filePath, content, 'utf-8');
   console.log(`Updated: ${fileName}`);
+
+  mirrorReleaseToVersioned(fileName);
 }
 
 function toDateOnly(value) {

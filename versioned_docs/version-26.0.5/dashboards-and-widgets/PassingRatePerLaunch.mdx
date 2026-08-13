@@ -1,0 +1,63 @@
+---
+sidebar_position: 19
+sidebar_label: Passing rate per launch
+description: See passed vs total per launch with bar or pie views. Toggle skipped items, explore details, and drill down into tests on your test execution dashboard.
+---
+
+# Passing rate per launch
+
+Shows the percentage ratio of Passed test cases to Total test cases including or excluding Skipped ones of the selected launch.
+
+**Widget's parameters:**
+
+- Launch Name: the name of any finished launch
+- Mode: Bar View/Pie View
+- Ratio based on: Total test cases (Passed/Failed/Skipped) / Total test cases excluding Skipped
+- Widget name: any text
+- Description: any text
+
+:::note
+During the setup process, you can choose whether to consider Skipped items using the radio button.
+:::
+
+**Passing rate calculation including Skipped items**
+
+* Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted.
+* Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted).
+
+**Passing rate calculation excluding Skipped items**
+
+* Total test cases = Passed +Failed, while Failed= Failed +Interrupted.
+* Thus, Passing rate = Passed / (Passed + Failed + Interrupted).
+
+Please find below an example of configuration:
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch1.png')} alt="Configuring the Passing rate per launch widget in our test report dashboard" />
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch2.png')} alt="Creating a Passing rate per launch widget" />
+
+The widget can be displayed in two options as shown on the pictures below:
+
+**Bar View**
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch3.png')} alt="Passing rate per launch. Bar view" />
+
+**Pie View**
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch4.png')} alt="Passing rate per launch. Pie view" />
+
+As you can see, this widget was built based on the test results of the last run of the Daily Smoke Suite.
+
+An example of Passing rate per launch widget including Skipped items:
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch5.png')} alt="Passing rate per launch widget including Skipped items" />
+
+An example of Passing rate per launch widget excluding Skipped items:
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch6.png')} alt="Passing rate per launch widget excluding Skipped items" />
+
+The tooltip on mouse hover over chart area shows the number of test cases and ratio of Passed/Not Passed to Total test cases (Passed, Failed, Skipped) or the number of test cases and ratio of Passed/Not Passed to Total test cases excluding Skipped.
+
+The Passing rate per launch widget has clickable sections. When you click on not Passed pie/bar element, system redirects to the test item view. If the widget was built with the option “Total test cases (Passed/Failed/Skipped)”, then tests with statuses Failed, Interrupted, Skipped are displayed. If the widget was built with the option “Total test cases excluding Skipped”, then tests with statuses Failed and Interrupted are displayed.
+
+<MediaViewer src={require('./img/widget-types/PassingRatePerLaunch7.png')} alt="Redirect to the test item view" />

@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { buildFileName } = require('./release-utils');
-
-const RELEASES_DIR = path.join(__dirname, '..', 'docs', 'releases');
+const { RELEASES_DIR, buildFileName, deleteVersionedRelease } = require('./release-utils');
 
 async function main() {
   const releaseName = process.env.RELEASE_NAME?.trim();
@@ -16,11 +14,12 @@ async function main() {
 
   if (!fs.existsSync(filePath)) {
     console.warn(`Warning: release file not found, nothing to delete: ${fileName}`);
-    return;
+  } else {
+    fs.unlinkSync(filePath);
+    console.log(`Deleted: ${fileName}`);
   }
 
-  fs.unlinkSync(filePath);
-  console.log(`Deleted: ${fileName}`);
+  deleteVersionedRelease(fileName);
 }
 
 main().catch((err) => {
