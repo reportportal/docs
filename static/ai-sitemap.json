@@ -180,9 +180,19 @@
           "description": "Practical guide to setting up TLS/HTTPS in our test results dashboard"
         },
         {
+          "title": "AWS Load Balancer Integration on EKS",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS/",
+          "description": "Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values."
+        },
+        {
           "title": "Migrate one instance to another",
           "url": "https://reportportal.io/docs/installation-steps-advanced/MigrateOneInstanceToAnother/",
           "description": "Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity."
+        },
+        {
+          "title": "Audit logs and log collection",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/AuditLogsAndLogCollection/",
+          "description": "Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values."
         },
         {
           "title": "Scaling ReportPortal services",
@@ -193,11 +203,6 @@
           "title": "Deploy with AWS ECS Fargate",
           "url": "https://reportportal.io/docs/installation-steps-advanced/DeployWithAWSECSFargate/",
           "description": "Deploy ReportPortal on AWS ECS Fargate for scalable test automation reporting with serverless container management."
-        },
-        {
-          "title": "Amazon Application Load Balancer Configuration Guide",
-          "url": "https://reportportal.io/docs/installation-steps-advanced/AmazonALBNGINXIngressController/",
-          "description": "Configure Amazon ALB and NGINX Ingress Controller for ReportPortal test automation reporting tools on AWS EKS."
         },
         {
           "title": "Quick Start Guide for Google Cloud Platform GKE",
@@ -230,6 +235,11 @@
           "title": "Archived Releases",
           "url": "https://reportportal.io/docs/releases/archived-releases/",
           "description": "Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard."
+        },
+        {
+          "title": "Version 26.0.4",
+          "url": "https://reportportal.io/docs/releases/Version26.0.4/",
+          "description": ""
         },
         {
           "title": "Version 26.0.3",

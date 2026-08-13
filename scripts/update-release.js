@@ -1,8 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const { buildFileName, buildSidebarLabel, transformBody } = require('./release-utils');
+const {
+  RELEASES_DIR,
+  buildFileName,
+  buildSidebarLabel,
+  transformBody,
+  mirrorReleaseToVersioned,
+} = require('./release-utils');
 
-const RELEASES_DIR = path.join(__dirname, '..', 'docs', 'releases');
 const BASE_API_URL = 'https://api.github.com/repos/reportportal/reportportal/releases/tags';
 
 async function main() {
@@ -21,12 +26,20 @@ async function main() {
   const sidebarPosition = readExistingSidebarPosition(filePath);
   const sidebarLabel = buildSidebarLabel(releaseName);
   const body = transformBody(release.body || '');
+  const lastUpdateDate = toDateOnly(release.published_at || release.created_at);
 
-  const content = [
+  const frontMatter = [
     '---',
     `sidebar_position: ${sidebarPosition}`,
     `sidebar_label: ${sidebarLabel}`,
-    '---',
+  ];
+  if (lastUpdateDate) {
+    frontMatter.push('last_update:', `  date: '${lastUpdateDate}'`);
+  }
+  frontMatter.push('---');
+
+  const content = [
+    ...frontMatter,
     '',
     `# ${sidebarLabel}`,
     '',
@@ -37,6 +50,14 @@ async function main() {
   fs.mkdirSync(RELEASES_DIR, { recursive: true });
   fs.writeFileSync(filePath, content, 'utf-8');
   console.log(`Updated: ${fileName}`);
+
+  mirrorReleaseToVersioned(fileName);
+}
+
+function toDateOnly(value) {
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date.toISOString().split('T')[0];
 }
 
 function readExistingSidebarPosition(filePath) {

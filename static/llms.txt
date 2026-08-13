@@ -46,10 +46,11 @@
 - [Maintain commands Cheat sheet](https://reportportal.io/docs/installation-steps-advanced/MaintainCommandsCheatSheet/): Quickly manage and troubleshoot your ReportPortal instance with essential Docker commands for installation, backup, cleanup, and service monitoring.
 - [Additional configuration parameters](https://reportportal.io/docs/installation-steps-advanced/AdditionalConfigurationParameters/): Optimize ReportPortal setup with customizable parameters - ports, session timeouts, database and API settings via Docker-friendly environment variables.
 - [Setup TLS / HTTPS Docker Compose + Traefik v2](https://reportportal.io/docs/installation-steps-advanced/SetupTLSHTTPSDockerComposeTraefikV2/): Practical guide to setting up TLS/HTTPS in our test results dashboard
+- [AWS Load Balancer Integration on EKS](https://reportportal.io/docs/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS/): Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values.
 - [Migrate one instance to another](https://reportportal.io/docs/installation-steps-advanced/MigrateOneInstanceToAnother/): Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity.
+- [Audit logs and log collection](https://reportportal.io/docs/installation-steps-advanced/AuditLogsAndLogCollection/): Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values.
 - [Scaling ReportPortal services](https://reportportal.io/docs/installation-steps-advanced/ScalingReportPortalServices/): Learn how to dynamically scale ReportPortal services using Docker or Kubernetes, ensuring optimal performance and reliability for your testing infrastructure.
 - [Deploy with AWS ECS Fargate](https://reportportal.io/docs/installation-steps-advanced/DeployWithAWSECSFargate/): Deploy ReportPortal on AWS ECS Fargate for scalable test automation reporting with serverless container management.
-- [Amazon Application Load Balancer Configuration Guide](https://reportportal.io/docs/installation-steps-advanced/AmazonALBNGINXIngressController/): Configure Amazon ALB and NGINX Ingress Controller for ReportPortal test automation reporting tools on AWS EKS.
 - [Quick Start Guide for Google Cloud Platform GKE](https://reportportal.io/docs/installation-steps-advanced/QuickStartWithGCPGKE/): Deploy ReportPortal on Google Cloud Platform GKE for scalable test automation reporting tools with Kubernetes orchestration.
 - [Upgrading PostgreSQL for ReportPortal v24.2 and later](https://reportportal.io/docs/installation-steps-advanced/UpgradingPostgreSQLForReportPortalV24.2AndLater/): Upgrade PostgreSQL database for ReportPortal v24.2 and later versions with data preservation.
 - [S3 Cloud Storage](https://reportportal.io/docs/installation-steps-advanced/file-storage-options/S3CloudStorage/): Configure S3 cloud storage for the ReportPortal Flaky Test Detection tool using AWS, MinIO, or other S3-compatible providers.
@@ -58,6 +59,7 @@
 
 - [Releases](https://reportportal.io/docs/releases/): Check out the latest ReportPortal version, release notes, and updates.
 - [Archived Releases](https://reportportal.io/docs/releases/archived-releases/): Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard.
+- [Version 26.0.4](https://reportportal.io/docs/releases/Version26.0.4/)
 - [Version 26.0.3](https://reportportal.io/docs/releases/Version26.0.3/)
 - [Version 26.0.2](https://reportportal.io/docs/releases/Version26.0.2/)
 - [Version 26.0.1](https://reportportal.io/docs/releases/Version26.0.1/)
