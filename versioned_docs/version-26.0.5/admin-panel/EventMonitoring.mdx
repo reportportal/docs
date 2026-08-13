@@ -1,0 +1,68 @@
+---
+sidebar_position: 3
+sidebar_label: Event monitoring
+description: Monitor all activities and events in ReportPortal at project and instance levels for comprehensive test automation reporting tools administration and auditing.
+---
+
+# Event monitoring
+
+Starting from version 23.2, ReportPortal can monitor all activities (events) at both the project and instance levels.
+
+## Project level event monitoring
+
+To view the list of all activities within your project, open the menu at the bottom of the page as an `Administrator` and select the "Administrate" option. All existing projects are listed on the "All Projects" page. Click on the ellipsis button next to the project and choose the "Monitoring" option from the dropdown.
+
+Here, you will find a table with the following columns: Time, User, Action, Object Type, Object Name, Old Value, and New Value.
+
+<MediaViewer src={require('./img/EventMonitoring.png')} alt="Event monitoring in our test report dashboard" />
+
+### Time
+
+This column displays the time in a "time ago" format (e.g., "10 minutes ago"). Hovering over it, the system should show the precise action time.
+
+### User
+
+This column shows who acted. We track not only actions by specific users but also, for your convenience, actions performed by ReportPortal itself or certain ReportPortal services. For example, actions by Jobs Service (such as Launch deletions) are included.
+
+If the activity was on behalf of a user, and their account was deleted, then there will be a "deleted user" entry in the "User" column.
+
+### Action
+
+This column displays all events within this project.
+
+**Event actions:** Create dashboard, Update dashboard, Delete dashboard, Create widget, Update widget, Delete widget, Create filter, Update filter, Delete filter, Create custom defect type, Update defect, Delete defect, Create integration, Update integration, Delete integration, Start launch, Finish launch, Delete launch, Update project, Update analyzer, Post issue, Link issue, Unlink issue, Generate index, Delete index, Start import, Finish import, Update item, AA linked issue, AA changed defect type, Create pattern rule, Update pattern rule, Delete pattern rule, PA find pattern.
+
+### Object Type
+
+This refers to the object on which the action was taken.
+
+**Event objects:** Launch, Dashboard, Custom defect type, Notification rule, Filter, Import, Integration, Test item, Project, Ticket, User, Widget, Pattern Rule, index, Plugin.
+
+### Object Name
+
+This is the name of the widget, launch, etc.
+
+The **Old Value** and **New Value** columns display the changes that were made.
+
+You can filter activities by user, action, object type, and object name.
+
+<MediaViewer src="https://youtu.be/_Gz3s3PYYac" alt="Event monitoring in our test automation dashboard" type="video" />
+
+Another way to view the event list in your project is by creating a ["Project Activity Panel" widget](/dashboards-and-widgets/ProjectActivityPanel).
+
+## Instance level event monitoring
+
+Instance level events are not displayed in the UI – they are stored in the database.
+
+**Instance level events:** Account deletion, Bulk account deletion, Administrator unassign, Provide Administrator permission for a user, Project creation, Bulk delete project by ReportPortal administrator, Delete project by ReportPortal administrator, Delete project by ReportPortal administrator, Delete Personal project when deleting user, Create Global Integration, Update Global Integration, Delete Global Integration, Bulk delete of Global Integration via API only, Manual plugin upload, Delete Plugin, Update Plugin (disable/enable), Create user in Administrate, Create user via auth service SAML.
+
+Additionally, during instance setup, you can enable event storage in an audit log file. This data can be sent to a Security Information and Event Management (SIEM) system using tools like Fluentd, Fluentbit, or Filebeat. Logs and events are then checked and monitored within the SIEM system.
+
+The primary advantage of the audit log file is that it preserves all records without alterations or deletions. In contrast, data in the database can be modified or deleted. For example, if launches or projects are deleted, the corresponding data is removed from the database. Deleting accounts leads to data obfuscation in the database.
+
+Hence, if historical monitoring and strict accountability are required, enabling event storage in an audit log file is recommended. Financial companies, for example, are often mandated to retain all user actions in their services for 3 years.
+
+:::note
+Administrators should ensure that log rotation is configured for the location where the audit log will be saved, as a substantial amount of data will accumulate.
+:::
+Event monitoring assists organizations, especially in industries like finance and healthcare, in maintaining the security of their systems and data.
