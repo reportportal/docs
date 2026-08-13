@@ -75,7 +75,27 @@ There is the ability to add description for the Suite level and attributes and d
 
 **Attributes:**
 
-```<tag>dynamic_tag</tag>```
+You can pass attributes via `<tag>` elements in two ways:
+
+Plain tag (value only, no key):
+
+```xml
+<tag>dynamic_tag</tag>
+```
+
+```xml
+<tag>scenario_owner:team-name</tag>
+```
+
+Key-value tag (separate key and value in ReportPortal):
+
+```xml
+<tag key="scenario_owner">team-name</tag>
+```
+
+When the optional `key` attribute is present, the tag is imported as a structured attribute with distinct key and value fields. When `key` is omitted, the full tag text becomes the attribute value (existing behaviour).
+
+Tags with empty or whitespace-only values are skipped and do not create attributes.
 
 <MediaViewer src={require('./img/robot-framework/RobotFramework5.png')} alt="Description for the Suite level and attributes and descriptions for the Test level in XML report" />
 
