@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 sidebar_label: AWS Load Balancer Integration on EKS
 description: Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values.
 ---
