@@ -180,19 +180,24 @@
           "description": "Practical guide to setting up TLS/HTTPS in our test results dashboard"
         },
         {
+          "title": "Docker Hardened Images support for Helm Chart",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/DockerHardenedImagesSupportForHelmChart/",
+          "description": "Docker Hardened Images for ReportPortal Helm. Configure PostgreSQL and RabbitMQ with DHI registry, security contexts, and Helm values."
+        },
+        {
           "title": "AWS Load Balancer Integration on EKS",
           "url": "https://reportportal.io/docs/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS/",
+          "description": "Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values."
+        },
+        {
+          "title": "Audit logs and log collection",
+          "url": "https://reportportal.io/docs/installation-steps-advanced/AuditLogsAndLogCollection/",
           "description": "Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values."
         },
         {
           "title": "Migrate one instance to another",
           "url": "https://reportportal.io/docs/installation-steps-advanced/MigrateOneInstanceToAnother/",
           "description": "Efficiently migrate your ReportPortal instance to AWS by backing up and restoring PostgreSQL, MinIO, and OpenSearch data, ensuring seamless continuity."
-        },
-        {
-          "title": "Audit logs and log collection",
-          "url": "https://reportportal.io/docs/installation-steps-advanced/AuditLogsAndLogCollection/",
-          "description": "Configure ReportPortal audit logging and collect logs with Fluent Bit sidecars, shared volumes, and Helm values."
         },
         {
           "title": "Scaling ReportPortal services",
