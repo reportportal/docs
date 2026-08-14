@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 21
 sidebar_label: Version 25.0.5
 description: ReportPortal v25.0.5 release notes with bug fixes.
 ---
