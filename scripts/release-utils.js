@@ -165,16 +165,21 @@ function normalizeReportPortalLinks(text) {
       try {
         const url = new URL(rawUrl);
 
+        if (url.hostname !== 'reportportal.io') {
+          return match;
+        }
+
         [...url.searchParams.keys()]
           .filter((key) => key.toLowerCase().startsWith('utm_'))
           .forEach((key) => url.searchParams.delete(key));
 
-        if (url.hash.includes('utm_')) {
+        if (/utm_/i.test(url.hash)) {
           url.hash = url.hash.replace(/[?&]utm_[^&]*/gi, '');
         }
 
         if (url.pathname === '/docs' || url.pathname.startsWith('/docs/')) {
-          const relativePath = url.pathname.replace(/^\/docs/, '') || '/';
+          const suffix = url.pathname.slice('/docs'.length).replace(/^\/+/, '');
+          const relativePath = `/${suffix}`;
           return `](${relativePath}${url.search}${url.hash})`;
         }
 
