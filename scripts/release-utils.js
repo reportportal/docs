@@ -169,14 +169,17 @@ function normalizeReportPortalLinks(text) {
           return match;
         }
 
-        [...url.searchParams.keys()]
-          .filter((key) => key.toLowerCase().startsWith('utm_'))
-          .forEach((key) => url.searchParams.delete(key));
+        // 1. Strip utm_ params from the query string
+        for (const key of [...url.searchParams.keys()]) {
+          if (key.toLowerCase().startsWith('utm_')) url.searchParams.delete(key);
+        }
 
+        // 2. Strip utm_ params that ended up in the hash by mistake
         if (/utm_/i.test(url.hash)) {
           url.hash = url.hash.replace(/[?&]utm_[^&]*/gi, '');
         }
 
+        // 3. Convert /docs links to relative paths
         if (url.pathname === '/docs' || url.pathname.startsWith('/docs/')) {
           const suffix = url.pathname.slice('/docs'.length).replace(/^\/+/, '');
           const relativePath = `/${suffix}`;
