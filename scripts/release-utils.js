@@ -158,6 +158,34 @@ function buildSidebarLabel(name) {
   return `Version ${v}`;
 }
 
+function normalizeReportPortalLinks(text) {
+  return text.replace(
+    /\]\((https:\/\/reportportal\.io(?:\([^()]*\)|[^()])*)\)/g,
+    (match, rawUrl) => {
+      try {
+        const url = new URL(rawUrl);
+
+        [...url.searchParams.keys()]
+          .filter((key) => key.toLowerCase().startsWith('utm_'))
+          .forEach((key) => url.searchParams.delete(key));
+
+        if (url.hash.includes('utm_')) {
+          url.hash = url.hash.replace(/[?&]utm_[^&]*/gi, '');
+        }
+
+        if (url.pathname === '/docs' || url.pathname.startsWith('/docs/')) {
+          const relativePath = url.pathname.replace(/^\/docs/, '') || '/';
+          return `](${relativePath}${url.search}${url.hash})`;
+        }
+
+        return `](${url.toString()})`;
+      } catch {
+        return match;
+      }
+    },
+  );
+}
+
 function transformBody(body) {
   let result = body;
 
@@ -175,6 +203,8 @@ function transformBody(body) {
     /(?<!["\(])(?<!\]\()https?:\/\/[^\s)<>\]]+/g,
     (url) => `[${extractLabel(url)}](${url})`,
   );
+
+  result = normalizeReportPortalLinks(result);
 
   return result;
 }
@@ -207,6 +237,7 @@ module.exports = {
   buildFileName,
   buildSidebarLabel,
   transformBody,
+  normalizeReportPortalLinks,
   extractLabel,
   stripPrefix,
 };
