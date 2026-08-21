@@ -55,6 +55,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [clean-docs-folder]
     environment: production
+    outputs:
+      amplify_job_id: ${{ steps.amplify.outputs.job_id }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -90,6 +92,7 @@ jobs:
         run: aws s3 sync ./${{ env.BUILD_DIR }} s3://${{ env.AWS_S3_BUCKET_NAME }}/docs/
 
       - name: Trigger Amplify redeploy
+        id: amplify
         run: |
           aws s3 sync s3://${{ env.AWS_S3_BUCKET_NAME }} /tmp/full-site
 
@@ -109,6 +112,74 @@ jobs:
             --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} \
             --branch-name production \
             --job-id "$JOB_ID"
+
+          echo "job_id=${JOB_ID}" >> "$GITHUB_OUTPUT"
+
+  wait-amplify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION_NAME }}
+
+      - name: Wait for Amplify deployment
+        env:
+          AWS_AMPLIFY_APP_ID: ${{ secrets.AWS_AMPLIFY_APP_ID }}
+          AMPLIFY_JOB_ID: ${{ needs.deploy.outputs.amplify_job_id }}
+        run: |
+          TIMEOUT_SECONDS=900
+          INTERVAL_SECONDS=15
+          elapsed=0
+
+          while [ "$elapsed" -lt "$TIMEOUT_SECONDS" ]; do
+            STATUS=$(aws amplify get-job \
+              --app-id "${AWS_AMPLIFY_APP_ID}" \
+              --branch-name production \
+              --job-id "${AMPLIFY_JOB_ID}" \
+              --query 'job.summary.status' \
+              --output text)
+
+            echo "Amplify job ${AMPLIFY_JOB_ID} status: ${STATUS} (${elapsed}s)"
+
+            case "${STATUS}" in
+              SUCCEED)
+                echo "Amplify deployment succeeded."
+                exit 0
+                ;;
+              FAILED|CANCELLED|CANCELLING)
+                echo "::error::Amplify deployment ${STATUS}."
+                exit 1
+                ;;
+            esac
+
+            sleep "${INTERVAL_SECONDS}"
+            elapsed=$((elapsed + INTERVAL_SECONDS))
+          done
+
+          echo "::error::Timed out waiting for Amplify job ${AMPLIFY_JOB_ID}."
+          exit 1
+
+  start-algolia-crawler:
+    needs: wait-amplify
+    runs-on: ubuntu-latest
+    environment: production
+    continue-on-error: true
+    steps:
+      - name: Start Algolia crawler reindex
+        env:
+          USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
+          API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
+          CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
+        run: |
+          CREDENTIALS=$(printf '%s' "${USER_ID}:${API_KEY}" | base64 -w 0)
+
+          curl --fail-with-body -X POST \
+            -H "Authorization: Basic ${CREDENTIALS}" \
+            "https://crawler.algolia.com/api/1/crawlers/${CRAWLER_ID}/reindex"
 
   merge-to-develop:
     needs: deploy
