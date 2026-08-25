@@ -158,6 +158,42 @@ function buildSidebarLabel(name) {
   return `Version ${v}`;
 }
 
+function normalizeReportPortalLinks(text) {
+  return text.replace(
+    /\]\((https:\/\/reportportal\.io(?:\([^()]*\)|[^()])*)\)/g,
+    (match, rawUrl) => {
+      try {
+        const url = new URL(rawUrl);
+
+        if (url.hostname !== 'reportportal.io') {
+          return match;
+        }
+
+        // 1. Strip utm_ params from the query string
+        for (const key of [...url.searchParams.keys()]) {
+          if (key.toLowerCase().startsWith('utm_')) url.searchParams.delete(key);
+        }
+
+        // 2. Strip utm_ params that ended up in the hash by mistake
+        if (/utm_/i.test(url.hash)) {
+          url.hash = url.hash.replace(/[?&]utm_[^&]*/gi, '');
+        }
+
+        // 3. Convert /docs links to relative paths
+        if (url.pathname === '/docs' || url.pathname.startsWith('/docs/')) {
+          const suffix = url.pathname.slice('/docs'.length).replace(/^\/+/, '');
+          const relativePath = `/${suffix}`;
+          return `](${relativePath}${url.search}${url.hash})`;
+        }
+
+        return `](${url.toString()})`;
+      } catch {
+        return match;
+      }
+    },
+  );
+}
+
 function transformBody(body) {
   let result = body;
 
@@ -175,6 +211,8 @@ function transformBody(body) {
     /(?<!["\(])(?<!\]\()https?:\/\/[^\s)<>\]]+/g,
     (url) => `[${extractLabel(url)}](${url})`,
   );
+
+  result = normalizeReportPortalLinks(result);
 
   return result;
 }
@@ -207,6 +245,7 @@ module.exports = {
   buildFileName,
   buildSidebarLabel,
   transformBody,
+  normalizeReportPortalLinks,
   extractLabel,
   stripPrefix,
 };
