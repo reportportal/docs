@@ -143,6 +143,7 @@ h1 {
 
 .navbar .dropdown {
   --version-dropdown-offset: 16px;
+
   padding: 0 4px;
 }
 
@@ -172,7 +173,7 @@ h1 {
   height: 6px;
   margin: 0;
   border: 0;
-  background-color: currentColor;
+  background-color: currentcolor;
   position: static;
   top: auto;
   transform: none;
@@ -221,6 +222,7 @@ h1 {
 .dropdown__menu .dropdown__link--active,
 .dropdown__menu .dropdown__link--active:hover {
   --ifm-dropdown-link-color: var(--ifm-dropdown-link-active-color);
+
   background-color: var(--ifm-dropdown-link-active-background);
   font-weight: 500;
 }
