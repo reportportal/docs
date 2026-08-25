@@ -35,6 +35,11 @@
   src: url("/static/fonts/noto-sans/NotoSans-Medium.ttf");
   font-weight: 500;
 }
+@font-face {
+  font-family: NotoSans;
+  src: url("/static/fonts/noto-sans/NotoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
 
 :root {
   --ifm-color-primary: #009dbb;
@@ -47,6 +52,8 @@
   --ifm-font-family-base: NotoSans, Arial, sans-serif;
   --ifm-heading-font-family: Poppins, Arial, sans-serif;
   --ifm-code-font-size: 95%;
+  --ifm-dropdown-box-shadow: 0 8px 24px -4px rgba(23, 28, 41, 0.14);
+  --version-selector-border-color-open: var(--ifm-color-primary);
 }
 
 [data-theme='light'] {
@@ -58,11 +65,30 @@
   --ifm-color-emphasis-700: #8791ab;
   --ifm-color-content-secondary: #8791ab;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-dropdown-border-color: #e7e9ee;
+  --ifm-dropdown-hover-background-color: #f1f2f5;
+  --ifm-dropdown-link-active-color: var(--ifm-color-primary-darker);
+  --ifm-dropdown-link-active-background: #e6f5f8;
+
+  --version-selector-border-color: var(--ifm-dropdown-border-color);
+  --version-selector-divider-color: var(--ifm-dropdown-border-color);
+  --version-selector-color: var(--ifm-font-color-base);
 }
 
 [data-theme='dark'] {
   --ifm-font-color-base: #e3e3e3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-dropdown-background-color: #2e2f31;
+  --ifm-dropdown-border-color: #4a4f57;
+  --ifm-dropdown-hover-background-color: #3a3c40;
+  --ifm-dropdown-link-active-color: #3ac2dc;
+  --ifm-dropdown-link-active-background: #123a44;
+
+  --version-selector-border-color: #444950;
+  --version-selector-divider-color: #3a3b3d;
+  --version-selector-color: #e3e3e3;
 }
 
 button {
@@ -97,4 +123,119 @@ h1 {
 
 .version-button .dropdown--right .dropdown__menu {
   left: 0px;
+}
+
+/* Navbar version selector trigger (closed / open) */
+.navbar__item.version-selector-divider {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0 12px;
+}
+
+.version-selector-divider__line {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: var(--version-selector-divider-color);
+}
+
+.navbar .dropdown {
+  --version-dropdown-offset: 16px;
+  padding: 0 4px;
+}
+
+.navbar .dropdown > .navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 10px 6px 12px;
+  border: 1px solid var(--version-selector-border-color);
+  border-radius: 4px;
+  color: var(--version-selector-color);
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  transition: border-color var(--ifm-transition-fast) ease;
+}
+
+.navbar .dropdown > .navbar__link:hover,
+.navbar .dropdown--hoverable:hover > .navbar__link {
+  color: var(--version-selector-color);
+  border-color: var(--version-selector-border-color-open);
+}
+
+.navbar .dropdown > .navbar__link:after {
+  width: 10px;
+  height: 6px;
+  margin: 0;
+  border: 0;
+  background-color: currentColor;
+  position: static;
+  top: auto;
+  transform: none;
+  transition: transform var(--ifm-transition-fast) ease;
+  mask: url('/img/chevron-down.svg') center / contain no-repeat;
+  -webkit-mask: url('/img/chevron-down.svg') center / contain no-repeat;
+}
+
+.navbar .dropdown--hoverable:hover > .navbar__link:after {
+  transform: rotate(180deg);
+}
+
+/* Gap: Infima toggles opacity/visibility on :hover
+   Bridge (::after) only while hovered — so empty space below does not open the menu. */
+.navbar .dropdown--hoverable:hover > .dropdown__menu {
+  transform: translateY(var(--version-dropdown-offset));
+}
+
+.navbar .dropdown--hoverable:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: var(--version-dropdown-offset);
+}
+
+/* Version dropdown: section labels + divider (Latest / Minor) */
+.dropdown__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid var(--ifm-dropdown-border-color);
+  border-radius: 8px;
+  box-shadow: var(--ifm-dropdown-box-shadow);
+}
+.dropdown__menu .dropdown__link {
+  min-width: 184px;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+.dropdown__menu .dropdown__link--active,
+.dropdown__menu .dropdown__link--active:hover {
+  --ifm-dropdown-link-color: var(--ifm-dropdown-link-active-color);
+  background-color: var(--ifm-dropdown-link-active-background);
+  font-weight: 500;
+}
+.dropdown__menu .dropdown__label {
+  display: block;
+  padding: 12px 12px 6px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  color: var(--ifm-dropdown-link-color);
+  pointer-events: none;
+  cursor: default;
+}
+.dropdown__menu .dropdown__divider {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--ifm-dropdown-border-color);
 }

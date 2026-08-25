@@ -2,6 +2,8 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import { themes } from 'prism-react-renderer';
+import versions from './versions.json';
+import { splitVersions } from './src/utils/splitVersions.js';
 
 const fs = require('fs');
 const path = require('path');
@@ -16,6 +18,8 @@ require('dotenv').config();
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
 const RELEASES_DIR = path.join(__dirname, 'docs', 'releases');
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 function readReleaseLastmodDates() {
   const dates = {};
@@ -36,6 +40,8 @@ function readReleaseLastmodDates() {
   }
   return dates;
 }
+
+const { latest, minors } = splitVersions(versions);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -97,7 +103,14 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
-          includeCurrentVersion: process.env.NODE_ENV !== 'production',
+          onlyIncludeVersions: [
+            ...(isProduction ? [] : ['current']),
+            ...latest,
+            ...minors.map((v) => v.id),
+          ],
+          versions: Object.fromEntries(
+            minors.map(({ id, label }) => [id, { label }]),
+          ),
         },
         blog: false,
         theme: {
@@ -142,8 +155,23 @@ const config = {
             target: '_self',
           },
           {
+            type: 'html',
+            position: 'left',
+            className: 'version-selector-divider',
+            value: '<span class="version-selector-divider__line"></span>',
+          },
+          {
             type: 'docsVersionDropdown',
-            position: 'right',
+            position: 'left',
+            dropdownItemsAfter: minors.length
+              ? [
+                  { type: 'html', value: '<hr class="dropdown__divider" />' },
+                  {
+                    type: 'html',
+                    value: '<span class="dropdown__label">Earlier versions</span>',
+                  },
+                ]
+              : [],
           },
           {
             href: 'https://reportportal.io/',
@@ -261,6 +289,8 @@ const config = {
         searchPagePath: 'search',
       },
     }),
+
+  clientModules: ['./src/clientModules/syncMinorVersionDropdown.js'],
 
   plugins: [
     './plugins/plugin-cookie-pro',
