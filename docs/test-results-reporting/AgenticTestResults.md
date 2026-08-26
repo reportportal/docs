@@ -22,7 +22,7 @@ To integrate your AI testing workflows with ReportPortal, choose one of the foll
 
 ### Programmatically
 
-Use ReportPortal [integration guides](./ImplementOwnIntegration.md) and [reporting SDKs](./ReportingSDK.md) for various programming languages to send results from your agent pipeline via the ReportPortal API.
+Use ReportPortal [integration guides](/integrations/ImplementOwnIntegration/) and [reporting SDKs](/test-results-reporting/ReportingSDK/) for various programming languages to send results from your agent pipeline via the ReportPortal API.
 
 ### Using agent skills
 
