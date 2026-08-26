@@ -6,19 +6,19 @@ description: How ReportPortal uses ML, MCP, and agentic reporting together — f
 
 # AI capabilities
 
-Built-in ML triage detects failure patterns and root causes automatically, while AI agents connected via [MCP](/integrations/ai-agents/MCPServer) extend that work across the pipeline — from test design to a release decision.
+Built-in [ML triage](/analysis/AutoAnalysisOfLaunches) detects failure patterns and root causes automatically, while AI agents connected via [MCP](/integrations/ai-agents/MCPServer) extend that work across the pipeline — from test design to a release decision. For how this works in practice, see [smarter AI defect triage](https://reportportal.io/blog/dont-analyze-the-same-failure-twice-smarter-ai-defect-triage-with-reportportal/).
 
 ReportPortal does not treat AI as a single analyzer step. It supports the whole testing cycle: suggesting and organizing cases in the [Test Management System](/test-management-system/), executing and monitoring runs (including [agentic test results](/test-results-reporting/AgenticTestResults)), classifying failures, and helping teams make go / no-go decisions with evidence in one place.
 
-**Failure analysis on reported results**
+## Failure analysis on reported results
 
 Daily regressions produce more failures than a team can review by hand. [AI-based failure reason detection](/getting-started/features/AIFailureReasonDetection) is the built-in layer: [Auto-Analysis](/analysis/AutoAnalysisOfLaunches) assigns defect types from historical investigations, [Unique Error](/analysis/UniqueErrorAnalysis) groups identical messages, and [ML suggestions](/analysis/MLSuggestions) reuse comments and bug-tracker links from similar items.
 
 Saved classifications become training data, so the next similar failure is more likely to be labeled without a person opening every log. Use this when the question is *why this run failed* and what to fix first.
 
-**AI tools connected to ReportPortal**
+## AI tools connected to ReportPortal
 
-The MCP Server is a bridge to assistants such as Cursor, Copilot, or Claude. Those tools can query launches, logs, and attachments, suggest defect types, and trigger analysis or [quality gates](/getting-started/features/QualityGates) after you confirm the action.
+The MCP Server is a bridge to assistants such as Cursor, Copilot, or Claude. Those tools can query launches, logs, and attachments, suggest defect types, and trigger analysis or [quality gates](/getting-started/features/QualityGates) after you confirm the action. For concrete examples, see [MCP Server practical use cases](https://reportportal.io/blog/reportportal-mcp-server-practical-use-cases-for-ai-powered-qa-teams/).
 
 When TMS is in the same project, the assistant is not limited to “what failed.” It can work with **what should be tested** (library, folders, plans, milestones) and **what actually ran**. Typical flows:
 
@@ -28,7 +28,7 @@ When TMS is in the same project, the assistant is not limited to “what failed.
 
 That is how design and planning stay connected to reporting: the agent does not replace TMS or Launches; it operates on the same objects your team already uses.
 
-**Results from AI agents**
+## Results from AI agents
 
 Agentic testing is a different source of data. An agent explores the product, decides what to check, and reports a session with steps, logs, and attachments. ReportPortal stores those [agentic launches](/test-results-reporting/AgenticTestResults) in the same project as scripted suites, with a distinct launch type so they stay comparable rather than mixed into one unlabeled pile.
 
