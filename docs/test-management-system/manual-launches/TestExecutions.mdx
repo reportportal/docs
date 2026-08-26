@@ -1,8 +1,150 @@
 ---
 sidebar_position: 1
 sidebar_label: Test executions
-description: test
+description: Run, track, and manage test executions within a manual launch. Learn how to search, filter, change status, and delete test executions.
 ---
 
 # Test executions
 
+Test executions are individual test cases included in a manual launch for execution. They represent the specific testing activities that need to be performed. Test Executions are created as snapshots of Test Cases. Once added to a launch, they are not updated if the original Test Case is modified.
+
+Each test execution has its status, priority, and tags, allowing teams to track execution progress, prioritize testing, and categorize test executions. Users can run test executions, update their statuses, delete them from a manual launch, and search and filter them.
+
+Any user with project access can view test executions organized by folders in a manual launch.
+
+<MediaViewer src={require('./img/ViewTestExecutions.png')} alt="Test executions list in a manual launch" />
+
+:::note
+When you add a test case from the Test Case Library to a manual launch linked to a test plan, the test case is automatically added to that test plan as well. For manual launches without a linked test plan, test cases are added only to the launch.
+:::
+
+## Search test executions in manual launch
+
+Any user with project access can search test executions within a selected manual launch.
+
+<MediaViewer src={require('./img/SearchTestExecutions.png')} alt="Search test executions in a manual launch" />
+
+## Filter test executions in manual launch
+
+Any user with project access can filter test executions within a selected manual launch.
+
+<MediaViewer src={require('./img/FilterTestExecutions.png')} alt="Filter panel for test executions" />
+
+**Priority** – The level of importance assigned to the test execution, taken from the source test case. It helps prioritize test executions based on their business impact and the severity of potential failures. Dropdown with the options: Blocker, Critical, High, Medium, Low, Unspecified.
+
+**Tags** – Keywords associated with test executions, taken from the source test case. They are used to categorize and filter test executions based on relevant characteristics.
+
+**Show "To Run" only** – A checkbox that filters the list to display only test executions that are marked as To Run and are pending execution.
+
+## Change test execution status from manual launch
+
+To change status of test execution:
+
+1. Log in as Admin, Manager or user with edit permissions.
+2. Navigate to "Manual Launches" page.
+3. Click on manual launch's name to open all test executions list.
+4. Click anywhere in the launch row to open the details panel.
+
+:::note
+The launch name and "More actions" (•••) trigger their own actions and won't open the panel.
+:::
+
+5. Click "Change Status" button in the side panel with Launch details.
+6. Select new status.
+7. Click confirm button.
+
+<MediaViewer src={require('./img/ChangeStatusTestExecution1.png')} alt="Select a test execution to change status" />
+
+<MediaViewer src={require('./img/ChangeStatusTestExecution2.png')} alt="Change Status options in the details panel" />
+
+If current **status is "To Run"**, the following options are available in the "Change Status" dropdown:
+
+* Mark as Passed
+* Mark as Failed
+* Mark as Skipped
+
+If current **status is "In Progress"**, the following options are available in the "Change Status" dropdown:
+
+* Mark as Passed
+* Mark as Failed
+* Mark as Skipped
+* Clear Status
+
+If current **status is "Passed"**, the following options are available in the "Change Status" dropdown:
+
+* Mark as Failed
+* Mark as Skipped
+* Clear Status
+
+If current **status is "Failed"**, the following options are available in the "Change Status" dropdown:
+
+* Mark as Passed
+* Mark as Skipped
+* Clear Status
+
+If current **status is "Skipped"**, the following options are available in the "Change Status" dropdown:
+
+* Mark as Passed
+* Mark as Failed
+* Clear Status
+
+<MediaViewer src={require('./img/TE-MarkAsPassed.png')} alt="Confirm action on Mark as Passed modal window" />
+
+<MediaViewer src={require('./img/TE-MarkAsFailed.png')} alt="Confirm action on Mark as Failed modal window" />
+
+<MediaViewer src={require('./img/TE-MarkAsSkipped.png')} alt="Confirm action on Mark as Skipped modal window" />
+
+<MediaViewer src={require('./img/TE-ClearStatus.png')} alt="Confirm action on Clear Status modal window" />
+
+## Run test execution from manual launch
+
+To run test execution:
+
+1. Log in as Admin, Manager or user with edit permissions.
+2. Navigate to "Manual Launches" page.
+3. Click on manual launch's name to open all test executions list.
+4. Click anywhere in the launch row to open the details panel.
+
+:::note
+The launch name and "More actions" (•••) trigger their own actions and won't open the panel.
+:::
+
+5. Click "Run Test" or "Continue Testing" button.
+
+<MediaViewer src={require('./img/RunTestExecution.png')} alt="Run Test button in the test execution details panel" />
+
+If the test execution **status is "To Run"**, the primary "Run Test" button and the "Change Status" dropdown are visible.
+
+If the test execution **status is "In Progress"**, the "Continue Testing" button and the "Change Status" dropdown are visible.
+
+If the test execution **status is "Passed", "Failed", or "Skipped"**, only the "Change Status" dropdown is visible. There is no separate "Rerun" button. To run the test again, the user must select "Clear Status" to reset the status to "To Run". The "Run Test" button then becomes available.
+
+## Delete test execution from manual launch
+
+To delete test execution:
+
+1. Log in as Admin, Manager or user with edit permissions.
+2. Navigate to "Manual Launches" page.
+3. Click on manual launch's name to open all test executions list.
+4. Click the "More actions" (•••) icon next to the test execution.
+5. Select "Delete" option.
+6. Click "Delete" button.
+
+<MediaViewer src={require('./img/DeleteTestExecution1.png')} alt="Delete option for a test execution" />
+
+<MediaViewer src={require('./img/DeleteTestExecution2.png')} alt="Confirm action on Delete Test Execution modal window" />
+
+## Bulk-delete test executions from manual launch
+
+To bulk-delete test executions:
+
+1. Log in as Admin, Manager or user with edit permissions.
+2. Navigate to "Manual Launches" page.
+3. Click on manual launch's name to open all test executions list.
+4. Bulk-select test executions.
+5. Select "Delete" option.
+6. Click "Delete" button.
+
+<MediaViewer src={require('./img/BulkDeleteTestExecution1.png')} alt="Bulk-select test executions" />
+
+<MediaViewer src={require('./img/BulkDeleteTestExecution2.png')} alt="Confirm action on Delete Test Executions modal window" />
