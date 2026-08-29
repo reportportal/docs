@@ -1,6 +1,6 @@
 ---
 title: Analysis
-description: test
+description: Investigate failures and monitor trends with Auto-Analysis, Pattern Analysis, and Unique Error Analysis in ReportPortal.
 ---
 
 # Analysis

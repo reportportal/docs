@@ -12,7 +12,7 @@ In this tutorial we will walk you through the process of integrating ReportPorta
 To run your tests in any kind of CI, you first need a way to execute them in the
 console. E.G. for Java this might be calling a build tool like Gradle or Maven
 with: `./gradlew test` or `./mvnw test` respectively. For Python it might be
-`pytest` command. Your tests should be already [integrated with a ReportPortal agent](/log-data-in-reportportal/test-framework-integration/). You also need a working ReportPortal instance and access to your secret storage, E.G.
+`pytest` command. Your tests should be already [integrated with a ReportPortal agent](../../test-frameworks/). You also need a working ReportPortal instance and access to your secret storage, E.G.
 [HashiCorp Vault](https://www.vaultproject.io/), to securely get your
 credentials while the pipeline is running.
 
@@ -276,7 +276,7 @@ variable name in the logs.
 
 Enterprise users can utilize our Quality Gates plugin to get more
 control over application-under-test quality. To enable and configure Quality Gates plugin on
-ReportPortal, please, refer to [corresponding documentation](/quality-gates).
+ReportPortal, please, refer to [corresponding documentation](../../../analysis/quality-gates/).
 
 ReportPortal the Quality Gates plugin doesn't have native integration with GitLab, so we
 need to use a custom approach here. One way is polling ReportPortal Launch info API for

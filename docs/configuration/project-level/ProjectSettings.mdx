@@ -26,11 +26,11 @@ The project settings are divided into following tabs: "General", "Integrations",
 Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations.
 
-The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](/installation-and-deployment/advanced-installation/JobsConfiguration).
+The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](../../../installation-and-deployment/advanced-installation/JobsConfiguration).
 
 The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
-- **Name** – is a disabled field, can be edited on Organization level -> [Projects page](/configuration/organization-level/Projects).
+- **Name** – is a disabled field, can be edited on Organization level -> [Projects page](../../organization-level/Projects).
 
 In addition to the Project Settings General section, you can find the project name on the left menu and in the URL.
 
@@ -86,7 +86,7 @@ Our test reporting tool integrates seamlessly, allowing for a streamlined connec
 
 <MediaViewer src={require('./img/project-settings/ProjectSettings4.png')} alt="Integrations tab in the Project Settings" />
 
-Integrations can be added at the [instance level](/configuration/instance-level/Plugins), making them applicable to all projects, or they can be configured specifically for a project in the Project Settings.
+Integrations can be added at the [instance level](../../instance-level/Plugins), making them applicable to all projects, or they can be configured specifically for a project in the Project Settings.
 
 For those who require a different configuration from other projects, or who want to integrate only their specific project with an external system, follow these steps:
 
@@ -164,7 +164,7 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 ### Slack notifications
 
 :::tip
-To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to the instance level -> [Plugins page](/configuration/instance-level/Plugins).
+To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to the instance level -> [Plugins page](../../instance-level/Plugins).
 :::
 
 To create Slack notification rule, perform the following steps:
@@ -178,7 +178,7 @@ To create Slack notification rule, perform the following steps:
 
 **Rule name** – from 1 to 55 characters, mandatory field
 
-**Webhook URL** – mandatory field (it is configured on the [Slack side](/integrations/notifications/Slack#configuration-on-slack-side)
+**Webhook URL** – mandatory field (it is configured on the [Slack side](../../../integrations/notifications/Slack#configuration-on-slack-side)
 
 **In case** – dropdown field; by default, the value is set to *Always*:
 
@@ -209,7 +209,7 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 ### Telegram notifications
 
 :::tip
-To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to the instance level -> [Plugins page](/configuration/instance-level/Plugins).
+To use this functionality, ensure that the Slack plugin is uploaded and enabled. For that, go to the instance level -> [Plugins page](../../instance-level/Plugins).
 :::
 
 To create Telegram notification rule, perform the following steps:
@@ -223,13 +223,13 @@ To create Telegram notification rule, perform the following steps:
 
 **Rule name** – from 1 to 55 characters, mandatory field
 
-**Chat id** – mandatory field, copied from group info in [Telegram](/integrations/notifications/Telegram#configuration-on-telegram-side)
+**Chat id** – mandatory field, copied from group info in [Telegram](../../../integrations/notifications/Telegram#configuration-on-telegram-side)
 
 :::important
 Add ‘-’ before the chat id.
 :::
 
-**Bot Api Key** - mandatory field, received during registration [your Telegram bot](/integrations/notifications/Telegram#configuration-on-telegram-side)
+**Bot Api Key** - mandatory field, received during registration [your Telegram bot](../../../integrations/notifications/Telegram#configuration-on-telegram-side)
 
 **In case** – dropdown field; by default, the value is set to *Always*:
 
@@ -281,7 +281,7 @@ To create custom defect types, perform the following steps:
 
 Add more custom defects, if you need it. The system allows us to add up to ten subtypes of each default defect type.
 
-Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor. For more information refer to the [Investigation of failure](/working-with-test-results/InvestigationOfFailure) topic.
+Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor. For more information refer to the [Investigation of failure](../../../working-with-test-results/InvestigationOfFailure) topic.
 
 :::note
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
@@ -400,13 +400,13 @@ System log types cannot be deleted.
 
 The Analyzer can allow reducing test failure analysis routine on the project.
 
-For more information on this topic, please refer to [Auto-Analysis documentation](/analysis/AutoAnalysisOfLaunches).
+For more information on this topic, please refer to [Auto-Analysis documentation](../../../analysis/AutoAnalysisOfLaunches).
 
 ## Pattern Analysis
 
 The "Pattern Analysis" feature allows identifying recurring failure patterns and common behaviors across test results.
 
-For more details, see the [Pattern Analysis documentation](/analysis/PatternAnalysis).
+For more details, see the [Pattern Analysis documentation](../../../analysis/PatternAnalysis).
 
 ## Demo data
 
@@ -421,4 +421,4 @@ modified or removed without any effect of your real objects.
 
 Quality Gates allow defining business-friendly quality rules and acceptance criteria for launches, helping QA teams and stakeholders evaluate release readiness based on testing results.
 
-Explore the full capabilities of [Quality Gates](/analysis/quality-gates/).
+Explore the full capabilities of [Quality Gates](../../../analysis/quality-gates/).

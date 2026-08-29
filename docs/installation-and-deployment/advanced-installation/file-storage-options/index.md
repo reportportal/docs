@@ -85,4 +85,4 @@ DATASTORE_ENDPOINT: http://minio:9000
 
 ## Cloud Storage
 
-To set up Amazon S3 Cloud Storage with IAM user (secret keys) or IAM role, follow our [Advanced S3 Integration Guide](/installation-steps-advanced/file-storage-options/S3CloudStorage).
+To set up Amazon S3 Cloud Storage with IAM user (secret keys) or IAM role, follow our [Advanced S3 Integration Guide](./S3CloudStorage).

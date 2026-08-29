@@ -325,7 +325,7 @@ aws elbv2 describe-listeners --load-balancer-arn <alb-arn>
 - [ALB Ingress Annotations Reference](https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/ingress/annotations/)
 - [Install AWS Load Balancer Controller (Helm)](https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html)
 - [Route application and HTTP traffic with Application Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)
-- [ReportPortal Documentation](/docs)
+- [ReportPortal Documentation](../../../)
 - [ReportPortal GitHub Issues](https://github.com/reportportal/kubernetes/issues)
 
 ---
