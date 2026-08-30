@@ -41,3 +41,6 @@ jobs:
 
       - name: Build the source code
         run: npm run build
+
+      - name: Validate Schema.org JSON-LD
+        run: npm run validate:schema
