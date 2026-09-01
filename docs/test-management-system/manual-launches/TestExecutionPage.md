@@ -53,16 +53,23 @@ If current **status is "Skipped"**, the following options are available in the "
 * Mark as Failed
 * Clear Status
 
+**Screenshot of "Mark as Passed" modal window**
 <MediaViewer src={require('./img/TEpageMarkAsPassed.png')} alt="Confirm action on Mark as Passed modal window" />
 
+**Screenshot of "Mark as Failed" modal window** with BTS integration configured
 <MediaViewer src={require('./img/TEpageMarkAsFailed1.png')} alt="Mark as Failed modal window with BTS integration configured" />
 
 :::note
 On the "Mark as Failed" modal, you can add a comment, attach files, link an existing issue, or create a new issue when marking a test execution as failed for the first time.
 :::
 
+**"Mark as Failed" modal window** without BTS integration configured
+<MediaViewer src={require('./img/TEpageMarkAsFailed2.png')} alt="Mark as Failed modal window without BTS integration configured" />
+
+**Screenshot of "Mark as Skipped" modal window**
 <MediaViewer src={require('./img/TEpageMarkAsSkipped.png')} alt="Confirm action on Mark as Skipped modal window" />
 
+**Screenshots of "Clear Status" modal window**
 <MediaViewer src={require('./img/TEpageClearStatus1.png')} alt="Clear status option in the execution status dropdown" />
 
 <MediaViewer src={require('./img/TEpageClearStatus2.png')} alt="Confirm action on Clear Status modal window" />
