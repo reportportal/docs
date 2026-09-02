@@ -4,36 +4,57 @@ sidebar_label: AI capabilities
 description: How ReportPortal uses ML, MCP, and agentic reporting together — from test design and execution to failure analysis and release decisions.
 ---
 
-# AI capabilities
+# AI capabilities for the full testing lifecycle
 
-Built-in [ML triage](/analysis/AutoAnalysisOfLaunches) detects failure patterns and root causes automatically, while AI agents connected via [MCP](/integrations/ai-agents/MCPServer) extend that work across the pipeline — from test design to a release decision. For how this works in practice, see [smarter AI defect triage](https://reportportal.io/blog/dont-analyze-the-same-failure-twice-smarter-ai-defect-triage-with-reportportal/).
+ReportPortal leverages AI assistants via [MCP](/integrations/ai-agents/MCPServer) to accelerate testing at every stage of the lifecycle. The ReportPortal MCP Server connects AI clients such as Claude, Cursor, and GitHub Copilot using the Model Context Protocol (MCP). These assistants can help teams create test cases, organize plans, and review reported results.
 
-ReportPortal does not treat AI as a single analyzer step. It supports the whole testing cycle: suggesting and organizing cases in the [Test Management System](/test-management-system/), executing and monitoring runs (including [agentic test results](/test-results-reporting/AgenticTestResults)), classifying failures, and helping teams make go / no-go decisions with evidence in one place.
+## Design: AI-assisted test case creation
 
-## Failure analysis on reported results
+AI assistants connected via the ReportPortal MCP Server can generate, review, and refine test cases directly in the [Test Management System](/test-management-system/). Instead of writing every scenario from scratch, QA teams can prompt AI to create [test cases](/test-management-system/test-case-library/TestCases) based on requirements — then review and refine them in ReportPortal.
 
-Daily regressions produce more failures than a team can review by hand. [AI-based failure reason detection](/getting-started/features/AIFailureReasonDetection) is the built-in layer: [Auto-Analysis](/analysis/AutoAnalysisOfLaunches) assigns defect types from historical investigations, [Unique Error](/analysis/UniqueErrorAnalysis) groups identical messages, and [ML suggestions](/analysis/MLSuggestions) reuse comments and bug-tracker links from similar items.
+*Example:* A QA lead provides a feature specification to AI. AI generates test cases for the happy path and error handling, formats them in ReportPortal, and the team refines them.
 
-Saved classifications become training data, so the next similar failure is more likely to be labeled without a person opening every log. Use this when the question is *why this run failed* and what to fix first.
+## Plan: Manage test structure with AI
 
-## AI tools connected to ReportPortal
+MCP tools enable AI to create and manage [test folders](/test-management-system/test-case-library/Folders), [milestones](/test-management-system/milestones/), and [test plans](/test-management-system/milestones/TestPlan). AI can help structure test work efficiently, while teams keep control over strategy and prioritization.
 
-The MCP Server is a bridge to assistants such as Cursor, Copilot, or Claude. Those tools can query launches, logs, and attachments, suggest defect types, and trigger analysis or [quality gates](/getting-started/features/QualityGates) after you confirm the action. For concrete examples, see [MCP Server practical use cases](https://reportportal.io/blog/reportportal-mcp-server-practical-use-cases-for-ai-powered-qa-teams/).
+*Example:* AI helps organize a release test suite by creating milestones for different test stages and populating test plans with relevant test cases.
 
-When TMS is in the same project, the assistant is not limited to “what failed.” It can work with **what should be tested** (library, folders, plans, milestones) and **what actually ran**. Typical flows:
+## Execute: Unified test reporting
 
-* draft or organize cases from specs, then keep the library as the source of truth
-* compare planned cases to executions and list what is missing or failed — see [AI Analysis](/analysis/AIAnalysis)
-* apply an approved defect type so Auto-Analysis can learn from it
+ReportPortal [consolidates results](/getting-started/features/UnifiedTestReporting) from automated tests, [agentic QA tests](/test-results-reporting/AgenticTestResults), and manual testing in one place. All test execution data — [logs, screenshots, and other artifacts](/getting-started/features/RichArtifactsInTestReports) — is available for analysis and investigation. AI assistants can access that context through MCP.
 
-That is how design and planning stay connected to reporting: the agent does not replace TMS or Launches; it operates on the same objects your team already uses.
+*Example:* Your CI/CD pipeline reports automated test results. In parallel, agentic QA tests explore the application autonomously. Manual testers verify critical flows. All results appear in ReportPortal with full context and are accessible to AI assistants for analysis through MCP.
 
-## Results from AI agents
+## Analyze: AI-powered failure investigation
 
-Agentic testing is a different source of data. An agent explores the product, decides what to check, and reports a session with steps, logs, and attachments. ReportPortal stores those [agentic launches](/test-results-reporting/AgenticTestResults) in the same project as scripted suites, with a distinct launch type so they stay comparable rather than mixed into one unlabeled pile.
+ReportPortal's [Unique Error Analysis](/analysis/UniqueErrorAnalysis) and [Auto-Analysis](/analysis/AutoAnalysisOfLaunches) automatically group related failures and suggest root causes. Instead of manually reviewing hundreds of logs, AI surfaces the signal: 20 failures might be grouped into 3 unique errors. [ML suggestions](/analysis/MLSuggestions) can auto-classify defect types based on historical patterns. For an overview of this built-in layer, see [AI-based failure reason detection](/getting-started/features/AIFailureReasonDetection).
 
-During execution you still get [real-time](/getting-started/features/RealTimeReporting) progress. For release, [Quality Gates](/getting-started/features/QualityGates) can use the analyzed project data — including agentic runs — as the automated GO / NO-GO in CI/CD.
+*Example:* 200 test failures appear. Unique Error Analysis groups them: 150 from timeout (infrastructure issue), 40 from a UI change (test maintenance), 10 from data setup. The team fixes 3 root causes instead of investigating 200 items separately.
 
-In short: MCP is how *your* AI tools talk to ReportPortal. Agentic reporting is how *testing agents* send results in. ML triage is what ReportPortal does with failures once they are there. You do not have to adopt all three at once, but they share one record of what was tested and what blocked the release.
+## Visualize: Build custom dashboards in your AI tool
 
-To set up a connection, start with [MCP Server](/integrations/ai-agents/MCPServer). For cases and plans, see [Test Management System](/test-management-system/). To report agent sessions, see [Agentic test results](/test-results-reporting/AgenticTestResults).
+Using the [MCP Server](/integrations/ai-agents/MCPServer), AI assistants in Claude, Cursor, and other tools can build custom dashboards and widgets directly in your AI client. Pull live test data from ReportPortal and create tailored visualizations for your team's needs — without leaving the development environment.
+
+You can also track the same metrics in ReportPortal with [dashboards and widgets](/dashboards-and-widgets/).
+
+*Example:* In Cursor, you configure the ReportPortal MCP connector. You then ask the AI to create a dashboard showing test pass rates by feature, failure trends, and critical defects — and the dashboard appears in the editor for real-time monitoring.
+
+## Release: Quality Gates for automated decision-making
+
+[Quality Gates](/quality-gates/) evaluate test launches against configured rules: pass rate, number of defects by type, test count, and new failures compared to baselines. Teams set criteria like "block release if more than 5 Product Bugs are found" or "pass rate must be > 95%." Quality Gates integrate with CI/CD pipelines to enforce consistent, automated release decisions.
+
+*Example:* A release candidate passes a Quality Gate automatically: 96.5% pass rate, 2 Product Bugs (threshold is 5), zero new failures. The gate turns green; CI/CD proceeds. If it fails, the gate shows exactly which rule blocked the release.
+
+## Why it matters
+
+Manual testing processes are slow and do not scale. By integrating AI across the testing lifecycle, ReportPortal helps teams:
+
+- Reduce analysis time by automatically grouping failures and suggesting defect types
+- Enforce consistent quality standards through automated Quality Gates
+- Make data-driven release decisions without manual spreadsheets
+- Use AI as a seamless part of the test workflow via MCP
+
+By integrating AI across every stage of testing, ReportPortal helps turn QA from a bottleneck into a competitive advantage.
+
+To connect an assistant, start with [MCP Server](/integrations/ai-agents/MCPServer). For cases and plans, see [Test Management System](/test-management-system/). To report agent sessions, see [Agentic test results](/test-results-reporting/AgenticTestResults).
