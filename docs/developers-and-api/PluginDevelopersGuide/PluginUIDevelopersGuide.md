@@ -7,7 +7,7 @@ description: Learn how to develop plugin UI components for ReportPortal test aut
 
 The described approach cover the UI part of the plugin engine starting from ReportPortal version 24.1.
 
-To learn how deal with ReportPortal plugins from the Backend side, follow the [separate guide](./PluginAPIDevelopersGuide.mdx). 
+To learn how deal with ReportPortal plugins from the Backend side, follow the [separate guide](../PluginAPIDevelopersGuide). 
 
 ## The concept
 

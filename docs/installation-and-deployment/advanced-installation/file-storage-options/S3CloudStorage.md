@@ -377,7 +377,7 @@ x-analyzer-environment: &common-analyzer-environment
 ```
 
 :::note
-For full configuration options, see the [ReportPortal S3 integration guide](/installation-steps-advanced/file-storage-options/).
+For full configuration options, see the [ReportPortal S3 integration guide](../).
 :::
 
 #### 5. Docker-Based Installation

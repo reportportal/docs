@@ -1,6 +1,6 @@
 ---
 title: Dashboards & Visualization
-description: test
+description: Build custom dashboards and widgets in ReportPortal to visualize test metrics, track trends, and share quality insights with your team.
 ---
 
 # Dashboards & Visualization

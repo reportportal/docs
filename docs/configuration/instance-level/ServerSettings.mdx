@@ -61,12 +61,12 @@ The configured minimum password length is validated in the following scenarios:
 
 ### GitHub
 
-To enable [GitHub authorization](/integrations/authorization/GitHub):
+To enable [GitHub authorization](../../../integrations/authorization/GitHub):
 
 1. Log in as Admin.
 2. Go to the Server Settings -> "Authorization configuration" tab -> GitHub section.
 3. Switch ON the "GitHub authorization" toggle.
-4. Fill in required [parameters for authorization](/integrations/authorization/GitHub#reportportal-configuration).
+4. Fill in required [parameters for authorization](../../../integrations/authorization/GitHub#reportportal-configuration).
 5. Click "Submit".
 
 <MediaViewer src={require('./img/server-settings/GitHub.png')} alt="Enable GitHub authorization in our test automation dashboard" />
@@ -115,7 +115,7 @@ Now, Admin, Manager, and Member can no longer invite new users to either project
 
 An admin can disable the "Important launches" functionality to better control storage usage and prevent launches from being stored indefinitely on the instance.
 
-By default, the "Important launches" functionality is enabled on all instances. Users can then [mark launches as important](/administration-and-maintenance/LaunchesRetentionPolicy#mark-launch-as-important-on-ui) using the launch burger menu or [report launch as important](/administration-and-maintenance/LaunchesRetentionPolicy#report-launch-as-important), and these launches can only be deleted manually or when [storage limits are exceeded](/administration-and-maintenance/LaunchesRetentionPolicy#important-launch-deletion-on-full-storage).
+By default, the "Important launches" functionality is enabled on all instances. Users can then [mark launches as important](../../../administration-and-maintenance/LaunchesRetentionPolicy#mark-launch-as-important-on-ui) using the launch burger menu or [report launch as important](../../../administration-and-maintenance/LaunchesRetentionPolicy#report-launch-as-important), and these launches can only be deleted manually or when [storage limits are exceeded](../../../administration-and-maintenance/LaunchesRetentionPolicy#important-launch-deletion-on-full-storage).
 
 To turn off the "Important launches" functionality:
 
@@ -131,7 +131,7 @@ When toggling "Important Launches" off:
 
 <MediaViewer src={require('./img/server-settings/ServerSettings12.png')} alt="Disabled Mark as important option" />
 
-2. A background job runs to remove the "Important" flag from launches that were previously marked as important, converting them to regular launches and making them subject to the standard [retention policy](/administration-and-maintenance/LaunchesRetentionPolicy).
+2. A background job runs to remove the "Important" flag from launches that were previously marked as important, converting them to regular launches and making them subject to the standard [retention policy](../../../administration-and-maintenance/LaunchesRetentionPolicy).
 
 3. If the toggle is off, then even if a user reports a launch with the system attribute retentionPolicy:important, the launch will not be marked as important and will still be subject to the standard retention policy.
 
@@ -139,7 +139,7 @@ When toggling "Important Launches" off:
 
 ## Analytics
 
-To turn on [Google Analytics](/references/GoogleAnalyticsUsageByReportPortal) on ReportPortal UI:
+To turn on [Google Analytics](../../../references/GoogleAnalyticsUsageByReportPortal) on ReportPortal UI:
 
 1. Log in as Admin.
 2. Go to the Server Settings page -> "Analytics" tab.

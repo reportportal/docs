@@ -1,0 +1,181 @@
+---
+sidebar_position: 2
+sidebar_label: Mobitru
+description: Integrate Mobitru with ReportPortal to automatically load session recordings and view test execution videos directly in your test results.
+---
+
+# Mobitru
+
+To install the Mobitru plugin, see [Upload plugin](../../ManagePlugins#upload-plugin) section.
+
+The Mobitru plugin automatically loads Mobitru session recordings to ReportPortal by linking each test execution to its corresponding video. This allows you to access the recording directly from the test results.
+
+Once you've set up the ReportPortal-Mobitru integration, simply open the video to see how the test was executed. You can also click any point on the video timeline to jump directly to the corresponding log entry in ReportPortal in case of multiple recordings per test result.
+
+:::note
+Admin can upload Mobitru plugin and create **global integration** (applicable to all organizations/projects on the instance) on the **Instance plugins** page.
+
+Manager and user with edit permissions can re-write global configuration with **project** one on **Project Settings -> Integrations**.
+:::
+
+## Configure Mobitru plugin
+
+### Global Mobitru integration
+
+To configure Mobitru for the whole instance:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Instance plugins page -> Other section.
+3. Click on "Mobitru" panel.
+4. Click on "Add Integration" button.
+5. Fill and confirm the authorization form.
+
+```javascript
+'API key': <can be generated in User Settings on the Mobitru side>
+'Mobitru Billing unit (slug)': <the name of the project in Mobitru>
+'Workspace ID': <the ID of the workspace in Mobitru>
+```
+
+<MediaViewer src={require('./img/CreateGlobal1.png')} alt="Mobitru plugin on Instance plugins page in our test results dashboard" />
+
+<MediaViewer src={require('./img/CreateGlobal2.png')} alt="Create Global Integration form for Mobitru" />
+
+The **API key** can be generated in User Settings on the Mobitru side.
+
+<MediaViewer src={require('./img/APIkey1.png')} alt="Generate API key in Mobitru User Settings" />
+
+<MediaViewer src={require('./img/APIKey2.png')} alt="Generate access key modal in Mobitru" />
+
+**Mobitru Billing unit (slug)** is the name of the project in Mobitru.
+
+<MediaViewer src={require('./img/MobitruBilling.png')} alt="Mobitru Billing unit slug in user profile menu" />
+
+**Workspace ID** can also be found in Mobitru.
+
+<MediaViewer src={require('./img/WorkspaceID.png')} alt="Workspace ID in Mobitru workspace selector" />
+
+#### Delete Mobitru global integration
+
+To delete Mobitru global integration:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Instance plugins page -> Other section.
+3. Click on "Mobitru" panel.
+4. Open global integration.
+5. Click "Delete" icon.
+6. Click "Delete" button.
+
+<MediaViewer src={require('./img/DeleteGlobal.png')} alt="Delete Mobitru global integration" />
+
+### Project Mobitru integration
+
+By default, projects use the global Mobitru integration configuration. If you configure a project-specific integration, it takes precedence over the global configuration for that project.
+
+To configure Mobitru for the project:
+
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
+2. Go to the Project settings -> Integrations tab -> Other section.
+3. Click on "Mobitru" panel.
+4. Click "Create Integration" button.
+5. Fill and confirm the authorization form.
+
+```javascript
+'API key': <can be generated in User Settings on the Mobitru side>
+'Mobitru Billing unit (slug)': <the name of the project in Mobitru>
+'Workspace ID': <the ID of the workspace in Mobitru>
+```
+
+<MediaViewer src={require('./img/CreateProject1.png')} alt="Create Mobitru project integration" />
+
+<MediaViewer src={require('./img/CreateProject2.png')} alt="Create Project Integration form for Mobitru" />
+
+#### Delete Mobitru project integration
+
+To delete Mobitru project integration:
+
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
+2. Go to the Project settings -> Integrations tab -> Other section.
+3. Click on "Mobitru" panel.
+4. Click "Reset to Global Integration" button.
+5. Click "Reset" button.
+
+<MediaViewer src={require('./img/DeleteProject.png')} alt="Reset Mobitru project integration to global" />
+
+## Link your test results with recordings
+
+**Prerequisites:** Your [test framework](../../../integrations/test-frameworks/) must already be integrated with ReportPortal.
+
+Connect your test project to Mobitru to run tests on real devices and browsers. Then add the Mobitru video recording ID attribute so ReportPortal can match each test execution to its session video. The setup process depends on the testing framework you use.
+
+Full examples with configuration details and source code are available in the corresponding guides.
+
+### Selenium
+
+**1. Integrate your tests with Mobitru.**
+
+   [Full example](https://github.com/reportportal/examples-js/blob/main/example-mocha/mobitru-selenium/tests/driver.js#L30)
+
+**2. Add the recording attribute.**
+
+   [Full example](https://github.com/reportportal/examples-js/blob/main/example-mocha/mobitru-selenium/tests/google.spec.js#L47)
+
+### Playwright
+
+**1. Integrate your tests with Mobitru.**
+
+   [Full example](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/mobitru/feature.spec.ts#L12)
+
+**2. Add the recording attribute.**
+
+   [Full example](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/mobitru/feature.spec.ts#L81)
+
+### Mobile
+
+**1. Integrate your tests with Mobitru.**
+
+   Full example
+
+**2. Add the recording attribute.**
+
+   Full example
+
+For additional details, refer to Mobitru documentation for [desktop browser automation](https://mobitru.com/docs/desktop-browser-automation-overview/) and [mobile automation](https://mobitru.com/docs/automation/).
+
+**3. Run the tests (common step)**
+
+Execute your test project as usual (CLI, IDE, etc.). Tests run on Mobitru's real devices and browsers.
+
+## View Mobitru videos in ReportPortal
+
+Test results, logs, and the Mobitru execution video with timeline appear together in ReportPortal.
+
+For that:
+
+1. Open a launch.
+2. Open the test item.
+3. Go to the Logs view.
+4. Open the Remote device tab.
+
+The Remote device tab appears only when the test item (or one of its nested steps) was reported with a Mobitru recording attribute and the video has already been downloaded into ReportPortal binary storage as an attachment. If the attribute is present but the video is not yet stored (or download failed), the tab stays hidden.
+
+:::info
+ReportPortal supports multiple Mobitru videos under one test item or its Nested steps.
+:::
+
+:::important
+Mobitru videos are saved in ReportPortal as attachments and are governed by Keep attachments (Project settings -> General). Adjust this policy if you need longer retention; video files can increase storage consumption.
+:::
+
+<MediaViewer src={require('./img/MobitruVideo.png')} alt="Mobitru video on Remote device tab in our test automation dashboard" />
+
+## Cloud Devices
+
+The "Cloud Devices" tab appears in the project sidebar when a global or project Mobitru integration is configured.
+
+<MediaViewer src={require('./img/CloudDevices.png')} alt="Cloud Devices tab in project sidebar" />
+
+It is a read-only catalog of devices available via Mobitru - browse iOS and Android, grouped as Premium and Available. Use Explore Devices or open a device card to continue in Mobitru in a new browser tab. This page does not let you interact with a device from ReportPortal; to run tests on a device, use the Mobitru integration flow described above.
+
+:::note
+For a better viewing experience, enable the [following option](../../../working-with-test-results/LogLevel#full-width-mode) in **Log level settings**.
+:::

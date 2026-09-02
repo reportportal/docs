@@ -12,7 +12,7 @@ In this tutorial, we will walk you through the process of integrating ReportPort
 To run your tests in any kind of CI, you first need a way to execute them in the
 console. For example, for Java this might be calling a build tool like Gradle or Maven
 with: `./gradlew test` or `./mvnw test` respectively. For Python, it might be
-`pytest` command. Your tests should be already [integrated with a ReportPortal agent](/log-data-in-reportportal/test-framework-integration/). You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
+`pytest` command. Your tests should be already [integrated with a ReportPortal agent](../../test-frameworks/). You also need a working ReportPortal instance. We will be using GitHub Actions secrets, to securely get our
 credentials while the workflow is running, see official [GitHub Docs](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) for more details.
 
 ## Using GitHub Actions workflow file
@@ -216,7 +216,7 @@ will cut it off from the output.
 
 Enterprise users can utilize our Quality Gates plugin to get more
 control over application-under-test quality. To enable and configure Quality Gates plugin on
-ReportPortal, please, refer to [corresponding documentation](/quality-gates).
+ReportPortal, please, refer to [corresponding documentation](../../../analysis/quality-gates/).
 
 ReportPortal's Quality Gates plugin doesn't have native integration with GitHub Actions, so we
 need to use a custom approach here. One way is polling ReportPortal Launch info API for

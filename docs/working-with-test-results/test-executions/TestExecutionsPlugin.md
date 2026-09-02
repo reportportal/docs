@@ -6,7 +6,7 @@ description: Learn how to install, enable, upgrade and uninstall ReportPortal Te
 
 # Test executions plugin
 
-The Test Executions is our [premium feature](/getting-started/features/TestExecutions).
+The Test Executions is our [premium feature](../../../getting-started/features/TestExecutions).
 
 It introduces a flat, searchable view of test cases with advanced filtering and customization — offering a faster, clearer way to explore test execution data beyond the traditional launch view.
 

@@ -7,13 +7,13 @@ description: Configure data retention policies to manage storage and keep import
 
 Retention policies play a pivotal role in ensuring that companies maintain control over their data. In ReportPortal, on the General tab in Project Settings, the retention policy outlines the guidelines for how long regular launches and their descendants (logs, attachments) should be kept and when they should be deleted.
 
-You can also mark some launches as important, meaning they are generally not subject to deletion by the time-based retention policy. These launches can only be deleted manually or if [storage is overused](/configuration/LaunchesRetentionPolicy#important-launch-deletion-on-full-storage) (in this case new launches will displace old ones, even if they are marked as important).
+You can also mark some launches as important, meaning they are generally not subject to deletion by the time-based retention policy. These launches can only be deleted manually or if [storage is overused](#important-launch-deletion-on-full-storage) (in this case new launches will displace old ones, even if they are marked as important).
 
 You can mark a launch as important either through the application's UI or during test reporting using special system attributes.
 
 :::note
 By default, the "Important launches" functionality is enabled on all instances.<br />
-An admin can [disable the "Important launches" functionality](/admin-panel/ServerSettings#features) if needed.
+An admin can [disable the "Important launches" functionality](../../configuration/instance-level/ServerSettings#features) if needed.
 :::
 
 ## Mark launch as important on UI

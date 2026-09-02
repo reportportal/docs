@@ -24,4 +24,4 @@ The **Other** plugins group includes the Sauce Labs, Mobitru, Test Executions, Q
 
 Using these plugins, you can tailor ReportPortal to your specific workflows, boosting testing efficiency and enhancing team collaboration.
 
-For comprehensive integration guides for all available plugins, see the [Integrations section](/integrations/).
+For comprehensive integration guides for all available plugins, see the [Integrations section](../../../integrations/).

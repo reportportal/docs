@@ -12,7 +12,7 @@ ReportPortal is a TestOps service, that provides increased capabilities to speed
 ReportPortal is a great addition to Continuous Integration and Continuous
 Testing process.
 
-ReportPortal is distributed under the Apache v2.0 license, and it is free to use and modify, even for commercial purposes. We offer two paid premium features – [Quality Gates](/quality-gates) and [SCIM Server feature](/features/SCIMServerFeature).
+ReportPortal is distributed under the Apache v2.0 license, and it is free to use and modify, even for commercial purposes. We offer two paid premium features – [Quality Gates](./analysis/quality-gates/) and [SCIM Server feature](./getting-started/features/SCIMServerFeature).
 
 If a company is interested in our services, we can provide support hours to deploy, integrate, configure, or customize the tool, as well as [SaaS options](https://reportportal.io/pricing/saas).
 
@@ -70,11 +70,11 @@ In ReportPortal, you have fully real-time analytic report automation. Since the 
 
 - ***Advanced reporting***
 
-ReportPortal offers widgets with a user-friendly visual interface to create interactive reports for all your needs. For example, you can build qa metrics dashboard using [Overall statistics](/dashboards-and-widgets/OverallStatistics), [Unique bugs table](/dashboards-and-widgets/UniqueBugsTable), [Passing rate summary](/dashboards-and-widgets/PassingRateSummary) widgets. 
+ReportPortal offers widgets with a user-friendly visual interface to create interactive reports for all your needs. For example, you can build qa metrics dashboard using [Overall statistics](./dashboards-and-visualization/OverallStatistics), [Unique bugs table](./dashboards-and-visualization/UniqueBugsTable), [Passing rate summary](./dashboards-and-visualization/PassingRateSummary) widgets. 
 
 - ***Easily running CI/CD tests***
 
-ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](/log-data-in-reportportal/HowToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
+ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](./test-results-reporting/HowToRunYourTests) to run automated tests to improve quality of product by catching issues early in development lifecycle.
 
 - ***Clear data management***
 

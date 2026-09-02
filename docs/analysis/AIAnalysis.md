@@ -6,7 +6,7 @@ description: AI-powered MCP Server enables smart test analysis, automated defect
 
 # AI Analysis
 
-Modern QA workflows are increasingly shaped by the need to process large volumes of test data quickly and make informed decisions without switching between multiple tools. The [MCP Server](/integrations/ai-agents/MCPServer) introduces a new approach to this challenge by acting as a bridge between AI assistants and test reporting ecosystems such as ReportPortal.
+Modern QA workflows are increasingly shaped by the need to process large volumes of test data quickly and make informed decisions without switching between multiple tools. The [MCP Server](../../integrations/ai-agents/MCPServer) introduces a new approach to this challenge by acting as a bridge between AI assistants and test reporting ecosystems such as ReportPortal.
 
 At its core, MCP is a lightweight protocol that enables structured, context-aware communication between external systems and AI tools. Instead of relying on manual interaction through a web interface, teams can delegate routine analytical tasks to AI assistants connected via the MCP Server. This fundamentally changes how engineers access and interpret test data.
 
