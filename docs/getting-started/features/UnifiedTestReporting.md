@@ -1,26 +1,25 @@
 ---
 sidebar_position: 1
 sidebar_label: Unified test reporting
-description: Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard.
+description: Unify automation, agentic, and manual test results in one place. Streamline collaboration, real-time insights, and quality gates from a single source of truth.
 ---
 
 # Single-entry point and unified test reporting
 
-ReportPortal was created with the idea in mind to be a single tool to acquire and aggregate the results of all automated tests for projects. Our centralized test automation tool is a great focus area for managers and test engineers because all test results can be accessed, reviewed and analyzed in one place.
+ReportPortal was created to be a single tool where teams acquire, aggregate, and analyze test results for a project. All test results can be accessed, reviewed, and analyzed in one place. Unified reporting covers classic [automation](/log-data-in-reportportal/test-framework-integration/), [agentic](/log-data-in-reportportal/AgenticTestResults) runs from AI agents, and [manual](/test-management-system/) executions from the built-in Test Management System.
 
-In the complex landscape of software testing, where [multiple test frameworks](../../../integrations/test-frameworks/), languages, and types of tests often coexist, the sheer volume and diversity of test reports can be overwhelming. ReportPortal addresses this problem elegantly by serving as a single-entry point for all test reports, providing unified and consolidated insights across the board. This single point of truth offers a multitude of benefits that can transform the way your team approaches testing.
+In a typical QA setup, those sources used to live in different tools: framework reports, a separate Test Management System, spreadsheets, and agent sessions that never reached the same dashboard. Before every release, somebody had to combine all that information manually. ReportPortal removes that manual work. It is a single-entry point for all test reports, so the record of what was tested, by whom or by what, and with what evidence stays in one project.
 
 **Unification and Standardization**
 
-ReportPortal is designed to unify reports from various test frameworks and languages, whether they are API tests, integration tests, or end-to-end tests. It takes these disparate reports and presents them in a standardized format, making them equally understandable to QA engineers, developers, and even DevOps teams. This eliminates the need for engineers to scour multiple platforms for hidden reports, thereby reducing confusion and promoting efficiency.
+ReportPortal unifies reports from various [test frameworks](/log-data-in-reportportal/test-framework-integration/) and languages — API tests, integration tests, and end-to-end tests — and presents them in a standardized format that QA engineers, developers, and DevOps teams can all read. The same view also accepts [agentic launches](/log-data-in-reportportal/AgenticTestResults) and [manual launches](/test-management-system/manual-launches/). You can see the source of each test run on the [Launches](/work-with-reports/ViewLaunches#launches-tab) and [Manual launches](/test-management-system/manual-launches/) pages, even though the reports use the same format. Results stay associated with the same test case across automated, agentic, and manual runs, which keeps history and coverage comparable. Engineers no longer need to search across multiple platforms for separate reports.
 
 **Streamlined Collaboration**
 
-With a single link, you can direct team members to a central location where test results are not just collected but also analyzed. This facilitates collaboration by creating a universal language and understanding of test results across different team members, irrespective of their roles or technical proficiencies. The centralized reporting also aids in "Shift Left" testing approaches, where test feedback is made available earlier in the development cycle by Developers and not only QA Engineers.
+With a single link, you can send team members to a central location where results are collected and analyzed. QA leads see coverage across automation, agentic, and manual work without exporting from three systems. Managers get a release-readiness picture from one project. The same shared view also supports "Shift Left" testing, where developers can inspect test feedback earlier in the cycle, not only QA engineers.
 
 **Immediate Feedback and Quality Gate Integration**
 
-When combined with automated [quality gates](../../../analysis/quality-gates/), the platform can provide instantaneous verdicts on whether code changes have passed or failed the tests. In the event of a failure, the platform's [auto-analysis feature](../../../analysis/AutoAnalysisOfLaunches) helps to pinpoint the exact cause. This real-time, automated feedback is invaluable in modern DevOps pipelines, accelerating the release process and enhancing code quality.
+For automated pipelines, [quality gates](/quality-gates/) can give an immediate GO / NO-GO verdict on whether code changes have passed the required checks. On failure, [auto-analysis](/analysis/AutoAnalysisOfLaunches) helps pinpoint the cause. This real-time, automated feedback is invaluable in modern DevOps pipelines. Agentic and manual results land in the same project and history, so evidence from those runs is available next to automation, while quality gates remain the automated decision layer in CI/CD.
 
-In summary, ReportPortal’s [single-entry point](https://reportportal.io/blog/all-your-test-results-one-place-smarter-reporting-across-tools/) for all test reports offers the unique advantage of consolidating, standardizing, and analyzing test data in one location. This unified approach significantly simplifies the testing process, fosters better collaboration, and enables more agile development cycles. Adopting ReportPortal is a strategic move toward a more efficient and streamlined testing environment. 
-
+In summary, ReportPortal’s single-entry point consolidates, standardizes, and analyzes test data from automation, agentic, and manual testing in one location. That unified record simplifies the testing process, improves collaboration, and supports more confident release decisions.
