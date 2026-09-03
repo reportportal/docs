@@ -9,33 +9,33 @@ description: Find quick answers about installing, integrating, and using ReportP
 
 On this page, we have put together a list of the most frequently asked questions. Here, you can find prompt responses.
 
-1. [Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?](/references/FAQ/#1-does-on-prem-installed-reportportal-make-any-external-calls-what-are-the-content-and-nature-of-these-calls)
-2. [Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?](/references/FAQ/#2-assuming-reportportal-locally-caches-logs-to-understand-their-content-where-are-these-stored-and-what-are-the-associated-retention-policies)
-3. [How is data encrypted in transit and at rest?](/references/FAQ/#3-how-is-data-encrypted-in-transit-and-at-rest)
-4. [Does the containerized solution function as a standalone, or can it be integrated with K8S or other orchestration platforms? Is there a helm chart available?](/references/FAQ/#4-does-the-containerized-solution-function-as-a-standalone-or-can-it-be-integrated-with-k8s-or-other-orchestration-platforms-is-there-a-helm-chart-available)
-5. [Is there any training available to use ReportPortal effectively?](/references/FAQ/#5-is-there-any-training-available-to-use-reportportal-effectively)
-6. [Is there a demo available?](/references/FAQ/#6-is-there-a-demo-available)
-7. [How can I begin using ReportPortal?](/references/FAQ/#7-how-can-i-begin-using-reportportal)
-8. [Does the tool integrate with my existing test automation framework?](/references/FAQ/#8-does-the-tool-integrate-with-my-existing-test-automation-framework)
-9. [What type of license does ReportPortal use?](/references/FAQ/#9-what-type-of-license-does-reportportal-use)
-10. [Does ReportPortal have any paid features?](/references/FAQ/#10-does-reportportal-have-any-paid-features)
-11. [Does ReportPortal use AI?](/references/FAQ/#11-does-reportportal-use-ai)
-12. [Do we need specific infrastructure prerequisites to avoid performance problems?](/references/FAQ/#12-do-we-need-specific-infrastructure-prerequisites-to-avoid-performance-problems)
-13. [What types of reports can I generate with the ReportPortal?](/references/FAQ/#13-what-types-of-reports-can-i-generate-with-the-reportportal)
-14. [Can ReportPortal aggregate performance test results?](/references/FAQ/#14-can-reportportal-aggregate-performance-test-results)
-15. [Does ReportPortal have integration with Jira?](/references/FAQ/#15-does-reportportal-have-integration-with-jira)
-16. [How can I check the ReportPortal version?](/references/FAQ/#16-how-can-i-check-the-reportportal-version)
-17. [How can I check if the ReportPortal API is working?](/references/FAQ/#17-how-can-i-check-if-the-reportportal-api-is-working)
-18. [What are the application limits in ReportPortal?](/references/FAQ/#18-what-are-the-application-limits-in-reportportal)
-19. [Does ReportPortal have any paid features?](/references/FAQ/#19-does-reportportal-have-any-paid-features)
-20. [What is Organizations?](/references/FAQ/#20-what-is-organizations)
-21. [What happens to my data during migration to a version with Organizations?](/references/FAQ/#21-what-happens-to-my-data-during-migration-to-a-version-with-organizations)
-22. [How will the UI change for users after data migration to a version with Organizations?](/references/FAQ/#22-how-will-the-ui-change-for-users-after-data-migration-to-a-version-with-organizations)
-23. [How will role-based access change with the introduction of Organizations?](/references/FAQ/#23-how-will-role-based-access-change-with-the-introduction-of-organizations)
+1. [Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?](#1-does-on-prem-installed-reportportal-make-any-external-calls-what-are-the-content-and-nature-of-these-calls)
+2. [Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?](#2-assuming-reportportal-locally-caches-logs-to-understand-their-content-where-are-these-stored-and-what-are-the-associated-retention-policies)
+3. [How is data encrypted in transit and at rest?](#3-how-is-data-encrypted-in-transit-and-at-rest)
+4. [Does the containerized solution function as a standalone, or can it be integrated with K8S or other orchestration platforms? Is there a helm chart available?](#4-does-the-containerized-solution-function-as-a-standalone-or-can-it-be-integrated-with-k8s-or-other-orchestration-platforms-is-there-a-helm-chart-available)
+5. [Is there any training available to use ReportPortal effectively?](#5-is-there-any-training-available-to-use-reportportal-effectively)
+6. [Is there a demo available?](#6-is-there-a-demo-available)
+7. [How can I begin using ReportPortal?](#7-how-can-i-begin-using-reportportal)
+8. [Does the tool integrate with my existing test automation framework?](#8-does-the-tool-integrate-with-my-existing-test-automation-framework)
+9. [What type of license does ReportPortal use?](#9-what-type-of-license-does-reportportal-use)
+10. [Does ReportPortal have any paid features?](#10-does-reportportal-have-any-paid-features)
+11. [Does ReportPortal use AI?](#11-does-reportportal-use-ai)
+12. [Do we need specific infrastructure prerequisites to avoid performance problems?](#12-do-we-need-specific-infrastructure-prerequisites-to-avoid-performance-problems)
+13. [What types of reports can I generate with the ReportPortal?](#13-what-types-of-reports-can-i-generate-with-the-reportportal)
+14. [Can ReportPortal aggregate performance test results?](#14-can-reportportal-aggregate-performance-test-results)
+15. [Does ReportPortal have integration with Jira?](#15-does-reportportal-have-integration-with-jira)
+16. [How can I check the ReportPortal version?](#16-how-can-i-check-the-reportportal-version)
+17. [How can I check if the ReportPortal API is working?](#17-how-can-i-check-if-the-reportportal-api-is-working)
+18. [What are the application limits in ReportPortal?](#18-what-are-the-application-limits-in-reportportal)
+19. [Does ReportPortal have any paid features?](#19-does-reportportal-have-any-paid-features)
+20. [What is Organizations?](#20-what-is-organizations)
+21. [What happens to my data during migration to a version with Organizations?](#21-what-happens-to-my-data-during-migration-to-a-version-with-organizations)
+22. [How will the UI change for users after data migration to a version with Organizations?](#22-how-will-the-ui-change-for-users-after-data-migration-to-a-version-with-organizations)
+23. [How will role-based access change with the introduction of Organizations?](#23-how-will-role-based-access-change-with-the-introduction-of-organizations)
 
 #### 1. Does on-prem installed ReportPortal make any external calls? What are the content and nature of these calls?
 
-All test results and testing data reside in-house, within your instance of ReportPortal. However, there are two types of external calls that ReportPortal makes. The first checks our status page for the latest version and informs users of it on the login page. The second sends anonymized data to [Google Analytics](/terms-and-conditions/GoogleAnalyticsUsageByReportPortal), helping us refine the user experience and better understand application usage. This can be toggled off if desired.
+All test results and testing data reside in-house, within your instance of ReportPortal. However, there are two types of external calls that ReportPortal makes. The first checks our status page for the latest version and informs users of it on the login page. The second sends anonymized data to [Google Analytics](../GoogleAnalyticsUsageByReportPortal), helping us refine the user experience and better understand application usage. This can be toggled off if desired.
 
 #### 2. Assuming ReportPortal locally caches logs to understand their content, where are these stored, and what are the associated retention policies?
 
@@ -55,7 +55,7 @@ ReportPortal is containerized and can be orchestrated using either docker-compos
 
 #### 5. Is there any training available to use ReportPortal effectively?
 
-Check our [Tutorial](/tutorial/) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigating [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
+Check our [Tutorial](../../getting-started/Tutorial) and read [blog post](https://reportportal.io/blog/Tips-to-get-ReportPortal-benefits) with tips to get ReportPortal benefits. We also recommend investigating [our documentation](https://reportportal.io/docs/) where you can find screenshots and video instructions on ReportPortal functionality.
 
 #### 6. Is there a demo available?
 
@@ -78,11 +78,11 @@ If you need a personalized demo session, please leave your [contact details](htt
 
 #### 7. How can I begin using ReportPortal?
 
-The initial steps involve installing and configuring the tool. [Installation steps](/installation-steps) you can find in our documentation.
+The initial steps involve installing and configuring the tool. [Installation steps](../../installation-and-deployment/) you can find in our documentation.
 
 #### 8. Does the tool integrate with my existing test automation framework?
 
-ReportPortal can be integrated with common testing frameworks and CI tools. Consult [this section](/log-data-in-reportportal/test-framework-integration) of the documentation for detailed information on test framework integration. And use following links for Integration with CI/CD: [Integration with GitLab CI](/quality-gates/IntegrationWithCICD/IntegrationWithGitLabCI/), [Integration with Jenkins](/quality-gates/IntegrationWithCICD/IntegrationWithJenkins/).
+ReportPortal can be integrated with common testing frameworks and CI tools. Consult [this section](../../integrations/test-frameworks/) of the documentation for detailed information on test framework integration. And use following links for Integration with CI/CD: [Integration with GitLab CI](../../integrations/cicd/IntegrationWithGitLabCI), [Integration with Jenkins](../../integrations/cicd/IntegrationWithJenkins).
 
 #### 9. What type of license does ReportPortal use?
 
@@ -92,13 +92,13 @@ ReportPortal is licensed under Apache v2.0, which means it’s free to use, come
 
 We offer several premium features:
 
-- [Quality Gates](/getting-started/features/QualityGates) – a set of predefined criteria that must be met for a test run to be considered successful.
-- [SCIM Server](/getting-started/features/SCIMServerFeature) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
-- [Organizations](/getting-started/features/Organizations) – a scalable way to group and manage multiple projects, apply shared settings, and streamline permissions across teams or business units.
-- [Test Executions](/getting-started/features/TestExecutions) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
-- [Authorization Plugins](/integrations/authorization/) (LDAP, SAML) – enable centralized and secure user authentication by integrating ReportPortal with enterprise identity providers.
-  - [LDAP](/integrations/authorization/LDAP) – enables authentication via directory services, allowing users to access ReportPortal using their domain credentials while simplifying user management through existing directory infrastructure.
-  - [SAML](/integrations/authorization/SamlProviders/) – provides single sign-on (SSO) through providers like Azure or Okta, allowing users to log in with existing corporate credentials while ensuring secure and streamlined access management.
+- [Quality Gates](../../getting-started/features/QualityGates) – a set of predefined criteria that must be met for a test run to be considered successful.
+- [SCIM Server](../../getting-started/features/SCIMServerFeature) – automates user management by syncing users and their access rights between your identity provider and ReportPortal.
+- [Organizations](../../getting-started/features/Organizations) – a scalable way to group and manage multiple projects, apply shared settings, and streamline permissions across teams or business units.
+- [Test Executions](../../getting-started/features/TestExecutions) – a unified view of all test results across launches, helping teams quickly find, filter, and analyze tests in one place without opening each launch separately.
+- [Authorization Plugins](../../integrations/authorization/) (LDAP, SAML) – enable centralized and secure user authentication by integrating ReportPortal with enterprise identity providers.
+  - [LDAP](../../integrations/authorization/LDAP) – enables authentication via directory services, allowing users to access ReportPortal using their domain credentials while simplifying user management through existing directory infrastructure.
+  - [SAML](../../integrations/authorization/SamlProviders/) – provides single sign-on (SSO) through providers like Azure or Okta, allowing users to log in with existing corporate credentials while ensuring secure and streamlined access management.
 
 #### 11. Does ReportPortal use AI?
 
@@ -106,13 +106,13 @@ We provide ML-driven failure triage. Read [this article](https://reportportal.io
 
 #### 12. Do we need specific infrastructure prerequisites to avoid performance problems?
 
-Look into [Hardware Requirements](/installation-steps/HardwareRequirements).
+Look into [Hardware Requirements](../../installation-and-deployment/HardwareRequirements).
 
 #### 13. What types of reports can I generate with the ReportPortal?
 
-ReportPortal has a lot of widgets to visualize test results and understand the state of the product. Most popular our widgets: [Overall statistics chart](/dashboards-and-widgets/OverallStatistics), [Launch statistics chart](/dashboards-and-widgets/LaunchStatisticsChart), [Failed cases trend chart](/dashboards-and-widgets/FailedCasesTrendChart), [Launch execution and issue statistic](/dashboards-and-widgets/LaunchExecutionAndIssueStatistic), [Component health check](/dashboards-and-widgets/ComponentHealthCheck).
+ReportPortal has a lot of widgets to visualize test results and understand the state of the product. Most popular our widgets: [Overall statistics chart](../../dashboards-and-visualization/OverallStatistics), [Launch statistics chart](../../dashboards-and-visualization/LaunchStatisticsChart), [Failed cases trend chart](../../dashboards-and-visualization/FailedCasesTrendChart), [Launch execution and issue statistic](../../dashboards-and-visualization/LaunchExecutionAndIssueStatistic), [Component health check](../../dashboards-and-visualization/ComponentHealthCheck).
 
-Depending on your needs, you can create either a report for a [single test run](/dashboards-and-widgets/PossibleDashboardsInReportPortal#report-for-one-tests-run-a-dashboard-for-an-engineer) or a [Build/Release/Sprint Report](/dashboards-and-widgets/PossibleDashboardsInReportPortal#build--release-sprint-report-a-dashboard-for-a-team-leads-pm-dm). ReportPortal also allows you to generate various types of [test automation reports](https://reportportal.io/blog/how-to-create-test-report-with-reportportal) using widgets, including:
+Depending on your needs, you can create either a report for a [single test run](../../dashboards-and-visualization/PossibleDashboardsInReportPortal#report-for-one-tests-run-a-dashboard-for-an-engineer) or a [Build/Release/Sprint Report](../../dashboards-and-visualization/PossibleDashboardsInReportPortal#build--release-sprint-report-a-dashboard-for-a-team-leads-pm-dm). ReportPortal also allows you to generate various types of [test automation reports](https://reportportal.io/blog/how-to-create-test-report-with-reportportal) using widgets, including:
 
 * Summary Report
 * Detailed Test Case Report
@@ -126,7 +126,7 @@ We do not support direct integration with performance testing frameworks, but as
 
 #### 15. Does ReportPortal have integration with Jira?
 
-Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](/plugins/bug-tracking/AtlassianJiraServer), [Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud), [Azure DevOps](/plugins/bug-tracking/AzureDevOps), [GitLab](/plugins/bug-tracking/GitLab), [Monday](/plugins/bug-tracking/Monday) and [Rally](/plugins/bug-tracking/Rally).
+Our test automation reporting dashboard have integration with following Bug Tracking Systems: [Jira Server](../../integrations/bug-tracking/AtlassianJiraServer), [Jira Cloud](../../integrations/bug-tracking/AtlassianJiraCloud), [Azure DevOps](../../integrations/bug-tracking/AzureDevOps), [GitLab](../../integrations/bug-tracking/GitLab), [Monday](../../integrations/bug-tracking/Monday) and [Rally](../../integrations/bug-tracking/Rally).
 
 #### 16. How can I check the ReportPortal version?
 

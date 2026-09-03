@@ -28,7 +28,7 @@ This concise, step-by-step guide will help you deploy ReportPortal using Docker 
 
 :::note
 For production, deploy on a Linux-based server or cloud instance. Adjust resource limits according to expected load.
-[See advanced deployment recommendations](/installation-steps/HardwareRequirements).
+[See advanced deployment recommendations](../../HardwareRequirements).
 :::
 
 ### Step 1: Prepare the Environment
@@ -107,4 +107,4 @@ For production, deploy on a Linux-based server or cloud instance. Adjust resourc
 * **Secure Secrets**: Store sensitive environment variables (e.g., DB passwords) in a `.env` file and reference them in `docker-compose.yml`.
 * **Use Docker Networks**: Isolate ReportPortal on its own network for enhanced security.
 * **Scale Services**: For high availability, consider using [Kubernetes](https://github.com/reportportal/kubernetes) with multiple replicas.
-* **Backups**: Schedule periodic backups of the PostgreSQL database and Storage. [How to backup ReportPortal guide](/installation-steps-advanced/BackupRestoreGuide/)
+* **Backups**: Schedule periodic backups of the PostgreSQL database and Storage. [How to backup ReportPortal guide](../../../administration-and-maintenance/BackupRestoreGuide)

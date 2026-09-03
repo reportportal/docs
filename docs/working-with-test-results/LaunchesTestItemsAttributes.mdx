@@ -35,7 +35,7 @@ Attributes are specific data points that can be included at all levels in Report
 2. Attributes are used for filtering.
 3. You can create a filter based on the attribute and then build widgets using this filter.
 
-You can [report attributes to ReportPortal](/log-data-in-reportportal/HowToReportAttributesToReportPortal) via test framework integrations or via API and add or edit them via the UI. For that, click on the pencil icon next to the desired launch/test item. Then click on the existing attribute to edit the key and value.
+You can [report attributes to ReportPortal](../../test-results-reporting/HowToReportAttributesToReportPortal) via test framework integrations or via API and add or edit them via the UI. For that, click on the pencil icon next to the desired launch/test item. Then click on the existing attribute to edit the key and value.
 
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes5.png')} alt="Pencil icon to edit attribute via UI" />
 
@@ -112,7 +112,7 @@ Thus, we understand that we need to focus on tests with controller type `contr_l
 
 ### Using attributes for creating widgets
 
-Widgets allow you to visually track [qa and test automation metrics metrics](/dashboards-and-widgets/ReportingAndMetricsInReportPortal/#qa-and-test-automation-metrics-in-reportportal) for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](/dashboards-and-widgets/CumulativeTrendChart).
+Widgets allow you to visually track [qa and test automation metrics metrics](../../dashboards-and-visualization/ReportingAndMetricsInReportPortal#qa-and-test-automation-metrics-in-reportportal) for launches. We can define these metrics using filters that can be created based on attributes. For example, to determine the growth trend of summary statistics of launches with the same attribute key, let's construct a [Cumulative trend chart widget](../../dashboards-and-visualization/CumulativeTrendChart).
 
 There are some launches with the `smoke` attribute.
 
@@ -130,7 +130,7 @@ On the screenshot below, we can observe a growth in statistics on the platforms 
 
 <MediaViewer src={require('./img/launches-test-items-attributes/Attributes22.png')} alt="Growth in statistics on the platforms from one build to the next" />
 
-Based on attributes specified for test items, you can also build a [Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/) to visually represent the passing rate of different application components.
+Based on attributes specified for test items, you can also build a [Component Health Check widget](../../dashboards-and-visualization/ComponentHealthCheck) to visually represent the passing rate of different application components.
 
 For example, if there are some launches with the `demo` attribute, you can create a filter using this attribute.
 
@@ -152,4 +152,4 @@ As a result:
 
 Therefore, properly using attributes in ReportPortal can greatly optimize test management and assist in providing clearer visualizations of trends through widgets.
 
-There are also [system attributes](/log-data-in-reportportal/HowToReportAttributesToReportPortal#system-attributes) that allow to extend the functionality of ReportPortal.
+There are also [system attributes](../../test-results-reporting/HowToReportAttributesToReportPortal#system-attributes) that allow to extend the functionality of ReportPortal.

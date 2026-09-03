@@ -22,7 +22,7 @@ To integrate your AI testing workflows with ReportPortal, choose one of the foll
 
 ### Programmatically
 
-Use ReportPortal [integration guides](./ImplementOwnIntegration.md) and [reporting SDKs](./ReportingSDK.md) for various programming languages to send results from your agent pipeline via the ReportPortal API.
+Use ReportPortal [integration guides](../../integrations/ImplementOwnIntegration) and [reporting SDKs](../ReportingSDK) for various programming languages to send results from your agent pipeline via the ReportPortal API.
 
 ### Using agent skills
 
@@ -31,7 +31,7 @@ Coming soon.
 In the meantime, you can explore and experiment with the [goRP CLI skill](https://github.com/reportportal/goRP/blob/master/.cursor/skills/reportportal/SKILL.md) to report results directly from an AI agent session.
 
 :::tip Mark your launches as agentic
-To [distinguish](/work-with-reports/ViewLaunches#launches-tab) agentic launches from classic automation in the ReportPortal UI, include the following system attribute when starting a launch:
+To [distinguish](../../working-with-test-results/ViewLaunches#launches-tab) agentic launches from classic automation in the ReportPortal UI, include the following system attribute when starting a launch:
 
 ```json
 {

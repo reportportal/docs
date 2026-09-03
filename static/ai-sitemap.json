@@ -31,12 +31,12 @@
         {
           "title": "User role guides",
           "url": "https://reportportal.io/docs/getting-started/UserRoleGuides/",
-          "description": "test"
+          "description": "Learn ReportPortal permissions by account type and role, then follow role-based guides for QA, admins, and TestOps workflows."
         },
         {
           "title": "Unified test reporting",
           "url": "https://reportportal.io/docs/getting-started/features/UnifiedTestReporting/",
-          "description": "Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard."
+          "description": "Unify automation, agentic, and manual test results in one place. Streamline collaboration, real-time insights, and quality gates from a single source of truth."
         },
         {
           "title": "Categorisation of failures",
@@ -265,17 +265,17 @@
         {
           "title": "Instance level",
           "url": "https://reportportal.io/docs/configuration/instance-level/",
-          "description": "test"
+          "description": "Configure ReportPortal at the instance level. Manage organizations, users, server settings, and plugins for the whole test reporting platform."
         },
         {
           "title": "Organization level",
           "url": "https://reportportal.io/docs/configuration/organization-level/",
-          "description": "test"
+          "description": "Configure organization-level settings in ReportPortal. Manage projects, users, roles, and data retention for test reporting across the organization."
         },
         {
           "title": "Project level",
           "url": "https://reportportal.io/docs/configuration/project-level/",
-          "description": "test"
+          "description": "Configure project-level settings in ReportPortal. Manage the project team, notifications, defect types, analyzer, and how long test results are stored."
         },
         {
           "title": "User account",
@@ -285,7 +285,7 @@
         {
           "title": "All Organizations",
           "url": "https://reportportal.io/docs/configuration/instance-level/AllOrganizations/",
-          "description": "test"
+          "description": "View and manage all organizations on the instance. Search, filter, export, create, rename, and delete organizations in ReportPortal."
         },
         {
           "title": "Edit personal information",
@@ -300,12 +300,12 @@
         {
           "title": "Project Team",
           "url": "https://reportportal.io/docs/configuration/project-level/ProjectTeam/",
-          "description": "test"
+          "description": "Manage the project team in ReportPortal. Invite or assign users, change project roles, and unassign members from the project."
         },
         {
           "title": "All Users",
           "url": "https://reportportal.io/docs/configuration/instance-level/AllUsers/",
-          "description": "test"
+          "description": "Manage all users on the ReportPortal instance. Invite or create users, assign roles, grant admin rights, and export user lists."
         },
         {
           "title": "Project Settings",
@@ -350,7 +350,7 @@
         {
           "title": "Organization Settings",
           "url": "https://reportportal.io/docs/configuration/organization-level/OrganizationSettings/",
-          "description": "test"
+          "description": "Set organization-level retention for launches, logs, and attachments. These limits apply to all projects in the organization."
         }
       ]
     },
@@ -465,6 +465,11 @@
           "description": "Install, configure, and manage plugins to extend ReportPortal functionality for enhanced test execution reporting capabilities."
         },
         {
+          "title": "Email Server",
+          "url": "https://reportportal.io/docs/integrations/notifications/EmailServer/",
+          "description": "Configure email server settings for automated notifications in ReportPortal."
+        },
+        {
           "title": "MCP Server",
           "url": "https://reportportal.io/docs/integrations/ai-agents/MCPServer/",
           "description": "Automate test analysis with MCP Server, use AI to detect issues, summarize results, and streamline QA workflows for faster, smarter decision-making."
@@ -475,9 +480,24 @@
           "description": "Configure user provisioning from external identity providers for automated user management in ReportPortal test automation reporting tools."
         },
         {
+          "title": "Sauce Labs",
+          "url": "https://reportportal.io/docs/integrations/infrastructure-providers/SauceLabs/",
+          "description": "Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow."
+        },
+        {
           "title": "Integration with testRigor",
           "url": "https://reportportal.io/docs/integrations/test-platforms/testRigor/",
           "description": "Integrate testRigor with ReportPortal for seamless test case reporting and automated test result analysis workflows."
+        },
+        {
+          "title": "Mobitru",
+          "url": "https://reportportal.io/docs/integrations/infrastructure-providers/Mobitru/",
+          "description": "Integrate Mobitru with ReportPortal to automatically load session recordings and view test execution videos directly in your test results."
+        },
+        {
+          "title": "Slack",
+          "url": "https://reportportal.io/docs/integrations/notifications/Slack/",
+          "description": "Configure Slack notifications for real-time test execution reporting updates in ReportPortal."
         },
         {
           "title": "Jira Server",
@@ -485,9 +505,19 @@
           "description": "Integrate Jira Server with your test automation reporting tool to track defects, sync statuses, and streamline bug reporting."
         },
         {
+          "title": "Telegram",
+          "url": "https://reportportal.io/docs/integrations/notifications/Telegram/",
+          "description": "Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group."
+        },
+        {
           "title": "Jira Cloud",
           "url": "https://reportportal.io/docs/integrations/bug-tracking/AtlassianJiraCloud/",
           "description": "Integrate Jira Cloud with your test reporting tool to streamline issue tracking, link defects, and sync updates across your QA process."
+        },
+        {
+          "title": "Teams",
+          "url": "https://reportportal.io/docs/integrations/notifications/Teams/",
+          "description": "Integrate Microsoft Teams with ReportPortal to receive real-time test results and launch summaries in your Teams channel."
         },
         {
           "title": "Azure DevOps",
@@ -508,26 +538,6 @@
           "title": "Rally",
           "url": "https://reportportal.io/docs/integrations/bug-tracking/Rally/",
           "description": "Integrate Rally with your QA automation dashboard to track, post, and manage defects efficiently from test results."
-        },
-        {
-          "title": "Sauce Labs",
-          "url": "https://reportportal.io/docs/integrations/infrastructure-providers/SauceLabs/",
-          "description": "Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow."
-        },
-        {
-          "title": "Email Server",
-          "url": "https://reportportal.io/docs/integrations/notifications/EmailServer/",
-          "description": "Configure email server settings for automated notifications in ReportPortal."
-        },
-        {
-          "title": "Slack",
-          "url": "https://reportportal.io/docs/integrations/notifications/Slack/",
-          "description": "Configure Slack notifications for real-time test execution reporting updates in ReportPortal."
-        },
-        {
-          "title": "Telegram",
-          "url": "https://reportportal.io/docs/integrations/notifications/Telegram/",
-          "description": "Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group."
         },
         {
           "title": "JUnit",
@@ -844,62 +854,62 @@
     {
       "title": "Test Management System",
       "url": "https://reportportal.io/docs/test-management-system/",
-      "description": "test",
+      "description": "Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.",
       "pages": [
         {
           "title": "Test Management System",
           "url": "https://reportportal.io/docs/test-management-system/",
-          "description": "test"
+          "description": "Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results."
         },
         {
           "title": "Manual launches",
           "url": "https://reportportal.io/docs/test-management-system/manual-launches/",
-          "description": "test"
+          "description": "Organize and manage manual testing activities with Manual Launches. Learn how to search, filter, view, edit, and delete launches."
         },
         {
           "title": "Milestones",
           "url": "https://reportportal.io/docs/test-management-system/milestones/",
-          "description": "test"
+          "description": "Plan testing around releases, sprints, and features in the our qa metrics dashboard."
         },
         {
           "title": "Test Case Library",
           "url": "https://reportportal.io/docs/test-management-system/test-case-library/",
-          "description": "test"
+          "description": "Organize and manage test cases with Test Case Library, then track execution insights with the our test results dashboard."
         },
         {
           "title": "Folders",
           "url": "https://reportportal.io/docs/test-management-system/test-case-library/Folders/",
-          "description": "test"
+          "description": "Organize test cases with folders and subfolders in the Test Case Library. Learn how to create, duplicate, rename, move, and manage folders."
         },
         {
           "title": "Test executions",
           "url": "https://reportportal.io/docs/test-management-system/manual-launches/TestExecutions/",
-          "description": "test"
+          "description": "Run, track, and manage test executions within a manual launch. Learn how to search, filter, change status, and delete test executions."
         },
         {
           "title": "Test plan",
           "url": "https://reportportal.io/docs/test-management-system/milestones/TestPlan/",
-          "description": "test"
+          "description": "Create, edit, duplicate, and delete test plans in Milestones to define testing scope and track coverage."
         },
         {
           "title": "Test cases",
           "url": "https://reportportal.io/docs/test-management-system/milestones/TestCases/",
-          "description": "test"
+          "description": "Add, search, and remove test cases in a test plan, then add them to a manual launch from a milestone."
         },
         {
           "title": "Test cases",
           "url": "https://reportportal.io/docs/test-management-system/test-case-library/TestCases/",
-          "description": "test"
+          "description": "Learn how to work with test cases in the Test Case Library in our test results dashboard."
         },
         {
           "title": "Test execution page",
           "url": "https://reportportal.io/docs/test-management-system/manual-launches/TestExecutionPage/",
-          "description": "test"
+          "description": "Review a selected test execution, change its status, add comments, and post or link issues on the Test Execution page."
         },
         {
           "title": "Bulk operations",
           "url": "https://reportportal.io/docs/test-management-system/test-case-library/BulkOperations/",
-          "description": "Bulk operations"
+          "description": "Manage multiple test cases at once with bulk operations for faster and more efficient test case management."
         }
       ]
     },
@@ -988,7 +998,7 @@
         {
           "title": "Log level",
           "url": "https://reportportal.io/docs/working-with-test-results/LogLevel/",
-          "description": ""
+          "description": "Review test logs by level in ReportPortal. Filter Trace to Fatal messages, inspect screenshots, and debug failed test steps faster."
         },
         {
           "title": "Investigation of failure",
@@ -1030,12 +1040,12 @@
     {
       "title": "Analysis",
       "url": "https://reportportal.io/docs/analysis/",
-      "description": "test",
+      "description": "Investigate failures and monitor trends with Auto-Analysis, Pattern Analysis, and Unique Error Analysis in ReportPortal.",
       "pages": [
         {
           "title": "Analysis",
           "url": "https://reportportal.io/docs/analysis/",
-          "description": "test"
+          "description": "Investigate failures and monitor trends with Auto-Analysis, Pattern Analysis, and Unique Error Analysis in ReportPortal."
         },
         {
           "title": "Quality Gates",
@@ -1137,12 +1147,12 @@
     {
       "title": "Dashboards & Visualization",
       "url": "https://reportportal.io/docs/dashboards-and-visualization/",
-      "description": "test",
+      "description": "Build custom dashboards and widgets in ReportPortal to visualize test metrics, track trends, and share quality insights with your team.",
       "pages": [
         {
           "title": "Dashboards & Visualization",
           "url": "https://reportportal.io/docs/dashboards-and-visualization/",
-          "description": "test"
+          "description": "Build custom dashboards and widgets in ReportPortal to visualize test metrics, track trends, and share quality insights with your team."
         },
         {
           "title": "Possible Dashboards in ReportPortal",
@@ -1284,12 +1294,12 @@
     {
       "title": "Premium Features",
       "url": "https://reportportal.io/docs/premium-features/",
-      "description": "test",
+      "description": "Unlock ReportPortal Premium Features on SaaS and Managed Services plans, designed for enterprise-scale testing, deeper insights, and continuous quality workflows.",
       "pages": [
         {
           "title": "Premium Features",
           "url": "https://reportportal.io/docs/premium-features/",
-          "description": "test"
+          "description": "Unlock ReportPortal Premium Features on SaaS and Managed Services plans, designed for enterprise-scale testing, deeper insights, and continuous quality workflows."
         }
       ]
     },

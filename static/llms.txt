@@ -11,8 +11,8 @@
 - [Getting Started](https://reportportal.io/docs/getting-started/): Discover ReportPortal basics - how to run tests, review results, use analytics, and navigate dashboards effectively.
 - [Features](https://reportportal.io/docs/getting-started/features/): Discover ReportPortal's features like real-time reporting, AI capabilities across the testing lifecycle, visualization of test data and more.
 - [Tutorial](https://reportportal.io/docs/getting-started/Tutorial/): ReportPortal guide. How to do test failure analysis, how to create dashboard to manage test results and use capabilities of continuous testing platform.
-- [User role guides](https://reportportal.io/docs/getting-started/UserRoleGuides/): test
-- [Unified test reporting](https://reportportal.io/docs/getting-started/features/UnifiedTestReporting/): Unify results from all test frameworks in one place. Streamline collaboration, real-time insights, and quality gates in a single test automation dashboard.
+- [User role guides](https://reportportal.io/docs/getting-started/UserRoleGuides/): Learn ReportPortal permissions by account type and role, then follow role-based guides for QA, admins, and TestOps workflows.
+- [Unified test reporting](https://reportportal.io/docs/getting-started/features/UnifiedTestReporting/): Unify automation, agentic, and manual test results in one place. Streamline collaboration, real-time insights, and quality gates from a single source of truth.
 - [Categorisation of failures](https://reportportal.io/docs/getting-started/features/CategorisationOfFailures/): Learn how ReportPortal streamlines defect triage with clear categories, root cause insights, and faster resolution across teams for more reliable testing outcomes.
 - [AI capabilities](https://reportportal.io/docs/getting-started/features/AICapabilities/): How ReportPortal uses ML, MCP, and agentic reporting together — from test design and execution to failure analysis and release decisions.
 - [AI failure reason detection](https://reportportal.io/docs/getting-started/features/AIFailureReasonDetection/): Use AI to auto-categorize failures, reduce manual triage, and speed bug discovery. ReportPortal automates test failure analytics for faster, accurate results.
@@ -61,15 +61,15 @@
 ## Configuration
 
 - [Configuration](https://reportportal.io/docs/configuration/): Understand multi-level configuration in ReportPortal for better control over system, organizations, and project settings.
-- [Instance level](https://reportportal.io/docs/configuration/instance-level/): test
-- [Organization level](https://reportportal.io/docs/configuration/organization-level/): test
-- [Project level](https://reportportal.io/docs/configuration/project-level/): test
+- [Instance level](https://reportportal.io/docs/configuration/instance-level/): Configure ReportPortal at the instance level. Manage organizations, users, server settings, and plugins for the whole test reporting platform.
+- [Organization level](https://reportportal.io/docs/configuration/organization-level/): Configure organization-level settings in ReportPortal. Manage projects, users, roles, and data retention for test reporting across the organization.
+- [Project level](https://reportportal.io/docs/configuration/project-level/): Configure project-level settings in ReportPortal. Manage the project team, notifications, defect types, analyzer, and how long test results are stored.
 - [User account](https://reportportal.io/docs/configuration/user-account/): Manage your ReportPortal user account for an efficient real time dashboard open source.
-- [All Organizations](https://reportportal.io/docs/configuration/instance-level/AllOrganizations/): test
+- [All Organizations](https://reportportal.io/docs/configuration/instance-level/AllOrganizations/): View and manage all organizations on the instance. Search, filter, export, create, rename, and delete organizations in ReportPortal.
 - [Edit personal information](https://reportportal.io/docs/configuration/user-account/EditPersonalInformation/): Manage your personal profile information, preferences, and account settings in ReportPortal.
 - [Organizations plugin](https://reportportal.io/docs/configuration/organization-level/OrganizationsPlugin/): Organize multiple projects in your test execution dashboard under a single structure with the Organizations plugin.
-- [Project Team](https://reportportal.io/docs/configuration/project-level/ProjectTeam/): test
-- [All Users](https://reportportal.io/docs/configuration/instance-level/AllUsers/): test
+- [Project Team](https://reportportal.io/docs/configuration/project-level/ProjectTeam/): Manage the project team in ReportPortal. Invite or assign users, change project roles, and unassign members from the project.
+- [All Users](https://reportportal.io/docs/configuration/instance-level/AllUsers/): Manage all users on the ReportPortal instance. Invite or create users, assign roles, grant admin rights, and export user lists.
 - [Project Settings](https://reportportal.io/docs/configuration/project-level/ProjectSettings/): Configure project settings, notifications, defect types, and data retention policies to optimize your test automation reporting dashboard performance.
 - [Projects](https://reportportal.io/docs/configuration/organization-level/Projects/): Create, rename, and delete projects, invite users, and quickly assign or unassign yourself—all from one Projects page.
 - [Restore a password](https://reportportal.io/docs/configuration/user-account/RestoreAPassword/): Reset your ReportPortal password securely using email verification to regain access to your account.
@@ -78,7 +78,7 @@
 - [Server Settings](https://reportportal.io/docs/configuration/instance-level/ServerSettings/): Configure server settings including GitHub authorization, SSO login, and Google Analytics in ReportPortal test automation reporting tools.
 - [Data retention procedure](https://reportportal.io/docs/configuration/user-account/DataRetentionProcedure/): Configure data retention periods for PII data in ReportPortal. Set individual retention durations and manage data lifecycle using test execution reporting.
 - [Instance Plugins](https://reportportal.io/docs/configuration/instance-level/Plugins/): Integrate ReportPortal with bug tracking, notifications, authorization, and import plugins to streamline QA workflows.
-- [Organization Settings](https://reportportal.io/docs/configuration/organization-level/OrganizationSettings/): test
+- [Organization Settings](https://reportportal.io/docs/configuration/organization-level/OrganizationSettings/): Set organization-level retention for launches, logs, and attachments. These limits apply to all projects in the organization.
 
 ## Integrations
 
@@ -103,19 +103,21 @@
 - [System for Cross-domain Identity Management (SCIM)](https://reportportal.io/docs/integrations/UserProvisioning/Scim/): Use SCIM in ReportPortal to auto-provision users and groups from Okta or Azure, keeping roles, access, and attributes always up to date and secure.
 - [Implement own integration](https://reportportal.io/docs/integrations/ImplementOwnIntegration/): Learn how to implement custom integration with ReportPortal using the developer guide.
 - [Manage plugins](https://reportportal.io/docs/integrations/ManagePlugins/): Install, configure, and manage plugins to extend ReportPortal functionality for enhanced test execution reporting capabilities.
+- [Email Server](https://reportportal.io/docs/integrations/notifications/EmailServer/): Configure email server settings for automated notifications in ReportPortal.
 - [MCP Server](https://reportportal.io/docs/integrations/ai-agents/MCPServer/): Automate test analysis with MCP Server, use AI to detect issues, summarize results, and streamline QA workflows for faster, smarter decision-making.
 - [Overview](https://reportportal.io/docs/integrations/UserProvisioning/overview/): Configure user provisioning from external identity providers for automated user management in ReportPortal test automation reporting tools.
+- [Sauce Labs](https://reportportal.io/docs/integrations/infrastructure-providers/SauceLabs/): Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow.
 - [Integration with testRigor](https://reportportal.io/docs/integrations/test-platforms/testRigor/): Integrate testRigor with ReportPortal for seamless test case reporting and automated test result analysis workflows.
+- [Mobitru](https://reportportal.io/docs/integrations/infrastructure-providers/Mobitru/): Integrate Mobitru with ReportPortal to automatically load session recordings and view test execution videos directly in your test results.
+- [Slack](https://reportportal.io/docs/integrations/notifications/Slack/): Configure Slack notifications for real-time test execution reporting updates in ReportPortal.
 - [Jira Server](https://reportportal.io/docs/integrations/bug-tracking/AtlassianJiraServer/): Integrate Jira Server with your test automation reporting tool to track defects, sync statuses, and streamline bug reporting.
+- [Telegram](https://reportportal.io/docs/integrations/notifications/Telegram/): Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group.
 - [Jira Cloud](https://reportportal.io/docs/integrations/bug-tracking/AtlassianJiraCloud/): Integrate Jira Cloud with your test reporting tool to streamline issue tracking, link defects, and sync updates across your QA process.
+- [Teams](https://reportportal.io/docs/integrations/notifications/Teams/): Integrate Microsoft Teams with ReportPortal to receive real-time test results and launch summaries in your Teams channel.
 - [Azure DevOps](https://reportportal.io/docs/integrations/bug-tracking/AzureDevOps/): Connect Azure DevOps with your test report dashboard to post, link, and manage issue in just a few clicks.
 - [GitLab](https://reportportal.io/docs/integrations/bug-tracking/GitLab/): Integrate GitLab to post issues, link defects, and sync status updates seamlessly.
 - [Monday](https://reportportal.io/docs/integrations/bug-tracking/Monday/): Integrate ReportPortal with Monday to streamline issue reporting, link test failures, and synchronize statuses between your test results and Monday boards.
 - [Rally](https://reportportal.io/docs/integrations/bug-tracking/Rally/): Integrate Rally with your QA automation dashboard to track, post, and manage defects efficiently from test results.
-- [Sauce Labs](https://reportportal.io/docs/integrations/infrastructure-providers/SauceLabs/): Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow.
-- [Email Server](https://reportportal.io/docs/integrations/notifications/EmailServer/): Configure email server settings for automated notifications in ReportPortal.
-- [Slack](https://reportportal.io/docs/integrations/notifications/Slack/): Configure Slack notifications for real-time test execution reporting updates in ReportPortal.
-- [Telegram](https://reportportal.io/docs/integrations/notifications/Telegram/): Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group.
 - [JUnit](https://reportportal.io/docs/integrations/import/JUnit/): Easily import JUnit test results into ReportPortal via UI or API, enabling streamlined test analysis and enhanced reporting capabilities.
 - [RobotFramework](https://reportportal.io/docs/integrations/import/RobotFramework/): Import RobotFramework test results into ReportPortal for comprehensive test execution reporting integration and analysis.
 - [GitHub](https://reportportal.io/docs/integrations/authorization/GitHub/): Enable GitHub OAuth login in ReportPortal to streamline access management, allowing developers to sign in using their GitHub credentials for seamless authentication.
@@ -181,17 +183,17 @@
 
 ## Test Management System
 
-- [Test Management System](https://reportportal.io/docs/test-management-system/): test
-- [Manual launches](https://reportportal.io/docs/test-management-system/manual-launches/): test
-- [Milestones](https://reportportal.io/docs/test-management-system/milestones/): test
-- [Test Case Library](https://reportportal.io/docs/test-management-system/test-case-library/): test
-- [Folders](https://reportportal.io/docs/test-management-system/test-case-library/Folders/): test
-- [Test executions](https://reportportal.io/docs/test-management-system/manual-launches/TestExecutions/): test
-- [Test plan](https://reportportal.io/docs/test-management-system/milestones/TestPlan/): test
-- [Test cases](https://reportportal.io/docs/test-management-system/milestones/TestCases/): test
-- [Test cases](https://reportportal.io/docs/test-management-system/test-case-library/TestCases/): test
-- [Test execution page](https://reportportal.io/docs/test-management-system/manual-launches/TestExecutionPage/): test
-- [Bulk operations](https://reportportal.io/docs/test-management-system/test-case-library/BulkOperations/): Bulk operations
+- [Test Management System](https://reportportal.io/docs/test-management-system/): Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
+- [Manual launches](https://reportportal.io/docs/test-management-system/manual-launches/): Organize and manage manual testing activities with Manual Launches. Learn how to search, filter, view, edit, and delete launches.
+- [Milestones](https://reportportal.io/docs/test-management-system/milestones/): Plan testing around releases, sprints, and features in the our qa metrics dashboard.
+- [Test Case Library](https://reportportal.io/docs/test-management-system/test-case-library/): Organize and manage test cases with Test Case Library, then track execution insights with the our test results dashboard.
+- [Folders](https://reportportal.io/docs/test-management-system/test-case-library/Folders/): Organize test cases with folders and subfolders in the Test Case Library. Learn how to create, duplicate, rename, move, and manage folders.
+- [Test executions](https://reportportal.io/docs/test-management-system/manual-launches/TestExecutions/): Run, track, and manage test executions within a manual launch. Learn how to search, filter, change status, and delete test executions.
+- [Test plan](https://reportportal.io/docs/test-management-system/milestones/TestPlan/): Create, edit, duplicate, and delete test plans in Milestones to define testing scope and track coverage.
+- [Test cases](https://reportportal.io/docs/test-management-system/milestones/TestCases/): Add, search, and remove test cases in a test plan, then add them to a manual launch from a milestone.
+- [Test cases](https://reportportal.io/docs/test-management-system/test-case-library/TestCases/): Learn how to work with test cases in the Test Case Library in our test results dashboard.
+- [Test execution page](https://reportportal.io/docs/test-management-system/manual-launches/TestExecutionPage/): Review a selected test execution, change its status, add comments, and post or link issues on the Test Execution page.
+- [Bulk operations](https://reportportal.io/docs/test-management-system/test-case-library/BulkOperations/): Manage multiple test cases at once with bulk operations for faster and more efficient test case management.
 
 ## Test Results Reporting
 
@@ -212,7 +214,7 @@
 - [Operations under launches](https://reportportal.io/docs/working-with-test-results/OperationsUnderLaunches/): Manage launch operations including editing attributes, merging launches, and bulk actions to streamline test execution reporting workflows.
 - [Filtering launches](https://reportportal.io/docs/working-with-test-results/FilteringLaunches/): Filter launches and test items using advanced criteria to quickly find specific test execution reporting data and analyze results efficiently.
 - [Launches/test items attributes](https://reportportal.io/docs/working-with-test-results/LaunchesTestItemsAttributes/): Use attributes to organize and categorize test data for better test automation reporting tools performance and easier analysis across launches.
-- [Log level](https://reportportal.io/docs/working-with-test-results/LogLevel/)
+- [Log level](https://reportportal.io/docs/working-with-test-results/LogLevel/): Review test logs by level in ReportPortal. Filter Trace to Fatal messages, inspect screenshots, and debug failed test steps faster.
 - [Investigation of failure](https://reportportal.io/docs/working-with-test-results/InvestigationOfFailure/): Investigate test failures by setting defect types, linking bug tracking systems, and performing detailed test failure analysis for better quality control.
 - [History of launches](https://reportportal.io/docs/working-with-test-results/HistoryOfLaunches/): Track test execution history and trends over time to identify patterns and improve test automation metrics dashboard insights.
 - [Test case ID](https://reportportal.io/docs/working-with-test-results/TestCaseId/): Link test cases with external test management systems using unique test case IDs. Track and manage test execution reporting across platforms.
@@ -223,7 +225,7 @@
 
 ## Analysis
 
-- [Analysis](https://reportportal.io/docs/analysis/): test
+- [Analysis](https://reportportal.io/docs/analysis/): Investigate failures and monitor trends with Auto-Analysis, Pattern Analysis, and Unique Error Analysis in ReportPortal.
 - [Quality Gates](https://reportportal.io/docs/analysis/quality-gates/): Drive efficiency with Quality Gates. Configure rules, integrate with CI/CD for enhanced test report dashboard.
 - [Auto-Analysis of launches](https://reportportal.io/docs/analysis/AutoAnalysisOfLaunches/): Use Auto-Analysis to categorize failures with ML, reduce manual work, and link defects automatically. Speed investigations and improve accuracy with test failure analytics.
 - [Immediate Auto-Analysis](https://reportportal.io/docs/analysis/ImmediateAutoAnalysis/): Kick off Auto-Analysis before a launch finishes to flag failures sooner. Use attributes to accelerate test failure analytics and shorten feedback loops.
@@ -246,7 +248,7 @@
 
 ## Dashboards & Visualization
 
-- [Dashboards & Visualization](https://reportportal.io/docs/dashboards-and-visualization/): test
+- [Dashboards & Visualization](https://reportportal.io/docs/dashboards-and-visualization/): Build custom dashboards and widgets in ReportPortal to visualize test metrics, track trends, and share quality insights with your team.
 - [Possible Dashboards in ReportPortal](https://reportportal.io/docs/dashboards-and-visualization/PossibleDashboardsInReportPortal/): Explore the possible dashboards and widgets in ReportPortal to visualize your test results, monitor progress, and gain actionable insights.
 - [Reporting and metrics in ReportPortal](https://reportportal.io/docs/dashboards-and-visualization/ReportingAndMetricsInReportPortal/): With ReportPortal, you can boost your software quality by obtaining detailed test automation reports to monitor test execution, identify issues, and analyze trends for continuous enhancement.
 - [Work with dashboards](https://reportportal.io/docs/dashboards-and-visualization/WorkWithDashboards/): Create, edit, clone, and manage dashboards in ReportPortal. Build focused views with widgets and videos to monitor releases on a live test results dashboard.
@@ -277,7 +279,7 @@
 
 ## Premium Features
 
-- [Premium Features](https://reportportal.io/docs/premium-features/): test
+- [Premium Features](https://reportportal.io/docs/premium-features/): Unlock ReportPortal Premium Features on SaaS and Managed Services plans, designed for enterprise-scale testing, deeper insights, and continuous quality workflows.
 
 ## Developers & API
 

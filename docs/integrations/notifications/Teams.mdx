@@ -1,0 +1,132 @@
+---
+sidebar_position: 4
+sidebar_label: Teams
+description: Integrate Microsoft Teams with ReportPortal to receive real-time test results and launch summaries in your Teams channel.
+---
+
+# Teams
+
+Stay up to date with real-time test results delivered directly to your Microsoft Teams channel.
+
+The Teams plugin is our [premium offering](../../../premium-features/).
+
+## Configuration on the Microsoft Teams side
+
+Create a team and a channel in Microsoft Teams where you want to receive notifications.
+
+<MediaViewer src={require('./img/teams/Teams1.png')} alt="New team option in Microsoft Teams" />
+
+<MediaViewer src={require('./img/teams/Teams2.png')} alt="Create a team modal in Microsoft Teams" />
+
+Then, create a webhook for the channel:
+
+1. Open the target channel in Microsoft Teams.
+2. Select "More channel options" (...) next to the channel name.
+3. Select "Workflows".
+
+<MediaViewer src={require('./img/teams/Teams3.png')} alt="Workflows option in channel menu" />
+
+4. Search for and select the "Send webhook alerts to a channel" template.
+
+<MediaViewer src={require('./img/teams/Teams4.png')} alt="Send webhook alerts to a channel template" />
+
+5. Select the team and channel.
+
+<MediaViewer src={require('./img/teams/Teams5.png')} alt="Select team and channel for webhook" />
+
+6. Copy the generated webhook URL.
+
+<MediaViewer src={require('./img/teams/Teams6.png')} alt="Copy webhook link in Teams Workflows" />
+
+Webhook can be used to create notification rules in ReportPortal.
+
+## Configuration on ReportPortal side
+
+### Upload plugin
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Plugins page.
+3. Click "Upload" button at the top of the page.
+4. Add .jar file and click "Upload" button.
+
+### Create notification rule
+
+1. Go to the Project settings -> [Notifications](../../../configuration/project-level/ProjectSettings#notifications).
+2. Choose Teams Notification Group.
+3. Click "Create Rule" button.
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field. The name must be unique per plugin.
+
+**Webhook URL** – mandatory field (it is configured on the Microsoft Teams side).
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has "To Investigate" items – notification will be sent, if at least 1 item has "To Investigate"
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi select.
+
+**Attributes** – optional checkbox
+
+When the "Attributes" checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* "All attributes should match"
+* "Any attribute should match"
+
+5. Click on "Create" button.
+
+<MediaViewer src={require('./img/teams/TeamsCreateNotification.png')} alt="Create Teams Notification Rule" />
+
+:::info
+Admin, Manager, and user with edit permissions can create, update, delete, and duplicate Teams notification rules.<br />
+User with view permissions can view the list of rules.
+:::
+
+You can edit, copy, enable, or disable a notification rule by clicking the appropriate controls on the rule.
+
+### How to receive notifications in Teams
+
+When you have the plugin installed and Teams notification rules configured, you can start receiving notifications to the channel configured. For this you need to report a launch which matches the notification rule and after the launch is finished you will receive a corresponding message in the Teams channel with details on the Launch results, including:
+
+* Launch name and number of execution
+* Start time and finish time
+* ID and UUID
+* Description
+* Attributes
+* Execution statistics
+* Defect statistics
+* Link to open the launch in ReportPortal
+
+<MediaViewer src={require('./img/teams/TeamsNotifications.png')} alt="Launch finished notification in Microsoft Teams" />
+
+### Disable Teams notifications
+
+1. Go to the Project settings -> Notifications.
+2. Turn OFF for Teams.
+
+<MediaViewer src={require('./img/teams/TeamsDisableNotifications.png')} alt="Disable Teams notifications" />
+
+### Disable plugin
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Instance plugins page.
+3. Find Teams plugin.
+4. Click the toggle to turn it off.
+
+<MediaViewer src={require('./img/teams/TeamsDisablePlugin.png')} alt="Disable Teams plugin" />
+
+### Uninstall plugin
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Instance plugins page.
+3. Find Teams plugin and click on it.
+4. Click "Uninstall" button and confirm your choice.
+
+<MediaViewer src={require('./img/teams/TeamsUninstallPlugin.png')} alt="Uninstall Teams plugin" />
