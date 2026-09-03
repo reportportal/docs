@@ -34,7 +34,7 @@ To configure the SMTP server for the whole instance:
 3. Click on "Email Server" panel.
 4. Click on "Add integration" button.
 
-<MediaViewer src={require('./img/email-server/EmailServer1.png')} alt="Add Email Server integration in our test reporting tool" />
+<MediaViewer src={require('./img/email-server/EmailGlobal1.png')} alt="Add Global Email Server integration in ReportPortal" />
 
 5. Fill in required parameters for integration.
 6. Click "Create" button.
@@ -45,10 +45,10 @@ To configure the SMTP server for the whole instance:
 `From name`: <string> (optional)
 `From Email`: <user email address> (required)
 `Port`: <port number> (required)
-`Authorization`: OFF/ON (dropdown)
-`Username`: <string> (required)
-`Password`: <user email password> (required)
-`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
+`Authorization`: OFF/ON (radio button, OFF by default)
+`Username`: <string> (shown and required when Authorization is ON)
+`Password`: <user email password> (shown and required when Authorization is ON)
+`Encryption`: None/TLS/SSL (radio button, required)
 ```
 
 :::note
@@ -66,37 +66,37 @@ Example of SMTP server configuration for Gmail email server (detailed info could
 `Authorization`: ON
 `Username`: reportportal1
 `Password`: <user email password>
-`TLS`: checkbox should be checked
+`Encryption`: TLS
 ```
 
-<MediaViewer src={require('./img/email-server/EmailServer2.png')} alt="Example of Global Email Server integration" />
+<MediaViewer src={require('./img/email-server/EmailGlobal2.png')} alt="Create Global Email Server integration form" />
 
 After Email Server integration is added, the configuration will apply to all projects within the instance.
 
-## Project Email Server integration
+## Organizational Email Server integration
 
-To configure an SMTP server for a single project instance:
+To configure the SMTP server for the whole organization:
 
-1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
-2. Go to the Project settings -> Integrations tab.
+1. Log in to ReportPortal as Admin or Manager.
+2. Go to Organization settings -> Integrations tab.
 3. Click on "Email Server" panel.
-4. Click on "Add Project integration" button.
+4. Click on "Create Organizational Integration" button. If a Global Email Server integration already exists, click "Create Integration" instead.
 
-<MediaViewer src={require('./img/email-server/EmailServer3.png')} alt="Add Project Email Server integration" />
+<MediaViewer src={require('./img/email-server/EmailOrganizational1.png')} alt="Create Organizational Email Server integration in our test automation metrics dashboard" />
 
 5. Fill in required parameters for integration.
 6. Click "Create" button.
 
-```javascript 
+```javascript
 `Host`: <host name of email server> (required)
 `Protocol`: <SMTP> (predefined)
 `From name`: <string> (optional)
 `From Email`: <user email address> (required)
 `Port`: <port number> (required)
-`Authorization`: OFF/ON (dropdown)
-`Username`: <string> (required)
-`Password`: <user email password> (required)
-`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
+`Authorization`: OFF/ON (radio button, OFF by default)
+`Username`: <string> (shown and required when Authorization is ON)
+`Password`: <user email password> (shown and required when Authorization is ON)
+`Encryption`: None/TLS/SSL (radio button, required)
 ```
 
 Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)):
@@ -110,9 +110,63 @@ Example of SMTP server configuration for Gmail email server (detailed info could
 `Authorization`: ON
 `Username`: reportportal1
 `Password`: <user email password>
-`TLS`: checkbox should be checked
+`Encryption`: TLS
 ```
-<MediaViewer src={require('./img/email-server/EmailServer4.png')} alt="Example of Project Email Server integration" />
+
+<MediaViewer src={require('./img/email-server/EmailOrganizational2.png')} alt="Create Organizational Email Server integration form" />
+
+After Organizational Email Server integration is added, the configuration will apply to all projects within the organization that do not have an individual Email Server integration.
+
+:::note
+Only one Organizational Email Server integration can be added per organization. If a Global Email Server integration exists, it becomes inactive after the organizational integration is created.
+:::
+
+:::info
+Admin and Manager can create an Organizational Email Server integration.<br />
+Member can only view the list of available integrations.
+:::
+
+## Project Email Server integration
+
+To configure an SMTP server for a single project instance:
+
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Email Server" panel.
+4. Click on "Create Project Integration" button.
+
+<MediaViewer src={require('./img/email-server/EmailProject1.png')} alt="Create Project Email Server integration in ReportPortal" />
+
+5. Fill in required parameters for integration.
+6. Click "Create" button.
+
+```javascript 
+`Host`: <host name of email server> (required)
+`Protocol`: <SMTP> (predefined)
+`From name`: <string> (optional)
+`From Email`: <user email address> (required)
+`Port`: <port number> (required)
+`Authorization`: OFF/ON (radio button, OFF by default)
+`Username`: <string> (shown and required when Authorization is ON)
+`Password`: <user email password> (shown and required when Authorization is ON)
+`Encryption`: None/TLS/SSL (radio button, required)
+```
+
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)):
+
+```javascript
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`From name`: reportportal
+`From Email`: reportportal1@gmail.com
+`Port`: 587
+`Authorization`: ON
+`Username`: reportportal1
+`Password`: <user email password>
+`Encryption`: TLS
+```
+
+<MediaViewer src={require('./img/email-server/EmailProject2.png')} alt="Create Project Email Server integration form" />
 
 <MediaViewer src="https://youtu.be/OVnc5nxwp24" alt="Email Server integration" type="video" />
 
