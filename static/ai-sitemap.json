@@ -21,7 +21,7 @@
         {
           "title": "Features",
           "url": "https://reportportal.io/docs/getting-started/features/",
-          "description": "Discover ReportPortal's features like real-time reporting, AI-based defects triage, visualization of test data and more."
+          "description": "Discover ReportPortal's features like real-time reporting, AI capabilities across the testing lifecycle, visualization of test data and more."
         },
         {
           "title": "Tutorial",
@@ -42,6 +42,11 @@
           "title": "Categorisation of failures",
           "url": "https://reportportal.io/docs/getting-started/features/CategorisationOfFailures/",
           "description": "Learn how ReportPortal streamlines defect triage with clear categories, root cause insights, and faster resolution across teams for more reliable testing outcomes."
+        },
+        {
+          "title": "AI capabilities",
+          "url": "https://reportportal.io/docs/getting-started/features/AICapabilities/",
+          "description": "How ReportPortal uses ML, MCP, and agentic reporting together — from test design and execution to failure analysis and release decisions."
         },
         {
           "title": "AI failure reason detection",
@@ -260,17 +265,17 @@
         {
           "title": "Instance level",
           "url": "https://reportportal.io/docs/configuration/instance-level/",
-          "description": "Configure ReportPortal at the instance level. Manage organizations, users, server settings, and plugins for the whole platform."
+          "description": "Configure ReportPortal at the instance level. Manage organizations, users, server settings, and plugins for the whole test reporting platform."
         },
         {
           "title": "Organization level",
           "url": "https://reportportal.io/docs/configuration/organization-level/",
-          "description": "Configure organization-level settings in ReportPortal. Manage projects, users, roles, and data retention for your organization."
+          "description": "Configure organization-level settings in ReportPortal. Manage projects, users, roles, and data retention for test reporting across the organization."
         },
         {
           "title": "Project level",
           "url": "https://reportportal.io/docs/configuration/project-level/",
-          "description": "Configure project-level settings in ReportPortal. Manage the project team, notifications, defect types, analyzer, and data retention."
+          "description": "Configure project-level settings in ReportPortal. Manage the project team, notifications, defect types, analyzer, and how long test results are stored."
         },
         {
           "title": "User account",
@@ -460,6 +465,11 @@
           "description": "Install, configure, and manage plugins to extend ReportPortal functionality for enhanced test execution reporting capabilities."
         },
         {
+          "title": "Email Server",
+          "url": "https://reportportal.io/docs/integrations/notifications/EmailServer/",
+          "description": "Configure email server settings for automated notifications in ReportPortal."
+        },
+        {
           "title": "MCP Server",
           "url": "https://reportportal.io/docs/integrations/ai-agents/MCPServer/",
           "description": "Automate test analysis with MCP Server, use AI to detect issues, summarize results, and streamline QA workflows for faster, smarter decision-making."
@@ -485,14 +495,29 @@
           "description": "Integrate Mobitru with ReportPortal to automatically load session recordings and view test execution videos directly in your test results."
         },
         {
+          "title": "Slack",
+          "url": "https://reportportal.io/docs/integrations/notifications/Slack/",
+          "description": "Configure Slack notifications for real-time test execution reporting updates in ReportPortal."
+        },
+        {
           "title": "Jira Server",
           "url": "https://reportportal.io/docs/integrations/bug-tracking/AtlassianJiraServer/",
           "description": "Integrate Jira Server with your test automation reporting tool to track defects, sync statuses, and streamline bug reporting."
         },
         {
+          "title": "Telegram",
+          "url": "https://reportportal.io/docs/integrations/notifications/Telegram/",
+          "description": "Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group."
+        },
+        {
           "title": "Jira Cloud",
           "url": "https://reportportal.io/docs/integrations/bug-tracking/AtlassianJiraCloud/",
           "description": "Integrate Jira Cloud with your test reporting tool to streamline issue tracking, link defects, and sync updates across your QA process."
+        },
+        {
+          "title": "Teams",
+          "url": "https://reportportal.io/docs/integrations/notifications/Teams/",
+          "description": "Integrate Microsoft Teams with ReportPortal to receive real-time test results and launch summaries in your Teams channel."
         },
         {
           "title": "Azure DevOps",
@@ -513,21 +538,6 @@
           "title": "Rally",
           "url": "https://reportportal.io/docs/integrations/bug-tracking/Rally/",
           "description": "Integrate Rally with your QA automation dashboard to track, post, and manage defects efficiently from test results."
-        },
-        {
-          "title": "Email Server",
-          "url": "https://reportportal.io/docs/integrations/notifications/EmailServer/",
-          "description": "Configure email server settings for automated notifications in ReportPortal."
-        },
-        {
-          "title": "Slack",
-          "url": "https://reportportal.io/docs/integrations/notifications/Slack/",
-          "description": "Configure Slack notifications for real-time test execution reporting updates in ReportPortal."
-        },
-        {
-          "title": "Telegram",
-          "url": "https://reportportal.io/docs/integrations/notifications/Telegram/",
-          "description": "Integrate Telegram with ReportPortal to receive real-time test updates, failure alerts, and launch summaries directly in your Telegram group."
         },
         {
           "title": "JUnit",
@@ -884,7 +894,7 @@
         {
           "title": "Test cases",
           "url": "https://reportportal.io/docs/test-management-system/milestones/TestCases/",
-          "description": "test"
+          "description": "Add, search, and remove test cases in a test plan, then add them to a manual launch from a milestone."
         },
         {
           "title": "Test cases",
