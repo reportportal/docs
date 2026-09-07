@@ -108,17 +108,21 @@ E-mail plugin can not be uninstalled.
 
 ## Configure a plugin
 
-**Permissions:**
-Only ADMINISTRATOR can make global configurations of a plugin.
-ADMINISTRATOR and PROJECT MANAGER can make project configurations of a plugin.
+:::info
+Admin can configure a plugin on the instance level.<br />
+Admin and Manager can configure plugin on the organizational level.<br />
+Admin, Manager, and user with edit permissions can configure plugin on the project level.
+:::
 
-Users can configure a plugin on the **instance-level** (global configuration) and also on the **project level** (project configuration). The configuration is the same for both levels.
+Users can configure a plugin on the instance level (global configuration), organization level and also on the project level (project configuration). The configuration is the same for both levels.
 
-If a user configures plugin on the **global level**, then these configurations will be applied to all projects on the instance, which do not have their own configurations.
+If a user configures plugin on the **global level**, then these configurations will be applied to all organizations and projects on the instance, which do not have their own configurations.
 
-If the user configures a plugin on the **project level**, then these configurations will be applied to only this project and replace global configurations, in case they are. 
+If a user configures plugin on the **organizational level**, then these configurations will be applied to all projects in the organization, which do not have their own configurations.
 
-> **Use case 1:** 
+If the user configures a plugin on the **project level**, then these configurations will be applied to only this project and replace global and organizational configurations, in case they are.
+
+> **Use case 1:**
 > 
 > **Situation:** A small team, on ReportPortal instance there are several projects. Separate projects are added for different test types (UI, API, Unit and other). The team works with one project in Jira (or Rally). Different projects post new bugs in the same Jira (or Rally) project.
 > **Solution:** configure global integration for Jira (or Rally) plugin on the "Administrate" section.
