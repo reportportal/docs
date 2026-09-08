@@ -194,10 +194,87 @@ function normalizeReportPortalLinks(text) {
   );
 }
 
+function isFenceLine(line) {
+  return /^\s*```/.test(line);
+}
+
+function isStructuralLine(line) {
+  const t = line.trim();
+  if (t === '') return true;
+  if (/^#{1,6}\s/.test(t)) return true;
+  if (/^[*+-]\s+/.test(t)) return true;
+  if (/^\d+[.)]\s+/.test(t)) return true;
+  if (/^\|.*\|$/.test(t)) return true;
+  if (/^>/.test(t)) return true;
+  if (/^([*_-])\1{2,}$/.test(t)) return true;
+  return false;
+}
+
+function normalizeHeadings(lines) {
+  let inCodeBlock = false;
+
+  return lines.map((line) => {
+    if (isFenceLine(line)) {
+      inCodeBlock = !inCodeBlock;
+      return line;
+    }
+    if (inCodeBlock) return line;
+
+    const match = line.match(/^(#{1,6})(\s+)(.*)$/);
+    if (!match) return line;
+
+    let [, hashes, spacing, rest] = match;
+    rest = rest.replace(/\*\*(.*?)\*\*/g, '$1');
+    if (hashes.length === 1) hashes = '##';
+
+    return `${hashes}${spacing}${rest}`;
+  });
+}
+
+function convertListMarkers(lines) {
+  let inCodeBlock = false;
+
+  return lines.map((line) => {
+    if (isFenceLine(line)) {
+      inCodeBlock = !inCodeBlock;
+      return line;
+    }
+    if (inCodeBlock) return line;
+
+    // Skip horizontal rules such as "---" so they aren't mistaken for list items.
+    if (/^\s*-{3,}\s*$/.test(line)) return line;
+
+    return line.replace(/^(\s*)-(\s+)/, '$1*$2');
+  });
+}
+
+function insertLineBreaks(lines) {
+  let inCodeBlock = false;
+
+  return lines.map((line, index) => {
+    if (isFenceLine(line)) {
+      inCodeBlock = !inCodeBlock;
+      return line;
+    }
+    if (inCodeBlock) return line;
+    if (isStructuralLine(line)) return line;
+    if (/(\s{2}|<br\s*\/?>)$/.test(line)) return line;
+
+    const nextLine = lines[index + 1];
+    if (nextLine === undefined || isStructuralLine(nextLine)) return line;
+
+    return `${line.replace(/\s+$/, '')}<br />`;
+  });
+}
+
 function transformBody(body) {
   let result = body;
 
   result = result.replace(/\r\n/g, '\n');
+
+  result = normalizeHeadings(result.split('\n')).join('\n');
+  result = convertListMarkers(result.split('\n')).join('\n');
+  result = insertLineBreaks(result.split('\n')).join('\n');
 
   result = result.replace(/<img\b[^>]*>/gi, (tag) => {
     const srcMatch = tag.match(/src="([^"]+)"/i);
