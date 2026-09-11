@@ -10,40 +10,40 @@ ReportPortal provides robust integration with many JavaScript testing frameworks
 
 ReportPortal supports seamless integration with the following JavaScript test frameworks:
 
-- [Playwright](./Playwright)<br />
+- [Playwright](./Playwright.md)<br />
 An advanced testing framework for web applications, Playwright offers comprehensive end-to-end testing. Playwright integration with ReportPortal enhances the clarity and tracking of your test results.
 
-- [CucumberJS](./CucumberJS)<br />
+- [CucumberJS](./CucumberJS.md)<br />
 A behavior-driven development (BDD) framework that emphasizes collaboration between developers and non-developers. By integrating with ReportPortal, CucumberJS allows you to track your Gherkin test scenarios and their results in real time.
 
-- [CodeceptJS](./Codecept)<br />
+- [CodeceptJS](./Codecept.md)<br />
 A modern end-to-end testing framework with an easy-to-use syntax. CodeceptJS integration with ReportPortal centralizes all your test execution data, providing detailed analytics and reporting for better test management.
 
-- [WebdriverIO](./WebdriverIO)<br />
+- [WebdriverIO](./WebdriverIO.md)<br />
 A robust automation framework. This integration enables seamless reporting of UI test executions, complete with logs and screenshots, which are sent directly to ReportPortal for real-time analysis.
 
-- [Cypress](./Cypress)<br />
+- [Cypress](./Cypress.md)<br />
 An open-source, front-end testing tool designed for the modern web. Cypress integration with ReportPortal enhances test management by providing detailed logging of test executions and real-time analytics for efficient debugging and insights.
 
-- [Mocha](./Mocha)<br />
+- [Mocha](./Mocha.md)<br />
 A flexible testing framework ideal for unit and integration tests. ReportPortal integration with Mocha captures test execution logs and generates comprehensive reports.
 
-- [Jest](./Jest)<br />
+- [Jest](./Jest.md)<br />
 A feature-rich testing framework. Jest’s integration with ReportPortal allows for the reporting of unit test results, tracking of errors, and monitoring of test automation metrics.
 
-- [Vitest](./Vitest)<br />
+- [Vitest](./Vitest.md)<br />
 A modern unit testing framework designed specifically for Vite projects. Thanks to this integration, Vitest sends detailed test execution results to ReportPortal, enabling automated defect triaging and test failure analytics.
 
-- [Nightwatch](./Nightwatch)<br />
+- [Nightwatch](./Nightwatch.md)<br />
 A browser automation framework. With integration with ReportPortal, you can get the results of Nightwatch UI test executions immediately for analysis.
 
-- [Jasmine](./Jasmine)<br />
+- [Jasmine](./Jasmine.md)<br />
 A behavior-driven development (BDD) testing framework. Jasmine’s integration with ReportPortal logs test results and enables you to track test performance and failures.
 
-- [TestCafe](./TestCafe)<br />
+- [TestCafe](./TestCafe.md)<br />
 An open-source, end-to-end testing framework for web applications. TestCafe’s integration with ReportPortal ensures test results are automatically sent for reporting, providing a clear overview of test performance across browsers.
 
-- [Postman](./Postman)<br />
+- [Postman](./Postman.md)<br />
 Widely used for API testing, Postman’s integration with ReportPortal helps track and log API test results for enhanced analytics and real-time reporting.
 
 If you need a sophisticated and full-featured integration with a test framework, you can configure it by your self.
