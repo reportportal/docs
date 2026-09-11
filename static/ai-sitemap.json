@@ -1016,6 +1016,11 @@
           "description": "Link test cases with external test management systems using unique test case IDs. Track and manage test execution reporting across platforms."
         },
         {
+          "title": "Launches retention policy",
+          "url": "https://reportportal.io/docs/working-with-test-results/LaunchesRetentionPolicy/",
+          "description": "Configure data retention policies to manage storage and keep important launches. Set up automated cleanup for test execution reporting data."
+        },
+        {
           "title": "Create filters",
           "url": "https://reportportal.io/docs/working-with-test-results/saved-searches-filters/CreateFilters/",
           "description": "Create and manage saved search filters for launches. Use filters as independent objects or for creating widgets in your test execution reporting dashboard."
@@ -1414,11 +1419,6 @@
           "title": "API Key Revocation",
           "url": "https://reportportal.io/docs/administration-and-maintenance/api-key-revocation/",
           "description": "Manage API key revocation for secure access control in ReportPortal with manual and automated options."
-        },
-        {
-          "title": "Launches retention policy",
-          "url": "https://reportportal.io/docs/administration-and-maintenance/LaunchesRetentionPolicy/",
-          "description": "Configure data retention policies to manage storage and keep important launches. Set up automated cleanup for test execution reporting data."
         },
         {
           "title": "Tuning CI tool",
