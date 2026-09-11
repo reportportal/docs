@@ -9,8 +9,8 @@ Project-level configuration applies to a single project. It is intended for Admi
 
 At this level you can:
 
-* manage the [project team](./ProjectTeam): invite or assign users, change project roles, and unassign members
-* configure [project settings](./ProjectSettings): general retention, integrations, notifications, defect types, log types, analyzer, pattern analysis, demo data, and Quality Gates
+* manage the [project team](./ProjectTeam.mdx): invite or assign users, change project roles, and unassign members
+* configure [project settings](./ProjectSettings.mdx): general retention, integrations, notifications, defect types, log types, analyzer, pattern analysis, demo data, and Quality Gates
 
 All users with project access can view project settings. Project settings cannot exceed the retention limits set at the organization level.
 
