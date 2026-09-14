@@ -9,6 +9,7 @@ const SITE_DESCRIPTION =
 
 const ROOT = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(ROOT, 'docs');
+const RELEASES_DIR = path.join(ROOT, 'releases');
 const STATIC_DIR = path.join(ROOT, 'static');
 const OUT_MD = path.join(STATIC_DIR, 'llms.txt');
 const OUT_JSON = path.join(STATIC_DIR, 'ai-sitemap.json');
@@ -88,9 +89,15 @@ function absoluteUrl(urlPath) {
 }
 
 function loadPages() {
-  const files = walkDocs(DOCS_DIR);
-  return files.map((file) => {
-    const rel = path.relative(DOCS_DIR, file).split(path.sep).join('/');
+  const files = walkDocs(DOCS_DIR).map((file) => ({
+    file,
+    rel: path.relative(DOCS_DIR, file).split(path.sep).join('/'),
+  }));
+  const releasesFiles = walkDocs(RELEASES_DIR).map((file) => ({
+    file,
+    rel: `releases/${path.relative(RELEASES_DIR, file).split(path.sep).join('/')}`,
+  }));
+  return [...files, ...releasesFiles].map(({ file, rel }) => {
     const fm = parseFrontMatter(fs.readFileSync(file, 'utf8'));
     const baseName = path.basename(rel);
     const isIndex = /^index\.(md|mdx)$/.test(baseName);

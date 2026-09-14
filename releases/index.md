@@ -1,6 +1,7 @@
 ---
 title: Releases
 description: Check out the latest ReportPortal version, release notes, and updates.
+sidebar_class_name: hidden
 ---
 
 # Releases
@@ -15,6 +16,6 @@ Whether you're interested in new features, performance enhancements, or security
 
 To test-drive ReportPortal’s functionality, you can review all the features introduced in each release on our [demo instance](https://demo.reportportal.io/).
 
-import DocCardList from '@theme/DocCardList';
+import ReleaseCards from '@site/src/components/releaseCards';
 
-<DocCardList />
+<ReleaseCards />
