@@ -21,11 +21,18 @@ import { useCurrentSidebarCategory } from '@docusaurus/plugin-content-docs/clien
 const GITHUB_RELEASE_DESCRIPTION = 'Explore our updates';
 
 export const ReleaseCards = () => {
-  const items = useCurrentSidebarCategory()
-    .items.filter((item) => !(item.type === 'link' && item.docId === 'index'))
+  const category = useCurrentSidebarCategory();
+
+  if (!category?.items || !Array.isArray(category.items)) {
+    console.warn('ReleaseCards: sidebar category not found or items are invalid');
+    return null;
+  }
+
+  const items = category.items
+    .filter((item) => !(item.type === 'link' && item.docId === 'index'))
     .map((item) =>
       item.type === 'link' ? { ...item, description: GITHUB_RELEASE_DESCRIPTION } : item,
     );
 
-  return <DocCardList items={items} />;
+  return items.length ? <DocCardList items={items} /> : null;
 };
