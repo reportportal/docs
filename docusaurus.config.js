@@ -17,7 +17,7 @@ require('dotenv').config();
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
-const RELEASES_DIR = path.join(__dirname, 'docs', 'releases');
+const RELEASES_DIR = path.join(__dirname, 'releases');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -153,6 +153,13 @@ const config = {
             position: 'left',
             to: 'https://developers.reportportal.io/api-docs/',
             target: '_self',
+          },
+          {
+            type: 'doc',
+            docsPluginId: 'releases',
+            docId: 'index',
+            position: 'left',
+            label: 'Releases',
           },
           {
             type: 'html',
@@ -294,6 +301,15 @@ const config = {
 
   plugins: [
     './plugins/plugin-cookie-pro',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'releases',
+        path: 'releases',
+        routeBasePath: 'releases',
+        sidebarPath: require.resolve('./sidebarsReleases.js'),
+      },
+    ],
     [
       '@docusaurus/plugin-client-redirects',
       {

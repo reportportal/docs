@@ -18,6 +18,7 @@ on:
     types: [opened, synchronize]
     paths:
       - 'docs/**'
+      - 'releases/**'
       - 'scripts/gen-llms.js'
       - '.github/workflows/gen-llms.yml'
   workflow_dispatch:
