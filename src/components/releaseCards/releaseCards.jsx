@@ -20,11 +20,10 @@ import { useCurrentSidebarCategory } from '@docusaurus/plugin-content-docs/clien
 
 const GITHUB_RELEASE_DESCRIPTION = 'Explore our updates';
 
-export const ReleaseCards = () => {
+export function ReleaseCards() {
   const category = useCurrentSidebarCategory();
 
   if (!category?.items || !Array.isArray(category.items)) {
-    console.warn('ReleaseCards: sidebar category not found or items are invalid');
     return null;
   }
 
@@ -35,4 +34,4 @@ export const ReleaseCards = () => {
     );
 
   return items.length ? <DocCardList items={items} /> : null;
-};
+}
