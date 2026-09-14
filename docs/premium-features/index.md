@@ -13,9 +13,9 @@ Our Premium Features have been meticulously designed and developed with large-sc
 We invite you to explore our Premium Features, understanding their objectives and benefits in detail on our documentation page. We are confident that you'll find the value they add to be well worth the investment. As always, we're here to answer any questions and assist you in getting the most out of your ReportPortal experience.
 
 **Available Premium Features:**
-- [**Quality Gates**](../getting-started/features/QualityGates)
-- [**SCIM Server feature**](../getting-started/features/SCIMServerFeature)
-- [**Test Executions**](../getting-started/features/TestExecutions)
-- [**Organizations**](../getting-started/features/Organizations)
-- [**LDAP**](../integrations/authorization/LDAP)
-- [**SAML**](../integrations/authorization/SamlProviders/)
+- [**Quality Gates**](../getting-started/features/QualityGates.md)
+- [**SCIM Server feature**](../getting-started/features/SCIMServerFeature.md)
+- [**Test Executions**](../getting-started/features/TestExecutions.md)
+- [**Organizations**](../getting-started/features/Organizations.md)
+- [**LDAP**](../integrations/authorization/LDAP.mdx)
+- [**SAML**](../integrations/authorization/SamlProviders/index.md)
