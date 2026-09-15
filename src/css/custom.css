@@ -54,6 +54,7 @@
   --ifm-code-font-size: 95%;
   --ifm-dropdown-box-shadow: 0 8px 24px -4px rgba(23, 28, 41, 0.14);
   --version-selector-border-color-open: var(--ifm-color-primary);
+  --navbar-button-hover-color: #fff;
 }
 
 [data-theme='light'] {
@@ -89,6 +90,7 @@
   --version-selector-border-color: #444950;
   --version-selector-divider-color: #3a3b3d;
   --version-selector-color: #e3e3e3;
+  --navbar-button-hover-color: var(--ifm-font-color-base);
 }
 
 button {
@@ -127,11 +129,9 @@ h1 {
 
 /* Navbar version selector trigger (closed / open) */
 .navbar__item.version-selector-divider {
-  display: inline-flex;
   align-items: center;
   align-self: center;
-  padding: 0;
-  margin: 0 12px;
+  padding: 0 var(--ifm-navbar-item-padding-horizontal);
 }
 
 .version-selector-divider__line {
@@ -139,6 +139,10 @@ h1 {
   width: 1px;
   height: 24px;
   background: var(--version-selector-divider-color);
+}
+
+.navbar-sidebar .version-selector-divider {
+  display: none;
 }
 
 .navbar .dropdown {
@@ -240,4 +244,88 @@ h1 {
   margin: 0;
   border: 0;
   border-top: 1px solid var(--ifm-dropdown-border-color);
+}
+
+/* Header: GitHub icon + Try demo */
+.navbar-sidebar .menu__link[href^='http']:not(.navbar-button) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-button {
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 40px;
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 4px;
+  color: var(--ifm-color-primary);
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  background: transparent;
+}
+
+.navbar-button:hover {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: var(--navbar-button-hover-color);
+}
+
+.navbar-button [class*='iconExternalLink'] {
+  display: none;
+}
+
+.navbar-sidebar .navbar-button {
+  display: flex;
+  margin: 8px 12px 16px;
+}
+
+@media (min-width: 997px) {
+  .version-selector-divider {
+    display: inline-flex;
+  }
+
+  .navbar__items .navbar__link:has([class*='iconExternalLink']) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .navbar-button {
+    display: inline-flex;
+    font-size: 0.875rem;
+  }
+
+  .try-demo {
+    order: 1;
+    width: 104px;
+    margin-left: 14px;
+  }
+
+  .github-link {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    font-size: 0;
+    margin: 0 12px 0 8px;
+  }
+
+  .github-link:before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: var(--ifm-navbar-link-color);
+    mask: url('/img/github.svg') center / contain no-repeat;
+    -webkit-mask: url('/img/github.svg') center / contain no-repeat;
+  }
+
+  .github-link:hover:before {
+    background-color: var(--ifm-navbar-link-hover-color);
+  }
+
+  .github-link [class*='iconExternalLink'] {
+    display: none;
+  }
 }

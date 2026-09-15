@@ -182,13 +182,20 @@ const config = {
           },
           {
             href: 'https://reportportal.io/',
-            label: 'ReportPortal.io',
+            label: 'Main site',
             position: 'right',
           },
           {
             href: 'https://github.com/reportportal',
             label: 'GitHub',
             position: 'right',
+            className: 'github-link',
+          },
+          {
+            href: 'https://demo.reportportal.io/ui/',
+            label: 'Try demo',
+            position: 'right',
+            className: 'navbar-button try-demo',
           },
         ],
       },
@@ -235,13 +242,17 @@ const config = {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/reportportal/',
+              },
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'ReportPortal.io',
+                label: 'Main site',
                 href: 'https://reportportal.io/',
               },
               {
