@@ -242,6 +242,10 @@ const config = {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/reportportal/',
+              },
             ],
           },
           {
