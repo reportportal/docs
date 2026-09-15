@@ -75,6 +75,8 @@
   --version-selector-border-color: var(--ifm-dropdown-border-color);
   --version-selector-divider-color: var(--ifm-dropdown-border-color);
   --version-selector-color: var(--ifm-font-color-base);
+  --badge-secondary-bg: #eef0f4;
+  --badge-secondary-color: #5F6578;
 }
 
 [data-theme='dark'] {
@@ -91,6 +93,8 @@
   --version-selector-divider-color: #3a3b3d;
   --version-selector-color: #e3e3e3;
   --navbar-button-hover-color: var(--ifm-font-color-base);
+  --badge-secondary-bg: #3a3b3d;
+  --badge-secondary-color: #c8ccd4;
 }
 
 button {
@@ -280,6 +284,20 @@ h1 {
 .navbar-sidebar .navbar-button {
   display: flex;
   margin: 8px 12px 16px;
+}
+
+.badge--secondary {
+  --ifm-badge-background-color: var(--badge-secondary-bg);
+  --ifm-badge-border-color: var(--badge-secondary-bg);
+  --ifm-badge-padding-vertical: 4px;
+  --ifm-badge-padding-horizontal: 10px;
+  --ifm-badge-border-radius: 4px;
+  --ifm-font-weight-bold: 600;
+
+  border: none;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: var(--badge-secondary-color);
 }
 
 @media (min-width: 997px) {
