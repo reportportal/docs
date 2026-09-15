@@ -1,0 +1,125 @@
+---
+sidebar_label: SCIM Azure
+description: Configure SCIM to sync Azure Entra ID users and groups automatically to ReportPortal, map attributes, and sync admin roles to streamline access control and user management.
+---
+
+# SCIM Azure
+
+:::important
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+:::
+
+ReportPortal allows you to synchronize users and groups from Azure Microsoft Entra ID
+to ReportPortal via SCIM.
+
+## Creating a SCIM provisioning
+
+1. Log in to [Azure portal](https://portal.azure.com).
+
+2. Go to the `Azure Enterprise Applications` section and click `New application`.
+
+ <MediaViewer src={require('../../img/scimAzure/1.png')} alt="New application" />
+
+3. Click `Create your own application`.
+
+<MediaViewer src={require('../../img/scimAzure/2.png')} alt="Create your own application" />
+
+4. Enter the name of your application. 
+Choose the `Integrate any other application you don't find in the gallery (Non-gallery)` bullet
+and click the `Create` button.
+
+<MediaViewer src={require('../../img/scimAzure/3.png')} alt="Fill application fields" />
+
+5. After creating an application, go to the `Provisioning` section and click `New configuration`.
+
+<MediaViewer src={require('../../img/scimAzure/4.png')} alt="Provisioning" />
+
+<MediaViewer src={require('../../img/scimAzure/5.png')} alt="New configuration" />
+
+6. Fill in the following fields:
+  - Tenant URL: `https://{your_scim_server_host}?aadOptscim062020`
+  - Secret Token: `your_admin_api_key`
+
+:::note
+`?aadOptscim062020` is a special parameter that allows you to use the a [SCIM compatible protocol](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior).
+:::
+
+<MediaViewer src={require('../../img/scimAzure/6.png')} alt="Admin credentials" />
+
+7. Click `Test Connection` to check the connection and click `Create`.
+
+<MediaViewer src={require('../../img/scimAzure/7.png')} alt="Test connection" />
+
+## Set up Attribute mapping
+
+1. Go to the `Attribute mapping` section and click `Provision Microsoft Entra ID Users`.
+
+<MediaViewer src={require('../../img/scimAzure/8.png')} alt="Attribute mapping" />
+
+2. In the `Attribute Mappings` section, find and delete the `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager` attribute.
+For some reason, Azure sends this attribute with the wrong SCIM format. This attribute is not used in ReportPortal.
+
+<MediaViewer src={require('../../img/scimAzure/9.png')} alt="Delete attribute" />
+
+3. Click `Save` to save the changes.
+
+## Admin role synchronization
+
+For proper synchronization of the admin role, you need to create a new `App-role` in Azure.
+
+1. Go to the `Provisioning` -> `Users and groups` section and click `application registration`.
+
+<MediaViewer src={require('../../img/scimAzure/10.png')} alt="Application registration" />
+
+2. Click to `Create app role`.
+
+<MediaViewer src={require('../../img/scimAzure/11.png')} alt="Create app role" />
+
+3. Fill in the following fields:
+  - Display name: `Administrator`
+  - Value: `Administrator`
+  - Description: `Administrator role`
+
+<MediaViewer src={require('../../img/scimAzure/12.png')} alt="Fill app role fields" />
+
+4. Click `Apply`.
+
+5. Select the `User` role and fill the Value field with `User`.
+
+6. Click `Apply`.
+
+7. Return to the configured enterprise application and go to the `Provisioning` -> `Attribute mapping` -> `Provision Microsoft Entra ID Users` section.
+
+<MediaViewer src={require('../../img/scimAzure/13.png')} alt="Attribute mapping" />
+
+8. Select the `Show advanced options` checkbox at the bottom and click the `Edit attribute list for customappsso` link.
+
+<MediaViewer src={require('../../img/scimAzure/14.png')} alt="Advanced options" />
+
+9. You will see the `Edit Attribute List`. At the bottom of the list, fill in the empty fields with the name `roles` and type `String`.
+
+<MediaViewer src={require('../../img/scimAzure/15.png')} alt="Edit attribute list" />
+
+10. Click `Save`.
+
+11. Return to the `Provision Microsoft Entra ID Users` and click `Add New Mapping`.
+
+<MediaViewer src={require('../../img/scimAzure/16.png')} alt="Add new mapping" />
+
+12. Fill in the following fields:
+  - Mapping type: `Expression`
+  - Expression: `AppRoleAssignmentsComplex([appRoleAssignments])`
+  - Target attribute: `roles`
+
+  Keep default values for other fields.
+
+<MediaViewer src={require('../../img/scimAzure/17.png')} alt="Fill new mapping fields" />
+
+13. Click `Ok` and then `Save`.
+
+After these steps, when you add users or groups to the Azure project you can select
+an application role for them: `User` or `Administrator`.
+
+<MediaViewer src={require('../../img/scimAzure/18.png')} alt="Select role" />
+
+This role will be synchronized with the ReportPortal user instance role.

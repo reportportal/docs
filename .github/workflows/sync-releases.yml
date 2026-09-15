@@ -18,7 +18,10 @@ on:
     branches:
       - master
     paths-ignore:
-      - 'docs/releases/**'
+      - 'releases/**'
+
+  repository_dispatch:
+    types: [release-published]
 
   workflow_call:
     inputs:
@@ -68,6 +71,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ref: master
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Set up Node.js
@@ -91,7 +95,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if [ -n "$(git status docs/releases/ --porcelain)" ]; then
+          if [ -n "$(git status releases/ --porcelain)" ]; then
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
@@ -103,6 +107,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/releases/
+          git add releases/
           git commit -m "docs: sync release pages from GitHub Releases"
           git push

@@ -13,7 +13,9 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "gen-llms": "node ./scripts/gen-llms.js",
+    "version": "docusaurus docs:version"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,8 @@
     "@docusaurus/core": "^3.6.0",
     "@docusaurus/plugin-client-redirects": "^3.6.0",
     "@docusaurus/preset-classic": "^3.6.0",
+    "@docusaurus/theme-common": "^3.6.0",
+    "@docusaurus/utils-common": "^3.6.0",
     "@mdx-js/react": "3.0.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",

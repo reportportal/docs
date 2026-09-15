@@ -1,11 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+const {
+  RELEASES_DIR,
+  buildFileName,
+  buildSidebarLabel,
+  transformBody,
+  syncReleasePositions,
+} = require('./release-utils');
 
 const RELEASES_API_URL =
   process.env.RELEASES_URL ||
   'https://api.github.com/repos/reportportal/reportportal/releases';
 const RELEASES_PER_PAGE = 100;
-const RELEASES_DIR = path.join(__dirname, '..', 'docs', 'releases');
 
 async function main() {
   const releases = await fetchAllReleases();
@@ -63,16 +69,19 @@ async function main() {
     fs.writeFileSync(filePath, content, 'utf-8');
     console.log(`Created: ${fileName}`);
     created++;
+    existingFiles.add(fileName.toLowerCase());
   }
 
+  const reordered = syncReleasePositions();
+
   console.log(
-    `\nDone. ${created} new file(s) created, ${filtered.length - created} already existed or skipped.`,
+    `\nDone. ${created} new file(s) created, ${reordered.length} positions updated, ${filtered.length - created} already existed or skipped.`,
   );
 
-  if (created > 0) {
+  if (created > 0 || reordered.length > 0) {
     fs.writeFileSync(
       path.join(__dirname, '..', '.releases-updated'),
-      String(created),
+      String(created + reordered.length),
     );
   }
 }
@@ -130,68 +139,6 @@ async function fetchAllReleases() {
 
   console.log(`Fetched ${all.length} releases total.\n`);
   return all;
-}
-
-function transformBody(body) {
-  let result = body;
-
-  result = result.replace(/\r\n/g, '\n');
-
-  result = result.replace(/<img\b[^>]*>/gi, (tag) => {
-    const srcMatch = tag.match(/src="([^"]+)"/i);
-    const altMatch = tag.match(/alt="([^"]*)"/i);
-    const src = srcMatch ? srcMatch[1] : '';
-    const alt = altMatch ? altMatch[1] : 'image';
-    return src ? `![${alt}](${src})` : '';
-  });
-
-  result = result.replace(
-    /(?<!["\(])(?<!\]\()https?:\/\/[^\s)<>\]]+/g,
-    (url) => `[${extractLabel(url)}](${url})`,
-  );
-
-  return result;
-}
-
-function extractLabel(url) {
-  try {
-    const parts = new URL(url).pathname.split('/').filter(Boolean);
-    return parts.length > 0 ? parts[parts.length - 1] : url;
-  } catch {
-    return url;
-  }
-}
-
-function buildFileName(name) {
-  let v = stripPrefix(name);
-
-  if (/^BETA/i.test(v)) {
-    const nums = v.match(/[\d.]+/);
-    return nums ? `Version${nums[0]}RC.md` : `Version${v.replace(/\s+/g, '')}.md`;
-  }
-
-  v = v.replace(/\s+(Final|RC|Beta|Alpha)$/i, '').trim();
-
-  return `Version${v}.md`;
-}
-
-function buildSidebarLabel(name) {
-  let v = stripPrefix(name);
-
-  if (/^BETA/i.test(v)) {
-    const nums = v.match(/[\d.]+/);
-    return nums ? `Version ${nums[0]} RC` : `Version ${v}`;
-  }
-
-  return `Version ${v}`;
-}
-
-function stripPrefix(name) {
-  return name
-    .replace(/^Release\s+/i, '')
-    .replace(/^ReportPortal\s+/i, '')
-    .replace(/^v\.?\s*/i, '')
-    .trim();
 }
 
 main().catch((err) => {

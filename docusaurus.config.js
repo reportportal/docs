@@ -2,6 +2,12 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import { themes } from 'prism-react-renderer';
+import versions from './versions.json';
+import { splitVersions } from './src/utils/splitVersions.js';
+
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -10,6 +16,32 @@ require('dotenv').config();
 
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
+
+const RELEASES_DIR = path.join(__dirname, 'releases');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+function readReleaseLastmodDates() {
+  const dates = {};
+  let files = [];
+  try {
+    files = fs.readdirSync(RELEASES_DIR);
+  } catch {
+    return dates;
+  }
+  for (const file of files) {
+    if (!file.endsWith('.md')) continue;
+    const { data } = matter.read(path.join(RELEASES_DIR, file));
+    const rawDate = data?.last_update?.date;
+    if (!rawDate) continue;
+    const date = new Date(rawDate);
+    if (Number.isNaN(date.getTime())) continue;
+    dates[path.basename(file, '.md')] = date.toISOString().split('T')[0];
+  }
+  return dates;
+}
+
+const { latest, minors } = splitVersions(versions);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,13 +71,15 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.9,
-          ignorePatterns: ['/docs/search'],
+          lastmod: 'date',
+          ignorePatterns: ['/docs/search', '/docs/search/'],
           filename: 'sitemap.xml',
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
             const seen = new Set();
             const fileExtensions = ['.html', '.htm', '.xml', '.pdf', '.jpg', '.png', '.css', '.js'];
+            const releaseLastmod = readReleaseLastmodDates();
             return items
               .map((item) => {
                 const u = new URL(item.url);
@@ -53,7 +87,10 @@ const config = {
                 if (!hasFileExtension && !u.pathname.endsWith('/')) {
                   u.pathname += '/';
                 }
-                return { ...item, url: u.toString() };
+                const releaseMatch = u.pathname.match(/\/releases\/(Version[^/]+)\/?$/);
+                const releaseDate = releaseMatch ? releaseLastmod[releaseMatch[1]] : undefined;
+                const lastmod = releaseDate ?? item.lastmod;
+                return { ...item, url: u.toString(), lastmod };
               })
               .filter((item) => {
                 if (seen.has(item.url)) return false;
@@ -66,6 +103,14 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          onlyIncludeVersions: [
+            ...(isProduction ? [] : ['current']),
+            ...latest,
+            ...minors.map((v) => v.id),
+          ],
+          versions: Object.fromEntries(
+            minors.map(({ id, label }) => [id, { label }]),
+          ),
         },
         blog: false,
         theme: {
@@ -110,14 +155,47 @@ const config = {
             target: '_self',
           },
           {
+            type: 'doc',
+            docsPluginId: 'releases',
+            docId: 'index',
+            position: 'left',
+            label: 'Releases',
+          },
+          {
+            type: 'html',
+            position: 'left',
+            className: 'version-selector-divider',
+            value: '<span class="version-selector-divider__line"></span>',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownItemsAfter: minors.length
+              ? [
+                  { type: 'html', value: '<hr class="dropdown__divider" />' },
+                  {
+                    type: 'html',
+                    value: '<span class="dropdown__label">Earlier versions</span>',
+                  },
+                ]
+              : [],
+          },
+          {
             href: 'https://reportportal.io/',
-            label: 'ReportPortal.io',
+            label: 'Main site',
             position: 'right',
           },
           {
             href: 'https://github.com/reportportal',
             label: 'GitHub',
             position: 'right',
+            className: 'github-link',
+          },
+          {
+            href: 'https://demo.reportportal.io/ui/',
+            label: 'Try demo',
+            position: 'right',
+            className: 'navbar-button try-demo',
           },
         ],
       },
@@ -164,13 +242,17 @@ const config = {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/reportportal/',
+              },
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'ReportPortal.io',
+                label: 'Main site',
                 href: 'https://reportportal.io/',
               },
               {
@@ -226,9 +308,20 @@ const config = {
       },
     }),
 
+  clientModules: ['./src/clientModules/syncMinorVersionDropdown.js'],
+
   plugins: [
     './plugins/plugin-cookie-pro',
     './plugins/plugin-schema-org',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'releases',
+        path: 'releases',
+        routeBasePath: 'releases',
+        sidebarPath: require.resolve('./sidebarsReleases.js'),
+      },
+    ],
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -470,7 +563,7 @@ const config = {
             from: '/installation-steps/ScalingUpReportPortalAPIService',
           },
           {
-            to: '/installation-steps-advanced/AmazonALBNGINXIngressController',
+            to: '/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS',
             from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
           },
           {
