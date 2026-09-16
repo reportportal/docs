@@ -22,6 +22,7 @@
   "plugins": ["react", "prettier", "jsx-a11y", "react-hooks", "@docusaurus"],
   "rules": {
     "import/prefer-default-export": 0,
+    "react/require-default-props": 0,
     "react/no-unescaped-entities": 0,
     "import/no-unresolved": [
       0,
