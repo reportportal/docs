@@ -9,10 +9,10 @@ Instance-level configuration applies to the entire ReportPortal installation. It
 
 At this level you can:
 
-* view and manage [all organizations](./AllOrganizations) on the instance
-* invite, assign, and manage [all users](./AllUsers), including admin rights
-* configure [server settings](./ServerSettings) such as authorization, SSO, inactivity timeout, and Google Analytics
-* upload and manage [instance plugins](./Plugins) for bug tracking, notifications, authorization, import, and other test reporting extensions
+* view and manage [all organizations](./AllOrganizations.mdx) on the instance
+* invite, assign, and manage [all users](./AllUsers.mdx), including admin rights
+* configure [server settings](./ServerSettings.mdx) such as authorization, SSO, inactivity timeout, and Google Analytics
+* upload and manage [instance plugins](./Plugins.md) for bug tracking, notifications, authorization, import, and other test reporting extensions
 
 Changes made at the instance level apply globally. Organization- and project-level settings then refine this configuration for specific teams and their test results.
 

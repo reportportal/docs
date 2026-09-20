@@ -9,10 +9,10 @@ Organization-level configuration applies to all projects grouped under one organ
 
 At this level you can:
 
-* enable the [Organizations plugin](./OrganizationsPlugin) to group multiple projects under one organization
-* create, rename, and delete [projects](./Projects), and invite users to them
-* manage [organization users](./OrganizationUsers), their roles, and project assignments
-* set [organization settings](./OrganizationSettings) for keeping launches, logs, and attachments
+* enable the [Organizations plugin](./OrganizationsPlugin.mdx) to group multiple projects under one organization
+* create, rename, and delete [projects](./Projects.mdx), and invite users to them
+* manage [organization users](./OrganizationUsers.mdx), their roles, and project assignments
+* set [organization settings](./OrganizationSettings.mdx) for keeping launches, logs, and attachments
 
 Organization settings define the maximum retention for test results in all projects of that organization. Project settings cannot exceed these limits.
 
