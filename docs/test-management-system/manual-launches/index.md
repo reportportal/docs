@@ -22,7 +22,7 @@ The "Manual launches" page lets you:
 
 **How to get started with manual launches?**
 
-Create a new manual launch from the Test Case Library or from a Test Plan (which is part of a Milestone).
+Create a new manual launch from the [Test Case Library](../test-case-library/BulkOperations.md#bulk-add-test-cases-to-launch) or from a [Test Plan](../milestones/TestCases.md#add-test-cases-to-manual-launch) (which is part of a Milestone).
 
 <MediaViewer src={require('./img/ManualLaunchesEmpty.png')} alt="Initial state of Manual Launches" />
 

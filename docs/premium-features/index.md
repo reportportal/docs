@@ -19,3 +19,4 @@ We invite you to explore our Premium Features, understanding their objectives an
 - [**Organizations**](../getting-started/features/Organizations)
 - [**LDAP**](../integrations/authorization/LDAP)
 - [**SAML**](../integrations/authorization/SamlProviders/)
+- [**Teams**](../integrations/notifications/Teams/)

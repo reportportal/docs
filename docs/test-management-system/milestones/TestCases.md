@@ -54,7 +54,7 @@ Any user with project access can view the list of test cases scoped for the sele
 
 <MediaViewer src={require('./img/TestCasesTestPlan.png')} alt="Test cases scoped in a test plan" />
 
-## Search test cases
+## Search test cases in test plan
 
 To search test cases in the test plan:
 

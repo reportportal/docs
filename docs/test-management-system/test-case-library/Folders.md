@@ -46,6 +46,8 @@ or
 2. Navigate to "Test Case Library" page.
 3. Click the "More actions" (•••) icon next to the folder.
 4. Select "Create subfolder" option.
+5. Enter subfolder name.
+6. Click "Create" button.
 
 <MediaViewer src={require('./img/CreateSubfolder2-1.png')} alt="Create subfolder second flow" />
 

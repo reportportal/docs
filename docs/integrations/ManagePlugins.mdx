@@ -8,11 +8,11 @@ description: Install, configure, and manage plugins to extend ReportPortal funct
 
 ReportPortal as a test management system can be reinforced by uploading plugins.  For now, you can install the next plugins from the box:
 
-* Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps, GitLab, Monday and Rally
-* Notification plugins: E-mail server, Slack, Telegram
+* Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps, GitLab, Monday, Rally
+* Notification plugins: E-mail server, Slack, Telegram, Teams
 * Authorization plugins: LDAP, SAML
 * Import plugins: JUnit, RobotFramework
-* Other: Organizations, Sauce Labs, Mobitru, Quality Gates, Test Executions
+* Other: Sauce Labs, Organizations, Mobitru, Quality Gates, Test Executions
 
 | **Plugin**  | **Features**  |   
 |---|---|
@@ -25,8 +25,9 @@ ReportPortal as a test management system can be reinforced by uploading plugins.
  
 ## Upload plugin
 
-**Permissions:**
-Only ADMIN can upload plugin.
+:::info
+Only Admin can upload plugin.
+:::
 
 You can find the latest version of all ReportPortal plugins by the [link](https://search.maven.org/search?q=g:com.epam.reportportal%20plugin). Then you should download the latest version of a needed plugin. Or you can use a direct link to the needed plugin from the table below.
 
@@ -43,7 +44,14 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 | Telegram | https://github.com/reportportal/plugin-telegram/packages |
 | JUnit | https://github.com/reportportal/plugin-import-junit/packages |
 | RobotFramework | https://github.com/reportportal/plugin-import-robot/packages |
-|E-mail/LDAP/Active directory/SAML| You do not need to download these plugins, there are already available on the Plugin page|
+| Mobitru | https://github.com/reportportal/plugin-mobitru/packages |
+|E-mail | You do not need to download these plugins, there are already available on the Plugin page|
+| LDAP | [premium feature](https://reportportal.io/pricing/saas/) |
+| SAML | [premium feature](https://reportportal.io/pricing/saas/) |
+| Organization | [premium feature](https://reportportal.io/pricing/saas/) |
+| Quality Gates | [premium feature](https://reportportal.io/pricing/saas/) |
+| Test Executions | [premium feature](https://reportportal.io/pricing/saas/) |
+| Teams | [premium feature](https://reportportal.io/pricing/saas/) |
 
 <MediaViewer src="https://youtu.be/57QfOZ8hGwg" alt="Upload Plugin to our open source test reporting tool" type="video" />
 
@@ -66,15 +74,17 @@ For a plugin uploading perform the following actions:
 
 ## Update a plugin
 
-**Permissions:**
-Only ADMIN can update the plugin.
+:::info
+Only Admin can upload plugin.
+:::
 
 It is the same procedure as for Uploading. You can upload a plugin with the latest version to the ReportPortal, and an existing version will be updated to the latest one. 
 
 ## Enable / Disable a plugin
 
-**Permissions:**
-Only ADMIN can enable / disable plugin.
+:::info
+Only Admin can upload plugin.
+:::
 
 <MediaViewer src="https://youtu.be/3rKYlzUqg_0" alt="Enable/Disable Plugin" type="video" />
 
@@ -91,8 +101,9 @@ The plugin will be removed from Project Settings on the project spaces. But all 
 
 ## Uninstall a plugin 
 
-**Permissions:**
-Only ADMIN can uninstall the plugin.
+:::info
+Only Admin can upload plugin.
+:::
 
 You can remove a plugin from the system by following these steps:
 

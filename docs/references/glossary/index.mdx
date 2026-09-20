@@ -70,11 +70,35 @@ Logs are textual data necessary for debugging and problem solving. Our Analyzer 
 
 <MediaViewer src={require('./img/Glossary8.png')} alt="Example of Logs in our continuous testing platform" />
 
-## Test Case ID
+## Attribute
+
+A key–value label that can be attached to launches, suites, tests, and steps. Attributes help categorize and group test data, filter results, and build widgets based on those filters. They can be reported via agents or API, and also added or edited in the UI.
+
+<MediaViewer src={require('./img/Attributes.png')} alt="Attributes in our test results dashboard" />
+
+## Tag
+
+A simple label used in the Test Case Library to categorize and find test cases. Tags are created in the UI and stored as attributes with the key tag (for example, `tag: smoke`).
+
+<MediaViewer src={require('./img/Tags.png')} alt="Tags in our test report dashboard" />
+
+## Test Case ID In Automation
 
 The ID which is used along with Steps. It is unique signature of tests by which we build test history. In general, you don’t need to manipulate these IDs, since every agent usually generates them with Code reference and parameters. But if you want to customize your history view this is the first point where to look. Agents usually generate Test Case IDs based on code reference and have a way to customize it.
 
 <MediaViewer src={require('./img/Glossary9.png')} alt="Test Case ID scheme on ReportPortal" />
+
+## Test Case ID In Test Case Library
+
+A unique identifier automatically assigned to each test case within a project in the Test Case Library. It follows the format TC + sequential number (for example, TC65) and is used to reference test cases in the Test Management System.
+
+<MediaViewer src={require('./img/TMSTestCaseID.png')} alt="Test Case ID in the Test Case Library" />
+
+## Milestone
+
+A planning unit in the Test Management System that defines the time frame and context for testing — for example, a release, sprint, feature, or another delivery goal. Within a milestone, teams organize Test Plans, track coverage and deadlines, and prepare test cases for manual launches.
+
+<MediaViewer src={require('./img/Milestones.png')} alt="Planning in the Test Management System" />
 
 ## Before Method
 
