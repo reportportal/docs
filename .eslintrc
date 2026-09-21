@@ -20,6 +20,15 @@
     "plugin:react-hooks/recommended"
   ],
   "plugins": ["react", "prettier", "jsx-a11y", "react-hooks", "@docusaurus"],
+  "overrides": [
+    {
+      "files": ["plugins/**/*.js"],
+      "env": {
+        "node": true,
+        "browser": false
+      }
+    }
+  ],
   "rules": {
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,

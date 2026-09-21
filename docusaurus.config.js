@@ -4,6 +4,7 @@
 import { themes } from 'prism-react-renderer';
 import versions from './versions.json';
 import { splitVersions } from './src/utils/splitVersions.js';
+import remarkMediaViewerDimensions from './plugins/remark-media-viewer-dimensions.js';
 
 const fs = require('fs');
 const path = require('path');
@@ -107,6 +108,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          remarkPlugins: [remarkMediaViewerDimensions],
           onlyIncludeVersions: [
             ...(isProduction ? [] : ['current']),
             ...latest,
@@ -323,6 +325,7 @@ const config = {
         path: 'releases',
         routeBasePath: 'releases',
         sidebarPath: require.resolve('./sidebarsReleases.js'),
+        remarkPlugins: [remarkMediaViewerDimensions],
       },
     ],
     [

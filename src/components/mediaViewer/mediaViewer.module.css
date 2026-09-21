@@ -14,20 +14,53 @@
  * limitations under the License.
  */
 
+.fallback-media-container,
 .media-container {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2px 4px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  box-sizing: border-box;
   margin-bottom: 20px;
 }
 
+.fallback-media-container {
+  visibility: hidden;
+}
+
+.media-container {
+  appearance: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--ifm-transition-fast) ease;
+}
+
+.media-container:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.media-container:focus-visible {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest);
+}
+
+.fallback-video-iframe,
 .video-iframe {
   display: inline-block;
   position: relative;
-  cursor: pointer;
   border: none;
   overflow: hidden;
   width: 100%;
   height: 512px;
   margin-bottom: 20px;
+}
+
+.video-iframe {
+  cursor: pointer;
 }
 
 .preview-container {
@@ -43,7 +76,9 @@
   z-index: 1;
 }
 
+.fallback-thumbnail,
 .thumbnail {
+  display: block;
   height: auto;
   width: 100%;
 }
