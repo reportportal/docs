@@ -108,6 +108,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          showLastUpdateTime: true,
           remarkPlugins: [remarkMediaViewerDimensions],
           onlyIncludeVersions: [
             ...(isProduction ? [] : ['current']),
@@ -318,6 +319,7 @@ const config = {
 
   plugins: [
     './plugins/plugin-cookie-pro',
+    './plugins/plugin-schema-org',
     [
       '@docusaurus/plugin-content-docs',
       {
