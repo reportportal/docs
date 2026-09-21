@@ -58,6 +58,10 @@ const config = {
   organizationName: 'reportportal',
   projectName: 'documentation',
 
+  customFields: {
+    productName: 'ReportPortal',
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
