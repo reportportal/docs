@@ -36,7 +36,7 @@ function absoluteUrl(siteConfig, pathname) {
 
 function toIsoDate(value) {
   if (value === undefined || value === null || value === '') return undefined;
-  const date = typeof value === 'number' ? new Date(value * 1000) : new Date(value);
+  const date = new Date(value);
   return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
 }
 
@@ -114,6 +114,7 @@ function buildHowTo(context) {
     name: howto.name || shared.name,
     description: shared.description,
     url: shared.url,
+    mainEntityOfPage: shared.mainEntityOfPage,
     inLanguage: shared.inLanguage,
     author: shared.author,
     publisher: shared.publisher,
@@ -132,7 +133,9 @@ function buildFaqPage(context) {
     name: shared.name,
     description: shared.description,
     url: shared.url,
+    mainEntityOfPage: shared.mainEntityOfPage,
     inLanguage: shared.inLanguage,
+    author: shared.author,
     publisher: shared.publisher,
     ...(shared.dateModified ? { dateModified: shared.dateModified } : {}),
     mainEntity: questions,

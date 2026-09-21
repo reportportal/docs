@@ -7,7 +7,7 @@
     "start": "npm run docusaurus clear && docusaurus start",
     "build": "docusaurus build",
     "validate:schema": "node scripts/validate-schema.js",
-    "lint": "eslint src/**/*.{js,jsx}",
+    "lint": "eslint src/**/*.{js,jsx} plugins/**/*.js",
     "format": "npm run lint -- --fix",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
@@ -78,6 +78,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.18.1"
   }
 }

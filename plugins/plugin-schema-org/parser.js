@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { toString as mdastToString } from 'mdast-util-to-string';
 
 const MIN_FAQ_ENTRIES = 2;
@@ -9,7 +10,8 @@ const STEP_NAME_MAX_LENGTH = 110;
 const FAQ_HEADING_DEPTHS = [3, 4];
 const HOWTO_HEADING_DEPTHS_IN_ORDER = [3, 2];
 
-const QUESTION_STARTERS = /^(how|what|why|when|where|who|which|can|do|does|did|is|are|should|will)\b/i;
+const QUESTION_STARTERS =
+  /^(how|what|why|when|where|who|which|can|do|does|did|is|are|should|will)\b/i;
 const STEP_HEADING = /^(step\s*\d*\b|\d+\.\s+)/i;
 
 const IGNORABLE_NODE_TYPES = new Set([
@@ -55,13 +57,13 @@ function headingText(node) {
 
 function collectSectionText(siblings, startIndex, currentDepth) {
   const parts = [];
-  for (let i = startIndex; i < siblings.length; i++) {
+  for (let i = startIndex; i < siblings.length; i += 1) {
     const node = siblings[i];
     if (node.type === 'heading' && node.depth <= currentDepth) break;
-    if (IGNORABLE_NODE_TYPES.has(node.type)) continue;
-
-    const text = nodeToText(node);
-    if (text) parts.push(text);
+    if (!IGNORABLE_NODE_TYPES.has(node.type)) {
+      const text = nodeToText(node);
+      if (text) parts.push(text);
+    }
   }
   return cleanText(parts.join(' '));
 }
@@ -117,7 +119,8 @@ function extractStepsFromHeadings(tree) {
         const name = headingText(node);
         if (looksLikeStepHeading(name)) {
           const text = truncate(collectSectionText(siblings, i + 1, node.depth));
-          acc.push(buildStep(position++, name, text));
+          acc.push(buildStep(position, name, text));
+          position += 1;
         }
       }
       return acc;

@@ -103,6 +103,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          showLastUpdateTime: true,
           onlyIncludeVersions: [
             ...(isProduction ? [] : ['current']),
             ...latest,

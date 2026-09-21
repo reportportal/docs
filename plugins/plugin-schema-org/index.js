@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import path from 'path';
 import { promises as fs } from 'fs';
 import fastGlob from 'fast-glob';
@@ -6,8 +7,8 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkMdx from 'remark-mdx';
 
-import { resolveSchemaTypes } from './mapping.js';
-import { parseDoc } from './parser.js';
+import { resolveSchemaTypes } from './mapping';
+import { parseDoc } from './parser';
 
 const PLUGIN_NAME = 'plugin-schema-org';
 const DOCUSAURUS_DEFAULT_DOCS_DIR = 'docs';
@@ -40,9 +41,7 @@ function computePermalink({ relativeFile, frontMatter, baseUrl }) {
   const rawSlug = frontMatter.slug;
   if (typeof rawSlug === 'string' && rawSlug.trim() !== '') {
     const slug = rawSlug.trim();
-    return slug.startsWith('/')
-      ? joinUrl(baseUrl, slug)
-      : joinUrl(baseUrl, dir, slug);
+    return slug.startsWith('/') ? joinUrl(baseUrl, slug) : joinUrl(baseUrl, dir, slug);
   }
 
   return joinUrl(baseUrl, dir, fileName);
@@ -110,10 +109,9 @@ export default function pluginSchemaOrg(context, userOptions = {}) {
         ),
       );
 
-      return entries.reduce((map, entry) => {
-        if (entry) map[entry.permalink] = entry.data;
-        return map;
-      }, {});
+      return Object.fromEntries(
+        entries.filter(Boolean).map((entry) => [entry.permalink, entry.data]),
+      );
     },
 
     async contentLoaded({ content, actions }) {
