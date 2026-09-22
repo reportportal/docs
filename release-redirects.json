@@ -1,0 +1,26 @@
+[
+  {
+    "to": "/releases",
+    "from": "/category/releases"
+  },
+  {
+    "to": "/releases/Version26.0.2",
+    "from": "/releases/Release26.0.2"
+  },
+  {
+    "to": "/releases/Version26.0.1",
+    "from": "/releases/Release26.0.1"
+  },
+  {
+    "to": "/releases/Version25.1.6",
+    "from": "/releases/Release25.1.6"
+  },
+  {
+    "to": "/releases/Version25.1.5",
+    "from": "/releases/Release25.1.5"
+  },
+  {
+    "to": "/releases/Version24.2.0",
+    "from": "/releases/Version24.2"
+  }
+]

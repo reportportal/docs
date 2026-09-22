@@ -92,6 +92,9 @@ jobs:
           RELEASES_URL: ${{ env.RELEASES_URL }}
           SYNC_SCOPE: ${{ inputs.scope == 'last-n' && format('last-{0}', inputs.count) || steps.scope.outputs.value }}
 
+      - name: Archive old releases
+        run: node scripts/archive-releases.js
+
       - name: Check for changes
         id: changes
         run: |

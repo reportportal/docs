@@ -3,6 +3,8 @@ const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const RELEASES_DIR = path.join(ROOT_DIR, 'releases');
+const ARCHIVED_RELEASES_DIR = path.join(RELEASES_DIR, 'archived-releases');
+const RELEASE_REDIRECTS_PATH = path.join(ROOT_DIR, 'release-redirects.json');
 
 function sanitizeFileToken(value) {
   return value
@@ -40,18 +42,22 @@ function compareReleaseVersionsDesc(fileA, fileB) {
   return 0;
 }
 
-function syncReleasePositions() {
-  const files = fs
-    .readdirSync(RELEASES_DIR, { withFileTypes: true })
+function listReleaseFiles(dir) {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && parseReleaseVersion(entry.name))
     .map((entry) => entry.name)
     .sort(compareReleaseVersionsDesc);
+}
+
+function syncReleasePositions(dir = RELEASES_DIR) {
+  const files = listReleaseFiles(dir);
 
   const changed = [];
 
   files.forEach((fileName, index) => {
     const position = index + 1;
-    const filePath = path.join(RELEASES_DIR, fileName);
+    const filePath = path.join(dir, fileName);
     const text = fs.readFileSync(filePath, 'utf-8');
     const match = text.match(/^sidebar_position:\s*(\d+)/m);
     const current = match ? parseInt(match[1], 10) : null;
@@ -173,7 +179,7 @@ function createCodeBlockTracker() {
     if (fence) {
       const closesOpenFence =
         openFence && fence.char === openFence.char && fence.length >= openFence.length;
-      openFence = closesOpenFence ? null : (openFence || fence);
+      openFence = closesOpenFence ? null : openFence || fence;
       afterBlank = false;
       return true;
     }
@@ -288,8 +294,32 @@ function stripPrefix(name) {
     .trim();
 }
 
+function upsertReleaseRedirect(oldPath, newPath) {
+  const redirects = JSON.parse(fs.readFileSync(RELEASE_REDIRECTS_PATH, 'utf-8'));
+
+  const updated = redirects.map((entry) =>
+    entry.to === oldPath ? { ...entry, to: newPath } : entry,
+  );
+
+  const existingIndex = updated.findIndex((entry) => {
+    const froms = Array.isArray(entry.from) ? entry.from : [entry.from];
+    return froms.includes(oldPath);
+  });
+
+  if (existingIndex !== -1) {
+    updated[existingIndex] = { ...updated[existingIndex], to: newPath };
+  } else {
+    updated.push({ to: newPath, from: oldPath });
+  }
+
+  fs.writeFileSync(RELEASE_REDIRECTS_PATH, `${JSON.stringify(updated, null, 2)}\n`, 'utf-8');
+}
+
 module.exports = {
   RELEASES_DIR,
+  ARCHIVED_RELEASES_DIR,
+  parseReleaseVersion,
+  listReleaseFiles,
   syncReleasePositions,
   compareReleaseVersionsDesc,
   buildFileName,
@@ -298,4 +328,5 @@ module.exports = {
   normalizeReportPortalLinks,
   extractLabel,
   stripPrefix,
+  upsertReleaseRedirect,
 };
