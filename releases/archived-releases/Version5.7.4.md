@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 21
 sidebar_label: Version 5.7.4
 description: ReportPortal v5.7.4 archived release notes with MinIO client updates.
 ---

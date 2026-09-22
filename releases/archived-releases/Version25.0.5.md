@@ -1,30 +1,32 @@
 ---
-sidebar_position: 23
-sidebar_label: Version 25.0.3
-description: ReportPortal v25.0.3 release notes with bug fixes.
+sidebar_position: 11
+sidebar_label: Version 25.0.5
+description: ReportPortal v25.0.5 release notes with bug fixes.
 ---
 
-# Version 25.0.3
+# Version 25.0.5
 
-## 1. Technical updates:
-
-ReportPortal now supports M4-chip processors.
+## 1. New integrations:
+**Telegram plugin** enabling real-time test execution updates and failure alerts within Telegram channels.
+Learn more in our [documentation](/plugins/notifications/Telegram).
 
 ## 2. Released services:
-|Service Name|Repository|Tag|
+|Plugin Name|Repository|Tag|
 |---|---| --- |
-|API|reportportal/service-api|5.13.3|
-|Authorization|reportportal/service-authorization|5.13.1|
-|Jobs|reportportal/service-jobs|5.13.1|
+|Telegram|reportportal/plugin-telegram|1.0.0||
+
 
 **Rest of services and plugins have the same version as before:**
 |Service Name|Repository|Tag|
 |---|---| --- |
-|UI|reportportal/service-ui|5.12.3|
+|Jobs|reportportal/service-jobs|5.13.1|
+|Authorization|reportportal/service-authorization|5.13.1|
 |Index|reportportal/service-index|5.13.0|
 |Migrations|reportportal/migrations|5.13.0|
-|Auto Analyzer|reportportal/service-auto-analyzer|5.13.1|
 |Metrics Gatherer|reportportal/service-metrics-gatherer|5.13.0|
+|API|reportportal/service-api|5.13.4|
+|UI|reportportal/service-ui|5.12.4|
+|Auto-Analyzer|reportportal/service-auto-analyzer|5.13.2|
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
@@ -38,4 +40,3 @@ ReportPortal now supports M4-chip processors.
 |Jira Cloud|reportportal/plugin-bts-jira-cloud|5.12.1|
 |Saucelabs|reportportal/plugin-saucelabs|5.12.1|
 |Rally|reportportal/plugin-bts-rally|5.12.2||
-
