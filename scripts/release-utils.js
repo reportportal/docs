@@ -14,12 +14,15 @@ function sanitizeFileToken(value) {
 }
 
 function parseReleaseVersion(fileName) {
-  const match = fileName.match(/^Version(\d+(?:\.\d+)*)(RC)?\.md$/i);
+  const match = fileName.match(/^Version(\d+(?:\.\d+)*)(?:-(\d+))?(RC)?\.md$/i);
   if (!match) return null;
 
   return {
-    parts: match[1].split('.').map((part) => parseInt(part, 10)),
-    isRc: Boolean(match[2]),
+    parts: [
+      ...match[1].split('.').map((part) => parseInt(part, 10)),
+      ...(match[2] ? [parseInt(match[2], 10)] : []),
+    ],
+    isRc: Boolean(match[3]),
   };
 }
 
