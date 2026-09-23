@@ -16,6 +16,8 @@ Whether you're interested in new features, performance enhancements, or security
 
 To test-drive ReportPortal’s functionality, you can review all the features introduced in each release on our [demo instance](https://demo.reportportal.io/).
 
+For the complete history of ReportPortal versions, visit our [GitHub Releases page](https://github.com/reportportal/reportportal/releases).
+
 import ReleaseCards from '@site/src/components/releaseCards';
 
 <ReleaseCards />

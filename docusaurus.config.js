@@ -9,6 +9,7 @@ import remarkMediaViewerDimensions from './plugins/remark-media-viewer-dimension
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const releaseRedirects = require('./release-redirects.json');
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -343,10 +344,6 @@ const config = {
             from: '/category/features',
           },
           {
-            to: '/releases',
-            from: '/category/releases',
-          },
-          {
             to: '/user-account',
             from: '/category/user-account',
           },
@@ -643,10 +640,6 @@ const config = {
             from: '/JVM-based-clients-configuration',
           },
           {
-            to: '/releases/Version24.2.0',
-            from: '/releases/Version24.2',
-          },
-          {
             to: '/plugins/bug-tracking/AtlassianJiraServer',
             from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
           },
@@ -699,14 +692,6 @@ const config = {
             from: '/dashboards-and-widgets/DashboardCloning',
           },
           {
-            to: '/releases/Version25.1.6',
-            from: '/releases/Release25.1.6',
-          },
-          {
-            to: '/releases/Version25.1.5',
-            from: '/releases/Release25.1.5',
-          },
-          {
             to: '/developers-guides/ReportPortalAPI',
             from: '/api',
           },
@@ -714,14 +699,7 @@ const config = {
             to: '/plugins/other/SauceLabs',
             from: '/plugins/SauceLabs',
           },
-          {
-            to: '/releases/Version26.0.2',
-            from: '/releases/Release26.0.2',
-          },
-          {
-            to: '/releases/Version26.0.1',
-            from: '/releases/Release26.0.1',
-          },
+          ...releaseRedirects,
         ],
       },
     ],

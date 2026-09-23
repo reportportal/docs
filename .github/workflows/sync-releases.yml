@@ -92,10 +92,13 @@ jobs:
           RELEASES_URL: ${{ env.RELEASES_URL }}
           SYNC_SCOPE: ${{ inputs.scope == 'last-n' && format('last-{0}', inputs.count) || steps.scope.outputs.value }}
 
+      - name: Archive old releases
+        run: node scripts/archive-releases.js
+
       - name: Check for changes
         id: changes
         run: |
-          if [ -n "$(git status releases/ --porcelain)" ]; then
+          if [ -n "$(git status --porcelain -- releases/ release-redirects.json)" ]; then
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
@@ -107,6 +110,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add releases/
+          git add releases/ release-redirects.json
           git commit -m "docs: sync release pages from GitHub Releases"
           git push

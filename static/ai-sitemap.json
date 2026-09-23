@@ -1506,92 +1506,92 @@
         },
         {
           "title": "Version 25.1.8",
-          "url": "https://reportportal.io/docs/releases/Version25.1.8/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.8/",
           "description": "Explore ReportPortal Version 25.1.8 release notes: enhanced Auto-Analysis settings, improved retry handling, and updated service and plugin versions."
         },
         {
           "title": "Version 25.1.7",
-          "url": "https://reportportal.io/docs/releases/Version25.1.7/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.7/",
           "description": "Explore ReportPortal Version 25.1.7 release notes detailing bug fixes, updated services, and plugin versions to enhance your test automation experience."
         },
         {
           "title": "Version 25.1.6",
-          "url": "https://reportportal.io/docs/releases/Version25.1.6/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.6/",
           "description": "Explore ReportPortal Version 25.1.6 release notes: PostgreSQL 17 upgrade, enhanced launch exports, improved RobotFramework imports, and analyzer updates."
         },
         {
           "title": "Version 25.1.5",
-          "url": "https://reportportal.io/docs/releases/Version25.1.5/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.5/",
           "description": "Explore ReportPortal Version 25.1.5 release notes detailing bug fixes, plugin updates, and improvements to enhance your test automation experience."
         },
         {
           "title": "Version 25.1.4",
-          "url": "https://reportportal.io/docs/releases/Version25.1.4/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.4/",
           "description": "Explore ReportPortal Version 25.1.4 release notes detailing bug fixes, plugin updates, and improvements, including SAML login issue resolution."
         },
         {
           "title": "Version 25.1.3",
-          "url": "https://reportportal.io/docs/releases/Version25.1.3/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.3/",
           "description": "Explore ReportPortal Version 25.1.3 release notes, featuring Jira Cloud integration fixes, plugin updates, and enhanced system stability for improved test management."
         },
         {
           "title": "Version 25.1.2",
-          "url": "https://reportportal.io/docs/releases/Version25.1.2/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.2/",
           "description": "Explore ReportPortal Version 25.1.2 release notes detailing bug fixes for Jira Cloud integration and component health check widget enhancements."
         },
         {
           "title": "Version 25.1.1",
-          "url": "https://reportportal.io/docs/releases/Version25.1.1/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1.1/",
           "description": "ReportPortal Version 25.1.1 addresses SAML reply URL generation issues, enhancing security and compatibility."
         },
         {
           "title": "Version 25.1",
-          "url": "https://reportportal.io/docs/releases/Version25.1/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.1/",
           "description": "ReportPortal v25.1 release notes with Spring Boot 3 upgrade, enhanced test execution reporting, and improved performance."
         },
         {
           "title": "Version 25.0.6",
-          "url": "https://reportportal.io/docs/releases/Version25.0.6/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.0.6/",
           "description": "ReportPortal v25.0.6 release notes with bug fixes and enhanced stability."
         },
         {
           "title": "Version 25.0.5",
-          "url": "https://reportportal.io/docs/releases/Version25.0.5/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.0.5/",
           "description": "ReportPortal v25.0.5 release notes with bug fixes."
         },
         {
           "title": "Version 25.0.4",
-          "url": "https://reportportal.io/docs/releases/Version25.0.4/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.0.4/",
           "description": "ReportPortal v25.0.4 release notes with bug fixes and enhanced test automation reporting tools stability."
         },
         {
           "title": "Version 25.0.3",
-          "url": "https://reportportal.io/docs/releases/Version25.0.3/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.0.3/",
           "description": "ReportPortal v25.0.3 release notes with bug fixes."
         },
         {
           "title": "Version 25.0.2",
-          "url": "https://reportportal.io/docs/releases/Version25.0.2/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version25.0.2/",
           "description": "ReportPortal v25.0.2 release notes with bug fixes."
         },
         {
           "title": "Version 24.2.3",
-          "url": "https://reportportal.io/docs/releases/Version24.2.3/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version24.2.3/",
           "description": "ReportPortal v24.2.3 release notes with bug fixes."
         },
         {
           "title": "Version 24.2.2",
-          "url": "https://reportportal.io/docs/releases/Version24.2.2/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version24.2.2/",
           "description": "ReportPortal v24.2.2 release notes with bug fixes and enhanced stability."
         },
         {
           "title": "Version 24.2",
-          "url": "https://reportportal.io/docs/releases/Version24.2.0/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version24.2.0/",
           "description": "ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance."
         },
         {
           "title": "Version 24.1",
-          "url": "https://reportportal.io/docs/releases/Version24.1/",
+          "url": "https://reportportal.io/docs/releases/archived-releases/Version24.1/",
           "description": "ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features."
         },
         {

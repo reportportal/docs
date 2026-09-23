@@ -1,25 +1,18 @@
 ---
-sidebar_position: 17
-sidebar_label: Version 25.1.2
-description: Explore ReportPortal Version 25.1.2 release notes detailing bug fixes for Jira Cloud integration and component health check widget enhancements.
+sidebar_position: 4
+sidebar_label: Version 25.1.5
+description: Explore ReportPortal Version 25.1.5 release notes detailing bug fixes, plugin updates, and improvements to enhance your test automation experience.
 ---
 
-# Version 25.1.2
+# Version 25.1.5
 
 ## 1. Bugs fixed:
-1. Fixed component health check widget (table view).
-2. Fixed post priority field in Jira Cloud.
+Fixed an issue with login of new users via AD/LDAP authorizations.
 
-## 2. Released services:
+## 2. Released plugins:
 |Service Name|Repository|Tag|
 |---|---| --- |
-|API|reportportal/service-api|5.14.1|
-|UI|reportportal/service-ui|5.14.2|
-
-**Released plugins:**
-|Plugin Name|Repository|Tag|
-|---|---| --- |
-|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.2|
+|Authorization|reportportal/service-authorization|5.14.3|
 
 **Rest of services and plugins have the same version as before:**
 |Service Name|Repository|Tag|
@@ -27,7 +20,8 @@ description: Explore ReportPortal Version 25.1.2 release notes detailing bug fix
 |Index|reportportal/service-index|5.14.0|
 |Jobs|reportportal/service-jobs|5.14.0|
 |Migrations|reportportal/migrations|5.14.0|
-|Authorization|reportportal/service-authorization|5.14.1|
+|Api|reportportal/service-api|5.14.1|
+|UI|reportportal/service-ui|5.14.2|
 |Auto Analyzer|reportportal/service-auto-analyzer|5.14.1|
 
 |Plugin Name|Repository|Tag|
@@ -38,6 +32,7 @@ description: Explore ReportPortal Version 25.1.2 release notes detailing bug fix
 |Monday|reportportal/plugin-bts-monday|1.1.0|
 |Rally|reportportal/plugin-bts-rally|5.13.0|
 |Jira|reportportal/plugin-bts-jira|5.13.0|
+|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.3|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.0|
 |Azure|reportportal/plugin-bts-azure|5.13.0|
