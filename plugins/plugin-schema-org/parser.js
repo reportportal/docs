@@ -25,6 +25,15 @@ const IGNORABLE_NODE_TYPES = new Set([
   'mdxJsxTextElement',
 ]);
 
+const BLOCK_CHILD_TYPES = new Set([
+  'paragraph',
+  'heading',
+  'list',
+  'listItem',
+  'blockquote',
+  'code',
+]);
+
 function cleanText(text) {
   if (!text) return '';
   return text
@@ -45,7 +54,12 @@ function truncate(text, maxLength = MAX_ANSWER_LENGTH) {
 function nodeToText(node) {
   if (!node) return '';
   try {
-    return cleanText(mdastToString(node));
+    if (!node.children) return cleanText(mdastToString(node));
+
+    const hasBlockChildren = node.children.some((c) => BLOCK_CHILD_TYPES.has(c.type));
+    if (!hasBlockChildren) return cleanText(mdastToString(node));
+
+    return cleanText(node.children.map((c) => nodeToText(c)).join(' '));
   } catch {
     return '';
   }
