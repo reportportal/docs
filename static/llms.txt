@@ -310,10 +310,6 @@
 ## Case Studies
 
 - [Case Studies](https://reportportal.io/docs/case-studies/): Discover success stories to see how top organizations improved processes thanks to our test automation reporting dashboard.
-- [Reducing regression time by 50%](https://reportportal.io/docs/case-studies/ReducingRegressionTimeBy50/): Learn how to reduce regression time by 50% using ReportPortal's test automation reporting tools and qa dashboard tools for faster analysis.
-- [Increasing test automation stability and visibility](https://reportportal.io/docs/case-studies/IncreasingTestAutomationStabilityAndVisibility/): Discover how ReportPortal boosted test stability from 25% to 95%, cut analysis effort by 90%, and improved visibility for smarter release decisions.
-- [Reducing regression analysis efforts](https://reportportal.io/docs/case-studies/ReducingRegressionAnalysisEfforts/): Discover how ReportPortal reduces regression analysis time by enabling real-time insights, automated reruns, and a powerful QA metrics dashboard for faster, smarter testing.
-- [Improving test automation stability](https://reportportal.io/docs/case-studies/ImprovingTestAutomationStability/): Learn how ReportPortal improve test automation stability, reduced failures, and cut analysis time with better logging, triage, and dashboards.
 
 ## Glossary
 
