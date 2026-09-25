@@ -17,6 +17,7 @@ on:
   pull_request:
     types: [opened, synchronize]
     paths:
+      - 'docs/**'
       - 'versioned_docs/**'
       - 'versions.json'
       - 'releases/**'
