@@ -7,7 +7,8 @@ description: Automate GO/NO-GO checks with Quality Gates in ReportPortal. Enforc
 # Quality Gates
 
 :::info
-This is a [premium feature](../../premium-features/index.md).
+This is a premium offering from ReportPortal, available as part of our paid support services.
+If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
 :::
 
 [Quality Gates](../../analysis/quality-gates/index.md) is a feature thanks to which ReportPortal becomes an integral part of continuous testing platform. It prevents the code from moving forward if it doesn’t meet testing criteria. ReportPortal uses aggregated data and rule engine to verify testing results against required conditions.

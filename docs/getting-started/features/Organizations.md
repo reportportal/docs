@@ -7,10 +7,11 @@ description: Structure projects in ReportPortal using a two-level hierarchy, cen
 # Organizations
 
 :::info
-This is a [premium feature](../../premium-features/index.md).
+This is a premium offering from ReportPortal, available as part of our paid support services.
+If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
 :::
 
-Organizations in ReportPortal introduce a new level of flexibility and control by allowing you to group multiple projects under a two-level hierarchy. This scalable structure simplifies how teams manage and organize their testing efforts, making it easier to support enterprise-level testing at scale.
+[Organizations](../../configuration/organization-level/index.md) in ReportPortal introduce a new level of flexibility and control by allowing you to group multiple projects under a two-level hierarchy. This scalable structure simplifies how teams manage and organize their testing efforts, making it easier to support enterprise-level testing at scale.
 
 Organizations come with the next key benefits:
 

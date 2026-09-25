@@ -6,7 +6,7 @@ description: Add, search, and remove test cases in a test plan, then add them to
 
 # Test cases
 
-Test cases within a test plan are the execution scope for a milestone. They can be searched, reviewed, added from the Test Case Library, assigned to manual launches, or removed from the plan.
+Test cases in a test plan define the scope of a milestone. They can be searched, reviewed, added from the Test Case Library, assigned to manual launches, or removed from the plan.
 
 ## Add tests from library to test plan
 

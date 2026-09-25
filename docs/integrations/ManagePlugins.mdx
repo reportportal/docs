@@ -6,21 +6,25 @@ description: Install, configure, and manage plugins to extend ReportPortal funct
 
 # Manage plugins
 
-ReportPortal as a test management system can be reinforced by uploading plugins.  For now, you can install the next plugins from the box:
+ReportPortal as a test management system can be reinforced by uploading plugins. For now, you can install the next plugins from the box:
 
 * Bug Tracking Systems plugins: Jira Server, Jira Cloud, Azure DevOps, GitLab, Monday, Rally
 * Notification plugins: E-mail server, Slack, Telegram, Teams
 * Authorization plugins: LDAP, SAML
 * Import plugins: JUnit, RobotFramework
-* Other: Sauce Labs, Organizations, Mobitru, Quality Gates, Test Executions
+* Infrastructure providers: Sauce Labs, Mobitru
+* Other: Organizations, Quality Gates, Test Executions
 
 | **Plugin**  | **Features**  |   
 |---|---|
-| Jira Server/Jira Cloud/Azure DevOps/GitLab/Monday/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and Jira or Rally, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses.|
-|E-mail server/Slack/Telegram| With this plugin, you will be able to configure notifications about test result finish in real time.|
-|SauceLabs| This plugin helps you to integrate ReportPortal with Sauce Labs and watch a video of test executions right in the ReportPortal application on the log view.
-|LDAP/Active directory/SAML| This plugin helps authorize without new user creation.|
+| Jira Server/Jira Cloud/Azure DevOps/GitLab/Monday/Rally  |  This plugin can be required for projects that collect defects in a separate tracking tool. The integration provides an exchange of information between ReportPortal and a BTS, for example: posting new issues to BTS, linking test failures with the existing issue in BTS, track issue statuses.|
+|E-mail server/Slack/Telegram/Teams| With this plugin, you will be able to configure notifications about test result finish in real time.|
+|Sauce Labs/Mobitru| This plugin helps you to integrate ReportPortal with Sauce Labs or Mobitru and watch a video of test executions right in the ReportPortal application on the log view.|
+|LDAP/SAML| This plugin helps authorize without new user creation.|
 |JUnit/RobotFramework | This plugin is essential for importing tests into ReportPortal.|
+|Organizations| This plugin adds a two-level hierarchy (organization → projects), so you can group projects and apply settings across teams.|
+|Quality Gates| This plugin evaluates launches against configured quality rules and supports automated GO/NO-GO release decisions, including in CI/CD pipelines.|
+|Test Executions| This plugin provides a unified view of all test cases across launches with flexible filters and a customizable layout for faster analysis.|
 | Implement your own plugin |[Plugin developers guide](../developers-and-api/PluginDevelopersGuide/index.md)|
  
 ## Upload plugin
@@ -31,6 +35,8 @@ Only Admin can upload plugin.
 
 You can find the latest version of all ReportPortal plugins by the [link](https://search.maven.org/search?q=g:com.epam.reportportal%20plugin). Then you should download the latest version of a needed plugin. Or you can use a direct link to the needed plugin from the table below.
 
+Premium plugins are not available for download from Maven or GitHub. See the details for each plugin in the table below.
+
 |Plugin  | Link to download |
 | ------------- | ------------- |
 | JIRA Server  | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-jira or https://github.com/reportportal/plugin-bts-jira/packages |
@@ -39,23 +45,23 @@ You can find the latest version of all ReportPortal plugins by the [link](https:
 | GitLab | https://github.com/reportportal/plugin-bts-gitlab/packages |
 | Monday | https://github.com/reportportal/plugin-bts-monday/packages |
 | Rally | https://search.maven.org/artifact/com.epam.reportportal/plugin-bts-rally or https://github.com/reportportal/plugin-bts-rally/packages |
-| SauceLabs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs or https://github.com/reportportal/plugin-saucelabs/packages |
+| E-mail | You do not need to download this plugin, it is already available on the Plugins page |
 | Slack | https://github.com/reportportal/plugin-slack/packages |
 | Telegram | https://github.com/reportportal/plugin-telegram/packages |
+| Teams | The [Teams plugin](./notifications/Teams.mdx) is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling Teams for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
+| LDAP | The [LDAP plugin](./authorization/LDAP.mdx) is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling LDAP for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
+| SAML | The [SAML plugin](./authorization/SamlProviders/Overview.mdx) is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling SAML for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
 | JUnit | https://github.com/reportportal/plugin-import-junit/packages |
 | RobotFramework | https://github.com/reportportal/plugin-import-robot/packages |
+| Sauce Labs | https://search.maven.org/artifact/com.epam.reportportal/plugin-saucelabs or https://github.com/reportportal/plugin-saucelabs/packages |
 | Mobitru | https://github.com/reportportal/plugin-mobitru/packages |
-|E-mail | You do not need to download these plugins, there are already available on the Plugin page|
-| LDAP | [premium feature](https://reportportal.io/pricing/saas/) |
-| SAML | [premium feature](https://reportportal.io/pricing/saas/) |
-| Organization | [premium feature](https://reportportal.io/pricing/saas/) |
-| Quality Gates | [premium feature](https://reportportal.io/pricing/saas/) |
-| Test Executions | [premium feature](https://reportportal.io/pricing/saas/) |
-| Teams | [premium feature](https://reportportal.io/pricing/saas/) |
+| Organizations | The [Organizations](../configuration/organization-level/index.md) plugin is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling Organizations for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
+| Quality Gates | The [Quality Gates](../analysis/quality-gates/index.md) plugin is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling Quality Gates for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
+| Test Executions | The [Test Executions feature](../working-with-test-results/test-executions/index.mdx) is a premium offering from ReportPortal, available as part of our paid support services.<br />If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information. |
 
 <MediaViewer src="https://youtu.be/57QfOZ8hGwg" alt="Upload Plugin to our open source test reporting tool" type="video" />
 
-For a plugin uploading perform the following actions:
+To upload a plugin, perform the following actions:
 
 1. Log in to ReportPortal as Admin.
 2. Navigate to Instance plugins page.
@@ -83,7 +89,7 @@ It is the same procedure as for Uploading. You can upload a plugin with the late
 ## Enable / Disable a plugin
 
 :::info
-Only Admin can upload plugin.
+Only Admin can enable or disable a plugin.
 :::
 
 <MediaViewer src="https://youtu.be/3rKYlzUqg_0" alt="Enable/Disable Plugin" type="video" />
@@ -97,12 +103,12 @@ For that:
 3. Find plugin.
 4. Click a switcher to disable.
 
-The plugin will be removed from Project Settings on the project spaces. But all plugin configurations will be saved in the DataBase and you can return them back if you need by clicking on the switcher enable the plugin.
+The plugin will be removed from Project Settings on the project spaces. But all plugin configurations will be saved in the database and you can return them back if you need by clicking on the switcher to enable the plugin.
 
 ## Uninstall a plugin 
 
 :::info
-Only Admin can upload plugin.
+Only Admin can uninstall a plugin.
 :::
 
 You can remove a plugin from the system by following these steps:
@@ -112,7 +118,7 @@ You can remove a plugin from the system by following these steps:
 3. Click on Plugin.
 4. Click "Uninstall" button.
 
-The plugin will be successfully deleted. All plugin configurations will be deleted from the DataBase.
+The plugin will be successfully deleted. All plugin configurations will be deleted from the database.
 E-mail plugin can not be uninstalled.
 
 <MediaViewer src="https://youtu.be/b8nCZc2zyN4" alt="Uninstall Plugin" type="video" />
@@ -125,7 +131,7 @@ Admin and Manager can configure plugin on the organizational level.<br />
 Admin, Manager, and user with edit permissions can configure plugin on the project level.
 :::
 
-Users can configure a plugin on the instance level (global configuration), organization level and also on the project level (project configuration). The configuration is the same for both levels.
+Users can configure a plugin on the instance level (global configuration), organizational level, and project level (project configuration). The configuration approach is the same for all three levels.
 
 If a user configures plugin on the **global level**, then these configurations will be applied to all organizations and projects on the instance, which do not have their own configurations.
 
@@ -135,20 +141,20 @@ If the user configures a plugin on the **project level**, then these configurati
 
 > **Use case 1:**
 > 
-> **Situation:** A small team, on ReportPortal instance there are several projects. Separate projects are added for different test types (UI, API, Unit and other). The team works with one project in Jira (or Rally). Different projects post new bugs in the same Jira (or Rally) project.
-> **Solution:** configure global integration for Jira (or Rally) plugin on the "Administrate" section.
+> **Situation:** A small team, on ReportPortal instance there are several projects. Separate projects are added for different test types (UI, API, Unit and other). The team works with one project in a BTS (for example, Jira). Different projects post new bugs in the same BTS project.<br />
+> **Solution:** configure global integration for the BTS plugin on the Instance plugins page.<br />
 >**Pros:** Administrator configures integration once, and should not perform the same action several times. If the integration requires some changes, the Administrator can easily edit an integration, and the changes will apply to all projects on the instance.
 
 
 > **Use case 2:** 
 > 
-> **Situation:**  On ReportPortal instance there are several projects. Separate projects are added for different teams. Each team works with its project in Jira (or Rally) and posts new bugs in different Jira (or Rally) projects. Each team should not have access to the Jira (or Rally) project of other teams.
-> **Solution:** configure project integrations for Jira (or Rally) plugin on the Project settings.
+> **Situation:**  On ReportPortal instance there are several projects. Separate projects are added for different teams. Each team works with its project in a BTS and posts new bugs in different BTS projects. Each team should not have access to the BTS project of other teams.<br />
+> **Solution:** configure project integrations for the BTS plugin on the Project settings.<br />
 >**Pros:** Project Manager or Administrator configures integrations per project, team members from different projects can not see configurations of each other.
 
 
 > **Use case 3:** 
 > 
-> **Situation:**  On ReportPortal instance there are several projects. Separate projects are added for different teams. But for one team has been added several projects. So several projects on ReportPortal have connections with one Jira (or Rally) project and several projects have a connection with different Jira (or Rally) projects.
-> **Solution:** configure global integrations on the Management board, and configure project integrations for Jira (or Rally) plugin on the Project settings.
+> **Situation:**  On ReportPortal instance there are several projects. Separate projects are added for different teams. But for one team has been added several projects. So several projects on ReportPortal have connections with one BTS project and several projects have a connection with different BTS projects.<br />
+> **Solution:** configure global integrations on the Instance plugins page, and configure project integrations for the BTS plugin on the Project settings.<br />
 >**Pros:** Administrator configures integration once for those who need the same settings, and Project Manager or Administrator configures integrations per project, for those projects who need to limit access.
