@@ -18,6 +18,8 @@ on:
     types: [opened, synchronize]
     paths:
       - 'docs/**'
+      - 'versioned_docs/**'
+      - 'versions.json'
       - 'releases/**'
       - 'scripts/gen-llms.js'
       - '.github/workflows/gen-llms.yml'

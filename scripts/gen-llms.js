@@ -8,7 +8,10 @@ const SITE_DESCRIPTION =
   'ReportPortal is an open-source TestOps service for centralized test reporting, AI-powered failure analysis, and real-time test analytics.';
 
 const ROOT = path.resolve(__dirname, '..');
-const DOCS_DIR = path.join(ROOT, 'docs');
+const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'versions.json'), 'utf8'));
+const latestVersion = versions[0];
+const versionedDocsDir = path.join(ROOT, 'versioned_docs', `version-${latestVersion}`);
+const DOCS_DIR = fs.existsSync(versionedDocsDir) ? versionedDocsDir : path.join(ROOT, 'docs');
 const RELEASES_DIR = path.join(ROOT, 'releases');
 const STATIC_DIR = path.join(ROOT, 'static');
 const OUT_MD = path.join(STATIC_DIR, 'llms.txt');
@@ -16,6 +19,8 @@ const OUT_JSON = path.join(STATIC_DIR, 'ai-sitemap.json');
 
 const SECTION_FALLBACK_POSITION = 999;
 const PAGE_FALLBACK_POSITION = 999;
+
+const NOINDEX_RE = /name=["']robots["'][^>]*content=["'][^"']*noindex/i;
 
 function walkDocs(dir, acc = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -93,36 +98,45 @@ function loadPages() {
     file,
     rel: path.relative(DOCS_DIR, file).split(path.sep).join('/'),
   }));
-  const releasesFiles = walkDocs(RELEASES_DIR).map((file) => ({
-    file,
-    rel: `releases/${path.relative(RELEASES_DIR, file).split(path.sep).join('/')}`,
-  }));
-  return [...files, ...releasesFiles].map(({ file, rel }) => {
-    const fm = parseFrontMatter(fs.readFileSync(file, 'utf8'));
-    const baseName = path.basename(rel);
-    const isIndex = /^index\.(md|mdx)$/.test(baseName);
-    const sectionDir = rel.includes('/') ? rel.split('/')[0] : '';
-    const urlPath = buildUrlPath(rel, fm);
-    const depth = rel.split('/').length;
-    const title =
-      fm.title ||
-      fm.sidebar_label ||
-      (isIndex && sectionDir
-        ? sectionDir.replace(/[-_]/g, ' ')
-        : titleFromFilename(baseName));
-    return {
+  const releasesFiles = walkDocs(RELEASES_DIR)
+    .map((file) => ({
       file,
-      rel,
-      depth,
-      sectionDir,
-      isIndex,
-      isRoot: urlPath === '',
-      title: title.trim(),
-      description: (fm.description || '').trim(),
-      position: toNumber(fm.sidebar_position, PAGE_FALLBACK_POSITION),
-      url: absoluteUrl(urlPath),
-    };
-  });
+      rel: `releases/${path.relative(RELEASES_DIR, file).split(path.sep).join('/')}`,
+    }))
+    .filter(({ rel }) => {
+      if (!rel.startsWith('releases/archived-releases/')) return true;
+      return /\/index\.(md|mdx)$/.test(rel);
+    });
+  return [...files, ...releasesFiles]
+    .map(({ file, rel }) => {
+      const content = fs.readFileSync(file, 'utf8');
+
+      if (NOINDEX_RE.test(content)) return null;
+
+      const fm = parseFrontMatter(content);
+      const baseName = path.basename(rel);
+      const isIndex = /^index\.(md|mdx)$/.test(baseName);
+      const sectionDir = rel.includes('/') ? rel.split('/')[0] : '';
+      const urlPath = buildUrlPath(rel, fm);
+      const depth = rel.split('/').length;
+      const title =
+        fm.title ||
+        fm.sidebar_label ||
+        (isIndex && sectionDir ? sectionDir.replace(/[-_]/g, ' ') : titleFromFilename(baseName));
+      return {
+        file,
+        rel,
+        depth,
+        sectionDir,
+        isIndex,
+        isRoot: urlPath === '',
+        title: title.trim(),
+        description: (fm.description || '').trim(),
+        position: toNumber(fm.sidebar_position, PAGE_FALLBACK_POSITION),
+        url: absoluteUrl(urlPath),
+      };
+    })
+    .filter(Boolean);
 }
 
 function loadSections(pages) {

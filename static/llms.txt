@@ -310,10 +310,6 @@
 ## Case Studies
 
 - [Case Studies](https://reportportal.io/docs/case-studies/): Discover success stories to see how top organizations improved processes thanks to our test automation reporting dashboard.
-- [Reducing regression time by 50%](https://reportportal.io/docs/case-studies/ReducingRegressionTimeBy50/): Learn how to reduce regression time by 50% using ReportPortal's test automation reporting tools and qa dashboard tools for faster analysis.
-- [Increasing test automation stability and visibility](https://reportportal.io/docs/case-studies/IncreasingTestAutomationStabilityAndVisibility/): Discover how ReportPortal boosted test stability from 25% to 95%, cut analysis effort by 90%, and improved visibility for smarter release decisions.
-- [Reducing regression analysis efforts](https://reportportal.io/docs/case-studies/ReducingRegressionAnalysisEfforts/): Discover how ReportPortal reduces regression analysis time by enabling real-time insights, automated reruns, and a powerful QA metrics dashboard for faster, smarter testing.
-- [Improving test automation stability](https://reportportal.io/docs/case-studies/ImprovingTestAutomationStability/): Learn how ReportPortal improve test automation stability, reduced failures, and cut analysis time with better logging, triage, and dashboards.
 
 ## Glossary
 
@@ -343,55 +339,6 @@
 - [Version 25.1.11](https://reportportal.io/docs/releases/Version25.1.11/)
 - [Version 25.1.10](https://reportportal.io/docs/releases/Version25.1.10/)
 - [Version 25.1.9](https://reportportal.io/docs/releases/Version25.1.9/)
-- [Version 25.1.8](https://reportportal.io/docs/releases/archived-releases/Version25.1.8/): Explore ReportPortal Version 25.1.8 release notes: enhanced Auto-Analysis settings, improved retry handling, and updated service and plugin versions.
-- [Version 25.1.7](https://reportportal.io/docs/releases/archived-releases/Version25.1.7/): Explore ReportPortal Version 25.1.7 release notes detailing bug fixes, updated services, and plugin versions to enhance your test automation experience.
-- [Version 25.1.6](https://reportportal.io/docs/releases/archived-releases/Version25.1.6/): Explore ReportPortal Version 25.1.6 release notes: PostgreSQL 17 upgrade, enhanced launch exports, improved RobotFramework imports, and analyzer updates.
-- [Version 25.1.5](https://reportportal.io/docs/releases/archived-releases/Version25.1.5/): Explore ReportPortal Version 25.1.5 release notes detailing bug fixes, plugin updates, and improvements to enhance your test automation experience.
-- [Version 25.1.4](https://reportportal.io/docs/releases/archived-releases/Version25.1.4/): Explore ReportPortal Version 25.1.4 release notes detailing bug fixes, plugin updates, and improvements, including SAML login issue resolution.
-- [Version 25.1.3](https://reportportal.io/docs/releases/archived-releases/Version25.1.3/): Explore ReportPortal Version 25.1.3 release notes, featuring Jira Cloud integration fixes, plugin updates, and enhanced system stability for improved test management.
-- [Version 25.1.2](https://reportportal.io/docs/releases/archived-releases/Version25.1.2/): Explore ReportPortal Version 25.1.2 release notes detailing bug fixes for Jira Cloud integration and component health check widget enhancements.
-- [Version 25.1.1](https://reportportal.io/docs/releases/archived-releases/Version25.1.1/): ReportPortal Version 25.1.1 addresses SAML reply URL generation issues, enhancing security and compatibility.
-- [Version 25.1](https://reportportal.io/docs/releases/archived-releases/Version25.1/): ReportPortal v25.1 release notes with Spring Boot 3 upgrade, enhanced test execution reporting, and improved performance.
-- [Version 25.0.6](https://reportportal.io/docs/releases/archived-releases/Version25.0.6/): ReportPortal v25.0.6 release notes with bug fixes and enhanced stability.
-- [Version 25.0.5](https://reportportal.io/docs/releases/archived-releases/Version25.0.5/): ReportPortal v25.0.5 release notes with bug fixes.
-- [Version 25.0.4](https://reportportal.io/docs/releases/archived-releases/Version25.0.4/): ReportPortal v25.0.4 release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 25.0.3](https://reportportal.io/docs/releases/archived-releases/Version25.0.3/): ReportPortal v25.0.3 release notes with bug fixes.
-- [Version 25.0.2](https://reportportal.io/docs/releases/archived-releases/Version25.0.2/): ReportPortal v25.0.2 release notes with bug fixes.
-- [Version 24.2.3](https://reportportal.io/docs/releases/archived-releases/Version24.2.3/): ReportPortal v24.2.3 release notes with bug fixes.
-- [Version 24.2.2](https://reportportal.io/docs/releases/archived-releases/Version24.2.2/): ReportPortal v24.2.2 release notes with bug fixes and enhanced stability.
-- [Version 24.2](https://reportportal.io/docs/releases/archived-releases/Version24.2.0/): ReportPortal v24.2 release notes with PostgreSQL 15 support, enhanced test automation metrics dashboard, and improved performance.
-- [Version 24.1](https://reportportal.io/docs/releases/archived-releases/Version24.1/): ReportPortal v24.1 release notes with Immediate Auto-Analysis, Pattern Analysis, and features.
-- [Version 23.2](https://reportportal.io/docs/releases/archived-releases/Version23.2/): ReportPortal v23.2 release notes with new monitoring features, data retention policies, and enhanced test automation reporting tools capabilities.
-- [Version 23.1](https://reportportal.io/docs/releases/archived-releases/Version23.1/): ReportPortal v23.1 archived release notes with new logo, enhanced features.
-- [Version 5.7.4](https://reportportal.io/docs/releases/archived-releases/Version5.7.4/): ReportPortal v5.7.4 archived release notes with MinIO client updates.
-- [Version 5.7.3](https://reportportal.io/docs/releases/archived-releases/Version5.7.3/): Explore ReportPortal Version 5.7.3: enhanced error log navigation, improved lazy loading, and optimized Elasticsearch performance for better test analysis.
-- [Version 5.7.2](https://reportportal.io/docs/releases/archived-releases/Version5.7.2/): Discover ReportPortal 5.7.2: introduces dual logging to ElasticSearch, new Jira and Azure DevOps plugins, enhanced UI, and performance improvements.
-- [Version 5.7.1](https://reportportal.io/docs/releases/archived-releases/Version5.7.1/): ReportPortal v5.7.1 archived release notes with bug fixes.
-- [Version 5.7.0](https://reportportal.io/docs/releases/archived-releases/Version5.7.0/): ReportPortal v5.7.0 archived release notes with new features.
-- [Version 5.6.3](https://reportportal.io/docs/releases/archived-releases/Version5.6.3/): ReportPortal v5.6.3 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.6.2](https://reportportal.io/docs/releases/archived-releases/Version5.6.2/): ReportPortal v5.6.2 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.6.1](https://reportportal.io/docs/releases/archived-releases/Version5.6.1/): ReportPortal v5.6.1 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.6.0](https://reportportal.io/docs/releases/archived-releases/Version5.6.0/): ReportPortal v5.6.0 archived release notes with new features and enhanced test automation reporting tools capabilities.
-- [Version 5.5.0](https://reportportal.io/docs/releases/archived-releases/Version5.5.0/): ReportPortal v5.5.0 archived release notes with new features and enhanced test automation reporting tools capabilities.
-- [Version 5.4.0](https://reportportal.io/docs/releases/archived-releases/Version5.4.0/): ReportPortal v5.4.0 archived release notes with new features and enhanced test automation reporting tools capabilities.
-- [Version 5.3.5](https://reportportal.io/docs/releases/archived-releases/Version5.3.5/): ReportPortal v5.3.5 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.3.3](https://reportportal.io/docs/releases/archived-releases/Version5.3.3/): ReportPortal v5.3.3 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.3.2](https://reportportal.io/docs/releases/archived-releases/Version5.3.2/): ReportPortal v5.3.2 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.3.1](https://reportportal.io/docs/releases/archived-releases/Version5.3.1/): ReportPortal v5.3.1 archived release notes with bug fixes.
-- [Version 5.3.0](https://reportportal.io/docs/releases/archived-releases/Version5.3.0/): ReportPortal v5.3.0 archived release notes with new features and enhanced test automation reporting tools capabilities.
-- [Version 5.2.3](https://reportportal.io/docs/releases/archived-releases/Version5.2.3/): ReportPortal v5.2.3 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 5.2.2](https://reportportal.io/docs/releases/archived-releases/Version5.2.2/): ReportPortal v5.2.2 archived release notes with bug fixes.
-- [Version 5.2.1](https://reportportal.io/docs/releases/archived-releases/Version5.2.1/): ReportPortal v5.2.1 archived release notes with bug fixes.
-- [Version 5.2.0](https://reportportal.io/docs/releases/archived-releases/Version5.2.0/): ReportPortal v5.2.0 archived release notes with new features.
-- [Version 5.1.0](https://reportportal.io/docs/releases/archived-releases/Version5.1.0/): ReportPortal v5.1.0 archived release notes with enhanced security, encryption updates.
-- [Version 5.0.0](https://reportportal.io/docs/releases/archived-releases/Version5.0.0/): ReportPortal v5.0.0 archived release notes with major updates.
-- [Version 5.0RC](https://reportportal.io/docs/releases/archived-releases/Version5.0RC/): ReportPortal v5.0RC archived release candidate notes with new features.
-- [Version 4.3](https://reportportal.io/docs/releases/archived-releases/Version4.3/): ReportPortal v4.3 archived release notes with new features.
-- [Version 4.2.0](https://reportportal.io/docs/releases/archived-releases/Version4.2.0/): ReportPortal v4.2.0 archived release notes with new features.
-- [Version 4.1.0](https://reportportal.io/docs/releases/archived-releases/Version4.1.0/): ReportPortal v4.1.0 archived release notes with new features.
-- [Version 4.0.0](https://reportportal.io/docs/releases/archived-releases/Version4.0.0/): ReportPortal v4.0.0 archived release notes with major updates and enhanced test automation reporting tools features.
-- [Version 3.3.2-1](https://reportportal.io/docs/releases/archived-releases/Version3.3.2-1/): ReportPortal v3.3.2-1 archived release notes with bug fixes and enhanced test automation reporting tools stability.
-- [Version 3.3.2](https://reportportal.io/docs/releases/archived-releases/Version3.3.2/): ReportPortal v3.3.2 archived release notes with new features and enhanced test automation reporting tools capabilities.
 
 ## Optional
 
