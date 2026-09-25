@@ -8,7 +8,10 @@ const SITE_DESCRIPTION =
   'ReportPortal is an open-source TestOps service for centralized test reporting, AI-powered failure analysis, and real-time test analytics.';
 
 const ROOT = path.resolve(__dirname, '..');
-const DOCS_DIR = path.join(ROOT, 'docs');
+const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'versions.json'), 'utf8'));
+const latestVersion = versions[0];
+const versionedDocsDir = path.join(ROOT, 'versioned_docs', `version-${latestVersion}`);
+const DOCS_DIR = fs.existsSync(versionedDocsDir) ? versionedDocsDir : path.join(ROOT, 'docs');
 const RELEASES_DIR = path.join(ROOT, 'releases');
 const STATIC_DIR = path.join(ROOT, 'static');
 const OUT_MD = path.join(STATIC_DIR, 'llms.txt');
@@ -93,10 +96,15 @@ function loadPages() {
     file,
     rel: path.relative(DOCS_DIR, file).split(path.sep).join('/'),
   }));
-  const releasesFiles = walkDocs(RELEASES_DIR).map((file) => ({
-    file,
-    rel: `releases/${path.relative(RELEASES_DIR, file).split(path.sep).join('/')}`,
-  }));
+  const releasesFiles = walkDocs(RELEASES_DIR)
+    .map((file) => ({
+      file,
+      rel: `releases/${path.relative(RELEASES_DIR, file).split(path.sep).join('/')}`,
+    }))
+    .filter(({ rel }) => {
+      if (!rel.startsWith('releases/archived-releases/')) return true;
+      return /\/index\.(md|mdx)$/.test(rel);
+    });
   return [...files, ...releasesFiles].map(({ file, rel }) => {
     const fm = parseFrontMatter(fs.readFileSync(file, 'utf8'));
     const baseName = path.basename(rel);
