@@ -62,6 +62,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          fetch-depth: 0
 
       - name: Pull latest changes
         run: git pull origin master

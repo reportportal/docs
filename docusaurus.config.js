@@ -4,10 +4,12 @@
 import { themes } from 'prism-react-renderer';
 import versions from './versions.json';
 import { splitVersions } from './src/utils/splitVersions.js';
+import remarkMediaViewerDimensions from './plugins/remark-media-viewer-dimensions.js';
 
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const releaseRedirects = require('./release-redirects.json');
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -17,7 +19,7 @@ require('dotenv').config();
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
-const RELEASES_DIR = path.join(__dirname, 'docs', 'releases');
+const RELEASES_DIR = path.join(__dirname, 'releases');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -57,6 +59,10 @@ const config = {
 
   organizationName: 'reportportal',
   projectName: 'documentation',
+
+  customFields: {
+    productName: 'ReportPortal',
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -103,6 +109,8 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
+          showLastUpdateTime: true,
+          remarkPlugins: [remarkMediaViewerDimensions],
           onlyIncludeVersions: [
             ...(isProduction ? [] : ['current']),
             ...latest,
@@ -155,6 +163,13 @@ const config = {
             target: '_self',
           },
           {
+            type: 'doc',
+            docsPluginId: 'releases',
+            docId: 'index',
+            position: 'left',
+            label: 'Releases',
+          },
+          {
             type: 'html',
             position: 'left',
             className: 'version-selector-divider',
@@ -175,13 +190,20 @@ const config = {
           },
           {
             href: 'https://reportportal.io/',
-            label: 'ReportPortal.io',
+            label: 'Main site',
             position: 'right',
           },
           {
             href: 'https://github.com/reportportal',
             label: 'GitHub',
             position: 'right',
+            className: 'github-link',
+          },
+          {
+            href: 'https://demo.reportportal.io/ui/',
+            label: 'Try demo',
+            position: 'right',
+            className: 'navbar-button try-demo',
           },
         ],
       },
@@ -228,13 +250,17 @@ const config = {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/reportportal/',
+              },
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'ReportPortal.io',
+                label: 'Main site',
                 href: 'https://reportportal.io/',
               },
               {
@@ -294,6 +320,17 @@ const config = {
 
   plugins: [
     './plugins/plugin-cookie-pro',
+    './plugins/plugin-schema-org',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'releases',
+        path: 'releases',
+        routeBasePath: 'releases',
+        sidebarPath: require.resolve('./sidebarsReleases.js'),
+        remarkPlugins: [remarkMediaViewerDimensions],
+      },
+    ],
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -305,10 +342,6 @@ const config = {
           {
             to: '/features',
             from: '/category/features',
-          },
-          {
-            to: '/releases',
-            from: '/category/releases',
           },
           {
             to: '/user-account',
@@ -607,10 +640,6 @@ const config = {
             from: '/JVM-based-clients-configuration',
           },
           {
-            to: '/releases/Version24.2.0',
-            from: '/releases/Version24.2',
-          },
-          {
             to: '/plugins/bug-tracking/AtlassianJiraServer',
             from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
           },
@@ -663,14 +692,6 @@ const config = {
             from: '/dashboards-and-widgets/DashboardCloning',
           },
           {
-            to: '/releases/Version25.1.6',
-            from: '/releases/Release25.1.6',
-          },
-          {
-            to: '/releases/Version25.1.5',
-            from: '/releases/Release25.1.5',
-          },
-          {
             to: '/developers-guides/ReportPortalAPI',
             from: '/api',
           },
@@ -678,14 +699,7 @@ const config = {
             to: '/plugins/other/SauceLabs',
             from: '/plugins/SauceLabs',
           },
-          {
-            to: '/releases/Version26.0.2',
-            from: '/releases/Release26.0.2',
-          },
-          {
-            to: '/releases/Version26.0.1',
-            from: '/releases/Release26.0.1',
-          },
+          ...releaseRedirects,
         ],
       },
     ],

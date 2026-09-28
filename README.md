@@ -40,6 +40,8 @@ Each changes pushing (direct pushing or via merging a Pull Request) to the:
 
 The documentation uses [Docusaurus versioning](https://docusaurus.io/docs/versioning). Available versions are listed in `versions.json`; the first entry is always the latest and is served at the site root (`/docs/`).
 
+Releases live in a separate unversioned docs instance (`releases/`), linked from the **Releases** tab and served at `/docs/releases/`. They are not snapshotted when you run `npm run version`.
+
 > **Note:** The `docs/` folder contains unreleased content for the next version. It is hidden from the public version dropdown in production builds, but is available locally at `/next/` when running the dev server (`npm run start`).
 
 ### Releasing a new version

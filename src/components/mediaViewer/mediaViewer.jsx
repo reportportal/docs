@@ -31,13 +31,24 @@ const getSrc = (src) => {
   return typeof src === 'string' ? src : src.default;
 };
 
-export function MediaViewer({ src, type, alt, thumbnail }) {
+export function MediaViewer({ src, type, alt, thumbnail, width, height }) {
   const [open, setOpen] = useState(false);
 
   const openViewer = () => setOpen(true);
 
+  const videoFallback = <div className={styles['fallback-video-iframe']} />;
+  const imageFallback =
+    width && height ? (
+      <div className={styles['fallback-media-container']}>
+        <div
+          className={styles['fallback-thumbnail']}
+          style={{ aspectRatio: `${width}/${height}` }}
+        />
+      </div>
+    ) : null;
+
   return (
-    <BrowserOnly>
+    <BrowserOnly fallback={type === TYPE_VIDEO ? videoFallback : imageFallback}>
       {() => {
         let contentSrc = getSrc(src);
         const thumbnailSrc = thumbnail ? getSrc(thumbnail) : contentSrc;
@@ -57,7 +68,13 @@ export function MediaViewer({ src, type, alt, thumbnail }) {
         return (
           <>
             <button type="button" className={styles['media-container']} onClick={openViewer}>
-              <img className={styles.thumbnail} src={thumbnailSrc} alt={alt} />
+              <img
+                className={styles.thumbnail}
+                src={thumbnailSrc}
+                alt={alt}
+                width={width}
+                height={height}
+              />
             </button>
             {open && (
               <div className={styles['preview-container']}>
@@ -87,9 +104,13 @@ MediaViewer.propTypes = {
   thumbnail: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   type: PropTypes.oneOf([TYPE_PHOTO, TYPE_VIDEO]),
   alt: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 MediaViewer.defaultProps = {
   thumbnail: '',
   type: TYPE_PHOTO,
   alt: '',
+  width: undefined,
+  height: undefined,
 };
