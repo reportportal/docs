@@ -107,6 +107,40 @@ Tags with empty or whitespace-only values are skipped and do not create attribut
 
 <MediaViewer src="https://youtu.be/lxcWl6u6yUo" alt="Launch import via API with RobotFramework plugin in our test results dashboard" type="video" />
 
+## Import RobotFramework test results to existing launch via API
+
+:::important
+RobotFramework plugin should be enabled.
+:::
+
+The endpoint ```POST /v1/plugin/{projectName}/{plugin}/import``` allows importing test results in XML or ZIP format into existing launch in any status. Meanwhile, import into a finished launch does not change the launch finish time.
+
+:::note
+Start time of imported tests can't be earlier than start time of original launch.
+:::
+
+The template for **launchImportRq** object for your API request can be found in the **API section -> Plugin : Plugins API collection ->** ```POST /v1/plugin/{projectName}/{pluginName}/import```
+
+<MediaViewer src={require('./img/robot-framework/RobotFrameworkExistingLaunch1.png')} alt="Open API section from the user profile menu in ReportPortal sidebar" />
+
+<MediaViewer src={require('./img/robot-framework/RobotFrameworkExistingLaunch2.png')} alt="JSON template in the Plugins API import endpoint" />
+
+To import test results to an existing launch, you should specify **launchUuid** parameter in your API request.
+
+:::info
+Content Type for **launchImportRq** should be **application/json**.
+:::
+
+<MediaViewer src={require('./img/robot-framework/RobotFrameworkExistingLaunch3.png')} alt="Postman request with launchUuid parameter for importing RobotFramework results into existing launch" />
+
+You can easily find it in the UI on the "Edit Launch" modal.
+
+<MediaViewer src={require('./img/robot-framework/RobotFrameworkExistingLaunch4.png')} alt="Edit Launch modal showing UUID of the existing launch" />
+
+Name, description, start time and attributes you can leave as is.
+
+The imported values do not overwrite the existing launch attributes, name, or description.
+
 ## Disable plugin
 
 1. Log in to ReportPortal as administrator.
