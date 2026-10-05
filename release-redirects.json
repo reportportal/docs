@@ -1,98 +1,1132 @@
 [
   {
-    "to": "/releases",
-    "from": "/category/releases"
+    "source": "/docs/releases/26.0.5",
+    "target": "/docs/releases/Version26.0.5/",
+    "status": "301"
   },
   {
-    "to": "/releases/Version26.0.2",
-    "from": "/releases/Release26.0.2"
+    "source": "/docs/releases/26.0.5/",
+    "target": "/docs/releases/Version26.0.5/",
+    "status": "301"
   },
   {
-    "to": "/releases/Version26.0.1",
-    "from": "/releases/Release26.0.1"
+    "source": "/docs/releases/26.0.4",
+    "target": "/docs/releases/Version26.0.4/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.6",
-    "from": "/releases/Release25.1.6"
+    "source": "/docs/releases/26.0.4/",
+    "target": "/docs/releases/Version26.0.4/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.5",
-    "from": "/releases/Release25.1.5"
+    "source": "/docs/releases/26.0.3",
+    "target": "/docs/releases/Version26.0.3/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version24.2.0",
-    "from": "/releases/Version24.2"
+    "source": "/docs/releases/26.0.3/",
+    "target": "/docs/releases/Version26.0.3/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.8",
-    "from": "/releases/Version25.1.8"
+    "source": "/docs/releases/26.0.2",
+    "target": "/docs/releases/Version26.0.2/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.7",
-    "from": "/releases/Version25.1.7"
+    "source": "/docs/releases/26.0.2/",
+    "target": "/docs/releases/Version26.0.2/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.6",
-    "from": "/releases/Version25.1.6"
+    "source": "/docs/releases/26.0.1",
+    "target": "/docs/releases/Version26.0.1/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.5",
-    "from": "/releases/Version25.1.5"
+    "source": "/docs/releases/26.0.1/",
+    "target": "/docs/releases/Version26.0.1/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.4",
-    "from": "/releases/Version25.1.4"
+    "source": "/docs/releases/25.2",
+    "target": "/docs/releases/Version25.2/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.3",
-    "from": "/releases/Version25.1.3"
+    "source": "/docs/releases/25.2/",
+    "target": "/docs/releases/Version25.2/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.2",
-    "from": "/releases/Version25.1.2"
+    "source": "/docs/releases/25.1.12",
+    "target": "/docs/releases/Version25.1.12/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1.1",
-    "from": "/releases/Version25.1.1"
+    "source": "/docs/releases/25.1.12/",
+    "target": "/docs/releases/Version25.1.12/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.1",
-    "from": "/releases/Version25.1"
+    "source": "/docs/releases/25.1.11",
+    "target": "/docs/releases/Version25.1.11/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.0.6",
-    "from": "/releases/Version25.0.6"
+    "source": "/docs/releases/25.1.11/",
+    "target": "/docs/releases/Version25.1.11/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.0.5",
-    "from": "/releases/Version25.0.5"
+    "source": "/docs/releases/25.1.10",
+    "target": "/docs/releases/Version25.1.10/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.0.4",
-    "from": "/releases/Version25.0.4"
+    "source": "/docs/releases/25.1.10/",
+    "target": "/docs/releases/Version25.1.10/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.0.3",
-    "from": "/releases/Version25.0.3"
+    "source": "/docs/releases/25.1.9",
+    "target": "/docs/releases/Version25.1.9/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version25.0.2",
-    "from": "/releases/Version25.0.2"
+    "source": "/docs/releases/25.1.9/",
+    "target": "/docs/releases/Version25.1.9/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version24.2.3",
-    "from": "/releases/Version24.2.3"
+    "source": "/docs/releases/25.1.8",
+    "target": "/docs/releases/archived-releases/Version25.1.8/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version24.2.2",
-    "from": "/releases/Version24.2.2"
+    "source": "/docs/releases/25.1.8/",
+    "target": "/docs/releases/archived-releases/Version25.1.8/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version24.2.0",
-    "from": "/releases/Version24.2.0"
+    "source": "/docs/releases/Version25.1.8",
+    "target": "/docs/releases/archived-releases/Version25.1.8/",
+    "status": "301"
   },
   {
-    "to": "/releases/archived-releases/Version24.1",
-    "from": "/releases/Version24.1"
+    "source": "/docs/releases/Version25.1.8/",
+    "target": "/docs/releases/archived-releases/Version25.1.8/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.7",
+    "target": "/docs/releases/archived-releases/Version25.1.7/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.7/",
+    "target": "/docs/releases/archived-releases/Version25.1.7/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.7",
+    "target": "/docs/releases/archived-releases/Version25.1.7/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.7/",
+    "target": "/docs/releases/archived-releases/Version25.1.7/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.6",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.6/",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.6",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.6/",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.5",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.5/",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.5",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.5/",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.4",
+    "target": "/docs/releases/archived-releases/Version25.1.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.4/",
+    "target": "/docs/releases/archived-releases/Version25.1.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.4",
+    "target": "/docs/releases/archived-releases/Version25.1.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.4/",
+    "target": "/docs/releases/archived-releases/Version25.1.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.3",
+    "target": "/docs/releases/archived-releases/Version25.1.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.3/",
+    "target": "/docs/releases/archived-releases/Version25.1.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.3",
+    "target": "/docs/releases/archived-releases/Version25.1.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.3/",
+    "target": "/docs/releases/archived-releases/Version25.1.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.2",
+    "target": "/docs/releases/archived-releases/Version25.1.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.2/",
+    "target": "/docs/releases/archived-releases/Version25.1.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.2",
+    "target": "/docs/releases/archived-releases/Version25.1.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.2/",
+    "target": "/docs/releases/archived-releases/Version25.1.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.1",
+    "target": "/docs/releases/archived-releases/Version25.1.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1.1/",
+    "target": "/docs/releases/archived-releases/Version25.1.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.1",
+    "target": "/docs/releases/archived-releases/Version25.1.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1.1/",
+    "target": "/docs/releases/archived-releases/Version25.1.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1",
+    "target": "/docs/releases/archived-releases/Version25.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.1/",
+    "target": "/docs/releases/archived-releases/Version25.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1",
+    "target": "/docs/releases/archived-releases/Version25.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.1/",
+    "target": "/docs/releases/archived-releases/Version25.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.6",
+    "target": "/docs/releases/archived-releases/Version25.0.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.6/",
+    "target": "/docs/releases/archived-releases/Version25.0.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.6",
+    "target": "/docs/releases/archived-releases/Version25.0.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.6/",
+    "target": "/docs/releases/archived-releases/Version25.0.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.5",
+    "target": "/docs/releases/archived-releases/Version25.0.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.5/",
+    "target": "/docs/releases/archived-releases/Version25.0.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.5",
+    "target": "/docs/releases/archived-releases/Version25.0.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.5/",
+    "target": "/docs/releases/archived-releases/Version25.0.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.4",
+    "target": "/docs/releases/archived-releases/Version25.0.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.4/",
+    "target": "/docs/releases/archived-releases/Version25.0.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.4",
+    "target": "/docs/releases/archived-releases/Version25.0.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.4/",
+    "target": "/docs/releases/archived-releases/Version25.0.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.3",
+    "target": "/docs/releases/archived-releases/Version25.0.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.3/",
+    "target": "/docs/releases/archived-releases/Version25.0.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.3",
+    "target": "/docs/releases/archived-releases/Version25.0.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.3/",
+    "target": "/docs/releases/archived-releases/Version25.0.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.2",
+    "target": "/docs/releases/archived-releases/Version25.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/25.0.2/",
+    "target": "/docs/releases/archived-releases/Version25.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.2",
+    "target": "/docs/releases/archived-releases/Version25.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version25.0.2/",
+    "target": "/docs/releases/archived-releases/Version25.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.3",
+    "target": "/docs/releases/archived-releases/Version24.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.3/",
+    "target": "/docs/releases/archived-releases/Version24.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.3",
+    "target": "/docs/releases/archived-releases/Version24.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.3/",
+    "target": "/docs/releases/archived-releases/Version24.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.2",
+    "target": "/docs/releases/archived-releases/Version24.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.2/",
+    "target": "/docs/releases/archived-releases/Version24.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.2",
+    "target": "/docs/releases/archived-releases/Version24.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.2/",
+    "target": "/docs/releases/archived-releases/Version24.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.0",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.2.0/",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.0",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2.0/",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.1",
+    "target": "/docs/releases/archived-releases/Version24.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/24.1/",
+    "target": "/docs/releases/archived-releases/Version24.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.1",
+    "target": "/docs/releases/archived-releases/Version24.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.1/",
+    "target": "/docs/releases/archived-releases/Version24.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/23.2",
+    "target": "/docs/releases/archived-releases/Version23.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/23.2/",
+    "target": "/docs/releases/archived-releases/Version23.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version23.2",
+    "target": "/docs/releases/archived-releases/Version23.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version23.2/",
+    "target": "/docs/releases/archived-releases/Version23.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/23.1",
+    "target": "/docs/releases/archived-releases/Version23.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/23.1/",
+    "target": "/docs/releases/archived-releases/Version23.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version23.1",
+    "target": "/docs/releases/archived-releases/Version23.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version23.1/",
+    "target": "/docs/releases/archived-releases/Version23.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.4",
+    "target": "/docs/releases/archived-releases/Version5.7.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.4/",
+    "target": "/docs/releases/archived-releases/Version5.7.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.4",
+    "target": "/docs/releases/archived-releases/Version5.7.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.4/",
+    "target": "/docs/releases/archived-releases/Version5.7.4/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.3",
+    "target": "/docs/releases/archived-releases/Version5.7.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.3/",
+    "target": "/docs/releases/archived-releases/Version5.7.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.3",
+    "target": "/docs/releases/archived-releases/Version5.7.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.3/",
+    "target": "/docs/releases/archived-releases/Version5.7.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.2",
+    "target": "/docs/releases/archived-releases/Version5.7.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.2/",
+    "target": "/docs/releases/archived-releases/Version5.7.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.2",
+    "target": "/docs/releases/archived-releases/Version5.7.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.2/",
+    "target": "/docs/releases/archived-releases/Version5.7.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.1",
+    "target": "/docs/releases/archived-releases/Version5.7.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.1/",
+    "target": "/docs/releases/archived-releases/Version5.7.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.1",
+    "target": "/docs/releases/archived-releases/Version5.7.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.1/",
+    "target": "/docs/releases/archived-releases/Version5.7.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.0",
+    "target": "/docs/releases/archived-releases/Version5.7.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.7.0/",
+    "target": "/docs/releases/archived-releases/Version5.7.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.0",
+    "target": "/docs/releases/archived-releases/Version5.7.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.7.0/",
+    "target": "/docs/releases/archived-releases/Version5.7.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.3",
+    "target": "/docs/releases/archived-releases/Version5.6.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.3/",
+    "target": "/docs/releases/archived-releases/Version5.6.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.3",
+    "target": "/docs/releases/archived-releases/Version5.6.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.3/",
+    "target": "/docs/releases/archived-releases/Version5.6.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.2",
+    "target": "/docs/releases/archived-releases/Version5.6.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.2/",
+    "target": "/docs/releases/archived-releases/Version5.6.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.2",
+    "target": "/docs/releases/archived-releases/Version5.6.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.2/",
+    "target": "/docs/releases/archived-releases/Version5.6.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.1",
+    "target": "/docs/releases/archived-releases/Version5.6.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.1/",
+    "target": "/docs/releases/archived-releases/Version5.6.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.1",
+    "target": "/docs/releases/archived-releases/Version5.6.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.1/",
+    "target": "/docs/releases/archived-releases/Version5.6.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.0",
+    "target": "/docs/releases/archived-releases/Version5.6.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.6.0/",
+    "target": "/docs/releases/archived-releases/Version5.6.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.0",
+    "target": "/docs/releases/archived-releases/Version5.6.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.6.0/",
+    "target": "/docs/releases/archived-releases/Version5.6.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.5.0",
+    "target": "/docs/releases/archived-releases/Version5.5.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.5.0/",
+    "target": "/docs/releases/archived-releases/Version5.5.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.5.0",
+    "target": "/docs/releases/archived-releases/Version5.5.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.5.0/",
+    "target": "/docs/releases/archived-releases/Version5.5.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.4.0",
+    "target": "/docs/releases/archived-releases/Version5.4.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.4.0/",
+    "target": "/docs/releases/archived-releases/Version5.4.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.4.0",
+    "target": "/docs/releases/archived-releases/Version5.4.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.4.0/",
+    "target": "/docs/releases/archived-releases/Version5.4.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.5",
+    "target": "/docs/releases/archived-releases/Version5.3.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.5/",
+    "target": "/docs/releases/archived-releases/Version5.3.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.5",
+    "target": "/docs/releases/archived-releases/Version5.3.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.5/",
+    "target": "/docs/releases/archived-releases/Version5.3.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.3",
+    "target": "/docs/releases/archived-releases/Version5.3.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.3/",
+    "target": "/docs/releases/archived-releases/Version5.3.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.3",
+    "target": "/docs/releases/archived-releases/Version5.3.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.3/",
+    "target": "/docs/releases/archived-releases/Version5.3.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.2",
+    "target": "/docs/releases/archived-releases/Version5.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.2/",
+    "target": "/docs/releases/archived-releases/Version5.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.2",
+    "target": "/docs/releases/archived-releases/Version5.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.2/",
+    "target": "/docs/releases/archived-releases/Version5.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.1",
+    "target": "/docs/releases/archived-releases/Version5.3.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.1/",
+    "target": "/docs/releases/archived-releases/Version5.3.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.1",
+    "target": "/docs/releases/archived-releases/Version5.3.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.1/",
+    "target": "/docs/releases/archived-releases/Version5.3.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.0",
+    "target": "/docs/releases/archived-releases/Version5.3.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.3.0/",
+    "target": "/docs/releases/archived-releases/Version5.3.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.0",
+    "target": "/docs/releases/archived-releases/Version5.3.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.3.0/",
+    "target": "/docs/releases/archived-releases/Version5.3.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.3",
+    "target": "/docs/releases/archived-releases/Version5.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.3/",
+    "target": "/docs/releases/archived-releases/Version5.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.3",
+    "target": "/docs/releases/archived-releases/Version5.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.3/",
+    "target": "/docs/releases/archived-releases/Version5.2.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.2",
+    "target": "/docs/releases/archived-releases/Version5.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.2/",
+    "target": "/docs/releases/archived-releases/Version5.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.2",
+    "target": "/docs/releases/archived-releases/Version5.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.2/",
+    "target": "/docs/releases/archived-releases/Version5.2.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.1",
+    "target": "/docs/releases/archived-releases/Version5.2.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.1/",
+    "target": "/docs/releases/archived-releases/Version5.2.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.1",
+    "target": "/docs/releases/archived-releases/Version5.2.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.1/",
+    "target": "/docs/releases/archived-releases/Version5.2.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.0",
+    "target": "/docs/releases/archived-releases/Version5.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.2.0/",
+    "target": "/docs/releases/archived-releases/Version5.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.0",
+    "target": "/docs/releases/archived-releases/Version5.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.2.0/",
+    "target": "/docs/releases/archived-releases/Version5.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.1.0",
+    "target": "/docs/releases/archived-releases/Version5.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.1.0/",
+    "target": "/docs/releases/archived-releases/Version5.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.1.0",
+    "target": "/docs/releases/archived-releases/Version5.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.1.0/",
+    "target": "/docs/releases/archived-releases/Version5.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.0.0",
+    "target": "/docs/releases/archived-releases/Version5.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.0.0/",
+    "target": "/docs/releases/archived-releases/Version5.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.0.0",
+    "target": "/docs/releases/archived-releases/Version5.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.0.0/",
+    "target": "/docs/releases/archived-releases/Version5.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.0RC",
+    "target": "/docs/releases/archived-releases/Version5.0RC/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/5.0RC/",
+    "target": "/docs/releases/archived-releases/Version5.0RC/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.0RC",
+    "target": "/docs/releases/archived-releases/Version5.0RC/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version5.0RC/",
+    "target": "/docs/releases/archived-releases/Version5.0RC/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.3",
+    "target": "/docs/releases/archived-releases/Version4.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.3/",
+    "target": "/docs/releases/archived-releases/Version4.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.3",
+    "target": "/docs/releases/archived-releases/Version4.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.3/",
+    "target": "/docs/releases/archived-releases/Version4.3/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.2.0",
+    "target": "/docs/releases/archived-releases/Version4.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.2.0/",
+    "target": "/docs/releases/archived-releases/Version4.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.2.0",
+    "target": "/docs/releases/archived-releases/Version4.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.2.0/",
+    "target": "/docs/releases/archived-releases/Version4.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.1.0",
+    "target": "/docs/releases/archived-releases/Version4.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.1.0/",
+    "target": "/docs/releases/archived-releases/Version4.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.1.0",
+    "target": "/docs/releases/archived-releases/Version4.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.1.0/",
+    "target": "/docs/releases/archived-releases/Version4.1.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.0.0",
+    "target": "/docs/releases/archived-releases/Version4.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/4.0.0/",
+    "target": "/docs/releases/archived-releases/Version4.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.0.0",
+    "target": "/docs/releases/archived-releases/Version4.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version4.0.0/",
+    "target": "/docs/releases/archived-releases/Version4.0.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/3.3.2-1",
+    "target": "/docs/releases/archived-releases/Version3.3.2-1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/3.3.2-1/",
+    "target": "/docs/releases/archived-releases/Version3.3.2-1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version3.3.2-1",
+    "target": "/docs/releases/archived-releases/Version3.3.2-1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version3.3.2-1/",
+    "target": "/docs/releases/archived-releases/Version3.3.2-1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/3.3.2",
+    "target": "/docs/releases/archived-releases/Version3.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/3.3.2/",
+    "target": "/docs/releases/archived-releases/Version3.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version3.3.2",
+    "target": "/docs/releases/archived-releases/Version3.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version3.3.2/",
+    "target": "/docs/releases/archived-releases/Version3.3.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release26.0.2",
+    "target": "/docs/releases/Version26.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release26.0.2/",
+    "target": "/docs/releases/Version26.0.2/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release26.0.1",
+    "target": "/docs/releases/Version26.0.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release26.0.1/",
+    "target": "/docs/releases/Version26.0.1/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release25.1.6",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release25.1.6/",
+    "target": "/docs/releases/archived-releases/Version25.1.6/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release25.1.5",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Release25.1.5/",
+    "target": "/docs/releases/archived-releases/Version25.1.5/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
+  },
+  {
+    "source": "/docs/releases/Version24.2/",
+    "target": "/docs/releases/archived-releases/Version24.2.0/",
+    "status": "301"
   }
 ]

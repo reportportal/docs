@@ -4,7 +4,6 @@ const path = require('path');
 const ROOT_DIR = path.join(__dirname, '..');
 const RELEASES_DIR = path.join(ROOT_DIR, 'releases');
 const ARCHIVED_RELEASES_DIR = path.join(RELEASES_DIR, 'archived-releases');
-const RELEASE_REDIRECTS_PATH = path.join(ROOT_DIR, 'release-redirects.json');
 
 function sanitizeFileToken(value) {
   return value
@@ -297,27 +296,6 @@ function stripPrefix(name) {
     .trim();
 }
 
-function upsertReleaseRedirect(oldPath, newPath) {
-  const redirects = JSON.parse(fs.readFileSync(RELEASE_REDIRECTS_PATH, 'utf-8'));
-
-  const updated = redirects.map((entry) =>
-    entry.to === oldPath ? { ...entry, to: newPath } : entry,
-  );
-
-  const existingIndex = updated.findIndex((entry) => {
-    const froms = Array.isArray(entry.from) ? entry.from : [entry.from];
-    return froms.includes(oldPath);
-  });
-
-  if (existingIndex !== -1) {
-    updated[existingIndex] = { ...updated[existingIndex], to: newPath };
-  } else {
-    updated.push({ to: newPath, from: oldPath });
-  }
-
-  fs.writeFileSync(RELEASE_REDIRECTS_PATH, `${JSON.stringify(updated, null, 2)}\n`, 'utf-8');
-}
-
 module.exports = {
   RELEASES_DIR,
   ARCHIVED_RELEASES_DIR,
@@ -331,5 +309,4 @@ module.exports = {
   normalizeReportPortalLinks,
   extractLabel,
   stripPrefix,
-  upsertReleaseRedirect,
 };

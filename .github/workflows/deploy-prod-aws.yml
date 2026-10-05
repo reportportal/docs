@@ -182,6 +182,18 @@ jobs:
             -H "Authorization: Basic ${CREDENTIALS}" \
             "https://crawler.algolia.com/api/1/crawlers/${CRAWLER_ID}/reindex"
 
+  trigger-website-redirects:
+    needs: wait-amplify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy Redirects on reportportal-website
+        env:
+          GH_TOKEN: ${{ secrets.WEBSITE_DISPATCH_TOKEN }}
+        run: |
+          gh workflow run deploy-redirects.yml \
+            -R reportportal/reportportal-website \
+            --ref master
+
   merge-to-develop:
     needs: deploy
     runs-on: ubuntu-latest

@@ -95,6 +95,9 @@ jobs:
       - name: Archive old releases
         run: node scripts/archive-releases.js
 
+      - name: Generate release redirects
+        run: node scripts/gen-release-redirects.js
+
       - name: Check for changes
         id: changes
         run: |
