@@ -7,7 +7,7 @@ description: Edit Quality Gates configurations for quality control management.
 # Quality Gate Edit
 
 :::important
-This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/service-packages/).
 :::
 
 If user edit Quality Gates, previous reports for these Quality Gates would not be recalculated.
