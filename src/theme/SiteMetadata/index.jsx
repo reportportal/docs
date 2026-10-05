@@ -50,22 +50,15 @@ CanonicalUrlHeaders.defaultProps = {
   permalink: undefined,
 };
 
-function getVersionMainDoc(version) {
-  return version?.docs.find((doc) => doc.id === version.mainDocId);
-}
-
 function VersionedCanonicalHeaders({ pluginId }) {
   const { activeVersion } = useActiveDocContext(pluginId);
-  const { latestDocSuggestion, latestVersionSuggestion } = useDocVersionSuggestions(pluginId);
-  const latestMainDoc = getVersionMainDoc(latestVersionSuggestion);
-  const canonicalPath = (latestDocSuggestion ?? latestMainDoc)?.path;
+  const { latestDocSuggestion } = useDocVersionSuggestions(pluginId);
 
-  if (!activeVersion || activeVersion.isLast) {
+  if (!activeVersion || activeVersion.isLast || !latestDocSuggestion) {
     return <CanonicalUrlHeaders />;
   }
 
-  // Same doc in latest, or the latest index when that doc was removed.
-  return <CanonicalUrlHeaders permalink={canonicalPath} />;
+  return <CanonicalUrlHeaders permalink={latestDocSuggestion.path} />;
 }
 
 VersionedCanonicalHeaders.propTypes = {
