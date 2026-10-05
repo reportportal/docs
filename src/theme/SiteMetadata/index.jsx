@@ -8,6 +8,11 @@ import { DEFAULT_SEARCH_TAG } from '@docusaurus/theme-common/internal';
 import { useLocation } from '@docusaurus/router';
 import { applyTrailingSlash } from '@docusaurus/utils-common';
 import SearchMetadata from '@theme/SearchMetadata';
+import {
+  useActivePlugin,
+  useActiveDocContext,
+  useDocVersionSuggestions,
+} from '@docusaurus/plugin-content-docs/client';
 
 function useDefaultCanonicalUrl() {
   const {
@@ -23,10 +28,12 @@ function useDefaultCanonicalUrl() {
 
 function CanonicalUrlHeaders({ permalink }) {
   const {
-    siteConfig: { url: siteUrl },
+    siteConfig: { url: siteUrl, baseUrl, trailingSlash },
   } = useDocusaurusContext();
   const defaultCanonicalUrl = useDefaultCanonicalUrl();
-  const canonicalUrl = permalink ? `${siteUrl}${permalink}` : defaultCanonicalUrl;
+  const canonicalUrl = permalink
+    ? siteUrl + applyTrailingSlash(permalink, { trailingSlash, baseUrl })
+    : defaultCanonicalUrl;
   return (
     <Head>
       <meta property="og:url" content={canonicalUrl} />
@@ -43,11 +50,34 @@ CanonicalUrlHeaders.defaultProps = {
   permalink: undefined,
 };
 
+function getVersionMainDoc(version) {
+  return version?.docs.find((doc) => doc.id === version.mainDocId);
+}
+
+function VersionedCanonicalHeaders({ pluginId }) {
+  const { activeVersion } = useActiveDocContext(pluginId);
+  const { latestDocSuggestion, latestVersionSuggestion } = useDocVersionSuggestions(pluginId);
+  const latestMainDoc = getVersionMainDoc(latestVersionSuggestion);
+  const canonicalPath = (latestDocSuggestion ?? latestMainDoc)?.path;
+
+  if (!activeVersion || activeVersion.isLast) {
+    return <CanonicalUrlHeaders />;
+  }
+
+  // Same doc in latest, or the latest index when that doc was removed.
+  return <CanonicalUrlHeaders permalink={canonicalPath} />;
+}
+
+VersionedCanonicalHeaders.propTypes = {
+  pluginId: PropTypes.string.isRequired,
+};
+
 export default function SiteMetadata() {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const { metadata, image: defaultImage } = useThemeConfig();
+  const activePlugin = useActivePlugin();
   return (
     <>
       <Head>
@@ -57,7 +87,11 @@ export default function SiteMetadata() {
 
       {defaultImage && <PageMetadata image={defaultImage} />}
 
-      <CanonicalUrlHeaders />
+      {activePlugin ? (
+        <VersionedCanonicalHeaders pluginId={activePlugin.pluginId} />
+      ) : (
+        <CanonicalUrlHeaders />
+      )}
 
       <SearchMetadata tag={DEFAULT_SEARCH_TAG} locale={currentLocale} />
 
