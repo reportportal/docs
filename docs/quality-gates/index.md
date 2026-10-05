@@ -8,7 +8,7 @@ description: Drive efficiency with Quality Gates. Configure rules, integrate wit
 The Quality Gates section in ReportPortal is designed to help you maintain high standards of product quality throughout the testing process.
 
 :::important
-This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/service-packages/).
 :::
 
 ## What are Quality Gates?
