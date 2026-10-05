@@ -5,7 +5,6 @@ const {
   ARCHIVED_RELEASES_DIR,
   listReleaseFiles,
   syncReleasePositions,
-  upsertReleaseRedirect,
 } = require('./release-utils');
 
 // Number of most recent releases to keep in the main releases folder.
@@ -62,9 +61,6 @@ function moveRelease(fileName) {
   console.log(`Archived: ${fileName}`);
 
   moveReferencedImages(content, fileName);
-
-  const slug = fileName.replace(/\.md$/, '');
-  upsertReleaseRedirect(`/releases/${slug}`, `/releases/archived-releases/${slug}`);
 
   return true;
 }
