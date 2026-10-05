@@ -7,7 +7,7 @@ description: Delete Quality Gates configurations in ReportPortal for quality con
 # Delete Quality Gates
 
 :::important
-This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/on-premises).
+This feature is available in ReportPortal with a [managed services subscription](https://reportportal.io/pricing/service-packages/).
 :::
 
 If you want to delete Quality Gate:
