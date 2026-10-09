@@ -140,7 +140,8 @@ h1 {
 }
 
 /* Navbar version selector trigger (closed / open) */
-.navbar__item.version-selector-divider {
+.version-selector-divider {
+  display: none;
   align-items: center;
   align-self: center;
   padding: 0 var(--ifm-navbar-item-padding-horizontal);
@@ -151,10 +152,6 @@ h1 {
   width: 1px;
   height: 24px;
   background: var(--version-selector-divider-color);
-}
-
-.navbar-sidebar .version-selector-divider {
-  display: none;
 }
 
 .navbar .dropdown {
