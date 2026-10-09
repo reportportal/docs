@@ -169,12 +169,6 @@ const config = {
             label: 'Releases',
           },
           {
-            type: 'html',
-            position: 'left',
-            className: 'version-selector-divider',
-            value: '<span class="version-selector-divider__line"></span>',
-          },
-          {
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownItemsAfter: minors.length
