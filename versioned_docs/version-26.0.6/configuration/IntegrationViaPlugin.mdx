@@ -1,0 +1,53 @@
+---
+sidebar_position: 5
+sidebar_label: Integration via plugin
+description: Integrate ReportPortal with external systems like Jira, Slack, and bug tracking tools to enhance your test automation reporting tools capabilities.
+---
+
+# Integration via plugin
+
+Users can enhance ReportPortal by adding additional integrations with:
+* [Jira Server](/plugins/bug-tracking/AtlassianJiraServer)
+* [Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud)
+* [Rally](/plugins/bug-tracking/Rally)
+* [Azure DevOps](/plugins/bug-tracking/AzureDevOps)
+* [GitLab](/plugins/bug-tracking/GitLab)
+* [Monday](/plugins/bug-tracking/Monday)
+* [Sauce Labs](/plugins/other/SauceLabs)
+* [E-mail server](/plugins/notifications/EmailServer)
+* [Slack](/plugins/notifications/Slack)
+* [Telegram](/plugins/notifications/Telegram)
+* [LDAP](/plugins/authorization/LDAP)
+* [Active Directory](/plugins/authorization/ActiveDirectory)
+* [Okta SAML](/plugins/authorization/SamlProviders/OktaSaml)
+* [Azure SAML](/plugins/authorization/SamlProviders/AzureSaml)
+* [JUnit](/plugins/import/JUnit)
+* [RobotFramework](/plugins/import/RobotFramework)
+
+<MediaViewer src={require('./img/Integrations.png')} alt="Integrations with our test automation results dashboard" />
+
+If you're keen on incorporating ReportPortal with other external systems, and can't find the necessary tab in the Project Settings, please refer to the [Plugins section](/plugins/) in our documentation for guidance. Our test reporting tool integrates seamlessly, allowing for a streamlined connection with external systems.
+
+The integrations can be added at a global level, applicable for all projects on an instance, in the "Administrate" section. Alternatively, they can be specific to a project and can be configured in the Project Settings.
+
+For those who require a different configuration to other projects, or want to integrate only their specific project with an external system, the following steps could be followed:
+
+1. Log into ReportPortal as a `PROJECT MANAGER` or `ADMINISTRATOR`
+
+2. Navigate to Project settings > Integrations
+
+3. Click on one of the shown integration panels
+
+4. Click on the "Add Project integration" button.
+
+Performing these steps will unlink your current project from the global settings and initiate your own configuration.
+
+<MediaViewer src={require('./img/ProjectIntegration.png')} alt="Create Project Integration" />
+
+:::note
+If you unlink project setting and ADMIN changes global settings for the whole instance, your project will use your project settings.
+:::
+
+To revert to the global settings, click the button titled "Reset to global settings". This action will erase your settings, and the integration will revert to using the global settings.
+
+Remember, you can always reset to the global settings.

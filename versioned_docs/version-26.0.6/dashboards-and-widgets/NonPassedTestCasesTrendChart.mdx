@@ -1,0 +1,33 @@
+---
+sidebar_position: 17
+sidebar_label: Non-passed test-cases trend chart
+description: Track non-passed test trends over time to identify quality issues. Monitor failed and skipped test percentages using QA dashboard tool.
+
+
+---
+
+# Non-passed test-cases trend chart
+
+The widget shows the percent ratio of non-passed test cases "Failed + Skipped" and "Total" cases from run to run.
+
+**Widget's parameters:**
+
+To configure the widget, click the "Add New Widget" button on the dashboard header, then select a template and specify the following settings on the second step:
+
+- Filter.
+- Items: 1-150. Default meaning is 50
+
+**Widget view**
+
+The widget contains agenda: % (Failed + Skipped) / Total.
+
+- The X-axis shows launches numbers and launches names on hover.
+- Y-axis shows the percent of sum Failed + Skipped test cases to Total.
+
+The tooltip on mouse hover over the chart area shows launch details: launch name and number, launch start time and percentage of non-passed cases.
+
+<MediaViewer src={require('./img/widget-types/NonPassedTestCasesTrendChart.png')} alt="Dashboard for QA automation: Non Passed Test Cases Trend Chart Widget" />
+
+:::note
+The widget doesn't contain "IN PROGRESS" launches.
+:::
