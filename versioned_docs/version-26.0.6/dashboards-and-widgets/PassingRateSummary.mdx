@@ -1,0 +1,66 @@
+---
+sidebar_position: 20
+sidebar_label: Passing rate summary
+description: Analyze passing rates across multiple launches with bar or pie views. Toggle skipped items and drill down for detailed test execution reporting insight.
+---
+
+# Passing rate summary
+
+Shows the percentage ratio of Passed test cases to Total test cases including or excluding Skipped ones for set of launches.
+
+**Widget's parameters:**
+
+* Filter: At least one filter is required
+* Items: 1-600. The default meaning is 50.
+* Mode: Bar View/Pie View
+* Ratio based on: Total test cases (Passed/Failed/Skipped) / Total test cases excluding Skipped
+* Widget name: any text
+* Description: any text
+
+:::note
+During the setup process, you can choose whether to consider Skipped items using the radio button.
+:::
+
+**Passing rate calculation including Skipped items**
+
+* Total test cases = Passed + Not Passed, while Not Passed = Failed + Skipped + Interrupted.
+* Thus, Passing rate = Passed / (Passed + Failed + Skipped + Interrupted).
+
+**Passing rate calculation excluding Skipped items**
+
+* Total test cases = Passed +Failed, while Failed= Failed +Interrupted.
+* Thus, Passing rate = Passed / (Passed + Failed + Interrupted).
+
+Please find below an example of configuration:
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary1.png')} alt="Add Passing Rate Summary Widget" />
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary2.png')} alt="Passing Rate Summary Widget Configuration in our test automation dashboard" />
+
+The widget can be displayed in two options as shown on the pictures below:
+
+**Bar View**
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary3.png')} alt="Passing Rate Summary Widget. Bar view" />
+
+**Pie view**
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary4.png')} alt="Passing Rate Summary Widget. Pie view" />
+
+As you can see, this widget was built based on the “Daily Smoke” filter.
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary5.png')} alt="Daily Smoke filter" />
+
+An example of Passing rate summary widget including Skipped items:
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary6.png')} alt="Passing rate summary widget including Skipped items" />
+
+An example of Passing rate summary widget excluding Skipped items:
+
+<MediaViewer src={require('./img/widget-types/PassingRateSummary7.png')} alt="Passing rate summary widget excluding Skipped items" />
+
+The tooltip on mouse hover over chart area shows the number of test cases and ratio of Passed/Not Passed to Total test cases (Passed, Failed, Skipped) or the number of test cases and ratio of Passed/Not Passed to Total test cases excluding Skipped.
+
+The Passing rate summary widget has clickable sections. When you click on not Passed pie/bar element, system redirects to the test item view. If the widget was built with the option **“Total test cases (Passed/Failed/Skipped)”**, then tests with statuses Failed, Interrupted, Skipped are displayed. If the widget was built with the option **“Total test cases excluding Skipped”**, then tests with statuses Failed and Interrupted are displayed.
+
+Thanks to “Passing rate summary” widget, it is no longer needed to spend time on calculating Passing rate of the specified set of launches. ReportPortal provides these statistics as a visualization – it is a quick and convenient decision. You can take the screenshot of widget and use it in the test results report.
