@@ -11,17 +11,17 @@ last_update:
 
 ## ⚠️ Breaking Changes 
 
-- **PostgreSQL:** Switched to official `postgres:18.4` image. Direct volume re-use from older/Bitnami versions is **not supported** due to major PostgreSQL version and data directory layout changes.
-- **RabbitMQ:** Switched to `rabbitmq:4.3.4-management` with required configuration mounts (`deprecated_features.permit.queue_master_locator = true`).
-- **OpenSearch:** Upgraded to `opensearchproject/opensearch:3.8.0`.
-- **Analyzer** non-root image. Added an init container and a new volume configuration section.
+* **PostgreSQL:** Switched to official `postgres:18.4` image. Direct volume re-use from older/Bitnami versions is **not supported** due to major PostgreSQL version and data directory layout changes.
+* **RabbitMQ:** Switched to `rabbitmq:4.3.4-management` with required configuration mounts (`deprecated_features.permit.queue_master_locator = true`).
+* **OpenSearch:** Upgraded to `opensearchproject/opensearch:3.8.0`.
+* **Analyzer** non-root image. Added an init container and a new volume configuration section.
 
 Follow the [Migration guide](https://github.com/reportportal/reportportal/wiki/Migration-v26) to ensure a smooth transition from Bitnami to CloudPirates dependencies
 
 ## 1. What's new:
 
 **Robot Framework import: structured tag attributes**  
-The Robot Framework import plugin now supports an optional `key` attribute on `<tag>` elements, so tags are imported as proper key–value attributes in ReportPortal (useful for tools that expect separate keys and values). Existing plain tags keep the previous behaviour; blank tag values are skipped.
+The Robot Framework import plugin now supports an optional `key` attribute on `<tag>` elements, so tags are imported as proper key–value attributes in ReportPortal (useful for tools that expect separate keys and values). Existing plain tags keep the previous behaviour; blank tag values are skipped.<br />
 A special thank you to [@Pdangova](https://github.com/Pdangova) for the valuable contribution to key-value tag attribute support in the Robot Framework import plugin!
 
 ## 2. Performance improvements:
@@ -63,7 +63,7 @@ Rest of services and plugins have the same version as in 26.0.4:
 | Monday          | reportportal/plugin-bts-monday     | 1.1.1   |
 | Azure           | reportportal/plugin-bts-azure      | 5.13.2  |
 | Jira            | reportportal/plugin-bts-jira       | 5.15.0  |
-| Import Plugin (JUnit) | reportportal/plugin-import-robot | 1.1.0 |
+| Import Plugin (JUnit) | reportportal/plugin-import-junit | 1.1.0 |
 | Telegram        | reportportal/plugin-telegram       | 1.1.0   |
 | Slack           | reportportal/plugin-slack          | 1.1.2   |
 | Sauce Labs      | reportportal/plugin-saucelabs      | 5.13.1  |
