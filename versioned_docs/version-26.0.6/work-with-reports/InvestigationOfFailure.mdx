@@ -1,0 +1,87 @@
+---
+sidebar_position: 6
+sidebar_label: Investigation of failure
+description: Investigate test failures by setting defect types, linking bug tracking systems, and performing detailed test failure analysis for better quality control.
+---
+
+# Investigation of failure
+
+## Set defect type
+
+ReportPortal provides the possibility for test failure analysis of your runs. The investigation includes setting the appropriate defect type of failed items, posting a defect for them or linking the ID of a defect that is already created in the bug tracking system.
+
+Using [“Make decision” modal](/analysis/ManualAnalysis#make-decision-modal-redesign), you can choose the real reason of your failure and provide a comment for this fail.
+
+When a defect is found in a test, the bug triage should be performed and proper defect type should be assigned to it, in order to have accurate test runs statistics. You will be able to change a defect type for a test and mark it as a Product Bug/Automation Bug/System Issue/No Defect at any time.
+
+The available defect types:
+
+* “To investigate”
+* “Product bug”
+* “Automation bug”
+* “System issue”
+* “No defect”
+
+***“To investigate”*** means that no investigation has been made on this defect yet.
+
+***“Product bug”*** means that the defect was investigated and a production bug found as the reason for the failure of this test.
+
+***“Automation bug”*** means that the defect was investigated and the automation test is not correct.
+
+***“System issue”*** means that the defect was investigated and it turns out that a system-level issue, like an app crash, caused the test to fail.
+
+***“No defect”*** means that the defect was investigated and was defined to be not a defect.
+
+You can successfully work with basic defect types, or you can also create up to 70 custom defect types. Moreover, it is possible to have all custom groups of issues under 1 default defect type (if needed).
+
+## How to create a custom defect type?
+
+1. Open Project Settings
+2. Navigate to “Defect Types” tab
+3. Click “Create Defect Type” button at the top of the page or click the icon near the defect type group
+4. Select the Defect Type Group
+5. Fill the “Defect Type Name” and the “Abbreviation” fields
+6. Select a color in the “Color of Defect” section (you can select any color from the color picker)
+
+<MediaViewer src={require('./img/defect-types/CustomDefectTypes1.png')} alt="Create a custom defect types in our test results dashboard" />
+
+Thanks to custom defect types, you can get the following benefits:
+
+1. More specific defect types to identify the most problematic product area
+2. The ability to prioritize bugs based on more specific types of defects
+3. A possibility to assign people / teams
+
+For example, there can be following custom defect types that are created on the project:
+
+**Product Bug Group** – Billing feature, Backend bug, UI issue, Not implemented feature
+
+**Automation Bug Group** – Test data issue, Timeout issue
+
+**System Issue Group** – Permission issue, Environment issue
+
+**No Defect Group** – New feature, Manually passed, Fixed (if the bug is fixed, but auto tests are not fixed yet)
+
+:::note
+There is also To Investigate Group for the defects that have not been sorted out yet.
+:::
+
+:::important
+A small life hack: you can identify defects by the name of the team and, in doing so, assign them to the appropriate team. This method can be applied within any defect type group.
+:::
+
+<MediaViewer src={require('./img/defect-types/CustomDefectTypes2.png')} alt="Custom defect types in our test automation dashboard" />
+
+<MediaViewer src={require('./img/defect-types/CustomDefectTypes3.png')} alt="Example of using custom defect types in our test automation results dashboard" />
+
+## Post bug to Bug Tracking System
+
+ReportPortal allows to connect some popular bug tracking systems with our test automation reporting platform and post a bug to them or link the ticket ID of the already posted defect to the test item in ReportPortal.
+
+Before posting/linking a bug, make sure that the bug tracking systems are connected to the project on the project settings page. To check it, please, find the user guides below:
+
+* [Jira Server](/plugins/bug-tracking/AtlassianJiraServer)
+* [Jira Cloud](/plugins/bug-tracking/AtlassianJiraCloud)
+* [Azure DevOps](/plugins/bug-tracking/AzureDevOps)
+* [Rally](/plugins/bug-tracking/Rally)
+* [GitLab](/plugins/bug-tracking/GitLab)
+* [Monday](/plugins/bug-tracking/Monday)
