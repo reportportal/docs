@@ -28,7 +28,7 @@ description: ReportPortal Version 25.1.1 addresses SAML reply URL generation iss
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Import Plugin (RobotFramework)|reportportal/plugin-import-robot|1.1.0|
 |Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.1|
 |Saucelabs|reportportal/plugin-saucelabs|5.13.0|

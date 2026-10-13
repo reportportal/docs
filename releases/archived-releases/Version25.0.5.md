@@ -32,7 +32,7 @@ Learn more in our [documentation](/plugins/notifications/Telegram).
 |---|---| --- |
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.12.1|
 |Import Plugin (RobotFramework)|reportportal/plugin-import-robot|1.0.1|
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.0.2|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.0.2|
 |Monday|reportportal/plugin-bts-monday|1.0.1|
 |Slack|reportportal/plugin-slack|1.0.1|
 |Azure|reportportal/plugin-bts-azure|5.12.1|

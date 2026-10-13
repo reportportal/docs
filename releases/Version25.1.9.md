@@ -75,7 +75,7 @@ Fixed "Set up Own Integration" link to properly open in new browser tab instead 
 |Monday|reportportal/plugin-bts-monday|1.1.1|
 |Azure|reportportal/plugin-bts-azure|5.13.2|
 |Jira|reportportal/plugin-bts-jira|5.13.1|
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.1|
 |Sauce Labs|reportportal/plugin-saucelabs|5.13.1|

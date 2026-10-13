@@ -27,7 +27,7 @@ Fixed Jira Cloud posting issue related to 'Component' field.
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Import Plugin (RobotFramework)|reportportal/plugin-import-robot|1.1.0|
 |Saucelabs|reportportal/plugin-saucelabs|5.13.0|
 |Monday|reportportal/plugin-bts-monday|1.1.0|
