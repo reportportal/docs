@@ -44,7 +44,7 @@ Docs updated:
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.1|
 |Sauce Labs|reportportal/plugin-saucelabs|5.13.1|

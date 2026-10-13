@@ -40,7 +40,7 @@ Fixed Service Auto Analyzer vulnerabilities.
 |Azure|reportportal/plugin-bts-azure|5.13.2|
 |Jira|reportportal/plugin-bts-jira|5.15.0|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.1|
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Import Plugin (RobotFramework)|reportportal/plugin-import-robot|1.1.1|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Slack|reportportal/plugin-slack|1.1.2|
