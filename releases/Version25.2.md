@@ -87,7 +87,7 @@ Now deletes empty Personal projects correctly and avoids index deletion errors.
 |Rally|reportportal/plugin-bts-rally|5.13.1|
 |Monday|reportportal/plugin-bts-monday|1.1.1|
 |Azure|reportportal/plugin-bts-azure|5.13.2|
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Telegram|reportportal/plugin-telegram|1.1.0|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.1|
 |Sauce Labs|reportportal/plugin-saucelabs|5.13.1|

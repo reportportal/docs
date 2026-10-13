@@ -102,7 +102,7 @@ Removed:<br />
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Import Plugin (JUnit)|reportportal/plugin-import-robot|1.1.0|
+|Import Plugin (JUnit)|reportportal/plugin-import-junit|1.1.0|
 |Monday|reportportal/plugin-bts-monday|1.1.0|
 |Rally|reportportal/plugin-bts-rally|5.13.0|
 |Jira|reportportal/plugin-bts-jira|5.13.0|
