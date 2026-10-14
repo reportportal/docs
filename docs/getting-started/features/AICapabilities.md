@@ -8,6 +8,8 @@ description: How ReportPortal uses ML, MCP, and agentic reporting together — f
 
 ReportPortal leverages AI assistants via [MCP](../../integrations/ai-agents/MCPServer.mdx) to accelerate testing at every stage of the lifecycle. The ReportPortal MCP Server connects AI clients such as Claude, Cursor, and GitHub Copilot using the Model Context Protocol (MCP). These assistants can help teams create test cases, organize plans, and review reported results.
 
+<MediaViewer src={require('./img/AIAgents.png')} alt="Diagram of the MCP server connecting AI agents on the testing lifecycle" />
+
 ## Design: AI-assisted test case creation
 
 AI assistants connected via the ReportPortal MCP Server can generate, review, and refine test cases directly in the [Test Management System](../../test-management-system/index.md). Instead of writing every scenario from scratch, QA teams can prompt AI to create [test cases](../../test-management-system/test-case-library/TestCases.md) based on requirements — then review and refine them in ReportPortal.

@@ -11,6 +11,8 @@ The Test Management System (TMS) helps teams manage manual testing in a structur
 The Test Management System is available at the project level and can be accessed from the project sidebar.
 :::
 
+<MediaViewer src={require('./TestCycleFlowchart.png')} alt="Continuous improvement cycle" />
+
 ## How TMS works
 
 The TMS guides teams through a complete testing workflow. Each component plays a specific role in this cycle:

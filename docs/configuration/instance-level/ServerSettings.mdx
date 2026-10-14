@@ -8,18 +8,21 @@ description: Configure server settings including GitHub authorization, SSO login
 
 On the Server Settings page, you can enable GitHub authorization, allowing users to sign in with their GitHub credentials. Additionally, you can configure the instance to allow login only through SSO and here you can enable or disable Google Analytics.
 
-## Authorization configuration
+## Access configuration
 
 ### Inactivity timeout
 
 Admin can configure session expiration per instance.
 
-For that, the Admin needs to navigate to the Server Settings -> "Authorization configuration" tab -> Inactivity timeout section and set up the duration of user inactivity before automatic logout in 'Inactivity timeout' block:
+For that, the Admin needs to navigate to the Server Settings -> "Access configuration" tab -> Inactivity timeout section and set up the duration of user inactivity before automatic logout in 'Inactivity timeout' block:
 
 * 15 minutes
 * 1 hour
 * 12 hours
-* 24 hours (default value)
+* 1 day (default value)
+* 2 days
+* 5 days
+* 7 days
 
 The user is logged out if their session inactivity exceeds the defined timeout.
 
@@ -41,7 +44,7 @@ Existing passwords are not affected and remain valid even if they do not meet th
 To set minimum password length:
 
 1. Log in as ADMIN.
-2. Navigate to Server Settings -> "Authorization configuration" tab -> Password section
+2. Navigate to Server Settings -> "Access configuration" tab -> Password section
 3. Set the minimum password length to a value between 8 and 256 characters.
 4. Click "Submit".
 
@@ -58,20 +61,6 @@ The configured minimum password length is validated in the following scenarios:
 * Create User modal window
 * Password change in the user profile
 * Password reset from the login page
-
-### GitHub
-
-To enable [GitHub authorization](../../integrations/authorization/GitHub.md):
-
-1. Log in as Admin.
-2. Go to the Server Settings -> "Authorization configuration" tab -> GitHub section.
-3. Switch ON the "GitHub authorization" toggle.
-4. Fill in required [parameters for authorization](../../integrations/authorization/GitHub.md#reportportal-configuration).
-5. Click "Submit".
-
-<MediaViewer src={require('./img/server-settings/GitHub.png')} alt="Enable GitHub authorization in our test automation dashboard" />
-
-Now you can access ReportPortal by clicking the "Login with GitHub" button on the login page.
 
 ### Instance Invitations
 

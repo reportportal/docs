@@ -11,7 +11,9 @@ This is a premium offering from ReportPortal, available as part of our paid supp
 If you're interested in enabling Test Executions for your setup, please [contact us](https://reportportal.io/contact-us/general) for more information.
 :::
 
-[Organizations](../../configuration/organization-level/index.md) in ReportPortal introduce a new level of flexibility and control by allowing you to group multiple projects under a two-level hierarchy. This scalable structure simplifies how teams manage and organize their testing efforts, making it easier to support enterprise-level testing at scale.
+[Organizations](../../configuration/organization-level/index.md) in ReportPortal introduce a new level of flexibility and control by allowing you to group multiple projects under a two-level hierarchy. This structure simplifies testing management and supports enterprise-level testing at scale.
+
+ReportPortal also allows you to create and manage multiple Organizations, each with its own projects and settings, making it easier to [organize test data across teams, products, and development streams](https://reportportal.io/blog/introducing-organizations-a-new-way-to-structure-testing-at-scale/).
 
 Organizations come with the next key benefits:
 
