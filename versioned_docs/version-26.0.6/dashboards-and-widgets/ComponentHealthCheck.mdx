@@ -9,7 +9,7 @@ description: Generate a detailed test automation report with passing rate of the
 The widget shows the passing rate of the application components, indicated by the attributes specified for test cases.
 
 :::note
-For using this widget you need to report (or add manually) attributes to test items.
+The **Component health check** widget groups test items by configured attribute keys. Test items must contain these attributes before the widget can build its hierarchy.
 :::
 
 ## Widget's parameters:
@@ -150,7 +150,7 @@ regular red: greater than or equal to 22,5% (calculated as (`90%/4`)) and less t
 dark red: less than 22,5%
 
 :::note
-The widget doesn't contain 'IN PROGRESS" launches.
+The **Component health check** widget excludes launches in **IN PROGRESS** status from its data.
 :::
 
 <MediaViewer src="https://youtu.be/feb-sfi476g" alt="Component Health Check Widget Video" type="video" />

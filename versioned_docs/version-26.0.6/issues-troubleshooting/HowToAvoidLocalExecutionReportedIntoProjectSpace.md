@@ -51,6 +51,6 @@ Create an internal user for Jenkins executions, set him/her as a PROJECT MANAGER
 This will make it possible to create launches only for Jenkins users
 
 :::note
-It is also possible to combine all those options at the same time.
+To keep local test runs out of a ReportPortal project while CI runs continue reporting, you may combine launch attributes, Debug mode, launch naming, `rp.enable`, and project-role restrictions.
 :::
 

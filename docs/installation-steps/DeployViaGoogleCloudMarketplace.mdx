@@ -42,7 +42,7 @@ These steps are executed once, provided that this is not configured.
 2. Enable billing and set the billing account.
 
 :::note
-You will see this screen if you have not enabled billing or set up the billing account before.
+During ReportPortal deployment from Google Cloud Marketplace, Google Cloud displays the billing setup screen if billing is not enabled or no billing account is linked to the project.
 :::
 
 <MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace4.png')} alt="Enable billing" />
@@ -58,7 +58,7 @@ After that, accept terms and agreements again.
 4. Enable API.
 
 :::note
-You will see this screen if you have not enabled API before.
+During the first ReportPortal deployment from Google Cloud Marketplace, you may be prompted to enable the required Google Cloud APIs.
 :::
 
 <MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace7.png')} alt="Enable API" />
@@ -99,7 +99,7 @@ for your hostname with the provided `IP address`. For instance, here is how you 
 <MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace13.png')} alt="Certificate with the status Active" />
 
 :::note
-The process of transferring the certificate from `Provisioning` to `Active` status can take up to 30 minutes.
+A Google-managed SSL certificate configured for a ReportPortal Marketplace deployment may remain in **Provisioning** status for up to 30 minutes before becoming **Active**.
 :::
 
 3. Follow your hostname in a browser.
@@ -141,7 +141,7 @@ So why does a warning pop up? During deployment, Google Marketplace creates a Se
 <MediaViewer src={require('./img/google-cloud-marketplace/GCPmarketplace18.png')} alt="Log in to our test automation results dashboard" />
 
 :::note
-It may take Google Kubernetes Engine a few minutes before the application becomes accessible via the link.
+After ReportPortal is deployed on GKE, wait a few minutes before opening its URL because the workloads and ingress may still be starting.
 :::
 
 Let's get your ReportPortal instance up!
@@ -157,7 +157,7 @@ If you need to delete the application, this can be accomplished either from the 
 Upon deleting the application, all associated resources, such as Workloads, Secrets & ConfigMaps, and Ingress will be deleted, except for the application‘s persistent volumes.
 
 :::note
-The deletion process can take a few minutes. Workloads, and Secrets&ConfigMaps tied to the cluster will remain.
+Deleting the ReportPortal Marketplace application can take several minutes. GKE workloads, Secrets, and ConfigMaps may remain until the cluster is deleted or cleaned up manually.
 :::
 
 If you wish to eliminate all costs, you will also need to delete the cluster, as certain resources reserved for our needs will continue to be billed.
