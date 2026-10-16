@@ -46,7 +46,7 @@ After message is sent, the `controller` returns HTTP response to the `client` wi
 * **Step 3**  
 `Consumer` starts processing the message as soon as it is received from `RabbitMq`. 
 After a successful processing, the entity will be stored in a database and obtain a physical id. 
-In case of an exception, it is logged and the entity is not saved.
+If a retryable “not found” exception occurs, the message is delayed in a retry TTL queue and requeued. Other failures go to the parking lot; the entity is not saved.
 
 <MediaViewer src={require('./img/async/SimpleScheme.png')} alt="Simple Scheme" />
 
@@ -60,11 +60,17 @@ By default (if property `rp.reporting.async` is not specified) agents work in a 
 rp.endpoint=https://example.com
 rp.api.key=xxx
 rp.launch=launch-name
-rp.project=project-name
+rp.project=project-key
 rp.reporting.async=true
 ```
 
 (*) Listed above is an example for Java-based client. For another platforms please see corresponding documentation.
+
+:::important
+Starting from ReportPortal **26.1**, reporting API endpoints use **project key** (`projectKey`) instead of project name.
+
+You can find the project key in **Project settings → General**.
+:::
 
 ### Asynchronous API
 
@@ -90,14 +96,16 @@ Requests and responses have no differences with sync ones but there are some spe
 
 `API` has the following properties for connection to RabbitMq service:
 
-| Name                 | Environment variable name | Default value                          |
-|----------------------|---------------------------|----------------------------------------|
-| rp.amqp.host         | RP_AMQP_HOST              | rabbitmq                               |
-| rp.amqp.port         | RP_AMQP_PORT              | 5672                                   |
-| rp.amqp.user         | RP_AMQP_USER              | rabbitmq                               |
-| rp.amqp.pass         | RP_AMQP_PASS              | rabbitmq                               |
-| rp.amqp.addresses    | RP_AMQP_ADDRESSES         | amqp://rabbitmq:rabbitmq@rabbitmq:5672 |
-| reporting.queues.count  | REPORTING_QUEUES_COUNT | 10                                     |
+| Name                          | Environment variable name     | Default value                                                  |
+|-------------------------------|-------------------------------|----------------------------------------------------------------|
+| rp.amqp.host                  | RP_AMQP_HOST                  | rabbitmq                                                       |
+| rp.amqp.port                  | RP_AMQP_PORT                  | 5672                                                           |
+| rp.amqp.user                  | RP_AMQP_USER                  | empty (must be set)                                            |
+| rp.amqp.pass                  | RP_AMQP_PASS                  | empty (must be set)                                            |
+| rp.amqp.addresses             | RP_AMQP_ADDRESSES             | `amqp://${rp.amqp.user}:${rp.amqp.pass}@${rp.amqp.host}:${rp.amqp.port}` |
+| reporting.queues.count        | REPORTING_QUEUES_COUNT        | 10                                                             |
+| reporting.retry.max-count     | REPORTING_RETRY_MAX_COUNT     | 20                                                             |
+| reporting.parkingLot.ttl.days | REPORTING_PARKINGLOT_TTL_DAYS | 7                                                              |
 
 
 `rp.amqp.host` - Hostname of RabbitMq service.  
@@ -105,31 +113,51 @@ Requests and responses have no differences with sync ones but there are some spe
 `rp.amqp.user` - Username to connect to RabbitMq service.  
 `rp.amqp.pass` - User password to connect to RabbitMq service.  
 `rp.amqp.addresses` - Full address to connect to RabbitMq service.  
-`reporting.queues.count` - Number of queues to be processed by this service-api.
+`reporting.queues.count` - Number of reporting queues created and consumed by this service-api instance.  
+`reporting.retry.max-count` - Maximum number of retries before a message is moved to the parking lot.  
+`reporting.parkingLot.ttl.days` - How long messages are kept in the parking lot for manual analysis.
 
 #### Exchanges and queues for reporting
 
-The `API` creates two exchanges: `e.reporting` and `e.reporting.retry`. The `e.reporting` exchange is linked to queues that handle messages from requests, while the `e.reporting.retry` exchange is linked to retry queue and manages rejected from the main reporting queues.
-The number of queues in these exchanges depends on the `REPORTING_QUEUES_COUNT` env variable. The `e.reporting` exchange has `N` queues named `q.reporting.id.0` to `q.reporting.id.N`. The `e.reporting.retry` exchange has 1 queue named `q.retry.reporting.ttl`.
-If a message from `e.reporting.retry` is consumed and throws an exception more than 20 times, it will be moved to a separate queue named `q.parkingLot.reporting`, where it will be stored for 7 days for manual error analysis.
-The retry message will be stored in `q.retry.reporting.ttl` with progressive TTL. It means that ttl will be increase each time. The whole ttl of the retry message is about 2 hours.
+The `API` creates two exchanges: `e.reporting` and `e.reporting.retry`.
+
+* `e.reporting` is an `x-consistent-hash` exchange. It routes reporting messages to per-instance queues.
+* `e.reporting.retry` is a direct exchange used for delayed retries of failed messages.
+
+The number of main reporting queues depends on `reporting.queues.count` (`REPORTING_QUEUES_COUNT`).  
+Each service-api instance declares its own queues named `q.reporting.{instanceId}.0` … `q.reporting.{instanceId}.{N-1}`, where `{instanceId}` is preferably the pod/hostname (`HOSTNAME`), otherwise a short random id. This lets an instance reclaim its queues after restart.
+
+Retry uses **three** TTL queues bound to `e.reporting.retry` (messages dead-letter back to `e.reporting`):
+
+| Queue | TTL | Used when retry count is |
+|-------|-----|--------------------------|
+| `q.retry.reporting.ttl.ms` | 500 ms | 0–5 |
+| `q.retry.reporting.ttl.s` | 5 s | 6–10 |
+| `q.retry.reporting.ttl.m` | 2 min | 11 and higher (until max retry count) |
+
+If a message exceeds `reporting.retry.max-count` (default **20**), it is moved to `q.parkingLot.reporting`, where it is stored for `reporting.parkingLot.ttl.days` (default **7** days) for manual error analysis.
 
 <MediaViewer src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
+
+:::note
+The diagram above may still show the older single retry queue (`q.retry.reporting.ttl`) and `q.reporting.id.*` naming. Prefer the queue names and TTL stages described in this section.
+:::
 
 #### Scheme
 
 All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue.
-This is achieved by using an exchange that maps messages to queues using the `Consistent Hashing` algorithm.
+This is achieved by using an exchange that maps messages to queues using the `Consistent Hashing` algorithm (hash header `hash-on`, typically the launch UUID).
 
 Messages in the queue don't have a strict order but they are stored mostly in the same order as they arrive from `client`. 
-This ensures a minimal amount of exceptions (causing the sending of such messages to the retry queue) caused by cases when a child is handled before its own parent. 
+This ensures a minimal amount of exceptions (causing the sending of such messages to the retry queues) caused by cases when a child is handled before its own parent. 
 
 Consuming scheme:
 
 <MediaViewer src={require('./img/async/Consuming.png')} alt="Consuming" />
 
-`(!)` All not managed exceptions will be moved to the `q.parkingLot.reporting` for manual analysis.
-Possible exceptions that may be thrown and lead to moving the message to the retry queue:
+`(!)` Only retryable “entity not found” errors are sent to the retry TTL queues. Any other exception is moved directly to `q.parkingLot.reporting` for manual analysis.
+
+Retryable cases (default after retries are exhausted → parking lot):
 * On start launch/test item:
     * Entity not found. Parent entity not found.
 * On finish launch/test item:
