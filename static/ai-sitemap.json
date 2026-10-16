@@ -338,11 +338,6 @@
           "description": "Configure server settings including GitHub authorization, SSO login, and Google Analytics in ReportPortal test automation reporting tools."
         },
         {
-          "title": "Data retention procedure",
-          "url": "https://reportportal.io/docs/configuration/user-account/DataRetentionProcedure/",
-          "description": "Configure data retention periods for PII data in ReportPortal. Set individual retention durations and manage data lifecycle using test execution reporting."
-        },
-        {
           "title": "Instance Plugins",
           "url": "https://reportportal.io/docs/configuration/instance-level/Plugins/",
           "description": "Integrate ReportPortal with bug tracking, notifications, authorization, and import plugins to streamline QA workflows."
@@ -392,7 +387,7 @@
         {
           "title": "Infrastructure providers",
           "url": "https://reportportal.io/docs/integrations/infrastructure-providers/",
-          "description": "Enrich ReportPortal test results via infrastructure providers like Sauce Labs with videos, logs and full execution environment context."
+          "description": "Enrich ReportPortal test results via infrastructure providers like Sauce Labs and Mobitru with videos, logs, and full execution environment context."
         },
         {
           "title": "Integration with CI/CD",
@@ -402,7 +397,7 @@
         {
           "title": "Notifications",
           "url": "https://reportportal.io/docs/integrations/notifications/",
-          "description": "Configure notification plugins for Email, Slack, and Telegram in ReportPortal for real-time alerts."
+          "description": "Configure notification plugins for Email, Slack, Telegram, and Teams in ReportPortal for real-time alerts."
         },
         {
           "title": "Test platforms",
@@ -991,14 +986,9 @@
           "description": "Filter launches and test items using advanced criteria to quickly find specific test execution reporting data and analyze results efficiently."
         },
         {
-          "title": "Launches/test items attributes",
-          "url": "https://reportportal.io/docs/working-with-test-results/LaunchesTestItemsAttributes/",
-          "description": "Use attributes to organize and categorize test data for better test automation reporting tools performance and easier analysis across launches."
-        },
-        {
-          "title": "Log level",
-          "url": "https://reportportal.io/docs/working-with-test-results/LogLevel/",
-          "description": "Review test logs by level in ReportPortal. Filter Trace to Fatal messages, inspect screenshots, and debug failed test steps faster."
+          "title": "History of launches",
+          "url": "https://reportportal.io/docs/working-with-test-results/HistoryOfLaunches/",
+          "description": "Track test execution history and trends over time to identify patterns and improve test automation metrics dashboard insights."
         },
         {
           "title": "Investigation of failure",
@@ -1006,9 +996,19 @@
           "description": "Investigate test failures by setting defect types, linking bug tracking systems, and performing detailed test failure analysis for better quality control."
         },
         {
-          "title": "History of launches",
-          "url": "https://reportportal.io/docs/working-with-test-results/HistoryOfLaunches/",
-          "description": "Track test execution history and trends over time to identify patterns and improve test automation metrics dashboard insights."
+          "title": "Automated and agentic launch/test item attributes",
+          "url": "https://reportportal.io/docs/working-with-test-results/AutomatedAndAgenticLaunchTestItemAttributes/",
+          "description": "Use attributes to organize and categorize test data for better test automation reporting tools performance and easier analysis across launches."
+        },
+        {
+          "title": "Manual launch attributes",
+          "url": "https://reportportal.io/docs/working-with-test-results/ManualLaunchAttributes/",
+          "description": "Describe testing context — such as environment, release, and execution type — to filter, group, and review manual test runs faster."
+        },
+        {
+          "title": "Log level",
+          "url": "https://reportportal.io/docs/working-with-test-results/LogLevel/",
+          "description": "Review test logs by level in ReportPortal. Filter Trace to Fatal messages, inspect screenshots, and debug failed test steps faster."
         },
         {
           "title": "Test case ID",
@@ -1322,11 +1322,6 @@
           "title": "Plugin developers guide",
           "url": "https://reportportal.io/docs/developers-and-api/PluginDevelopersGuide/",
           "description": "Build custom plugins for ReportPortal. Learn APIs and UI hooks to extend reporting, streamline workflows, and tailor your test automation dashboard."
-        },
-        {
-          "title": "API differences between v4 and v5",
-          "url": "https://reportportal.io/docs/developers-and-api/APIDifferencesBetweenV4AndV5/",
-          "description": "Compare API changes between ReportPortal v4 and v5 versions for seamless migration and integration with test automation reporting tool."
         },
         {
           "title": "Asynchronous reporting",
