@@ -84,7 +84,7 @@ Rest of services and plugins have the same version as in 26.0.3:
 
 | Plugin Name | Repository | Tag |
 | --- | --- | --- |
-| Jira Cloud | reportportal/plugin-bts-jira-cloud | 5.15.10 |
+| Jira Cloud | reportportal/plugin-bts-jira-cloud | 5.13.10 |
 | Gitlab Plugin | reportportal/plugin-bts-gitlab | 5.13.2 |
 | Import Plugin (RobotFramework) | reportportal/plugin-import-robot | 1.1.2 |
 | Rally | reportportal/plugin-bts-rally | 5.13.1 |
