@@ -45,7 +45,7 @@ Performing these steps will unlink your current project from the global settings
 <MediaViewer src={require('./img/ProjectIntegration.png')} alt="Create Project Integration" />
 
 :::note
-If you unlink project setting and ADMIN changes global settings for the whole instance, your project will use your project settings.
+When a project uses its own integration configuration, changes to the instance-wide integration do not overwrite the project settings. The project continues to use its project-level configuration until it is reset to global settings.
 :::
 
 To revert to the global settings, click the button titled "Reset to global settings". This action will erase your settings, and the integration will revert to using the global settings.
