@@ -57,7 +57,7 @@ Rest of services and plugins have the same version as in 26.0.4:
 | Plugin Name     | Repository      | Tag   |
 | --------------- | --------------- | ----- |
 | Test Executions | Premium feature | 1.0.4 |
-| Jira Cloud      | reportportal/plugin-bts-jira-cloud | 5.15.10 |
+| Jira Cloud      | reportportal/plugin-bts-jira-cloud | 5.13.10 |
 | Gitlab Plugin   | reportportal/plugin-bts-gitlab     | 5.13.2  |
 | Rally           | reportportal/plugin-bts-rally      | 5.13.1  |
 | Monday          | reportportal/plugin-bts-monday     | 1.1.1   |
