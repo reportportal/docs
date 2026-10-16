@@ -51,7 +51,7 @@ cd /usr/lib/jvm/jre/lib/security/
 # Or use this command if the 'security' directory is in another folder:
 # cd /usr/lib/jvm/java-11-amazon-corretto/jre/lib/security/
 
-Note: Replace 'java-11-amazon-corretto' with the version in the latest API Docker image.
+Note: When importing a JIRA TLS certificate into the ReportPortal API container, replace `java-11-amazon-corretto` with the actual JVM directory used by the current API Docker image.
 
 # 3. Get the certificate file
 curl -O url://to/your/foo.cert
@@ -75,7 +75,7 @@ docker exec -t -i reportportal_api_1 ./usr/lib/jvm/jre/bin/keytool -import -alia
 # If the 'jre' folder is inside another folder, use the following command instead:
 # docker exec -t -i reportportal_api_1 ./usr/lib/jvm/java-11-amazon-corretto/jre/bin/keytool -import -alias rootcert -keystore /usr/lib/jvm/java-11-amazon-corretto/jre/lib/security/cacerts -file /cert.der
 
-Note: Replace 'java-11-amazon-corretto' with the version in the latest API Docker image.
+Note: When importing a JIRA TLS certificate into the ReportPortal API container, replace `java-11-amazon-corretto` with the actual JVM directory used by the current API Docker image.
 
 # 3. Exit and restart the Docker API.
 exit

@@ -95,7 +95,7 @@ JUnit plugin should be enabled.
 The endpoint ```POST /v1/plugin/{projectName}/{plugin}/import``` allows importing test results in XML or ZIP format into existing launch in any status. Meanwhile, import into a finished launch does not change the launch finish time.
 
 :::note
-Start time of imported tests can't be earlier than start time of original launch.
+When importing JUnit results into an existing launch through the plugin API, imported test items cannot have a start time earlier than the start time of that launch.
 :::
 
 The template for **launchImportRq** object for your API request can be found in the **API section -> Plugin : Plugins API collection ->** ```POST /v1/plugin/{projectName}/{pluginName}/import```
@@ -107,7 +107,7 @@ The template for **launchImportRq** object for your API request can be found in 
 To import test results to an existing launch, you should specify **launchUuid** parameter in your API request.
 
 :::info
-Content Type for **launchImportRq** should be **application/json**.
+For import into an existing launch, send **launchImportRq** as JSON with the `Content-Type: application/json` header.
 :::
 
 <MediaViewer src={require('./img/junit/JUnitExistingLaunch3.png')} alt="Postman request with launchUuid parameter for importing into existing launch" />
