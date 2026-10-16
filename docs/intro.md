@@ -76,6 +76,10 @@ ReportPortal offers widgets with a user-friendly visual interface to create inte
 
 ReportPortal is CI/CD agnostic tool solution. You can use [any CI environment](./test-results-reporting/HowToRunYourTests.md) to run automated tests to improve quality of product by catching issues early in development lifecycle.
 
+- ***Manual and automated testing in one place***
+
+The built-in [Test Management System](./test-management-system/index.md) keeps reusable test cases, Test Plans, Milestones, and manual executions in the same project as automated results. Coverage, progress, and failures stay together, so release decisions are based on the full testing picture.
+
 - ***Clear data management***
 
 With Organizations, ReportPortal allows you to structure and manage test data across multiple projects using a scalable, two-level hierarchy. You can organize tests results by project in a way that makes the most sense for your team – by test type, business unit, or any structure that fits your workflow.
