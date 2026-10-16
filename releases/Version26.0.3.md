@@ -12,13 +12,13 @@ last_update:
 
 ## 1. What's new:
 
-**[Agentic testing results support](/log-data-in-reportportal/AgenticTestResults)**<br />
+**[Agentic testing results support](/log-data-in-reportportal/AgenticTestResults/#merge-launches)**<br />
 As AI-driven testing becomes a core part of modern quality engineering, ReportPortal provides first-class support for agentic test results — outcomes produced by autonomous AI agents rather than traditional scripted test automation.
 
 Starting from version 26.0.3, ReportPortal can receive and display results from AI agentic testing pipelines alongside classic automation results. This gives teams a unified view of their entire testing landscape — human-authored tests, automated regression suites, and AI agent sessions — in one place.
 
 ## 2. Premium updates for subscribers:
-**[Test Executions](/test-executions/#add-new-column):** 
+**[Test Executions](/test-executions/#add-new-column/):** 
 
 **-Export with attachments:**<br />
 XLS and PDF exports now support attachment inclusion. When Include attachments is enabled, the download is a ZIP archive containing the report file and any attachments. A second option controls structure: unchecked preserves a step-based folder hierarchy; checked places all attachments in a flat Attachments folder.<br />
@@ -70,7 +70,7 @@ This issue will be fixed in version 26.0.4.
 
 |Plugin Name|Repository|Tag|
 |---|---| --- |
-|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.15.10|
+|Jira Cloud|reportportal/plugin-bts-jira-cloud|5.13.10|
 |Gitlab Plugin|reportportal/plugin-bts-gitlab|5.13.2|
 |Test Executions| Premium feature|1.0.3|
 
