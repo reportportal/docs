@@ -471,6 +471,11 @@
           "description": "Integrate Cucumber BDD framework with ReportPortal for comprehensive test automation reporting tools and behavior-driven testing analysis."
         },
         {
+          "title": "Ginkgo",
+          "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Other/ginkgo/",
+          "description": "Collect, analyze, and visualize Ginkgo v2 execution results in our test automation reporting dashboard."
+        },
+        {
           "title": "nosetests",
           "url": "https://reportportal.io/docs/log-data-in-reportportal/test-framework-integration/Python/nosetests/",
           "description": "Integrate nosetests with ReportPortal to capture detailed test results, monitor trends, and enhance test analysis for improved software quality."
