@@ -7,7 +7,7 @@ description: Understand API and Analyzer service communication using AMQP and Ra
 
 ## Overview
 
-Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](http://www.amqp.org/specification/0-9-1/amqp-org-download) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates a [virtual host](https://www.rabbitmq.com/vhosts.html) named `analyzer` on start. Analyzers connect to that virtual host and declare a direct exchange with capability arguments.
+Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](https://www.rabbitmq.com/tutorials/amqp-concepts) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates a [virtual host](https://www.rabbitmq.com/docs/vhosts) named `analyzer` on start. Analyzers connect to that virtual host and declare a direct exchange with capability arguments.
 
 Messages are JSON. Some operations use request/reply on the analyzer exchange; **analyze** is fire-and-forget: the API publishes to every analyzer exchange, and analyzers send results to a separate reply queue (`analysis.matches` by default, exchange `analyzer-reply`).
 
@@ -19,7 +19,7 @@ Each analyzer has to declare a direct exchange with the following arguments:
 
 | Argument | Description | Default if missing |
 |----------|-------------|--------------------|
-| `analyzer` | Name of analyzer (string) | — |
+| `analyzer` | Name of analyzer (string). **Required**: exchanges without it are ignored by the API | — |
 | `analyzer_index` | Indexing supported (boolean) | `false` |
 | `analyzer_log_search` | Log search supported (boolean) | `false` |
 | `analyzer_suggest` | Suggest supported (boolean) | `false` |
@@ -67,7 +67,7 @@ Index request stores log information used later for analysis. The API publishes 
 |-----------|-------------|---------|
 | launchId | Id of launch | 101 |
 | launchName | Name of launch | Smoke Test |
-| launchStartTime | Launch start time | |
+| launchStartTime | Launch start time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 24, 663000000]` |
 | launchNumber | Launch number | 12 |
 | previousLaunchId | Previous launch id (when relevant for mode) | 100 |
 | project | Id of project | 12 |
@@ -95,7 +95,7 @@ Index request stores log information used later for analysis. The API publishes 
 | testItemId | Id of test item | 123 |
 | testItemName | Name of test item | uploadPlugin |
 | issueType | Issue type locator | pb001 |
-| startTime | Test item start time | |
+| startTime | Test item start time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 25, 318000000]` |
 | uniqueId | Unique id of test item | auto:c6edafc24a03c6f69b6ec070d1fd0089 |
 | testCaseHash | Test case hash | 123456 |
 | isAutoAnalyzed | Is test item auto analyzed | false |
@@ -107,7 +107,7 @@ Index request stores log information used later for analysis. The API publishes 
 |-----------|-------------|---------|
 | logId | Id of log | 125 |
 | logLevel | Log level (integer) | 40000 |
-| logTime | Log time | |
+| logTime | Log time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 25, 318000000]` |
 | message | Log message | java.lang.AssertionError: ... |
 | clusterId | Cluster id, if any | 1 |
 
@@ -120,6 +120,7 @@ Example in JSON:
   {
     "launchId": 110,
     "launchName": "Smoke Test",
+    "launchStartTime": [2026, 10, 19, 11, 42, 24, 663000000],
     "project": 11,
     "analyzerConfig": {
       "minShouldMatch": 95,
@@ -136,6 +137,7 @@ Example in JSON:
         "testItemId": 101,
         "testItemName": "uploadPlugin",
         "issueType": "pb001",
+        "startTime": [2026, 10, 19, 11, 42, 25, 318000000],
         "uniqueId": "auto:c6edafc24a03c6f69b6ec070d1fd0089",
         "testCaseHash": 123456,
         "isAutoAnalyzed": false,
@@ -143,11 +145,13 @@ Example in JSON:
           {
             "logId": 111,
             "logLevel": 40000,
+            "logTime": [2026, 10, 19, 11, 42, 25, 318000000],
             "message": "java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <400>."
           },
           {
             "logId": 112,
             "logLevel": 40000,
+            "logTime": [2026, 10, 19, 11, 42, 25, 400000000],
             "message": "java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <500>."
           }
         ]
