@@ -7,177 +7,240 @@ description: Understand API and Analyzer service communication using AMQP and Ra
 
 ## Overview
 
-Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](http://www.amqp.org/specification/0-9-1/amqp-org-download) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates [virtual host](https://www.rabbitmq.com/vhosts.html) inside RabbitMQ with name `analyzer` on start. Analyzers in theirs turn connect to the virtual host and declare exchange with name and arguments. Any type of request from `API` and response from `analyzer` stores in the same queue. Request and response messages is presented as JSON.  
+Communication between `API service` and `analyzer service` is carried out using [AMQP 0-9-1](https://www.rabbitmq.com/tutorials/amqp-concepts) and [RabbitMQ](https://www.rabbitmq.com) as message broker. `API service` creates a [virtual host](https://www.rabbitmq.com/docs/vhosts) named `analyzer` on start. Analyzers connect to that virtual host and declare a direct exchange with capability arguments.
+
+Messages are JSON. Some operations use request/reply on the analyzer exchange; **analyze** is fire-and-forget: the API publishes to every analyzer exchange, and analyzers send results to a separate reply queue (`analysis.matches` by default, exchange `analyzer-reply`).
 
 <MediaViewer src={require('./img/analyzer/ApiAnalyzer.png')} alt="API Analyzer" />
 
 ## Declaring exchange
 
-Each analyzer has to declare direct exchange with the following arguments:
+Each analyzer has to declare a direct exchange with the following arguments:
 
-- `analyzer` - Name of analyzer (string)
-- `version` - Analyzer version (string)
-- `analyzer_index` - Is indexing supported (boolean, false by default)
-- `analyzer_log_search` - Is log searching supported (boolean, false by default)
-- `analyzer_priority` - Priority of analyzer (number). The lower the number, the higher the priority. 
+| Argument | Description | Default if missing |
+|----------|-------------|--------------------|
+| `analyzer` | Name of analyzer (string). **Required**: exchanges without it are ignored by the API | — |
+| `analyzer_index` | Indexing supported (boolean) | `false` |
+| `analyzer_log_search` | Log search supported (boolean) | `false` |
+| `analyzer_suggest` | Suggest supported (boolean) | `false` |
+| `analyzer_cluster` | Cluster generation supported (boolean) | `false` |
+| `analyzer_priority` | Priority (number). Lower number = higher priority | used as lowest priority |
+
+`analyzer_priority` is used when the API must pick **one** analyzer exchange (search, suggest, cluster).  
+For **analyze** and **index**, the API fans out to all matching analyzer exchanges. Analyze results arriving later overwrite earlier ones for the same item (last-write-wins).
+
+Analyzers may also declare a `version` argument for their own needs; the API does not use it for routing.
 
 <MediaViewer src={require('./img/analyzer/Exchange.png')} alt="Exchange" />
 
-## Declaring queues
+## Declaring queues / routing keys
 
-Each analyzer has to declare 5 queues with names: `analyze`, `search`, `index`, `clean`, `delete`.
+Core routes used by the API:
+
+| Route | Purpose |
+|-------|---------|
+| `analyze` | Auto-analysis request |
+| `search` | Similar log search |
+| `index` | Index logs |
+| `namespace_finder` | Sent together with index |
+| `clean` | Remove selected logs from index |
+| `delete` | Delete entire project index |
+| `defect_update` | Update defect type in index |
+| `item_remove` | Remove test items from index |
+| `launch_remove` | Remove launches from index |
+| `suggest` | Suggest similar items |
+| `index_suggest_info` | User choice from suggests |
+| `remove_suggest_info` | Remove suggest index |
+| `cluster` | Generate clusters |
+
+A minimal custom analyzer typically declares at least: `analyze`, `search`, `index`, `clean`, `delete`.
 
 <MediaViewer src={require('./img/analyzer/Queues.png')} alt="Queues" />
 
 ## Indexing
 
-Index request can be used to store info about logs and then analysis will be proceed based on the info. Requests and responses use `index` queue. 
+Index request stores log information used later for analysis. The API publishes an array of `IndexLaunch` to analyzers that support indexing (`analyzer_index=true`), on both `index` and `namespace_finder` routes. Indexing is **fire-and-forget** (no reply with indexed count is waited for).
 
-Index request structure from `API`:
+### IndexLaunch
 
-IndexLaunch:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| launchId | Id of launch | 101 |
+| launchName | Name of launch | Smoke Test |
+| launchStartTime | Launch start time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 24, 663000000]` |
+| launchNumber | Launch number | 12 |
+| previousLaunchId | Previous launch id (when relevant for mode) | 100 |
+| project | Id of project | 12 |
+| analyzerConfig | Analyzer configuration | |
+| testItems | Array of test items | |
+| clusters | Map of cluster id → name | |
 
-| Attribute      | Description            | Example    |
-|----------------|------------------------|------------|
-| launchId       | Id of launch           | 101        |
-| launchName     | Name of launch         | Smoke Test |
-| project        | Id of project          | 12         |
-| analyzerConfig | Analyzer configuration |            |
-| testItems      | Array of test items    |            |
+### AnalyzerConfig
 
-AnalyzerConfig:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| minShouldMatch | Percent of words equality between analyzed log and indexed log | 95 |
+| searchLogsMinShouldMatch | Min should match used for log search | 95 |
+| numberOfLogLines | Number of first log lines considered (`-1` = all) | -1 |
+| isAutoAnalyzerEnabled | Is auto analysis enabled | true |
+| analyzerMode | Analysis mode. Allowable values: `ALL`, `LAUNCH_NAME`, `CURRENT_LAUNCH`, `PREVIOUS_LAUNCH`, `CURRENT_AND_THE_SAME_NAME` | ALL |
+| indexingRunning | Is indexing running | false |
+| allMessagesShouldMatch | Require all messages to match | false |
+| largestRetryPriority | Prefer largest retry when analyzing | false |
 
-| Attribute             | Description                                                                  | Example |
-|-----------------------|------------------------------------------------------------------------------|---------|
-| minDocFreq            | The minimum frequency of the saved logs                                      | 1       |
-| minTermFreq           | The minimum frequency of the word in the analyzed log                        | 1       |
-| minShouldMatch        | Percent of words equality between analyzed log and particular log from index | 95      |
-| numberOfLogLines      | The number of first lines of log message that should be considered in indeT  | -1      |
-| isAutoAnalyzerEnabled | Is auto analysis enabled                                                     | true    |
-| analyzerMode          | Analysis mode. Allowable values: "all", "launch_name", "current_launch"      | all     |
-| indexingRunning       | Is indexing running                                                          | false   |
+### IndexTestItem
 
-IndexTestItem:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| testItemId | Id of test item | 123 |
+| testItemName | Name of test item | uploadPlugin |
+| issueType | Issue type locator | pb001 |
+| startTime | Test item start time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 25, 318000000]` |
+| uniqueId | Unique id of test item | auto:c6edafc24a03c6f69b6ec070d1fd0089 |
+| testCaseHash | Test case hash | 123456 |
+| isAutoAnalyzed | Is test item auto analyzed | false |
+| logs | Array of test item logs | |
 
-| Attribute      | Description                | Example                               |
-|----------------|----------------------------|---------------------------------------|
-| testItemId     | Id of test item            | 123                                   |
-| issueType      | Issue type locator         | pb001                                 |
-| isAutoAnalyzed | Is test item auto analyzed | false                                 |
-| logs           | Array of test item logs    |                                       |
+### IndexLog
 
-IndexLog:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| logId | Id of log | 125 |
+| logLevel | Log level (integer) | 40000 |
+| logTime | Log time as an array: `[year, month, day, hour, minute, second, nanosecond]` | `[2026, 10, 19, 11, 42, 25, 318000000]` |
+| message | Log message | java.lang.AssertionError: ... |
+| clusterId | Cluster id, if any | 1 |
 
-| Attribute | Descrioption | Example                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|-----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| logId     | Id of log    | 125                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| logLevel  | Log level    | 40000                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| message   | Log message  | java.lang.AssertionError: 1 expectation failed. Expected status code &lt;200> but was &lt;400>.  	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) |
+`API` sends an array of `IndexLaunch` entities that have to be indexed.
 
-`API` send array of IndexLaunch entities that have to be indexed.
-
-Example in json :
+Example in JSON:
 
 ```json
 [
-   {
-      "launchId":110,
-      "launchName":"Smoke Test",
-      "project":11,
-      "analyzerConfig":{
-         "minDocFreq":1,
-         "minTermFreq":1,
-         "minShouldMatch":95,
-         "numberOfLogLines":-1,
-         "isAutoAnalyzerEnabled":true,
-         "analyzerMode":"all",
-         "indexingRunning":false
-      },
-      "testItems":[
-         {
-            "testItemId":101,
-            "issueType":"pb001",
-            "uniqueId":"auto:c6edafc24a03c6f69b6ec070d1fd0089",
-            "isAutoAnalyzed":false,
-            "logs":[
-               {
-                  "logId":111,
-                  "logLevel":40000,
-                  "message":"java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <400>."
-               },
-               {
-                  "logId":112,
-                  "logLevel":40000,
-                  "message":"java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <500>."
-               }
-            ]
-         }
-      ]
-   }
+  {
+    "launchId": 110,
+    "launchName": "Smoke Test",
+    "launchStartTime": [2026, 10, 19, 11, 42, 24, 663000000],
+    "project": 11,
+    "analyzerConfig": {
+      "minShouldMatch": 95,
+      "searchLogsMinShouldMatch": 95,
+      "numberOfLogLines": -1,
+      "isAutoAnalyzerEnabled": true,
+      "analyzerMode": "ALL",
+      "indexingRunning": false,
+      "allMessagesShouldMatch": false,
+      "largestRetryPriority": false
+    },
+    "testItems": [
+      {
+        "testItemId": 101,
+        "testItemName": "uploadPlugin",
+        "issueType": "pb001",
+        "startTime": [2026, 10, 19, 11, 42, 25, 318000000],
+        "uniqueId": "auto:c6edafc24a03c6f69b6ec070d1fd0089",
+        "testCaseHash": 123456,
+        "isAutoAnalyzed": false,
+        "logs": [
+          {
+            "logId": 111,
+            "logLevel": 40000,
+            "logTime": [2026, 10, 19, 11, 42, 25, 318000000],
+            "message": "java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <400>."
+          },
+          {
+            "logId": 112,
+            "logLevel": 40000,
+            "logTime": [2026, 10, 19, 11, 42, 25, 400000000],
+            "message": "java.lang.AssertionError: 1 expectation failed. Expected status code <200> but was <500>."
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
-Analyzer should return response with number of indexed logs.
-
 ## Analyze
 
-Analyze request can be used to find matches from request in indexed data. Requests and responses use `analyze` queue. 
+Analyze finds matches in indexed data for items that need investigation. The API publishes `IndexLaunch` (as a one-element list) to the `analyze` route on **every** analyzer exchange (async, no waiting for a reply on that route).
 
-Analyze request is the same as IndexLaunch entity used for indexing. It contains info about test items and logs thad have to be analyzed.
+Analyzers should send the result as an array of `AnalyzedItemRs` to the API reply queue (`analysis.matches` by default). The analyzer instance name can be provided in the AMQP `analyzer_id` header.
 
-Response from analyzer should contain array of the following entities (info about analyzed test items):
+### AnalyzedItemRs (JSON field names)
 
-AnalyzedItemRs:
-
-| Attribute      | Description              | Example |
-|----------------|--------------------------|---------|
-| itemId         | Id of analyzed test item | 111     |
-| relevantItemId | Id of relevant test item | 123     |
-| issueType      | Issue type locator       | pb001   |
+| JSON attribute | Description | Example |
+|----------------|-------------|---------|
+| testItem | Id of analyzed test item | 111 |
+| relevantItem | Id of relevant test item | 123 |
+| issueType | Issue type locator | pb001 |
 
 ## Search logs
 
-Search request can be used to find similar logs from test items with `to_investigate` type. Requests and responses use `search` queue. 
+Search finds similar logs for items with `to_investigate` type. Requests use the `search` route on an analyzer that supports log search (`analyzer_log_search=true`). The API waits for a reply.
 
-Search logs request from `API`:
+### SearchRq
 
-SearchRq:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| launchId | Id of launch | 111 |
+| launchName | Name of launch | Smoke Test |
+| itemId | Id of test item | 112 |
+| projectId | Id of project | 10 |
+| filteredLaunchIds | Launch ids to search among | [1, 2, 3] |
+| logMessages | Log messages to look for | ["first message", "second message"] |
+| logLines | Number of log lines used in comparison | 5 |
+| analyzerConfig | Analyzer configuration | |
 
-| Attribute         | Description                                             | Example                             |
-|-------------------|---------------------------------------------------------|-------------------------------------|
-| launchId          | Id of launch                                            | 111                                 |
-| launchName        | Name of launch                                          | Smoke Test                          |
-| itemId            | Id of test item                                         | 112                                 |
-| projectId         | Id of project                                           | 10                                  |
-| filteredLaunchIds | Array of launch ids, among with search would be applied | [1,2,3]                             |
-| logMessages       | Array of log messages looking for                       | ["first message", "second message"] |
-| logLines          | Number of logs lines that will be used in comparison    | 5                                   |
+### SearchRs
 
-Analyzer should return array of log ids that matches as a response.
+Analyzer returns an array of objects:
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| logId | Matched log id | 111 |
+| testItemId | Matched test item id | 112 |
 
 ## Clean
 
-Clean request can be used to remove stored log from index. Requests use `clean` queue. 
+Clean removes selected logs from the index. Route: `clean`. Fire-and-forget (no reply expected).
 
-Clean logs request from `API`:
+### CleanIndexRq
 
-CleanIndexRq:
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| project | Id of project / index | 10 |
+| ids | Array of log ids to remove | [111, 122, 123] |
 
-| Attribute | Description                     | Example         |
-|-----------|---------------------------------|-----------------|
-| project   | Id of project                   | 10              |
-| ids       | Array of log ids to be removed  | [111, 122, 123] |
+## Delete
 
-Analyzer do not send response on the request.
+Delete removes the entire index for a project. Route: `delete`. Request body is the project/index id (`Long`).
 
-## Delete 
+The API may call delete in two ways:
+- **sync** (`deleteIndex`): waits for an integer reply; `1` means success
+- **async** (`deleteIndexAsync`): fire-and-forget
 
-Delete request can be used to delete entire index. Requests use `delete` queue. 
+## Other index maintenance routes
 
-Request message from `API` contains only id of index.
+| Route | Direction | Notes |
+|-------|-----------|-------|
+| `defect_update` | request/reply | Updates defect types in index; reply is a list of item ids |
+| `item_remove` | fire-and-forget | Removes items from index |
+| `launch_remove` | fire-and-forget | Removes launches from index |
 
-Analyzer do not send response on the request.
+## Suggest and cluster
+
+These routes are used when the corresponding exchange flags are enabled:
+
+| Route | Flag | Pattern |
+|-------|------|---------|
+| `suggest` | `analyzer_suggest` | request/reply |
+| `index_suggest_info` | `analyzer_suggest` | fire-and-forget (user choice) |
+| `remove_suggest_info` | `analyzer_suggest` | fire-and-forget (project id) |
+| `cluster` | `analyzer_cluster` | request/reply |
+
+For these operations the API selects a single exchange by lowest `analyzer_priority`.
 
 ## Examples
 
-Custom [analyzer](https://github.com/ihar-kahadouski/custom-analyzer) written in java using [Spring AMQP](https://spring.io/projects/spring-amqp).
+Custom [analyzer](https://github.com/ihar-kahadouski/custom-analyzer) written in Java using [Spring AMQP](https://spring.io/projects/spring-amqp).
