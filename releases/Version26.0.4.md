@@ -40,29 +40,29 @@ The Component Health Check widget can now use **Owner** as a grouping level alon
 ## 4. CVE addressed:
 
 ### Service-api
-CVE-2026-42584, CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-41417, CVE-2026-42583,  
-CVE-2026-42587, CVE-2026-41284, CVE-2026-41293, CVE-2026-43514, CVE-2026-43515, CVE-2026-43513,  
-CVE-2026-42498, CVE-2020-29582, CVE-2026-1225
+[CVE-2026-42584](https://nvd.nist.gov/vuln/detail/CVE-2026-42584), [CVE-2026-42585](https://nvd.nist.gov/vuln/detail/CVE-2026-42585), [CVE-2026-42581](https://nvd.nist.gov/vuln/detail/CVE-2026-42581), [CVE-2026-42580](https://nvd.nist.gov/vuln/detail/CVE-2026-42580), [CVE-2026-41417](https://nvd.nist.gov/vuln/detail/CVE-2026-41417), [CVE-2026-42583](https://nvd.nist.gov/vuln/detail/CVE-2026-42583),  
+[CVE-2026-42587](https://nvd.nist.gov/vuln/detail/CVE-2026-42587), [CVE-2026-41284](https://nvd.nist.gov/vuln/detail/CVE-2026-41284), [CVE-2026-41293](https://nvd.nist.gov/vuln/detail/CVE-2026-41293), [CVE-2026-43514](https://nvd.nist.gov/vuln/detail/CVE-2026-43514), [CVE-2026-43515](https://nvd.nist.gov/vuln/detail/CVE-2026-43515), [CVE-2026-43513](https://nvd.nist.gov/vuln/detail/CVE-2026-43513),  
+[CVE-2026-42498](https://nvd.nist.gov/vuln/detail/CVE-2026-42498), [CVE-2020-29582](https://nvd.nist.gov/vuln/detail/CVE-2020-29582), [CVE-2026-1225](https://nvd.nist.gov/vuln/detail/CVE-2026-1225)
 
 ### Service-authorization
-CVE-2026-40971, CVE-2026-40974, CVE-2026-22746, CVE-2026-22751, CVE-2026-22748, CVE-2026-22752,  
-CVE-2026-22732, CVE-2026-5588, CVE-2026-0636, CVE-2026-22733, CVE-2026-22731, CVE-2026-42584,  
-CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-41417, CVE-2026-33870, CVE-2025-67735,  
-CVE-2026-42583, CVE-2026-42587, CVE-2026-33871, CVE-2026-43512, CVE-2026-43513, CVE-2026-43514,  
-CVE-2026-43515, CVE-2025-66614, CVE-2026-34483, CVE-2026-42498, CVE-2026-42198, CVE-2026-22737,  
-CVE-2026-22741, CVE-2026-22740, CVE-2026-22745, CVE-2026-40973, CVE-2026-40977, CVE-2026-1225
+[CVE-2026-40971](https://nvd.nist.gov/vuln/detail/CVE-2026-40971), [CVE-2026-40974](https://nvd.nist.gov/vuln/detail/CVE-2026-40974), [CVE-2026-22746](https://nvd.nist.gov/vuln/detail/CVE-2026-22746), [CVE-2026-22751](https://nvd.nist.gov/vuln/detail/CVE-2026-22751), [CVE-2026-22748](https://nvd.nist.gov/vuln/detail/CVE-2026-22748), [CVE-2026-22752](https://nvd.nist.gov/vuln/detail/CVE-2026-22752),  
+[CVE-2026-22732](https://nvd.nist.gov/vuln/detail/CVE-2026-22732), [CVE-2026-5588](https://nvd.nist.gov/vuln/detail/CVE-2026-5588), [CVE-2026-0636](https://nvd.nist.gov/vuln/detail/CVE-2026-0636), [CVE-2026-22733](https://nvd.nist.gov/vuln/detail/CVE-2026-22733), [CVE-2026-22731](https://nvd.nist.gov/vuln/detail/CVE-2026-22731), [CVE-2026-42584](https://nvd.nist.gov/vuln/detail/CVE-2026-42584),  
+[CVE-2026-42585](https://nvd.nist.gov/vuln/detail/CVE-2026-42585), [CVE-2026-42581](https://nvd.nist.gov/vuln/detail/CVE-2026-42581), [CVE-2026-42580](https://nvd.nist.gov/vuln/detail/CVE-2026-42580), [CVE-2026-41417](https://nvd.nist.gov/vuln/detail/CVE-2026-41417), [CVE-2026-33870](https://nvd.nist.gov/vuln/detail/CVE-2026-33870), [CVE-2025-67735](https://nvd.nist.gov/vuln/detail/CVE-2025-67735),  
+[CVE-2026-42583](https://nvd.nist.gov/vuln/detail/CVE-2026-42583), [CVE-2026-42587](https://nvd.nist.gov/vuln/detail/CVE-2026-42587), [CVE-2026-33871](https://nvd.nist.gov/vuln/detail/CVE-2026-33871), [CVE-2026-43512](https://nvd.nist.gov/vuln/detail/CVE-2026-43512), [CVE-2026-43513](https://nvd.nist.gov/vuln/detail/CVE-2026-43513), [CVE-2026-43514](https://nvd.nist.gov/vuln/detail/CVE-2026-43514),  
+[CVE-2026-43515](https://nvd.nist.gov/vuln/detail/CVE-2026-43515), [CVE-2025-66614](https://nvd.nist.gov/vuln/detail/CVE-2025-66614), [CVE-2026-34483](https://nvd.nist.gov/vuln/detail/CVE-2026-34483), [CVE-2026-42498](https://nvd.nist.gov/vuln/detail/CVE-2026-42498), [CVE-2026-42198](https://nvd.nist.gov/vuln/detail/CVE-2026-42198), [CVE-2026-22737](https://nvd.nist.gov/vuln/detail/CVE-2026-22737),  
+[CVE-2026-22741](https://nvd.nist.gov/vuln/detail/CVE-2026-22741), [CVE-2026-22740](https://nvd.nist.gov/vuln/detail/CVE-2026-22740), [CVE-2026-22745](https://nvd.nist.gov/vuln/detail/CVE-2026-22745), [CVE-2026-40973](https://nvd.nist.gov/vuln/detail/CVE-2026-40973), [CVE-2026-40977](https://nvd.nist.gov/vuln/detail/CVE-2026-40977), [CVE-2026-1225](https://nvd.nist.gov/vuln/detail/CVE-2026-1225)
 
 ### Service-jobs
-CVE-2026-42584, CVE-2026-42585, CVE-2026-42581, CVE-2026-42580, CVE-2026-42583, CVE-2026-42587,  
-CVE-2026-43512, CVE-2026-41284, CVE-2026-41293, CVE-2026-43515, CVE-2026-43513, CVE-2026-43514,  
-CVE-2026-42498
+[CVE-2026-42584](https://nvd.nist.gov/vuln/detail/CVE-2026-42584), [CVE-2026-42585](https://nvd.nist.gov/vuln/detail/CVE-2026-42585), [CVE-2026-42581](https://nvd.nist.gov/vuln/detail/CVE-2026-42581), [CVE-2026-42580](https://nvd.nist.gov/vuln/detail/CVE-2026-42580), [CVE-2026-42583](https://nvd.nist.gov/vuln/detail/CVE-2026-42583), [CVE-2026-42587](https://nvd.nist.gov/vuln/detail/CVE-2026-42587),  
+[CVE-2026-43512](https://nvd.nist.gov/vuln/detail/CVE-2026-43512), [CVE-2026-41284](https://nvd.nist.gov/vuln/detail/CVE-2026-41284), [CVE-2026-41293](https://nvd.nist.gov/vuln/detail/CVE-2026-41293), [CVE-2026-43515](https://nvd.nist.gov/vuln/detail/CVE-2026-43515), [CVE-2026-43513](https://nvd.nist.gov/vuln/detail/CVE-2026-43513), [CVE-2026-43514](https://nvd.nist.gov/vuln/detail/CVE-2026-43514),  
+[CVE-2026-42498](https://nvd.nist.gov/vuln/detail/CVE-2026-42498)
 
 ### Service-index
-CVE-2026-39821, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814), CVE-2025-69725
+[CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821), [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814), [CVE-2025-69725](https://nvd.nist.gov/vuln/detail/CVE-2025-69725)
 
 ### Migrations
-CVE-2026-33816, CVE-2026-33815, CVE-2026-41889, CVE-2026-39821, CVE-2026-33186,  
-[CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814), CVE-2025-22868
+[CVE-2026-33816](https://nvd.nist.gov/vuln/detail/CVE-2026-33816), [CVE-2026-33815](https://nvd.nist.gov/vuln/detail/CVE-2026-33815), [CVE-2026-41889](https://nvd.nist.gov/vuln/detail/CVE-2026-41889), [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821), [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186),  
+[CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814), [CVE-2025-22868](https://nvd.nist.gov/vuln/detail/CVE-2025-22868)
 
 ## 5. Released services and plugins:
 
