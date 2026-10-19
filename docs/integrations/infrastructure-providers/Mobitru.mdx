@@ -113,19 +113,125 @@ Full examples with configuration details and source code are available in the co
 
 **1. Integrate your tests with Mobitru.**
 
+```javascript
+async function createMobitruDriver() {
+  const billingUnit = process.env.MOBITRU_BILLING_UNIT;
+  const accessToken = process.env.MOBITRU_ACCESS_TOKEN;
+
+  if (!billingUnit || !accessToken) {
+    throw new Error(
+      'MOBITRU_BILLING_UNIT and MOBITRU_ACCESS_TOKEN environment variables are required when BROWSER_PROVIDER=mobitru',
+    );
+  }
+
+  const mobitruOptions = {
+    'mobitru:options': {
+      enableVideo: true,
+    },
+  };
+
+  return new Builder()
+    .withCapabilities(mobitruOptions)
+    .forBrowser(Browser.CHROME)
+    .usingServer(`https://${billingUnit}:${accessToken}@${MOBITRU_HUB_URL}/wd/hub`)
+    .build();
+}
+```
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-mocha/mobitru-selenium/tests/driver.js#L30)
 
 **2. Add the recording attribute.**
+```javascript
+async function getMobitruRecordingId(driver) {
+  const session = await driver.getSession();
 
+  return session.getId();
+}
+// ...
+
+ it('should display the Google title', async () => {
+    const attributes = [
+      { key: 'browser', value: 'chrome' },
+    ];
+
+    attributes.push({
+      key: 'mobitru_selenium_recording_id',
+      value: await getMobitruRecordingId(driver),
+    });
+
+    PublicReportingAPI.addAttributes(attributes);
+})
+```
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-mocha/mobitru-selenium/tests/google.spec.js#L47)
 
 ### Playwright
 
 **1. Integrate your tests with Mobitru.**
 
+```javascript
+const mobitru_test = test.extend<{ page: Page }>({
+   page: async ({page, request}, use, testInfo) => {
+      const mobitruHost = process.env.MOBITRU_HUB_URL;
+      const mobitruTeamCode = process.env.MOBITRU_BILLING_UNIT;
+      const mobitruAccessToken = process.env.MOBITRU_ACCESS_TOKEN;
+
+      const httpCredentials = {
+        username: mobitruTeamCode,
+        password: mobitruAccessToken,
+      };
+      const mobitruApiAccessToken = btoa(
+        `${httpCredentials.username}:${httpCredentials.password}`,
+      );
+
+      // prepare a playwright WS endpoint for specific session name and playwright version
+      const sessionName = crypto.randomUUID();
+      const videoEnabled = process.env.VIDEO_ENABLED || 'true';
+      const wsEndpoint =
+        `wss://${mobitruTeamCode}:${mobitruAccessToken}@${mobitruHost}` +
+        `/playwright/chromium/playwright-${PW_VERSION}` +
+        `?headless=false&enableVideo=${videoEnabled}&sessionName=${sessionName}`;
+
+      const browser = await chromium.connect({
+          timeout: 0,
+          wsEndpoint: wsEndpoint
+      });
+      const newPage = await browser.newPage({
+          ignoreHTTPSErrors: true,
+          viewport: {width: 1920, height: 1080}
+      });
+      await use(newPage);
+
+      //close the browser to trigger the saving of video recording
+      await browser.close();
+  }
+});
+```
+
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/mobitru/feature.spec.ts#L12)
 
 **2. Add the recording attribute.**
+
+```javascript
+      // get the playwright session id by using the session name specified in WS endpoint
+      const sessionInfo = await page.request.get(
+        `https://${mobitruHost}/playwright/session/${sessionName}`,
+        {
+          headers: {
+            Authorization: `Basic ${mobitruApiAccessToken}`,
+          },
+        },
+      );
+      expect(sessionInfo.ok()).toBeTruthy();
+      const jsonResponse = await sessionInfo.json();
+      const sessionId = jsonResponse.sessionId;
+
+      // send mobitru recording attribute, so RP will attach the video to the report automatically
+      ReportingApi.addAttributes([
+        {
+          key: 'mobitru_playwright_recording_id',
+          value: sessionId,
+        },
+      ]);
+      ```
 
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/mobitru/feature.spec.ts#L81)
 
