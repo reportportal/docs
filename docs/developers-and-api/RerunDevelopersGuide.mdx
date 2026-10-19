@@ -5,6 +5,12 @@ description: Implement test rerun functionality in ReportPortal for selective te
 
 # Rerun developers guide
 
+:::important
+Starting from ReportPortal **26.1**, reporting API endpoints use **project key** (`projectKey`) instead of project name.
+
+You can find the project key in **Project settings → General**.
+:::
+
 ## What is rerun
 
 Let's imagine we have some set of tests:
@@ -45,7 +51,7 @@ On the step view we can see that items with names `getActivitiesForProject`, `ge
 
 #### Using API
 
-To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide.md#start-launch) adding `"rerun"=true` parameter in the request body.
+To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide.md#start-launch) adding `"rerun": true` parameter in the request body.
 
 ```json 
 {
@@ -66,7 +72,7 @@ And response will contain found launch `id` for asynchronous endpoint or `id` an
 
 #### Using agent
 
-To start launch rerun add `rp.rerun=true` to `reportportal.properties` file. No need to change anything else(name, project, etc.).
+To start launch rerun add `rp.rerun=true` to `reportportal.properties` file. No need to change anything else (name, project, etc.).
 
 ```properties
 rp.endpoint=https://rp.com
@@ -79,22 +85,22 @@ rp.rerun=true
 
 #### Handling
 
-System tries to find the latest launch on the project with same name as in request.
+System tries to find the latest launch on the project with the same name as in the request.
 
-If launch found - system updates the following attributes (if they are present in request and they are different from stored):
+If launch found - system updates the following attributes (when present in the request):
 - Mode
-- Description
-- Attributes
-- UUID
+- Description (replaced if provided)
+- Attributes (added to existing ones)
+- UUID (replaced if provided)
 - Status = `IN_PROGRESS`
 
-If system cannot find launch with the same name - system throws error with `404` code.
+If system cannot find a launch with the same name - system throws error with `404` code (`LAUNCH_NOT_FOUND`).
 
 ### Specified launch
 
 #### Using API
 
-To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide.md#start-launch) adding `"rerun"=true` and `"rerunOf"=launch_uuid` parameters in the request body. Where `launch_uuid` is UUID of launch that have to be reruned.
+To start launch rerun you should call [default start launch endpoint](./ReportingDevelopersGuide.md#start-launch) adding `"rerun": true` and `"rerunOf": "launch_uuid"` parameters in the request body. Where `launch_uuid` is UUID of launch that have to be rerun.
 
 ```json
 {
@@ -135,39 +141,48 @@ In this example, `79446272-a439-45f9-8073-5ca7869f140b` is the UUID of the launc
 
 #### Handling
 
-The same as for [specified launch](#specified-launch).
+System looks up the launch by `rerunOf` UUID within the project.
+
+If launch found - the same updates are applied as for [latest launch](#handling):
+- Mode
+- Description (replaced if provided)
+- Attributes (added to existing ones)
+- UUID (replaced if provided)
+- Status = `IN_PROGRESS`
+
+If launch with the given UUID is not found on the project - system throws error with `404` code (`LAUNCH_NOT_FOUND`).
 
 ## Test Items behavior
 
 There are no differences in API calls for starting and finishing items inside rerun launch. But such items handling is different.
 
+Rerun matching is based on **test case identity** within the same launch:
+- If `testCaseId` is provided in the start item request, it is used to build the identity hash.
+- Otherwise the hash is generated from the item structure (including name and parameters).
+- Root items are also matched by **name**.
+- Child items are matched under the same **parent**.
+
+Nested steps (`hasStats=false`) are not handled by rerun logic: a new item is always created.
+
 ### Container types (has children)
 
-System tries to find item with the same name, set of parameters and under the same path.
+System tries to find an existing item with the same test case identity under the same parent (or as a root item with the same name).
  
 If such item found - the following attributes will be updated:
 
 - Description
-- UUID
+- Attributes (overwritten; system attributes are preserved)
+- UUID (replaced if provided in the request)
 - Status = `IN_PROGRESS`
  
 If not - new item will be created.
 
 ### Step types (without children)
 
-System tries to find item with the same name, set of parameters and under the same path.
+System tries to find an existing item with the same test case identity under the same parent.
  
-If such item found - retry of the item will be created.
+If such item found - a **retry** of the item will be created.
  
 If not - new item will be created.
 
 ## [Example](https://github.com/reportportal/examples-java)
-
-
-
-
-
-
-
-
-
