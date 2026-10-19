@@ -117,10 +117,11 @@ function normalizeReportPortalLinks(text) {
           if (key.toLowerCase().startsWith('utm_')) url.searchParams.delete(key);
         }
 
-        // 2. Strip utm_ params that ended up in the hash by mistake
+        // 2. Strip utm_ params and a trailing slash that ended up in the hash
         if (/utm_/i.test(url.hash)) {
           url.hash = url.hash.replace(/[?&]utm_[^&]*/gi, '');
         }
+        url.hash = url.hash.replace(/\/+$/, '');
 
         // 3. Convert /docs links to relative paths
         if (url.pathname === '/docs' || url.pathname.startsWith('/docs/')) {
