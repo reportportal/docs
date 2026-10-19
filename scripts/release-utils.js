@@ -277,6 +277,11 @@ function transformBody(body) {
 
   result = normalizeReportPortalLinks(result);
 
+  result = result.replace(
+    /(?<![\w/])\b(CVE-\d{4}-\d+)\b(?!\])/g,
+    '[$1](https://nvd.nist.gov/vuln/detail/$1)',
+  );
+
   return result;
 }
 
