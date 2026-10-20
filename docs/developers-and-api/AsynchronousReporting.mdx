@@ -139,10 +139,6 @@ If a message exceeds `reporting.retry.max-count` (default **20**), it is moved t
 
 <MediaViewer src={require('./img/async/ExchangesQueues.png')} alt="Exchanges Queues" />
 
-:::note
-The diagram above may still show the older single retry queue (`q.retry.reporting.ttl`) and `q.reporting.id.*` naming. Prefer the queue names and TTL stages described in this section.
-:::
-
 #### Scheme
 
 All requests (items, logs) related to the same launch will be stored in the same RabbitMQ queue.
