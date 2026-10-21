@@ -9,7 +9,7 @@ The described approach covers the UI part of the plugin engine starting from Rep
 
 To learn how to deal with ReportPortal plugins from the Backend side, follow the [Plugin API development guide](./PluginAPIDevelopersGuide.mdx).
 
-Start from the [plugin template](https://github.com/reportportal/plugin-template/tree/feature/organizations). Bundled UI (webpack, `metadata.json`, extension points) lives in [`ui/`](https://github.com/reportportal/plugin-template/tree/feature/organizations/ui).
+Start from the [plugin template](https://github.com/reportportal/plugin-template/tree/main). Bundled UI (webpack, `metadata.json`, extension points) lives in [`ui/`](https://github.com/reportportal/plugin-template/tree/main/ui).
 
 ## The concept
 
@@ -110,7 +110,7 @@ Shared libraries from the core UI:
 
 After embedding into the core UI, each extension root receives components, selectors, actions, and utils via props (built in `createImportProps` and spread by `FederatedExtensionLoader`).
 
-The full set is defined in [`createImportProps.js`](https://github.com/reportportal/service-ui/blob/develop/app/src/controllers/plugins/uiExtensions/createImportProps.js). In the plugin, you can type these props with the interfaces from the [plugin template](https://github.com/reportportal/plugin-template/tree/feature/organizations/ui/src/types/extensionProps).
+The full set is defined in [`createImportProps.js`](https://github.com/reportportal/service-ui/blob/develop/app/src/controllers/plugins/uiExtensions/createImportProps.js). In the plugin, you can type these props with the interfaces from the [plugin template](https://github.com/reportportal/plugin-template/tree/main/ui/src/types/extensionProps).
 
 Typical groups: `lib`, `components`, `componentLibrary`, `constants`, `actions`, `selectors`, `utils`, `validators`, `icons`, `HOCs`, `portalRootIds`.
 
@@ -125,7 +125,7 @@ To open a host modal, dispatch `actions.showModalAction` (there is no separate `
 
 ### Extension points
 
-`type` in `metadata.json`. These are the points a custom plugin can use after upload. The [plugin template](https://github.com/reportportal/plugin-template/tree/feature/organizations) covers the navigation and settings types.
+`type` in `metadata.json`. These are the points a custom plugin can use after upload. The [plugin template](https://github.com/reportportal/plugin-template/tree/main) covers the navigation and settings types.
 
 | Extension type | Description |
 | -------------- | ----------- |
@@ -164,7 +164,7 @@ Without this section the plugin falls back to core strings and `defaultMessage`.
 
 The template workflow mirrors Service UI: `defineMessages` in code → `npm run manage:translations` → committed `ui/src/locales/{ru,uk,be,zh,es}.json` → webpack copies them to `locale-{lang}.json`. Use a unique message id prefix (for example `PluginTemplate.*`); it does not have to equal `pluginId`.
 
-Details can be found [here](https://github.com/reportportal/plugin-template/blob/feature/organizations/ui/README.md#localization-translations-shipped-with-the-plugin).
+Details can be found [here](https://github.com/reportportal/plugin-template/blob/main/ui/README.md#localization-translations-shipped-with-the-plugin).
 
 ## Local development
 
