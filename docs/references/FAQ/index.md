@@ -129,9 +129,36 @@ Our test automation reporting dashboard have integration with following Bug Trac
 
 #### 16. How can I check the ReportPortal version?
 
-You can find the current version of ReportPortal on the login page. Simply hover your mouse over the ```i``` icon next to the "New versions are available" message to see the version details.
+You can check the ReportPortal latest version in two ways:
 
-<MediaViewer src={require('./img/NewVersions.png')} alt="New versions in our test automation dashboard" />
+***On the login page***
+
+1. Open the ReportPortal login page.
+2. Click the "Service Version" icon.
+
+<MediaViewer src={require('./img/NewVersions1.png')} alt="Service Version icon" />
+
+A modal window will display the following information:
+
+* **Product version:** The overall ReportPortal version, displayed at the top of the window.
+* **Connected services:** A table showing the current version and status of each service, including API Service, Jobs Service, Service UI, Service Analyzer, and others.
+
+<MediaViewer src={require('./img/NewVersions2.png')} alt="ReportPortal releases" />
+
+***Inside the application***
+
+1. Log in to ReportPortal.
+2. At the bottom of the left-hand menu, click the "Help & Service versions" icon (a question mark with a green dot).
+3. Select "Versions of connected services".
+
+<MediaViewer src={require('./img/NewVersions3.png')} alt="Versions of connected services icon" />
+
+A modal window will display the following information:
+
+* **Product version:** The overall ReportPortal version, displayed at the top of the window.
+* **Connected services:** A table showing the current version and status of each service, including API Service, Jobs Service, Service UI, Service Analyzer, and others.
+
+<MediaViewer src={require('./img/NewVersions4.png')} alt="Latest version of ReportPortal in our test automation dashboard" />
 
 #### 17. How can I check if the ReportPortal API is working?
 
