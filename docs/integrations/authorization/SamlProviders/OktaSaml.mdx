@@ -59,18 +59,18 @@ In the `App name` field, enter the application's name. Click `Next`.
 In the `Single sign-on URL` field, enter the following URL:
 
 ```url
-https://<host>/uat/login/saml2/sso/{providerName}
+https://<host>/api/login/saml2/sso/{providerName}
 ```
 In the example below, ReportPortal was deployed on the local machine using the following URL:
 
 ```url
-http://localhost:8080/uat/login/saml2/sso/Okta
+http://localhost:8080/api/login/saml2/sso/Okta
 ```
 
 for ReportPortal version older than 25.1, you can use the following URL:
 
 ```url
-https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
+https://<host>/api/saml/sp/SSO/alias/report-portal-sp
 ```
 
 More details about the ACS URL you can find in the [SAML Overview](./Overview.mdx#identity-provider-configuration).
@@ -184,10 +184,10 @@ You need to map the attributes from the Okta configuration to the ReportPortal.
 In the `RP callback URL` field, enter the URL:
 
 ```url
-https://<host>/uat
+https://<host>/api
 ```
 
-In the case below, the following URL was used: `http://192.168.49.2/uat`.
+In the case below, the following URL was used: `http://192.168.49.2/api`.
 
 #### Create the integration
 

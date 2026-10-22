@@ -13,11 +13,11 @@ To enable this feature you need to [register new application in Github](https://
 
 Fill the following fields:
 
-| Name                       | Value                                      | Description                                           |
-|----------------------------|--------------------------------------------|-------------------------------------------------------|
+| Name                       | Value                                        | Description                                           |
+|----------------------------|----------------------------------------------|-------------------------------------------------------|
 | Application name           | `Report Portal`                              | Just something which allow you recognize what's this. |
-| Homepage URL               | `https://{HOST}:{PORT}/uat/sso/user`         | Replace with `{HOST}` and `{PORT}` with appropriate values of your instance. Naturally you can omit `:{PORT}` if it's default port for HTTPS protocol. | 
-| Authorization callback URL | `https://{HOST}:{PORT}/uat/sso/login/github` | As in the previous field replace with `{HOST}` and `{PORT}` with your appropriate values. | 
+| Homepage URL               | `https://{HOST}:{PORT}/api/sso/user`         | Replace with `{HOST}` and `{PORT}` with appropriate values of your instance. Naturally you can omit `:{PORT}` if it's default port for HTTPS protocol. | 
+| Authorization callback URL | `https://{HOST}:{PORT}/api/sso/login/github` | As in the previous field replace with `{HOST}` and `{PORT}` with your appropriate values. | 
 
 Once new application is created, you will have Client ID. Click on "Generate a new client secret" to get Client Secret, but do not close the window until you configure the Authorization on RP, since it will never show you the Secret again.
 
