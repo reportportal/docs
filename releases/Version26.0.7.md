@@ -31,7 +31,8 @@ Both features are controlled by the `prime.enabled` master switch and require pr
 | Helm Chart name | Helm Chart version  | App version    |
 | ------------ | ------------------------ | ------ |
 | PostgreSQL | `0.21.2` | `18.6` |
-| RabbitMQ | `0.21.31` | `4.3.6-management`|
+| RabbitMQ | `0.21.32` | `4.4.0-management`|
+| OpenSearch | `3.9.0`| `3.9.0` |
 
 ## 3. Released services and plugins:
 
