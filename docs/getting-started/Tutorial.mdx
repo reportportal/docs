@@ -8,7 +8,7 @@ description: ReportPortal guide. How to do test failure analysis, how to create 
 
 ## Overview
 
-The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you'll learn how to use ReportPortal features and how to get the most out of them, as well as expert tips for using our test automation results dashboard.
+The goal of this tutorial is to introduce all ReportPortal capabilities. Along the way, you'll learn how to use ReportPortal features and how to get the most out of them — including the Test Management System for manual testing and the test automation results dashboard for automated runs.
 
 ## How to explore ReportPortal without installation
 
@@ -56,19 +56,64 @@ Now you can group several projects under one organization, apply shared settings
 
 Each project still has its own launches, logs, and screenshots – but now you manage them through a two-level structure: Organization → Projects.
 
-This helps you scale test management without chaos and keep related projects aligned.
+This helps you scale project management without chaos and keep related projects aligned.
 
 <MediaViewer src={require('./img/tutorial/Organizations.png')} alt="Grouping several projects under one organization" />
 
-## How to generate first data in ReportPortal
+## How to manage manual testing with the Test Management System
 
-The main section for work with ReportPortal is Launches tab in the left menu. But Launches table is empty and it’s hard to understand what ReportPortal can do and what to do next.
+After you open a project, you will see more than Automated Launches in the sidebar. ReportPortal also includes a [Test Management System (TMS)](../test-management-system/index.md) for structured manual testing — from reusable test cases to planned execution and result review.
 
-[Generate demo data](../configuration/project-level/ProjectSettings.mdx#demo-data) feature can help you with this, by generating a set of demo launches (test executions), filters and dashboards.
+ReportPortal supports both manual and automated testing:
+
+* **Test Management** — create and organize manual test cases, plan testing with Milestones and Test Plans, and run them in Manual Launches.
+* **Automated reporting** — send results from your test frameworks to Automated Launches, investigate failures, create dashboards, and use ML-powered analysis. We cover automated reporting in the next sections.
+
+TMS follows a clear cycle: Test Case Library → Milestone / Test Plan → Manual Launch → review outcomes.
+
+<MediaViewer src={require('../test-management-system/TestCycleFlowchart.png')} alt="Test Management System continuous improvement cycle" />
+
+### Create Test Cases in the Test Case Library
+
+Start in **Test Case Library** (project sidebar):
+
+1. [Create a folder](../test-management-system/test-case-library/Folders.md#create-folder) for your first suite (for example, `Smoke`).
+2. [Create a few test cases](../test-management-system/test-case-library/TestCases.md#create-test-case) in the folder. Add a name and priority, then use either a text scenario or step-by-step instructions.
+3. If you already have test cases in another tool, you can [import test cases from a CSV file](../test-management-system/test-case-library/TestCases.md#import-test-cases).
+
+<MediaViewer src={require('../test-management-system/test-case-library/img/TestCaseLibrary.png')} alt="Test Case Library in the project sidebar" />
+
+### Plan scope with a Milestone and Test Plan
+
+Next, open **Milestones**:
+
+1. [Create a milestone](../test-management-system/milestones/index.md#create-milestone) (for example, type `Release` or `Sprint`) with start date and deadline.
+2. [Create a test plan](../test-management-system/milestones/TestPlan.md#create-test-plan) inside that milestone (for example, `Smoke`).
+3. [Add test cases from the library](../test-management-system/milestones/TestCases.md#add-tests-from-library-to-test-plan) to the plan — this defines what you intend to execute.
+
+### Run tests in a Manual Launch
+
+From the test plan (or from the Test Case Library), [add selected test cases to a Manual Launch](../test-management-system/milestones/TestCases.md#add-test-cases-to-manual-launch). Then open **Manual Launches**:
+
+1. Open the launch and start a test execution that is still in **To Run**.
+2. When you finish the test, set the result to Passed, Failed, or Skipped.
+3. For a failed execution, add a comment and, if a Bug Tracking System is configured, [post or link an issue](../test-management-system/manual-launches/TestExecutionPage.md#postlink-issue-for-test-execution) — the same BTS plugins you will later use for automated failure triage.
+
+<MediaViewer src={require('../test-management-system/manual-launches/img/ManualLaunches.png')} alt="Manual Launches in the project sidebar" />
+
+You have completed one manual testing cycle. For folders, bulk actions, coverage metrics, and execution details, see the full [Test Management System](../test-management-system/index.md) documentation.
+
+When you are ready to explore **automated** reporting next, continue with demo data below — or skip ahead to [adding real framework results](#how-to-add-test-results-to-reportportal).
+
+## How to generate first automation data in ReportPortal
+
+The main section for automated work with ReportPortal is the **Automated Launches** tab in the left menu. But the launches table is empty and it’s hard to understand what ReportPortal can do and what to do next.
+
+[Generate demo data](../configuration/project-level/ProjectSettings.mdx#demo-data) feature can help you with this, by generating a set of demo **automated** launches (test executions), filters and dashboards. Demo data does not populate the Test Management System (Test Case Library, Milestones, or Manual Launches).
 
 <MediaViewer src={require('./img/tutorial/GenerateFirstData.png')} alt="Generate First Data in our open source test reporting tool" />
 
-Once generated, you will see 5 launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.
+Once generated, you will see 5 automated launches (each Launch is equivalent to a testing session, or testing execution, or one Jenkins job). On the Filters tab you will find 1 filter. And Dashboards will have a Demo dashboard with visualizations/widgets built on top of the data from launches.
 
 Let’s understand how ReportPortal works based on demo data, and later we can return to the upload of your actual data from your testing frameworks. You can [navigate to this section](#how-to-add-test-results-to-reportportal) right now if you wish.
 
@@ -302,4 +347,7 @@ You can go to the test cases level and see what problems they had.
 
 You have checked demo test results, dashboards and widgets. And now you want to see your real data in ReportPortal.
 
-ReportPortal is a TestOps service that integrates with your Test Framework, listens to events and visualizes test results. You cannot execute results right from ReportPortal, but you can [integrate ReportPortal with a Test Framework](../integrations/test-frameworks/index.mdx) or [Implement own integration](../integrations/ImplementOwnIntegration.md).
+ReportPortal is a TestOps platform for both manual and automated testing:
+
+* For **manual** testing, create and run cases in the [Test Management System](../test-management-system/index.md) as described [earlier in this tutorial](#how-to-manage-manual-testing-with-the-test-management-system).
+* For **automated** testing, ReportPortal integrates with your Test Framework, listens to events, and visualizes results in Automated Launches. You can [integrate ReportPortal with a Test Framework](../integrations/test-frameworks/index.mdx) or [implement your own integration](../integrations/ImplementOwnIntegration.md).
