@@ -329,6 +329,7 @@
 
 - [Releases](https://reportportal.io/docs/releases/): Check out the latest ReportPortal version, release notes, and updates.
 - [Archived Releases](https://reportportal.io/docs/releases/archived-releases/): Browse older ReportPortal versions for reference and long-term support needs. Review historic notes to trace changes across your test report dashboard.
+- [Version 26.0.7](https://reportportal.io/docs/releases/Version26.0.7/)
 - [Version 26.0.6](https://reportportal.io/docs/releases/Version26.0.6/)
 - [Version 26.0.5](https://reportportal.io/docs/releases/Version26.0.5/)
 - [Version 26.0.4](https://reportportal.io/docs/releases/Version26.0.4/)
@@ -338,7 +339,6 @@
 - [Version 25.2](https://reportportal.io/docs/releases/Version25.2/)
 - [Version 25.1.12](https://reportportal.io/docs/releases/Version25.1.12/)
 - [Version 25.1.11](https://reportportal.io/docs/releases/Version25.1.11/)
-- [Version 25.1.10](https://reportportal.io/docs/releases/Version25.1.10/)
 
 ## Optional
 
