@@ -1,5 +1,5 @@
 ---
-sidebar_position: 24
+sidebar_position: 25
 sidebar_label: Version 5.7.2
 description: "Discover ReportPortal 5.7.2: introduces dual logging to ElasticSearch, new Jira and Azure DevOps plugins, enhanced UI, and performance improvements."
 ---
