@@ -1,0 +1,191 @@
+---
+sidebar_position: 10
+sidebar_label: Email Server
+description: Configure email server settings for automated notifications in ReportPortal.
+---
+
+# Email Server
+
+Email Server plugin is available in ReportPortal on the Plugins page.
+
+You don't need to download. It is already available in ReportPortal on the Plugins page.
+
+## Add Email Server integration
+
+You can integrate our centralized test automation tool with an Email Server via the SMTP protocol.
+
+This integration enables you to perform functions such as:
+
+* inviting new users to the project
+* configuring notification rules on launch finish
+* receiving notifications about account deletion, creation of project Email Server integration, completion of index generation for the analyzer
+
+:::important
+A user with the account role Administrator can configure email integration for the entire instance or on a per-project basis.<br />
+A user with the account role Project Manager can configure email integration only for projects where they are assigned as the Project Manager.
+:::
+
+## Global Email Server integration
+
+To configure the SMTP server for the whole instance:
+
+1. Log in as ADMIN.
+
+2. Go to Administrate > Plugins.
+
+3. Click on Email Server plugin panel.
+
+4. Click on "Add integration" button.
+
+<MediaViewer src={require('./img/email-server/EmailServer1.png')} alt="Add Email Server integration in our test reporting tool" />
+
+5. Fill in required parameters for integration.
+
+6. Click "Create" button.
+
+```javascript
+`Host`: <host name of email server> (required)
+`Protocol`: <SMTP> (predefined)
+`From name`: <string> (optional)
+`From Email`: <user email address> (required)
+`Port`: <port number> (required)
+`Authorization`: OFF/ON (dropdown)
+`Username`: <string> (required)
+`Password`: <user email password> (required)
+`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
+```
+
+:::note
+You can configure an Email Server using an email service provider (such as SendGrid) and enter a username in the `Username` field without including the @ symbol or undergoing additional validation.
+:::
+
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)).
+
+```javascript
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`From name`: reportportal
+`From Email`: reportportal1@gmail.com
+`Port`: 587
+`Authorization`: ON
+`Username`: reportportal1
+`Password`: <user email password>
+`TLS`: checkbox should be checked
+```
+
+<MediaViewer src={require('./img/email-server/EmailServer2.png')} alt="Example of Global Email Server integration" />
+
+After Email Server integration is added, the configuration will apply to all projects within the instance.
+
+## Project Email Server integration
+
+If email integration has not been added to the project, or if a Project Manager or Administrator wants to specify unique configurations for a specific project, they can configure the Email Server in the project settings.
+
+To configure an SMTP server for a single project instance:
+
+1. Log in as an ADMIN or Project Manager.
+
+2. Go to Project Settings > Integrations.
+
+3. Click on the Email Server integration panel.
+
+4. Click on "Add Project integration" button.
+
+<MediaViewer src={require('./img/email-server/EmailServer3.png')} alt="Add Project Email Server integration" />
+
+5. Fill in required parameters for integration.
+
+6. Click "Create" button.
+
+```javascript 
+`Host`: <host name of email server> (required)
+`Protocol`: <SMTP> (predefined)
+`From name`: <string> (optional)
+`From Email`: <user email address> (required)
+`Port`: <port number> (required)
+`Authorization`: OFF/ON (dropdown)
+`Username`: <string> (required)
+`Password`: <user email password> (required)
+`TLS` or `SSL`: <should be checked depends on the selected port> (checkbox)
+```
+
+Example of SMTP server configuration for Gmail email server (detailed info could be found [here](https://support.google.com/a/answer/176600?hl=en)):
+
+```javascript
+`Host`: smtp.gmail.com
+`Protocol`: SMTP
+`From name`: reportportal
+`From Email`: reportportal1@gmail.com
+`Port`: 587
+`Authorization`: ON
+`Username`: reportportal1
+`Password`: <user email password>
+`TLS`: checkbox should be checked
+```
+<MediaViewer src={require('./img/email-server/EmailServer4.png')} alt="Example of Project Email Server integration" />
+
+<MediaViewer src="https://youtu.be/OVnc5nxwp24" alt="Email Server integration" type="video" />
+
+## Create Email notification rule
+
+1. Go to the Project settings -> [Notifications](/configuration/ProjectSettings/#email-notifications).
+
+2. Choose Email Notification Group.
+
+3. Click ‘Create Rule’ button.
+
+4. Fill the form:
+
+**Rule name** – from 1 to 55 characters, mandatory field
+
+**Recipients** - optional field, user name on the project or valid email
+
+**Launch owner** - optional checkbox, who launched - that receives
+
+:::note
+When the `Launch owner` checkbox is unchecked, you must fill in the `Recipients` field.
+:::
+
+**In case** – optional field, dropdown with the options:
+
+* Always – notification will be sent in any case.
+* 10% of items have issues – notification will be sent, if more than 10% of items have issues.
+* 20% of items have issues – notification will be sent, if more than 20% of items have issues.
+* 50% of items have issues – notification will be sent, if more than 50% of items have issues.
+* Launch has issues – notification will be sent, if at least 1 item has issues
+* Launch has ‘To Investigate’ items – notification will be sent, if at least 1 item has ‘To Investigate’
+
+**Launch names** – optional field
+
+You can select only existing launch name. The field allows multi select.
+
+**Attributes** – optional checkbox
+
+When the ‘Attributes’ checkbox is checked, you can provide key/value for attributes and select the necessary radio button:
+
+* ‘All attributes should match’
+* ‘Any attribute should match’
+
+5. Click on ‘Create’ button.
+
+<MediaViewer src={require('./img/email-server/EmailNotificationRule.png')} alt="Create Email notification rule in our test report dashboard" />
+
+## Disable Email notifications
+
+1. Go to the Project settings -> Notifications.
+
+2. Turn OFF for Email.
+
+<MediaViewer src={require('./img/email-server/EmailDisableRule.png')} alt="Disable Email notifications in ReportPortal" />
+
+## Disable plugin
+
+1. Log in to ReportPortal as administrator.
+
+2. Go to Administrate -> Plugins section -> Notifications tab.
+
+3. Find Email plugin and click on it.
+
+4. Turn OFF.
+
+<MediaViewer src={require('./img/email-server/EmailDisablePlugin.png')} alt="Disable Email plugin in our qa metrics dashboard" />
