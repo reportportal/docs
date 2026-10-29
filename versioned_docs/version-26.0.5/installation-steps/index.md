@@ -11,7 +11,7 @@ Before proceeding with the installation, it is important to select a hardware co
 
 ReportPortal offers **several installation methods** to accommodate different environments and requirements. **The primary methods** include installation via Docker, Kubernetes. Each method is adapted to different levels of expertise and infrastructure setups, giving you flexibility based on your team’s technical requirements.
 
-This section outlines the installation process for each method step-by-step, providing clear instructions to help you through the configuration. If you need assistance with installation, you can take advantage of our [professional services](https://reportportal.io/pricing/on-premises/).
+This section outlines the installation process for each method step-by-step, providing clear instructions to help you through the configuration. If you need assistance with installation, you can take advantage of our [professional services](https://reportportal.io/pricing/service-packages/).
 
 By following the instructions in this section, you can ensure a successful and efficient deployment of ReportPortal, allowing you to begin automating your test reporting with ease.
 

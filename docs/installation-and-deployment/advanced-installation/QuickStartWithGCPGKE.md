@@ -333,7 +333,7 @@ helm install \
 ### Google-managed SSL certificates
 
 :::note
-This is recommended approach for using SSL certificates in GKE.
+For ReportPortal on GKE, Google-managed SSL certificates are the recommended way to terminate HTTPS for the ingress.
 :::
 
 You can use Google-managed SSL certificates for your domain name:
