@@ -2,6 +2,9 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import { themes } from 'prism-react-renderer';
+import versions from './versions.json';
+import { splitVersions } from './src/utils/splitVersions.js';
+import remarkMediaViewerDimensions from './plugins/remark-media-viewer-dimensions.js';
 
 const fs = require('fs');
 const path = require('path');
@@ -15,7 +18,9 @@ require('dotenv').config();
 // the default baseUrl is for production deployment, for dev running specify it via DOCS_BASE_URL environment variable
 const baseUrl = process.env.DOCS_BASE_URL || '/docs/';
 
-const RELEASES_DIR = path.join(__dirname, 'docs', 'releases');
+const RELEASES_DIR = path.join(__dirname, 'releases');
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 function readReleaseLastmodDates() {
   const dates = {};
@@ -37,6 +42,8 @@ function readReleaseLastmodDates() {
   return dates;
 }
 
+const { latest, minors } = splitVersions(versions);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ReportPortal Documentation',
@@ -51,6 +58,10 @@ const config = {
 
   organizationName: 'reportportal',
   projectName: 'documentation',
+
+  customFields: {
+    productName: 'ReportPortal',
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -97,7 +108,16 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reportportal/docs/blob/develop',
-          includeCurrentVersion: process.env.NODE_ENV !== 'production',
+          showLastUpdateTime: true,
+          remarkPlugins: [remarkMediaViewerDimensions],
+          onlyIncludeVersions: [
+            ...(isProduction ? [] : ['current']),
+            ...latest,
+            ...minors.map((v) => v.id),
+          ],
+          versions: Object.fromEntries(
+            minors.map(({ id, label }) => [id, { label }]),
+          ),
         },
         blog: false,
         theme: {
@@ -142,18 +162,41 @@ const config = {
             target: '_self',
           },
           {
+            type: 'doc',
+            docsPluginId: 'releases',
+            docId: 'index',
+            position: 'left',
+            label: 'Releases',
+          },
+          {
             type: 'docsVersionDropdown',
-            position: 'right',
+            position: 'left',
+            dropdownItemsAfter: minors.length
+              ? [
+                  { type: 'html', value: '<hr class="dropdown__divider" />' },
+                  {
+                    type: 'html',
+                    value: '<span class="dropdown__label">Earlier versions</span>',
+                  },
+                ]
+              : [],
           },
           {
             href: 'https://reportportal.io/',
-            label: 'ReportPortal.io',
+            label: 'Main site',
             position: 'right',
           },
           {
             href: 'https://github.com/reportportal',
             label: 'GitHub',
             position: 'right',
+            className: 'github-link',
+          },
+          {
+            href: 'https://demo.reportportal.io/ui/',
+            label: 'Try demo',
+            position: 'right',
+            className: 'navbar-button try-demo',
           },
         ],
       },
@@ -200,13 +243,17 @@ const config = {
                 label: 'Slack',
                 href: 'https://slack.epmrpp.reportportal.io/',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/reportportal/',
+              },
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'ReportPortal.io',
+                label: 'Main site',
                 href: 'https://reportportal.io/',
               },
               {
@@ -262,401 +309,19 @@ const config = {
       },
     }),
 
+  clientModules: ['./src/clientModules/syncMinorVersionDropdown.js'],
+
   plugins: [
     './plugins/plugin-cookie-pro',
+    './plugins/plugin-schema-org',
     [
-      '@docusaurus/plugin-client-redirects',
+      '@docusaurus/plugin-content-docs',
       {
-        redirects: [
-          {
-            to: '/installation-steps',
-            from: ['/category/installation-steps', '/Installation'],
-          },
-          {
-            to: '/features',
-            from: '/category/features',
-          },
-          {
-            to: '/releases',
-            from: '/category/releases',
-          },
-          {
-            to: '/user-account',
-            from: '/category/user-account',
-          },
-          {
-            to: '/work-with-reports',
-            from: '/category/work-with-reports',
-          },
-          {
-            to: '/analysis',
-            from: '/category/analysis',
-          },
-          {
-            to: '/saved-searches-filters',
-            from: '/category/saved-searches-filters',
-          },
-          {
-            to: '/dashboards-and-widgets',
-            from: '/category/dashboards-and-widgets',
-          },
-          {
-            to: '/admin-panel',
-            from: '/category/admin-panel',
-          },
-          {
-            to: '/plugins',
-            from: '/category/plugins',
-          },
-          {
-            to: '/external-integrations',
-            from: '/category/external-integrations',
-          },
-          {
-            to: '/quality-gates',
-            from: '/category/quality-gates',
-          },
-          {
-            to: '/case-studies',
-            from: '/category/case-studies',
-          },
-          {
-            to: '/terms-and-conditions',
-            from: '/category/terms--conditions',
-          },
-          {
-            to: '/installation-steps/DeployWithDocker',
-            from: ['/installation-steps/DeployWithDockerOnLinuxMac', '/Deploy-with-Docker', '/installation-steps/DeployWithDockerOnWindows', '/Installation/Docker'],
-          },
-          {
-            to: '/plugins/authorization/SamlProviders',
-            from: ['/reportportal-configuration/authorization/SAMLProvider', '/SAML-integration'],
-          },
-          {
-            to: '/plugins/authorization/SamlProviders/OktaSaml',
-            from: ['/reportportal-configuration/authorization/SAMLProvider/OktaSAML', '/reportportal-configuration/authorization/SamlProviders/OktaSaml'],
-          },
-          {
-            to: '/installation-steps-advanced',
-            from: ['/Setup-TLS(SSL)-in', '/installation-steps/SetupTSLSSLInTraefik2.0.x'],
-          },
-          {
-            to: '/plugins/authorization/SamlProviders/AzureSaml',
-            from: ['/reportportal-configuration/authorization/SAMLProvider/AzureSAML', '/Azure-SAML-Integration', '/reportportal-configuration/authorization/SamlProviders/AzureSaml'],
-          },
-          {
-            to: '/issues-troubleshooting/ResolveAnalyzerKnownIssues',
-            from: '/Resolve-Analyzer-Known',
-          },
-          {
-            to: '/issues-troubleshooting',
-            from: ['/How-to-resolve', '/category/issues-troubleshooting'],
-          },
-          {
-            to: '/log-data-in-reportportal/ImportDataToReportPortal',
-            from: ['/Import-data-to', '/Log-data-import'],
-          },
-          {
-            to: '/log-data-in-reportportal',
-            from: ['/Log-Data-in', '/category/log-data-in-reportportal'],
-          },
-          {
-            to: '/installation-steps-advanced/MaintainCommandsCheatSheet',
-            from: ['/Maintain-commands-Cheat', '/installation-steps/MaintainCommandsCheatSheet'],
-          },
-          {
-            to: '/installation-steps/DeployWithKubernetes',
-            from: ['/Deploy-with-Kubernetes', '/installation-steps/deploy-with-kubernetes'],
-          },
-          {
-            to: '/log-data-in-reportportal/test-framework-integration',
-            from: '/Test-Framework-Integration',
-          },
-          {
-            to: '/analysis/AutoAnalysisOfLaunches',
-            from: '/Auto-Analysis-of-launches',
-          },
-          {
-            to: '/issues-troubleshooting/IssuesWithLDAPSHowToResolve',
-            from: '/Issues-with-LDAPS',
-          },
-          {
-            to: '/plugins/other/SauceLabs',
-            from: '/Sauce-Labs-integration',
-          },
-          {
-            to: '/plugins/authorization',
-            from: '/reportportal-configuration/authorization',
-          },
-          {
-            to: '/installation-steps/DeployWithoutDocker',
-            from: ['/Deploy-ReportPortal-without', '/Deploy-Without-Docker'],
-          },
-          {
-            to: '/plugins/authorization/ActiveDirectory',
-            from: ['/Active-Directory-Auth', '/reportportal-configuration/authorization/ActiveDirectory'],
-          },
-          {
-            to: '/work-with-reports/ViewLaunches',
-            from: '/View-launches',
-          },
-          {
-            to: '/dashboards-and-widgets/FlakyTestCasesTableTop50',
-            from: '/dashboards-and-widgets/FlakyTestCasesTableTop20',
-          },
-          {
-            to: '/dashboards-and-widgets/ComponentHealthCheck',
-            from: '/Component-health-check',
-          },
-          {
-            to: '/installation-steps-advanced/DeployWithAWSECSFargate',
-            from: ['/Deploy-with-AWS', '/installation-steps/DeployWithAWSECSFargate'],
-          },
-          {
-            to: '/work-with-reports/ViewLaunches#markdown-mode-on-logs-view',
-            from: '/How-to-activate',
-          },
-          {
-            to: '/installation-steps/HardwareRequirements',
-            from: ['/Optimal-Performance-Hardware', '/installation-steps/OptimalPerformanceHardwareSetup'],
-          },
-          {
-            to: '/configuration',
-            from: ['/Report-Portal-Configuration', '/reportportal-configuration', '/category/reportportal-configuration'],
-          },
-          {
-            to: '/dashboards-and-widgets/TableComponentHealthCheck',
-            from: '/Table-Component-health',
-          },
-          {
-            to: '/developers-guides',
-            from: ['/category/dev-guides', '/category/developers-guides'],
-          },
-          {
-            to: '/developers-guides/APIDifferencesBetweenV4AndV5',
-            from: '/dev-guides/APIDifferencesBetweenV4AndV5',
-          },
-          {
-            to: '/developers-guides/AsynchronousReporting',
-            from: '/dev-guides/AsynchronousReporting',
-          },
-          {
-            to: '/developers-guides/AttachmentsGuide',
-            from: '/dev-guides/AttachmentsGuide',
-          },
-          {
-            to: '/developers-guides/BackEndJavaContributionGuide',
-            from: '/dev-guides/BackEndJavaContributionGuide',
-          },
-          {
-            to: '/developers-guides/InteractionsBetweenAPIAndAnalyzer',
-            from: '/dev-guides/InteractionsBetweenAPIAndAnalyzer',
-          },
-          {
-            to: '/developers-guides/PluginDevelopersGuide',
-            from: '/dev-guides/PluginDevelopersGuide',
-          },
-          {
-            to: '/developers-guides/ReportPortalAPI',
-            from: '/dev-guides/ReportPortalAPI',
-          },
-          {
-            to: '/developers-guides/ReportingDevelopersGuide',
-            from: '/dev-guides/ReportingDevelopersGuide',
-          },
-          {
-            to: '/developers-guides/RerunDevelopersGuide',
-            from: '/dev-guides/RerunDevelopersGuide',
-          },
-          {
-            to: '/developers-guides/RetriesReporting',
-            from: '/dev-guides/RetriesReporting',
-          },
-          {
-            to: '/installation-steps-advanced/ComponentsOverview',
-            from: '/reportportal-configuration/ComponentsOverview',
-          },
-          {
-            to: '/installation-steps-advanced/BasicMonitoringConfiguration',
-            from: '/installation-steps/BasicMonitoringConfiguration',
-          },
-          {
-            to: '/installation-steps-advanced/JobsConfiguration',
-            from: '/reportportal-configuration/ReportPortalJobsConfiguration',
-          },
-          {
-            to: '/installation-steps-advanced/BackupRestoreGuide',
-            from: '/reportportal-configuration/ReportPortalBackupRestoreGuide',
-          },
-          {
-            to: '/installation-steps-advanced/AdditionalConfigurationParameters',
-            from: '/installation-steps/AdditionalConfigurationParameters',
-          },
-          {
-            to: '/installation-steps-advanced/MigrateOneInstanceToAnother',
-            from: '/installation-steps/MigrateOneInstanceToAnother',
-          },
-          {
-            to: '/installation-steps-advanced/file-storage-options/',
-            from: '/installation-steps/ReportPortal23.1FileStorageOptions',
-          },
-          {
-            to: '/installation-steps-advanced/ScalingReportPortalServices',
-            from: '/installation-steps/ScalingUpReportPortalAPIService',
-          },
-          {
-            to: '/installation-steps-advanced/AWSLoadBalancerIntegrationOnEKS',
-            from: '/installation-steps/deploy-with-kubernetes/AmazonALBNGINXIngressController',
-          },
-          {
-            to: '/installation-steps-advanced/QuickStartWithGCPGKE',
-            from: '/installation-steps/deploy-with-kubernetes/QuickStartWithGCPGKE',
-          },
-          {
-            to: '/tutorial',
-            from: ['/reportportal-tutorial', '/What-is-ReportPortal'],
-          },
-          {
-            to: '/glossary',
-            from: '/reportportal-glossary',
-          },
-          {
-            to: '/log-data-in-reportportal/HowToGetAnAccessTokenInReportPortal',
-            from: '/reportportal-configuration/HowToGetAnAccessTokenInReportPortal',
-          },
-          {
-            to: '/plugins/authorization/GitHub',
-            from: '/reportportal-configuration/authorization/GitHub',
-          },
-          {
-            to: '/plugins/authorization/LDAP',
-            from: '/reportportal-configuration/authorization/LDAP',
-          },
-          {
-            to: '/plugins/authorization/SamlProviders/Overview',
-            from: '/reportportal-configuration/authorization/SamlProviders/Overview',
-          },
-          {
-            to: '/configuration/IntegrationViaPlugin',
-            from: '/reportportal-configuration/IntegrationViaPlugin',
-          },
-          {
-            to: '/configuration/ProjectSettings',
-            from: ['/configuration/ProjectConfiguration', '/reportportal-configuration/ProjectConfiguration'],
-          },
-          {
-            to: '/admin-panel/AllProjectsPage',
-            from: ['/configuration/CreationOfProjectAndAddingUsers', '/reportportal-configuration/CreationOfProjectAndAddingUsers'],
-          },
-          {
-            to: '/installation-steps-advanced/ScalingReportPortalServices',
-            from: '/installation-steps-advanced/ScalingUpReportPortalAPIService',
-          },
-          {
-            to: '/plugins/authorization',
-            from: '/category/authorization',
-          },
-          {
-            to: '/plugins/authorization/SamlProviders',
-            from: '/category/saml-providers',
-          },
-          {
-            to: '/work-with-reports/TestCaseId#what-does-happen-if-you-do-not-report-items-with-test-case-id',
-            from: '/Test-case-ID>what-does-happen-if-you-do-not-report-items-with-test-case-id-',
-          },
-          {
-            to: '/work-with-reports/TestCaseId#what-is-it-test-case-id',
-            from: '/Test-case-ID>what-is-it-test-case-id',
-          },
-          {
-            to: '/dashboards-and-widgets/CumulativeTrendChart',
-            from: '/Cumulative-trend-chart',
-          },
-          {
-            to: '/log-data-in-reportportal/test-framework-integration/Java',
-            from: '/JVM-based-clients-configuration',
-          },
-          {
-            to: '/releases/Version24.2.0',
-            from: '/releases/Version24.2',
-          },
-          {
-            to: '/plugins/bug-tracking/AtlassianJiraServer',
-            from: ['/plugins/AtlassianJiraServer', '/plugins/JiraServer']
-          },
-          {
-            to: '/plugins/bug-tracking/AtlassianJiraCloud',
-            from: '/plugins/AtlassianJiraCloud',
-          },
-          {
-            to: '/plugins/bug-tracking/AzureDevOps',
-            from: ['/plugins/AzureDevOps', '/plugins/AzureDevOpsBTS']
-          },
-          {
-            to: '/plugins/bug-tracking/GitLab',
-            from: ['/plugins/GitLab', '/plugins/GitLabBTS']
-          },
-          {
-            to: '/plugins/bug-tracking/Monday',
-            from: '/plugins/Monday',
-          },
-          {
-            to: '/plugins/bug-tracking/Rally',
-            from: '/plugins/Rally',
-          },
-          {
-            to: '/plugins/notifications/EmailServer',
-            from: '/plugins/EmailServer',
-          },
-          {
-            to: '/plugins/notifications/Slack',
-            from: '/plugins/Slack',
-          },
-          {
-            to: '/plugins/notifications/Telegram',
-            from: '/plugins/Telegram',
-          },
-          {
-            to: '/plugins/import/JUnit',
-            from: '/plugins/JUnit',
-          },
-          {
-            to: '/plugins/import/RobotFramework',
-            from: '/plugins/RobotFramework',
-          },
-          {
-            to: '/installation-steps-advanced/file-storage-options/',
-            from: '/installation-steps-advanced/FileStorageOptions',
-          },
-          {
-            to: '/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning',
-            from: '/dashboards-and-widgets/DashboardCloning',
-          },
-          {
-            to: '/releases/Version25.1.6',
-            from: '/releases/Release25.1.6',
-          },
-          {
-            to: '/releases/Version25.1.5',
-            from: '/releases/Release25.1.5',
-          },
-          {
-            to: '/developers-guides/ReportPortalAPI',
-            from: '/api',
-          },
-          {
-            to: '/plugins/other/SauceLabs',
-            from: '/plugins/SauceLabs',
-          },
-          {
-            to: '/releases/Version26.0.2',
-            from: '/releases/Release26.0.2',
-          },
-          {
-            to: '/releases/Version26.0.1',
-            from: '/releases/Release26.0.1',
-          },
-        ],
+        id: 'releases',
+        path: 'releases',
+        routeBasePath: 'releases',
+        sidebarPath: require.resolve('./sidebarsReleases.js'),
+        remarkPlugins: [remarkMediaViewerDimensions],
       },
     ],
   ],

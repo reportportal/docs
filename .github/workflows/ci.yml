@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -39,5 +41,13 @@ jobs:
       - name: Run lint
         run: npm run lint
 
+      - name: Check release redirects are up to date
+        run: |
+          node scripts/gen-release-redirects.js
+          git diff --exit-code -- release-redirects.json
+
       - name: Build the source code
         run: npm run build
+
+      - name: Validate Schema.org JSON-LD
+        run: npm run validate:schema
