@@ -75,11 +75,21 @@ ReportPortal contains the SAML Plugin by default.
 You have to provide a URL for a SAML provider to deliver SAML data to the
 identity federation.
 
+For ReportPortal with Service API 6.0.0 and newer (Service Authorization merged into Service API), the ACS URL is:
+
+```url
+https://<host>/api/login/saml2/sso/{your-provider-name}
+```
+
 For ReportPortal version 25.1 with Service authorization 5.14.0 and newer, the ACS URL is:
 
 ```url
 https://<host>/uat/login/saml2/sso/{your-provider-name}
 ```
+
+:::important
+When upgrading to Service API 6.0.0 or newer, update the ACS URL in your identity provider settings from `/uat/...` to `/api/...`.
+:::
 
 You can find the `{your-provider-name}` in the ReportPortal SAML plugin configuration.
 The field is called **Provider name**.
@@ -101,7 +111,7 @@ https://<host>/uat/saml/sp/SSO/alias/report-portal-sp
 
 Set up identifier (aka Audience Restriction, aka Entity ID) for application as
 `report.portal.sp.id`.
-When you deploy the authorization service, you can specify your entity ID using
+When you deploy Service API (or the authorization service in versions before Service API 6.0.0), you can specify your entity ID using
 the environment variable `RP_AUTH_SAML_ENTITYID`.
 
 #### Custom attributes
@@ -174,8 +184,10 @@ Once you submit an integration with the "RP callback URL," the URL will be
 applied to all SAML integrations.
 
 ```url
-https://<host>/uat
+https://<host>/api
 ```
+
+For versions before Service API 6.0.0, use `https://<host>/uat`.
 
 ***First name*** - Attribute name from SAML metadata which contains an user first/given name.
 
@@ -193,7 +205,7 @@ https://<host>/uat
 </saml:Attribute>
 ```
 
-***Full name*** - Attribute name from SAML metadata which contains a full user name. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
+***Full name*** - Attribute name from SAML metadata which contains a full username. You can use either two separate attributes for first name and last name or a combined first and last name attribute. This solely depends on your SAML provider.
 
 ```xml
 <saml:Attribute Name="FullName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
