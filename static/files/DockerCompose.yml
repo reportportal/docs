@@ -105,7 +105,7 @@ services:
     restart: always
 
   analyzer:
-    image: reportportal/service-auto-analyzer:5.15.6
+    image: reportportal/service-auto-analyzer:6.0.0
     environment:
       LOGGING_LEVEL: info
       AMQP_EXCHANGE_NAME: analyzer-default
