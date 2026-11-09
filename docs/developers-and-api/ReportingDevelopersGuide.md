@@ -49,16 +49,20 @@ Also we need token to get access to API. There are two ways to retrieve it.
 
 You can find it in profile (`http://rp.com/ui/#user-profile`).
 
-#### Using UAT service
+#### Using API service
 
-First of all you need UI-token. You can get it sending POST request to `http://rp.com/uat/sso/oauth/token` with user credentials.
+First of all you need UI-token. You can get it sending POST request to `http://rp.com/api/sso/oauth/token` with user credentials.
+
+:::note
+In ReportPortal versions with a separate Service Authorization (before Service API 6.0.0), use `http://rp.com/uat/sso/oauth/token` instead.
+:::
 
 ```shell
 curl --header "Content-Type: application/x-www-form-urlencoded" \
      --request POST \
      --data "grant_type=password&username=default&password=1q2w3e" \
      --user "ui:uiman" \
-     http://rp.com/uat/sso/oauth/token
+     http://rp.com/api/sso/oauth/token
 ```
 
 Response will contain `access_token` field which is UI-token 

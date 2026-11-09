@@ -27,7 +27,7 @@ This integration has not been tested by our team.
 <MediaViewer src={require('./img/google-workspace-sso/GoogleWorkspaceSSO2.png')} alt="Download Metadata button" />
 
 8. Host the metadata somewhere so that it is accessible to ReportPortal via HTTPS.
-9. Enter the ACS URL: `https:///uat/login/saml2/sso/GoogleSSO`
+9. Enter the ACS URL: `https://<host>/api/login/saml2/sso/GoogleSSO` (for versions before Service API 6.0.0: `https://<host>/uat/login/saml2/sso/GoogleSSO`)
 
 :::note
 GoogleSSO will be used as the ReportPortal SAML Provider name.<br />

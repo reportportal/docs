@@ -26,12 +26,10 @@ description: Contribute to ReportPortal's Java backend with comprehensive develo
   - [Service Migrations](https://github.com/reportportal/migrations) - service for DB schema and data updates
 - [RabbitMQ](https://www.rabbitmq.com) - message broker for inter-service communication
 - [Minio](https://min.io) - binary data storage (alternative to plain filesystem storage)
-- [Service Index](https://github.com/reportportal/service-index) - gateway service with services metadata resolving mechanism
 - [Service UI](https://github.com/reportportal/service-ui) - ReportPortal web UI
 
-There are three Java repositories that are part of the whole RP deployment:
-- [Service API](https://github.com/reportportal/service-api) - REST API service as ReportPortal functionality provider
-- [Service Authorization](https://github.com/reportportal/service-authorization) - REST Authorization service for users authentication
+There are two Java repositories that are part of the whole RP deployment:
+- [Service API](https://github.com/reportportal/service-api) - REST API service as ReportPortal functionality provider. It also handles user authentication and authorization (previously a separate Service Authorization).
 - [Service Jobs](https://github.com/reportportal/service-jobs) - Service with jobs to process data in the back-ground
 
 ## Code conventions
@@ -102,7 +100,7 @@ version: '2.4'
 services:
 
   postgres:
-    image: postgres:12-alpine
+    image: postgres:18.6
     shm_size: '512m'
     environment:
       POSTGRES_USER: rpuser
@@ -110,9 +108,9 @@ services:
       POSTGRES_DB: reportportal
     volumes:
       # For unix host
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql
       # For windows host
-      # - postgres:/var/lib/postgresql/data
+      # - postgres:/var/lib/postgresql
     ports:
       - "5432:5432"
     command:
@@ -131,7 +129,7 @@ services:
     restart: always
   
   db-scripts:
-    image: reportportal/migrations:5.6.0
+    image: reportportal/migrations:5.15.6
     depends_on:
       postgres:
         condition: service_healthy
@@ -148,7 +146,7 @@ services:
 
 Maintaining an up-to-date database (DB) schema is an important aspect of efficient test automation reporting tools management.
 
-`image: reportportal/migrations:5.6.0` is the released version of the migrations service. However, if any changes were made in the develop branch after the release, the migrated DB schema may be outdated. To prevent this and ensure your DB data remains current, follow the steps outlined below:
+`image: reportportal/migrations:6.0.0` is the released version of the migrations service. However, if any changes were made in the develop branch after the release, the migrated DB schema may be outdated. To prevent this and ensure your DB data remains current, follow the steps outlined below:
 
 - clone/update [Migrations Repository](https://github.com/reportportal/migrations)
 - checkout `develop` branch
@@ -197,7 +195,7 @@ version: '2.4'
 services:
 
   postgres:
-    image: postgres:12-alpine
+    image: postgres:18.6
     shm_size: '512m'
     environment:
       POSTGRES_USER: rpuser
@@ -205,9 +203,9 @@ services:
       POSTGRES_DB: reportportal
     volumes:
       # For unix host
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql
       # For windows host
-      # - postgres:/var/lib/postgresql/data
+      # - postgres:/var/lib/postgresql
     ports:
       - "5432:5432"
     command:
@@ -226,7 +224,7 @@ services:
     restart: always
   
   db-scripts:
-    image: reportportal/migrations:5.6.0
+    image: reportportal/migrations:6.0.0
     depends_on:
       postgres:
         condition: service_healthy
@@ -263,17 +261,6 @@ volumes:
   minio:
 ```
 
-This file will be updated in the subsequent sections, but we can already initiate the development of our first service.
-
-### Service Authorization
-
-To start up Service Authorization, you should populate the marked values in the `application.yaml file`:
-
-<MediaViewer src={require('./img/backend/AuthDbConfig.png')} alt="Start Service Authorization" />
-
-<MediaViewer src={require('./img/backend/AuthBinaryConfig.png')} alt="Values you should fill" />
-
-(Optional) Adjust the `context-path` value from `/` to `/uat` if you plan to deploy Service UI locally (described in a later section).
 
 ### Service API
 
@@ -289,16 +276,24 @@ To add RabbitMQ to our deployment, the following should be incorporated into our
 
 ```yaml
   rabbitmq:
-    image: rabbitmq:3.7.16-management
+    image: rabbitmq:4.4.0-management
     ports:
       - "5672:5672"
       - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: "rabbitmq"
       RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    configs:
+      - source: rabbitmq_extra_config
+        target: /etc/rabbitmq/conf.d/99-extra.conf
+      - source: rabbitmq_enabled_plugins
+        target: /etc/rabbitmq/enabled_plugins
     healthcheck:
-      test: ["CMD", "rabbitmqctl", "status"]
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 30s
       retries: 5
+      start_period: 60s
     restart: always
 ```
 
@@ -306,7 +301,7 @@ We can now begin deploying the Service API without encountering any issues. Howe
 
 ```yaml
   opensearch:
-    image: opensearchproject/opensearch:2.11.0
+    image: opensearchproject/opensearch:3.9.0
     container_name: opensearch
     environment:
       discovery.type: single-node
@@ -328,7 +323,7 @@ We can now begin deploying the Service API without encountering any issues. Howe
     restart: always
 
   analyzer: 
-    image: reportportal/service-auto-analyzer:5.6.0
+    image: reportportal/service-auto-analyzer:6.0.0
     environment:
       LOGGING_LEVEL: info
       AMQP_EXCHANGE_NAME: analyzer-default
@@ -357,7 +352,7 @@ To start the Service API, populate the marked values in your `application.yaml` 
 
 <MediaViewer src={require('./img/backend/RabbitmqConfig.png')} alt="Rabbitmq Configuration" />
 
-Alternatively, you may need to change the `context-path` value from `/` to `/api` should you plan to deploy Service UI locally (detailed instructions will be provided at a later stage).
+Service API serves both the REST API and the authorization endpoints on port `8585`. Since Service Authorization was merged into Service API, the authorization endpoints are available under `/api` (for example, `/api/sso/oauth/token`) instead of `/uat`.
 
 ### Service Jobs
 
@@ -383,9 +378,11 @@ Before:
 ```javascript
 proxy: [
         {
-          context: ['/composite', '/api/', '/uat/'],
+          context: ['/api/', '/ui/info', '/info'],
           target: process.env.PROXY_PATH,
+          changeOrigin: true,
           bypass(req) {
+            // eslint-disable-next-line no-console
             console.log(`proxy url: ${req.url}`);
           },
         },
@@ -396,21 +393,15 @@ After:
 ```javascript
 proxy: [
         {
-          context: ['/composite', '/api/'],
+          context: ['/api/'],
           target: 'http://localhost:8585',
-          bypass(req) {
-            console.log(`proxy url: ${req.url}`);
-          },
-        },
-        {
-          context: ['/uat/'],
-          target: 'http://localhost:9999',
-          bypass(req) {
-            console.log(`proxy url: ${req.url}`);
-          },
+          pathRewrite: { '^/api': '' },
+          changeOrigin: true,
         },
       ]
 ```
+
+All `/api/` requests, including the authorization endpoints (`/api/sso/...`) that were previously served under `/uat/`, are sent to the locally running Service API. The `/api` prefix is stripped the same way the Traefik gateway does in the Docker deployment.
 
 - If NodeJs is not already installed, install it (version 20 is recommended).
 - From the root folder(service-ui), run Service UI using the following commands:
@@ -428,36 +419,9 @@ This will allow you to view your test automation dashboard and interact with the
 
 ### Introduction to dependencies
 
-In addition to common dependencies such as `spring-...`, our Java services also have ReportPortal libraries distributed across different repositories. Here is a list of these dependencies:
-- [Commons DAO](https://github.com/reportportal/commons-dao) - Data layer dependency with domain model configuration
-- [Commons Model](https://github.com/reportportal/commons-model) - REST models dependency
-- [Commons](https://github.com/reportportal/commons) - Some common utils for multiple usage purposes
-- [Commons Rules](https://github.com/reportportal/commons-rules) - Business rules validation dependency
-- [Plugin API](https://github.com/reportportal/plugin-api) - ReportPortal plugin API
-- [Commons BOM](https://github.com/reportportal/commons-bom) - POM config for releases
+In addition to common dependencies such as `spring-...`, earlier versions of the Java services relied on ReportPortal libraries distributed across separate repositories (Commons DAO, Commons Model, Commons, Commons Rules, Plugin API, and Commons BOM). These libraries are now merged into the [Service API](https://github.com/reportportal/service-api) codebase and are no longer consumed as remote dependencies, so the separate repositories are not used for development anymore.
 
-### Updates in dependencies
-
-Let's assume you found a bug when trying to retrieve a user from the DB. The logic is invoked within Service API, but the buggy code is in the Commons DAO dependency. To apply a fix and validate its effectiveness, follow these steps:
-
-- Clone or update the `Commons DAO` repository.
-- Checkout the `develop` branch.
-- Implement the necessary changes.
-- Create a branch according to naming policy.
-- Push the changes to the remote.
-- Create a pull request (PR) to the `develop` branch. Now, you can see your branch and the `commit hash` on the GitHub page:
-
-<MediaViewer src={require('./img/backend/CommitHash.png')} alt="Commit hash" />
-
-- Go to the service where your changes need to be applied (Service API in our instance).
-- Copy the `commit hash` and replace the existing one in the `build.gradle` of the required service (Service API in our instance):
-
-<MediaViewer src={require('./img/backend/BuildGradleUpdated.png')} alt="Build gradle updated" />
-
-- After rebuilding the project using `Gradle`, the dependency will be resolved and downloaded using the [Jitpack tool](https://jitpack.io).
-- Generate a branch according to the naming policy.
-- Push the changes to the remote.
-- Create a PR to the `develop` branch.
+As a result, changes to the data layer, REST models, common utilities, business rules validation, or the plugin API are made directly in the Service API repository, in the same branch and pull request as the rest of your change. There is no need to publish a dependency and update its version or commit hash in `build.gradle`.
 
 ## Summary notes
 
@@ -468,9 +432,6 @@ The simplified development workflow should look as follows:
 - Always [maintain the latest schema and data](#how-to-keep-db-data-up-to-date) in your local DB instance.
 - Checkout the `develop` branch in the required repository.
 - Implement changes.
-- If changes in dependencies are necessary:
-   - Go to the dependency repository, apply changes, and create a branch and PR according to conventions.
-   - Using the `commit hash`, update the dependency in the `build.gradle`.
 - Create a branch according to the name policy.
 - Push to the remote.
 - Create a PR following the name policy.

@@ -128,7 +128,7 @@ chmod 600 acme.json
 ```
 services:
 gateway:
-image: traefik:v2.11.32
+image: traefik:v2.11.60
 restart: unless-stopped
 ports:
 - "80:80"
