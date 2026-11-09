@@ -38,7 +38,7 @@ and click the `Create` button.
 
 6. Fill in the following fields:
   - Tenant URL: `https://{your_scim_server_host}?aadOptscim062020`
-  - Secret Token: `your_admin_api_key`
+  - Secret Token: `your_rp_admin_api_key`
 
 :::note
 `?aadOptscim062020` is a special parameter that allows you to use the a [SCIM compatible protocol](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior).
@@ -52,7 +52,7 @@ and click the `Create` button.
 
 ## Set up Attribute mapping
 
-1. Go to the `Attribute mapping` section and click `Provision Microsoft Entra ID Users`.
+1. Go to the `Attribute mapping` section and select `Users` tab.
 
 <MediaViewer src={require('./img/scimAzure/8.png')} alt="Attribute mapping" />
 
@@ -88,13 +88,11 @@ For proper synchronization of the admin role, you need to create a new `App-role
 
 6. Click `Apply`.
 
-7. Return to the configured enterprise application and go to the `Provisioning` -> `Attribute mapping` -> `Provision Microsoft Entra ID Users` section.
+7. Return to the configured enterprise application and go to the `Provisioning` -> `Attribute mapping` -> `Users` tab.
+
+8. Select the `Edit customappsso user attributes` in the `Advanced options` dropdown.
 
 <MediaViewer src={require('./img/scimAzure/13.png')} alt="Attribute mapping" />
-
-8. Select the `Show advanced options` checkbox at the bottom and click the `Edit attribute list for customappsso` link.
-
-<MediaViewer src={require('./img/scimAzure/14.png')} alt="Advanced options" />
 
 9. You will see the `Edit Attribute List`. At the bottom of the list, fill in the empty fields with the name `roles` and type `String`.
 
@@ -102,7 +100,7 @@ For proper synchronization of the admin role, you need to create a new `App-role
 
 10. Click `Save`.
 
-11. Return to the `Provision Microsoft Entra ID Users` and click `Add New Mapping`.
+11. Return to the `Attribute mapping` -> `Users` tab and click `Add attribute mapping`.
 
 <MediaViewer src={require('./img/scimAzure/16.png')} alt="Add new mapping" />
 
