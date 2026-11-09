@@ -163,6 +163,10 @@ async function getMobitruRecordingId(driver) {
 ```
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-mocha/mobitru-selenium/tests/google.spec.js#L47)
 
+**3. Run the tests**
+
+Execute your test project as usual (CLI, IDE, etc.). Tests run on Mobitru's real devices and browsers.
+
 ### Playwright
 
 **1. Integrate your tests with Mobitru.**
@@ -235,21 +239,65 @@ const mobitru_test = test.extend<{ page: Page }>({
 
    [Full example](https://github.com/reportportal/examples-js/blob/main/example-playwright/tests/mobitru/feature.spec.ts#L81)
 
+**3. Run the tests**
+
+Execute your test project as usual (CLI, IDE, etc.). Tests run on Mobitru's real devices and browsers.
+
 ### Mobile
+
+The [examples](https://github.com/reportportal/examples-js/tree/main/example-webdriverio/mobitru-mobile-web) below are based on WebdriverIO.
 
 **1. Integrate your tests with Mobitru.**
 
-   Full example
+```javascript
+exports.config = {
+  runner: 'local',
+  protocol: 'https',
+  hostname: MOBITRU_HOST,
+  port: 443,
+  path: '/wd/hub',
+  headers: {
+    Authorization: `Basic ${Buffer.from(`${billingUnit}:${accessToken}`).toString('base64')}`,
+  },
 
+  specs: ['./tests/**/*.spec.js'],
+  // keep a single session to stay within the Mobitru device slot limit
+  maxInstances: 1,
+  capabilities: [
+    {
+      platformName: 'iOS',
+      'appium:automationName': 'XCUITest',
+      'appium:browserName': 'safari',
+      ...(workspaceId && { 'mobitru:wid': workspaceId }),
+    },
+  ],
+};
+```
 **2. Add the recording attribute.**
 
-   Full example
+```javascript
+async function withMobitruRecording(testFn) {
+  const udid = getDeviceUdid();
 
-For additional details, refer to Mobitru documentation for [desktop browser automation](https://mobitru.com/docs/desktop-browser-automation-overview/) and [mobile automation](https://mobitru.com/docs/automation/).
+  await callMobitruApi('POST', `/device/${udid}/recording`);
+  try {
+    await testFn();
+  } finally {
+    const { recordingId } = await callMobitruApi('DELETE', `/device/${udid}/recording`);
 
-**3. Run the tests (common step)**
+    ReportingApi.addAttributes([
+      ...getDeviceAttributes(),
+      { key: RECORDING_ATTRIBUTE_KEY, value: recordingId },
+    ]);
+  }
+}
+```
+
+**3. Run the tests**
 
 Execute your test project as usual (CLI, IDE, etc.). Tests run on Mobitru's real devices and browsers.
+
+For additional details, refer to Mobitru documentation for [desktop browser automation](https://mobitru.com/docs/desktop-browser-automation-overview/) and [mobile automation](https://mobitru.com/docs/automation/).
 
 ## View Mobitru videos in ReportPortal
 
