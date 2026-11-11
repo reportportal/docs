@@ -113,11 +113,6 @@
           "description": "Deploy ReportPortal on Kubernetes using Helm to streamline test reporting and analysis with scalable, containerized infrastructure."
         },
         {
-          "title": "Deploy via Google Cloud Marketplace",
-          "url": "https://reportportal.io/docs/installation-steps/DeployViaGoogleCloudMarketplace/",
-          "description": "Deploy ReportPortal quickly via Google Cloud Marketplace with one-click installation for scalable test automation reporting tools."
-        },
-        {
           "title": "Deploy with Minikube",
           "url": "https://reportportal.io/docs/installation-steps/DeployWithMinikube/",
           "description": "Deploy ReportPortal on Minikube for local Kubernetes testing and development."
