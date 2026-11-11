@@ -31,7 +31,6 @@
 - [Deploy with Docker](https://reportportal.io/docs/installation-steps/DeployWithDocker/): Make your test automation reporting more portable. Reduce the risk of configuration issues with your test reporting tool using Docker.
 - [Deploy without Docker](https://reportportal.io/docs/installation-steps/DeployWithoutDocker/): Deploy ReportPortal without Docker for traditional server installations and custom test automation reporting tools configurations.
 - [Deploy with Kubernetes](https://reportportal.io/docs/installation-steps/DeployWithKubernetes/): Deploy ReportPortal on Kubernetes using Helm to streamline test reporting and analysis with scalable, containerized infrastructure.
-- [Deploy via Google Cloud Marketplace](https://reportportal.io/docs/installation-steps/DeployViaGoogleCloudMarketplace/): Deploy ReportPortal quickly via Google Cloud Marketplace with one-click installation for scalable test automation reporting tools.
 - [Deploy with Minikube](https://reportportal.io/docs/installation-steps/DeployWithMinikube/): Deploy ReportPortal on Minikube for local Kubernetes testing and development.
 - [Deploy on Ubuntu OS](https://reportportal.io/docs/installation-steps/DeployOnUbuntuOS/): Deploy ReportPortal on Ubuntu with Docker and Docker Compose. Follow step-by-step instructions to launch your test reporting environment efficiently.
 
