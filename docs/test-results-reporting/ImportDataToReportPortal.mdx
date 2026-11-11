@@ -69,20 +69,18 @@ You can only interrupt the import in UI when files are being downloaded into the
 Admin, Manager, and user with edit permissions can import data to ReportPortal.
 :::
 
-The details about import via API you can find on the ReportPortal menu at the bottom: API -> Plugin Controller -> Send report to the specified plugin for importing
+The details about import via API you can find on the ReportPortal menu at the bottom: **Help & Service Versions -> OpenAPI -> Plugin Controller**
 
 <MediaViewer src={require('./img/ImportViaAPI.png')} alt="Import via API in our qa automation dashboard" />
 
 You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
 
-The endpoint ```POST /v1/plugin/{projectName}/{pluginName}/import``` allows importing a launch into the specified project using an XML or ZIP file.
-
-**Permissions:** Admin, PM, Member, Customer, Operator.
+The endpoint ```POST /v1/plugin/{projectKey}/{pluginName}/import``` allows importing a launch into the specified project using an XML or ZIP file.
 
 Here's an example of a request to the endpoint:
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/organization1.project1/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@"file_path.zip";type=application/x-zip-compressed' \
@@ -105,19 +103,25 @@ curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/i
 
 **pluginName** – mandatory field to specify import plugin
 
-**projectName** – mandatory field to specify project name
+**projectKey** – mandatory field to specify project name
 
 **file** – mandatory area to upload file for import
 
 **launchImportRq** is application/json part of the request where you can specify needed custom information about launch.
 
-**attributes** – array of attributes
+**startTime** – if launch start time needed, or will be used first time in imported report
 
-**description** – custom launch description
+**launchUuid** - unique identifier (UUID) assigned to a specific test execution
 
 **name** – custom launch name
 
-**startTime** – if launch start time needed, or will be used first time in imported report
+**description** – custom launch description
+
+**attributes** – array of attributes
+
+
+
+
 
 <MediaViewer src={require('./img/parameters.png')} alt="Query parameters for API import" />
 
@@ -138,7 +142,7 @@ When set to "false", test items with SKIPPED status will be processed and marked
 **Scenario 1** (Test items with SKIPPED status have "To Investigate" status):
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/organization1.project1/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@Launch.zip;type=application/x-zip-compressed' \
@@ -152,7 +156,7 @@ curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/i
 **Scenario 2** (Test items with SKIPPED status don't have "To Investigate" status)
 
 ```yaml
-curl -L -X POST 'http://localhost:8080/api/v1/plugin/superadmin_personal/junit/import' \
+curl -L -X POST 'http://localhost:8080/api/v1/plugin/organization1.project1/junit/import' \
 -H 'Content-Type: multipart/form-data' \
 -H 'Authorization: Bearer {token}' \
 -F 'file=@Launch.zip;type=application/x-zip-compressed' \

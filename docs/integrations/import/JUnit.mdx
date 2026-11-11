@@ -55,7 +55,7 @@ If the XML file is not in the JUnit structure, the system will interrupt the pro
 JUnit plugin should be enabled.
 :::
 
-The endpoint ```POST /v1/plugin/{projectName}/junit/import``` allows importing a launch into the specified project using an XML or ZIP file.
+The endpoint ```POST /v1/plugin/{projectKey}/junit/import``` allows importing a launch into the specified project using an XML or ZIP file.
 
 You can configure parameters (name, description, attributes) for the imported launch by specifying these values in your API request.
 
@@ -86,17 +86,17 @@ There is the ability to read attributes and descriptions for Suite and Test leve
 JUnit plugin should be enabled.
 :::
 
-The endpoint ```POST /v1/plugin/{projectName}/{plugin}/import``` allows importing test results in XML or ZIP format into existing launch in any status. Meanwhile, import into a finished launch does not change the launch finish time.
+The endpoint ```POST /v1/plugin/{projectKey}/{pluginName}/import``` allows importing test results in XML or ZIP format into existing launch in any status. Meanwhile, import into a finished launch does not change the launch finish time.
 
 :::note
 When importing JUnit results into an existing launch through the plugin API, imported test items cannot have a start time earlier than the start time of that launch.
 :::
 
-The template for **launchImportRq** object for your API request can be found in the **API section -> Plugin : Plugins API collection ->** ```POST /v1/plugin/{projectName}/{pluginName}/import```
+The template for **launchImportRq** object for your API request can be found in the **Help & Service Versions -> OpenAPI -> Plugin Controller** -> ```POST /v1/plugin/{projectKey}/{pluginName}/import```
 
-<MediaViewer src={require('./img/junit/JUnitExistingLaunch1.png')} alt="Open API section from the user profile menu in ReportPortal sidebar" />
+<MediaViewer src={require('./img/junit/OpenAPIplugin.png')} alt="Open API section from the user profile menu in ReportPortal sidebar" />
 
-<MediaViewer src={require('./img/junit/JUnitExistingLaunch2.png')} alt="JSON template in the Plugins API import endpoint" />
+<MediaViewer src={require('./img/junit/import-parameters.png')} alt="JSON template in the Plugins API import endpoint" />
 
 To import test results to an existing launch, you should specify **launchUuid** parameter in your API request.
 
