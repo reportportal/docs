@@ -43,6 +43,8 @@ One set of instructions and one expected result for the whole test case (best fo
 
 <MediaViewer src={require('./img/CreateTestCaseText.png')} alt="Create Test Case with Text template" />
 
+<MediaViewer src="https://youtu.be/UfdH80sy6Sc" alt="Test case with Text based template" type="video" />
+
 ***Steps based***
 
 Instructions and an expected result for each step. Steps are numbered, reorderable, and can carry their own attachments. 
@@ -79,6 +81,8 @@ Each tag is stored as an attribute with the key "tag". For example, the tag "smo
 
 **Expected result** – The expected system behavior or output after executing the test steps. It is used to determine whether the test passes or fails.
 
+<MediaViewer src="https://youtu.be/KNpgf9XOS70" alt="Test case with Steps based template" type="video" />
+
 ### How to create tags
 
 To create tag:
@@ -97,6 +101,8 @@ To create tag:
 ## Import test cases
 
 Admin, Manager or user with edit permissions can import test cases in CSV format.
+
+<MediaViewer src="https://youtu.be/wVgJcMI69ro" alt="How to import test cases to our AI-powered test management & analytics dashboard" type="video" />
 
 Possible options:
 

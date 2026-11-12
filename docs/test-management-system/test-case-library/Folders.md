@@ -18,6 +18,8 @@ Any user with project access can search folders.
 
 ## Create folder
 
+<MediaViewer src="https://youtu.be/coK_341saLw" alt="How to create folders in the test case library" type="video" />
+
 To create folder:
 
 1. Log in as Admin, Manager or user with edit permissions.

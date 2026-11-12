@@ -9,6 +9,8 @@ The Test Case Library is a centralized repository used to create, organize, main
 
 "Test Case Library" page can be accessible using sidebar on project level.
 
+<MediaViewer src="https://youtu.be/NqXTkr2KfvE" alt="Test case library in our test management system" type="video" />
+
 How to get started with Test Case Library?
 
 1. Create folder.

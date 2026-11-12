@@ -28,6 +28,8 @@ The Milestones page lets you:
 * add individual or multiple test cases to manual launches
 * remove individual or multiple test cases from test plans
 
+<MediaViewer src="https://youtu.be/QbeSib7sihw" alt="Milestones page to organize manual testing" type="video" />
+
 How to get started with Milestones? Just create milestone.
 
 <MediaViewer src={require('./img/MilestonesEmpty.png')} alt="Empty state of Milestones page" />

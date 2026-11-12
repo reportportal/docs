@@ -7,6 +7,8 @@ description: Manage manual testing in a structured way — from creating reusabl
 
 The Test Management System (TMS) helps teams manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
 
+Explore our [TMS tutorial series](https://www.youtube.com/playlist?list=PLMIJlgqzrygI) to learn how to organize test cases, plan testing activities, and manage manual test execution in ReportPortal.
+
 :::note
 The Test Management System is available at the project level and can be accessed from the project sidebar.
 :::

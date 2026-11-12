@@ -10,6 +10,8 @@ A test plan defines the scope of testing within a specific milestone by grouping
 
 Test Plans enable teams to plan and manage execution scope and review test coverage.
 
+<MediaViewer src="https://youtu.be/ODFNBnbZdUI" alt="Test coverage in ReportPortal" type="video" />
+
 ## Create test plan
 
 To create test plan:

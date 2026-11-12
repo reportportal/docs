@@ -10,6 +10,8 @@ Test cases in a test plan define the scope of a milestone. They can be searched,
 
 ## Add tests from library to test plan
 
+<MediaViewer src="https://youtu.be/Svk7vxdtDnI" alt="Add tests to test plan" type="video" />
+
 To add tests from library to test plan:
 
 1. Log in as Admin, Manager or user with edit permissions.
@@ -68,6 +70,8 @@ To search test cases in the test plan:
 <MediaViewer src={require('./img/SearchTestCases.png')} alt="Search test cases in a test plan" />
 
 ## Add test cases to manual launch
+
+<MediaViewer src="https://youtu.be/kafyKipD0tc" alt="Add tests to manual launch" type="video" />
 
 To add test case to launch:
 

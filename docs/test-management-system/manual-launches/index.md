@@ -20,6 +20,8 @@ The "Manual launches" page lets you:
 
 <MediaViewer src={require('./img/ManualLaunches.png')} alt="Manual Launches in the sidebar" />
 
+<MediaViewer src="https://youtu.be/n-_Q1Oyw_vg" alt="Manual launches in our AI-powered test management & analytics dashboard" type="video" />
+
 **How to get started with manual launches?**
 
 Create a new manual launch from the [Test Case Library](../test-case-library/BulkOperations.md#bulk-add-test-cases-to-launch) or from a [Test Plan](../milestones/TestCases.md#add-test-cases-to-manual-launch) (which is part of a Milestone).

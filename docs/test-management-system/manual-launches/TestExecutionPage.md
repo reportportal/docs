@@ -8,6 +8,8 @@ description: Review a selected test execution, change its status, add comments, 
 
 The Test Execution page provides detailed information and controls for a selected test execution within a manual launch. It allows users to get familiar with the test case scenario, review and update the execution status, add or clear execution comments, and post or link issues to the test execution when marking it as failed.
 
+<MediaViewer src="https://youtu.be/0jGhOxEMh-8" alt="Test execution page" type="video" />
+
 ## View selected test execution page
 
 To view selected test execution page:
@@ -99,6 +101,8 @@ To clear execution comment:
 <MediaViewer src={require('./img/ClearExecutionComment.png')} alt="Clear Comment button on the test execution page" />
 
 ## Post/link issue for test execution
+
+<MediaViewer src="https://youtu.be/Z37RzuO6oEE" alt="Post and link issue for manual test execution" type="video" />
 
 To post or link issue for test execution:
 
