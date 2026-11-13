@@ -1,0 +1,27 @@
+---
+sidebar_position: 7
+sidebar_label: Manual launch attributes
+description: Describe testing context — such as environment, release, and execution type — to filter, group, and review manual test runs faster.
+---
+
+# Manual launch attributes
+
+Manual launch attributes let you add context to a manual launch so the team can understand under which conditions testing was performed. They describe the launch as a whole — for example, which environment, release, or platform was covered — rather than individual test cases inside it.
+
+Attributes are useful when several manual launches run in parallel or across different setups. With clear labels, you can quickly separate smoke runs from full regression, or QA results from Staging, without relying only on the launch name.
+
+On the [Manual Launches](../test-management-system/manual-launches/index.md) page, you can filter launches by attributes to narrow the list to a specific release, sprint, team, or execution type. If the launch context changes after creation, update attributes through **Edit launch**.
+
+Use short, consistent keys and values so the same filters work across projects and over time. Avoid overcrowding a launch with too many labels — keep only those that help with search, reporting, and day-to-day coordination.
+
+***Example use cases***
+
+* **Environment** – Environment: QA, Environment: Staging, Environment: Production
+* **Release** – Release: 2.5.0
+* **Sprint** – Sprint: Sprint 12
+* **Platform** – Platform: Web, Platform: Android, Platform: iOS
+* **Browser** – Browser: Chrome, Browser: Firefox
+* **Execution type** – Regression, Smoke, Sanity
+* **Team or component** – Team: Payments, Component: Authentication
+
+Well-chosen attributes make manual launches easier to find, compare, and discuss across QA, development, and release planning.

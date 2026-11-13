@@ -1,0 +1,11 @@
+---
+sidebar_label: How to run your tests
+description: Learn how to run your tests with ReportPortal test automation reporting tools integration in any CI/CD pipeline.
+---
+
+# How to run your tests
+
+Automated tests can be executed in any CI tool you are using on the project (Jenkins, Bamboo, Azure DevOps, GitHub Actions, CircleCI, TeamCity, GitLab, Travis CI, Codeship, Buddy, GoCD, Wercker and more).
+It doesn't require any settings from ReportPortal.
+
+So that the test results get into the ReportPortal, you need to perform [test framework integration](../integrations/test-frameworks/index.mdx) or [implement own integration](../integrations/ImplementOwnIntegration.md).

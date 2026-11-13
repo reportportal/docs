@@ -1,0 +1,58 @@
+---
+sidebar_position: 1
+sidebar_label: Sauce Labs
+description: Integrate Sauce Labs with ReportPortal to view test execution videos directly in your logs, enhancing test analysis and streamlining your QA workflow.
+---
+
+# Sauce Labs
+
+To install the Sauce Labs plugin, see [Upload plugin](../ManagePlugins.mdx#upload-plugin) section.
+
+## Add the Sauce Labs integration
+
+Configure the integration with Sauce Labs to watch a video of test executions in the our centralized test automation tool.
+
+:::info
+Admin, Manager, and user with edit permissions can create/edit/delete Sauce Labs integration.<br />
+User with view permissions can only view the list of available integrations.
+:::
+
+## Global Sauce Labs integration
+
+To configure Sauce Labs for the whole instance:
+
+1. Log in to ReportPortal as Admin.
+2. Navigate to Instance plugins page.
+3. Click on "Sauce Labs" panel.
+4. Click "Add integration" button.
+5. Fill and confirm the authorization form.
+6. Click "Create" button.
+
+  ```javascript 
+  `User name`: <host_name_of_email_server>
+  `Access token`: <your access token>
+  `Data center`: <Europe, USA>
+  ```
+## Project Sauce Labs integration
+
+If any project needs different Sauce Labs configuration, you can add a project configuration. This means that when a new global integration is added to our test automation results dashboard, it will no longer be applied to this project.
+
+For that,
+
+1. Log in to ReportPortal as Admin, Manager, or user with edit permissions.
+2. Go to the Project settings -> Integrations tab.
+3. Click on "Sauce Labs" panel.
+4. Click on "Add Project integration" button.
+5. Fill and confirm the authorization form.
+
+<MediaViewer src={require('./img/SauceLabsProject.png')} alt="Sauce Labs project integration" />
+
+## How to use the Sauce Labs integration
+
+Before using this feature, you should report test results to ReportPortal with the attribute: `SLID: XXXXXXXX`.
+
+Where: SLID = `Sauce Labs ID` and XXXXXXXX = `# of job in Sauce Labs`
+
+The `SLID: XXXXXXXX` attribute links the execution in ReportPortal and a job in Sauce Labs. If a test item has attribute `SLID: XXXXXXXX`, and there is a global or project integration with Sauce Labs, a user will be able to view a video from Sauce Labs for the appropriate job in ReportPortal on a log view.
+
+<MediaViewer src="https://youtu.be/RQAxGz6koh0" alt="How to use Sauce Labs Integration with our centralized test automation tool" type="video" />

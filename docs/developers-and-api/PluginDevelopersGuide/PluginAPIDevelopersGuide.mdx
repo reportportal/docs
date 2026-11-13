@@ -1,0 +1,629 @@
+---
+sidebar_label: Plugin API development guide
+description: Develop custom plugins for ReportPortal using APIs and microservices architecture for enhanced test automation reporting tools functionality.
+---
+
+# Plugin API development guide
+
+## Introduction
+
+ReportPortal as a microservice application had services that integrate with external systems like JIRA or RALLY. These are problems of this
+approach:
+
+- every service will run as a separate application consuming additional amount of resources for environment;
+- user may not need all the integrations at the moment but need some (or a new one) later, so he should modify deployment configuration
+  every time;
+- every service modification requires re-deployment.
+
+To solve these problems and support dynamic integrations ReportPortal implements plugin system on top
+of [PF4J](https://github.com/pf4j/pf4j).
+
+:::note
+Documentation for the UI plugins can be found [here](./PluginUIDevelopersGuide.md)
+:::
+## How does it work
+
+<MediaViewer src={require('../img/plugin/InstallPlugin.png')} alt="Install Plugin" />
+
+## Creating your first plugin
+
+Result of the following steps can be found here - [Plugin template](https://github.com/reportportal/plugin-template).
+This is fully configured and ready-to-use plugin. Use the [Use this template](https://github.com/new?template_name=plugin-template&template_owner=reportportal)
+button to create your own repository from it.
+
+### Prerequisites
+
+- JDK 25
+- Gradle (the template ships with the Gradle wrapper, so `./gradlew` can be used instead)
+- Node.js 20 (downloaded automatically by the Gradle build to assemble the plugin UI)
+
+### Project structure
+
+```text
+plugin-template
+├── build.gradle                 # build configuration
+├── gradle.properties            # plugin id, version and manifest properties
+├── project-properties.gradle    # common project properties
+├── settings.gradle
+├── src/main/java/com/epam/reportportal/extension/template
+│   ├── TemplatePlugin.java              # PF4J plugin class
+│   ├── TemplatePluginExtension.java     # plugin entry point (@Extension)
+│   ├── command                          # plugin commands
+│   │   ├── bts                          # BTS commands examples
+│   │   └── test/TestConnectionCommand.java
+│   ├── event                            # plugin event listeners and handlers
+│   ├── info                             # PluginInfoProvider
+│   └── model
+├── src/main/resources
+│   ├── binary-data.properties           # files available to the client side
+│   └── schema/*.sql                     # optional SQL migration scripts
+└── ui                                   # plugin UI (see the UI development guide)
+```
+
+### Base plugin configuration
+
+Plugin properties are configured in the `gradle.properties` file. They are put into the plugin jar manifest during the build:
+
+```properties
+version=1.0.0
+description=EPAM Report Portal. Template plugin.
+pluginId=template
+pluginClass=com.epam.reportportal.extension.template.TemplatePlugin
+pluginName=Template Plugin
+provider=Developer name
+license=Apache 2.0
+documentation=https://reportportal.io/docs/plugins/
+isIntegrationsAllowed=true
+isEmbedded=true
+isMultiple=true
+mainBinaryData=main.js
+metadataBinaryData=metadata.json
+yourAdditionalMetadata=yourMetadataValue
+yourAdditionalProperty=yourPropertyValue
+```
+
+| Property                | Description                                                                                                 |
+|-------------------------|-------------------------------------------------------------------------------------------------------------|
+| `pluginId`              | Unique plugin identifier. Should be a keyword without special symbols. It is also used as the plugin name in API calls. |
+| `pluginClass`           | Fully qualified name of the class that extends `org.pf4j.Plugin`.                                           |
+| `pluginName`            | Human-readable plugin name.                                                                                 |
+| `isIntegrationsAllowed` | Whether integrations can be created for the plugin (shows or hides the **Add integration** block on the plugin page). |
+| `isEmbedded`            | Whether integration settings are rendered by the plugin UI.                                                 |
+| `isMultiple`            | Whether multiple integrations of this plugin are allowed.                                                   |
+| `mainBinaryData`, `metadataBinaryData` | Names of the plugin UI files.                                                                |
+
+Additional manifest entries can be added with the `Plugin-Metadata-*` and `Plugin-Property-*` prefixes (see `yourAdditionalMetadata`
+and `yourAdditionalProperty` examples).
+
+:::note
+Versions in branches other than the _main_ branch are not release versions and must be updated following the pattern:
+`NEXT_RELEASE_VERSION-SNAPSHOT-NUMBER_OF_BUILD` (example: `6.0.1-SNAPSHOT-1`).
+:::
+
+The `build.gradle` file looks as follows:
+
+```groovy
+plugins {
+    id "io.spring.dependency-management" version "1.1.7"
+    id 'java'
+    id 'jacoco'
+    id 'com.gradleup.shadow' version '9.6.1'
+    id "com.github.node-gradle.node" version "7.1.0"
+    id("io.freefair.lombok") version "9.8.2"
+}
+
+node {
+    version = '20.11.0'
+    npmVersion = '10.2.4'
+    download = true
+    workDir = layout.buildDirectory.dir('ui').get().asFile
+    npmWorkDir = file("${project.rootDir}/ui")
+    nodeProjectDir = file("${project.rootDir}/ui")
+}
+
+npm_run_build {
+    inputs.files fileTree("ui/src")
+    inputs.file 'ui/package.json'
+    inputs.file 'ui/package-lock.json'
+    outputs.dir 'ui/build'
+}
+
+apply from: 'project-properties.gradle'
+
+repositories {
+    mavenCentral()
+
+    if (!releaseMode) {
+        maven {
+            url = 'https://jitpack.io'
+        }
+    }
+    maven { url  "https://build.shibboleth.net/nexus/content/repositories/releases/" }
+}
+
+dependencies {
+    if (releaseMode) {
+        implementation 'com.epam.reportportal:service-api'
+        annotationProcessor 'com.epam.reportportal:service-api'
+    } else {
+        implementation 'com.github.reportportal:service-api:6.0.0'
+        annotationProcessor 'com.github.reportportal:service-api:6.0.0'
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+```
+
+The plugin depends on `service-api` directly. It provides the extension points (`ReportPortalExtensionPoint`, `ExtensionCommand`) and
+grants access to the core ReportPortal classes: repositories, entities, events, etc. In non-release mode `service-api` is resolved from
+[JitPack](https://jitpack.io) by commit hash, so the plugin can be built against any `service-api` revision.
+
+<br/>
+
+### Create extension
+
+Firstly we create our plugin representation (we also can override `start()` and `stop()` methods) that will be managed by `pf4j` plugin
+manager. The class name should match the `pluginClass` property.
+
+```java
+package com.epam.reportportal.extension.template;
+
+import org.pf4j.Plugin;
+import org.pf4j.PluginWrapper;
+
+public class TemplatePlugin extends Plugin {
+
+  public TemplatePlugin(PluginWrapper wrapper) {
+    super(wrapper);
+  }
+}
+```
+
+Then we create our plugin entry point - a class annotated with `@Extension` that implements `ReportPortalExtensionPoint`:
+
+```java
+@Extension
+public class TemplatePluginExtension implements ReportPortalExtensionPoint {
+
+  private static final String DEFAULT_PLUGIN_ID = "template";
+  public final String pluginId;
+
+  private final Supplier<Map<String, ExtensionCommand<?>>> commonExtensionCommandMapping =
+    new MemoizingSupplier<>(this::getCommonExtensionCommands);
+
+  private final Supplier<Map<String, ExtensionCommand<?>>> integrationExtensionCommandMapping =
+    new MemoizingSupplier<>(this::getIntegrationExtensionCommands);
+
+  public TemplatePluginExtension() {
+    this.pluginId = readPluginIdFromManifest(this.getClass(), DEFAULT_PLUGIN_ID);
+  }
+
+  @Override
+  public Map<String, ?> getPluginParams() {
+    Map<String, Object> params = new HashMap<>();
+    params.put(ALLOWED_COMMANDS, new ArrayList<>(integrationExtensionCommandMapping.get().keySet()));
+    params.put(COMMON_COMMANDS, new ArrayList<>(commonExtensionCommandMapping.get().keySet()));
+    return params;
+  }
+
+  @Override
+  @Deprecated(forRemoval = true)
+  public CommonPluginCommand<?> getCommonCommand(String commandName) {
+    return null;
+  }
+
+  @Override
+  @Deprecated(forRemoval = true)
+  public PluginCommand<?> getIntegrationCommand(String commandName) {
+    return null;
+  }
+
+  @Override
+  public Map<String, ExtensionCommand<?>> getCommonExtensionCommands() {
+    return new HashMap<>();
+  }
+
+  @Override
+  public Map<String, ExtensionCommand<?>> getIntegrationExtensionCommands() {
+    List<ExtensionCommand<?>> commands = new ArrayList<>();
+    commands.add(new TestConnectionCommand(projectRepository,
+      organizationUserRepository,
+      organizationRepository,
+      projectUserRepository,
+      objectMapper));
+    return commands.stream().collect(Collectors.toMap(ExtensionCommand::getName, it -> it));
+  }
+}
+```
+
+- `getPluginParams()` returns lists of supported plugin commands to the client side: `allowedCommands` (integration commands) and
+  `commonCommands` (commands that don't require an integration).
+- `getIntegrationExtensionCommands()` returns the commands executed in the scope of an integration.
+- `getCommonExtensionCommands()` returns the commands that can be executed without an integration.
+- `getCommonCommand()` and `getIntegrationCommand()` belong to the legacy `PluginCommand` API. They are deprecated and should return `null`.
+- The plugin id is read from the jar manifest using `PluginManifestUtils.readPluginIdFromManifest()`, so it is not hardcoded.
+
+<br/>
+
+### Plugin commands
+
+Every command implements the `ExtensionCommand` interface:
+
+```java
+public interface ExtensionCommand<T> extends NamedPluginCommand {
+
+  // executes a command that does not require an integration (common command)
+  default T executeCommand(PluginCommandRQ pluginCommandRq) {
+    throw new UnsupportedOperationException("Command does not support execution without an integration");
+  }
+
+  // executes a command in the scope of the integration
+  default T executeCommand(Integration integration, PluginCommandRQ pluginCommandRq) {
+    throw new UnsupportedOperationException("Command does not support execution with an integration");
+  }
+}
+```
+
+The command name is returned by the `getName()` method. `PluginCommandRQ` contains the command `context` (`org_id`, `project_id`,
+`integration_id`) and arbitrary `arguments`.
+
+It's recommended to extend `AbstractExtensionCommand`. It validates the user's permissions before the command is invoked. A command declares
+the minimum required roles (`minUserRole`, `minOrgRole`, `minProjectRole`) and implements the `invokeCommand()` method.
+Administrators bypass all checks.
+
+```java
+public class TestConnectionCommand extends AbstractExtensionCommand<Boolean> {
+
+  public TestConnectionCommand(ProjectRepository projectRepository,
+      OrganizationUserRepository organizationUserRepository,
+      OrganizationRepository organizationRepository,
+      ProjectUserRepository projectUserRepository) {
+    super(projectRepository, organizationUserRepository, organizationRepository, projectUserRepository);
+
+    // Set required permission levels
+    this.minProjectRole = ProjectRole.VIEWER;
+    this.minOrgRole = OrganizationRole.MEMBER;
+    this.minUserRole = UserRole.USER;
+  }
+
+  @Override
+  public String getName() {
+    return "testConnection";
+  }
+
+  @Override
+  protected Boolean invokeCommand(Integration integration, PluginCommandRQ pluginCommandRq) {
+    return true;
+  }
+}
+```
+
+Command `testConnection` is mandatory and should either always return `true` or execute logic of connection test with external system.
+
+Override `invokeCommand(PluginCommandRQ)` for common commands and `invokeCommand(Integration, PluginCommandRQ)` for integration commands.
+The template also contains examples of BTS commands (`getIssue`, `getIssueFields`, `getIssueTypes`, `postTicket`) in the `command/bts` package.
+
+All commands are executed through the core application endpoint:
+
+```http
+POST /api/plugins/{pluginName}/commands/{commandName}
+Content-Type: application/json
+
+{
+  "context": {
+    "org_id": 1,
+    "project_id": 2,
+    "integration_id": 3
+  },
+  "arguments": {
+    "example_param": "example_value"
+  }
+}
+```
+
+The scope is derived from the `context`: if `project_id` is present the scope is project, if `org_id` is present - organization, otherwise - global.
+For integration commands, if `integration_id` is not provided, the first enabled integration of the plugin in the corresponding scope is used.
+
+<br/>
+
+### Autowire dependencies
+
+Being loaded in runtime plugin extension can be handled as `Spring bean`. That's why we can autowire dependencies just as we do in core
+application:
+
+```java
+@Extension
+public class TemplatePluginExtension implements ReportPortalExtensionPoint, DisposableBean {
+  ...
+  @Autowired
+  private ApplicationContext applicationContext;
+  @Autowired
+  private IntegrationTypeRepository integrationTypeRepository;
+  @Autowired
+  private IntegrationRepository integrationRepository;
+  @Autowired
+  private ProjectRepository projectRepository;
+  @Autowired
+  private DataSource dataSource;
+
+  @Autowired
+  @Lazy
+  private ObjectMapper objectMapper;
+  ...
+}
+```
+
+<br/>
+
+### Binary data
+
+We can store in `resources` folder files that can be loaded from the client side later. The `binary-data.properties` file contains
+*key-value* mapping that represents files allowed to be loaded from the client side:
+
+```properties
+main=remoteEntity.js
+metadata=metadata.json
+icon=plugin-icon.svg
+```
+
+`PluginInfoProviderImpl` reads this file and stores the mapping in the `binaryData` section of the integration type details,
+together with the plugin description and metadata.
+
+<br/>
+
+### Database migrations
+
+If the plugin requires its own database tables, put SQL scripts to the `src/main/resources/schema` folder. The template extension executes
+them on startup:
+
+```java
+@PostConstruct
+public void initializePlugin() throws IOException {
+  initListeners();
+  executeMigrationScripts();
+}
+
+private void executeMigrationScripts() throws IOException {
+  try {
+    PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(this.getClass().getClassLoader());
+    Resource[] resources = resolver.getResources("classpath:resources/schema/*.sql");
+    if (resources.length == 0) {
+      return;
+    }
+    new ResourceDatabasePopulator(resources).execute(dataSource);
+  } catch (Exception e) {
+    throw new IOException("Failed to execute migration scripts", e);
+  }
+}
+```
+
+Scripts are executed on every plugin start, so they should be idempotent (e.g. `CREATE TABLE IF NOT EXISTS`). Remove this call if the
+plugin does not require database schema initialization.
+
+<br/>
+
+### Sensitive integration parameters
+
+The following integration parameter names are automatically encrypted by service-api before persisting:
+
+- `password`
+- `oauthAccessKey`
+- `apiToken`
+- `apiKey`
+- `accessToken`
+- `managerPassword`
+- `clientSecret`
+- `passwordAttribute`
+
+If your plugin reads any of these params from `Integration.getParams()`, decrypt the value using the injected `BasicTextEncryptor` before use:
+
+```java
+@Autowired
+private BasicTextEncryptor encryptor;
+
+String raw = integration.getParams().getParams().get("password");
+String plain = encryptor.decrypt(raw);
+```
+
+<br/>
+
+### Event listeners
+
+We can affect logic executed in core application from the plugin by handling predefined set of events. The template handles:
+
+- `PluginUploadedEvent` (`PluginLoadedEventListener` + `PluginLoadedEventHandler`) - can be used to create a default integration when
+  the plugin is uploaded;
+- `PluginDeletedEvent` (`PluginDeletedEventListener` + `PluginDeletedEventHandler`) - can be used to clean up plugin data when the plugin is deleted.
+
+Listeners check that the event belongs to the current plugin:
+
+```java
+public class PluginLoadedEventListener implements ApplicationListener<PluginUploadedEvent> {
+
+  private final String pluginId;
+  private final PluginLoadedEventHandler pluginLoadedEventHandler;
+
+  public PluginLoadedEventListener(String pluginId, PluginLoadedEventHandler pluginLoadedEventHandler) {
+    this.pluginId = pluginId;
+    this.pluginLoadedEventHandler = pluginLoadedEventHandler;
+  }
+
+  @Override
+  public void onApplicationEvent(PluginUploadedEvent event) {
+    if (pluginId.equals(event.getPluginActivityResource().getName())) {
+      pluginLoadedEventHandler.handle(event);
+    }
+  }
+}
+```
+
+To add a new listener we should use `ApplicationContext` after plugin was loaded - so we do it in the method marked by `@PostConstruct`.
+
+Also, we should remove listeners when we unload plugin - so we implement `DisposableBean` interface and provide this logic in the `destroy()` method.
+
+That's how our extension looks now:
+
+```java
+@Extension
+@Slf4j
+public class TemplatePluginExtension implements ReportPortalExtensionPoint, DisposableBean {
+
+  private static final String DEFAULT_PLUGIN_ID = "template";
+  public final String pluginId;
+
+  private final Supplier<Map<String, ExtensionCommand<?>>> commonExtensionCommandMapping =
+    new MemoizingSupplier<>(this::getCommonExtensionCommands);
+
+  private final Supplier<Map<String, ExtensionCommand<?>>> integrationExtensionCommandMapping =
+    new MemoizingSupplier<>(this::getIntegrationExtensionCommands);
+
+  private final Supplier<ApplicationListener<PluginUploadedEvent>> pluginLoadedListener;
+  private final Supplier<ApplicationListener<PluginDeletedEvent>> pluginDeletedListener;
+
+  @Autowired
+  private ApplicationContext applicationContext;
+  @Autowired
+  private IntegrationTypeRepository integrationTypeRepository;
+  @Autowired
+  private IntegrationRepository integrationRepository;
+  @Autowired
+  private DataSource dataSource;
+  ...
+
+  public TemplatePluginExtension() {
+    this.pluginId = readPluginIdFromManifest(this.getClass(), DEFAULT_PLUGIN_ID);
+    pluginLoadedListener = new MemoizingSupplier<>(() -> new PluginLoadedEventListener(
+      pluginId, new PluginLoadedEventHandler(integrationTypeRepository, integrationRepository)
+    ));
+    pluginDeletedListener = new MemoizingSupplier<>(() -> new PluginDeletedEventListener(
+      pluginId, new PluginDeletedEventHandler(integrationTypeRepository, integrationRepository)
+    ));
+  }
+
+  @PostConstruct
+  public void initializePlugin() throws IOException {
+    initListeners();
+    executeMigrationScripts();
+  }
+
+  private void initListeners() {
+    ApplicationEventMulticaster applicationEventMulticaster = applicationContext.getBean(
+      AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME,
+      ApplicationEventMulticaster.class
+    );
+    applicationEventMulticaster.addApplicationListener(pluginLoadedListener.get());
+    applicationEventMulticaster.addApplicationListener(pluginDeletedListener.get());
+  }
+
+  @Override
+  public void destroy() {
+    removeListeners();
+  }
+
+  private void removeListeners() {
+    ApplicationEventMulticaster applicationEventMulticaster = applicationContext.getBean(
+      AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME,
+      ApplicationEventMulticaster.class
+    );
+    applicationEventMulticaster.removeApplicationListener(pluginLoadedListener.get());
+    applicationEventMulticaster.removeApplicationListener(pluginDeletedListener.get());
+  }
+
+  @Override
+  public Map<String, ?> getPluginParams() {
+    Map<String, Object> params = new HashMap<>();
+    params.put(ALLOWED_COMMANDS, new ArrayList<>(integrationExtensionCommandMapping.get().keySet()));
+    params.put(COMMON_COMMANDS, new ArrayList<>(commonExtensionCommandMapping.get().keySet()));
+    return params;
+  }
+
+  ...
+}
+```
+
+If your plugin does not need to handle events, you can remove the event listeners and the `DisposableBean` implementation from the extension class.
+
+<br/>
+
+### Assemble plugin
+
+The plugin jar manifest is configured in `build.gradle` with properties from `gradle.properties`:
+
+```groovy
+jar {
+    from("src/main/resources") {
+        into("/resources")
+    }
+    from("ui/build") {
+        into("/resources")
+    }
+    manifest {
+        attributes(
+                "Class-Path": configurations.compileClasspath.collect { it.getName() }.join(' '),
+                "Plugin-Class": "${pluginClass}",
+                "Plugin-Id": "${pluginId}",
+                "Plugin-Name": "${pluginName}",
+                "Plugin-Version": "${project.version}",
+                "Plugin-Provider": "${provider}",
+                "Plugin-License": "${license}",
+                "Plugin-Description": "${project.description}",
+                "Plugin-Documentation": "${documentation}",
+                "Plugin-Metadata-isIntegrationsAllowed": "${isIntegrationsAllowed}",
+                "Plugin-Metadata-embedded": "${isEmbedded}",
+                "Plugin-Metadata-isMultiple": "${isMultiple}",
+                "Plugin-Binary-Data-main": "${mainBinaryData}",
+                "Plugin-Binary-Data-metadata": "${metadataBinaryData}",
+                "Plugin-Metadata-yourAdditionalMetadata": "${yourAdditionalMetadata}",
+                "Plugin-Property-yourAdditionalProperty": "${yourAdditionalProperty}",
+        )
+    }
+}
+
+shadowJar {
+    from("src/main/resources") {
+        into("/resources")
+    }
+    from("ui/build") {
+        into("/resources")
+    }
+    configurations = [project.configurations.compileClasspath]
+    zip64 = true
+    minimize()
+    dependencies {
+        // example:
+        // include(dependency("org.apache.tomcat:tomcat-annotations-api:.*"))
+    }
+}
+
+compileJava.dependsOn npm_run_build
+```
+
+The `ui` folder is built with the `npm_run_build` task before Java compilation, and the build result is packed into the `resources` folder
+of the plugin jar together with the `src/main/resources` contents.
+
+Our plugin can be built either as:
+  - simple jar (without external dependencies) and use dependencies from core application;
+  - shadow jar (with external dependencies) and still use dependencies from core application. Additional dependencies should be
+    included explicitly in the `shadowJar.dependencies` section.
+
+Now we can just execute `./gradlew build` and get plugin binaries in the `build/libs` folder that can be uploaded to the application.
+
+### Deploy plugin
+
+1. Navigate to the **Administrate** section in your ReportPortal instance.
+2. Go to the **Plugins** tab.
+3. Click on the **Upload** button and select the `.jar` file generated in the previous step.
+4. After the plugin is uploaded, it will appear in the list of plugins.
+
+## Lazy initialization
+
+All plugin components that relies on `@Autowired` dependencies should be loaded lazily using `MemoizingSupplier` (`com.epam.reportportal.extension.util.MemoizingSupplier`) or another lazy-load mechanism.
+This is the restriction of plugin installation flow:
+:::note
+
+We create extension object using constructor and only then we autowire dependencies. If we don't use lazy initialization - all objects created in the constructor will be created with `NULL` objects that were marked as `@Autowired`
+:::

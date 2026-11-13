@@ -1,17 +1,17 @@
 ---
 title: Configuration
-description: Configure projects, users, and retention in ReportPortal. Step-by-step guides for access, roles, and policies to manage your test report dashboard effectively.
+description: Understand multi-level configuration in ReportPortal for better control over system, organizations, and project settings.
 ---
 
 # Configuration
 
-The **Configuration** section is designed specifically for Project Managers, offering essential tools and information to help configure project settings and manage users effectively. In this section, you will find detailed guides that cover every aspect of setting up and customizing project settings to fit the unique needs of your team and organization. Whether you’re just starting a new project or refining an existing one, these resources will help ensure that your project runs smoothly and efficiently.
+This section describes how configuration in ReportPortal is organized across three levels: instance level, organization level, and project level. It is intended for administrators and managers who need to manage settings and control how the system behaves.
 
-**A key feature of this section** is its focus on **user management**. These guides will show you how to invite user on a project, assign roles to team members, and control access to various functionalities within the platform. This ensures that collaboration is smooth, secure, and aligned with the responsibilities of each team member.
+Here you will find information on how configuration is structured and how different levels relate to each other. Each level is responsible for its own scope of settings, allowing you to apply changes either globally or more locally, depending on your needs.
 
-Additionally, this section covers the **Launches retention policy** – an important aspect of managing your project’s data. In ReportPortal, the retention policy determines how long regular launches, and their related data (such as logs and attachments) will be stored before they are automatically deleted. Understanding and configuring this policy is critical for optimizing storage usage and ensuring that old, unnecessary data doesn’t clutter your system.
+The section helps you understand where to configure specific options, how to keep settings consistent, and how to manage them across multiple projects and teams. This approach makes it easier to maintain order, avoid conflicts, and adapt the system to your workflow.
 
-Thanks to the Configuration section, Project Managers can ensure efficient project setup, effective user management, and optimal data retention practices.
+Overall, it provides a clear view of how configuration works in ReportPortal and helps you use our test reporting tool in a more organized and efficient way.
 
 import DocCardList from '@theme/DocCardList';
 
