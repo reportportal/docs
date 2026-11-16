@@ -12,7 +12,7 @@ last_update:
 
 ## 1. Premium updates for subscribers:
 
-**[Test Executions](/test-executions/):**
+**[Test Executions](/26.0.7/test-executions):**
 
 * **Latest executions only** — New toggle in All Filters: show every execution, or only the latest execution per test name. Export reflects the toggle; when the mode is on, the UI warns about view limitations (statistics, sorting, pagination, export).
 
@@ -26,7 +26,7 @@ last_update:
 
 ## 2. What's new:
 
-**[Component Health Check widget](/dashboards-and-widgets/ComponentHealthCheck/): Owner grouping**  
+**[Component Health Check widget](/26.0.7/dashboards-and-widgets/ComponentHealthCheck): Owner grouping**  
 The Component Health Check widget can now use **Owner** as a grouping level alongside attribute keys. You can build hierarchies such as Owner → platform → feature, or mix Owner at any level. Drill-down to test items respects the Owner grouping.
 
 ## 3. Bugs fixed:

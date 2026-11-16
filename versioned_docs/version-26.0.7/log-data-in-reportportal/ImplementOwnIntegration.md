@@ -8,7 +8,7 @@ description:  Learn how to implement custom integration with ReportPortal using 
 
 Willing to build your own integration with ReportPortal?
 
-You can find a detailed description of how report results to ReportPortal in our [developers` guide](/developers-guides/ReportingDevelopersGuide).
+You can find a detailed description of how report results to ReportPortal in our [developers` guide](../developers-guides/ReportingDevelopersGuide.md).
 
 Based on this information you can create your integration with a test framework.
 

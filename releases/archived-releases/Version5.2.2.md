@@ -8,7 +8,7 @@ description: ReportPortal v5.2.2 archived release notes with bug fixes.
 
 ## Improvements
 
-Added [a possibility to choose a base for a History table via a docker-compose](/work-with-reports/HistoryOfLaunches#historical-trend-of-executions)
+Added [a possibility to choose a base for a History table via a docker-compose](/26.0.7/work-with-reports/HistoryOfLaunches#historical-trend-of-executions)
 
 ## Bugs
 [#997](https://github.com/reportportal/reportportal/issues/997) History doesn't compatible after data migration from v4 to v5

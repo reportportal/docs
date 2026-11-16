@@ -7,7 +7,7 @@ description: ReportPortal v25.0.4 release notes with bug fixes and enhanced test
 # Version 25.0.4
 
 ## 1. New features:
-**[Dashboard cloning feature](/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning):**<br />
+**[Dashboard cloning feature](/26.0.7/dashboards-and-widgets/WorkWithDashboards#dashboard-cloning):**<br />
 easily replicate dashboards across projects with the new Dashboard Cloning feature, saving time and effort when managing multiple projects. Clone via UI and API.
 
 ## 2. Released services:

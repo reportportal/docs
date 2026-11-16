@@ -17,17 +17,17 @@ In this version we have:
 * Improved performance x3
 
 ## Installation details
-- [with Docker](/installation-steps/DeployWithDocker)
-- [with Kubernetes Helm chart](/installation-steps/DeployWithKubernetes) #362
-- Manual set up [without Docker](/installation-steps/DeployWithoutDocker)
+- [with Docker](/26.0.7/installation-steps/DeployWithDocker)
+- [with Kubernetes Helm chart](/26.0.7/installation-steps/DeployWithKubernetes) #362
+- Manual set up [without Docker](/26.0.7/installation-steps/DeployWithoutDocker)
 - [**v4 -> v5 data migration instruction**](https://github.com/reportportal/reportportal/wiki/Migration-to-ReportPortal-v.5)
 ## Plugins
-Jira, Rally, SauceLabs integration now will work through the plugin functionality. You need to download [latest JAR package](/plugins/ManagePlugins#upload-plugin) from our Bintray repository, and drag-n-drop it ReportPortal in Administrative section -> Plugins.
+Jira, Rally, SauceLabs integration now will work through the plugin functionality. You need to download [latest JAR package](/26.0.7/plugins/ManagePlugins#upload-plugin) from our Bintray repository, and drag-n-drop it ReportPortal in Administrative section -> Plugins.
 
 Available plugins to download:
-- [Jira](/plugins/bug-tracking/AtlassianJiraServer)
-- [Rally](/plugins/bug-tracking/Rally)
-- [SauceLabs](/plugins/other/SauceLabs)
+- [Jira](/26.0.7/plugins/bug-tracking/AtlassianJiraServer)
+- [Rally](/26.0.7/plugins/bug-tracking/Rally)
+- [SauceLabs](/26.0.7/plugins/other/SauceLabs)
 ## Brand new features
 -	[#275](https://github.com/reportportal/reportportal/issues/275) [#639](https://github.com/reportportal/reportportal/issues/639)  Nested steps
 -	[#348](https://github.com/reportportal/reportportal/issues/348) Integration with SauceLabs

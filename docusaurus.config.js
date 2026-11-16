@@ -212,11 +212,11 @@ const config = {
               },
               {
                 label: 'ReportPortal Tutorial',
-                to: '/tutorial/',
+                to: '/getting-started/Tutorial',
               },
               {
                 label: 'Installation steps',
-                to: '/installation-steps/',
+                to: '/installation-and-deployment/installation-steps/',
               },
               {
                 label: 'RP Configuration',
@@ -224,7 +224,7 @@ const config = {
               },
               {
                 label: 'Developers Guide',
-                to: '/developers-guides/',
+                to: '/developers-and-api/',
               },
             ],
           },

@@ -13,7 +13,7 @@ description: ReportPortal v4.2.0 archived release notes with new features.
 * [#417](https://github.com/reportportal/reportportal/issues/417) Added a possibility to remove/generate ElasticSearch index (ML education);
 * [#381](https://github.com/reportportal/reportportal/issues/381) Auto-Analysis: AA for the current launch  (analogue of our previous feature "Match issue);
 * [#382](https://github.com/reportportal/reportportal/issues/382) Auto-Analysis: Possibility to chose which items should be auto-analysed in the launch ( With "To investigate", Already auto-analysed, analysed manually) ;
-  *Documentation about auto-analysis is [here](/analysis/AutoAnalysisOfLaunches)*
+  *Documentation about auto-analysis is [here](/26.0.7/analysis/AutoAnalysisOfLaunches)*
 * [#366](https://github.com/reportportal/reportportal/issues/366) Bulk operation for Unlink issues in BTS;
 
 ## Improvements
