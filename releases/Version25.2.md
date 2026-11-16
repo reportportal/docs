@@ -7,10 +7,10 @@ sidebar_label: Version 25.2
 
 ## 1. What's Changed:
 
-**1. [Premium feature](/terms-and-conditions/PremiumFeatures) (Subscribers-only): [Test Executions page](/features/TestExecutions)**<br />
+**1. [Premium feature](/26.0.7/terms-and-conditions/PremiumFeatures) (Subscribers-only): [Test Executions page](/26.0.7/features/TestExecutions)**<br />
 View and manage individual test cases across multiple launches in one flat list — no need to drill through launch hierarchy. Includes launch-level filters, test-level search & rich filters and customizable columns.
 
-**2. [Improved Log experience](/configuration/ProjectSettings#log-types)**<br />
+**2. [Improved Log experience](/26.0.7/configuration/ProjectSettings#log-types)**<br />
 The Log view is now more powerful and customizable:
 - Added per-user appearance settings (full-width layout, colorized backgrounds based on Log Types, disable log collapsing, adjustable log size, toggle pagination / infinite scroll).
 - Navigation is faster with error log jumping (Prev/Next) and search + “jump to” highlighting across pages.

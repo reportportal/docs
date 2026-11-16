@@ -19,8 +19,8 @@ last_update:
 ### New ReportPortal Prime Features
 
 Added support for ReportPortal Prime features in the Helm chart:
-* **Test Executions** — Flat searchable test-execution indexing via `prime.testExecutions.*` parameters. [Learn more about Test Executions →](/test-executions/)
-* **SCIM Bridge** — Automated user provisioning via `prime.scim.*` parameters. [Learn more about SCIM Bridge →](/external-integrations/UserProvisioning/Scim/)
+* **Test Executions** — Flat searchable test-execution indexing via `prime.testExecutions.*` parameters. [Learn more about Test Executions →](/26.0.7/test-executions)
+* **SCIM Bridge** — Automated user provisioning via `prime.scim.*` parameters. [Learn more about SCIM Bridge →](/26.0.7/external-integrations/UserProvisioning/Scim)
 
 Both features are controlled by the `prime.enabled` master switch and require private container images. See the [Prime Features Guide](https://github.com/reportportal/kubernetes/wiki/ReportPortal-Prime-Features) for configuration details.
 

@@ -9,20 +9,20 @@ last_update:
 
 ## 1.What's new:
 
-**1. [Lock dashboards feature](/dashboards-and-widgets/WorkWithDashboards#lock-dashboard)**<br />
+**1. [Lock dashboards feature](/26.0.7/dashboards-and-widgets/WorkWithDashboards#lock-dashboard)**<br />
 Admins and Project Managers can now lock dashboards to prevent unwanted changes and keep important views consistent for the whole team. When a dashboard is locked, Members, Customers, and Operators can still view data, refresh widgets, and work with filters, but cannot edit or delete dashboards or widgets. Admins and Project Managers retain full control regardless of lock status.
 
-**2. [Increased description filter limit](/work-with-reports/FilteringLaunches)**<br />
+**2. [Increased description filter limit](/26.0.7/work-with-reports/FilteringLaunches)**<br />
 Increased the Description filter limit to 256 characters across Launches, Suites, Tests, and Steps. This allows users to enter more detailed search criteria, making it easier to find relevant items with greater precision.
 
-**3. [Export report with nested step attachments](/work-with-reports/OperationsUnderLaunches#export-with-attachments)**<br />
+**3. [Export report with nested step attachments](/26.0.7/work-with-reports/OperationsUnderLaunches#export-with-attachments)**<br />
 Improved Launch Report export to include attachments from nested steps. This applies to all export formats when "Include Attachments" is enabled.
 
 ## 2.Premium updates for subscribers:
-**1. [Premium feature (Subscribers-only): Test Executions page — statistics](/test-executions/#launches-reported)**<br />
+**1. [Premium feature (Subscribers-only): Test Executions page — statistics](/26.0.7/test-executions#launches-reported)**<br />
 Added execution statistics to the Test Executions page to help users quickly understand the status distribution of the current search results without reviewing individual items one by one. Statistics update automatically whenever filters change, so the summary always reflects the latest search results.
 
-**2. [Premium feature (Subscribers-only): Test Executions page — saved filters](/test-executions/#saved-filters)**<br />
+**2. [Premium feature (Subscribers-only): Test Executions page — saved filters](/26.0.7/test-executions#saved-filters)**<br />
 Added Saved Filters to the Test Executions page so users can save frequently used filter combinations and switch between them faster without rebuilding search criteria each time. Saved filters are stored per user and per project, so each user can keep a personalized set of filters without affecting others.
 
 ## 3. Released services and plugins:

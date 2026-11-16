@@ -7,10 +7,10 @@ description: ReportPortal v25.0.6 release notes with bug fixes and enhanced stab
 # Version 25.0.6
 
 ## 1. New features:
-- **[Test case search widget](/dashboards-and-widgets/TestCaseSearch):**<br />
+- **[Test case search widget](/26.0.7/dashboards-and-widgets/TestCaseSearch):**<br />
   New widget enables searching test cases by name or attribute across all launches in a project.
 
-- **[Inactivity timeout](/admin-panel/ServerSettings/#inactivity-timeout):**<br />
+- **[Inactivity timeout](/26.0.7/admin-panel/ServerSettings#inactivity-timeout):**<br />
   Admins can now set user session timeouts under Server Settings. Users will be logged out after inactivity timeout.
 
 ## 2. Bugs fixed:

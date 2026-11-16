@@ -16,7 +16,7 @@ We have upgraded PostgreSQL to version 17.
 
 
 ## 1. What's changed:
-**1. [Launch export improvements](/work-with-reports/OperationsUnderLaunches#export-launches-reports):**<br />
+**1. [Launch export improvements](/26.0.7/work-with-reports/OperationsUnderLaunches#export-launches-reports):**<br />
 We've improved the launch report export functionality with new attachment support, better user experience, and enhanced file formatting. These changes make it easier to share comprehensive test reports with stakeholders while providing better visibility into the export process.
 
 - **Export reports with attachments:**<br />
@@ -32,7 +32,7 @@ We've improved the launch report export functionality with new attachment suppor
 - **Continuous layout:**<br />
   Removed page breaks from XLS and HTML export templates for better readability
 
-**2. [Important Launches feature management](/admin-panel/ServerSettings#features):**<br />
+**2. [Important Launches feature management](/26.0.7/admin-panel/ServerSettings#features):**<br />
 Administrators can now control the Important Launches functionality at the server level through a new toggle in Server Settings. When disabled, all launches are converted to regular launches and the 'Mark as Important' option is removed from launch menus across all projects.
 
 **3. RobotFramework import improvements:**

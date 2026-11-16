@@ -11,7 +11,7 @@ sidebar_label: Version 25.1.9
 Redesigned XLS export template with removed merged cells and proper numeric data formatting. Numeric values are now exported as true numeric cell types, enabling proper calculations, sorting, and filtering operations while maintaining visual readability.
 
 **2. New Tab Navigation:**<br />
-Test case links in the ["Most Failed Test-Cases (TOP-50)" widget](/dashboards-and-widgets/MostFailedTestCasesTableTop50) now open in new browser tabs with visual arrow indicators on hover, providing seamless navigation without losing your current context.
+Test case links in the ["Most Failed Test-Cases (TOP-50)" widget](/26.0.7/dashboards-and-widgets/MostFailedTestCasesTableTop50) now open in new browser tabs with visual arrow indicators on hover, providing seamless navigation without losing your current context.
 
 **3. History Table Improvement - Cell Preview Options:**<br />
 Introduced new monitoring capabilities in the History table with customizable cell preview options. Users can now:
@@ -20,7 +20,7 @@ Introduced new monitoring capabilities in the History table with customizable ce
 - Set threshold-based highlighting to identify items that fall outside acceptable parameters
 - Make data-driven decisions based on historical patterns and trend analysis
 
-Learn more about [cell preview improvements](/work-with-reports/HistoryOfLaunches#cell-preview-options).
+Learn more about [cell preview improvements](/26.0.7/work-with-reports/HistoryOfLaunches#cell-preview-options).
 
 **4. Amazon Application Load Balancer (ALB) Support**<br />
 We are excited to announce that our [Helm chart](https://github.com/reportportal/kubernetes) now supports deployment with Amazon Application Load Balancer (ALB). This enhancement makes it easier to integrate ReportPortal with AWS environments using ALB. For setup instructions, check out our [ALB deployment guide](https://github.com/reportportal/kubernetes/blob/master/docs/alb-deployment-guide.md)
