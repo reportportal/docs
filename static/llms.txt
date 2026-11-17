@@ -179,9 +179,9 @@
 - [OkHttp3](https://reportportal.io/docs/integrations/test-frameworks/Java/Loggers/OkHttp3/): Integrate OkHttp3 with ReportPortal to automatically log HTTP requests and responses, including images and binary data, for enhanced test analysis.
 - [Apache HttpComponents](https://reportportal.io/docs/integrations/test-frameworks/Java/Loggers/ApacheHttpComponents/): Integrate Apache HttpComponents with ReportPortal for comprehensive test automation reporting tools and HTTP request/response logging.
 
-## Test Management System
+## Test Management (Beta)
 
-- [Test Management System](https://reportportal.io/docs/test-management-system/): Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
+- [Test Management (Beta)](https://reportportal.io/docs/test-management-system/): Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
 - [Manual launches](https://reportportal.io/docs/test-management-system/manual-launches/): Organize and manage manual testing activities with Manual Launches. Learn how to search, filter, view, edit, and delete launches.
 - [Milestones](https://reportportal.io/docs/test-management-system/milestones/): Plan testing around releases, sprints, and features in the our qa metrics dashboard.
 - [Test Case Library](https://reportportal.io/docs/test-management-system/test-case-library/): Organize and manage test cases with Test Case Library, then track execution insights with the our test results dashboard.
