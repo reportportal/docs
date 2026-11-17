@@ -1,17 +1,17 @@
 ---
-title: Test Management System
+title: Test Management (Beta)
 description: Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
 ---
 
-# Test Management System
+# Test Management (Beta)
 
-The Test Management System (TMS) helps teams manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.
-
-Explore our [TMS tutorial series](https://www.youtube.com/playlist?list=PLMIJlgqzrygI) to learn how to organize test cases, plan testing activities, and manage manual test execution in ReportPortal.
+The Test Management System (TMS) helps teams manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results. Explore our [TMS tutorial series](https://www.youtube.com/playlist?list=PLMIJlgqzrygI) to learn how to organize test cases, plan testing activities, and manage manual test execution in ReportPortal.
 
 :::note
-The Test Management System is available at the project level and can be accessed from the project sidebar.
+The Test Management System (TMS) is currently in **beta**. Its functionality may change as we continue to improve the experience.
 :::
+
+TMS is available at the **project level** and can be accessed from the project sidebar.
 
 <MediaViewer src={require('./TestCycleFlowchart.png')} alt="Continuous improvement cycle" />
 
