@@ -842,12 +842,12 @@
       ]
     },
     {
-      "title": "Test Management System",
+      "title": "Test Management (Beta)",
       "url": "https://reportportal.io/docs/test-management-system/",
       "description": "Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results.",
       "pages": [
         {
-          "title": "Test Management System",
+          "title": "Test Management (Beta)",
           "url": "https://reportportal.io/docs/test-management-system/",
           "description": "Manage manual testing in a structured way — from creating reusable test cases to executing tests and analyzing results."
         },
