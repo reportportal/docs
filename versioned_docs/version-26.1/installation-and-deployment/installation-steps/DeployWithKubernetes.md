@@ -26,7 +26,7 @@ helm repo update reportportal
 Install the chart:
 
 ```bash
-helm install my-release --set uat.superadminInitPasswd.password="MyPassword" reportportal/reportportal
+helm install my-release --set serviceapi.auth.superadminInitPasswd.password="MyPassword" reportportal/reportportal
 ```
 :::note
 Upon the initial installation and the first login of the SuperAdmin, they will be required to create a unique initial password, distinct from the default password provided in the ReportPortal installation documentation. Failure to do so will result in the Auth service not starting.
@@ -82,7 +82,7 @@ To install the chart directly from local sources, use:
 
 
 ```bash
-helm install my-release --set uat.superadminInitPasswd.password="MyPassword" ./reportportal
+helm install my-release --set serviceapi.auth.superadminInitPasswd.password="MyPassword" ./reportportal
 ```
 
 ### Install specific version
@@ -93,7 +93,7 @@ To search for available versions of a chart, use:
 helm search repo reportportal --versions
 ```
 
-To install a specific version of a chart, use:
+To install a specific version of a chart (lower than 26.1), use:
 
 ```bash
 helm install my-release \

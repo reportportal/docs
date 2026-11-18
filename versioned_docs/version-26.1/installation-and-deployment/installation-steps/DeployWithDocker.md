@@ -56,15 +56,15 @@ For production, deploy on a Linux-based server or cloud instance. Adjust resourc
 2. **Review and Customize Environment Variables**
 
     * Open `docker-compose.yml` in your editor.
-    * Locate the `RP_INITIAL_ADMIN_PASSWORD` variable under the `uat-service` (or equivalent) section.
+    * Locate the `RP_INITIAL_ADMIN_PASSWORD` variable under the `api` service.
 
       ```yaml
       services:
-        uat:
+        api:
           environment:
-            RP_INITIAL_ADMIN_PASSWORD: "ChangeMe123"
+            RP_INITIAL_ADMIN_PASSWORD: "YourSecurePass"
       ```
-    * Replace `ChangeMe123` with a secure password of your choice.
+    * Replace `YourSecurePass` with a secure password of your choice.
     * (Optional) Adjust other variables such as database credentials or ports if needed.
 
 ### Step 3: Deploy ReportPortal
