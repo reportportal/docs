@@ -1,5 +1,5 @@
 ---
-sidebar_position: 22
+sidebar_position: 23
 sidebar_label: Version 23.1
 description: ReportPortal v23.1 archived release notes with new logo, enhanced features.
 ---
