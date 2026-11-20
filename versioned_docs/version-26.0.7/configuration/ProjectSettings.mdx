@@ -19,14 +19,14 @@ To go to the project settings page, click the "Project Settings" icon in the lef
 
 The project configuration page will be opened.
 
-The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](/quality-gates)).
+The project settings are divided into following tabs: "General", "Integrations", "Notifications", "Defect Types", "Analyzer", "Pattern Analysis", "Demo Data" and "Quality Gates" (if you have our [premium feature](../quality-gates/index.md)).
 
 ## General settings
 
 Our test automation results dashboard allows you to control the amount of the stored data (launches, test items, logs and attachments) by removing outdated elements using Quartz jobs.
 Functionality of data removing depends on two configurations. 
 
-The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](/installation-steps-advanced/JobsConfiguration)
+The first one is API service back-end environment variables that are described in [ReportPortal jobs configuration](../installation-steps-advanced/JobsConfiguration.md)
 
 The second one is the "General" tab you can configure parameter of data storage in ReportPortal for this project:
 
@@ -76,7 +76,7 @@ Widgets continue to work even if the logs are deleted, as they are linked to tes
 
 The "Integration" tab can allow the project to connect ReportPortal with external systems or rewrite global configurations for third party systems.
 
-For more information on this topic, please refer to [Integration with external systems](/configuration/IntegrationViaPlugin).
+For more information on this topic, please refer to [Integration with external systems](./IntegrationViaPlugin.mdx).
 
 ## Notifications
 
@@ -93,7 +93,7 @@ Users with MEMBER/ OPERATOR/ CUSTOMER project role will not have the capability 
 ### Email notifications
 
 :::tip
-For using this functionality be sure that the [Email server](/plugins/notifications/EmailServer/) is configured. For that, go to the Project Settings -> Integrations -> Email Server.
+For using this functionality be sure that the [Email server](../plugins/notifications/EmailServer.mdx) is configured. For that, go to the Project Settings -> Integrations -> Email Server.
 :::
 
 To create Email notification rule, perform the following steps:
@@ -147,7 +147,7 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 ### Slack notifications
 
 :::tip
-To use this functionality, ensure that the [Slack plugin](/plugins/notifications/Slack) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+To use this functionality, ensure that the [Slack plugin](../plugins/notifications/Slack.mdx) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
 :::
 
 To create Slack notification rule, perform the following steps:
@@ -162,7 +162,7 @@ To create Slack notification rule, perform the following steps:
 
 **Rule name** – from 1 to 55 characters, mandatory field
 
-**Webhook URL** – mandatory field (it is configured on the [Slack side](/plugins/notifications/Slack#create-an-application-in-slack))
+**Webhook URL** – mandatory field (it is configured on the [Slack side](../plugins/notifications/Slack.mdx#create-an-application-in-slack))
 
 **In case** – optional field, dropdown with the options:
 
@@ -195,7 +195,7 @@ You can edit/ copy/enable/disable notification rule by clicking on the appropria
 ### Telegram notifications
 
 :::tip
-To use this functionality, ensure that the [Telegram plugin](/plugins/notifications/Telegram) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
+To use this functionality, ensure that the [Telegram plugin](../plugins/notifications/Telegram.mdx) is uploaded and enabled. For that, go to Administrate -> Plugins or contact your instance Administrator.
 :::
 
 To create Telegram notification rule, perform the following steps:
@@ -210,13 +210,13 @@ To create Telegram notification rule, perform the following steps:
 
 **Rule name** – from 1 to 55 characters, mandatory field
 
-**Chat id** – mandatory field, copied from group info in [Telegram](/plugins/notifications/Telegram#configuration-on-telegram-side)
+**Chat id** – mandatory field, copied from group info in [Telegram](../plugins/notifications/Telegram.mdx#configuration-on-telegram-side)
 
 :::important
 When creating a Telegram notification rule in ReportPortal, prefix the **Chat id** value with a minus sign (`-`).
 :::
 
-**Bot Api Key** - mandatory field, received during registration [your Telegram bot](/plugins/notifications/Telegram#configuration-on-telegram-side)
+**Bot Api Key** - mandatory field, received during registration [your Telegram bot](../plugins/notifications/Telegram.mdx#configuration-on-telegram-side)
 
 **In case** – optional field, dropdown with the options:
 
@@ -269,7 +269,7 @@ To create custom defect types, perform the following steps:
 Add more custom defects, if you need it. The system allows us to add up to ten subtypes of each default defect type.
 
 Now you can do bug triage and set defect types as default Product Bug/Automation Bug/System Issue/No Defect/TO investigate or custom defects. All of them will be available to select on the Defect Type editor.
-For more information refer to the [Investigation of failure](/work-with-reports/InvestigationOfFailure) topic.
+For more information refer to the [Investigation of failure](../work-with-reports/InvestigationOfFailure.mdx) topic.
 
 :::note
 Default defects cannot be modified and or deleted from the system. Custom defect types can be deleted at any time.
@@ -387,13 +387,13 @@ System log types cannot be deleted.
 
 The Analyzer can allow reducing test failure analysis routine on the project.
 
-For more information on this topic, please refer to [Auto-Analysis documentation](/analysis/AutoAnalysisOfLaunches).
+For more information on this topic, please refer to [Auto-Analysis documentation](../analysis/AutoAnalysisOfLaunches.mdx).
 
 ## Pattern Analysis
 
 The "Pattern Analysis" feature allows identifying recurring failure patterns and common behaviors across test results.
 
-For more details, see the [Pattern Analysis documentation](/analysis/PatternAnalysis).
+For more details, see the [Pattern Analysis documentation](../analysis/PatternAnalysis.mdx).
 
 ## Demo data
 

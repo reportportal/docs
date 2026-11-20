@@ -57,11 +57,11 @@ This is the Beta release.
 -	Reporting test code reference (already updated Java-based agents)
 
 ## Integration with Java Test Frameworks
-- [Java TestNG](/log-data-in-reportportal/test-framework-integration/Java/TestNG)
-- [JUnit](/log-data-in-reportportal/test-framework-integration/Java/JUnit4)
-- [JUNit5](/log-data-in-reportportal/test-framework-integration/Java/JUnit5)
-- [Cucumber](/log-data-in-reportportal/test-framework-integration/Java/Cucumber)
-- [Jbehave](/log-data-in-reportportal/test-framework-integration/Java/JBehave)
+- [Java TestNG](/26.0.7/log-data-in-reportportal/test-framework-integration/Java/TestNG)
+- [JUnit](/26.0.7/log-data-in-reportportal/test-framework-integration/Java/JUnit4)
+- [JUNit5](/26.0.7/log-data-in-reportportal/test-framework-integration/Java/JUnit5)
+- [Cucumber](/26.0.7/log-data-in-reportportal/test-framework-integration/Java/Cucumber)
+- [Jbehave](/26.0.7/log-data-in-reportportal/test-framework-integration/Java/JBehave)
 
 ## Dev guides
 - [How to report results to ReportPortal](https://github.com/ihar-kahadouski/dev-guide/blob/master/reporting.md)

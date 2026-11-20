@@ -1,6 +1,6 @@
 ---
 title: Analysis
-description: Deep into ReportPortal's advanced analysis methods for robust test automation metrics & efficient defect triaging.
+description: Investigate failures and monitor trends with Auto-Analysis, Pattern Analysis, and Unique Error Analysis in ReportPortal.
 ---
 
 # Analysis
@@ -14,6 +14,7 @@ The automated analysis capabilities in ReportPortal are particularly useful for 
 With Immediate Auto-Analysis and Immediate Pattern Analysis, you can start analyzing failed tests right away, without having to wait for the launch to be completed.
 
 By leveraging these advanced analysis features, ReportPortal helps you optimize your test processes, enhance defect management, and maintain higher standards of software quality.
+
 
 import DocCardList from '@theme/DocCardList';
 

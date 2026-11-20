@@ -12,13 +12,13 @@ last_update:
 
 ## 1. What's new:
 
-**[Agentic testing results support](/log-data-in-reportportal/AgenticTestResults/)**<br />
+**[Agentic testing results support](/26.0.7/log-data-in-reportportal/AgenticTestResults)**<br />
 As AI-driven testing becomes a core part of modern quality engineering, ReportPortal provides first-class support for agentic test results — outcomes produced by autonomous AI agents rather than traditional scripted test automation.
 
 Starting from version 26.0.3, ReportPortal can receive and display results from AI agentic testing pipelines alongside classic automation results. This gives teams a unified view of their entire testing landscape — human-authored tests, automated regression suites, and AI agent sessions — in one place.
 
 ## 2. Premium updates for subscribers:
-**[Test Executions](/test-executions/#add-new-column):** 
+**[Test Executions](/26.0.7/test-executions#add-new-column):** 
 
 **-Export with attachments:**<br />
 XLS and PDF exports now support attachment inclusion. When Include attachments is enabled, the download is a ZIP archive containing the report file and any attachments. A second option controls structure: unchecked preserves a step-based folder hierarchy; checked places all attachments in a flat Attachments folder.<br />
@@ -40,16 +40,16 @@ Added
 * `DISABLE_TRAIN` config flag to permanently disable re-train functionality, by @HardNorth
 
 ## 5. Small improvements:
-**1. [Cumulative Trend Chart](/dashboards-and-widgets/CumulativeTrendChart/): drill-down by status**<br />
+**1. [Cumulative Trend Chart](/26.0.7/dashboards-and-widgets/CumulativeTrendChart): drill-down by status**<br />
 Clicking a status segment in the Cumulative Trend Chart now correctly filters results: Passed shows only Passed tests; Failed shows Failed and Interrupted tests; Skipped shows only Skipped; defect type segments apply the corresponding defect filter.
 
-**2. [Flaky Test Cases widget](/dashboards-and-widgets/FlakyTestCasesTableTop50/): drill-down opens correct execution**<br />
+**2. [Flaky Test Cases widget](/26.0.7/dashboards-and-widgets/FlakyTestCasesTableTop50): drill-down opens correct execution**<br />
 Clicking a test case in the Flaky Test Cases widget now opens the most recent execution of that test case. If the test case was not present in the latest launch, ReportPortal redirects to the most recent launch where it exists — instead of opening an empty view.
 
-**3. [Overall Statistics widget](/dashboards-and-widgets/OverallStatistics/): configurable Interrupted test counting**<br />
+**3. [Overall Statistics widget](/26.0.7/dashboards-and-widgets/OverallStatistics): configurable Interrupted test counting**<br />
 The Overall Statistics widget now has a new checkbox: Consider interrupted tests as failed. Enabled by default — Interrupted tests are counted within Failed (preserving previous behavior). When unchecked, Interrupted tests are shown as a separate category. This setting affects only the Overall Statistics widget.
 
-**4. [Test Case Search widget](/dashboards-and-widgets/TestCaseSearch/): search behavior and result limits**<br />
+**4. [Test Case Search widget](/26.0.7/dashboards-and-widgets/TestCaseSearch): search behavior and result limits**<br />
 Search now uses 'starts with' logic (previously 'contains'). Results are capped at 10 by default and 20 maximum.
 
 ## 6. Known issues:

@@ -169,7 +169,7 @@ global:
 
 
 storage:
-  # Ref.: https://reportportal.io/docs/installation-steps-advanced/file-storage-options/
+  # Ref.: ../index.md
   type: s3
   # Leave `accesskey` and `secretkey` empty for IAM role-based access
   accesskey:

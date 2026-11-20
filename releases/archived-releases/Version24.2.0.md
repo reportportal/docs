@@ -15,7 +15,7 @@ Open RabbitMQ Management, go to the Admin tab -> Feature Flags -> message_contai
 
 :::important
 Due to the transition to a new plugin mechanism when updating ReportPortal to version 24.2, all the plugins need to be reinstalled manually. 
-Check out the updated plugins [UI development guides](/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide).
+Check out the updated plugins [UI development guides](/26.0.7/developers-guides/PluginDevelopersGuide/PluginUIDevelopersGuide).
 :::
 
 :::important
@@ -25,21 +25,21 @@ https://github.com/reportportal/reportportal/compare/v24.1...v24.2) or [Kubernet
 
 ## 1. What's Changed:
 
-1. **New features** - **[Extended launches retention policy](/configuration/LaunchesRetentionPolicy)**: <br/>
+1. **New features** - **[Extended launches retention policy](/26.0.7/configuration/LaunchesRetentionPolicy)**: <br/>
    We've introduced an extended launches retention policy to allow important launches to be preserved beyond the existing retention periods. Previously, all launches were automatically deleted after a set time to save storage. With this update, you can now mark specific launches as important, ensuring they are never deleted, as long as there is sufficient storage available. This feature is useful for retaining critical data for compliance, auditing, or historical analysis.
 
-2. **New integrations** (Notifications) - **[Slack plugin](/plugins/notifications/Slack) and redesigned Notifications page**: <br/>
+2. **New integrations** (Notifications) - **[Slack plugin](/26.0.7/plugins/notifications/Slack) and redesigned Notifications page**: <br/>
    Teams using Slack can now set up Slack integration to receive ReportPortal notifications on launch event right in their Slack channel.<br/>
-   More details can be found in [Slack user guide](/plugins/notifications/Slack) and [blog post](https://reportportal.io/blog/report-test-results-in-real-time-to-slack).
+   More details can be found in [Slack user guide](/26.0.7/plugins/notifications/Slack) and [blog post](https://reportportal.io/blog/report-test-results-in-real-time-to-slack).
 
-3. **New integrations** (Bug Tracking Systems) - **[Monday plugin](/plugins/bug-tracking/Monday)**: <br/>
+3. **New integrations** (Bug Tracking Systems) - **[Monday plugin](/26.0.7/plugins/bug-tracking/Monday)**: <br/>
    Teams working with Monday as their BTS can now set up an integration to post and link issues from ReportPortal directly to Monday.  
 
 4. **Import functionality moved to plugin**:  <br/> 
    To provide more flexibility for launch import, the feature has been moved from the core application to a plugin. Users can now choose between the Robot and JUnit import plugins developed by the ReportPortal team, or create their own plugins to import results from other test frameworks.<br/>
-   More details about [JUnit import plugin](/plugins/import/JUnit).<br/>
-   More details about [Robot Framework import plugin](/plugins/import/RobotFramework).<br/>
-   [Guide on how to create import plugin](/developers-guides/PluginDevelopersGuide/DevelopACustomImportPlugin).
+   More details about [JUnit import plugin](/26.0.7/plugins/import/JUnit).<br/>
+   More details about [Robot Framework import plugin](/26.0.7/plugins/import/RobotFramework).<br/>
+   [Guide on how to create import plugin](/26.0.7/developers-guides/PluginDevelopersGuide/DevelopACustomImportPlugin).
 
 5. **Microseconds added to timestamps** for better test items sequence tracking:<br/>
    Microseconds have been added to timestamps to enable a more accurate sequence of logs, as some logs previously had identical timestamps at the millisecond level.
@@ -48,7 +48,7 @@ https://github.com/reportportal/reportportal/compare/v24.1...v24.2) or [Kubernet
 - PBKDF2 encryption has been added to the list of possible encryptions for LDAP.<br/>
 - LDAP integration can now be created either with Full name attribute mode or with separate fields for First name and Last name.
 
-7. **Improved logic of [launch rerun](/developers-guides/RerunDevelopersGuide)**:<br/>
+7. **Improved logic of [launch rerun](/26.0.7/developers-guides/RerunDevelopersGuide)**:<br/>
    User can report rerun of the specified launch with no attributes and the attributes for the initial launch will remain. If user reports rerun of the specified launch with attributes, only new attributes will be added to the launch.
 
 8. **New language introduced:**<br/>

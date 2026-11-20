@@ -8,7 +8,7 @@ description: ReportPortal v25.0.5 release notes with bug fixes.
 
 ## 1. New integrations:
 **Telegram plugin** enabling real-time test execution updates and failure alerts within Telegram channels.
-Learn more in our [documentation](/plugins/notifications/Telegram).
+Learn more in our [documentation](/26.0.7/plugins/notifications/Telegram).
 
 ## 2. Released services:
 |Plugin Name|Repository|Tag|

@@ -8,13 +8,13 @@ description: ReportPortal v24.1 release notes with Immediate Auto-Analysis, Patt
 
 ## 1. What's Changed:
 
-- **New feature – [Immediate Auto-Analysis](/analysis/ImmediateAutoAnalysis):**  <br/>
+- **New feature – [Immediate Auto-Analysis](/26.0.7/analysis/ImmediateAutoAnalysis):**  <br/>
   This feature employs Auto-Analysis based on specific test cases immediately after their completion for proactive issue investigation.
 
-- **New feature – [Immediate Pattern-Analysis](/analysis/ImmediatePatternAnalysis):**  <br/>
+- **New feature – [Immediate Pattern-Analysis](/26.0.7/analysis/ImmediatePatternAnalysis):**  <br/>
   No more need to wait for the launch finish. Initiate Pattern Analysis immediately after completion of specific test cases.
 
-- **New Integration – [Gitlab Plugin](/plugins/bug-tracking/GitLab):**<br/>
+- **New Integration – [Gitlab Plugin](/26.0.7/plugins/bug-tracking/GitLab):**<br/>
   New BTS plugin expanding ReportPortal BTS integration options for streamlined bugs reporting, issues.
 
 - **New feature – Retention Policy for Monitoring events**<br/>
@@ -29,7 +29,7 @@ description: ReportPortal v24.1 release notes with Immediate Auto-Analysis, Patt
 
 ## 2. Small Updates:
 
-- Change in [Base for AA](/analysis/AutoAnalysisOfLaunches#base-for-analysis):<br/>
+- Change in [Base for AA](/26.0.7/analysis/AutoAnalysisOfLaunches#base-for-analysis):<br/>
   New options for Base for Auto Analysis have been introduced.
 
 - Enhanced Monitoring:<br/>

@@ -16,14 +16,14 @@ If your API keys contain special characters, please regenerate them to ensure co
 **Action Required 3 - Update your SAML integration:**<br />
 Please update your existing SAML integration to use the new standard callback URL format: ```/uat/login/saml2/sso/{saml-provider-name}```<br />
 This ensures compatibility with the latest updates and improved security practices.<br />
-More details can be found in our [SAML documentation](/plugins/authorization/SamlProviders/Overview/).
+More details can be found in our [SAML documentation](/26.0.7/plugins/authorization/SamlProviders/Overview).
 
 **Important Compatibility Notice:**<br />
 Java agents released prior to 2022 may experience compatibility issues with ReportPortal 25.1. Please verify agent compatibility and consider upgrading to newer agent versions to ensure full functionality.
 
 ## 1. What's Changed:
 
-1. **[Footer link updates](/admin-panel/ServerSettings#links--branding)**:<br />
+1. **[Footer link updates](/26.0.7/admin-panel/ServerSettings#links--branding)**:<br />
    Admin users can now customize footer links in ReportPortal by adding new links, naming them, and rearranging their order. This allows users to easily access important shortcuts relevant to their organization.
 
 2. **Dashboard sorting**:<br />
@@ -35,7 +35,7 @@ Java agents released prior to 2022 may experience compatibility issues with Repo
 4. **Project Activity Panel update**:<br />A new criteria "Update test item" has been added to the Project Activity Panel widget. This displays activity when a user changes an item's defect type or status, or when Auto Analysis changes an item's defect type.
 
 6. **SCIM user filtering:**<br />
-   For users of our enterprise "[SCIM server](/features/SCIMServerFeature)" feature, we've added the ability to filter SCIM-type users.
+   For users of our enterprise "[SCIM server](/26.0.7/features/SCIMServerFeature)" feature, we've added the ability to filter SCIM-type users.
 
 
 ## 2. Technical improvements:

@@ -31,7 +31,7 @@ Coming soon.
 In the meantime, you can explore and experiment with the [goRP CLI skill](https://github.com/reportportal/goRP/blob/master/.cursor/skills/reportportal/SKILL.md) to report results directly from an AI agent session.
 
 :::tip Mark your launches as agentic
-To [distinguish](/work-with-reports/ViewLaunches#launches-tab) agentic launches from classic automation in the ReportPortal UI, include the following system attribute when starting a launch:
+To [distinguish](../work-with-reports/ViewLaunches.mdx#launches-tab) agentic launches from classic automation in the ReportPortal UI, include the following system attribute when starting a launch:
 
 ```json
 {
