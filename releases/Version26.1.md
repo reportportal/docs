@@ -15,7 +15,6 @@ last_update:
 >
 > - **[Migration from ReportPortal 26.0 to 26.1](https://github.com/reportportal/reportportal/wiki/Migration-v26.1)** covers filesystem storage, S3-compatible storage, and Amazon S3.
 
-> **Major release with breaking changes.** Review the Breaking changes section and verify user access after upgrade before rolling out broadly.
 
 ## 1. Breaking changes:
 
