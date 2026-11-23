@@ -176,3 +176,5 @@ Organization-aware plugin, **Microsoft Teams** notifications plugin, **Mobitru**
 * [ ] Rebuild/upgrade all plugins to 26.1-compatible builds  
 * [ ] Smoke-test login, reporting, attachments, orgs, and TMS (if used)  
 
+## 5. CVE addressed:
+this version addresses [CVE-2026-114938](https://github.com/advisories/GHSA-6g7j-4xh3-xq2q)
