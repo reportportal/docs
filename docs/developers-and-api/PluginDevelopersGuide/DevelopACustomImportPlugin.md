@@ -19,6 +19,7 @@ Before starting the development of a new import plugin, ensure you review these 
 5. **Event Objects**: Familiarize with event objects used in reporting at [GitHub](https://github.com/reportportal/service-api/tree/develop/src/main/java/com/epam/reportportal/base/infrastructure/events).
 6. **Start Import Endpoint**: Learn how to initiate importing through the UI at [GitHub](https://github.com/reportportal/service-api/blob/develop/src/main/java/com/epam/reportportal/base/ws/controller/PluginController.java).
 7. **Plugin commands**: Learn how plugin commands are implemented with `AbstractExtensionCommand` in the [Plugin API development guide](./PluginAPIDevelopersGuide.mdx#plugin-commands).
+8. **Spring Boot 4**: Plugins run on Spring Boot 4 and Jackson 3. If you are updating an existing import plugin, follow [Migrating an existing plugin to Spring Boot 4](./PluginAPIDevelopersGuide.mdx#migrating-an-existing-plugin-to-spring-boot-4).
 
 ## Step-by-Step Plugin Development Guide
 
@@ -71,6 +72,8 @@ For correct representation on the UI, there should be added specific parameters 
     return Map.of(importCommand.getName(), importCommand);
   }
 ```
+
+Here `objectMapper` is the Jackson 3 `tools.jackson.databind.json.JsonMapper` injected into the extension by the host application.
 
 The legacy `getCommonCommand()` and `getIntegrationCommand()` methods are deprecated and should return `null`.
 
