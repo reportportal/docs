@@ -37,6 +37,11 @@ button to create your own repository from it.
 - Gradle (the template ships with the Gradle wrapper, so `./gradlew` can be used instead)
 - Node.js 20 (downloaded automatically by the Gradle build to assemble the plugin UI)
 
+:::note
+Plugins run inside `service-api`, which is built on Spring Boot 4 and Jackson 3. The plugin does not declare these versions itself - they are
+provided by `service-api`. If you have a plugin built for the previous release, see [Migrating an existing plugin to Spring Boot 4](#migrating-an-existing-plugin-to-spring-boot-4).
+:::
+
 ### Project structure
 
 ```text
@@ -52,10 +57,8 @@ plugin-template
 │   │   ├── bts                          # BTS commands examples
 │   │   └── test/TestConnectionCommand.java
 │   ├── event                            # plugin event listeners and handlers
-│   ├── info                             # PluginInfoProvider
 │   └── model
 ├── src/main/resources
-│   ├── binary-data.properties           # files available to the client side
 │   └── schema/*.sql                     # optional SQL migration scripts
 └── ui                                   # plugin UI (see the UI development guide)
 ```
@@ -72,7 +75,7 @@ pluginClass=com.epam.reportportal.extension.template.TemplatePlugin
 pluginName=Template Plugin
 provider=Developer name
 license=Apache 2.0
- documentation=../integrations/ManagePlugins.mdx
+documentation=../integrations/ManagePlugins.mdx
 isIntegrationsAllowed=true
 isEmbedded=true
 isMultiple=true
@@ -90,7 +93,7 @@ yourAdditionalProperty=yourPropertyValue
 | `isIntegrationsAllowed` | Whether integrations can be created for the plugin (shows or hides the **Add integration** block on the plugin page). |
 | `isEmbedded`            | Whether integration settings are rendered by the plugin UI.                                                 |
 | `isMultiple`            | Whether multiple integrations of this plugin are allowed.                                                   |
-| `mainBinaryData`, `metadataBinaryData` | Names of the plugin UI files.                                                                |
+| `mainBinaryData`, `metadataBinaryData` | Names of the plugin UI files. They are written to the jar manifest as `Plugin-Binary-Data-main` and `Plugin-Binary-Data-metadata` (see [Binary data](#binary-data)). |
 
 Additional manifest entries can be added with the `Plugin-Metadata-*` and `Plugin-Property-*` prefixes (see `yourAdditionalMetadata`
 and `yourAdditionalProperty` examples).
@@ -104,7 +107,6 @@ The `build.gradle` file looks as follows:
 
 ```groovy
 plugins {
-    id "io.spring.dependency-management" version "1.1.7"
     id 'java'
     id 'jacoco'
     id 'com.gradleup.shadow' version '9.6.1'
@@ -144,11 +146,19 @@ repositories {
 dependencies {
     if (releaseMode) {
         implementation 'com.epam.reportportal:service-api'
-        annotationProcessor 'com.epam.reportportal:service-api'
+        annotationProcessor('com.epam.reportportal:service-api') {
+            exclude group: 'org.springframework.modulith', module: 'spring-modulith-apt'
+        }
     } else {
-        implementation 'com.github.reportportal:service-api:6.0.0'
-        annotationProcessor 'com.github.reportportal:service-api:6.0.0'
+        implementation 'com.github.reportportal:service-api:e342de9'
+        annotationProcessor('com.github.reportportal:service-api:e342de9') {
+            exclude group: 'org.springframework.modulith', module: 'spring-modulith-apt'
+        }
     }
+
+    // provided by the host application (service-api), versions come from its Spring Boot BOM
+    compileOnly 'tools.jackson.core:jackson-databind'
+    compileOnly 'jakarta.annotation:jakarta.annotation-api'
 }
 
 java {
@@ -162,6 +172,10 @@ The plugin depends on `service-api` directly. It provides the extension points (
 grants access to the core ReportPortal classes: repositories, entities, events, etc. In non-release mode `service-api` is resolved from
 [JitPack](https://jitpack.io) by commit hash, so the plugin can be built against any `service-api` revision.
 
+Do not declare a Spring Boot version or apply the `io.spring.dependency-management` plugin: the Spring Boot BOM comes from `service-api`.
+Libraries provided by the host application (for example Jackson 3 and Jakarta annotations) are declared as `compileOnly` without a version.
+The `spring-modulith-apt` annotation processor is excluded, because it is meant for the host application only.
+
 <br/>
 
 ### Create extension
@@ -173,13 +187,9 @@ manager. The class name should match the `pluginClass` property.
 package com.epam.reportportal.extension.template;
 
 import org.pf4j.Plugin;
-import org.pf4j.PluginWrapper;
 
 public class TemplatePlugin extends Plugin {
 
-  public TemplatePlugin(PluginWrapper wrapper) {
-    super(wrapper);
-  }
 }
 ```
 
@@ -352,7 +362,7 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
 
   @Autowired
   @Lazy
-  private ObjectMapper objectMapper;
+  private JsonMapper objectMapper;
   ...
 }
 ```
@@ -361,17 +371,17 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
 
 ### Binary data
 
-We can store in `resources` folder files that can be loaded from the client side later. The `binary-data.properties` file contains
-*key-value* mapping that represents files allowed to be loaded from the client side:
+Files from the `resources` folder of the plugin jar can be loaded from the client side later. The files that are allowed to be loaded are
+declared in the `gradle.properties` file:
 
 ```properties
-main=remoteEntity.js
-metadata=metadata.json
-icon=plugin-icon.svg
+mainBinaryData=main.js
+metadataBinaryData=metadata.json
 ```
 
-`PluginInfoProviderImpl` reads this file and stores the mapping in the `binaryData` section of the integration type details,
-together with the plugin description and metadata.
+The build writes them to the jar manifest as `Plugin-Binary-Data-main` and `Plugin-Binary-Data-metadata` entries (see
+[Assemble plugin](#assemble-plugin)). The host application reads the manifest and stores the mapping in the `binaryData` section of the
+integration type details, so the plugin does not need its own `binary-data.properties` file or `PluginInfoProvider` implementation.
 
 <br/>
 
@@ -454,12 +464,62 @@ public class PluginLoadedEventListener implements ApplicationListener<PluginUplo
 
   @Override
   public void onApplicationEvent(PluginUploadedEvent event) {
-    if (pluginId.equals(event.getPluginActivityResource().getName())) {
+    if (supports(event)) {
       pluginLoadedEventHandler.handle(event);
+    }
+  }
+
+  private boolean supports(PluginUploadedEvent event) {
+    return pluginId.equals(event.getPluginActivityResource().getName());
+  }
+}
+```
+
+The handler contains the actual logic. The template `PluginLoadedEventHandler` creates a default global integration if the plugin does not have one yet:
+
+```java
+public class PluginLoadedEventHandler implements EventHandler<PluginUploadedEvent> {
+
+  private final IntegrationTypeRepository integrationTypeRepository;
+  private final IntegrationRepository integrationRepository;
+
+  public PluginLoadedEventHandler(IntegrationTypeRepository integrationTypeRepository,
+      IntegrationRepository integrationRepository) {
+    this.integrationTypeRepository = integrationTypeRepository;
+    this.integrationRepository = integrationRepository;
+  }
+
+  @Override
+  public void handle(PluginUploadedEvent event) {
+    integrationTypeRepository.findByName(event.getPluginActivityResource().getName())
+      .ifPresent(integrationType -> createIntegration(event.getPluginActivityResource().getName(), integrationType));
+  }
+
+  private void createIntegration(String name, IntegrationType integrationType) {
+    List<Integration> integrations = integrationRepository.findAllGlobalByType(integrationType);
+    if (integrations.isEmpty()) {
+      Integration integration = new Integration();
+      integration.setName(name);
+      integration.setType(integrationType);
+      integration.setCreationDate(Instant.now());
+      integration.setEnabled(true);
+      integration.setCreator("SYSTEM");
+      integration.setParams(new IntegrationParams(new HashMap<>()));
+      integrationRepository.save(integration);
     }
   }
 }
 ```
+
+`PluginDeletedEventHandler` is an empty extension point for cleaning up the data created by the plugin itself (for example custom tables).
+Remove the default integration creation if your plugin should not create an integration automatically (for example, when `isIntegrationsAllowed=false`).
+
+:::note
+Splitting an event into a listener and a handler is a convention of the template, not a requirement. Many existing plugins register a single class
+that implements `ApplicationListener<PluginUploadedEvent>` and performs the plugin id check and the logic in `onApplicationEvent()`.
+Older plugins also call their own `PluginInfoProvider` there to fill the integration type details (binary data, description, metadata) - this is
+no longer needed, because these details are now read from the plugin manifest by the host application.
+:::
 
 To add a new listener we should use `ApplicationContext` after plugin was loaded - so we do it in the method marked by `@PostConstruct`.
 
@@ -500,7 +560,7 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
       pluginId, new PluginLoadedEventHandler(integrationTypeRepository, integrationRepository)
     ));
     pluginDeletedListener = new MemoizingSupplier<>(() -> new PluginDeletedEventListener(
-      pluginId, new PluginDeletedEventHandler(integrationTypeRepository, integrationRepository)
+      pluginId, new PluginDeletedEventHandler()
     ));
   }
 
@@ -618,6 +678,32 @@ Now we can just execute `./gradlew build` and get plugin binaries in the `build/
 2. Go to the **Plugins** tab.
 3. Click on the **Upload** button and select the `.jar` file generated in the previous step.
 4. After the plugin is uploaded, it will appear in the list of plugins.
+
+## Migrating an existing plugin to Spring Boot 4
+
+`service-api` runs on Spring Boot 4 (Spring Framework 7, Spring Security 7) and Jackson 3. A plugin built for the previous release must be
+updated and rebuilt against the new `service-api`. Use the [plugin template](https://github.com/reportportal/plugin-template) as a reference:
+
+1. **Build configuration**
+   - Remove the `io.spring.dependency-management` plugin and any explicit Spring Boot version. The Boot BOM comes from `service-api`.
+   - Update the `service-api` reference (in non-release mode, the JitPack commit hash) and exclude `org.springframework.modulith:spring-modulith-apt`
+     from `annotationProcessor`.
+   - Add `compileOnly 'tools.jackson.core:jackson-databind'` and `compileOnly 'jakarta.annotation:jakarta.annotation-api'` without versions.
+2. **Jackson 3**
+   - Replace `com.fasterxml.jackson.databind.ObjectMapper` with `tools.jackson.databind.json.JsonMapper` in the extension and in commands.
+     Use the mapper injected by the host instead of creating your own.
+   - Change the other `com.fasterxml.jackson.databind.*` and `com.fasterxml.jackson.core.*` imports to `tools.jackson.databind.*` and
+     `tools.jackson.core.*`. Annotations (`com.fasterxml.jackson.annotation.*`) keep their package.
+   - Jackson 3 exceptions are unchecked, so remove `@SneakyThrows` and `throws` clauses that were added only for Jackson calls.
+3. **Plugin class**: remove the `Plugin(PluginWrapper)` constructor from the class referenced by `pluginClass`.
+4. **Binary data**: `binary-data.properties` and the `PluginInfoProvider` implementation (including its call from the plugin loaded event
+   handler) are no longer needed and can be deleted. Declare `mainBinaryData` and `metadataBinaryData` in `gradle.properties`
+   (see [Binary data](#binary-data)).
+5. **Extension API**: use plain `@Deprecated` (without `forRemoval`) on `getCommonCommand()` and `getIntegrationCommand()`, matching the host interface.
+6. **Spring Framework 7 and Security 7**: fix any compilation errors caused by removed or relocated APIs. `RestTemplate` is deprecated in
+   Spring Framework 7, so prefer `RestClient` in new code.
+7. Run `./gradlew clean build`, upload the plugin jar to a ReportPortal instance built from the same `service-api` revision, and check that
+   the plugin loads and its commands work.
 
 ## Lazy initialization
 
